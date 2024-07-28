@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { ErrorTemplate } from '@/components/templates';
 
@@ -23,5 +23,5 @@ const ErrorPage = ({ error, reset }: ErrorPageProps) => {
   );
 };
 
-export default forwardRef(ErrorPage);
+export default ErrorPage;
 export type { ErrorPageProps };

@@ -1,5 +1,4 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { forwardRef } from 'react';
 
 import { AboutTemplate } from '@/components/templates';
 
@@ -33,6 +32,6 @@ const generateMetadata = async ({ params: { locale } }: AboutPageParams) => {
   };
 };
 
-export default forwardRef(AboutPage);
+export default AboutPage;
 export { generateMetadata };
 export type { AboutPageProps, AboutPageParams };

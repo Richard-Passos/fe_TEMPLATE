@@ -1,5 +1,4 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { forwardRef } from 'react';
 
 import { WorkTemplate } from '@/components/templates';
 
@@ -33,6 +32,6 @@ const generateMetadata = async ({ params: { locale } }: WorkPageParams) => {
   };
 };
 
-export default forwardRef(WorkPage);
+export default WorkPage;
 export { generateMetadata };
 export type { WorkPageProps, WorkPageParams };

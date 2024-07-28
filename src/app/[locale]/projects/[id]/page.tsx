@@ -1,5 +1,4 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { forwardRef } from 'react';
 
 import { SingleProjectTemplate } from '@/components/templates';
 
@@ -48,6 +47,6 @@ const generateMetadata = async ({
 const generateStaticParams = () =>
   Array.from(Array(10).keys()).map((id) => ({ id: id.toString() }));
 
-export default forwardRef(SingleProjectPage);
+export default SingleProjectPage;
 export { generateMetadata, generateStaticParams };
 export type { SingleProjectPageProps, SingleProjectPageParams };

@@ -1,5 +1,4 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { forwardRef } from 'react';
 
 import { ContactTemplate } from '@/components/templates';
 
@@ -33,6 +32,6 @@ const generateMetadata = async ({ params: { locale } }: ContactPageParams) => {
   };
 };
 
-export default forwardRef(ContactPage);
+export default ContactPage;
 export { generateMetadata };
 export type { ContactPageProps, ContactPageParams };

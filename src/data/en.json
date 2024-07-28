@@ -1,0 +1,143 @@
+{
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Welcome to Home Page!"
+      },
+      "blocks": {}
+    },
+    "work": {
+      "hero": {
+        "title": "Welcome to Work Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "Work",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "Welcome to About Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "About",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "contact": {
+      "hero": {
+        "title": "Welcome to Contact Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "Contact",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "projects": {
+      "hero": {
+        "title": "Welcome to Projects Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "Projects",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "singleProject": {
+      "hero": {
+        "title": "Welcome to SingleProject Page!"
+      },
+      "blocks": {}
+    },
+    "notFound": {
+      "hero": {
+        "title": "Welcome to Not Found Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "Not Found",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "error": {
+      "hero": {
+        "title": "Welcome to Error Page!"
+      },
+      "blocks": {},
+      "metadata": {
+        "title": "Error",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    }
+  },
+  "header": {
+    "nav": {
+      "short": {
+        "home": {
+          "href": "/",
+          "label": "Home"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Work"
+        },
+        "about": {
+          "href": "/about",
+          "label": "About"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contact"
+        }
+      },
+      "full": {
+        "home": {
+          "href": "/",
+          "label": "Home"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Work"
+        },
+        "projects": {
+          "href": "/projects",
+          "label": "Projects"
+        },
+        "about": {
+          "href": "/about",
+          "label": "About"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contact"
+        }
+      }
+    },
+    "locale": {
+      "label": "Your locale"
+    }
+  },
+  "footer": {},
+  "personal": {
+    "name": "FE Typescript",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
+    "logo": {
+      "label": "FE Typescript",
+      "icon": "/images/logo.svg",
+      "favicon": "/images/favicon.ico"
+    },
+    "socials": {}
+  },
+  "themes": {},
+  "locales": {
+    "en": {
+      "label": "English"
+    },
+    "pt": {
+      "label": "Portuguese"
+    }
+  }
+}

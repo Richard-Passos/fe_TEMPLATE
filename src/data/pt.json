@@ -1,0 +1,74 @@
+{
+  "pages": {
+    "home": {
+      "title": "Bem-vindo a Home Page!",
+      "blocks": {}
+    },
+    "work": {
+      "title": "Bem-vindo a Work Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "Work",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "about": {
+      "title": "Bem-vindo a About Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "About",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "contact": {
+      "title": "Bem-vindo a Contact Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "Contact",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "projects": {
+      "title": "Bem-vindo a Projects Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "Projects",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "singleProject": {
+      "title": "Bem-vindo a SingleProject Page!",
+      "blocks": {}
+    },
+    "notFound": {
+      "title": "Bem-vindo a Not Found Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "Not Found",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    },
+    "error": {
+      "title": "Bem-vindo a Error Page!",
+      "blocks": {},
+      "metadata": {
+        "title": "Error",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
+      }
+    }
+  },
+  "header": {},
+  "footer": {},
+  "personal": {
+    "name": "FE Typescript",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
+    "logo": {
+      "label": "FE Typescript",
+      "icon": "/images/logo.svg",
+      "favicon": "/images/favicon.ico"
+    },
+    "socials": {}
+  },
+  "themes": {},
+  "locales": {}
+}

@@ -2,13 +2,13 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "Welcome to Home Page!"
+        "title": "I'm Home Page!"
       },
       "blocks": {}
     },
     "work": {
       "hero": {
-        "title": "Welcome to Work Page!"
+        "title": "I'm Work Page!"
       },
       "blocks": {},
       "metadata": {
@@ -18,7 +18,7 @@
     },
     "about": {
       "hero": {
-        "title": "Welcome to About Page!"
+        "title": "I'm About Page!"
       },
       "blocks": {},
       "metadata": {
@@ -28,7 +28,7 @@
     },
     "contact": {
       "hero": {
-        "title": "Welcome to Contact Page!"
+        "title": "I'm Contact Page!"
       },
       "blocks": {},
       "metadata": {
@@ -38,7 +38,7 @@
     },
     "projects": {
       "hero": {
-        "title": "Welcome to Projects Page!"
+        "title": "I'm Projects Page!"
       },
       "blocks": {},
       "metadata": {
@@ -48,13 +48,13 @@
     },
     "singleProject": {
       "hero": {
-        "title": "Welcome to SingleProject Page!"
+        "title": "I'm SingleProject Page!"
       },
       "blocks": {}
     },
     "notFound": {
       "hero": {
-        "title": "Welcome to Not Found Page!"
+        "title": "I'm Not Found Page!"
       },
       "blocks": {},
       "metadata": {
@@ -64,7 +64,7 @@
     },
     "error": {
       "hero": {
-        "title": "Welcome to Error Page!"
+        "title": "I'm Error Page!"
       },
       "blocks": {},
       "metadata": {

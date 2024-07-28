@@ -1,63 +1,125 @@
 {
   "pages": {
     "home": {
-      "title": "Bem-vindo a Home Page!",
+      "hero": {
+        "title": "Eu sou a Página Inicial!"
+      },
       "blocks": {}
     },
     "work": {
-      "title": "Bem-vindo a Work Page!",
+      "hero": {
+        "title": "Eu sou a Página Trabalho!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "Work",
+        "title": "Trabalho",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "about": {
-      "title": "Bem-vindo a About Page!",
+      "hero": {
+        "title": "Eu sou a Página Sobre!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "About",
+        "title": "Sobre",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "contact": {
-      "title": "Bem-vindo a Contact Page!",
+      "hero": {
+        "title": "Eu sou a Página Contato!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "Contact",
+        "title": "Contato",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "projects": {
-      "title": "Bem-vindo a Projects Page!",
+      "hero": {
+        "title": "Eu sou a Página Projetos!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "Projects",
+        "title": "Projetos",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "singleProject": {
-      "title": "Bem-vindo a SingleProject Page!",
+      "hero": {
+        "title": "Eu sou a Página Um Projeto!"
+      },
       "blocks": {}
     },
     "notFound": {
-      "title": "Bem-vindo a Not Found Page!",
+      "hero": {
+        "title": "Eu sou a Página Não Encontrado!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "Not Found",
+        "title": "Não encontrado",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "error": {
-      "title": "Bem-vindo a Error Page!",
+      "hero": {
+        "title": "Eu sou a Página Erro!"
+      },
       "blocks": {},
       "metadata": {
-        "title": "Error",
+        "title": "Erro",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     }
   },
-  "header": {},
+  "header": {
+    "nav": {
+      "short": {
+        "home": {
+          "href": "/",
+          "label": "Início"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Trabalho"
+        },
+        "about": {
+          "href": "/about",
+          "label": "Sobre"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contato"
+        }
+      },
+      "full": {
+        "home": {
+          "href": "/",
+          "label": "Início"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Trabalho"
+        },
+        "projects": {
+          "href": "/projects",
+          "label": "Projetos"
+        },
+        "about": {
+          "href": "/about",
+          "label": "Sobre"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contato"
+        }
+      }
+    },
+    "locale": {
+      "label": "Sua localização"
+    }
+  },
   "footer": {},
   "personal": {
     "name": "FE Typescript",
@@ -70,5 +132,12 @@
     "socials": {}
   },
   "themes": {},
-  "locales": {}
+  "locales": {
+    "en": {
+      "label": "Inglês"
+    },
+    "pt": {
+      "label": "Português"
+    }
+  }
 }

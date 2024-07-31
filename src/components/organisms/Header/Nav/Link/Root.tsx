@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
 import { Link, Magnetic } from '@/components/atoms';
-import type { LinkProps } from '@/components/atoms/Link';
+import { LinkProps } from '@/components/atoms/Link';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
@@ -33,7 +33,7 @@ const HeaderNavLinkOrganism = (
     >
       <Link
         className={cn(
-          'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-black no-underline transition-none hover:z-10',
+          'group/link text-inherit relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold no-underline transition-none hover:z-10',
           className
         )}
         ref={ref}

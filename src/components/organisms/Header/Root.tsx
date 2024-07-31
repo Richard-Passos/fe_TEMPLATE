@@ -7,6 +7,7 @@ import Logo from '@/components/organisms/Logo';
 import { locales } from '@/navigation';
 import { cn } from '@/utils';
 
+import HeaderMenu from './Menu';
 import Nav from './Nav';
 import Set from './Set';
 
@@ -48,7 +49,9 @@ const HeaderOrganism = (
 
         <div className='flex items-center gap-xs'>
           <Nav items={items} />
+
           <Divider orientation='vertical' />
+
           <Suspense>
             <LocaleSelect
               aria-label={t('locale.label')}
@@ -58,8 +61,10 @@ const HeaderOrganism = (
                 label: gt(`locales.${key}.label`)
               }))}
             />
-          </Suspense>{' '}
+          </Suspense>
         </div>
+
+        <HeaderMenu namespace={`${namespace}.menu`} />
       </header>
     </Set>
   );

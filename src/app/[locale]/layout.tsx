@@ -2,7 +2,7 @@ import { ColorSchemeScript } from '@mantine/core';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
-import { Footer, Header, Providers } from '@/components/organisms';
+import { Footer, Header, Main, Providers } from '@/components/organisms';
 import '@/globals.css';
 import { locales } from '@/navigation';
 import { defaultColorScheme } from '@/theme';
@@ -30,9 +30,9 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
           <Header.Root />
 
           <Header.State>
-            <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
-              {children}
-            </main>
+            <Main.State>
+              <Main.Root>{children}</Main.Root>
+            </Main.State>
           </Header.State>
 
           <Footer />

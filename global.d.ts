@@ -10,7 +10,7 @@ declare global {
 
   type Namespace = NamespaceKeys<IntlMessages, NestedKeyOf<IntlMessages>>;
 
-  type PolimorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
+  type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
 
   type ExtractPrefix<T, P extends string> = T extends `${P}${infer Rest}`
     ? Rest extends `${infer _}.${string}`

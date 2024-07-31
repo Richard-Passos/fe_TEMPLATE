@@ -1,5 +1,5 @@
 import LocaleSelect, {
-  type LocaleSelectMoleculeProps as LocaleSelectProps
+  LocaleSelectMoleculeProps as LocaleSelectProps
 } from './Root';
 
 export default LocaleSelect;

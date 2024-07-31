@@ -1,5 +1,5 @@
-import ListItem, { type ListItemProps } from './Item';
-import ListRoot, { type ListMoleculeProps as ListRootProps } from './Root';
+import ListItem, { ListItemProps } from './Item';
+import ListRoot, { ListMoleculeProps as ListRootProps } from './Root';
 
 const List = {
   Root: ListRoot,

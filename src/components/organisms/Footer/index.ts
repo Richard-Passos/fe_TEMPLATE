@@ -1,4 +1,4 @@
-import Footer, { type FooterOrganismProps as FooterProps } from './Root';
+import Footer, { FooterOrganismProps as FooterProps } from './Root';
 
 export default Footer;
 export type { FooterProps };

@@ -3,9 +3,9 @@
 import { forwardRef } from 'react';
 
 import { Button } from '@/components/atoms';
-import { type ButtonProps } from '@/components/atoms/Button';
+import { ButtonProps } from '@/components/atoms/Button';
 import UnstyledLink, {
-  type UnstyledLinkProps
+  UnstyledLinkProps
 } from '@/components/atoms/Link/Unstyled';
 
 type ActionLinkMoleculeOwnProps = UnstyledLinkProps & {

@@ -1,7 +1,7 @@
-import { Badge, type BadgeProps } from '@mantine/core';
+import { Badge, BadgeProps } from '@mantine/core';
 
 type BadgeAtomOwnProps = {
-  ref?: PolimorphicRef<'div'>;
+  ref?: PolymorphicRef<'div'>;
 };
 
 type BadgeAtomProps = BadgeAtomOwnProps &

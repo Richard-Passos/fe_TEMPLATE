@@ -1,7 +1,7 @@
 import { Anchor, AnchorProps } from '@mantine/core';
 import { forwardRef } from 'react';
 
-import UnstyledLink, { type UnstyledLinkProps } from './Unstyled';
+import UnstyledLink, { UnstyledLinkProps } from './Unstyled';
 
 type LinkAtomOwnProps = {};
 

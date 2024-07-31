@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
-import Icon, { type Props } from 'react-inlinesvg';
+import Icon, { Props } from 'react-inlinesvg';
 
 import { cn } from '@/utils';
 
 type IconAtomOwnProps = {
-  ref?: PolimorphicRef<'svg'>;
+  ref?: PolymorphicRef<'svg'>;
 };
 
 type IconAtomProps = IconAtomOwnProps & Omit<Props, keyof IconAtomOwnProps>;
@@ -15,7 +15,7 @@ const IconAtom = (
 ) => {
   return (
     <Icon
-      className={cn('*:fill-current *:stroke-transparent size-full', className)}
+      className={cn('*:stroke-transparent size-full *:fill-current', className)}
       innerRef={ref}
       {...props}
     />

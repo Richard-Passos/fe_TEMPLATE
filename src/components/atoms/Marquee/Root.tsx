@@ -1,4 +1,4 @@
-import Marquee, { type MarqueeProps } from 'react-fast-marquee';
+import Marquee, { MarqueeProps } from 'react-fast-marquee';
 
 type MarqueeAtomOwnProps = {};
 

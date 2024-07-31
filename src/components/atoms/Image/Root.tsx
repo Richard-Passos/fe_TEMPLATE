@@ -1,5 +1,5 @@
-import { Image, type ImageProps } from '@mantine/core';
-import NextImage, { type ImageProps as NextImageProps } from 'next/image';
+import { Image, ImageProps } from '@mantine/core';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { ForwardedRef, forwardRef } from 'react';
 
 type ImageAtomOwnProps = {

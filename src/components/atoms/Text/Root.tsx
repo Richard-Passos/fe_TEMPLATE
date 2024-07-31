@@ -1,7 +1,7 @@
-import { Text, type TextProps } from '@mantine/core';
+import { Text, TextProps } from '@mantine/core';
 
 type TextAtomOwnProps = {
-  ref?: PolimorphicRef<'p'>;
+  ref?: PolymorphicRef<'p'>;
 };
 
 type TextAtomProps = TextAtomOwnProps & Omit<TextProps, keyof TextAtomOwnProps>;

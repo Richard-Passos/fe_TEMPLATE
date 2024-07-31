@@ -1,7 +1,7 @@
-import { Divider, type DividerProps } from '@mantine/core';
+import { Divider, DividerProps } from '@mantine/core';
 
 type DividerAtomOwnProps = {
-  ref?: PolimorphicRef<'div'>;
+  ref?: PolymorphicRef<'div'>;
 };
 
 type DividerAtomProps = DividerAtomOwnProps &

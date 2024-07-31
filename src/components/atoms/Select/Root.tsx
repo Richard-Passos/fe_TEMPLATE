@@ -1,7 +1,7 @@
-import { Select, type SelectProps } from '@mantine/core';
+import { Select, SelectProps } from '@mantine/core';
 
 type SelectAtomOwnProps = {
-  ref?: PolimorphicRef<'input'>;
+  ref?: PolymorphicRef<'input'>;
 };
 
 type SelectAtomProps = SelectAtomOwnProps &

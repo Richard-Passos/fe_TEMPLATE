@@ -1,8 +1,8 @@
 import {
   ActionIcon,
-  type ActionIconProps,
+  ActionIconProps,
   Button,
-  type ButtonProps,
+  ButtonProps,
   createPolymorphicComponent
 } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';

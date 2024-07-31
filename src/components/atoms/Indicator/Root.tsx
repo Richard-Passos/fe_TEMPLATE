@@ -1,7 +1,7 @@
-import { Indicator, type IndicatorProps } from '@mantine/core';
+import { Indicator, IndicatorProps } from '@mantine/core';
 
 type IndicatorAtomOwnProps = {
-  ref?: PolimorphicRef<'div'>;
+  ref?: PolymorphicRef<'div'>;
 };
 
 type IndicatorAtomProps = IndicatorAtomOwnProps &

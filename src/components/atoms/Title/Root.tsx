@@ -1,7 +1,7 @@
-import { Title, type TitleProps } from '@mantine/core';
+import { Title, TitleProps } from '@mantine/core';
 
 type TitleAtomOwnProps = {
-  ref?: PolimorphicRef<'h1'>;
+  ref?: PolymorphicRef<'h1'>;
 };
 
 type TitleAtomProps = TitleAtomOwnProps &

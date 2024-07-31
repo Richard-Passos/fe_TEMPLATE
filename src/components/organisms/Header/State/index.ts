@@ -1,5 +1,5 @@
 import HeaderState, {
-  type HeaderStateOrganismProps as HeaderStateProps
+  HeaderStateOrganismProps as HeaderStateProps
 } from './Root';
 
 export default HeaderState;

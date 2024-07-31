@@ -1,5 +1,5 @@
 import LogoSecondaryVariant, {
-  type LogoSecondaryVariantOrganismProps as LogoSecondaryVariantProps
+  LogoSecondaryVariantOrganismProps as LogoSecondaryVariantProps
 } from './Root';
 
 export default LogoSecondaryVariant;

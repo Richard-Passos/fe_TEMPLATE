@@ -1,5 +1,5 @@
 import HeaderNavLink, {
-  type HeaderNavLinkOrganismProps as HeaderNavLinkProps
+  HeaderNavLinkOrganismProps as HeaderNavLinkProps
 } from './Root';
 
 export default HeaderNavLink;

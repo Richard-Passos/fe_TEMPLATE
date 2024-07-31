@@ -1,4 +1,4 @@
-import Logo, { type LogoOrganismProps as LogoProps } from './Root';
+import Logo, { LogoOrganismProps as LogoProps } from './Root';
 
 export default Logo;
 export type { LogoProps };

@@ -1,5 +1,5 @@
 import LowImpactHero, {
-  type LowImpactHeroOrganismProps as LowImpactHeroProps
+  LowImpactHeroOrganismProps as LowImpactHeroProps
 } from './Root';
 
 export default LowImpactHero;

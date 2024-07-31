@@ -182,7 +182,7 @@ const themeOverride = createTheme({
     light: 6,
     dark: 7
   },
-  primaryColor: 'yellow',
+  primaryColor: 'red',
   autoContrast: false,
   luminanceThreshold: 0.3,
   fontFamily: fonts.display.style.fontFamily,

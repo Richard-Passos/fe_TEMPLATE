@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
+import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
 type HighImpactHeroOrganismOwnProps = {
@@ -8,7 +9,7 @@ type HighImpactHeroOrganismOwnProps = {
 };
 
 type HighImpactHeroOrganismProps = HighImpactHeroOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'section'>, keyof HighImpactHeroOrganismOwnProps>;
+  Omit<SectionProps, keyof HighImpactHeroOrganismOwnProps>;
 
 const HighImpactHeroOrganism = (
   { namespace, className, ...props }: HighImpactHeroOrganismProps,
@@ -17,16 +18,18 @@ const HighImpactHeroOrganism = (
   const t = useTranslations(namespace);
 
   return (
-    <section
+    <Section
       className={cn(
-        'flex min-h-svh w-full flex-col items-center pb-[--py] pt-[calc(var(--header-h)+var(--py))] [--py:--spacing-xl] 2xl:min-h-bounds',
+        'min-h-svh pt-[calc(var(--header-h)+var(--py))]',
         className
       )}
+      forceTheme
+      hasTransition={false}
       ref={ref}
       {...props}
     >
       {t('title')}
-    </section>
+    </Section>
   );
 };
 

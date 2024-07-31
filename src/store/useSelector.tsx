@@ -1,6 +1,6 @@
 import { useSelector as useReduxSelector } from 'react-redux';
 
-import type { RootState } from './root';
+import { RootState } from './root';
 
 const useSelector = useReduxSelector.withTypes<RootState>();
 

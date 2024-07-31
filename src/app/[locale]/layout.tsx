@@ -30,9 +30,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
           <Header.Root />
 
           <Header.State>
-            <Main.State>
-              <Main.Root>{children}</Main.Root>
-            </Main.State>
+            <Main>{children}</Main>
           </Header.State>
 
           <Footer />

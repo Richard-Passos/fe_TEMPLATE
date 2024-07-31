@@ -74,6 +74,15 @@
     }
   },
   "header": {
+    "menu": {
+      "title": "The Portfolio",
+      "open": {
+        "label": "Open menu"
+      },
+      "close": {
+        "label": "Close menu"
+      }
+    },
     "nav": {
       "short": {
         "home": {

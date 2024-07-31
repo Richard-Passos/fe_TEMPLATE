@@ -1,7 +1,7 @@
-import { List, type ListProps } from '@mantine/core';
+import { List, ListProps } from '@mantine/core';
 
 type ListMoleculeOwnProps = {
-  ref?: PolimorphicRef<'ul'>;
+  ref?: PolymorphicRef<'ul'>;
 };
 
 type ListMoleculeProps = ListMoleculeOwnProps &

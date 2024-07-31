@@ -1,4 +1,4 @@
-import Title, { type TitleAtomProps as TitleProps } from './Root';
+import Title, { TitleAtomProps as TitleProps } from './Root';
 
 export default Title;
 export type { TitleProps };

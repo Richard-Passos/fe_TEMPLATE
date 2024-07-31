@@ -1,7 +1,5 @@
-import HeaderRoot, {
-  type HeaderOrganismProps as HeaderRootProps
-} from './Root';
-import HeaderState, { type HeaderStateProps } from './State';
+import HeaderRoot, { HeaderOrganismProps as HeaderRootProps } from './Root';
+import HeaderState, { HeaderStateProps } from './State';
 
 const Header = {
   Root: HeaderRoot,

@@ -11,15 +11,11 @@ const ProjectsTemplateOrganism = ({
   return (
     <>
       <HighImpactHero
-        bg='black'
         namespace={`${namespace}.hero`}
         theme='dark'
       />
 
-      <Section
-        bg='white'
-        theme='light'
-      />
+      <Section theme='light' />
     </>
   );
 };

@@ -11,9 +11,11 @@ import Transition, { TransitionProps } from './Transition';
 import useSetTheme from './useSetTheme';
 
 type SectionOrganismOwnProps = Pick<TransitionProps, 'hasTransition'> & {
-  bg: BgProps['color'];
+  bg?: BgProps['color'] | TransitionProps['color'];
   theme: 'light' | 'dark';
   forceTheme?: boolean;
+  bgProps?: BgProps;
+  transitionProps?: TransitionProps;
 };
 
 type SectionOrganismProps = SectionOrganismOwnProps &
@@ -21,12 +23,14 @@ type SectionOrganismProps = SectionOrganismOwnProps &
 
 const SectionOrganism = (
   {
+    bg,
     hasTransition = true,
     forceTheme,
     children,
     className,
-    bg,
     theme,
+    bgProps,
+    transitionProps,
     ...props
   }: SectionOrganismProps,
   ref: SectionOrganismProps['ref']
@@ -51,9 +55,13 @@ const SectionOrganism = (
       <Transition
         color={bg}
         hasTransition={hasTransition}
+        {...transitionProps}
       />
 
-      <Bg color={bg}>
+      <Bg
+        color={bg}
+        {...bgProps}
+      >
         <Lines />
       </Bg>
     </section>

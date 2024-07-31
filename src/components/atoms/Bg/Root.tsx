@@ -4,7 +4,7 @@ import { PropsWithChildren, forwardRef } from 'react';
 import { cn } from '@/utils';
 
 type BgAtomOwnProps = PropsWithChildren<{
-  color: StyleProp<DefaultMantineColor>;
+  color?: StyleProp<DefaultMantineColor>;
   ref?: PolymorphicRef<'div'>;
 }>;
 
@@ -18,7 +18,7 @@ const BgAtom = (
     <Box
       bg={color}
       className={cn(
-        'absolute inset-y-0 -z-50 w-screen overflow-hidden',
+        'absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white dark:bg-black',
         className
       )}
       ref={ref}

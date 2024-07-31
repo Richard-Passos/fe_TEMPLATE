@@ -9,15 +9,11 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
   return (
     <>
       <HighImpactHero
-        bg='white'
         namespace={`${namespace}.hero`}
         theme='light'
       />
 
-      <Section
-        bg='black'
-        theme='dark'
-      />
+      <Section theme='dark' />
     </>
   );
 };

@@ -3,12 +3,12 @@
 import { Box, DefaultMantineColor, StyleProp } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Lines, ScrollAnimate } from '@/components/atoms';
+import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
 import { ConfigOptions } from '@/components/atoms/ScrollAnimate/Root';
 import { cn } from '@/utils';
 
 type SectionTransitionOrganismOwnProps = {
-  color: StyleProp<DefaultMantineColor>;
+  color?: StyleProp<DefaultMantineColor>;
   hasTransition?: boolean;
 };
 
@@ -36,12 +36,12 @@ const SectionTransitionOrganism = (
         {...props}
       >
         <div className='relative h-[--h] w-full -translate-y-full rotate-180 overflow-hidden'>
-          <Box
-            bg={color}
-            className='pointer-events-auto absolute left-1/2 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
+          <Bg
+            className='pointer-events-auto absolute left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
+            color={color}
           >
             <Lines className='z-0' />
-          </Box>
+          </Bg>
         </div>
       </div>
     </ScrollAnimate>

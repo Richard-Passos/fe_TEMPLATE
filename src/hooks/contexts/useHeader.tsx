@@ -3,18 +3,24 @@
 import { useCallback } from 'react';
 
 import { useDispatch, useSelector } from '@/store';
-import { setHeight, setIsVisible } from '@/store/slices/header';
+import {
+  HeaderSliceInitialState,
+  setHeight,
+  setIsVisible
+} from '@/store/slices/header';
 
 const useHeaderContext = () => {
   const context = useSelector((data) => data.header),
     dispatch = useDispatch();
 
   const handleSetHeight = useCallback(
-      (height: number) => dispatch(setHeight(height)),
+      (height: HeaderSliceInitialState['height']) =>
+        dispatch(setHeight(height)),
       [dispatch]
     ),
     handleSetIsVisible = useCallback(
-      (isVisible: boolean) => dispatch(setIsVisible(isVisible)),
+      (isVisible: HeaderSliceInitialState['isVisible']) =>
+        dispatch(setIsVisible(isVisible)),
       [dispatch]
     );
 

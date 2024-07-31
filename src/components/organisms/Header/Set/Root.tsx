@@ -1,5 +1,6 @@
 'use client';
 
+import { useComputedColorScheme } from '@mantine/core';
 import { useEventListener } from '@mantine/hooks';
 import { Slot, SlotProps } from '@radix-ui/react-slot';
 import {
@@ -25,7 +26,8 @@ const HeaderSetOrganism = (
   ref: HeaderSetOrganismProps['ref']
 ) => {
   const innerRef = useRef<HTMLElement>(null),
-    { setHeight } = useHeaderContext();
+    { setHeight } = useHeaderContext(),
+    theme = useComputedColorScheme();
 
   const handleSetHeight = useCallback(() => {
       if (!innerRef.current) return;
@@ -48,6 +50,7 @@ const HeaderSetOrganism = (
 
   return (
     <Slot
+      data-theme={theme}
       ref={setRefs(ref, innerRef)}
       {...props}
     />

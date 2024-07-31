@@ -1,3 +1,4 @@
+import { Section } from '@/components/organisms';
 import { HighImpactHero } from '@/components/organisms/Heros';
 
 type ErrorTemplateOrganismProps = {
@@ -8,9 +9,26 @@ type ErrorTemplateOrganismProps = {
 
 const ErrorTemplateOrganism = ({
   namespace,
-  message
+  message,
+  reset
 }: ErrorTemplateOrganismProps) => {
-  return <HighImpactHero namespace={`${namespace}.hero`} />;
+  console.log(message);
+  console.log(reset);
+
+  return (
+    <>
+      <HighImpactHero
+        bg='black'
+        namespace={`${namespace}.hero`}
+        theme='dark'
+      />
+
+      <Section
+        bg='white'
+        theme='light'
+      />
+    </>
+  );
 };
 export default ErrorTemplateOrganism;
 export type { ErrorTemplateOrganismProps };

@@ -1,3 +1,4 @@
+import { Section } from '@/components/organisms';
 import { HighImpactHero } from '@/components/organisms/Heros';
 
 type AboutTemplateOrganismProps = {
@@ -5,7 +6,20 @@ type AboutTemplateOrganismProps = {
 };
 
 const AboutTemplateOrganism = ({ namespace }: AboutTemplateOrganismProps) => {
-  return <HighImpactHero namespace={`${namespace}.hero`} />;
+  return (
+    <>
+      <HighImpactHero
+        bg='black'
+        namespace={`${namespace}.hero`}
+        theme='dark'
+      />
+
+      <Section
+        bg='white'
+        theme='light'
+      />
+    </>
+  );
 };
 export default AboutTemplateOrganism;
 export type { AboutTemplateOrganismProps };

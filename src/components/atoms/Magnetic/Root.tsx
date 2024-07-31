@@ -6,13 +6,14 @@ import { motion } from 'framer-motion';
 import { ComponentPropsWithRef, MouseEvent, forwardRef, useRef } from 'react';
 
 import { useSmooth } from '@/hooks';
+import { UseSmoothParams } from '@/hooks/useSmooth';
 import { setRefs } from '@/utils';
 
 const magneticAtomSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
 type MagneticAtomOwnProps = {
-  smoothConfig: {};
-  limit: number;
+  smoothConfig?: UseSmoothParams['1'];
+  limit?: number;
 };
 
 type MagneticAtomProps = MagneticAtomOwnProps &

@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { Icon } from '@/components/atoms';
 import { Action } from '@/components/molecules';
-import type { ActionProps } from '@/components/molecules/Action';
+import { ActionProps } from '@/components/molecules/Action';
 import { cn } from '@/utils';
 
 type LogoPrimaryVariantOrganismOwnProps = {

@@ -1,17 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+
+const config: Config = {
   content: [
     './src/app/**/*.{jsx,tsx}',
     './src/components/**/*.{jsx,tsx}',
     './src/theme.{js,ts}',
     './src/rich.{jsx,tsx}'
   ],
+  darkMode: [],
   corePlugins: {
     preflight: false
   },
-  darkMode: ['selector', '[data-mantine-color-scheme="dark"]'],
   theme: {
     colors: {
+      inherit: 'inherit',
       current: 'currentColor',
       bright: 'var(--color-bright)',
       text: 'var(--color-text)',
@@ -498,5 +501,21 @@ module.exports = {
         monospace: 'var(--font-family-monospace)'
       }
     }
-  }
+  },
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('dark', [
+        '&[data-theme="dark"]',
+        '[data-theme="dark"] > &:not([data-theme="light"])',
+        '[data-theme="dark"] :not([data-theme="light"]) &:not([data-theme="light"])'
+      ]);
+      addVariant('light', [
+        '&[data-theme="light"]',
+        '[data-theme="light"] > &:not([data-theme="dark"])',
+        '[data-theme="light"] :not([data-theme="dark"]) &:not([data-theme="dark"])'
+      ]);
+    })
+  ]
 };
+
+export default config;

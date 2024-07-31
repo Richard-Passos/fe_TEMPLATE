@@ -26,12 +26,13 @@ const LogoOrganism = (
   return (
     <Variant
       className={cn(
-        'text-black hover:bg-gray-0 dark:text-white dark:hover:bg-dark-6',
+        'text-inherit hover:bg-gray-0 dark:hover:bg-dark-7',
         className
       )}
       href='/'
       icon={t('icon')}
       label={t('label')}
+      limit={0}
       ref={ref}
       size='md'
       variant='transparent'

@@ -2,12 +2,15 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { cn } from '@/utils';
 
-type FooterOrganismOwnProps = {}
+type FooterOrganismOwnProps = {};
 
 type FooterOrganismProps = FooterOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof FooterOrganismOwnProps>
+  Omit<ComponentPropsWithRef<'div'>, keyof FooterOrganismOwnProps>;
 
-const FooterOrganism = ({ className, ...props }: FooterOrganismProps, ref: FooterOrganismProps['ref']) => {
+const FooterOrganism = (
+  { className, ...props }: FooterOrganismProps,
+  ref: FooterOrganismProps['ref']
+) => {
   return (
     <div
       className={cn('', className)}
@@ -18,4 +21,4 @@ const FooterOrganism = ({ className, ...props }: FooterOrganismProps, ref: Foote
 };
 
 export default forwardRef(FooterOrganism);
-export type { FooterOrganismProps }
+export type { FooterOrganismProps };

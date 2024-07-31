@@ -33,7 +33,7 @@ const HeaderNavLinkOrganism = (
     >
       <Link
         className={cn(
-          'group/link text-inherit relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold no-underline transition-none hover:z-10',
+          'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-inherit no-underline transition-none hover:z-10',
           className
         )}
         ref={ref}

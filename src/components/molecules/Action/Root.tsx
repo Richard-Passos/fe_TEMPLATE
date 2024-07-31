@@ -6,7 +6,7 @@ import { MagneticProps } from '@/components/atoms/Magnetic';
 
 import Link, { LinkProps } from './Link';
 
-type ActionMoleculeOwnProps = Partial<Pick<MagneticProps, 'limit'>>{
+type ActionMoleculeOwnProps = Partial<Pick<MagneticProps, 'limit'>> & {
   href?: string;
   ref?: any;
 };

@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { forwardRef } from 'react';
 
 import { Select } from '@/components/atoms';
-import type { SelectProps } from '@/components/atoms/Select';
+import { SelectProps } from '@/components/atoms/Select';
 import { isLocale, usePathname, useRouter } from '@/navigation';
 
 type LocaleSelectMoleculeOwnProps = {};

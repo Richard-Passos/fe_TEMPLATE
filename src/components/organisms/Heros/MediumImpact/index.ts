@@ -1,5 +1,5 @@
 import MediumImpactHero, {
-  type MediumImpactHeroOrganismProps as MediumImpactHeroProps
+  MediumImpactHeroOrganismProps as MediumImpactHeroProps
 } from './Root';
 
 export default MediumImpactHero;

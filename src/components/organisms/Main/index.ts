@@ -1,11 +1,4 @@
-import MainRoot, { MainOrganismProps as MainRootProps } from './Root';
-import MainState, { MainStateProps } from './State';
-
-const Main = {
-  Root: MainRoot,
-  State: MainState
-};
+import Main, { type MainOrganismProps as MainProps } from './Root';
 
 export default Main;
-export { MainRoot, MainState };
-export type { MainRootProps, MainStateProps };
+export type { MainProps };

@@ -74,6 +74,15 @@
     }
   },
   "header": {
+    "menu": {
+      "title": "O Portfólio",
+      "open": {
+        "label": "Abrir menu"
+      },
+      "close": {
+        "label": "Fechar menu"
+      }
+    },
     "nav": {
       "short": {
         "home": {

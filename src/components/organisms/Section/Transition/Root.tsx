@@ -26,16 +26,19 @@ const SectionTransitionOrganism = (
   return (
     <ScrollAnimate config={animationConfig}>
       <div
-        className={cn('absolute top-px h-20 w-screen', className)}
+        className={cn(
+          'pointer-events-none absolute top-px h-20 w-screen',
+          className
+        )}
         ref={ref}
         {...props}
       >
         <div className='relative h-[--h] w-full -translate-y-full rotate-180 overflow-hidden'>
           <Bg
-            className='pointer-events-auto absolute left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
+            className='pointer-events-auto left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
             color={color}
           >
-            <Lines className='z-0 rotate-180' />
+            <Lines className='h-screen -translate-x-[(50%_-_var(--removed-body-scroll-bar-size,0px)/2)] rotate-180' />
           </Bg>
         </div>
       </div>

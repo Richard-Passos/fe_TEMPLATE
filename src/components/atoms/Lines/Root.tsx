@@ -16,7 +16,7 @@ const LinesAtom = (
   return (
     <div
       className={cn(
-        'fixed left-1/2 top-0 h-[--main-h] w-screen -translate-x-1/2 bg-[linear-gradient(currentColor_1px,transparent_1px),linear-gradient(to_right,currentColor_1px,transparent_1px)] text-primary-6 opacity-60 [background-size:240px_240px] dark:opacity-20',
+        'fixed inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-[linear-gradient(currentColor_.8px,transparent_.8px),linear-gradient(to_right,currentColor_.8px,transparent_.8px)] opacity-20 [background-size:250px_200px] dark:opacity-5',
         className
       )}
       ref={ref}

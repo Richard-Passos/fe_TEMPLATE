@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
-import { Portal } from '@/components/atoms';
 import { Drawer } from '@/components/molecules';
 import {
   DrawerContentProps,
@@ -35,16 +34,17 @@ const HeaderMenuOrganism = (
 
   return (
     <Drawer.Root
-      className={cn('*:left-0 md:hidden', className)}
+      className={cn('*:left-0', className)}
       ref={ref}
       {...props}
       trigger={
-        <Portal>
-          <HeaderMenuTrigger
-            aria-label={t('open.label')}
-            className='fixed right-[2.5%] top-[calc(var(--header-h)/2)] z-[60] -translate-y-1/2'
-          />
-        </Portal>
+        <>
+          <HeaderMenuTrigger.Mobile className='md:hidden'>
+            {t('label')}
+          </HeaderMenuTrigger.Mobile>
+
+          <HeaderMenuTrigger.Root aria-label={t('open.label')} />
+        </>
       }
     >
       <Drawer.Content

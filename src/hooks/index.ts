@@ -6,7 +6,6 @@ import useEventListener from './useEventListener';
 import useId from './useId';
 import useSmooth from './useSmooth';
 import useUpdateEffect from './useUpdateEffect';
-import useUpdateMotionValueEvent from './useUpdateMotionValueEvent';
 import useWindowSize from './useWindowSize';
 
 const hooks = {
@@ -18,7 +17,6 @@ const hooks = {
   useId,
   useSmooth,
   useUpdateEffect,
-  useUpdateMotionValueEvent,
   useWindowSize
 };
 
@@ -32,6 +30,5 @@ export {
   useId,
   useSmooth,
   useUpdateEffect,
-  useUpdateMotionValueEvent,
   useWindowSize
 };

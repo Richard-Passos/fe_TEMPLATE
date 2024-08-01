@@ -23,7 +23,6 @@ const HighImpactHeroOrganism = (
         'min-h-svh pt-[calc(var(--header-h)+var(--py))]',
         className
       )}
-      forceTheme
       hasTransition={false}
       ref={ref}
       {...props}

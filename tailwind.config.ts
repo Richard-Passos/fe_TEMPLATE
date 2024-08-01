@@ -15,6 +15,7 @@ const config: Config = {
   theme: {
     colors: {
       inherit: 'inherit',
+      transparent: 'transparent',
       current: 'currentColor',
       bright: 'var(--color-bright)',
       text: 'var(--color-text)',
@@ -499,6 +500,10 @@ const config: Config = {
         title: 'var(--font-family-headings)',
         display: 'var(--font-family-display)',
         monospace: 'var(--font-family-monospace)'
+      },
+      data: {
+        closed: 'state=closed',
+        open: 'state=open'
       }
     }
   },
@@ -507,12 +512,12 @@ const config: Config = {
       addVariant('dark', [
         '&[data-mantine-color-scheme="dark"]',
         '[data-mantine-color-scheme="dark"] > &:not([data-mantine-color-scheme="light"])',
-        '[data-mantine-color-scheme="dark"] :not([data-mantine-color-scheme="light"]) &:not([data-mantine-color-scheme="light"])'
+        '[data-mantine-color-scheme="dark"]:not(:has([data-mantine-color-scheme="light"])) &'
       ]);
       addVariant('light', [
         '&[data-mantine-color-scheme="light"]',
         '[data-mantine-color-scheme="light"] > &:not([data-mantine-color-scheme="dark"])',
-        '[data-mantine-color-scheme="light"] :not([data-mantine-color-scheme="dark"]) &:not([data-mantine-color-scheme="dark"])'
+        '[data-mantine-color-scheme="light"]:not(:has([data-mantine-color-scheme="dark"])) &'
       ]);
     })
   ]

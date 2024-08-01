@@ -1227,6 +1227,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@studio-freight/hamo@npm:^0.6.28":
+  version: 0.6.33
+  resolution: "@studio-freight/hamo@npm:0.6.33"
+  dependencies:
+    "@studio-freight/tempus": "npm:^0.0.38"
+    just-debounce-it: "npm:^3.2.0"
+    nanoevents: "npm:^9.0.0"
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 10c0/c452ab77147e06b3b0c086e960c8134490b6c81fa31eb61af72d834962a587c446b424b43ca8a3f468bc6799028b84fee908bd824b65e3de854a4ab6717d1720
+  languageName: node
+  linkType: hard
+
+"@studio-freight/lenis@npm:^1.0.40":
+  version: 1.0.42
+  resolution: "@studio-freight/lenis@npm:1.0.42"
+  checksum: 10c0/edaaa6692a2e365ef6a0ed5b0a6d5f0bf32370fd4f53cd6aeff4cb42e92496127453dc348d4e1e5206425990c15d07c188fdf86f454995e342194c41f2ca270a
+  languageName: node
+  linkType: hard
+
+"@studio-freight/react-lenis@npm:^0.0.47":
+  version: 0.0.47
+  resolution: "@studio-freight/react-lenis@npm:0.0.47"
+  dependencies:
+    "@studio-freight/hamo": "npm:^0.6.28"
+    "@studio-freight/lenis": "npm:^1.0.40"
+    "@types/react": "npm:^18.0.0"
+    clsx: "npm:^2.0.0"
+    react: "npm:^18.0.0"
+    zustand: "npm:^4.4.7"
+  peerDependencies:
+    react: ^17 || ^18
+    react-dom: ^17 || ^18
+  checksum: 10c0/fa41cd2bb065a60cbac9eda32b2f12dc1c3a9af986f2466a45f87088aff5de84be15dc6a28a7a2b4163242e1da5bce2cd5bf428f68f9427e2e2144c30a0a8ecc
+  languageName: node
+  linkType: hard
+
+"@studio-freight/tempus@npm:^0.0.38":
+  version: 0.0.38
+  resolution: "@studio-freight/tempus@npm:0.0.38"
+  checksum: 10c0/5f9b96d950c22e030af87527c5f8342797f6984e9204e78a6ffe3819c00d06cd165015ca72ea5750e52c9300380d8b660ee5d9390556509efe03b258131653a9
+  languageName: node
+  linkType: hard
+
 "@swc/counter@npm:^0.1.3":
   version: 0.1.3
   resolution: "@swc/counter@npm:0.1.3"
@@ -1473,7 +1518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.14.11":
+"@types/node@npm:*":
   version: 20.14.11
   resolution: "@types/node@npm:20.14.11"
   dependencies:
@@ -1498,7 +1543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.3.3":
+"@types/react@npm:*, @types/react@npm:^18.0.0, @types/react@npm:^18.3.3":
   version: 18.3.3
   resolution: "@types/react@npm:18.3.3"
   dependencies:
@@ -2317,7 +2362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^2.1.1":
+"clsx@npm:^2.0.0, clsx@npm:^2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
@@ -5048,6 +5093,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"just-debounce-it@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "just-debounce-it@npm:3.2.0"
+  checksum: 10c0/69e5af960634d6e22f4d9bb9d7d06740bd437e11cfe6c18ee6e2eebbf6c29e5ce3a92bdb3dfbc8680d4e7f0203f5a3bc5e7dee288f249cbe394cff6e991ab692
+  languageName: node
+  linkType: hard
+
 "keyv@npm:^4.5.3":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
@@ -5444,6 +5496,13 @@ __metadata:
     object-assign: "npm:^4.0.1"
     thenify-all: "npm:^1.0.0"
   checksum: 10c0/103114e93f87362f0b56ab5b2e7245051ad0276b646e3902c98397d18bb8f4a77f2ea4a2c9d3ad516034ea3a56553b60d3f5f78220001ca4c404bd711bd0af39
+  languageName: node
+  linkType: hard
+
+"nanoevents@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "nanoevents@npm:9.0.0"
+  checksum: 10c0/af74c96d0d54ef0ddf6fd163d961b23ec4219ac51d0b70135a2cae49fac1107ddccdcbf7a120601e0bfdd38b15de811f3ce43da5bab967fdee9684e52e4cb5b7
   languageName: node
   linkType: hard
 
@@ -5925,6 +5984,7 @@ __metadata:
     "@radix-ui/react-slot": "npm:^1.1.0"
     "@reduxjs/toolkit": "npm:^2.2.6"
     "@splidejs/react-splide": "npm:^0.7.12"
+    "@studio-freight/react-lenis": "npm:^0.0.47"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.4.7"
     "@testing-library/react": "npm:^16.0.0"
@@ -5933,7 +5993,6 @@ __metadata:
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/jest": "npm:^29.5.12"
     "@types/lodash": "npm:^4.17.7"
-    "@types/node": "npm:^20.14.11"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     autoprefixer: "npm:^10.4.19"
@@ -6426,7 +6485,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
+"react@npm:^18.0.0, react@npm:^18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
@@ -7613,6 +7672,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/ac4814e5592524f242921157e791b022efe36e451fe0d4fd4d204322d5433a4fc300d63b0ade5185f8e0735ded044c70bcf6d2352db0f74d097a238cebd2da02
+  languageName: node
+  linkType: hard
+
 "use-sync-external-store@npm:^1.0.0":
   version: 1.2.2
   resolution: "use-sync-external-store@npm:1.2.2"
@@ -7909,5 +7977,25 @@ __metadata:
   version: 3.23.8
   resolution: "zod@npm:3.23.8"
   checksum: 10c0/8f14c87d6b1b53c944c25ce7a28616896319d95bc46a9660fe441adc0ed0a81253b02b5abdaeffedbeb23bdd25a0bf1c29d2c12dd919aef6447652dd295e3e69
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.4.7":
+  version: 4.5.4
+  resolution: "zustand@npm:4.5.4"
+  dependencies:
+    use-sync-external-store: "npm:1.2.0"
+  peerDependencies:
+    "@types/react": ">=16.8"
+    immer: ">=9.0.6"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/479af491ffa1f1eb2c38b3ba25dc4e14339e8b35a60033d3f6c165b22f8be8163f7e1370015ded9c6e28548cd25af84a73fb40b5fad0bd7882d16ddd5ed613c6
   languageName: node
   linkType: hard

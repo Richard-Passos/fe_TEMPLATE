@@ -16,13 +16,21 @@ type ButtonAtomProps = ButtonAtomOwnProps &
   Omit<ButtonProps, keyof ButtonAtomOwnProps>;
 
 const ButtonAtom = (
-  { isIconOnly, ...props }: ButtonAtomProps,
+  { style, isIconOnly, ...props }: ButtonAtomProps,
   ref: ButtonAtomProps['ref']
 ) => {
   if (isIconOnly)
     return (
       <ActionIcon
         ref={ref}
+        style={{
+          '--button-bg': 'var(--ai-bg)',
+          '--button-bd': 'var(--ai-bd)',
+          '--button-color': 'var(--ai-color)',
+          '--button-height': 'var(--ai-size)',
+          '--button-hover': 'var(--ai-hover)',
+          ...style
+        }}
         {...(props as Omit<ActionIconProps, keyof ButtonAtomOwnProps>)}
       />
     );
@@ -30,6 +38,7 @@ const ButtonAtom = (
   return (
     <Button
       ref={ref}
+      style={style}
       {...(props as Omit<ButtonProps, keyof ButtonAtomOwnProps>)}
     />
   );

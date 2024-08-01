@@ -1,3 +1,4 @@
+import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
 import { Button, Magnetic } from '@/components/atoms';
@@ -52,5 +53,7 @@ const ActionMolecule = (
   );
 };
 
-export default forwardRef(ActionMolecule);
+export default createPolymorphicComponent<'button', ActionMoleculeProps>(
+  forwardRef(ActionMolecule)
+);
 export type { ActionMoleculeProps };

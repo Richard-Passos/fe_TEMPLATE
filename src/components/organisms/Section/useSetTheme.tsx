@@ -19,7 +19,7 @@ const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
 
   const { scrollYProgress: y } = useScroll({
     target: ref,
-    offset: ['0 0.050001', '0 0.05']
+    offset: ['0 0.10001', '0 0.1']
   });
 
   const handleSetTheme = useCallback(

@@ -2,6 +2,7 @@ import { ColorSchemeScript } from '@mantine/core';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
+import { SmoothScroll } from '@/components/atoms';
 import { Footer, Header, Main, Providers } from '@/components/organisms';
 import '@/globals.css';
 import { locales } from '@/navigation';
@@ -18,7 +19,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
   return (
     <html
-      className='overflow-x-clip scroll-smooth has-[body[data-scroll-locked]]:overflow-y-hidden'
+      className='overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden'
       lang={locale}
     >
       <head>
@@ -27,13 +28,15 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
       <body className='relative flex min-h-dvh flex-col items-center overflow-x-clip'>
         <Providers>
-          <Header.Root />
+          <SmoothScroll>
+            <Header.Root />
 
-          <Header.State>
-            <Main>{children}</Main>
-          </Header.State>
+            <Header.State>
+              <Main>{children}</Main>
+            </Header.State>
 
-          <Footer />
+            <Footer />
+          </SmoothScroll>
         </Providers>
       </body>
     </html>

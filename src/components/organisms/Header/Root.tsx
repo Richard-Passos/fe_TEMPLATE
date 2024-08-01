@@ -50,12 +50,9 @@ const HeaderOrganism = (
         <div className='flex items-center gap-xs max-md:hidden'>
           <Nav items={items} />
 
-          <Divider orientation='vertical' />
-
           <Suspense>
             <LocaleSelect
               aria-label={t('locale.label')}
-              className='ml-4'
               data={locales.map((key) => ({
                 value: key,
                 label: gt(`locales.${key}.label`)

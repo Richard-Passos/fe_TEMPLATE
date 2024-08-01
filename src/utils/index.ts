@@ -7,6 +7,7 @@ import normId from './normId';
 import normKey from './normKey';
 import pick from './pick';
 import setRefs from './setRefs';
+import transformTemplate from './transformTemplate';
 
 const utils = {
   baseUrl,
@@ -17,7 +18,8 @@ const utils = {
   normId,
   normKey,
   pick,
-  setRefs
+  setRefs,
+  transformTemplate
 };
 
 export default utils;
@@ -30,5 +32,6 @@ export {
   normId,
   normKey,
   pick,
-  setRefs
+  setRefs,
+  transformTemplate
 };

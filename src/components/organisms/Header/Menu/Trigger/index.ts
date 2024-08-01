@@ -1,6 +1,15 @@
-import HeaderMenuTrigger, {
-  type HeaderMenuTriggerOrganismProps as HeaderMenuTriggerProps
+import HeaderMenuTriggerMobile, {
+  type HeaderMenuTriggerMobileProps
+} from './Mobile';
+import HeaderMenuTriggerRoot, {
+  type HeaderMenuTriggerOrganismProps as HeaderMenuTriggerRootProps
 } from './Root';
 
+const HeaderMenuTrigger = {
+  Root: HeaderMenuTriggerRoot,
+  Mobile: HeaderMenuTriggerMobile
+};
+
 export default HeaderMenuTrigger;
-export type { HeaderMenuTriggerProps };
+export { HeaderMenuTriggerRoot, HeaderMenuTriggerMobile };
+export type { HeaderMenuTriggerRootProps, HeaderMenuTriggerMobileProps };

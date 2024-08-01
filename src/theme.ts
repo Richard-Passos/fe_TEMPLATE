@@ -6,8 +6,8 @@ const themeOverride = createTheme({
   scale: 1,
   fontSmoothing: true,
   focusRing: 'auto',
-  white: '#fff',
-  black: '#000',
+  white: 'hsl(0 0% 98%)',
+  black: 'hsl(0 0% 4.7%)',
   colors: {
     dark: [
       '#C9C9C9',

@@ -34,7 +34,7 @@ const HeaderMenuTriggerOrganism = (
           config={animationConfig}
           smoothConfig={smoothConfig}
         >
-          <div className='data-open:![--tw-scale-x:1] fixed right-[calc(2.5%+var(--removed-body-scroll-bar-size,0px))] top-[calc(var(--header-h)/2)] z-[60] -translate-y-1/2 [--tw-scale-y:--tw-scale-x]'>
+          <div className='fixed right-[calc(2.5%+var(--removed-body-scroll-bar-size,0px))] top-[calc(var(--header-h)/2)] z-[60] -translate-y-1/2 [--tw-scale-y:--tw-scale-x] data-open:![--tw-scale-x:1]'>
             <HeaderMenuTriggerButton
               className={cn('relative', className)}
               isIconOnly
@@ -43,9 +43,9 @@ const HeaderMenuTriggerOrganism = (
               variant='default'
               {...props}
             >
-              <MenuIcon className='data-open:hidden absolute inset-1/4' />
+              <MenuIcon className='absolute inset-1/4 data-open:hidden' />
 
-              <TimesIcon className='data-closed:hidden absolute inset-1/4' />
+              <TimesIcon className='absolute inset-1/4 data-closed:hidden' />
             </HeaderMenuTriggerButton>
           </div>
         </ScrollAnimate>

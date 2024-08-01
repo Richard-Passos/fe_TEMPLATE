@@ -12,7 +12,7 @@ import {
 } from 'framer-motion';
 import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
-import { setRefs } from '@/utils';
+import { setRefs, transformTemplate } from '@/utils';
 
 type ConfigOptions = {
   scrollConfig?: UseScrollOptions;
@@ -69,6 +69,7 @@ const ScrollAnimateAtom = (
         [options.prop]: smoothConfig ? smoothProp : prop,
         ...style
       }}
+      transformTemplate={transformTemplate}
       {...props}
     />
   );

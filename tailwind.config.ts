@@ -505,14 +505,14 @@ const config: Config = {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant('dark', [
-        '&[data-theme="dark"]',
-        '[data-theme="dark"] > &:not([data-theme="light"])',
-        '[data-theme="dark"] :not([data-theme="light"]) &:not([data-theme="light"])'
+        '&[data-mantine-color-scheme="dark"]',
+        '[data-mantine-color-scheme="dark"] > &:not([data-mantine-color-scheme="light"])',
+        '[data-mantine-color-scheme="dark"] :not([data-mantine-color-scheme="light"]) &:not([data-mantine-color-scheme="light"])'
       ]);
       addVariant('light', [
-        '&[data-theme="light"]',
-        '[data-theme="light"] > &:not([data-theme="dark"])',
-        '[data-theme="light"] :not([data-theme="dark"]) &:not([data-theme="dark"])'
+        '&[data-mantine-color-scheme="light"]',
+        '[data-mantine-color-scheme="light"] > &:not([data-mantine-color-scheme="dark"])',
+        '[data-mantine-color-scheme="light"] :not([data-mantine-color-scheme="dark"]) &:not([data-mantine-color-scheme="dark"])'
       ]);
     })
   ]

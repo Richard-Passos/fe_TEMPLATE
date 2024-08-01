@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 
-import { ScrollAnimate } from '@/components/atoms';
+import { Portal, ScrollAnimate } from '@/components/atoms';
+import { MenuIcon, TimesIcon } from '@/components/atoms/Icon/icons';
 import { ConfigOptions } from '@/components/atoms/ScrollAnimate';
+import { HeaderState } from '@/components/organisms/Header';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
@@ -20,27 +22,35 @@ const HeaderMenuTriggerOrganism = (
 ) => {
   const animationConfig: ConfigOptions = {
     scroll: 'scrollY',
-    scrollPoints: [0, 299.999, 300],
+    scrollPoints: [0, 199.999, 200],
     prop: '--tw-scale-x',
     propPoints: [0, 0, 1]
   };
 
   return (
-    <ScrollAnimate
-      config={animationConfig}
-      smoothConfig={smoothConfig}
-    >
-      <HeaderMenuTriggerButton
-        className={cn(
-          'data-open:theme-primary data-open:![--tw-scale-x:1] pointer-events-auto [--tw-scale-y:--tw-scale-x] dark:bg-blue-5',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
-        +
-      </HeaderMenuTriggerButton>
-    </ScrollAnimate>
+    <Portal>
+      <HeaderState>
+        <ScrollAnimate
+          config={animationConfig}
+          smoothConfig={smoothConfig}
+        >
+          <div className='data-open:![--tw-scale-x:1] fixed right-[calc(2.5%+var(--removed-body-scroll-bar-size,0px))] top-[calc(var(--header-h)/2)] z-[60] -translate-y-1/2 [--tw-scale-y:--tw-scale-x]'>
+            <HeaderMenuTriggerButton
+              className={cn('relative', className)}
+              isIconOnly
+              ref={ref}
+              size='xl'
+              variant='default'
+              {...props}
+            >
+              <MenuIcon className='data-open:hidden absolute inset-1/4' />
+
+              <TimesIcon className='data-closed:hidden absolute inset-1/4' />
+            </HeaderMenuTriggerButton>
+          </div>
+        </ScrollAnimate>
+      </HeaderState>
+    </Portal>
   );
 };
 

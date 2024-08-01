@@ -15,7 +15,7 @@ const PortalAtom = (props: PortalAtomProps, ref: PortalAtomProps['ref']) => {
 
   return (
     <Portal
-      data-theme={theme}
+      data-mantine-color-scheme={theme}
       ref={ref}
       {...props}
     />

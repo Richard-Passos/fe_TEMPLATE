@@ -4,21 +4,27 @@ import { forwardRef } from 'react';
 
 import { Action } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
-import { DrawerTrigger } from '@/components/molecules/Drawer';
+import {
+  DrawerTrigger,
+  DrawerTriggerProps
+} from '@/components/molecules/Drawer';
 
 type HeaderMenuTriggerButtonOrganismOwnProps = {};
 
 type HeaderMenuTriggerButtonOrganismProps =
   HeaderMenuTriggerButtonOrganismOwnProps &
-    Omit<ActionProps, keyof HeaderMenuTriggerButtonOrganismOwnProps>;
+    Omit<
+      ActionProps & DrawerTriggerProps,
+      keyof HeaderMenuTriggerButtonOrganismOwnProps
+    >;
 
 const HeaderMenuTriggerButtonOrganism = (
   props: HeaderMenuTriggerButtonOrganismProps,
   ref: HeaderMenuTriggerButtonOrganismProps['ref']
 ) => {
   return (
-    <DrawerTrigger
-      component={Action}
+    <Action
+      component={DrawerTrigger}
       ref={ref}
       {...props}
     />

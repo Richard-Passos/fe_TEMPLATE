@@ -50,7 +50,7 @@ const HeaderSetOrganism = (
 
   return (
     <Slot
-      data-theme={theme}
+      data-mantine-color-scheme={theme}
       ref={setRefs(ref, innerRef)}
       {...props}
     />

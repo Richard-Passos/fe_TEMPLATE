@@ -14,6 +14,7 @@ import Marquee from './Marquee';
 import Portal from './Portal';
 import ScrollAnimate from './ScrollAnimate';
 import Select from './Select';
+import SmoothScroll from './SmoothScroll';
 import Text from './Text';
 import Title from './Title';
 
@@ -34,6 +35,7 @@ const Atoms = {
   Portal,
   ScrollAnimate,
   Select,
+  SmoothScroll,
   Text,
   Title
 };
@@ -56,6 +58,7 @@ export {
   Portal,
   ScrollAnimate,
   Select,
+  SmoothScroll,
   Text,
   Title
 };

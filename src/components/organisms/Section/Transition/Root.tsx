@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, DefaultMantineColor, StyleProp } from '@mantine/core';
+import { DefaultMantineColor, StyleProp } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
@@ -9,14 +9,13 @@ import { cn } from '@/utils';
 
 type SectionTransitionOrganismOwnProps = {
   color?: StyleProp<DefaultMantineColor>;
-  hasTransition?: boolean;
 };
 
 type SectionTransitionOrganismProps = SectionTransitionOrganismOwnProps &
   Omit<ComponentPropsWithRef<'div'>, keyof SectionTransitionOrganismOwnProps>;
 
 const SectionTransitionOrganism = (
-  { color, hasTransition, className, ...props }: SectionTransitionOrganismProps,
+  { color, className, ...props }: SectionTransitionOrganismProps,
   ref: SectionTransitionOrganismProps['ref']
 ) => {
   const animationConfig: ConfigOptions = {
@@ -27,11 +26,7 @@ const SectionTransitionOrganism = (
   return (
     <ScrollAnimate config={animationConfig}>
       <div
-        className={cn(
-          'absolute top-px h-20 w-screen',
-          !hasTransition && 'h-0',
-          className
-        )}
+        className={cn('absolute top-px h-20 w-screen', className)}
         ref={ref}
         {...props}
       >
@@ -40,7 +35,7 @@ const SectionTransitionOrganism = (
             className='pointer-events-auto absolute left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
             color={color}
           >
-            <Lines className='z-0' />
+            <Lines className='z-0 rotate-180' />
           </Bg>
         </div>
       </div>

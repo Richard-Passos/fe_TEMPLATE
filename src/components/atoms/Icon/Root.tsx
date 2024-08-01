@@ -15,7 +15,7 @@ const IconAtom = (
 ) => {
   return (
     <Icon
-      className={cn('*:stroke-transparent size-full *:fill-current', className)}
+      className={cn('size-full *:fill-current', className)}
       innerRef={ref}
       {...props}
     />

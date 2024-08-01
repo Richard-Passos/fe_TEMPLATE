@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import { Button, Magnetic } from '@/components/atoms';
 import { ButtonProps } from '@/components/atoms/Button';
 import { MagneticProps } from '@/components/atoms/Magnetic';
+import { cn } from '@/utils';
 
 import Link, { LinkProps } from './Link';
 
@@ -16,24 +17,49 @@ type ActionMoleculeProps = ActionMoleculeOwnProps &
   Omit<ButtonProps & LinkProps, keyof ActionMoleculeOwnProps>;
 
 const ActionMolecule = (
-  { href, limit = 0.5, children, ...props }: ActionMoleculeProps,
+  {
+    href,
+    limit = 0.5,
+    className,
+    style,
+    children,
+    ...props
+  }: ActionMoleculeProps,
   ref: ActionMoleculeProps['ref']
 ) => {
   const Content = (
-    <Magnetic
-      className='flex size-full items-center justify-center gap-[inherit] rounded-inherit'
-      limit={limit * 0.8}
-    >
-      <span>{children}</span>
-    </Magnetic>
+    <>
+      <Magnetic limit={limit * 0.8}>
+        <span className='z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit'>
+          {children}
+        </span>
+      </Magnetic>
+
+      <span className='absolute inset-0 bg-[--action-hover] transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)]' />
+    </>
   );
+
+  className = cn('group/action relative hover:bg-[--action-bg]', className);
+
+  style = {
+    '--action-bg': 'var(--button-bg)',
+    '--action-bd': 'var(--button-bd)',
+    '--action-color': 'var(--button-color)',
+    '--action-fz': 'var(--button-fz)',
+    '--action-height': 'var(--button-height)',
+    '--action-hover': 'var(--button-hover)',
+    '--action-padding-x': 'var(--button-padding-x)',
+    ...style
+  };
 
   if (href)
     return (
       <Magnetic limit={limit}>
         <Link
+          className={className}
           href={href}
           ref={ref}
+          style={style}
           {...(props as Omit<LinkProps, keyof ActionMoleculeOwnProps>)}
         >
           {Content}
@@ -44,7 +70,9 @@ const ActionMolecule = (
   return (
     <Magnetic limit={limit}>
       <Button
+        className={className}
         ref={ref}
+        style={style}
         {...(props as Omit<ButtonProps, keyof ActionMoleculeOwnProps>)}
       >
         {Content}

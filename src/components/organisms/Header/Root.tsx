@@ -47,7 +47,7 @@ const HeaderOrganism = (
           variant='primary'
         />
 
-        <div className='flex items-center gap-xs'>
+        <div className='flex items-center gap-xs max-md:hidden'>
           <Nav items={items} />
 
           <Divider orientation='vertical' />

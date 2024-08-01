@@ -5,16 +5,21 @@ import { useSearchParams } from 'next/navigation';
 import { forwardRef } from 'react';
 
 import { Select } from '@/components/atoms';
+import { GlobeIcon } from '@/components/atoms/Icon/icons';
+import { GlobeIconProps } from '@/components/atoms/Icon/icons/Globe';
 import { SelectProps } from '@/components/atoms/Select';
 import { isLocale, usePathname, useRouter } from '@/navigation';
+import { cn } from '@/utils';
 
-type LocaleSelectMoleculeOwnProps = {};
+type LocaleSelectMoleculeOwnProps = {
+  leftSectionProps?: GlobeIconProps;
+};
 
 type LocaleSelectMoleculeProps = LocaleSelectMoleculeOwnProps &
   Omit<SelectProps, keyof LocaleSelectMoleculeOwnProps>;
 
 const LocaleSelectMolecule = (
-  props: LocaleSelectMoleculeProps,
+  { className, leftSectionProps, ...props }: LocaleSelectMoleculeProps,
   ref: LocaleSelectMoleculeProps['ref']
 ) => {
   const locale = useLocale(),
@@ -25,7 +30,15 @@ const LocaleSelectMolecule = (
   return (
     <Select
       allowDeselect={false}
+      className={cn('max-w-36 [&_input]:text-ellipsis', className)}
       defaultValue={locale}
+      leftSection={
+        <GlobeIcon
+          {...leftSectionProps}
+          className={cn('aspect-square h-2/3', leftSectionProps?.className)}
+        />
+      }
+      leftSectionPointerEvents='none'
       ref={ref}
       {...props}
       onChange={(locale, options) => {

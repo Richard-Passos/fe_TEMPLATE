@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { ComponentPropsWithRef, Suspense, forwardRef } from 'react';
 
-import { Divider } from '@/components/atoms';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
 import { locales } from '@/navigation';
@@ -36,7 +35,7 @@ const HeaderOrganism = (
     <Set>
       <header
         className={cn(
-          'absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[5%] py-xl',
+          'absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[4%] py-xl',
           className
         )}
         ref={ref}

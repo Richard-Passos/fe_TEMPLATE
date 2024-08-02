@@ -1,8 +1,9 @@
 import { Box, BoxProps } from '@mantine/core';
+import { PropsWithChildren } from 'react';
 
-type BoxAtomOwnProps = {
+type BoxAtomOwnProps = PropsWithChildren<{
   ref?: PolymorphicRef<'div'>;
-};
+}>;
 
 type BoxAtomProps = BoxAtomOwnProps & Omit<BoxProps, keyof BoxAtomOwnProps>;
 

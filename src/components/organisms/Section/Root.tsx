@@ -1,10 +1,11 @@
 'use client';
 
 import { createPolymorphicComponent } from '@mantine/core';
-import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
+import { forwardRef, useRef } from 'react';
 
-import { Bg, Lines } from '@/components/atoms';
+import { Bg, Box, Lines } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
+import { BoxProps } from '@/components/atoms/Box';
 import { cn, setRefs } from '@/utils';
 
 import Transition, { TransitionProps } from './Transition';
@@ -16,10 +17,11 @@ type SectionOrganismOwnProps = {
   bgProps?: BgProps;
   hasTransition?: boolean;
   transitionProps?: TransitionProps;
+  ref?: PolymorphicRef<'section'>;
 };
 
 type SectionOrganismProps = SectionOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'section'>, keyof SectionOrganismOwnProps>;
+  Omit<BoxProps, keyof SectionOrganismOwnProps>;
 
 const SectionOrganism = (
   {
@@ -39,12 +41,13 @@ const SectionOrganism = (
   useSetTheme(innerRef, theme);
 
   return (
-    <section
+    <Box
       className={cn(
         'relative flex min-h-screen w-full flex-col items-center py-[--py] [--py:--spacing-lg] 2xl:min-h-bounds',
         hasTransition && 'pt-[calc(var(--py)*1.5)]',
         className
       )}
+      component='section'
       data-mantine-color-scheme={theme}
       ref={setRefs(ref, innerRef)}
       {...props}
@@ -64,7 +67,7 @@ const SectionOrganism = (
       >
         <Lines />
       </Bg>
-    </section>
+    </Box>
   );
 };
 

@@ -53,10 +53,7 @@ const HeaderMenuOrganism = (
           'aria-label': t('close.label'),
           ...contentProps?.closeProps
         }}
-        overlayProps={{
-          className: cn('md:hidden', contentProps?.overlayProps?.className),
-          ...contentProps?.overlayProps
-        }}
+        overlayProps={contentProps?.overlayProps}
         title={t('title')}
       ></Drawer.Content>
     </Drawer.Root>

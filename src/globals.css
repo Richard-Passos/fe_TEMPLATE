@@ -18,6 +18,10 @@
     height: auto;
   }
 
+  em {
+    @apply not-italic [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:theme(spacing[0.5])] [background-clip:text];
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }

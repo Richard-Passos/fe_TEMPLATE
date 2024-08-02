@@ -1,9 +1,8 @@
-import { Roboto_Slab } from 'next/font/google';
+import { Inter, Roboto_Slab } from 'next/font/google';
 import localFont from 'next/font/local';
 
-const titleFont = localFont({
-  src: '../public/fonts/ClashDisplay-Variable.ttf',
-  display: 'swap'
+const titleFont = Inter({
+  subsets: ['latin']
 });
 
 const displayFont = localFont({

@@ -2,13 +2,45 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "I'm Home Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {}
     },
     "work": {
       "hero": {
-        "title": "I'm Work Page!"
+        "title": {
+          "label": "Beyond code, boundaries and results",
+          "rich": "<Start>BEYOND CODE</Start> <End><span>BOUNDARIES</span> <em>&</em></End> <Center><span>RESULTS</span> <Description></Description></Center>"
+        },
+        "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.",
+        "left": {
+          "type": "text",
+          "content": "Available to work",
+          "src": "",
+          "animation": ""
+        },
+        "right": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateLeft",
+          "content": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -18,7 +50,23 @@
     },
     "about": {
       "hero": {
-        "title": "I'm About Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -28,7 +76,23 @@
     },
     "contact": {
       "hero": {
-        "title": "I'm Contact Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -38,7 +102,23 @@
     },
     "projects": {
       "hero": {
-        "title": "I'm Projects Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -48,13 +128,45 @@
     },
     "singleProject": {
       "hero": {
-        "title": "I'm SingleProject Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {}
     },
     "notFound": {
       "hero": {
-        "title": "I'm Not Found Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -64,7 +176,23 @@
     },
     "error": {
       "hero": {
-        "title": "I'm Error Page!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
@@ -136,8 +264,8 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
     "logo": {
       "label": "FE Typescript",
-      "icon": "/images/logo.svg",
-      "favicon": "/images/favicon.ico"
+      "icon": "/icons/logo.svg",
+      "favicon": "/icons/favicon.ico"
     },
     "socials": {}
   },

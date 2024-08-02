@@ -4,7 +4,7 @@ import { DefaultMantineColor, StyleProp } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
-import { ConfigOptions } from '@/components/atoms/ScrollAnimate/Root';
+import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate/Root';
 import { cn } from '@/utils';
 
 type SectionTransitionOrganismOwnProps = {
@@ -18,7 +18,7 @@ const SectionTransitionOrganism = (
   { color, className, ...props }: SectionTransitionOrganismProps,
   ref: SectionTransitionOrganismProps['ref']
 ) => {
-  const animationConfig: ConfigOptions = {
+  const animationConfig: ScrollAnimateConfigOptions = {
     prop: '--h',
     propPoints: ['0%', '100%']
   };

@@ -1,7 +1,7 @@
 import ScrollAnimate, {
-  ConfigOptions,
+  ScrollAnimateConfigOptions,
   ScrollAnimateAtomProps as ScrollAnimateProps
 } from './Root';
 
 export default ScrollAnimate;
-export type { ScrollAnimateProps, ConfigOptions };
+export type { ScrollAnimateProps, ScrollAnimateConfigOptions };

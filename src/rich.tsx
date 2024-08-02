@@ -12,7 +12,9 @@ const richRender = (Comp: ElementType) => (chunks: ReactNode) => (
 
 const rich = {
   p: richRender(Text),
+  span: richRender('span'),
   strong: richRender('strong'),
+  em: richRender('em'),
   i: richRender('i'),
   li: richRender(List.Item),
   ul: richRender((props: RichProps) => (

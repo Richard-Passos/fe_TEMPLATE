@@ -14,7 +14,7 @@ import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
 import { setRefs, transformTemplate } from '@/utils';
 
-type ConfigOptions = {
+type ScrollAnimateConfigOptions = {
   scrollConfig?: UseScrollOptions;
   scroll?: keyof ReturnType<typeof useScroll>;
   scrollPoints?: any[];
@@ -24,7 +24,7 @@ type ConfigOptions = {
 };
 
 type ScrollAnimateAtomOwnProps = {
-  config: ConfigOptions;
+  config: ScrollAnimateConfigOptions;
   smoothConfig?: SpringOptions;
 };
 
@@ -40,8 +40,13 @@ const ScrollAnimateAtom = (
 ) => {
   const innerRef = useRef(null);
 
-  const options: Pick<ConfigOptions, 'transformConfig' | 'scrollConfig'> &
-    Required<Omit<ConfigOptions, 'transformConfig' | 'scrollConfig'>> = {
+  const options: Pick<
+    ScrollAnimateConfigOptions,
+    'transformConfig' | 'scrollConfig'
+  > &
+    Required<
+      Omit<ScrollAnimateConfigOptions, 'transformConfig' | 'scrollConfig'>
+    > = {
     scroll: 'scrollYProgress',
     scrollPoints: [0, 1],
     ...config,
@@ -78,4 +83,4 @@ const ScrollAnimateAtom = (
 const MotionChild = motion(Slot);
 
 export default forwardRef(ScrollAnimateAtom);
-export type { ScrollAnimateAtomProps, ConfigOptions };
+export type { ScrollAnimateAtomProps, ScrollAnimateConfigOptions };

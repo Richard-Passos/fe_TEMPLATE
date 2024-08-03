@@ -1,6 +1,6 @@
-import ArrowDownIcon, {
-  type ArrowDownIconAtomProps as ArrowDownIconProps
+import ArrowLeftIcon, {
+  type ArrowLeftIconAtomProps as ArrowLeftIconProps
 } from './Root';
 
-export default ArrowDownIcon;
-export type { ArrowDownIconProps };
+export default ArrowLeftIcon;
+export type { ArrowLeftIconProps };

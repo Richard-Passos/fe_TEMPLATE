@@ -1,33 +1,33 @@
 import { forwardRef } from 'react';
 
 import { ArrowDownIcon } from '@/components/atoms/Icon/icons';
-import { Action } from '@/components/molecules';
-import { ActionProps } from '@/components/molecules/Action';
-import { cn } from '@/utils';
+
+import ScrollIndicatorTrigger, { ScrollIndicatorTriggerProps } from './Trigger';
 
 type ScrollIndicatorOrganismOwnProps = {};
 
 type ScrollIndicatorOrganismProps = ScrollIndicatorOrganismOwnProps &
-  Omit<ActionProps, keyof ScrollIndicatorOrganismOwnProps>;
+  Omit<ScrollIndicatorTriggerProps, keyof ScrollIndicatorOrganismOwnProps>;
 
 const ScrollIndicatorOrganism = (
-  { className, ...props }: ScrollIndicatorOrganismProps,
+  props: ScrollIndicatorOrganismProps,
   ref: ScrollIndicatorOrganismProps['ref']
 ) => {
   return (
-    <Action
-      className={cn('[&>span]:animate-scroll-indicator', className)}
-      href=''
+    <ScrollIndicatorTrigger
+      color='dark'
+      href='#scroll-to'
       isIconOnly
       ref={ref}
       size='input-sm'
-      variant='default'
       {...props}
     >
-      <ArrowDownIcon className='absolute bottom-[150%] size-[40%] translate-y-1/2' />
+      <span className='animate-scroll-indicator flex size-full items-center justify-center'>
+        <ArrowDownIcon className='absolute bottom-[150%] size-[40%] translate-y-1/2' />
 
-      <ArrowDownIcon className='size-[40%]' />
-    </Action>
+        <ArrowDownIcon className='size-[40%]' />
+      </span>
+    </ScrollIndicatorTrigger>
   );
 };
 

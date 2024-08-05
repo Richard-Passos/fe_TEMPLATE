@@ -64,6 +64,7 @@ const SectionOrganism = (
       <Bg
         color={bg}
         {...bgProps}
+        className={cn('[clip-path:inset(0)]', bgProps?.className)}
       >
         <Lines />
       </Bg>

@@ -37,7 +37,7 @@ const HighImpactHeroTitleOrganism = (
     <Title
       aria-label={t('title.label')}
       className={cn(
-        'flex w-full flex-col items-center text-center font-black leading-none sm:[font-size:clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] lg:px-[--inset]',
+        'flex w-full flex-col items-center text-center font-black leading-none [word-break:break-word] sm:[font-size:clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] lg:px-[--inset]',
         className
       )}
       order={1}

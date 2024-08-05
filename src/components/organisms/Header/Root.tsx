@@ -35,7 +35,7 @@ const HeaderOrganism = (
     <Set>
       <header
         className={cn(
-          'absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[4%] py-xl',
+          'absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[6%] py-lg sm:px-[4%] sm:py-xl',
           className
         )}
         ref={ref}

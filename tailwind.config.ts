@@ -504,6 +504,20 @@ const config: Config = {
       data: {
         closed: 'state=closed',
         open: 'state=open'
+      },
+      keyframes: {
+        'scroll-indicator': {
+          to: {
+            transform: 'translateY(100%)'
+          }
+        }
+      },
+      animation: {
+        'scroll-indicator':
+          'scroll-indicator var(--duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite'
+      },
+      transitionTimingFunction: {
+        backOut: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
       }
     }
   },

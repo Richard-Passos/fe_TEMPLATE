@@ -13,7 +13,10 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
         theme='light'
       />
 
-      <Section theme='dark' />
+      <Section
+        id='scroll-to'
+        theme='dark'
+      />
     </>
   );
 };

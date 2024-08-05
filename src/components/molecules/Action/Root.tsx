@@ -39,9 +39,13 @@ const ActionMolecule = (
     </>
   );
 
-  className = cn('group/action relative hover:bg-[--action-bg]', className);
+  className = cn(
+    'group/action relative bg-[--action-bg] hover:bg-[--action-bg]',
+    className
+  );
 
   style = {
+    '--action-size': 'var(--button-size)',
     '--action-bg': 'var(--button-bg)',
     '--action-bd': 'var(--button-bd)',
     '--action-color': 'var(--button-color)',

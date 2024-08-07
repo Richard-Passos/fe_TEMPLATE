@@ -17,10 +17,7 @@ const SecondaryLayoutBlockSubChildrenOrganism = (
 ) => {
   return (
     <div
-      className={cn(
-        'flex w-full items-center gap-sm sm:max-w-xl',
-        className
-      )}
+      className={cn('flex w-full items-center gap-sm sm:max-w-xl', className)}
       ref={ref}
       {...props}
     />

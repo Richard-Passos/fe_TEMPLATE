@@ -22,7 +22,7 @@ const ScrollIndicatorOrganism = (
       size='input-sm'
       {...props}
     >
-      <span className='animate-scroll-indicator flex size-full items-center justify-center'>
+      <span className='flex size-full animate-scroll-indicator items-center justify-center'>
         <ArrowDownIcon className='absolute bottom-[150%] size-[40%] translate-y-1/2' />
 
         <ArrowDownIcon className='size-[40%]' />

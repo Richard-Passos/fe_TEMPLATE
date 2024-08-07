@@ -3,19 +3,19 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { Text } from '@/components/atoms';
 
-import HighImpactHeroExtraIcon, { HighImpactHeroExtraIconProps } from './Icon';
-import HighImpactHeroExtraText, { HighImpactHeroExtraTextProps } from './Text';
+import PrimaryHeroExtraIcon, { PrimaryHeroExtraIconProps } from './Icon';
+import PrimaryHeroExtraText, { PrimaryHeroExtraTextProps } from './Text';
 
-type HighImpactHeroExtraOrganismOwnProps = {
+type PrimaryHeroExtraOrganismOwnProps = {
   namespace: ExtractPrefix<Namespace, `${string}.hero`>;
 };
 
-type HighImpactHeroExtraOrganismProps = HighImpactHeroExtraOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof HighImpactHeroExtraOrganismOwnProps>;
+type PrimaryHeroExtraOrganismProps = PrimaryHeroExtraOrganismOwnProps &
+  Omit<ComponentPropsWithRef<'div'>, keyof PrimaryHeroExtraOrganismOwnProps>;
 
-const HighImpactHeroExtraOrganism = (
-  { namespace, className, ...props }: HighImpactHeroExtraOrganismProps,
-  ref: HighImpactHeroExtraOrganismProps['ref']
+const PrimaryHeroExtraOrganism = (
+  { namespace, className, ...props }: PrimaryHeroExtraOrganismProps,
+  ref: PrimaryHeroExtraOrganismProps['ref']
 ) => {
   const t = useTranslations(namespace);
 
@@ -41,24 +41,22 @@ const getType = (
   side: 'left' | 'right'
 ) => {
   const data = {
-    content: t(`${side}.content`) as HighImpactHeroExtraTextProps['children'],
-    src: t(`${side}.src`) as HighImpactHeroExtraIconProps['src'],
-    animation: t(
-      `${side}.animation`
-    ) as HighImpactHeroExtraIconProps['animation']
+    content: t(`${side}.content`) as PrimaryHeroExtraTextProps['children'],
+    src: t(`${side}.src`) as PrimaryHeroExtraIconProps['src'],
+    animation: t(`${side}.animation`) as PrimaryHeroExtraIconProps['animation']
   };
 
   if (t(`${side}.type`) === 'text')
-    return <HighImpactHeroExtraText>{data.content}</HighImpactHeroExtraText>;
+    return <PrimaryHeroExtraText>{data.content}</PrimaryHeroExtraText>;
 
   if (t(`${side}.type`) === 'icon')
     return (
-      <HighImpactHeroExtraIcon
+      <PrimaryHeroExtraIcon
         animation={data.animation}
         src={data.src}
       />
     );
 };
 
-export default forwardRef(HighImpactHeroExtraOrganism);
-export type { HighImpactHeroExtraOrganismProps };
+export default forwardRef(PrimaryHeroExtraOrganism);
+export type { PrimaryHeroExtraOrganismProps };

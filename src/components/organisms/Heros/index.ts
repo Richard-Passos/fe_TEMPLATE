@@ -1,12 +1,12 @@
-import HighImpactHero from './HighImpact';
-import LowImpactHero from './LowImpact';
-import MediumImpactHero from './MediumImpact';
+import PrimaryHero from './Primary';
+import SecondaryHero from './Secondary';
+import TertiaryHero from './Tertiary';
 
 const Heros = {
-  HighImpact: HighImpactHero,
-  LowImpact: LowImpactHero,
-  MediumImpact: MediumImpactHero
+  Primary: PrimaryHero,
+  Tertiary: TertiaryHero,
+  Secondary: SecondaryHero
 };
 
 export default Heros;
-export { HighImpactHero, LowImpactHero, MediumImpactHero };
+export { PrimaryHero, TertiaryHero, SecondaryHero };

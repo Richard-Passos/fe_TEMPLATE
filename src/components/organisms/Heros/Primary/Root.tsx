@@ -5,21 +5,21 @@ import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
 import ScrollIndicator from '../../ScrollIndicator';
-import HighImpactHeroExtra from './Extra';
-import HighImpactHeroScrollAnimate from './ScrollAnimate';
-import HighImpactHeroTitle from './Title';
+import PrimaryHeroExtra from './Extra';
+import PrimaryHeroScrollAnimate from './ScrollAnimate';
+import PrimaryHeroTitle from './Title';
 
-type HighImpactHeroOrganismOwnProps = {
+type PrimaryHeroOrganismOwnProps = {
   namespace: ExtractPrefix<Namespace, `${string}.hero`>;
   ref?: PolymorphicRef<'div'>;
 };
 
-type HighImpactHeroOrganismProps = HighImpactHeroOrganismOwnProps &
-  Omit<SectionProps, keyof HighImpactHeroOrganismOwnProps>;
+type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
+  Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
 
-const HighImpactHeroOrganism = (
-  { namespace, className, ...props }: HighImpactHeroOrganismProps,
-  ref: HighImpactHeroOrganismProps['ref']
+const PrimaryHeroOrganism = (
+  { namespace, className, ...props }: PrimaryHeroOrganismProps,
+  ref: PrimaryHeroOrganismProps['ref']
 ) => {
   return (
     <Section
@@ -35,17 +35,17 @@ const HighImpactHeroOrganism = (
       )}
     >
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
-        <HighImpactHeroScrollAnimate>
+        <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
             <div className='flex w-full grow flex-col items-center justify-center gap-lg p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>
-              <HighImpactHeroTitle namespace={namespace} />
+              <PrimaryHeroTitle namespace={namespace} />
 
-              <HighImpactHeroExtra namespace={namespace} />
+              <PrimaryHeroExtra namespace={namespace} />
             </div>
 
             <Lines className='absolute -inset-y-full inset-x-0 -z-10 w-auto translate-x-0 [background-size:83.333px_66.666px]' />
           </div>
-        </HighImpactHeroScrollAnimate>
+        </PrimaryHeroScrollAnimate>
 
         <span className='pointer-events-none absolute inset-0 rounded-inherit border border-solid border-current opacity-20 dark:opacity-5' />
       </div>
@@ -55,5 +55,5 @@ const HighImpactHeroOrganism = (
   );
 };
 
-export default forwardRef(HighImpactHeroOrganism);
-export type { HighImpactHeroOrganismProps };
+export default forwardRef(PrimaryHeroOrganism);
+export type { PrimaryHeroOrganismProps };

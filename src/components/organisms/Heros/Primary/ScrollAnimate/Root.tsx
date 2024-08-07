@@ -35,17 +35,17 @@ const ANIMATION_CONFIG: {
   }
 };
 
-type HighImpactHeroScrollAnimateOrganismOwnProps = Partial<
+type PrimaryHeroScrollAnimateOrganismOwnProps = Partial<
   Pick<ScrollAnimateProps, 'config'>
 >;
 
-type HighImpactHeroScrollAnimateOrganismProps =
-  HighImpactHeroScrollAnimateOrganismOwnProps &
-    Omit<ScrollAnimateProps, keyof HighImpactHeroScrollAnimateOrganismOwnProps>;
+type PrimaryHeroScrollAnimateOrganismProps =
+  PrimaryHeroScrollAnimateOrganismOwnProps &
+    Omit<ScrollAnimateProps, keyof PrimaryHeroScrollAnimateOrganismOwnProps>;
 
-const HighImpactHeroScrollAnimateOrganism = (
-  { className, children, ...props }: HighImpactHeroScrollAnimateOrganismProps,
-  ref: HighImpactHeroScrollAnimateOrganismProps['ref']
+const PrimaryHeroScrollAnimateOrganism = (
+  { className, children, ...props }: PrimaryHeroScrollAnimateOrganismProps,
+  ref: PrimaryHeroScrollAnimateOrganismProps['ref']
 ) => {
   return (
     <ScrollAnimate
@@ -63,5 +63,5 @@ const HighImpactHeroScrollAnimateOrganism = (
   );
 };
 
-export default forwardRef(HighImpactHeroScrollAnimateOrganism);
-export type { HighImpactHeroScrollAnimateOrganismProps };
+export default forwardRef(PrimaryHeroScrollAnimateOrganism);
+export type { PrimaryHeroScrollAnimateOrganismProps };

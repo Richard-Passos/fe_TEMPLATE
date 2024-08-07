@@ -5,16 +5,16 @@ import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
 
-type HighImpactHeroTitleOrganismOwnProps = {
+type PrimaryHeroTitleOrganismOwnProps = {
   namespace: ExtractPrefix<Namespace, `${string}.hero`>;
 };
 
-type HighImpactHeroTitleOrganismProps = HighImpactHeroTitleOrganismOwnProps &
-  Omit<TitleProps, keyof HighImpactHeroTitleOrganismOwnProps>;
+type PrimaryHeroTitleOrganismProps = PrimaryHeroTitleOrganismOwnProps &
+  Omit<TitleProps, keyof PrimaryHeroTitleOrganismOwnProps>;
 
-const HighImpactHeroTitleOrganism = (
-  { namespace, className, ...props }: HighImpactHeroTitleOrganismProps,
-  ref: HighImpactHeroTitleOrganismProps['ref']
+const PrimaryHeroTitleOrganism = (
+  { namespace, className, ...props }: PrimaryHeroTitleOrganismProps,
+  ref: PrimaryHeroTitleOrganismProps['ref']
 ) => {
   const t = useTranslations(namespace);
 
@@ -35,9 +35,8 @@ const HighImpactHeroTitleOrganism = (
 
   return (
     <Title
-      aria-label={t('title.label')}
       className={cn(
-        'flex w-full flex-col items-center text-center font-black leading-none [word-break:break-word] sm:[font-size:clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] lg:px-[--inset]',
+        'flex w-full flex-col items-center text-center font-black leading-none [word-break:break-word] sm:text-[clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] lg:px-[--inset]',
         className
       )}
       order={1}
@@ -54,5 +53,5 @@ const HighImpactHeroTitleOrganism = (
   );
 };
 
-export default forwardRef(HighImpactHeroTitleOrganism);
-export type { HighImpactHeroTitleOrganismProps };
+export default forwardRef(PrimaryHeroTitleOrganism);
+export type { PrimaryHeroTitleOrganismProps };

@@ -5,23 +5,22 @@ import { Icon, ScrollAnimate } from '@/components/atoms';
 import { IconProps } from '@/components/atoms/Icon';
 import { cn } from '@/utils';
 
-type HighImpactHeroExtraIconOrganismOwnProps = {
+type PrimaryHeroExtraIconOrganismOwnProps = {
   animation: keyof typeof scrollAnimations;
   wrapperProps?: ComponentPropsWithRef<'div'>;
 };
 
-type HighImpactHeroExtraIconOrganismProps =
-  HighImpactHeroExtraIconOrganismOwnProps &
-    Omit<IconProps, keyof HighImpactHeroExtraIconOrganismOwnProps>;
+type PrimaryHeroExtraIconOrganismProps = PrimaryHeroExtraIconOrganismOwnProps &
+  Omit<IconProps, keyof PrimaryHeroExtraIconOrganismOwnProps>;
 
-const HighImpactHeroExtraIconOrganism = (
+const PrimaryHeroExtraIconOrganism = (
   {
     animation,
     className,
     wrapperProps,
     ...props
-  }: HighImpactHeroExtraIconOrganismProps,
-  ref: HighImpactHeroExtraIconOrganismProps['ref']
+  }: PrimaryHeroExtraIconOrganismProps,
+  ref: PrimaryHeroExtraIconOrganismProps['ref']
 ) => {
   return (
     <ScrollAnimate config={scrollAnimations[animation]}>
@@ -39,5 +38,5 @@ const HighImpactHeroExtraIconOrganism = (
   );
 };
 
-export default forwardRef(HighImpactHeroExtraIconOrganism);
-export type { HighImpactHeroExtraIconOrganismProps };
+export default forwardRef(PrimaryHeroExtraIconOrganism);
+export type { PrimaryHeroExtraIconOrganismProps };

@@ -13,8 +13,8 @@ import HeaderMenuTrigger from './Trigger';
 
 type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
   namespace: ExtractPrefix<Namespace, `${string}.menu`>;
-  triggerProps?: DrawerTriggerProps;
-  contentProps?: DrawerContentProps;
+  triggerProps?: Partial<DrawerTriggerProps>;
+  contentProps?: Partial<DrawerContentProps>;
 };
 
 type HeaderMenuOrganismProps = HeaderMenuOrganismOwnProps &

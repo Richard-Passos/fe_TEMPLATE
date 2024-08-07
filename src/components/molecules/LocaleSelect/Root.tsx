@@ -12,7 +12,7 @@ import { isLocale, usePathname, useRouter } from '@/navigation';
 import { cn } from '@/utils';
 
 type LocaleSelectMoleculeOwnProps = {
-  leftSectionProps?: GlobeIconProps;
+  leftSectionProps?: Partial<GlobeIconProps>;
 };
 
 type LocaleSelectMoleculeProps = LocaleSelectMoleculeOwnProps &

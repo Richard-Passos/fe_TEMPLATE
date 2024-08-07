@@ -16,11 +16,11 @@ import { PropsWithChildren, ReactNode, forwardRef } from 'react';
 
 type DrawerContentMoleculeOwnProps = PropsWithChildren<{
   title?: ReactNode;
-  overlayProps?: DrawerOverlayProps;
-  headerProps?: DrawerHeaderProps;
-  titleProps?: DrawerTitleProps;
-  closeProps?: DrawerCloseButtonProps;
-  bodyProps?: DrawerBodyProps;
+  overlayProps?: Partial<DrawerOverlayProps>;
+  headerProps?: Partial<DrawerHeaderProps>;
+  titleProps?: Partial<DrawerTitleProps>;
+  closeProps?: Partial<DrawerCloseButtonProps>;
+  bodyProps?: Partial<DrawerBodyProps>;
   ref?: PolymorphicRef<'div'>;
 }>;
 

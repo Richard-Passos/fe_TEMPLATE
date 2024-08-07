@@ -17,7 +17,6 @@ type SectionOrganismOwnProps = {
   bgProps?: Partial<BgProps>;
   hasTransition?: boolean;
   transitionProps?: Partial<TransitionProps>;
-  ref?: PolymorphicRef<'section'>;
 };
 
 type SectionOrganismProps = SectionOrganismOwnProps &
@@ -36,7 +35,7 @@ const SectionOrganism = (
   }: SectionOrganismProps,
   ref: SectionOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useSetTheme(innerRef, theme);
 

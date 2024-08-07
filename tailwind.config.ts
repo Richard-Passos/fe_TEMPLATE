@@ -497,7 +497,7 @@ const config: Config = {
         bounds: 'var(--max-w)'
       },
       fontFamily: {
-        title: 'var(--font-family-headings)',
+        title: 'var(--font-family-title)',
         display: 'var(--font-family-display)',
         monospace: 'var(--font-family-monospace)'
       },

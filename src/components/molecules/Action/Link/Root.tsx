@@ -2,13 +2,12 @@
 
 import { forwardRef } from 'react';
 
-import { Button } from '@/components/atoms';
-import { ButtonProps } from '@/components/atoms/Button';
+import Button, { ButtonProps } from '@/components/atoms/Button';
 import UnstyledLink, {
   UnstyledLinkProps
 } from '@/components/atoms/Link/Unstyled';
 
-type ActionLinkMoleculeOwnProps = UnstyledLinkProps & {
+type ActionLinkMoleculeOwnProps = {
   ref?: UnstyledLinkProps['ref'] & ButtonProps['ref'];
 };
 

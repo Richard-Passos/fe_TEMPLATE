@@ -54,7 +54,7 @@ const ActionMolecule = (
     '--action-hover': 'var(--button-hover)',
     '--action-padding-x': 'var(--button-padding-x)',
     ...style
-  };
+  } as typeof style;
 
   if (href)
     return (

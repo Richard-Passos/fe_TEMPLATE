@@ -2,6 +2,7 @@ import Action from './Action';
 import Drawer from './Drawer';
 import List from './List';
 import LocaleSelect from './LocaleSelect';
+import ScrollText from './ScrollText';
 import ScrollTo from './ScrollTo';
 
 const Molecules = {
@@ -9,8 +10,9 @@ const Molecules = {
   Drawer,
   List,
   LocaleSelect,
+  ScrollText,
   ScrollTo
 };
 
 export default Molecules;
-export { Action, Drawer, List, LocaleSelect, ScrollTo };
+export { Action, Drawer, List, LocaleSelect, ScrollText, ScrollTo };

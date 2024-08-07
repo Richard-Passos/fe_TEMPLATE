@@ -1,3 +1,4 @@
+import useChildrenCount from './useChildrenCount';
 import useColorScheme from './useColorScheme';
 import useComputedColorScheme from './useComputedColorScheme';
 import useDisclosure from './useDisclosure';
@@ -9,6 +10,7 @@ import useUpdateEffect from './useUpdateEffect';
 import useWindowSize from './useWindowSize';
 
 const hooks = {
+  useChildrenCount,
   useColorScheme,
   useComputedColorScheme,
   useDisclosure,
@@ -22,6 +24,7 @@ const hooks = {
 
 export default hooks;
 export {
+  useChildrenCount,
   useColorScheme,
   useComputedColorScheme,
   useDisclosure,

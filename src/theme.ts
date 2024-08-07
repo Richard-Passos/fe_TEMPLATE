@@ -203,13 +203,12 @@ const themeOverride = createTheme({
     textWrap: 'wrap',
     sizes: {
       h1: {
-        fontSize: 'calc(4rem * var(--mantine-scale))',
+        fontSize: 'calc(3.75rem * var(--mantine-scale))',
         lineHeight: '1.3'
       },
       h2: {
-        fontSize:
-          'calc(clamp(1.6875rem, -0.4219rem + 6.75vw, 3.375rem) * var(--mantine-scale))',
-        lineHeight: '1.35'
+        fontSize: 'calc(3.75rem * var(--mantine-scale))',
+        lineHeight: '1.15'
       },
       h3: {
         fontSize: 'calc(1.375rem * var(--mantine-scale))',

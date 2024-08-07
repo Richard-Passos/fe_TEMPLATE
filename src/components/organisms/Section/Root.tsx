@@ -14,9 +14,9 @@ import useSetTheme from './useSetTheme';
 type SectionOrganismOwnProps = {
   bg?: BgProps['color'] | TransitionProps['color'];
   theme: 'light' | 'dark';
-  bgProps?: BgProps;
+  bgProps?: Partial<BgProps>;
   hasTransition?: boolean;
-  transitionProps?: TransitionProps;
+  transitionProps?: Partial<TransitionProps>;
   ref?: PolymorphicRef<'section'>;
 };
 
@@ -36,14 +36,14 @@ const SectionOrganism = (
   }: SectionOrganismProps,
   ref: SectionOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLElement>(null);
 
   useSetTheme(innerRef, theme);
 
   return (
     <Box
       className={cn(
-        'relative flex min-h-screen w-full flex-col items-center py-[--py] [--py:--spacing-lg] 2xl:min-h-bounds',
+        'relative flex min-h-screen w-full flex-col items-center py-[--py] [--py:--spacing-2xl] 2xl:min-h-bounds',
         hasTransition && 'pt-[calc(var(--py)*1.5)]',
         className
       )}

@@ -5,9 +5,9 @@ import StoreProvider, { StoreProviderOrganismProps } from './Store';
 import UiProvider, { UiProviderOrganismProps } from './Ui';
 
 type ProvidersOrganismProps = PropsWithChildren<{
-  storeProps?: StoreProviderOrganismProps;
-  intlProps?: IntlProviderOrganismProps;
-  uiProps?: UiProviderOrganismProps;
+  storeProps?: Partial<StoreProviderOrganismProps>;
+  intlProps?: Partial<IntlProviderOrganismProps>;
+  uiProps?: Partial<UiProviderOrganismProps>;
 }>;
 
 const ProvidersOrganism = ({

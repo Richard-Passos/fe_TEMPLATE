@@ -1,5 +1,5 @@
 import { Section } from '@/components/organisms';
-import { HighImpactHero } from '@/components/organisms/Heros';
+import { PrimaryHero } from '@/components/organisms/Heros';
 
 type AboutTemplateOrganismProps = {
   namespace: ExtractPrefix<Namespace, 'pages.'>;
@@ -8,7 +8,7 @@ type AboutTemplateOrganismProps = {
 const AboutTemplateOrganism = ({ namespace }: AboutTemplateOrganismProps) => {
   return (
     <>
-      <HighImpactHero
+      <PrimaryHero
         namespace={`${namespace}.hero`}
         theme='dark'
       />

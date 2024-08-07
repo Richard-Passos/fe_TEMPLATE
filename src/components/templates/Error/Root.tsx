@@ -1,5 +1,5 @@
 import { Section } from '@/components/organisms';
-import { HighImpactHero } from '@/components/organisms/Heros';
+import { PrimaryHero } from '@/components/organisms/Heros';
 
 type ErrorTemplateOrganismProps = {
   namespace: ExtractPrefix<Namespace, 'pages.'>;
@@ -17,7 +17,7 @@ const ErrorTemplateOrganism = ({
 
   return (
     <>
-      <HighImpactHero
+      <PrimaryHero
         namespace={`${namespace}.hero`}
         theme='dark'
       />

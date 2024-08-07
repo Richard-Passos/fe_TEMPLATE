@@ -7,9 +7,8 @@ import {
 } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-type ButtonAtomOwnProps = {
+type ButtonAtomOwnProps = ComponentPropsWithRef<'button'> & {
   isIconOnly?: boolean;
-  ref?: ComponentPropsWithRef<'button'>['ref'];
 };
 
 type ButtonAtomProps = ButtonAtomOwnProps &

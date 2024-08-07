@@ -5,6 +5,7 @@ import { useLenis } from '@studio-freight/react-lenis';
 import { forwardRef } from 'react';
 
 import { Box } from '@/components/atoms';
+import { BoxProps } from '@/components/atoms/Box';
 import UnstyledLink, {
   UnstyledLinkProps
 } from '@/components/atoms/Link/Unstyled';
@@ -12,7 +13,7 @@ import UnstyledLink, {
 type ScrollToMoleculeOwnProps = {};
 
 type ScrollToMoleculeProps = ScrollToMoleculeOwnProps &
-  Omit<UnstyledLinkProps, keyof ScrollToMoleculeOwnProps>;
+  Omit<BoxProps & UnstyledLinkProps, keyof ScrollToMoleculeOwnProps>;
 
 const ScrollToMolecule = (
   { href, ...props }: ScrollToMoleculeProps,

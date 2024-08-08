@@ -52,7 +52,7 @@ const ListPageBlockOrganism = (
       </ListHorizontalScroll.Root>
 
       <Action
-        className='mt-xl'
+        className='my-xl'
         href={t('link.href')}
         size='md'
         variant='default'

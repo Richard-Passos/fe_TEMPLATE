@@ -1,4 +1,7 @@
-import { PrimaryLayoutBlock } from '@/components/organisms/Blocks/Layout';
+import {
+  PrimaryLayoutBlock,
+  SecondaryLayoutBlock
+} from '@/components/organisms/Blocks/Layout';
 import { PrimaryHero } from '@/components/organisms/Heros';
 
 type HomeTemplateOrganismProps = {
@@ -21,6 +24,14 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
         }}
         id='scroll-to'
         theme='dark'
+      />
+
+      <SecondaryLayoutBlock
+        data={{
+          title: ['HARD', 'SKILLS'],
+          subtitle: 'The best in market'
+        }}
+        theme='light'
       />
     </>
   );

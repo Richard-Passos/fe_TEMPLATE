@@ -2,132 +2,287 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "Eu sou a Página Inicial!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
-      "blocks": {}
+      "blocks": {
+        "listPage": {
+          "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
+          "link": {
+            "href": "/work",
+            "label": "Explore"
+          }
+        },
+        "but": {
+          "title": "BUT",
+          "description": "it's not just about the tech."
+        },
+        "ctaText": {
+          "text": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
+          "icons": {
+            "left": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateRight",
+              "y": "top"
+            },
+            "right": {
+              "src": "/icons/globe.svg",
+              "animation": "rotateLeft",
+              "y": "bottom"
+            }
+          }
+        }
+      }
     },
     "work": {
       "hero": {
-        "title": "Eu sou a Página Trabalho!"
+        "title": {
+          "label": "Beyond code, boundaries and results",
+          "rich": "<Start>BEYOND CODE</Start> <End><span>BOUNDARIES</span> <em>&</em></End> <Center><span>RESULTS</span> <Description></Description></Center>"
+        },
+        "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.",
+        "left": {
+          "type": "text",
+          "content": "Available to work",
+          "src": "",
+          "animation": ""
+        },
+        "right": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateLeft",
+          "content": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Trabalho",
+        "title": "Work",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "about": {
       "hero": {
-        "title": "Eu sou a Página Sobre!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Sobre",
+        "title": "About",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "contact": {
       "hero": {
-        "title": "Eu sou a Página Contato!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Contato",
+        "title": "Contact",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "projects": {
       "hero": {
-        "title": "Eu sou a Página Projetos!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Projetos",
+        "title": "Projects",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "singleProject": {
       "hero": {
-        "title": "Eu sou a Página Um Projeto!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {}
     },
     "notFound": {
       "hero": {
-        "title": "Eu sou a Página Não Encontrado!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Não encontrado",
+        "title": "Not Found",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "error": {
       "hero": {
-        "title": "Eu sou a Página Erro!"
+        "title": {
+          "label": "Turning heads and conquering hearts",
+          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
+        },
+        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "left": {
+          "type": "icon",
+          "src": "/icons/smile.svg",
+          "animation": "rotateRight",
+          "content": ""
+        },
+        "right": {
+          "type": "text",
+          "content": "(2024)",
+          "src": "",
+          "animation": ""
+        }
       },
       "blocks": {},
       "metadata": {
-        "title": "Erro",
+        "title": "Error",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     }
   },
   "header": {
     "menu": {
-      "title": "O Portfólio",
+      "title": "The Portfolio",
       "label": "Menu",
       "open": {
-        "label": "Abrir menu"
+        "label": "Open menu"
       },
       "close": {
-        "label": "Fechar menu"
+        "label": "Close menu"
       }
     },
     "nav": {
       "short": {
         "home": {
           "href": "/",
-          "label": "Início"
+          "label": "Home"
         },
         "work": {
           "href": "/work",
-          "label": "Trabalho"
+          "label": "Work"
         },
         "about": {
           "href": "/about",
-          "label": "Sobre"
+          "label": "About"
         },
         "contact": {
           "href": "/contact",
-          "label": "Contato"
+          "label": "Contact"
         }
       },
       "full": {
         "home": {
           "href": "/",
-          "label": "Início"
+          "label": "Home"
         },
         "work": {
           "href": "/work",
-          "label": "Trabalho"
+          "label": "Work"
         },
         "projects": {
           "href": "/projects",
-          "label": "Projetos"
+          "label": "Projects"
         },
         "about": {
           "href": "/about",
-          "label": "Sobre"
+          "label": "About"
         },
         "contact": {
           "href": "/contact",
-          "label": "Contato"
+          "label": "Contact"
         }
       }
     },
     "locale": {
-      "label": "Sua localização"
+      "label": "Your locale"
     }
   },
   "footer": {},
@@ -136,18 +291,18 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
     "logo": {
       "label": "FE Typescript",
-      "icon": "/images/logo.svg",
-      "favicon": "/images/favicon.ico"
+      "icon": "/icons/logo.svg",
+      "favicon": "/icons/favicon.ico"
     },
     "socials": {}
   },
   "themes": {},
   "locales": {
     "en": {
-      "label": "Inglês"
+      "label": "English"
     },
     "pt": {
-      "label": "Português"
+      "label": "Portuguese"
     }
   }
 }

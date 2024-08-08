@@ -10,13 +10,14 @@ import { cn, setRefs } from '@/utils';
 type ScrollTextMoleculeOwnProps = {
   text: string;
   dir?: 'ltr' | 'rtl';
+  config?: ScrollAnimateConfigOptions;
 };
 
 type ScrollTextMoleculeProps = ScrollTextMoleculeOwnProps &
   Omit<ComponentPropsWithRef<'span'>, keyof ScrollTextMoleculeOwnProps>;
 
 const ScrollTextMolecule = (
-  { dir = 'rtl', className, text, ...props }: ScrollTextMoleculeProps,
+  { dir = 'rtl', config, className, text, ...props }: ScrollTextMoleculeProps,
   ref: ScrollTextMoleculeProps['ref']
 ) => {
   const parentRef = useRef(null),
@@ -31,7 +32,12 @@ const ScrollTextMolecule = (
 
   const animationConfig: ScrollAnimateConfigOptions = {
     prop: 'x',
-    propPoints: directions[dir]
+    propPoints: directions[dir],
+    ...config,
+    scrollConfig: {
+      offset: ['0 1', '0 .3'],
+      ...config?.scrollConfig
+    }
   };
 
   return (

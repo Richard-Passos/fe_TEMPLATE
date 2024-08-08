@@ -1,3 +1,4 @@
+import { CtaTextBlock } from '@/components/organisms/Blocks';
 import {
   PrimaryLayoutBlock,
   SecondaryLayoutBlock
@@ -26,12 +27,10 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
         theme='dark'
       />
 
-      <SecondaryLayoutBlock
-        data={{
-          title: ['HARD', 'SKILLS'],
-          subtitle: 'The best in market'
-        }}
-        theme='light'
+      <CtaTextBlock
+        hasTransition={false}
+        namespace='pages.home.blocks.ctaText'
+        theme='dark'
       />
     </>
   );

@@ -3,6 +3,7 @@ import Bg from './Bg';
 import Box from './Box';
 import Button from './Button';
 import Divider from './Divider';
+import HorizontalScroll from './HorizontalScroll';
 import Icon from './Icon';
 import Image from './Image';
 import Indicator from './Indicator';
@@ -24,6 +25,7 @@ const Atoms = {
   Box,
   Button,
   Divider,
+  HorizontalScroll,
   Icon,
   Image,
   Indicator,
@@ -47,6 +49,7 @@ export {
   Box,
   Button,
   Divider,
+  HorizontalScroll,
   Icon,
   Image,
   Indicator,

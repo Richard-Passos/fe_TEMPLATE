@@ -20,7 +20,30 @@
           "animation": ""
         }
       },
-      "blocks": {}
+      "blocks": {
+        "listPage": {
+          "items": [""],
+          "link": {
+            "href": "/work",
+            "label": "Explore"
+          }
+        },
+        "ctaText": {
+          "text": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
+          "icons": {
+            "left": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateRight",
+              "y": "top"
+            },
+            "right": {
+              "src": "/icons/globe.svg",
+              "animation": "rotateLeft",
+              "y": "bottom"
+            }
+          }
+        }
+      }
     },
     "work": {
       "hero": {

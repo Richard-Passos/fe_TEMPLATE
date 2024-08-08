@@ -36,7 +36,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
     >
       <Title
         className={cn(
-          'w-full sm:text-[clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] md:grid md:grid-cols-12 md:items-center',
+          'w-full md:grid md:grid-cols-12 md:items-center',
           className
         )}
         order={2}
@@ -45,8 +45,8 @@ const PrimaryLayoutBlockHeaderOrganism = (
           <ScrollText
             className={cn(
               i % 2 === 0
-                ? 'max-sm:*:!-translate-x-[10%]'
-                : 'max-sm:*:!-translate-x-[20%]',
+                ? 'max-lg:*:!-translate-x-[20%] max-sm:*:!-translate-x-[10%]'
+                : 'max-lg:*:!-translate-x-[25%] max-sm:*:!-translate-x-[20%]',
               i !== arr.length - 1
                 ? 'md:col-span-full'
                 : 'md:col-span-6 lg:col-span-7'

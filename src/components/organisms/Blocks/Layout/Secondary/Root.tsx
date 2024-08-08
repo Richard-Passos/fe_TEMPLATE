@@ -1,25 +1,26 @@
 import { ReactNode, forwardRef } from 'react';
 
 import Section, { SectionProps } from '@/components/organisms/Section';
+import { cn } from '@/utils';
 
+import SecondaryLayoutBlockHeader, {
+  SecondaryLayoutBlockHeaderProps
+} from './Header';
 import SecondaryLayoutBlockSubChildren, {
   SecondaryLayoutBlockSubChildrenProps
 } from './SubChildren';
-import SecondaryLayoutBlockTitle, {
-  SecondaryLayoutBlockTitleProps
-} from './Title';
 import SecondaryLayoutBlockWrapper, {
   SecondaryLayoutBlockWrapperProps
 } from './Wrapper';
 
 type SecondaryLayoutBlockOrganismOwnProps = {
   data: {
-    title: ReactNode;
-    subtitle?: SecondaryLayoutBlockTitleProps['subtitle'];
+    title: SecondaryLayoutBlockHeaderProps['texts'];
+    subtitle?: SecondaryLayoutBlockHeaderProps['subtitle'];
   };
   subChildren?: ReactNode;
   wrapperProps?: Partial<SecondaryLayoutBlockWrapperProps>;
-  titleProps?: Partial<SecondaryLayoutBlockTitleProps>;
+  headerProps?: Partial<SecondaryLayoutBlockHeaderProps>;
   subChildrenProps?: Partial<SecondaryLayoutBlockSubChildrenProps>;
 };
 
@@ -32,7 +33,7 @@ const SecondaryLayoutBlockOrganism = (
     subChildren,
     children,
     wrapperProps,
-    titleProps,
+    headerProps,
     subChildrenProps,
     ...props
   }: SecondaryLayoutBlockOrganismProps,
@@ -44,12 +45,12 @@ const SecondaryLayoutBlockOrganism = (
       {...props}
     >
       <SecondaryLayoutBlockWrapper {...wrapperProps}>
-        <SecondaryLayoutBlockTitle
+        <SecondaryLayoutBlockHeader
           subtitle={data.subtitle}
-          {...titleProps}
-        >
-          {data.title}
-        </SecondaryLayoutBlockTitle>
+          texts={data.title}
+          {...headerProps}
+          className={cn('shrink-0', headerProps?.className)}
+        />
 
         <SecondaryLayoutBlockSubChildren {...subChildrenProps}>
           {subChildren}

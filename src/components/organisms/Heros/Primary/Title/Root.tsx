@@ -28,7 +28,7 @@ const PrimaryHeroTitleOrganism = (
     ),
     End = (chunks: ReactNode) => <span className='lg:ml-auto'>{chunks}</span>,
     Description = () => (
-      <span className='mt-auto max-w-sm -translate-y-3.5 text-start text-[.14em]/tight font-normal normal-case tracking-normal max-lg:hidden'>
+      <span className='mt-auto max-w-sm -translate-y-3.5 text-start text-[.14em]/tight font-normal normal-case max-lg:hidden'>
         {t('description')}
       </span>
     );
@@ -36,7 +36,7 @@ const PrimaryHeroTitleOrganism = (
   return (
     <Title
       className={cn(
-        'flex w-full flex-col items-center text-center font-black leading-none [word-break:break-word] sm:text-[clamp(5.625rem,2.5481rem+4.8077vw,6.875rem)] lg:px-[--inset]',
+        'flex w-full flex-col items-center text-center font-black [word-break:break-word] lg:px-[--inset]',
         className
       )}
       order={1}

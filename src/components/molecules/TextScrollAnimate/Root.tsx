@@ -35,7 +35,7 @@ const TextScrollAnimateMolecule = (
       ref={setRefs(ref, innerRef)}
       {...props}
     >
-      {words.map((w, i) => {
+      {words.map((w, i, arr) => {
         const start = i / words.length,
           end = start + 1 / words.length;
 
@@ -45,7 +45,7 @@ const TextScrollAnimateMolecule = (
             progress={scrollYProgress}
             range={[start, end]}
           >
-            {w}&nbsp;
+            {w}{i !== arr.length - 1 && <>&nbsp;</>}
           </TextScrollAnimateWord>
         );
       })}

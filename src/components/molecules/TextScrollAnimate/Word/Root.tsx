@@ -47,7 +47,9 @@ const TextScrollAnimateWordMolecule = (
         {children}
       </span>
 
-      <span className='opacity-10 dark:opacity-[.05]'>{children}</span>
+      <span className='pointer-events-none select-none opacity-10 dark:opacity-[.05]'>
+        {children}
+      </span>
     </motion.span>
   );
 };

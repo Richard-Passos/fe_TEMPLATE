@@ -1,8 +1,12 @@
+import ButBlock from './But';
 import CtaTextBlock from './CtaText';
+import ListPageBlock from './ListPage';
 
 const Blocks = {
-  CtaText: CtaTextBlock
+  But: ButBlock,
+  CtaText: CtaTextBlock,
+  ListPage: ListPageBlock
 };
 
 export default Blocks;
-export { CtaTextBlock };
+export { ButBlock, CtaTextBlock, ListPageBlock };

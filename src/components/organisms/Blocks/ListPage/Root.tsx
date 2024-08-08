@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
+import { cn } from '@/utils';
 
 import CleanLayoutBlock, {
   CleanLayoutBlockOrganismProps
@@ -15,7 +16,7 @@ type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
   Omit<CleanLayoutBlockOrganismProps, keyof ListPageBlockOrganismOwnProps>;
 
 const ListPageBlockOrganism = (
-  { namespace, ...props }: ListPageBlockOrganismProps,
+  { namespace, className, ...props }: ListPageBlockOrganismProps,
   ref: ListPageBlockOrganismProps['ref']
 ) => {
   const t = useTranslations(namespace);
@@ -24,6 +25,7 @@ const ListPageBlockOrganism = (
 
   return (
     <CleanLayoutBlock
+      className={cn('min-h-fit', className)}
       ref={ref}
       {...props}
     >
@@ -33,18 +35,27 @@ const ListPageBlockOrganism = (
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
             className='[--gap:--spacing-md]'
             key={item}
+            order={3}
           >
-            <span>{item}</span> ·&nbsp;
-            <span className='opacity-10 dark:opacity-[.05]'>{item}</span>&nbsp;
-            <span className='opacity-10 dark:opacity-[.05]'>·</span>&nbsp;
-            <span className='opacity-10 dark:opacity-[.05]'>{item}</span> ·
+            <span>&nbsp;{item}</span>
+            <span>&nbsp;·</span>
+            <span className='opacity-30 dark:opacity-10'>
+              &nbsp;{item}
+            </span>
+            <span className='opacity-30 dark:opacity-10'>&nbsp;·</span>
+            <span className='opacity-30 dark:opacity-10'>
+              &nbsp;{item}
+            </span>
+            <span>&nbsp;·</span>
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll.Root>
 
       <Action
-        className='mt-md'
-        href={t('link.src')}
+        className='mt-xl'
+        href={t('link.href')}
+        size='md'
+        variant='default'
       >
         {t('link.label')}
       </Action>

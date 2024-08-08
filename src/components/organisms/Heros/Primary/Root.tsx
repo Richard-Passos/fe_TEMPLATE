@@ -34,7 +34,7 @@ const PrimaryHeroOrganism = (
         className
       )}
     >
-      <div className='relative flex w-full grow overflow-hidden rounded-lg'>
+      <div className='relative flex w-full grow overflow-hidden rounded-lg border'>
         <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
             <div className='flex w-full grow flex-col items-center justify-center gap-lg p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>

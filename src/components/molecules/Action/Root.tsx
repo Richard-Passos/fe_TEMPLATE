@@ -30,7 +30,7 @@ const ActionMolecule = (
   const Content = (
     <>
       <Magnetic limit={limit * 0.8}>
-        <span className='z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit'>
+        <span className='relative z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit px-[--action-padding-x]'>
           {children}
         </span>
       </Magnetic>
@@ -40,7 +40,7 @@ const ActionMolecule = (
   );
 
   className = cn(
-    'group/action relative bg-[--action-bg] hover:bg-[--action-bg]',
+    'group/action relative bg-[--action-bg] hover:bg-[--action-bg] px-0 *:*:w-full',
     className
   );
 

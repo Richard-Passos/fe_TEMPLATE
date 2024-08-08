@@ -38,7 +38,7 @@ const ScrollAnimateAtom = (
   { config, smoothConfig, style, ...props }: ScrollAnimateAtomProps,
   ref: ScrollAnimateAtomProps['ref']
 ) => {
-  const innerRef = useRef(null);
+  const innerRef = useRef<HTMLElement>(null);
 
   const options: Pick<
     ScrollAnimateConfigOptions,
@@ -51,13 +51,12 @@ const ScrollAnimateAtom = (
     scrollPoints: [0, 1],
     ...config,
     scrollConfig: {
-      target: innerRef,
       offset: ['0 1', '1 0'],
       ...config.scrollConfig
     }
   };
 
-  const scroll = useScroll(config.scrollConfig);
+  const scroll = useScroll({ target: innerRef, ...options.scrollConfig });
 
   const prop = useTransform(
       scroll[options.scroll],

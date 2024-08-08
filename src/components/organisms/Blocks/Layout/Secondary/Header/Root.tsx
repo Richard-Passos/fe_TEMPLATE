@@ -44,7 +44,7 @@ const SecondaryLayoutBlockHeaderOrganism = (
         ))}
 
         {renderComp(
-          <span className='relative'>
+          <span className='relative w-fit'>
             {lastText}
 
             <Badge

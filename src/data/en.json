@@ -22,11 +22,15 @@
       },
       "blocks": {
         "listPage": {
-          "items": [""],
+          "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
           "link": {
             "href": "/work",
             "label": "Explore"
           }
+        },
+        "but": {
+          "title": "BUT",
+          "description": "it's not just about the tech."
         },
         "ctaText": {
           "text": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",

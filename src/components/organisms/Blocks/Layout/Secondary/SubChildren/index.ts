@@ -1,5 +1,5 @@
 import SecondaryLayoutBlockSubChildren, {
-  type SecondaryLayoutBlockSubChildrenOrganismProps as SecondaryLayoutBlockSubChildrenProps
+  SecondaryLayoutBlockSubChildrenOrganismProps as SecondaryLayoutBlockSubChildrenProps
 } from './Root';
 
 export default SecondaryLayoutBlockSubChildren;

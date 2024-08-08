@@ -1,5 +1,5 @@
 import SecondaryLayoutBlock, {
-  type SecondaryLayoutBlockOrganismProps as SecondaryLayoutBlockProps
+  SecondaryLayoutBlockOrganismProps as SecondaryLayoutBlockProps
 } from './Root';
 
 export default SecondaryLayoutBlock;

@@ -1,5 +1,5 @@
 import ScrollIndicator, {
-  type ScrollIndicatorOrganismProps as ScrollIndicatorProps
+  ScrollIndicatorOrganismProps as ScrollIndicatorProps
 } from './Root';
 
 export default ScrollIndicator;

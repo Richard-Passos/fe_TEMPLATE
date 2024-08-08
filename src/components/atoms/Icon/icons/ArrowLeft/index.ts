@@ -1,5 +1,5 @@
 import ArrowLeftIcon, {
-  type ArrowLeftIconAtomProps as ArrowLeftIconProps
+  ArrowLeftIconAtomProps as ArrowLeftIconProps
 } from './Root';
 
 export default ArrowLeftIcon;

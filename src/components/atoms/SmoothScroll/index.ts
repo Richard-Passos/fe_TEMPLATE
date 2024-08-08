@@ -1,5 +1,5 @@
 import SmoothScroll, {
-  type SmoothScrollAtomProps as SmoothScrollProps
+  SmoothScrollAtomProps as SmoothScrollProps
 } from './Root';
 
 export default SmoothScroll;

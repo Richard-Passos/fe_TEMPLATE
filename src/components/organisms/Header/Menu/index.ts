@@ -1,6 +1,4 @@
-import HeaderMenu, {
-  type HeaderMenuOrganismProps as HeaderMenuProps
-} from './Root';
+import HeaderMenu, { HeaderMenuOrganismProps as HeaderMenuProps } from './Root';
 
 export default HeaderMenu;
 export type { HeaderMenuProps };

@@ -1,5 +1,5 @@
 import HeaderMenuTriggerButton, {
-  type HeaderMenuTriggerButtonOrganismProps as HeaderMenuTriggerButtonProps
+  HeaderMenuTriggerButtonOrganismProps as HeaderMenuTriggerButtonProps
 } from './Root';
 
 export default HeaderMenuTriggerButton;

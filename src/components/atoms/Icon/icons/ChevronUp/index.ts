@@ -1,5 +1,5 @@
 import ChevronUpIcon, {
-  type ChevronUpIconAtomProps as ChevronUpIconProps
+  ChevronUpIconAtomProps as ChevronUpIconProps
 } from './Root';
 
 export default ChevronUpIcon;

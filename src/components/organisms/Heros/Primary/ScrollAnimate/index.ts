@@ -1,5 +1,5 @@
 import PrimaryHeroScrollAnimate, {
-  type PrimaryHeroScrollAnimateOrganismProps as PrimaryHeroScrollAnimateProps
+  PrimaryHeroScrollAnimateOrganismProps as PrimaryHeroScrollAnimateProps
 } from './Root';
 
 export default PrimaryHeroScrollAnimate;

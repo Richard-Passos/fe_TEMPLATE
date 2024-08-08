@@ -1,5 +1,5 @@
 import HeaderMenuTriggerMobile, {
-  type HeaderMenuTriggerMobileOrganismProps as HeaderMenuTriggerMobileProps
+  HeaderMenuTriggerMobileOrganismProps as HeaderMenuTriggerMobileProps
 } from './Root';
 
 export default HeaderMenuTriggerMobile;

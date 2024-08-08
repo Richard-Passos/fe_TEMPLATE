@@ -1,5 +1,5 @@
 import InstagramIcon, {
-  type InstagramIconAtomProps as InstagramIconProps
+  InstagramIconAtomProps as InstagramIconProps
 } from './Root';
 
 export default InstagramIcon;

@@ -1,5 +1,5 @@
 import PrimaryHeroExtraText, {
-  type PrimaryHeroExtraTextOrganismProps as PrimaryHeroExtraTextProps
+PrimaryHeroExtraTextOrganismProps as PrimaryHeroExtraTextProps
 } from './Root';
 
 export default PrimaryHeroExtraText;

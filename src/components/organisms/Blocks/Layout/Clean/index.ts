@@ -1,5 +1,5 @@
 import CleanLayoutBlock, {
-  type CleanLayoutBlockOrganismProps as CleanLayoutBlockProps
+  CleanLayoutBlockOrganismProps as CleanLayoutBlockProps
 } from './Root';
 
 export default CleanLayoutBlock;

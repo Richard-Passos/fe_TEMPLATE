@@ -1,5 +1,5 @@
 import QuestionIcon, {
-  type QuestionIconAtomProps as QuestionIconProps
+  QuestionIconAtomProps as QuestionIconProps
 } from './Root';
 
 export default QuestionIcon;

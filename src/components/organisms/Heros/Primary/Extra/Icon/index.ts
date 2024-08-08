@@ -1,5 +1,5 @@
 import PrimaryHeroExtraIcon, {
-  type PrimaryHeroExtraIconOrganismProps as PrimaryHeroExtraIconProps
+  PrimaryHeroExtraIconOrganismProps as PrimaryHeroExtraIconProps
 } from './Root';
 
 export default PrimaryHeroExtraIcon;

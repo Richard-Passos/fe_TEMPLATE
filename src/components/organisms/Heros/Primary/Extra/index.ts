@@ -1,5 +1,5 @@
 import PrimaryHeroExtra, {
-  type PrimaryHeroExtraOrganismProps as PrimaryHeroExtraProps
+  PrimaryHeroExtraOrganismProps as PrimaryHeroExtraProps
 } from './Root';
 
 export default PrimaryHeroExtra;

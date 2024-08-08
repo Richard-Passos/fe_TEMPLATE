@@ -1,8 +1,8 @@
 import HeaderMenuTriggerMobile, {
-  type HeaderMenuTriggerMobileProps
+  HeaderMenuTriggerMobileProps
 } from './Mobile';
 import HeaderMenuTriggerRoot, {
-  type HeaderMenuTriggerOrganismProps as HeaderMenuTriggerRootProps
+  HeaderMenuTriggerOrganismProps as HeaderMenuTriggerRootProps
 } from './Root';
 
 const HeaderMenuTrigger = {

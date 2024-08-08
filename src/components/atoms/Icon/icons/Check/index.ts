@@ -1,4 +1,4 @@
-import CheckIcon, { type CheckIconAtomProps as CheckIconProps } from './Root';
+import CheckIcon, { CheckIconAtomProps as CheckIconProps } from './Root';
 
 export default CheckIcon;
 export type { CheckIconProps };

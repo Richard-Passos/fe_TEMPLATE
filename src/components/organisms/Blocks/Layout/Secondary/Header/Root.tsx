@@ -48,6 +48,7 @@ const SecondaryLayoutBlockHeaderOrganism = (
             {lastText}
 
             <Badge
+              aria-hidden
               className='absolute bottom-0 right-0 h-auto w-max -translate-x-6 -rotate-12 border-current px-[1em] py-[.75em] text-[.24em] normal-case tracking-normal max-sm:translate-y-1/3 sm:text-[.14em]'
               component='span'
             >

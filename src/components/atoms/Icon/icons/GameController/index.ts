@@ -1,5 +1,5 @@
 import GameControllerIcon, {
-  type GameControllerIconAtomProps as GameControllerIconProps
+  GameControllerIconAtomProps as GameControllerIconProps
 } from './Root';
 
 export default GameControllerIcon;

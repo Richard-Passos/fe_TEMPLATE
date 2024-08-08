@@ -1,5 +1,5 @@
 import PrimaryLayoutBlockHeader, {
-  type PrimaryLayoutBlockHeaderOrganismProps as PrimaryLayoutBlockHeaderProps
+  PrimaryLayoutBlockHeaderOrganismProps as PrimaryLayoutBlockHeaderProps
 } from './Root';
 
 export default PrimaryLayoutBlockHeader;

@@ -14,21 +14,16 @@ type LogoSecondaryVariantOrganismProps = LogoSecondaryVariantOrganismOwnProps &
   Omit<ActionProps, keyof LogoSecondaryVariantOrganismOwnProps>;
 
 const LogoSecondaryVariantOrganism = (
-  { className, icon, label, ...props }: LogoSecondaryVariantOrganismProps,
+  { icon, label, ...props }: LogoSecondaryVariantOrganismProps,
   ref: LogoSecondaryVariantOrganismProps['ref']
 ) => {
   return (
     <Action
-      className={cn(
-        'data-[position=left]:*:*:h-2/3 data-[position=right]:*:*:h-2/3',
-        className
-      )}
-      leftSection={<Icon src={icon} />}
       ref={ref}
       size='md'
       {...props}
     >
-      {label}
+      <Icon className='w-auto h-2/3 mr-sm' src={icon} /> {label}
     </Action>
   );
 };

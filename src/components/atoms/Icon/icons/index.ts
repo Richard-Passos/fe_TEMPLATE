@@ -2,6 +2,7 @@ import ArrowDownIcon from './ArrowDown';
 import ArrowLeftIcon from './ArrowLeft';
 import ArrowRightIcon from './ArrowRight';
 import ArrowUpIcon from './ArrowUp';
+import ArrowUpRightIcon from './ArrowUpRight';
 import CheckIcon from './Check';
 import ChevronDownIcon from './ChevronDown';
 import ChevronUpIcon from './ChevronUp';
@@ -32,6 +33,7 @@ const Icons = {
   ArrowLeft: ArrowLeftIcon,
   ArrowRight: ArrowRightIcon,
   ArrowUp: ArrowUpIcon,
+  ArrowUpRightIcon: ArrowUpRightIcon,
   Check: CheckIcon,
   ChevronDown: ChevronDownIcon,
   ChevronUp: ChevronUpIcon,
@@ -64,6 +66,7 @@ export {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowUpIcon,
+  ArrowUpRightIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,

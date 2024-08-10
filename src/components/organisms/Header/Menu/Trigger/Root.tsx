@@ -45,9 +45,9 @@ const HeaderMenuTriggerOrganism = (
               variant='default'
               {...props}
             >
-              <MenuIcon className='absolute inset-[30%] group-data-open/action:hidden' />
+              <MenuIcon className='absolute size-[40%] group-data-open/action:hidden' />
 
-              <TimesIcon className='absolute inset-[30%] group-data-closed/action:hidden' />
+              <TimesIcon className='absolute size-[40%] group-data-closed/action:hidden' />
             </HeaderMenuTriggerButton>
           </div>
         </ScrollAnimate>

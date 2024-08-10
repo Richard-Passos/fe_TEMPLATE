@@ -20,12 +20,12 @@ const LogoPrimaryVariantOrganism = (
   return (
     <Action
       aria-label={label}
-      className={cn('![--button-padding-x:--spacing-xs]', className)}
+      className={cn('![--action-padding-x:--spacing-xs]', className)}
       ref={ref}
       {...props}
     >
       <Icon
-        className='h-9/10'
+        className='h-2/3'
         src={icon}
       />
     </Action>

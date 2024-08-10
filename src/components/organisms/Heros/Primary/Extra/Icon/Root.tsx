@@ -14,11 +14,7 @@ type PrimaryHeroExtraIconOrganismProps = PrimaryHeroExtraIconOrganismOwnProps &
   Omit<IconProps, keyof PrimaryHeroExtraIconOrganismOwnProps>;
 
 const PrimaryHeroExtraIconOrganism = (
-  {
-    animation,
-    wrapperProps,
-    ...props
-  }: PrimaryHeroExtraIconOrganismProps,
+  { animation, wrapperProps, ...props }: PrimaryHeroExtraIconOrganismProps,
   ref: PrimaryHeroExtraIconOrganismProps['ref']
 ) => {
   return (

@@ -1,30 +1,36 @@
-'use client'
-
-import { ComponentPropsWithRef, forwardRef } from 'react';
+'use client';
 
 import { DateTimeFormatOptions, useFormatter, useNow } from 'next-intl';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
 type LocalTimeAtomOwnProps = {
-  nowOptions?: Parameters<typeof useNow>[0],
-  formatOptions?: DateTimeFormatOptions
-}
+  nowOptions?: Parameters<typeof useNow>[0];
+  formatOptions?: DateTimeFormatOptions;
+};
 
 type LocalTimeAtomProps = LocalTimeAtomOwnProps &
-  Omit<ComponentPropsWithRef<'span'>, keyof LocalTimeAtomOwnProps>
+  Omit<ComponentPropsWithRef<'span'>, keyof LocalTimeAtomOwnProps>;
 
-const LocalTimeAtom = ({ nowOptions, formatOptions, ...props }: LocalTimeAtomProps, ref: LocalTimeAtomProps['ref']) => {
+const LocalTimeAtom = (
+  { nowOptions, formatOptions, ...props }: LocalTimeAtomProps,
+  ref: LocalTimeAtomProps['ref']
+) => {
   const now = useNow({ updateInterval: 1000 * 10, ...nowOptions }),
-    format = useFormatter()
+    format = useFormatter();
 
   return (
     <span
       ref={ref}
       {...props}
     >
-      {format.dateTime(now, { hour: 'numeric', minute: 'numeric', ...formatOptions })}
+      {format.dateTime(now, {
+        hour: 'numeric',
+        minute: 'numeric',
+        ...formatOptions
+      })}
     </span>
   );
 };
 
 export default forwardRef(LocalTimeAtom);
-export type { LocalTimeAtomProps }
+export type { LocalTimeAtomProps };

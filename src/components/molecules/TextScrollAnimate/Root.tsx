@@ -45,7 +45,8 @@ const TextScrollAnimateMolecule = (
             progress={scrollYProgress}
             range={[start, end]}
           >
-            {w}{i !== arr.length - 1 && <>&nbsp;</>}
+            {w}
+            {i !== arr.length - 1 && <>&nbsp;</>}
           </TextScrollAnimateWord>
         );
       })}

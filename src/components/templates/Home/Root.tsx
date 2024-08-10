@@ -1,7 +1,9 @@
-import { ButBlock, CtaTextBlock, ListPageBlock } from '@/components/organisms/Blocks';
 import {
-  PrimaryLayoutBlock,
-} from '@/components/organisms/Blocks/Layout';
+  ButBlock,
+  CtaTextBlock,
+  ListPageBlock
+} from '@/components/organisms/Blocks';
+import { PrimaryLayoutBlock } from '@/components/organisms/Blocks/Layout';
 import { PrimaryHero } from '@/components/organisms/Heros';
 
 type HomeTemplateOrganismProps = {
@@ -32,7 +34,10 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
         theme='dark'
       />
 
-      <ButBlock namespace='pages.home.blocks.but' theme='light' />
+      <ButBlock
+        namespace='pages.home.blocks.but'
+        theme='light'
+      />
 
       <PrimaryLayoutBlock
         data={{
@@ -40,7 +45,6 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
           description:
             "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
         }}
-
         hasTransition={false}
         id='scroll-to'
         theme='light'

@@ -39,13 +39,9 @@ const ListPageBlockOrganism = (
           >
             <span>&nbsp;{item}</span>
             <span>&nbsp;·</span>
-            <span className='opacity-30 dark:opacity-10'>
-              &nbsp;{item}
-            </span>
+            <span className='opacity-30 dark:opacity-10'>&nbsp;{item}</span>
             <span className='opacity-30 dark:opacity-10'>&nbsp;·</span>
-            <span className='opacity-30 dark:opacity-10'>
-              &nbsp;{item}
-            </span>
+            <span className='opacity-30 dark:opacity-10'>&nbsp;{item}</span>
             <span>&nbsp;·</span>
           </ListHorizontalScroll.Item>
         ))}

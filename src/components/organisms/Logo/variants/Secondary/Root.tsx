@@ -23,7 +23,11 @@ const LogoSecondaryVariantOrganism = (
       size='md'
       {...props}
     >
-      <Icon className='w-auto h-2/3 mr-sm' src={icon} /> {label}
+      <Icon
+        className='mr-sm h-2/3 w-auto'
+        src={icon}
+      />{' '}
+      {label}
     </Action>
   );
 };

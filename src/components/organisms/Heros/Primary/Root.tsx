@@ -43,7 +43,7 @@ const PrimaryHeroOrganism = (
               <PrimaryHeroExtra namespace={namespace} />
             </div>
 
-            <Lines className='absolute -inset-y-full inset-x-0 -z-10 w-auto translate-x-0 [background-size:83.333px_66.666px]' />
+            <Lines className='-z-10 [background-size:83.333px_66.666px]' />
           </div>
         </PrimaryHeroScrollAnimate>
 

@@ -285,7 +285,18 @@
       "label": "Your locale"
     }
   },
-  "footer": {},
+  "footer": {
+    "cta": {
+      "title": "LET'S MAKE <br></br> THEM FLY",
+      "subtitle": "Is your great ideas ready?",
+      "action": {
+        "label": "Get in touch"
+      }
+    },
+    "location": "{ country } —  { state }",
+    "madeBy": "Made with ❤️ by <creator>Richard</creator>",
+    "copyright": "© 2024 <legal>Legal</legal>"
+  },
   "personal": {
     "name": "FE Typescript",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
@@ -294,9 +305,29 @@
       "icon": "/icons/logo.svg",
       "favicon": "/icons/favicon.ico"
     },
-    "socials": {}
+    "location": {
+      "country": "Brazil",
+      "state": "RS",
+      "gmt": "GMT-3"
+    },
+    "socials": {
+      "github": {
+        "href": "https://github.com/Richard-Passos",
+        "icon": "/icons/github.svg",
+        "label": "Github"
+      },
+      "instagram": {
+        "href": "https://www.instagram.com/richardp.dev/",
+        "icon": "/icons/instagram.svg",
+        "label": "Instagram"
+      },
+      "linkedin": {
+        "href": "https://www.linkedin.com/in/richardp-dev",
+        "icon": "/icons/linkedin.svg",
+        "label": "Linkedin"
+      }
+    }
   },
-  "themes": {},
   "locales": {
     "en": {
       "label": "English"

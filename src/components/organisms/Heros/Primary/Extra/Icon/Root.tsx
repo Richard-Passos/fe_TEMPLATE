@@ -16,7 +16,6 @@ type PrimaryHeroExtraIconOrganismProps = PrimaryHeroExtraIconOrganismOwnProps &
 const PrimaryHeroExtraIconOrganism = (
   {
     animation,
-    className,
     wrapperProps,
     ...props
   }: PrimaryHeroExtraIconOrganismProps,
@@ -29,7 +28,6 @@ const PrimaryHeroExtraIconOrganism = (
         className={cn('size-6', wrapperProps?.className)}
       >
         <Icon
-          className={cn('size-full', className)}
           ref={ref}
           {...props}
         />

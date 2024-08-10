@@ -40,18 +40,19 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
           description:
             "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
         }}
+
+        hasTransition={false}
         id='scroll-to'
-        theme='dark'
+        theme='light'
       />
 
       <ListPageBlock
         hasTransition={false}
         namespace='pages.home.blocks.listPage'
-        theme='dark'
+        theme='light'
       />
 
       <CtaTextBlock
-        hasTransition={false}
         namespace='pages.home.blocks.ctaText'
         theme='dark'
       />

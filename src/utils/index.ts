@@ -5,6 +5,7 @@ import isExternalUrl from './isExternalUrl';
 import normCompName from './normCompName';
 import normId from './normId';
 import normKey from './normKey';
+import objKeys from './objKeys';
 import pick from './pick';
 import renderComp from './renderComp';
 import setRefs from './setRefs';
@@ -14,6 +15,7 @@ const utils = {
   baseUrl,
   capitalize,
   cn,
+  objKeys,
   isExternalUrl,
   normCompName,
   normId,
@@ -29,6 +31,7 @@ export {
   baseUrl,
   capitalize,
   cn,
+  objKeys,
   isExternalUrl,
   normCompName,
   normId,

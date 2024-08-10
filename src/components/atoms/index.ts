@@ -10,6 +10,7 @@ import Indicator from './Indicator';
 import Lines from './Lines';
 import Link from './Link';
 import Loader from './Loader';
+import LocalTime from './LocalTime';
 import Magnetic from './Magnetic';
 import Marquee from './Marquee';
 import Portal from './Portal';
@@ -32,6 +33,7 @@ const Atoms = {
   Lines,
   Link,
   Loader,
+  LocalTime,
   Magnetic,
   Marquee,
   Portal,
@@ -56,6 +58,7 @@ export {
   Lines,
   Link,
   Loader,
+  LocalTime,
   Magnetic,
   Marquee,
   Portal,

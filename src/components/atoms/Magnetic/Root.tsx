@@ -13,14 +13,14 @@ const magneticAtomSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
 type MagneticAtomOwnProps = {
   smoothConfig?: UseSmoothParams['1'];
-  limit?: number;
+  limit?: { x: number, y: number };
 };
 
 type MagneticAtomProps = MagneticAtomOwnProps &
   Omit<ComponentPropsWithRef<typeof MotionChild>, keyof MagneticAtomOwnProps>;
 
 const MagneticAtom = (
-  { smoothConfig, limit = 0.5, style, ...props }: MagneticAtomProps,
+  { smoothConfig, limit = { x: .5, y: .5 }, style, ...props }: MagneticAtomProps,
   ref: MagneticAtomProps['ref']
 ) => {
   const innerRef = useRef<HTMLElement>(null),
@@ -30,9 +30,9 @@ const MagneticAtom = (
     };
 
   const resetPosition = () => {
-      position.x.set(0);
-      position.y.set(0);
-    },
+    position.x.set(0);
+    position.y.set(0);
+  },
     updatePosition = ({ clientX, clientY }: MouseEvent<HTMLElement>) => {
       if (!innerRef.current) return;
 
@@ -41,15 +41,18 @@ const MagneticAtom = (
 
       const center = { x: left + width / 2, y: top + height / 2 };
 
-      position.x.set((clientX - center.x) * limit);
-      position.y.set((clientY - center.y) * limit);
+
+      position.x.set((clientX - center.x) * limit.x);
+      position.y.set((clientY - center.y) * limit.y);
+
+
     };
 
   const onMouseLeave = (ev: MouseEvent<HTMLElement>) => {
-      resetPosition();
+    resetPosition();
 
-      props.onMouseLeave?.(ev);
-    },
+    props.onMouseLeave?.(ev);
+  },
     onMouseMove = (ev: MouseEvent<HTMLElement>) => {
       deviceType !== 'touchOnly' && updatePosition(ev);
 

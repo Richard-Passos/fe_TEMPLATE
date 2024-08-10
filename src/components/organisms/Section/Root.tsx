@@ -3,7 +3,7 @@
 import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef, useRef } from 'react';
 
-import { Bg, Box, Lines } from '@/components/atoms';
+import { Bg, Box, Lines, ScrollAnimate } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
 import { BoxProps } from '@/components/atoms/Box';
 import { cn, setRefs } from '@/utils';
@@ -63,9 +63,10 @@ const SectionOrganism = (
       <Bg
         color={bg}
         {...bgProps}
-        className={cn('[clip-path:inset(0)]', bgProps?.className)}
       >
-        <Lines />
+        <ScrollAnimate config={{ prop: 'y', propPoints: ['-100%', '100%'] }}>
+          <Lines />
+        </ScrollAnimate>
       </Bg>
     </Box>
   );

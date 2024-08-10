@@ -41,6 +41,7 @@ const HeaderMenuTriggerOrganism = (
                 className
               )}
               isIconOnly
+              limit={{ x: 0.5, y: 0.5 }}
               ref={ref}
               variant='default'
               {...props}

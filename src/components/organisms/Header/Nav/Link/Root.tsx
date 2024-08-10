@@ -27,13 +27,10 @@ const HeaderNavLinkOrganism = (
   ref: HeaderNavLinkOrganismProps['ref']
 ) => {
   return (
-    <Magnetic
-      limit={0.3}
-      smoothConfig={{ damping: 5 }}
-    >
+    <Magnetic>
       <Link
         className={cn(
-          'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-inherit no-underline transition-none hover:z-10',
+          'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-inherit no-underline transition-none',
           className
         )}
         ref={ref}

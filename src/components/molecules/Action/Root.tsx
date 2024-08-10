@@ -19,7 +19,7 @@ type ActionMoleculeProps = ActionMoleculeOwnProps &
 const ActionMolecule = (
   {
     href,
-    limit = 0.5,
+    limit = { x: 0.35, y: 0.35 },
     className,
     style,
     children,
@@ -29,7 +29,7 @@ const ActionMolecule = (
 ) => {
   const Content = (
     <>
-      <Magnetic limit={limit * 0.8}>
+      <Magnetic limit={{ x: limit.x * 0.8, y: limit.y * 0.8 }}>
         <span className='relative z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit px-[--action-padding-x]'>
           {children}
         </span>
@@ -40,7 +40,7 @@ const ActionMolecule = (
   );
 
   className = cn(
-    'group/action relative bg-[--action-bg] hover:bg-[--action-bg] px-0 *:*:w-full',
+    'group/action relative bg-[--action-bg] hover:bg-[--action-bg] px-0 *:*:w-full hover:z-10',
     className
   );
 

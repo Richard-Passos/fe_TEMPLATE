@@ -9,13 +9,14 @@ import { cn } from '@/utils';
 
 type SectionTransitionOrganismOwnProps = {
   color?: StyleProp<DefaultMantineColor>;
+  reverse?: boolean
 };
 
 type SectionTransitionOrganismProps = SectionTransitionOrganismOwnProps &
   Omit<ComponentPropsWithRef<'div'>, keyof SectionTransitionOrganismOwnProps>;
 
 const SectionTransitionOrganism = (
-  { color, className, ...props }: SectionTransitionOrganismProps,
+  { color, reverse, className, ...props }: SectionTransitionOrganismProps,
   ref: SectionTransitionOrganismProps['ref']
 ) => {
   const animationConfig: ScrollAnimateConfigOptions = {
@@ -33,12 +34,16 @@ const SectionTransitionOrganism = (
         ref={ref}
         {...props}
       >
-        <div className='relative h-[--h] w-full -translate-y-full rotate-180 overflow-hidden'>
+        <div className={cn('relative w-full overflow-hidden', reverse ? 'h-[calc(100%-var(--h))] -translate-y-px' : 'h-[--h] -translate-y-full rotate-180')}>
           <Bg
-            className='pointer-events-auto left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] overflow-hidden rounded-[50%]'
+            className='pointer-events-auto left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] rounded-[50%]'
             color={color}
           >
-            <Lines className='h-screen -translate-x-[(50%_-_var(--removed-body-scroll-bar-size,0px)/2)] rotate-180' />
+            <div className={cn('absolute inset-0', !reverse && 'rotate-180')}>
+              <ScrollAnimate config={{ prop: 'y', propPoints: ['-100%', '100%'] }}>
+                <Lines className={cn(!reverse && '-translate-x-[(50%_-_var(--removed-body-scroll-bar-size,0px)/2)]')} />
+              </ScrollAnimate>
+            </div>
           </Bg>
         </div>
       </div>

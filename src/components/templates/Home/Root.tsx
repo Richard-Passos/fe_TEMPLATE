@@ -1,65 +1,45 @@
-import {
-  ButBlock,
-  CtaTextBlock,
-  ListPageBlock
-} from '@/components/organisms/Blocks';
-import { PrimaryLayoutBlock } from '@/components/organisms/Blocks/Layout';
+import { useMessages, useTranslations } from 'next-intl';
+
+import Blocks from '@/components/organisms/Blocks';
 import { PrimaryHero } from '@/components/organisms/Heros';
+import { ExtractPrefix, Namespace, Theme } from '@/types';
+import { normCompName, objKeys } from '@/utils';
 
 type HomeTemplateOrganismProps = {
-  namespace: ExtractPrefix<Namespace, 'pages.'>;
+  namespace: ExtractPrefix<Namespace, 'pages.home'>;
 };
 
 const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
+  const t = useTranslations(namespace),
+    messages = useMessages() as unknown as IntlMessages;
+
+  const blockKeys = objKeys(messages.pages.home.blocks);
+
+  let lastTheme: Theme;
+
   return (
     <>
-      <PrimaryHero
-        namespace={`${namespace}.hero`}
-        theme='light'
-      />
+      <PrimaryHero namespace={`${namespace}.hero`} />
 
-      <PrimaryLayoutBlock
-        data={{
-          title: ['ABOUT', 'WORK'],
-          description:
-            'Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.'
-        }}
-        id='scroll-to'
-        theme='dark'
-      />
+      {blockKeys.map((key) => {
+        const Block =
+          Blocks[normCompName(t(`blocks.${key}.type`)) as keyof typeof Blocks];
 
-      <ListPageBlock
-        hasTransition={false}
-        namespace='pages.home.blocks.listPage'
-        theme='dark'
-      />
+        const theme = t(`blocks.${key}.theme`) as Theme;
 
-      <ButBlock
-        namespace='pages.home.blocks.but'
-        theme='light'
-      />
+        const Component = (
+          <Block
+            hasTransition={lastTheme !== theme}
+            key={key}
+            namespace={`${namespace}.blocks.${key}`}
+            theme={theme}
+          />
+        );
 
-      <PrimaryLayoutBlock
-        data={{
-          title: ['ABOUT', 'ME'],
-          description:
-            "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
-        }}
-        hasTransition={false}
-        id='scroll-to'
-        theme='light'
-      />
+        lastTheme = theme;
 
-      <ListPageBlock
-        hasTransition={false}
-        namespace='pages.home.blocks.listPage'
-        theme='light'
-      />
-
-      <CtaTextBlock
-        namespace='pages.home.blocks.ctaText'
-        theme='dark'
-      />
+        return Component;
+      })}
     </>
   );
 };

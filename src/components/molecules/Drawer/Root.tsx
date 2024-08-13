@@ -1,15 +1,15 @@
 'use client';
 
 import { DrawerRoot, DrawerRootProps } from '@mantine/core';
-import { PropsWithChildren, ReactNode, forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
-import {
-  DisclosureContextInitialState,
-  DisclosureProvider
-} from '@/contexts/Disclosure';
+import DisclosureProvider, {
+  DisclosureProviderProps
+} from '@/Providers/Disclosure';
 import { useUpdateEffect } from '@/hooks';
 import { useDisclosureContext } from '@/hooks/contexts';
 import { usePathname } from '@/navigation';
+import { PolymorphicRef } from '@/types';
 
 type DrawerMoleculeOwnProps = Partial<
   Pick<DrawerRootProps, 'onClose' | 'opened'>
@@ -20,7 +20,7 @@ type DrawerMoleculeOwnProps = Partial<
 type DrawerMoleculeProps = DrawerMoleculeOwnProps &
   Omit<DrawerRootProps, keyof DrawerMoleculeOwnProps>;
 
-const MoleculesDrawer = forwardRef(
+const DrawerMolecule = forwardRef(
   (props: DrawerMoleculeProps, ref: DrawerMoleculeProps['ref']) => {
     const { isOpen, close, dataState } = useDisclosureContext(),
       pathname = usePathname();
@@ -38,15 +38,18 @@ const MoleculesDrawer = forwardRef(
     );
   }
 );
-MoleculesDrawer.displayName = 'MoleculesDrawer';
+DrawerMolecule.displayName = 'DrawerMolecule';
 
-type DrawerWithProviderMoleculeOwnProps = PropsWithChildren<{
-  defaultIsOpen?: DisclosureContextInitialState['isOpen'];
+type DrawerWithProviderMoleculeOwnProps = {
   trigger: ReactNode;
-}>;
+  ref?: DrawerMoleculeProps['ref'];
+};
 
 type DrawerWithProviderMoleculeProps = DrawerWithProviderMoleculeOwnProps &
-  DrawerMoleculeProps;
+  Omit<
+    DisclosureProviderProps & DrawerMoleculeProps,
+    keyof DrawerMoleculeOwnProps
+  >;
 
 const DrawerWithProviderMolecule = (
   { defaultIsOpen, trigger, ...props }: DrawerWithProviderMoleculeProps,
@@ -54,7 +57,7 @@ const DrawerWithProviderMolecule = (
 ) => {
   return (
     <DisclosureProvider defaultIsOpen={defaultIsOpen}>
-      <MoleculesDrawer
+      <DrawerMolecule
         ref={ref}
         {...props}
       />

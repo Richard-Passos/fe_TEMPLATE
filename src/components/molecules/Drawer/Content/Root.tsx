@@ -14,6 +14,8 @@ import {
 } from '@mantine/core';
 import { PropsWithChildren, ReactNode, forwardRef } from 'react';
 
+import { PolymorphicRef } from '@/types';
+
 type DrawerContentMoleculeOwnProps = PropsWithChildren<{
   title?: ReactNode;
   overlayProps?: Partial<DrawerOverlayProps>;

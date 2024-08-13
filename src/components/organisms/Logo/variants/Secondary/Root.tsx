@@ -14,19 +14,21 @@ type LogoSecondaryVariantOrganismProps = LogoSecondaryVariantOrganismOwnProps &
   Omit<ActionProps, keyof LogoSecondaryVariantOrganismOwnProps>;
 
 const LogoSecondaryVariantOrganism = (
-  { icon, label, ...props }: LogoSecondaryVariantOrganismProps,
+  { className, icon, label, ...props }: LogoSecondaryVariantOrganismProps,
   ref: LogoSecondaryVariantOrganismProps['ref']
 ) => {
   return (
     <Action
       ref={ref}
       size='md'
+      className={cn('![--action-padding-x:--spacing-xs]', className)}
       {...props}
     >
       <Icon
         className='mr-sm h-2/3 w-auto'
         src={icon}
-      />{' '}
+      />
+
       {label}
     </Action>
   );

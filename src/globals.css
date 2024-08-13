@@ -63,13 +63,13 @@
     --color-placeholder: var(--mantine-color-placeholder);
     --color-anchor: var(--mantine-color-anchor);
     --color-dimmed: var(--mantine-color-dimmed);
+    --color-border: var(--mantine-color-default-border);
     --color-black: var(--mantine-color-black);
     --color-white: var(--mantine-color-white);
 
     --color-default: var(--mantine-color-default);
     --color-default-hover: var(--mantine-color-default-hover);
     --color-default-color: var(--mantine-color-default-color);
-    --color-default-border: var(--mantine-color-default-border);
 
     --color-primary-contrast: var(--mantine-primary-color-contrast);
 
@@ -495,13 +495,13 @@
     --color-placeholder: var(--mantine-color-placeholder);
     --color-anchor: var(--mantine-color-anchor);
     --color-dimmed: var(--mantine-color-dimmed);
+    --color-border: var(--mantine-color-default-border);
     --color-black: var(--mantine-color-black);
     --color-white: var(--mantine-color-white);
 
     --color-default: var(--mantine-color-default);
     --color-default-hover: var(--mantine-color-default-hover);
     --color-default-color: var(--mantine-color-default-color);
-    --color-default-border: var(--mantine-color-default-border);
 
     --color-primary-contrast: var(--mantine-primary-color-contrast);
 

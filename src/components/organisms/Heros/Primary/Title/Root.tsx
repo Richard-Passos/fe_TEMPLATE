@@ -3,6 +3,7 @@ import { ReactNode, forwardRef } from 'react';
 
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
+import { ExtractPrefix, Namespace } from '@/types';
 import { cn } from '@/utils';
 
 type PrimaryHeroTitleOrganismOwnProps = {

@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { Text } from '@/components/atoms';
+import { ExtractPrefix, Namespace } from '@/types';
 
 import PrimaryHeroExtraIcon, { PrimaryHeroExtraIconProps } from './Icon';
 import PrimaryHeroExtraText, { PrimaryHeroExtraTextProps } from './Text';

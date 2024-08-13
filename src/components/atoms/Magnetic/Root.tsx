@@ -3,24 +3,31 @@
 import { Slot } from '@radix-ui/react-slot';
 import { deviceType } from 'detect-it';
 import { motion } from 'framer-motion';
-import { ComponentPropsWithRef, MouseEvent, forwardRef, useRef } from 'react';
+import { ComponentPropsWithRef, RefObject, forwardRef, useRef } from 'react';
 
-import { useSmooth } from '@/hooks';
+import { useEventListener, useSmooth } from '@/hooks';
 import { UseSmoothParams } from '@/hooks/useSmooth';
 import { setRefs } from '@/utils';
 
 const magneticAtomSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
 type MagneticAtomOwnProps = {
+  container?: RefObject<HTMLElement>;
   smoothConfig?: UseSmoothParams['1'];
-  limit?: { x: number, y: number };
+  limit?: { x: number; y: number };
 };
 
 type MagneticAtomProps = MagneticAtomOwnProps &
   Omit<ComponentPropsWithRef<typeof MotionChild>, keyof MagneticAtomOwnProps>;
 
 const MagneticAtom = (
-  { smoothConfig, limit = { x: .5, y: .5 }, style, ...props }: MagneticAtomProps,
+  {
+    container,
+    smoothConfig,
+    limit = { x: 0.35, y: 0.35 },
+    style,
+    ...props
+  }: MagneticAtomProps,
   ref: MagneticAtomProps['ref']
 ) => {
   const innerRef = useRef<HTMLElement>(null),
@@ -30,46 +37,45 @@ const MagneticAtom = (
     };
 
   const resetPosition = () => {
-    position.x.set(0);
-    position.y.set(0);
-  },
-    updatePosition = ({ clientX, clientY }: MouseEvent<HTMLElement>) => {
-      if (!innerRef.current) return;
+      position.x.set(0);
+      position.y.set(0);
+    },
+    updatePosition = (
+      { clientX, clientY }: MouseEvent,
+      element: RefObject<HTMLElement>
+    ) => {
+      if (!element.current) return;
 
       const { left, top, width, height } =
-        innerRef.current.getBoundingClientRect();
+        element.current.getBoundingClientRect();
 
       const center = { x: left + width / 2, y: top + height / 2 };
 
+      const pos =
+        deviceType !== 'touchOnly'
+          ? {
+              x: (clientX - center.x) * limit.x,
+              y: (clientY - center.y) * limit.y
+            }
+          : { x: 0, y: 0 };
 
-      position.x.set((clientX - center.x) * limit.x);
-      position.y.set((clientY - center.y) * limit.y);
-
-
+      position.x.set(pos.x);
+      position.y.set(pos.y);
     };
 
-  const onMouseLeave = (ev: MouseEvent<HTMLElement>) => {
-    resetPosition();
+  const element = container ?? innerRef;
 
-    props.onMouseLeave?.(ev);
-  },
-    onMouseMove = (ev: MouseEvent<HTMLElement>) => {
-      deviceType !== 'touchOnly' && updatePosition(ev);
-
-      props.onMouseMove?.(ev);
-    };
+  useEventListener('mousemove', (ev) => updatePosition(ev, element), element);
+  useEventListener('mouseleave', resetPosition, element);
 
   return (
     <MotionChild
       ref={setRefs(ref, innerRef)}
       style={{
-        ...style,
-        x: position.x,
-        y: position.y
+        ...position,
+        ...style
       }}
       {...props}
-      onMouseLeave={onMouseLeave}
-      onMouseMove={onMouseMove}
     />
   );
 };

@@ -1,7 +1,9 @@
+import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
 import { Lines } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
+import { ExtractPrefix, Namespace, PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 import ScrollIndicator from '../../ScrollIndicator';
@@ -9,7 +11,7 @@ import PrimaryHeroExtra from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
 import PrimaryHeroTitle from './Title';
 
-type PrimaryHeroOrganismOwnProps = {
+type PrimaryHeroOrganismOwnProps = Partial<Pick<SectionProps, 'theme'>> & {
   namespace: ExtractPrefix<Namespace, `${string}.hero`>;
   ref?: PolymorphicRef<'div'>;
 };
@@ -21,6 +23,8 @@ const PrimaryHeroOrganism = (
   { namespace, className, ...props }: PrimaryHeroOrganismProps,
   ref: PrimaryHeroOrganismProps['ref']
 ) => {
+  const t = useTranslations(namespace);
+
   return (
     <Section
       bgProps={{
@@ -28,6 +32,7 @@ const PrimaryHeroOrganism = (
       }}
       hasTransition={false}
       ref={ref}
+      theme={t('theme') as SectionProps['theme']}
       {...props}
       className={cn(
         'min-h-svh p-[--inset] pt-[--header-h] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
@@ -43,11 +48,11 @@ const PrimaryHeroOrganism = (
               <PrimaryHeroExtra namespace={namespace} />
             </div>
 
-            <Lines className='-z-10 [background-size:83.333px_66.666px]' />
+            <Lines className='-z-10 !opacity-60 [background-size:83.333px_66.666px]' />
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border border-solid border-current opacity-20 dark:opacity-5' />
+        <span className='pointer-events-none absolute inset-0 rounded-inherit border border-solid border-border opacity-60' />
       </div>
 
       <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />

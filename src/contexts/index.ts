@@ -1,8 +1,10 @@
-import DisclosureContext, { DisclosureProvider } from './Disclosure';
+import CatalogContext from './Catalog';
+import DisclosureContext from './Disclosure';
 
 const Contexts = {
+  Catalog: CatalogContext,
   Disclosure: DisclosureContext
 };
 
 export default Contexts;
-export { DisclosureContext, DisclosureProvider };
+export { CatalogContext, DisclosureContext };

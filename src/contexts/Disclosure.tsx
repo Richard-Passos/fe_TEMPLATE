@@ -1,8 +1,8 @@
 'use client';
 
-import { PropsWithChildren, createContext, useMemo } from 'react';
+import { createContext } from 'react';
 
-import { useDisclosure, useId } from '@/hooks';
+import { useDisclosure } from '@/hooks';
 
 type DisclosureContextInitialState = {
   id: string;
@@ -13,11 +13,7 @@ type DisclosureContextInitialState = {
   dataState: 'open' | 'closed';
 };
 
-type DisclosureProviderProps = PropsWithChildren<{
-  defaultIsOpen?: boolean;
-}>;
-
-const DEFAULTS: DisclosureContextInitialState = {
+const disclosureContextDefaultValue: DisclosureContextInitialState = {
   id: '',
   isOpen: false,
   open: () => {},
@@ -26,38 +22,8 @@ const DEFAULTS: DisclosureContextInitialState = {
   dataState: 'closed'
 };
 
-const DisclosureContext =
-  createContext<DisclosureContextInitialState>(DEFAULTS);
-
-const DisclosureProvider = ({
-  defaultIsOpen = false,
-  ...props
-}: DisclosureProviderProps) => {
-  const [isOpen, handlers] = useDisclosure(defaultIsOpen),
-    id = useId();
-
-  const dataState: DisclosureContextInitialState['dataState'] = isOpen
-    ? 'open'
-    : 'closed';
-
-  const context = useMemo(
-    () => ({
-      id,
-      isOpen,
-      dataState,
-      ...handlers
-    }),
-    [id, isOpen, dataState, handlers]
-  );
-
-  return (
-    <DisclosureContext.Provider
-      value={context}
-      {...props}
-    />
-  );
-};
+const DisclosureContext = createContext(disclosureContextDefaultValue);
 
 export default DisclosureContext;
-export { DisclosureProvider };
-export type { DisclosureContextInitialState, DisclosureProviderProps };
+export { disclosureContextDefaultValue };
+export type { DisclosureContextInitialState };

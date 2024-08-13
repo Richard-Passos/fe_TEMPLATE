@@ -24,13 +24,13 @@ const config: Config = {
       placeholder: 'var(--color-placeholder)',
       anchor: 'var(--color-anchor)',
       dimmed: 'var(--color-dimmed)',
+      border: 'var(--color-border)',
       black: 'var(--color-black)',
       white: 'var(--color-white)',
       default: {
         DEFAULT: 'var(--color-default)',
         hover: 'var(--color-default-hover)',
-        color: 'var(--color-default-color)',
-        border: 'var(--color-default-border)'
+        color: 'var(--color-default-color)'
       },
       primary: {
         contrast: 'var(--color-primary-contrast)',
@@ -467,6 +467,13 @@ const config: Config = {
       },
       outlineOffset: {
         DEFAULT: 'var(--outline-offset)'
+      },
+      bordeWidth: {
+        DEFAULT: '.8px',
+        '1': '.8px'
+      },
+      borderColor: {
+        DEFAULT: 'var(--color-border)'
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',

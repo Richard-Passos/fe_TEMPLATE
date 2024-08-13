@@ -1,5 +1,7 @@
 import { ListItem, ListItemProps } from '@mantine/core';
 
+import { PolymorphicRef } from '@/types';
+
 type ListItemMoleculeOwnProps = {
   ref?: PolymorphicRef<'li'>;
 };

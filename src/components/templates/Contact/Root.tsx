@@ -1,5 +1,6 @@
 import { Section } from '@/components/organisms';
 import { PrimaryHero } from '@/components/organisms/Heros';
+import { ExtractPrefix, Namespace } from '@/types';
 
 type ContactTemplateOrganismProps = {
   namespace: ExtractPrefix<Namespace, 'pages.'>;

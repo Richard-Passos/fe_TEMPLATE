@@ -4,6 +4,7 @@ import { ComponentPropsWithRef, Suspense, forwardRef } from 'react';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
 import { locales } from '@/navigation';
+import { Namespace } from '@/types';
 import { cn } from '@/utils';
 
 import HeaderMenu from './Menu';
@@ -42,7 +43,7 @@ const HeaderOrganism = (
         {...props}
       >
         <Logo
-          className='-ml-[--button-padding-x]'
+          className='-ml-[--action-padding-x]'
           variant='primary'
         />
 

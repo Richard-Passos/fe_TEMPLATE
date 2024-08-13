@@ -2,18 +2,17 @@ import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
+import { ExtractPrefix, Namespace } from '@/types';
 import { cn } from '@/utils';
 
-import CleanLayoutBlock, {
-  CleanLayoutBlockOrganismProps
-} from '../Layout/Clean/Root';
+import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 type ListPageBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.listPage`>;
+  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
 };
 
 type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockOrganismProps, keyof ListPageBlockOrganismOwnProps>;
+  Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
 
 const ListPageBlockOrganism = (
   { namespace, className, ...props }: ListPageBlockOrganismProps,
@@ -35,7 +34,7 @@ const ListPageBlockOrganism = (
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
             className='[--gap:--spacing-md]'
             key={item}
-            order={3}
+            order={4}
           >
             <span>&nbsp;{item}</span>
             <span>&nbsp;·</span>

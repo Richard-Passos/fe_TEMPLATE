@@ -4,11 +4,10 @@ import { forwardRef } from 'react';
 import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
 import { TextScrollAnimate } from '@/components/molecules';
+import { ExtractPrefix, Namespace } from '@/types';
 import { cn } from '@/utils';
 
-import CleanLayoutBlock, {
-  CleanLayoutBlockOrganismProps
-} from '../Layout/Clean/Root';
+import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 const ANIMATION_CONFIG = {
   x: {
@@ -42,11 +41,11 @@ const ANIMATION_CONFIG = {
 };
 
 type ButBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.but`>;
+  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
 };
 
 type ButBlockOrganismProps = ButBlockOrganismOwnProps &
-  Omit<CleanLayoutBlockOrganismProps, keyof ButBlockOrganismOwnProps>;
+  Omit<CleanLayoutBlockProps, keyof ButBlockOrganismOwnProps>;
 
 const ButBlockOrganism = (
   { namespace, className, ...props }: ButBlockOrganismProps,

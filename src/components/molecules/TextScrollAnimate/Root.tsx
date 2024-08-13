@@ -1,8 +1,7 @@
 'use client';
 
 import { useScroll } from 'framer-motion';
-import { useRef } from 'react';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
 import { cn, setRefs } from '@/utils';
 
@@ -31,7 +30,7 @@ const TextScrollAnimateMolecule = (
   return (
     <span
       aria-label={text}
-      className={cn('flex flex-wrap', className)}
+      className={cn('inline-block', className)}
       ref={setRefs(ref, innerRef)}
       {...props}
     >

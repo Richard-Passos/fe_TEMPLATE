@@ -33,7 +33,7 @@ const TextScrollAnimateWordMolecule = (
   return (
     <motion.span
       aria-hidden
-      className={cn('relative', className)}
+      className={cn('relative inline-block', className)}
       ref={ref}
       style={
         {

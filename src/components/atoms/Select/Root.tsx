@@ -1,5 +1,7 @@
 import { Select, SelectProps } from '@mantine/core';
 
+import { PolymorphicRef } from '@/types';
+
 type SelectAtomOwnProps = {
   ref?: PolymorphicRef<'input'>;
 };

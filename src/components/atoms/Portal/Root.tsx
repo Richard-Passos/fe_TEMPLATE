@@ -3,6 +3,8 @@
 import { Portal, PortalProps, useComputedColorScheme } from '@mantine/core';
 import { forwardRef } from 'react';
 
+import { PolymorphicRef } from '@/types';
+
 type PortalAtomOwnProps = {
   ref?: PolymorphicRef<'div'>;
 };

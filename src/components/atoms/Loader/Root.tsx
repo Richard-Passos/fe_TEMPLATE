@@ -1,5 +1,7 @@
 import { Loader, LoaderProps } from '@mantine/core';
 
+import { PolymorphicRef } from '@/types';
+
 type LoaderAtomOwnProps = {
   ref?: PolymorphicRef<'span'>;
 };

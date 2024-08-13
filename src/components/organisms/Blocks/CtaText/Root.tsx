@@ -4,11 +4,12 @@ import { forwardRef } from 'react';
 import { Text } from '@/components/atoms';
 import { TextScrollAnimate } from '@/components/molecules';
 import Icons, { IconsIcon } from '@/components/organisms/Icons';
+import { ExtractPrefix, Namespace } from '@/types';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 type CtaTextBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.ctaText`>;
+  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
 };
 
 type CtaTextBlockOrganismProps = CtaTextBlockOrganismOwnProps &
@@ -31,11 +32,8 @@ const CtaTextBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <Text className='relative z-10 w-9/10 max-w-screen-lg text-center text-4xl/tight font-semibold md:text-5xl/tight'>
-        <TextScrollAnimate
-          className='justify-center'
-          text={t('text')}
-        />
+      <Text className='relative z-10 w-9/10 max-w-screen-lg text-center text-3xl font-semibold leading-tight sm:text-[3.25rem]'>
+        <TextScrollAnimate text={t('text')} />
       </Text>
 
       <Icons

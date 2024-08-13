@@ -7,8 +7,9 @@ import { MagneticProps } from '@/components/atoms/Magnetic';
 import { cn, setRefs } from '@/utils';
 
 type TableProjectCardMagneticContainerOrganismOwnProps = {
-  limit?: MagneticProps['limit'];
   box: ReactNode;
+  magneticProps?: Partial<MagneticProps>;
+  boxProps?: Partial<ComponentPropsWithRef<'div'>>;
 };
 
 type TableProjectCardMagneticContainerOrganismProps =
@@ -22,8 +23,9 @@ const TableProjectCardMagneticContainerOrganism = (
   {
     className,
     children,
-    limit = { x: 0.2, y: 0.35 },
     box,
+    magneticProps,
+    boxProps,
     ...props
   }: TableProjectCardMagneticContainerOrganismProps,
   ref: TableProjectCardMagneticContainerOrganismProps['ref']
@@ -39,11 +41,21 @@ const TableProjectCardMagneticContainerOrganism = (
       {children}
 
       <Magnetic
-        className='pointer-events-none absolute'
         container={innerRef}
-        limit={limit}
+        {...magneticProps}
+        limit={{ x: 0.2, y: 0.35, ...magneticProps?.limit }}
+        smoothConfig={{
+          damping: 15,
+          stiffness: 150,
+          ...magneticProps?.smoothConfig
+        }}
       >
-        <div>{box}</div>
+        <div
+          {...boxProps}
+          className={cn('pointer-events-none absolute', boxProps?.className)}
+        >
+          {box}
+        </div>
       </Magnetic>
     </div>
   );

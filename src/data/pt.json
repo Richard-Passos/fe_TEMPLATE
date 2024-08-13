@@ -2,6 +2,7 @@
   "pages": {
     "home": {
       "hero": {
+        "theme": "light",
         "title": {
           "label": "Turning heads and conquering hearts",
           "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
@@ -21,18 +22,55 @@
         }
       },
       "blocks": {
-        "listPage": {
+        "0": {
+          "type": "selectProjectsCatalog",
+          "theme": "dark",
+          "title": ["ABOUT", "WORK"],
+          "subtitle": "SELECTED WORKS",
+          "empty": "Sorry, selected projects not found.",
+          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
+          "action": {
+            "label": "All projects"
+          }
+        },
+        "1": {
+          "type": "listPage",
+          "theme": "dark",
           "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
           "link": {
             "href": "/work",
             "label": "Explore"
           }
         },
-        "but": {
+        "2": {
+          "type": "but",
+          "theme": "light",
           "title": "BUT",
           "description": "it's not just about the tech."
         },
-        "ctaText": {
+        "3": {
+          "type": "selectProjectsCatalog",
+          "theme": "light",
+          "title": ["ABOUT", "ME"],
+          "subtitle": "ABOUT ME",
+          "empty": "Sorry, selected projects not found.",
+          "description": "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "action": {
+            "label": "All projects"
+          }
+        },
+        "4": {
+          "type": "listPage",
+          "theme": "dark",
+          "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
+          "link": {
+            "href": "/work",
+            "label": "Explore"
+          }
+        },
+        "5": {
+          "type": "ctaText",
+          "theme": "dark",
           "text": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
           "icons": {
             "left": {
@@ -69,7 +107,11 @@
           "content": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "Work",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -95,7 +137,11 @@
           "animation": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "About",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -121,7 +167,11 @@
           "animation": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "Contact",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -147,7 +197,11 @@
           "animation": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "Projects",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -173,7 +227,11 @@
           "animation": ""
         }
       },
-      "blocks": {}
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      }
     },
     "notFound": {
       "hero": {
@@ -195,7 +253,11 @@
           "animation": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "Not Found",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -221,7 +283,11 @@
           "animation": ""
         }
       },
-      "blocks": {},
+      "blocks": {
+        "0": {
+          "type": "selectProjectsCatalog"
+        }
+      },
       "metadata": {
         "title": "Error",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."

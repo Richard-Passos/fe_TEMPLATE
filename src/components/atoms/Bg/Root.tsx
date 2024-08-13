@@ -1,6 +1,7 @@
 import { Box, BoxProps, DefaultMantineColor, StyleProp } from '@mantine/core';
 import { PropsWithChildren, forwardRef } from 'react';
 
+import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 type BgAtomOwnProps = PropsWithChildren<{

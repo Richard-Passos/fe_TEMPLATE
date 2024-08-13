@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import Icon, { Props } from 'react-inlinesvg';
 
+import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 type IconAtomOwnProps = {

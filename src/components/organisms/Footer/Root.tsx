@@ -13,6 +13,7 @@ import {
 import { Action } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
+import { Namespace } from '@/types';
 import { cn, objKeys } from '@/utils';
 
 type FooterOrganismOwnProps = {
@@ -26,7 +27,7 @@ const FooterOrganism = (
   { className, ...props }: FooterOrganismProps,
   ref: FooterOrganismProps['ref']
 ) => {
-  const namespace = 'footer';
+  const namespace: Namespace = 'footer';
 
   const t = useTranslations(namespace),
     pt = useTranslations('personal');
@@ -58,7 +59,7 @@ const FooterOrganism = (
         <Title
           className='mt-xs leading-none'
           component='h2'
-          order={3}
+          order={4}
         >
           {t.rich('cta.title')}
         </Title>
@@ -143,10 +144,10 @@ const FooterOrganism = (
 
       <div className='absolute inset-[15%] -z-10 w-auto overflow-hidden rounded-lg'>
         <ScrollAnimate config={{ prop: 'y', propPoints: ['-100%', '100%'] }}>
-          <Lines className='[background-size:83.333px_66.666px]' />
+          <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border border-solid border-current opacity-20 dark:opacity-5' />
+        <span className='absolute inset-0 rounded-inherit border border-solid border-border opacity-60' />
       </div>
     </Section>
   );

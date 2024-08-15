@@ -1,16 +1,10 @@
 import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 
-const locales = ['en', 'pt'] as const;
+import { locales } from '@/constants';
 
-const defaultLocale = locales[0];
+const sharedPathnamesNavigation = createSharedPathnamesNavigation({
+  locales: locales.map((l) => l.value)
+});
 
-type Locale = (typeof locales)[number];
-
-const isLocale = (value: string): value is Locale => locales.includes(value);
-
-const sharedPathnamesNavigation = createSharedPathnamesNavigation({ locales });
-
-export { locales, defaultLocale, isLocale };
 export const { Link, redirect, usePathname, useRouter } =
   sharedPathnamesNavigation;
-export type { Locale };

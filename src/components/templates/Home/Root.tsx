@@ -3,7 +3,7 @@ import { useMessages, useTranslations } from 'next-intl';
 import Blocks from '@/components/organisms/Blocks';
 import { PrimaryHero } from '@/components/organisms/Heros';
 import { ExtractPrefix, Namespace, Theme } from '@/types';
-import { normCompName, objKeys } from '@/utils';
+import { keys, normCompName } from '@/utils';
 
 type HomeTemplateOrganismProps = {
   namespace: ExtractPrefix<Namespace, 'pages.home'>;
@@ -13,7 +13,7 @@ const HomeTemplateOrganism = ({ namespace }: HomeTemplateOrganismProps) => {
   const t = useTranslations(namespace),
     messages = useMessages() as unknown as IntlMessages;
 
-  const blockKeys = objKeys(messages.pages.home.blocks);
+  const blockKeys = keys(messages.pages.home.blocks);
 
   let lastTheme: Theme;
 

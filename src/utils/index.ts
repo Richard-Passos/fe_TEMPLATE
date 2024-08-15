@@ -1,11 +1,12 @@
 import baseUrl from './baseUrl';
 import capitalize from './capitalize';
 import cn from './cn';
+import get from './get';
 import isExternalUrl from './isExternalUrl';
+import keys from './keys';
 import normCompName from './normCompName';
 import normId from './normId';
 import normKey from './normKey';
-import objKeys from './objKeys';
 import pick from './pick';
 import renderComp from './renderComp';
 import setRefs from './setRefs';
@@ -15,7 +16,8 @@ const utils = {
   baseUrl,
   capitalize,
   cn,
-  objKeys,
+  get,
+  keys,
   isExternalUrl,
   normCompName,
   normId,
@@ -31,7 +33,8 @@ export {
   baseUrl,
   capitalize,
   cn,
-  objKeys,
+  get,
+  keys,
   isExternalUrl,
   normCompName,
   normId,

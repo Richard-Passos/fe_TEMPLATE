@@ -1,4 +1,4 @@
-import { domainRegex } from '@/regexs';
+import { domainRegex } from '@/constants/regexs';
 import baseUrl from '@/utils/baseUrl';
 
 const isExternalUrl = (url: string) =>

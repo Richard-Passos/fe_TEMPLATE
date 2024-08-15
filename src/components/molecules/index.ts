@@ -1,4 +1,5 @@
 import Action from './Action';
+import BentoGrid from './BentoGrid';
 import Catalog from './Catalog';
 import Drawer from './Drawer';
 import List from './List';
@@ -10,6 +11,7 @@ import TextScrollAnimate from './TextScrollAnimate';
 
 const Molecules = {
   Action,
+  BentoGrid,
   Catalog,
   Drawer,
   List,
@@ -23,6 +25,7 @@ const Molecules = {
 export default Molecules;
 export {
   Action,
+  BentoGrid,
   Catalog,
   Drawer,
   List,

@@ -14,7 +14,7 @@ import { Action } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { Namespace } from '@/types';
-import { cn, objKeys } from '@/utils';
+import { cn, keys } from '@/utils';
 
 type FooterOrganismOwnProps = {
   theme?: SectionProps['theme'];
@@ -34,7 +34,7 @@ const FooterOrganism = (
 
   const messages = useMessages() as unknown as IntlMessages;
 
-  const socialKeys = objKeys(messages.personal.socials);
+  const socialKeys = keys(messages.personal.socials);
 
   return (
     <Section

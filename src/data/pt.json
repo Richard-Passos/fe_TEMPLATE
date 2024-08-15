@@ -50,11 +50,11 @@
         },
         "3": {
           "type": "selectProjectsCatalog",
-          "theme": "light",
+          "theme": "dark",
           "title": ["ABOUT", "ME"],
-          "subtitle": "ABOUT ME",
-          "empty": "Sorry, selected projects not found.",
+          "subtitle": "SELECTED WORKS",
           "description": "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "empty": "Sorry, selected projects not found.",
           "action": {
             "label": "All projects"
           }
@@ -392,14 +392,6 @@
         "icon": "/icons/linkedin.svg",
         "label": "Linkedin"
       }
-    }
-  },
-  "locales": {
-    "en": {
-      "label": "English"
-    },
-    "pt": {
-      "label": "Portuguese"
     }
   }
 }

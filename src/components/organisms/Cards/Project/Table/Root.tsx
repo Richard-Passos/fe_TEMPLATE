@@ -29,7 +29,7 @@ const TableProjectCardOrganism = (
   return (
     <Link
       className={cn(
-        'group/item relative font-normal text-current no-underline hover:z-10 focus-visible:outline',
+        'group/item relative font-normal text-current no-underline hover:z-10 *:focus-visible:outline',
         className
       )}
       ref={ref}

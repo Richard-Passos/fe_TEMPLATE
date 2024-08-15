@@ -3,7 +3,7 @@ import { ComponentPropsWithRef, Suspense, forwardRef } from 'react';
 
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
-import { locales } from '@/navigation';
+import { locales } from '@/constants';
 import { Namespace } from '@/types';
 import { cn } from '@/utils';
 
@@ -22,8 +22,7 @@ const HeaderOrganism = (
 ) => {
   const namespace: Namespace = 'header';
 
-  const t = useTranslations(namespace),
-    gt = useTranslations();
+  const t = useTranslations(namespace);
 
   const shortNavKeys = ['home', 'work', 'about', 'contact'] as const;
 
@@ -53,10 +52,7 @@ const HeaderOrganism = (
           <Suspense>
             <LocaleSelect
               aria-label={t('locale.label')}
-              data={locales.map((key) => ({
-                value: key,
-                label: gt(`locales.${key}.label`)
-              }))}
+              data={locales}
             />
           </Suspense>
         </div>

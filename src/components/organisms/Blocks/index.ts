@@ -1,9 +1,11 @@
+import BentoGridBlock from './BentoGrid';
 import ButBlock from './But';
 import CtaTextBlock from './CtaText';
 import ListPageBlock from './ListPage';
 import SelectProjectsCatalogBlock from './SelectProjectsCatalog';
 
 const Blocks = {
+  BentoGrid: BentoGridBlock,
   But: ButBlock,
   CtaText: CtaTextBlock,
   ListPage: ListPageBlock,
@@ -11,4 +13,10 @@ const Blocks = {
 };
 
 export default Blocks;
-export { ButBlock, CtaTextBlock, ListPageBlock, SelectProjectsCatalogBlock };
+export {
+  BentoGridBlock,
+  ButBlock,
+  CtaTextBlock,
+  ListPageBlock,
+  SelectProjectsCatalogBlock
+};

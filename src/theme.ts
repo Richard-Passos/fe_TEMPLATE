@@ -1,6 +1,6 @@
 import { DEFAULT_THEME, createTheme, mergeMantineTheme } from '@mantine/core';
 
-import fonts from '@/fonts';
+import { fonts } from '@/constants';
 
 const themeOverride = createTheme({
   scale: 1,

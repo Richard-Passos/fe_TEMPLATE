@@ -4,8 +4,8 @@ import { PropsWithChildren } from 'react';
 
 import { SmoothScroll } from '@/components/atoms';
 import { Footer, Header, Main, Providers } from '@/components/organisms';
+import { locales } from '@/constants';
 import '@/globals.css';
-import { locales } from '@/navigation';
 import { defaultColorScheme } from '@/theme';
 
 type LayoutOwnProps = PropsWithChildren<{}>;
@@ -62,7 +62,7 @@ const generateMetadata = async ({ params: { locale } }: LayoutParams) => {
   };
 };
 
-const generateStaticParams = () => locales.map((locale) => ({ locale }));
+const generateStaticParams = () => locales.map((l) => ({ locale: l.value }));
 
 export default Layout;
 export { generateMetadata, generateStaticParams };

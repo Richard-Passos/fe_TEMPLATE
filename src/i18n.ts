@@ -1,11 +1,11 @@
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { isLocale } from '@/navigation';
+import { locales } from '@/constants';
 import rich from '@/rich';
 
 const i18nConfig = getRequestConfig(async ({ locale }) => {
-  if (!isLocale(locale)) notFound();
+  if (!locales.some((l) => l.value === locale)) notFound();
 
   return {
     messages: (await import(`@/data/${locale}.json`))?.default,

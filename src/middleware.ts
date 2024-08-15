@@ -1,10 +1,10 @@
 import createMiddleware from 'next-intl/middleware';
 
-import { defaultLocale, locales } from '@/navigation';
+import locales, { defaultLocale } from '@/constants/locales';
 
 const middleware = createMiddleware({
-  locales,
-  defaultLocale
+  locales: locales.map((l) => l.value),
+  defaultLocale: defaultLocale.value
 });
 
 export default middleware;

@@ -1,8 +1,8 @@
-import { domainRegex } from '@/constants/regexs';
+import { urlRegex } from '@/constants/regexs';
 import baseUrl from '@/utils/baseUrl';
 
 const isExternalUrl = (url: string) =>
   url.indexOf(':') > -1 &&
-  baseUrl.replace(domainRegex, '$2') !== url.replace(domainRegex, '$2');
+  baseUrl.replace(urlRegex, '$2$3$4') !== url.replace(urlRegex, '$2$3$4');
 
 export default isExternalUrl;

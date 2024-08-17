@@ -7,13 +7,13 @@ import {
   DrawerRootProps,
   DrawerTriggerProps
 } from '@/components/molecules/Drawer';
-import { ExtractPrefix, Namespace } from '@/types';
+import { Namespace } from '@/types';
 import { cn } from '@/utils';
 
 import HeaderMenuTrigger from './Trigger';
 
 type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
-  namespace: ExtractPrefix<Namespace, `${string}.menu`>;
+  namespace: Namespace<`${string}.menu`>;
   triggerProps?: Partial<DrawerTriggerProps>;
   contentProps?: Partial<DrawerContentProps>;
 };

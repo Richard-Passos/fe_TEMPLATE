@@ -2,30 +2,19 @@
   "pages": {
     "home": {
       "hero": {
-        "theme": "light",
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
+        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
         "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
-          "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
+          "animation": "rotateRight"
         },
         "right": {
-          "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
+          "text": "(2024)"
         }
       },
       "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog",
-          "theme": "dark",
-          "title": ["ABOUT", "WORK"],
+        "selectedProjects": {
+          "title": { "0": "ABOUT", "1": "WORK" },
           "subtitle": "SELECTED WORKS",
           "empty": "Sorry, selected projects not found.",
           "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
@@ -33,55 +22,98 @@
             "label": "All projects"
           }
         },
-        "1": {
-          "type": "listPage",
-          "theme": "dark",
-          "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
-          "link": {
-            "href": "/work",
+        "listWorkPage": {
+          "items": {
+            "0": "MISSION",
+            "1": "HARD & SOFT SKILLS",
+            "2": "SERVICES"
+          },
+          "action": {
             "label": "Explore"
           }
         },
-        "2": {
-          "type": "but",
-          "theme": "light",
+        "but": {
           "title": "BUT",
           "description": "it's not just about the tech."
         },
-        "3": {
-          "type": "selectProjectsCatalog",
-          "theme": "dark",
-          "title": ["ABOUT", "ME"],
-          "subtitle": "SELECTED WORKS",
+        "aboutBentoGrid": {
+          "title": { "0": "ABOUT", "1": "ME" },
           "description": "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
-          "empty": "Sorry, selected projects not found.",
-          "action": {
-            "label": "All projects"
+          "templates": {
+            "base": {
+              "0": "item-0",
+              "1": "item-1",
+              "2": "item-2",
+              "3": "item-3",
+              "4": "item-4",
+              "5": "item-5",
+              "6": "item-6"
+            },
+            "sm": {
+              "0": "item-0 item-0",
+              "1": "item-1 item-2",
+              "2": "item-3 item-4",
+              "3": "item-5 item-6"
+            },
+            "lg": {
+              "0": ". item-0 item-0",
+              "1": ". item-0 item-0",
+              "2": "item-1 item-2 item-3",
+              "3": "item-1 item-2 item-4",
+              "4": "item-5 item-5 item-6",
+              "5": "item-5 item-5 item-6"
+            }
+          },
+          "items": {
+            "description": {
+              "title": "#about",
+              "description": "🤟 <strong>Hey —</strong> I'm Richard an awesome full stack developer based in <country></country>. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
+            },
+            "location": {
+              "icon": "/icons/globe.svg",
+              "description": "Based in { country }, { gmt }"
+            },
+            "values": {
+              "icon": "/icons/fingerprint.svg",
+              "title": "My values"
+            },
+            "improving": {
+              "icon": "/icons/rocket.svg",
+              "description": "Improving a little bit every day."
+            },
+            "hobbie": {
+              "icon": "/icons/game-controller.svg",
+              "description": "I love to play games."
+            },
+            "localTime": {
+              "title": "MY LOCAL TIME"
+            },
+            "buyCoffee": {
+              "icon": "/icons/mug.svg",
+              "title": "Buy me a coffee"
+            }
           }
         },
-        "4": {
-          "type": "listPage",
-          "theme": "dark",
-          "items": ["MISSION", "HARD & SOFT SKILLS", "SERVICES"],
-          "link": {
-            "href": "/work",
+        "listAboutPage": {
+          "items": {
+            "0": "BACKGROUND",
+            "1": "HOBBIES",
+            "2": "PERSONALITY"
+          },
+          "action": {
             "label": "Explore"
           }
         },
-        "5": {
-          "type": "ctaText",
-          "theme": "dark",
-          "text": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
+        "cta": {
+          "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
           "icons": {
             "left": {
               "src": "/icons/smile.svg",
-              "animation": "rotateRight",
-              "y": "top"
+              "animation": "rotateRight"
             },
             "right": {
               "src": "/icons/globe.svg",
-              "animation": "rotateLeft",
-              "y": "bottom"
+              "animation": "rotateLeft"
             }
           }
         }
@@ -89,29 +121,19 @@
     },
     "work": {
       "hero": {
-        "title": {
-          "label": "Beyond code, boundaries and results",
-          "rich": "<Start>BEYOND CODE</Start> <End><span>BOUNDARIES</span> <em>&</em></End> <Center><span>RESULTS</span> <Description></Description></Center>"
-        },
-        "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.",
+        "title": "<Start>BEYOND CODE</Start> <End><span>BOUNDARIES</span> <em>&</em></End> <Center><span>RESULTS</span> <Description></Description></Center>",
+        "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and  crafting high-impact, user-centered solutions.",
         "left": {
           "type": "text",
-          "content": "Available to work",
-          "src": "",
-          "animation": ""
+          "text": "Available to work"
         },
         "right": {
           "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateLeft",
-          "content": ""
+          "animation": "rotateLeft"
         }
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
+      "blocks": {},
       "metadata": {
         "title": "Work",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -119,29 +141,19 @@
     },
     "about": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
+        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
         "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
           "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
+          "animation": "rotateRight"
         },
         "right": {
           "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
+          "text": "(about)"
         }
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
+      "blocks": {},
       "metadata": {
         "title": "About",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -149,29 +161,19 @@
     },
     "contact": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
+        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
         "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
           "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
+          "animation": "rotateRight"
         },
         "right": {
           "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
+          "text": "(contact)"
         }
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
+      "blocks": {},
       "metadata": {
         "title": "Contact",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -179,29 +181,19 @@
     },
     "projects": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
+        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
         "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
           "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
+          "animation": "rotateRight"
         },
         "right": {
           "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
+          "text": "(projects)"
         }
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
+      "blocks": {},
       "metadata": {
         "title": "Projects",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -209,55 +201,25 @@
     },
     "singleProject": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
+        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
         "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
           "type": "icon",
           "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
+          "animation": "rotateRight"
         },
         "right": {
           "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
+          "text": "(singleProject)"
         }
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      }
+      "blocks": {}
     },
     "notFound": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
-        },
-        "right": {
-          "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
-        }
+        "title": "Not Found!"
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
+      "blocks": {},
       "metadata": {
         "title": "Not Found",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -265,33 +227,9 @@
     },
     "error": {
       "hero": {
-        "title": {
-          "label": "Turning heads and conquering hearts",
-          "rich": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>"
-        },
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight",
-          "content": ""
-        },
-        "right": {
-          "type": "text",
-          "content": "(2024)",
-          "src": "",
-          "animation": ""
-        }
+        "title": "Error!"
       },
-      "blocks": {
-        "0": {
-          "type": "selectProjectsCatalog"
-        }
-      },
-      "metadata": {
-        "title": "Error",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
-      }
+      "blocks": {}
     }
   },
   "header": {
@@ -366,6 +304,7 @@
   "personal": {
     "name": "FE Typescript",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
+    "availability": "Available to work",
     "logo": {
       "label": "FE Typescript",
       "icon": "/icons/logo.svg",
@@ -391,6 +330,195 @@
         "href": "https://www.linkedin.com/in/richardp-dev",
         "icon": "/icons/linkedin.svg",
         "label": "Linkedin"
+      }
+    },
+    "buyCoffee": {
+      "icon": "/icons/mug.svg",
+      "href": "https://www.buymeacoffee.com/richardp.dev"
+    }
+  },
+  "services": {
+    "frontEnd": {
+      "title": "Front end",
+      "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
+    },
+    "backEnd": {
+      "title": "Back end",
+      "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
+    },
+    "fullStack": {
+      "title": "Full stack",
+      "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
+    }
+  },
+  "stats": {
+    "projectsCompleted": {
+      "title": "10ᐩ",
+      "description": "Projects \ncompleted"
+    },
+    "yearsExperience": {
+      "title": "1ᐩ",
+      "description": "Years of \nexperience"
+    },
+    "greaProjects": {
+      "title": "100%",
+      "description": "Great \nprojects"
+    },
+    "ontimeDeliveries": {
+      "title": "100%",
+      "description": "On-time \ndeliveries"
+    }
+  },
+  "values": {
+    "work": {
+      "Learning": {
+        "icon": "/icons/graduation-cap.svg",
+        "title": "Learning",
+        "description": "Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices."
+      },
+      "Excellence": {
+        "icon": "/icons/trophy.svg",
+
+        "title": "Excellence",
+        "description": "Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions."
+      },
+      "Quality-oriented": {
+        "icon": "/icons/check-badge.svg",
+        "title": "Quality-oriented",
+        "description": "Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions."
+      },
+      "Customer-oriented": {
+        "icon": "/icons/smile.svg",
+
+        "title": "Customer-oriented",
+        "description": "Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded."
+      }
+    },
+    "personal": {
+      "Integrity": {
+        "icon": "/icons/shield.svg",
+
+        "title": "Integrity",
+        "description": "I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships."
+      },
+      "Curiosity": {
+        "icon": "/icons/globe.svg",
+
+        "title": "Curiosity",
+        "description": "My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth."
+      },
+      "Respect": {
+        "icon": "/icons/puzzle.svg",
+
+        "title": "Respect",
+        "description": "I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience."
+      },
+      "Gratitude": {
+        "icon": "/icons/smile.svg",
+
+        "title": "Gratitude",
+        "description": "I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment."
+      }
+    }
+  },
+  "skills": {
+    "hard": {
+      "React.js": {
+        "title": "React.js",
+        "icon": "/icons/react.svg",
+        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
+      },
+      "Node.js": {
+        "title": "Node.js",
+        "icon": "/icons/nodejs.svg",
+        "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
+      },
+      "React Native": {
+        "title": "React Native",
+        "icon": "/icons/react.svg",
+        "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
+      },
+      "Next.js": {
+        "title": "Next.js",
+        "icon": "/icons/nextjs.svg",
+        "description": "React framework for building server-rendered and statically-generated web applications."
+      },
+      "JavaScript": {
+        "title": "JavaScript",
+        "icon": "/icons/javascript.svg",
+        "description": "Backbone of dynamic web development, enabling interactive and responsive user experiences."
+      },
+      "Jest": {
+        "title": "Jest",
+        "icon": "/icons/jest.svg",
+        "description": "A powerful JavaScript testing framework for seamless unit and integration testing."
+      },
+      "MongoDB": {
+        "title": "MongoDB",
+        "icon": "/icons/mongodb.svg",
+        "description": "A powerful, flexible NoSQL database solution for modern application development."
+      },
+      "Git": {
+        "title": "Git",
+        "icon": "/icons/git.svg",
+        "description": "Version control system for efficient collaboration and code management."
+      },
+      "TailwindCSS": {
+        "title": "TailwindCSS",
+        "icon": "/icons/tailwindcss.svg",
+        "description": "Utility-first CSS framework for rapid development."
+      },
+      "Styled-components": {
+        "title": "Styled-components",
+        "icon": "/icons/styled-components.svg",
+        "description": "CSS-in-JS for seamless styling and component-based design."
+      },
+      "HTML": {
+        "title": "HTML",
+        "icon": "/icons/html.svg",
+        "description": "Foundation of web development, used to create the structure and content of web pages."
+      },
+      "CSS": {
+        "title": "CSS",
+        "icon": "/icons/css.svg",
+        "description": "Styling language for web development, shaping the visual presentation of websites."
+      }
+    },
+    "soft": {
+      "Problem-solving": {
+        "title": "Problem-solving",
+        "icon": "/icons/puzzle.svg",
+        "description": "Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
+      },
+      "Detail-oriented": {
+        "title": "Detail-oriented",
+        "icon": "/icons/eye.svg",
+        "description": "Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
+      },
+      "Communication": {
+        "title": "Communication",
+        "icon": "/icons/chat.svg",
+        "description": "Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
+      },
+      "Adaptability": {
+        "title": "Adaptability",
+        "icon": "/icons/adjustments.svg",
+        "description": "Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
+      },
+      "Time management": {
+        "title": "Time management",
+        "icon": "/icons/calendar.svg",
+        "description": "Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
+      },
+      "Critical thinking": {
+        "title": "Critical thinking",
+        "icon": "/icons/compass.svg",
+        "description": "Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
+      },
+      "Synthetic thinking": {
+        "title": "Synthetic thinking",
+        "icon": "/icons/share.svg",
+        "description": "Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
       }
     }
   }

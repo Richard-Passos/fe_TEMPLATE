@@ -1,6 +1,6 @@
-import SelectProjectsCatalogListBlock, {
-  SelectProjectsCatalogListBlockOrganismProps as SelectProjectsCatalogListBlockProps
+import SelectProjectsCatalogTableBlock, {
+  SelectProjectsCatalogTableBlockOrganismProps as SelectProjectsCatalogTableBlockProps
 } from './Root';
 
-export default SelectProjectsCatalogListBlock;
-export type { SelectProjectsCatalogListBlockProps };
+export default SelectProjectsCatalogTableBlock;
+export type { SelectProjectsCatalogTableBlockProps };

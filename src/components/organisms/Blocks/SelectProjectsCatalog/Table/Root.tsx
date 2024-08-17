@@ -5,18 +5,18 @@ import { forwardRef } from 'react';
 import { CatalogList, CatalogListProps } from '@/components/molecules/Catalog';
 import { TableProjectCard } from '@/components/organisms/Cards/Project';
 
-type SelectProjectsCatalogListBlockOrganismOwnProps = {};
+type SelectProjectsCatalogTableBlockOrganismOwnProps = {};
 
-type SelectProjectsCatalogListBlockOrganismProps<T> =
-  SelectProjectsCatalogListBlockOrganismOwnProps &
+type SelectProjectsCatalogTableBlockOrganismProps<T> =
+  SelectProjectsCatalogTableBlockOrganismOwnProps &
     Omit<
       CatalogListProps<T>,
-      keyof SelectProjectsCatalogListBlockOrganismOwnProps
+      keyof SelectProjectsCatalogTableBlockOrganismOwnProps
     >;
 
-const SelectProjectsCatalogListBlockOrganism = <T,>(
-  props: SelectProjectsCatalogListBlockOrganismProps<T>,
-  ref: SelectProjectsCatalogListBlockOrganismProps<T>['ref']
+const SelectProjectsCatalogTableBlockOrganism = <T,>(
+  props: SelectProjectsCatalogTableBlockOrganismProps<T>,
+  ref: SelectProjectsCatalogTableBlockOrganismProps<T>['ref']
 ) => {
   return (
     <CatalogList
@@ -34,5 +34,5 @@ const SelectProjectsCatalogListBlockOrganism = <T,>(
   );
 };
 
-export default forwardRef(SelectProjectsCatalogListBlockOrganism);
-export type { SelectProjectsCatalogListBlockOrganismProps };
+export default forwardRef(SelectProjectsCatalogTableBlockOrganism);
+export type { SelectProjectsCatalogTableBlockOrganismProps };

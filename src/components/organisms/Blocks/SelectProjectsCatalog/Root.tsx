@@ -1,31 +1,59 @@
-import { useTranslations } from 'next-intl';
-import { forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { Text, Title } from '@/components/atoms';
+import { TitleProps } from '@/components/atoms/Title';
 import { Action, Catalog } from '@/components/molecules';
-import { ExtractPrefix, Namespace } from '@/types';
+import { ActionProps } from '@/components/molecules/Action';
+import {
+  CatalogEmptyProps,
+  CatalogRootProps
+} from '@/components/molecules/Catalog';
+import { cn, renderComp } from '@/utils';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
-import SelectProjectsCatalogGridBlock from './Grid';
-import SelectProjectsCatalogTableBlock from './Table';
+import SelectProjectsCatalogGridBlock, {
+  SelectProjectsCatalogGridBlockProps
+} from './Grid';
+import SelectProjectsCatalogTableBlock, {
+  SelectProjectsCatalogTableBlockProps
+} from './Table';
 
 type SelectProjectsCatalogBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
+  data: PrimaryLayoutBlockProps['data'] & {
+    subtitle?: ReactNode;
+    empty: ReactNode;
+    action: {
+      label: ReactNode;
+    };
+  };
+  catalogProps?: Partial<CatalogRootProps>;
+  subtitleProps?: Partial<TitleProps>;
+  emptyProps?: Partial<CatalogEmptyProps>;
+  tableProps?: Partial<SelectProjectsCatalogTableBlockProps<unknown>>;
+  gridProps?: Partial<SelectProjectsCatalogGridBlockProps<unknown>>;
+  actionProps?: Partial<ActionProps>;
 };
 
 type SelectProjectsCatalogBlockOrganismProps =
   SelectProjectsCatalogBlockOrganismOwnProps &
     Omit<
       PrimaryLayoutBlockProps,
-      keyof SelectProjectsCatalogBlockOrganismOwnProps | 'data'
+      keyof SelectProjectsCatalogBlockOrganismOwnProps
     >;
 
 const SelectProjectsCatalogBlockOrganism = (
-  { namespace, ...props }: SelectProjectsCatalogBlockOrganismProps,
+  {
+    data,
+    catalogProps,
+    subtitleProps,
+    emptyProps,
+    tableProps,
+    gridProps,
+    actionProps,
+    ...props
+  }: SelectProjectsCatalogBlockOrganismProps,
   ref: SelectProjectsCatalogBlockOrganismProps['ref']
 ) => {
-  const t = useTranslations(namespace);
-
   const items = Array.from(Array(5).keys()).map((i) => ({
     slug: `title-${i}`,
     title: `Title - ${i}`,
@@ -39,40 +67,57 @@ const SelectProjectsCatalogBlockOrganism = (
   return (
     <PrimaryLayoutBlock
       data={{
-        title: t.raw('title') as string[],
-        description: t.raw('description')
+        title: data.title,
+        description: data.description
       }}
       ref={ref}
       {...props}
     >
       <Catalog.Root
-        className='mt-2xl flex w-9/10 max-w-screen-lg flex-col items-center'
         items={items}
-        url='#'
+        {...catalogProps}
+        className={cn(
+          'mt-2xl flex w-9/10 max-w-screen-lg flex-col items-center',
+          catalogProps?.className
+        )}
       >
-        <Title
-          className='mb-lg mr-auto'
-          component='h3'
-          order={6}
-        >
-          {t('subtitle')}
-        </Title>
+        {renderComp(
+          <Title
+            className='mb-lg mr-auto text-dimmed'
+            component='h3'
+            order={6}
+            {...subtitleProps}
+          >
+            {data.subtitle}
+          </Title>,
+          [data.subtitle]
+        )}
 
-        <Catalog.Empty>
-          <Text className='text-center sm:max-w-2xl'>{t('empty')}</Text>
+        <Catalog.Empty {...emptyProps}>
+          <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
         </Catalog.Empty>
 
-        <SelectProjectsCatalogTableBlock className='group relative z-20 w-full max-sm:hidden' />
+        <SelectProjectsCatalogTableBlock
+          {...tableProps}
+          className={cn(
+            'group relative z-20 w-full max-sm:hidden',
+            tableProps?.className
+          )}
+        />
 
-        <SelectProjectsCatalogGridBlock className='w-full sm:hidden' />
+        <SelectProjectsCatalogGridBlock
+          {...gridProps}
+          className={cn('w-full sm:hidden', gridProps?.className)}
+        />
 
         <Action
-          className='mt-xl'
           href='projects'
           size='md'
           variant='default'
+          {...actionProps}
+          className={cn('mt-xl', actionProps?.className)}
         >
-          {t('action.label')}
+          {data.action.label}
         </Action>
       </Catalog.Root>
     </PrimaryLayoutBlock>

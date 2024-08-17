@@ -16,9 +16,7 @@ import Section, { SectionProps } from '@/components/organisms/Section';
 import { Namespace } from '@/types';
 import { cn, keys } from '@/utils';
 
-type FooterOrganismOwnProps = {
-  theme?: SectionProps['theme'];
-};
+type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 
 type FooterOrganismProps = FooterOrganismOwnProps &
   Omit<SectionProps, keyof FooterOrganismOwnProps>;
@@ -53,11 +51,17 @@ const FooterOrganism = (
       }
       {...props}
     >
-      <section className='w-9/10 pb-xl pt-2xl'>
-        <Text>{t('cta.subtitle')}</Text>
+      <section className='mb-xl w-9/10 pt-[--py]'>
+        <Title
+          className='font-semibold'
+          component='h3'
+          order={6}
+        >
+          {t('cta.subtitle')}
+        </Title>
 
         <Title
-          className='mt-xs leading-none'
+          className='leading-none'
           component='h2'
           order={4}
         >
@@ -136,7 +140,7 @@ const FooterOrganism = (
       <div className='w-full overflow-hidden'>
         <Logo
           aria-hidden
-          className='-mb-[8%] h-auto w-full ![--action-bg:transparent] ![--action-hover:transparent] ![--action-padding-x:0px] [&_svg]:h-full'
+          className='h-auto w-full ![--action-bg:transparent] ![--action-hover:transparent] ![--action-padding-x:0px] sm:-mb-[8%] [&_svg]:h-full'
           tabIndex={-1}
           variant='primary'
         />

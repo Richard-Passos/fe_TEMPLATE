@@ -12,7 +12,7 @@ import {
 import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
 import { useChildrenCount } from '@/hooks';
-import { cn, setRefs } from '@/utils';
+import { cn, setRefs, times } from '@/utils';
 
 type HorizontalScrollAtomOwnProps = {
   baseVelocity?: number;
@@ -78,10 +78,10 @@ const HorizontalScrollAtom = (
           {children}
         </div>
 
-        {[...Array(childrenCount)].map((_, i) => (
+        {times(childrenCount, String).map((id) => (
           <div
             className='flex items-center gap-[--gap]'
-            key={i}
+            key={id}
           >
             {children}
           </div>

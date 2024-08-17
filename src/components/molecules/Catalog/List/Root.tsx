@@ -5,19 +5,16 @@ import { ReactNode, forwardRef } from 'react';
 
 import Box, { BoxProps } from '@/components/atoms/Box';
 import { useCatalogContext } from '@/hooks/contexts';
-import { PolymorphicRef } from '@/types';
-import { cn } from '@/utils';
 
 type CatalogListMoleculeOwnProps<T> = {
   children?: (value: T, index: number, array: T[]) => ReactNode;
-  ref?: PolymorphicRef<'ul'> & BoxProps['ref'];
 };
 
 type CatalogListMoleculeProps<T> = CatalogListMoleculeOwnProps<T> &
   Omit<BoxProps, keyof CatalogListMoleculeOwnProps<T>>;
 
 const CatalogListMolecule = <T,>(
-  { className, children, ...props }: CatalogListMoleculeProps<T>,
+  { children, ...props }: CatalogListMoleculeProps<T>,
   ref: CatalogListMoleculeProps<T>['ref']
 ) => {
   const { items } = useCatalogContext<T>();
@@ -26,8 +23,7 @@ const CatalogListMolecule = <T,>(
 
   return (
     <Box
-      className={cn('m-0 p-0', className)}
-      component='ul'
+      component='nav'
       ref={ref}
       {...props}
     >
@@ -36,7 +32,7 @@ const CatalogListMolecule = <T,>(
   );
 };
 
-export default createPolymorphicComponent<'ul', CatalogListMoleculeProps<any>>(
+export default createPolymorphicComponent<'nav', CatalogListMoleculeProps<any>>(
   forwardRef(CatalogListMolecule)
 );
 export type { CatalogListMoleculeProps };

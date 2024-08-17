@@ -1,29 +1,48 @@
-import { Section } from '@/components/organisms';
-import { PrimaryHero } from '@/components/organisms/Heros';
-import { ExtractPrefix, Namespace } from '@/types';
+import { ComponentType } from 'react';
+
+import { Blocks } from '@/components/organisms';
+import { SecondaryHero } from '@/components/organisms/Heros';
+import { SecondaryHeroProps } from '@/components/organisms/Heros/Secondary';
+import { Theme, TypeVariants } from '@/types';
 
 type ErrorTemplateOrganismProps = {
-  namespace: ExtractPrefix<Namespace, 'pages.'>;
+  hero: SecondaryHeroProps;
+  blocks?: TypeVariants<typeof Blocks>[];
   message?: string;
   reset?: () => void;
 };
 
 const ErrorTemplateOrganism = ({
-  namespace,
+  hero,
+  blocks,
   message,
   reset
 }: ErrorTemplateOrganismProps) => {
   console.log(message);
   console.log(reset);
 
+  let lastTheme: Theme;
+
   return (
     <>
-      <PrimaryHero
-        namespace={`${namespace}.hero`}
-        theme='dark'
-      />
+      <SecondaryHero {...hero} />
 
-      <Section theme='light' />
+      {blocks?.map(({ type, theme, ...props }, i) => {
+        const Block = Blocks[type] as ComponentType<any>;
+
+        const Component = (
+          <Block
+            hasTransition={lastTheme !== theme}
+            key={i}
+            theme={theme}
+            {...props}
+          />
+        );
+
+        lastTheme = theme;
+
+        return Component;
+      })}
     </>
   );
 };

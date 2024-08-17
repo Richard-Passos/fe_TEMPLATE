@@ -1,40 +1,50 @@
-import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
-import { ExtractPrefix, Namespace } from '@/types';
+import { ActionProps } from '@/components/molecules/Action';
+import { ListHorizontalScrollRootProps } from '@/components/molecules/ListHorizontalScroll';
 import { cn } from '@/utils';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 type ListPageBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
+  data: {
+    items: string[];
+    action: {
+      href: string;
+      label: string;
+    };
+  };
+  listProps?: Partial<ListHorizontalScrollRootProps>;
+  actionProps?: Partial<ActionProps>;
 };
 
 type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
 
 const ListPageBlockOrganism = (
-  { namespace, className, ...props }: ListPageBlockOrganismProps,
+  {
+    data,
+    className,
+    listProps,
+    actionProps,
+    ...props
+  }: ListPageBlockOrganismProps,
   ref: ListPageBlockOrganismProps['ref']
 ) => {
-  const t = useTranslations(namespace);
-
-  const items = t.raw('items') as string[];
-
   return (
     <CleanLayoutBlock
       className={cn('min-h-fit', className)}
       ref={ref}
       {...props}
     >
-      <ListHorizontalScroll.Root>
-        {items.map((item, i) => (
+      <ListHorizontalScroll.Root {...listProps}>
+        {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
             className='[--gap:--spacing-md]'
             key={item}
-            order={4}
+            order={5}
           >
             <span>&nbsp;{item}</span>
             <span>&nbsp;·</span>
@@ -47,12 +57,13 @@ const ListPageBlockOrganism = (
       </ListHorizontalScroll.Root>
 
       <Action
-        className='my-xl'
-        href={t('link.href')}
+        href={data.action.href}
         size='md'
         variant='default'
+        {...actionProps}
+        className={cn('my-xl', actionProps?.className)}
       >
-        {t('link.label')}
+        {data.action.label}
       </Action>
     </CleanLayoutBlock>
   );

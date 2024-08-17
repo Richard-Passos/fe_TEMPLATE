@@ -1,50 +1,50 @@
-import { useMessages, useTranslations } from 'next-intl';
-import { forwardRef } from 'react';
+import { ComponentType, forwardRef } from 'react';
 
 import { BentoGrid } from '@/components/molecules';
-import { Namespace } from '@/types';
-import { get, keys, normCompName } from '@/utils';
+import { BentoGridRootProps } from '@/components/molecules/BentoGrid';
+import Cards from '@/components/organisms/Cards';
+import { TypeVariants } from '@/types';
 
-import Cards from '../../Cards';
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 
 type BentoGridBlockOrganismOwnProps = {
-  namespace: Namespace;
+  data: PrimaryLayoutBlockProps['data'] & {
+    templates: BentoGridRootProps['templates'];
+    items: TypeVariants<Omit<typeof Cards, 'Project'>>[];
+  };
+  withAnimation?: boolean;
 };
 
 type BentoGridBlockOrganismProps = BentoGridBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof BentoGridBlockOrganismOwnProps | 'data'>;
 
 const BentoGridBlockOrganism = (
-  { namespace, className, ...props }: BentoGridBlockOrganismProps,
+  { data, withAnimation, ...props }: BentoGridBlockOrganismProps,
   ref: BentoGridBlockOrganismProps['ref']
 ) => {
-  const t = useTranslations(namespace);
-
-  const messages = useMessages() as unknown as IntlMessages;
-
-  const itemKeys = keys(get(messages, `${namespace}.items`) as any) as string[];
-
   return (
     <PrimaryLayoutBlock
       data={{
-        title: t.raw('title'),
-        description: t.rich('description')
+        title: data.title,
+        description: data.description
       }}
       ref={ref}
       {...props}
     >
-      <BentoGrid.Root templates={t.raw('templates')}>
-        {itemKeys.map((key, i) => {
-          const Card =
-            Cards[normCompName(t(`items.${key}.type`)) as keyof typeof Cards];
+      <BentoGrid.Root
+        className='mt-2xl max-w-screen-lg'
+        templates={data.templates}
+      >
+        {data.items.map(({ type, data }, i) => {
+          const Card = Cards[type] as ComponentType<any>;
 
           return (
-            Card && (
-              <BentoGrid.Item index={i}>
-                {t(`items.${key}.type`)}
-              </BentoGrid.Item>
-            )
+            <BentoGrid.Item
+              index={i}
+              key={i}
+            >
+              <Card data={data} />
+            </BentoGrid.Item>
           );
         })}
       </BentoGrid.Root>

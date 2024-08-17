@@ -1,10 +1,11 @@
-import { useTranslations } from 'next-intl';
-import { forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
+import { TextProps } from '@/components/atoms/Text';
+import { TitleProps } from '@/components/atoms/Title';
 import { TextScrollAnimate } from '@/components/molecules';
-import { ExtractPrefix, Namespace } from '@/types';
+import { TextScrollAnimateProps } from '@/components/molecules/TextScrollAnimate';
 import { cn } from '@/utils';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
@@ -41,18 +42,27 @@ const ANIMATION_CONFIG = {
 };
 
 type ButBlockOrganismOwnProps = {
-  namespace: ExtractPrefix<Namespace, `${string}.blocks.`>;
+  data: {
+    title: ReactNode;
+    description: TextScrollAnimateProps['text'];
+  };
+  titleProps?: Partial<TextProps>;
+  descriptionProps?: Partial<TitleProps>;
 };
 
 type ButBlockOrganismProps = ButBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ButBlockOrganismOwnProps>;
 
 const ButBlockOrganism = (
-  { namespace, className, ...props }: ButBlockOrganismProps,
+  {
+    data,
+    className,
+    titleProps,
+    descriptionProps,
+    ...props
+  }: ButBlockOrganismProps,
   ref: ButBlockOrganismProps['ref']
 ) => {
-  const t = useTranslations(namespace);
-
   return (
     <CleanLayoutBlock
       className={cn(
@@ -66,14 +76,20 @@ const ButBlockOrganism = (
         <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
           <ScrollAnimate config={ANIMATION_CONFIG.y}>
             <div className='row-span-2 flex translate-y-[--y] items-center justify-center py-md [clip-path:inset(0_-100%_0_0)]'>
-              <Text className='relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter'>
-                <em className='text-gray-3'>{t('title')}</em>
+              <Text
+                {...titleProps}
+                className={cn(
+                  'relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter',
+                  titleProps?.className
+                )}
+              >
+                <em className='text-gray-3'>{data.title}</em>
 
                 <span
                   aria-hidden
                   className='pointer-events-none absolute left-0 select-none [clip-path:--clip-path]'
                 >
-                  {t('title')}
+                  {data.title}
                 </span>
               </Text>
             </div>
@@ -84,13 +100,17 @@ const ButBlockOrganism = (
       <ScrollAnimate config={ANIMATION_CONFIG.top}>
         <div className='flex w-9/10 items-center justify-center'>
           <Title
-            className='relative top-[--top] text-center font-medium'
             component='p'
             order={2}
+            {...descriptionProps}
+            className={cn(
+              'relative top-[--top] text-center font-medium',
+              descriptionProps?.className
+            )}
           >
             <TextScrollAnimate
               className='justify-center'
-              text={t('description')}
+              text={data.description}
             />
           </Title>
         </div>

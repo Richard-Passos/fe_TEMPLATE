@@ -9,10 +9,10 @@ const BentoGridItemLocalTime = ({ className, data = {}, ...props }) => {
 
   return (
     <Item
-      className={cn('min-h-60 flex-col items-center justify-center', className)}
+      className={cn('min-h-52 flex-col items-center justify-center', className)}
       {...props}
     >
-      <Text.Subtitle className='text-xs uppercase text-muted-content'>
+      <Text.Subtitle className='text-muted-content text-xs uppercase'>
         {data.title}
       </Text.Subtitle>
 

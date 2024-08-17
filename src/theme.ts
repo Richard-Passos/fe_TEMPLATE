@@ -219,15 +219,17 @@ const themeOverride = createTheme({
       },
       h4: {
         fontSize:
-          'calc(clamp(1.5rem, 0.5rem + 2.0833vw, 2.5rem) * var(--mantine-scale))',
+          'calc(clamp(2rem, 1.5rem + 1.0417vw, 2.5rem) * var(--mantine-scale))',
         lineHeight: '1.45'
       },
       h5: {
-        fontSize: 'calc(1rem * var(--mantine-scale))',
+        fontSize:
+          'calc(clamp(1.5rem, 1rem + 1.0417vw, 2rem) * var(--mantine-scale))',
         lineHeight: '1.5'
       },
       h6: {
-        fontSize: 'calc(0.75rem * var(--mantine-scale))',
+        fontSize:
+          'calc(clamp(0.75rem, 0.5rem + 0.5208vw, 1rem) * var(--mantine-scale))',
         lineHeight: '1.5'
       }
     }

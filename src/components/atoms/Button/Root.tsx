@@ -7,12 +7,18 @@ import {
 } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-type ButtonAtomOwnProps = ComponentPropsWithRef<'button'> & {
+import { PolymorphicRef } from '@/types';
+
+type ButtonAtomOwnProps = {
   isIconOnly?: boolean;
+  ref?: PolymorphicRef<'button'>;
 };
 
 type ButtonAtomProps = ButtonAtomOwnProps &
-  Omit<ButtonProps, keyof ButtonAtomOwnProps>;
+  Omit<
+    ComponentPropsWithRef<'button'> & ButtonProps & ActionIconProps,
+    keyof ButtonAtomOwnProps
+  >;
 
 const ButtonAtom = (
   { style, isIconOnly, ...props }: ButtonAtomProps,
@@ -30,7 +36,7 @@ const ButtonAtom = (
           '--button-hover': 'var(--ai-hover)',
           ...style
         }}
-        {...(props as Omit<ActionIconProps, keyof ButtonAtomOwnProps>)}
+        {...props}
       />
     );
 
@@ -38,7 +44,7 @@ const ButtonAtom = (
     <Button
       ref={ref}
       style={style}
-      {...(props as Omit<ButtonProps, keyof ButtonAtomOwnProps>)}
+      {...props}
     />
   );
 };

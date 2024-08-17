@@ -34,7 +34,7 @@ const BentoGridMolecule = (
   };
 
   const cssTemplates = entries(templates).reduce((obj, [key, value]) => {
-    key = `--${key}--template`;
+    key = `--${key}-template`;
 
     if (Array.isArray(value))
       value = value.map((item) => `'${item}'`).join(' ');
@@ -45,7 +45,7 @@ const BentoGridMolecule = (
   return (
     <Box
       className={cn(
-        'grid grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-xs [--template:--base-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template]',
+        'm-0 grid list-none grid-cols-[repeat(auto-fit,minmax(0px,1fr))] gap-xs p-0 [--template:--base-template] [grid-template-areas:--template] sm:[--template:--sm-template] md:[--template:--md-template] lg:[--template:--lg-template] xl:[--template:--xl-template] 2xl:[--template:--2xl-template]',
         className
       )}
       component='ul'

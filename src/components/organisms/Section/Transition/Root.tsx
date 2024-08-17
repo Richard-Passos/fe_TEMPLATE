@@ -38,7 +38,7 @@ const SectionTransitionOrganism = (
           className={cn(
             'relative w-full overflow-hidden',
             reverse
-              ? 'h-[calc(100%-var(--h))] -translate-y-px'
+              ? 'h-[calc(100%-var(--h))] -translate-y-0.5'
               : 'h-[--h] -translate-y-full rotate-180'
           )}
         >

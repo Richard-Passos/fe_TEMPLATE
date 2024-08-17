@@ -16,8 +16,7 @@
   "singleAttributePerLine": true,
   "singleQuote": true,
   "tabWidth": 2,
-  "tailwindAttributes": [".*lass", ".*lassName", ".*lassNames", ".*rops"],
-  "tailwindFunctions": ["cnv", ".*heme"],
+  "tailwindFunctions": ["cnv"],
   "trailingComma": "none",
   "useTabs": false
 }

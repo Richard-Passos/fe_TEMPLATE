@@ -3,16 +3,16 @@ import { forwardRef } from 'react';
 
 import Box, { BoxProps } from '@/components/atoms/Box';
 import { PolymorphicRef } from '@/types';
-import { cn, keys } from '@/utils';
+import { cn, entries } from '@/utils';
 
 type BentoGridMoleculeOwnProps = {
   templates: {
-    base: '';
-    sm?: 'var(--base-template)';
-    md?: 'var(--sm-template)';
-    lg?: 'var(--md-template)';
-    xl?: 'var(--lg-template)';
-    '2xl'?: 'var(--xl-template)';
+    base: string | string[];
+    sm?: string | string[];
+    md?: string | string[];
+    lg?: string | string[];
+    xl?: string | string[];
+    '2xl'?: string | string[];
   };
   ref?: PolymorphicRef<'ul'> & BoxProps['ref'];
 };
@@ -24,6 +24,24 @@ const BentoGridMolecule = (
   { templates, className, style, ...props }: BentoGridMoleculeProps,
   ref: BentoGridMoleculeProps['ref']
 ) => {
+  templates = {
+    sm: 'var(--base-template)',
+    md: 'var(--sm-template)',
+    lg: 'var(--md-template)',
+    xl: 'var(--lg-template)',
+    '2xl': 'var(--xl-template)',
+    ...templates
+  };
+
+  const cssTemplates = entries(templates).reduce((obj, [key, value]) => {
+    key = `--${key}--template`;
+
+    if (Array.isArray(value))
+      value = value.map((item) => `'${item}'`).join(' ');
+
+    return { ...obj, [key]: value };
+  }, {});
+
   return (
     <Box
       className={cn(
@@ -32,15 +50,10 @@ const BentoGridMolecule = (
       )}
       component='ul'
       ref={ref}
-      style={
-        {
-          ...keys(templates).reduce(
-            (obj, key) => ({ ...obj, [key]: templates[key] }),
-            {}
-          ),
-          ...style
-        } as typeof style
-      }
+      style={{
+        ...cssTemplates,
+        ...style
+      }}
       {...props}
     />
   );

@@ -17,7 +17,7 @@ const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
 
   const lastTheme = useRef<Theme>(activeTheme);
 
-  const { scrollYProgress: y } = useScroll({
+  /* const { scrollYProgress: y } = useScroll({
     target: ref,
     offset: ['0 0.10001', '0 0.1']
   });
@@ -40,7 +40,7 @@ const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
     return () => {
       unsubscribe();
     };
-  }, [y, handleSetTheme, theme, activeTheme]);
+  }, [y, handleSetTheme, theme, activeTheme]); */
 
   return activeTheme;
 };

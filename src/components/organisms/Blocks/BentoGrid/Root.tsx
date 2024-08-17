@@ -28,8 +28,8 @@ const BentoGridBlockOrganism = (
   return (
     <PrimaryLayoutBlock
       data={{
-        title: t.raw('title') as string[],
-        description: t.raw('description')
+        title: t.raw('title'),
+        description: t.rich('description')
       }}
       ref={ref}
       {...props}
@@ -39,7 +39,13 @@ const BentoGridBlockOrganism = (
           const Card =
             Cards[normCompName(t(`items.${key}.type`)) as keyof typeof Cards];
 
-          return Card && <BentoGrid.Item index={i}></BentoGrid.Item>;
+          return (
+            Card && (
+              <BentoGrid.Item index={i}>
+                {t(`items.${key}.type`)}
+              </BentoGrid.Item>
+            )
+          );
         })}
       </BentoGrid.Root>
     </PrimaryLayoutBlock>

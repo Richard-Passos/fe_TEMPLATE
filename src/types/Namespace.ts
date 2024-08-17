@@ -1,5 +1,11 @@
 import { NamespaceKeys, NestedKeyOf } from 'next-intl';
 
-type Namespace = NamespaceKeys<IntlMessages, NestedKeyOf<IntlMessages>>;
+import ExtractPrefix from './ExtractPrefix';
+
+type Keys = NamespaceKeys<IntlMessages, NestedKeyOf<IntlMessages>>;
+
+type Namespace<P = undefined> = P extends string
+  ? ExtractPrefix<Keys, P>
+  : Keys;
 
 export default Namespace;

@@ -1,29 +1,36 @@
-import { useTranslations } from 'next-intl';
-import { forwardRef } from 'react';
+import { ComponentType, ReactNode, forwardRef } from 'react';
 
-import { Lines } from '@/components/atoms';
+import { Lines, Text } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { ExtractPrefix, Namespace, PolymorphicRef } from '@/types';
+import { TypeVariants } from '@/types';
 import { cn } from '@/utils';
 
 import ScrollIndicator from '../../ScrollIndicator';
 import PrimaryHeroExtra from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
-import PrimaryHeroTitle from './Title';
+import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
 
-type PrimaryHeroOrganismOwnProps = Partial<Pick<SectionProps, 'theme'>> & {
-  namespace: ExtractPrefix<Namespace, `${string}.hero`>;
-  ref?: PolymorphicRef<'div'>;
+type PrimaryHeroOrganismOwnProps = {
+  data: {
+    title: PrimaryHeroTitleProps['children'];
+    description: ReactNode;
+    left: TypeVariants<typeof PrimaryHeroExtra>;
+    right: TypeVariants<typeof PrimaryHeroExtra>;
+  };
 };
 
 type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
   Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
 
 const PrimaryHeroOrganism = (
-  { namespace, className, ...props }: PrimaryHeroOrganismProps,
+  { data, className, ...props }: PrimaryHeroOrganismProps,
   ref: PrimaryHeroOrganismProps['ref']
 ) => {
-  const t = useTranslations(namespace);
+  const { type: leftType, ...leftProps } = data.left,
+    { type: rightType, ...rightProps } = data.right;
+
+  const Left = PrimaryHeroExtra[leftType] as ComponentType<any>,
+    Right = PrimaryHeroExtra[rightType] as ComponentType<any>;
 
   return (
     <Section
@@ -32,7 +39,6 @@ const PrimaryHeroOrganism = (
       }}
       hasTransition={false}
       ref={ref}
-      theme={t('theme') as SectionProps['theme']}
       {...props}
       className={cn(
         'min-h-svh p-[--inset] pt-[--header-h] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
@@ -42,10 +48,22 @@ const PrimaryHeroOrganism = (
       <div className='relative flex w-full grow overflow-hidden rounded-lg border'>
         <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
-            <div className='flex w-full grow flex-col items-center justify-center gap-lg p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>
-              <PrimaryHeroTitle namespace={namespace} />
+            <div className='flex w-full grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>
+              <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
-              <PrimaryHeroExtra namespace={namespace} />
+              <div className='mt-sm grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
+                <Text className='col-span-full max-w-lg justify-self-center text-center md:col-span-4 lg:sr-only'>
+                  {data.description}
+                </Text>
+
+                <div className='md:-order-1'>
+                  <Left {...leftProps} />
+                </div>
+
+                <div className='justify-self-end lg:col-end-7'>
+                  <Right {...rightProps} />
+                </div>
+              </div>
             </div>
 
             <Lines className='-z-10 !opacity-60 [background-size:83.333px_66.666px]' />

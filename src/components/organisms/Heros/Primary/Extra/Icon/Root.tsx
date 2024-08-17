@@ -6,25 +6,29 @@ import { IconProps } from '@/components/atoms/Icon';
 import { cn } from '@/utils';
 
 type PrimaryHeroExtraIconOrganismOwnProps = {
-  animation: keyof typeof scrollAnimations;
+  data: {
+    src: IconProps['src'];
+    animation: keyof typeof scrollAnimations;
+  };
   wrapperProps?: ComponentPropsWithRef<'div'>;
 };
 
 type PrimaryHeroExtraIconOrganismProps = PrimaryHeroExtraIconOrganismOwnProps &
-  Omit<IconProps, keyof PrimaryHeroExtraIconOrganismOwnProps>;
+  Omit<IconProps, keyof PrimaryHeroExtraIconOrganismOwnProps | 'src'>;
 
 const PrimaryHeroExtraIconOrganism = (
-  { animation, wrapperProps, ...props }: PrimaryHeroExtraIconOrganismProps,
+  { data, wrapperProps, ...props }: PrimaryHeroExtraIconOrganismProps,
   ref: PrimaryHeroExtraIconOrganismProps['ref']
 ) => {
   return (
-    <ScrollAnimate config={scrollAnimations[animation]}>
+    <ScrollAnimate config={scrollAnimations[data.animation]}>
       <div
         {...wrapperProps}
         className={cn('size-6', wrapperProps?.className)}
       >
         <Icon
           ref={ref}
+          src={data.src}
           {...props}
         />
       </div>

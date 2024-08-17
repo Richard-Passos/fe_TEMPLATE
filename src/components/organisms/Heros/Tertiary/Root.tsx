@@ -1,25 +1,38 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
+import { Title } from '@/components/atoms';
+import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
-type TertiaryHeroOrganismOwnProps = {};
+type TertiaryHeroOrganismOwnProps = {
+  data: {
+    title: ReactNode;
+  };
+};
 
 type TertiaryHeroOrganismProps = TertiaryHeroOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof TertiaryHeroOrganismOwnProps>;
+  Omit<SectionProps, keyof TertiaryHeroOrganismOwnProps>;
 
 const TertiaryHeroOrganism = (
-  { className, ...props }: TertiaryHeroOrganismProps,
+  { className, data, ...props }: TertiaryHeroOrganismProps,
   ref: TertiaryHeroOrganismProps['ref']
 ) => {
   return (
-    <section
+    <Section
       className={cn(
-        'flex min-h-dvh flex-col items-center justify-center pb-[--py] pt-[calc(var(--header-h)+var(--py))] [--py:--spacing-xl] max-2xl:min-h-bounds',
+        'min-h-svh justify-center pt-[calc(var(--header-h)+var(--py))] 2xl:min-h-bounds',
         className
       )}
       ref={ref}
       {...props}
-    />
+    >
+      <Title
+        className='text-center'
+        order={1}
+      >
+        {data.title}
+      </Title>
+    </Section>
   );
 };
 

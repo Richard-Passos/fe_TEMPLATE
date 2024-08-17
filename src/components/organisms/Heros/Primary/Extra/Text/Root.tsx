@@ -1,16 +1,20 @@
-import { PropsWithChildren, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { Text } from '@/components/atoms';
 import { TextProps } from '@/components/atoms/Text';
 import { cn } from '@/utils';
 
-type PrimaryHeroExtraTextOrganismOwnProps = PropsWithChildren<{}>;
+type PrimaryHeroExtraTextOrganismOwnProps = {
+  data: {
+    text: string;
+  };
+};
 
 type PrimaryHeroExtraTextOrganismProps = PrimaryHeroExtraTextOrganismOwnProps &
   Omit<TextProps, keyof PrimaryHeroExtraTextOrganismOwnProps>;
 
 const PrimaryHeroExtraTextOrganism = (
-  { className, ...props }: PrimaryHeroExtraTextOrganismProps,
+  { className, data, ...props }: PrimaryHeroExtraTextOrganismProps,
   ref: PrimaryHeroExtraTextOrganismProps['ref']
 ) => {
   return (
@@ -18,7 +22,9 @@ const PrimaryHeroExtraTextOrganism = (
       className={cn('text-sm font-semibold', className)}
       ref={ref}
       {...props}
-    />
+    >
+      {data.text}
+    </Text>
   );
 };
 

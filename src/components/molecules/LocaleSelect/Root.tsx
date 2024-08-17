@@ -8,8 +8,8 @@ import { Select } from '@/components/atoms';
 import { GlobeIcon } from '@/components/atoms/Icon/icons';
 import { GlobeIconProps } from '@/components/atoms/Icon/icons/Globe';
 import { SelectProps } from '@/components/atoms/Select';
-import { isLocale, usePathname, useRouter } from '@/navigation';
-import { cn } from '@/utils';
+import { usePathname, useRouter } from '@/navigation';
+import { cn, isLocale } from '@/utils';
 
 type LocaleSelectMoleculeOwnProps = {
   leftSectionProps?: Partial<GlobeIconProps>;
@@ -42,7 +42,7 @@ const LocaleSelectMolecule = (
       ref={ref}
       {...props}
       onChange={(locale, options) => {
-        if (!locale || !isLocale(locale)) return;
+        if (!isLocale(locale)) return;
 
         router.replace(`${pathname}?${searchParams}`, { locale });
 

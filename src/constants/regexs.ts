@@ -1,6 +1,6 @@
 const regexs = {
-  domain: /[a-z]*?:\/\/([a-z]\.)?(?=[a-z]*\.)(.*)\/.*/i
+  url: /([a-z]*?):\/\/([a-z]*\.)?(?=[a-z]*\.)(.*)(\..*)\/.*/i
 } as const;
 
 export default regexs;
-export const { domain: domainRegex } = regexs;
+export const { url: urlRegex } = regexs;

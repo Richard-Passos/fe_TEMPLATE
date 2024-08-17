@@ -11,7 +11,7 @@ import { useFetch, useId, useQueryString } from '@/hooks';
 
 type CatalogProviderOwnProps<T> = {
   items: T[];
-  url: string;
+  url?: string;
 };
 
 type CatalogProviderProps<T> = CatalogProviderOwnProps<T> &

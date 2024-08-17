@@ -1,24 +1,22 @@
-import { createPolymorphicComponent } from '@mantine/core';
+import { Slot, SlotProps } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
-import Box, { BoxProps } from '@/components/atoms/Box';
 import { PolymorphicRef } from '@/types';
 
 type BentoGridItemMoleculeOwnProps = {
   index: number;
-  ref?: PolymorphicRef<'li'> & BoxProps['ref'];
+  ref?: PolymorphicRef<'li'>;
 };
 
 type BentoGridItemMoleculeProps = BentoGridItemMoleculeOwnProps &
-  Omit<BoxProps, keyof BentoGridItemMoleculeOwnProps>;
+  Omit<SlotProps, keyof BentoGridItemMoleculeOwnProps>;
 
 const BentoGridItemMolecule = (
   { index, style, ...props }: BentoGridItemMoleculeProps,
   ref: BentoGridItemMoleculeProps['ref']
 ) => {
   return (
-    <Box
-      component='li'
+    <Slot
       ref={ref}
       style={{
         gridArea: `item-${index}`,
@@ -29,7 +27,5 @@ const BentoGridItemMolecule = (
   );
 };
 
-export default createPolymorphicComponent<'li', BentoGridItemMoleculeProps>(
-  forwardRef(BentoGridItemMolecule)
-);
+export default forwardRef(BentoGridItemMolecule);
 export type { BentoGridItemMoleculeProps };

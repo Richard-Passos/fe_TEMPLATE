@@ -11,7 +11,18 @@ const NotFoundPage = async () => {
 
   unstable_setRequestLocale(locale);
 
-  return <ErrorTemplate namespace='pages.notFound' />;
+  const t = await getTranslations('pages.notFound');
+
+  return (
+    <ErrorTemplate
+      hero={{
+        theme: 'dark',
+        data: {
+          title: t('hero.title')
+        }
+      }}
+    />
+  );
 };
 
 const generateMetadata = async () => {

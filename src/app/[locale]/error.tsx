@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 
 import { ErrorTemplate } from '@/components/templates';
@@ -12,13 +13,19 @@ type ErrorPageProps = {
 const ErrorPage = ({ error, reset }: ErrorPageProps) => {
   useEffect(() => {
     console.error(error);
-  }, [error]);
+    console.error(reset);
+  }, [error, reset]);
+
+  const t = useTranslations('pages.error');
 
   return (
     <ErrorTemplate
-      message={error.message}
-      namespace='pages.error'
-      reset={reset}
+      hero={{
+        theme: 'dark',
+        data: {
+          title: t('hero.title')
+        }
+      }}
     />
   );
 };

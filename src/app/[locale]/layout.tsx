@@ -26,7 +26,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body className='relative flex min-h-dvh flex-col items-center overflow-x-clip'>
+      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <SmoothScroll>
             <Header.Root />

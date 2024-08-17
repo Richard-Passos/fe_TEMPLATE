@@ -1,6 +1,6 @@
 const locales = [
   { label: 'English', value: 'en' },
-  { label: 'Portuguese', value: 'pt' }
+  { label: 'Português', value: 'pt' }
 ] as const;
 
 const defaultLocale = locales[0];

@@ -46,7 +46,7 @@ const FooterOrganism = (
       transitionProps={
         {
           reverse: true,
-          'data-mantine-color-scheme': 'dark'
+          'data-theme': 'dark'
         } as SectionProps['transitionProps']
       }
       {...props}
@@ -140,7 +140,7 @@ const FooterOrganism = (
       <div className='w-full overflow-hidden'>
         <Logo
           aria-hidden
-          className='h-auto w-full ![--action-bg:transparent] ![--action-hover:transparent] ![--action-padding-x:0px] sm:-mb-[8%] [&_svg]:h-full'
+          className='h-auto w-full ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] sm:-mb-[8%] [&_svg]:h-full'
           tabIndex={-1}
           variant='primary'
         />
@@ -151,7 +151,7 @@ const FooterOrganism = (
           <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border border-solid border-border opacity-60' />
+        <span className='absolute inset-0 rounded-inherit border opacity-60' />
       </div>
     </Section>
   );

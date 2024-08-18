@@ -4,6 +4,7 @@ import { ComponentPropsWithRef, ReactNode, forwardRef, useRef } from 'react';
 
 import { Magnetic } from '@/components/atoms';
 import { MagneticProps } from '@/components/atoms/Magnetic';
+import { CardRoot, CardRootProps } from '@/components/molecules/Card';
 import { cn, setRefs } from '@/utils';
 
 type TableProjectCardMagneticContainerOrganismOwnProps = {
@@ -15,7 +16,7 @@ type TableProjectCardMagneticContainerOrganismOwnProps = {
 type TableProjectCardMagneticContainerOrganismProps =
   TableProjectCardMagneticContainerOrganismOwnProps &
     Omit<
-      ComponentPropsWithRef<'div'>,
+      CardRootProps,
       keyof TableProjectCardMagneticContainerOrganismOwnProps
     >;
 
@@ -30,11 +31,14 @@ const TableProjectCardMagneticContainerOrganism = (
   }: TableProjectCardMagneticContainerOrganismProps,
   ref: TableProjectCardMagneticContainerOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLLIElement>(null);
 
   return (
-    <div
-      className={cn('relative flex items-center justify-center', className)}
+    <CardRoot
+      className={cn(
+        'relative flex-row items-center justify-center overflow-visible',
+        className
+      )}
       ref={setRefs(ref, innerRef)}
       {...props}
     >
@@ -57,7 +61,7 @@ const TableProjectCardMagneticContainerOrganism = (
           {box}
         </div>
       </Magnetic>
-    </div>
+    </CardRoot>
   );
 };
 

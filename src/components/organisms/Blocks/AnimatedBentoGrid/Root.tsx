@@ -36,7 +36,7 @@ const AnimatedBentoGridBlockOrganism = (
       {...props}
     >
       <BentoGrid.Root
-        className='mt-2xl w-9/10 max-w-screen-lg'
+        className='mt-xl w-9/10 max-w-screen-lg pt-md'
         templates={data.templates}
       >
         {data.items.map(({ type, data }, i) => {

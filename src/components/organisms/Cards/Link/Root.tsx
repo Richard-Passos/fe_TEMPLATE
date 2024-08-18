@@ -33,7 +33,7 @@ const LinkCardOrganism = (
         className={cn('h-auto', linkProps?.className)}
       >
         <div className='flex min-h-52 flex-col items-center justify-center'>
-          <div className='flex size-10 items-center justify-center rounded-sm border border-solid border-border'>
+          <div className='flex size-10 items-center justify-center rounded-sm border'>
             <Icon
               className='size-2/3'
               src={data.icon}

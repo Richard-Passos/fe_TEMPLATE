@@ -1,9 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
+import { get, keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -16,10 +17,26 @@ type WorkPageProps = WorkPageOwnProps & WorkPageParams;
 const WorkPage = ({ params: { locale } }: WorkPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations('pages.work');
+  const t = useTranslations('pages.work'),
+    messages = useMessages() as unknown as IntlMessages;
 
   return (
     <PageTemplate
+      blocks={[
+        {
+          type: 'ListMission',
+          theme: 'dark',
+          data: {
+            items: keys(get(messages, 'pages.work.blocks.mission.items')).map(
+              (key) => ({
+                text: t(`blocks.mission.items.${key}.text`),
+                icon: t(`blocks.mission.items.${key}.icon`)
+              })
+            ),
+            description: t.rich('blocks.mission.description')
+          }
+        }
+      ]}
       hero={{
         type: 'Primary',
         theme: 'light',

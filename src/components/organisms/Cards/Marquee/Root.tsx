@@ -39,7 +39,10 @@ const MarqueeCardOrganism = (
           {data.title}
         </Title>
 
-        <Marquee className='[--gap:--spacing-xs]'>
+        <Marquee
+          className='[--gap:theme(spacing.xs)]'
+          pauseOnHover
+        >
           {data.items.map((item, i) => (
             <Badge
               {...(i % 2 !== 0 && {

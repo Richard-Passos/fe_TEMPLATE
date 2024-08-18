@@ -8,7 +8,7 @@ import { cn, renderComp } from '@/utils';
 
 type PrimaryLayoutBlockHeaderOrganismOwnProps = {
   texts: ScrollTextProps['text'][];
-  description: TextProps['children'];
+  description?: TextProps['children'];
 };
 
 type PrimaryLayoutBlockHeaderOrganismProps =
@@ -68,7 +68,10 @@ const PrimaryLayoutBlockHeaderOrganism = (
         )}
       </Title>
 
-      <Text className='mt-sm w-9/10 md:sr-only'>{description}</Text>
+      {renderComp(
+        <Text className='mt-sm w-9/10 md:sr-only'>{description}</Text>,
+        [description]
+      )}
     </header>
   );
 };

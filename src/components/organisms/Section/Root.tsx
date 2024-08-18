@@ -43,12 +43,12 @@ const SectionOrganism = (
   return (
     <Box
       className={cn(
-        'relative flex min-h-screen w-full flex-col items-center py-[--py] [--py:--spacing-2xl] 2xl:min-h-bounds',
+        'relative flex min-h-screen w-full flex-col items-center py-[--py] [--py:theme(spacing.2xl)] 2xl:min-h-bounds',
         hasTransition && 'pt-[calc(var(--py)*1.5)]',
         className
       )}
       component='section'
-      data-mantine-color-scheme={theme}
+      data-theme={theme}
       ref={setRefs(ref, innerRef)}
       {...props}
     >

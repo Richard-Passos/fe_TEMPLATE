@@ -20,7 +20,7 @@ const LogoPrimaryVariantOrganism = (
   return (
     <Action
       aria-label={label}
-      className={cn('![--action-padding-x:--spacing-xs]', className)}
+      className={cn('![--button-padding-x:theme(spacing.xs)]', className)}
       ref={ref}
       {...props}
     >

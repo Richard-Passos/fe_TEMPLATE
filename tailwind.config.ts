@@ -17,479 +17,473 @@ const config: Config = {
       inherit: 'inherit',
       transparent: 'transparent',
       current: 'currentColor',
-      bright: 'var(--color-bright)',
-      text: 'var(--color-text)',
-      body: 'var(--color-body)',
-      error: 'var(--color-error)',
-      placeholder: 'var(--color-placeholder)',
-      anchor: 'var(--color-anchor)',
-      dimmed: 'var(--color-dimmed)',
-      border: 'var(--color-border)',
-      black: 'var(--color-black)',
-      white: 'var(--color-white)',
+      bright: 'var(--mantine-color-bright)',
+      text: 'var(--mantine-color-text)',
+      body: 'var(--mantine-color-body)',
+      error: 'var(--mantine-color-error)',
+      placeholder: 'var(--mantine-color-placeholder)',
+      anchor: 'var(--mantine-color-anchor)',
+      dimmed: 'var(--mantine-color-dimmed)',
+      border: 'var(--mantine-color-default-border)',
+      black: 'var(--mantine-color-black)',
+      white: 'var(--mantine-color-white)',
       default: {
-        DEFAULT: 'var(--color-default)',
-        hover: 'var(--color-default-hover)',
-        color: 'var(--color-default-color)'
+        DEFAULT: 'var(--mantine-color-default)',
+        hover: 'var(--mantine-color-default-hover)',
+        color: 'var(--mantine-color-default-color)',
+        border: 'var(--mantine-color-default-border)'
       },
       primary: {
-        contrast: 'var(--color-primary-contrast)',
+        contrast: 'var(--mantine-primary-color-contrast)',
         filled: {
-          DEFAULT: 'var(--color-primary-filled)',
-          hover: 'var(--color-primary-filled-hover)'
+          DEFAULT: 'var(--mantine-primary-color-filled)',
+          hover: 'var(--mantine-primary-color-filled-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-primary-light)',
-          hover: 'var(--color-primary-light-hover)',
-          color: 'var(--color-primary-color)'
+          DEFAULT: 'var(--mantine-primary-color-light)',
+          hover: 'var(--mantine-primary-color-light-hover)',
+          color: 'var(--mantine-primary-color-color)'
         },
-        0: 'var(--color-primary-0)',
-        1: 'var(--color-primary-1)',
-        2: 'var(--color-primary-2)',
-        3: 'var(--color-primary-3)',
-        4: 'var(--color-primary-4)',
-        5: 'var(--color-primary-5)',
-        6: 'var(--color-primary-6)',
-        7: 'var(--color-primary-7)',
-        8: 'var(--color-primary-8)',
-        9: 'var(--color-primary-9)'
+        0: 'var(--mantine-primary-color-0)',
+        1: 'var(--mantine-primary-color-1)',
+        2: 'var(--mantine-primary-color-2)',
+        3: 'var(--mantine-primary-color-3)',
+        4: 'var(--mantine-primary-color-4)',
+        5: 'var(--mantine-primary-color-5)',
+        6: 'var(--mantine-primary-color-6)',
+        7: 'var(--mantine-primary-color-7)',
+        8: 'var(--mantine-primary-color-8)',
+        9: 'var(--mantine-primary-color-9)'
       },
       dark: {
-        text: 'var(--color-dark-text)',
+        text: 'var(--mantine-color-dark-text)',
         filled: {
-          DEFAULT: 'var(--color-dark-filled)',
-          hover: 'var(--color-dark-filled-hover)'
+          DEFAULT: 'var(--mantine-color-dark-filled)',
+          hover: 'var(--mantine-color-dark-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-dark-outline)',
-          hover: 'var(--color-dark-outline-hover)'
+          DEFAULT: 'var(--mantine-color-dark-outline)',
+          hover: 'var(--mantine-color-dark-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-dark-light)',
-          hover: 'var(--color-dark-light-hover)',
-          color: 'var(--color-dark-color)'
+          DEFAULT: 'var(--mantine-color-dark-light)',
+          hover: 'var(--mantine-color-dark-light-hover)',
+          color: 'var(--mantine-color-dark-color)'
         },
-        0: 'var(--color-dark-0)',
-        1: 'var(--color-dark-1)',
-        2: 'var(--color-dark-2)',
-        3: 'var(--color-dark-3)',
-        4: 'var(--color-dark-4)',
-        5: 'var(--color-dark-5)',
-        6: 'var(--color-dark-6)',
-        7: 'var(--color-dark-7)',
-        8: 'var(--color-dark-8)',
-        9: 'var(--color-dark-9)'
+        0: 'var(--mantine-color-dark-0)',
+        1: 'var(--mantine-color-dark-1)',
+        2: 'var(--mantine-color-dark-2)',
+        3: 'var(--mantine-color-dark-3)',
+        4: 'var(--mantine-color-dark-4)',
+        5: 'var(--mantine-color-dark-5)',
+        6: 'var(--mantine-color-dark-6)',
+        7: 'var(--mantine-color-dark-7)',
+        8: 'var(--mantine-color-dark-8)',
+        9: 'var(--mantine-color-dark-9)'
       },
       gray: {
-        text: 'var(--color-gray-text)',
+        text: 'var(--mantine-color-gray-text)',
         filled: {
-          DEFAULT: 'var(--color-gray-filled)',
-          hover: 'var(--color-gray-filled-hover)'
+          DEFAULT: 'var(--mantine-color-gray-filled)',
+          hover: 'var(--mantine-color-gray-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-gray-outline)',
-          hover: 'var(--color-gray-outline-hover)'
+          DEFAULT: 'var(--mantine-color-gray-outline)',
+          hover: 'var(--mantine-color-gray-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-gray-light)',
-          hover: 'var(--color-gray-light-hover)',
-          color: 'var(--color-gray-color)'
+          DEFAULT: 'var(--mantine-color-gray-light)',
+          hover: 'var(--mantine-color-gray-light-hover)',
+          color: 'var(--mantine-color-gray-color)'
         },
-        0: 'var(--color-gray-0)',
-        1: 'var(--color-gray-1)',
-        2: 'var(--color-gray-2)',
-        3: 'var(--color-gray-3)',
-        4: 'var(--color-gray-4)',
-        5: 'var(--color-gray-5)',
-        6: 'var(--color-gray-6)',
-        7: 'var(--color-gray-7)',
-        8: 'var(--color-gray-8)',
-        9: 'var(--color-gray-9)'
+        0: 'var(--mantine-color-gray-0)',
+        1: 'var(--mantine-color-gray-1)',
+        2: 'var(--mantine-color-gray-2)',
+        3: 'var(--mantine-color-gray-3)',
+        4: 'var(--mantine-color-gray-4)',
+        5: 'var(--mantine-color-gray-5)',
+        6: 'var(--mantine-color-gray-6)',
+        7: 'var(--mantine-color-gray-7)',
+        8: 'var(--mantine-color-gray-8)',
+        9: 'var(--mantine-color-gray-9)'
       },
       red: {
-        text: 'var(--color-red-text)',
+        text: 'var(--mantine-color-red-text)',
         filled: {
-          DEFAULT: 'var(--color-red-filled)',
-          hover: 'var(--color-red-filled-hover)'
+          DEFAULT: 'var(--mantine-color-red-filled)',
+          hover: 'var(--mantine-color-red-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-red-outline)',
-          hover: 'var(--color-red-outline-hover)'
+          DEFAULT: 'var(--mantine-color-red-outline)',
+          hover: 'var(--mantine-color-red-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-red-light)',
-          hover: 'var(--color-red-light-hover)',
-          color: 'var(--color-red-color)'
+          DEFAULT: 'var(--mantine-color-red-light)',
+          hover: 'var(--mantine-color-red-light-hover)',
+          color: 'var(--mantine-color-red-color)'
         },
-        0: 'var(--color-red-0)',
-        1: 'var(--color-red-1)',
-        2: 'var(--color-red-2)',
-        3: 'var(--color-red-3)',
-        4: 'var(--color-red-4)',
-        5: 'var(--color-red-5)',
-        6: 'var(--color-red-6)',
-        7: 'var(--color-red-7)',
-        8: 'var(--color-red-8)',
-        9: 'var(--color-red-9)'
+        0: 'var(--mantine-color-red-0)',
+        1: 'var(--mantine-color-red-1)',
+        2: 'var(--mantine-color-red-2)',
+        3: 'var(--mantine-color-red-3)',
+        4: 'var(--mantine-color-red-4)',
+        5: 'var(--mantine-color-red-5)',
+        6: 'var(--mantine-color-red-6)',
+        7: 'var(--mantine-color-red-7)',
+        8: 'var(--mantine-color-red-8)',
+        9: 'var(--mantine-color-red-9)'
       },
       pink: {
-        text: 'var(--color-pink-text)',
+        text: 'var(--mantine-color-pink-text)',
         filled: {
-          DEFAULT: 'var(--color-pink-filled)',
-          hover: 'var(--color-pink-filled-hover)'
+          DEFAULT: 'var(--mantine-color-pink-filled)',
+          hover: 'var(--mantine-color-pink-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-pink-outline)',
-          hover: 'var(--color-pink-outline-hover)'
+          DEFAULT: 'var(--mantine-color-pink-outline)',
+          hover: 'var(--mantine-color-pink-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-pink-light)',
-          hover: 'var(--color-pink-light-hover)',
-          color: 'var(--color-pink-color)'
+          DEFAULT: 'var(--mantine-color-pink-light)',
+          hover: 'var(--mantine-color-pink-light-hover)',
+          color: 'var(--mantine-color-pink-color)'
         },
-        0: 'var(--color-pink-0)',
-        1: 'var(--color-pink-1)',
-        2: 'var(--color-pink-2)',
-        3: 'var(--color-pink-3)',
-        4: 'var(--color-pink-4)',
-        5: 'var(--color-pink-5)',
-        6: 'var(--color-pink-6)',
-        7: 'var(--color-pink-7)',
-        8: 'var(--color-pink-8)',
-        9: 'var(--color-pink-9)'
+        0: 'var(--mantine-color-pink-0)',
+        1: 'var(--mantine-color-pink-1)',
+        2: 'var(--mantine-color-pink-2)',
+        3: 'var(--mantine-color-pink-3)',
+        4: 'var(--mantine-color-pink-4)',
+        5: 'var(--mantine-color-pink-5)',
+        6: 'var(--mantine-color-pink-6)',
+        7: 'var(--mantine-color-pink-7)',
+        8: 'var(--mantine-color-pink-8)',
+        9: 'var(--mantine-color-pink-9)'
       },
       grape: {
-        text: 'var(--color-grape-text)',
+        text: 'var(--mantine-color-grape-text)',
         filled: {
-          DEFAULT: 'var(--color-grape-filled)',
-          hover: 'var(--color-grape-filled-hover)'
+          DEFAULT: 'var(--mantine-color-grape-filled)',
+          hover: 'var(--mantine-color-grape-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-grape-outline)',
-          hover: 'var(--color-grape-outline-hover)'
+          DEFAULT: 'var(--mantine-color-grape-outline)',
+          hover: 'var(--mantine-color-grape-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-grape-light)',
-          hover: 'var(--color-grape-light-hover)',
-          color: 'var(--color-grape-color)'
+          DEFAULT: 'var(--mantine-color-grape-light)',
+          hover: 'var(--mantine-color-grape-light-hover)',
+          color: 'var(--mantine-color-grape-color)'
         },
-        0: 'var(--color-grape-0)',
-        1: 'var(--color-grape-1)',
-        2: 'var(--color-grape-2)',
-        3: 'var(--color-grape-3)',
-        4: 'var(--color-grape-4)',
-        5: 'var(--color-grape-5)',
-        6: 'var(--color-grape-6)',
-        7: 'var(--color-grape-7)',
-        8: 'var(--color-grape-8)',
-        9: 'var(--color-grape-9)'
+        0: 'var(--mantine-color-grape-0)',
+        1: 'var(--mantine-color-grape-1)',
+        2: 'var(--mantine-color-grape-2)',
+        3: 'var(--mantine-color-grape-3)',
+        4: 'var(--mantine-color-grape-4)',
+        5: 'var(--mantine-color-grape-5)',
+        6: 'var(--mantine-color-grape-6)',
+        7: 'var(--mantine-color-grape-7)',
+        8: 'var(--mantine-color-grape-8)',
+        9: 'var(--mantine-color-grape-9)'
       },
       violet: {
-        text: 'var(--color-violet-text)',
+        text: 'var(--mantine-color-violet-text)',
         filled: {
-          DEFAULT: 'var(--color-violet-filled)',
-          hover: 'var(--color-violet-filled-hover)'
+          DEFAULT: 'var(--mantine-color-violet-filled)',
+          hover: 'var(--mantine-color-violet-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-violet-outline)',
-          hover: 'var(--color-violet-outline-hover)'
+          DEFAULT: 'var(--mantine-color-violet-outline)',
+          hover: 'var(--mantine-color-violet-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-violet-light)',
-          hover: 'var(--color-violet-light-hover)',
-          color: 'var(--color-violet-color)'
+          DEFAULT: 'var(--mantine-color-violet-light)',
+          hover: 'var(--mantine-color-violet-light-hover)',
+          color: 'var(--mantine-color-violet-color)'
         },
-        0: 'var(--color-violet-0)',
-        1: 'var(--color-violet-1)',
-        2: 'var(--color-violet-2)',
-        3: 'var(--color-violet-3)',
-        4: 'var(--color-violet-4)',
-        5: 'var(--color-violet-5)',
-        6: 'var(--color-violet-6)',
-        7: 'var(--color-violet-7)',
-        8: 'var(--color-violet-8)',
-        9: 'var(--color-violet-9)'
+        0: 'var(--mantine-color-violet-0)',
+        1: 'var(--mantine-color-violet-1)',
+        2: 'var(--mantine-color-violet-2)',
+        3: 'var(--mantine-color-violet-3)',
+        4: 'var(--mantine-color-violet-4)',
+        5: 'var(--mantine-color-violet-5)',
+        6: 'var(--mantine-color-violet-6)',
+        7: 'var(--mantine-color-violet-7)',
+        8: 'var(--mantine-color-violet-8)',
+        9: 'var(--mantine-color-violet-9)'
       },
       indigo: {
-        text: 'var(--color-indigo-text)',
+        text: 'var(--mantine-color-indigo-text)',
         filled: {
-          DEFAULT: 'var(--color-indigo-filled)',
-          hover: 'var(--color-indigo-filled-hover)'
+          DEFAULT: 'var(--mantine-color-indigo-filled)',
+          hover: 'var(--mantine-color-indigo-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-indigo-outline)',
-          hover: 'var(--color-indigo-outline-hover)'
+          DEFAULT: 'var(--mantine-color-indigo-outline)',
+          hover: 'var(--mantine-color-indigo-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-indigo-light)',
-          hover: 'var(--color-indigo-light-hover)',
-          color: 'var(--color-indigo-color)'
+          DEFAULT: 'var(--mantine-color-indigo-light)',
+          hover: 'var(--mantine-color-indigo-light-hover)',
+          color: 'var(--mantine-color-indigo-color)'
         },
-        0: 'var(--color-indigo-0)',
-        1: 'var(--color-indigo-1)',
-        2: 'var(--color-indigo-2)',
-        3: 'var(--color-indigo-3)',
-        4: 'var(--color-indigo-4)',
-        5: 'var(--color-indigo-5)',
-        6: 'var(--color-indigo-6)',
-        7: 'var(--color-indigo-7)',
-        8: 'var(--color-indigo-8)',
-        9: 'var(--color-indigo-9)'
+        0: 'var(--mantine-color-indigo-0)',
+        1: 'var(--mantine-color-indigo-1)',
+        2: 'var(--mantine-color-indigo-2)',
+        3: 'var(--mantine-color-indigo-3)',
+        4: 'var(--mantine-color-indigo-4)',
+        5: 'var(--mantine-color-indigo-5)',
+        6: 'var(--mantine-color-indigo-6)',
+        7: 'var(--mantine-color-indigo-7)',
+        8: 'var(--mantine-color-indigo-8)',
+        9: 'var(--mantine-color-indigo-9)'
       },
       blue: {
-        text: 'var(--color-blue-text)',
+        text: 'var(--mantine-color-blue-text)',
         filled: {
-          DEFAULT: 'var(--color-blue-filled)',
-          hover: 'var(--color-blue-filled-hover)'
+          DEFAULT: 'var(--mantine-color-blue-filled)',
+          hover: 'var(--mantine-color-blue-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-blue-outline)',
-          hover: 'var(--color-blue-outline-hover)'
+          DEFAULT: 'var(--mantine-color-blue-outline)',
+          hover: 'var(--mantine-color-blue-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-blue-light)',
-          hover: 'var(--color-blue-light-hover)',
-          color: 'var(--color-blue-color)'
+          DEFAULT: 'var(--mantine-color-blue-light)',
+          hover: 'var(--mantine-color-blue-light-hover)',
+          color: 'var(--mantine-color-blue-color)'
         },
-        0: 'var(--color-blue-0)',
-        1: 'var(--color-blue-1)',
-        2: 'var(--color-blue-2)',
-        3: 'var(--color-blue-3)',
-        4: 'var(--color-blue-4)',
-        5: 'var(--color-blue-5)',
-        6: 'var(--color-blue-6)',
-        7: 'var(--color-blue-7)',
-        8: 'var(--color-blue-8)',
-        9: 'var(--color-blue-9)'
+        0: 'var(--mantine-color-blue-0)',
+        1: 'var(--mantine-color-blue-1)',
+        2: 'var(--mantine-color-blue-2)',
+        3: 'var(--mantine-color-blue-3)',
+        4: 'var(--mantine-color-blue-4)',
+        5: 'var(--mantine-color-blue-5)',
+        6: 'var(--mantine-color-blue-6)',
+        7: 'var(--mantine-color-blue-7)',
+        8: 'var(--mantine-color-blue-8)',
+        9: 'var(--mantine-color-blue-9)'
       },
       cyan: {
-        text: 'var(--color-cyan-text)',
+        text: 'var(--mantine-color-cyan-text)',
         filled: {
-          DEFAULT: 'var(--color-cyan-filled)',
-          hover: 'var(--color-cyan-filled-hover)'
+          DEFAULT: 'var(--mantine-color-cyan-filled)',
+          hover: 'var(--mantine-color-cyan-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-cyan-outline)',
-          hover: 'var(--color-cyan-outline-hover)'
+          DEFAULT: 'var(--mantine-color-cyan-outline)',
+          hover: 'var(--mantine-color-cyan-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-cyan-light)',
-          hover: 'var(--color-cyan-light-hover)',
-          color: 'var(--color-cyan-color)'
+          DEFAULT: 'var(--mantine-color-cyan-light)',
+          hover: 'var(--mantine-color-cyan-light-hover)',
+          color: 'var(--mantine-color-cyan-color)'
         },
-        0: 'var(--color-cyan-0)',
-        1: 'var(--color-cyan-1)',
-        2: 'var(--color-cyan-2)',
-        3: 'var(--color-cyan-3)',
-        4: 'var(--color-cyan-4)',
-        5: 'var(--color-cyan-5)',
-        6: 'var(--color-cyan-6)',
-        7: 'var(--color-cyan-7)',
-        8: 'var(--color-cyan-8)',
-        9: 'var(--color-cyan-9)'
+        0: 'var(--mantine-color-cyan-0)',
+        1: 'var(--mantine-color-cyan-1)',
+        2: 'var(--mantine-color-cyan-2)',
+        3: 'var(--mantine-color-cyan-3)',
+        4: 'var(--mantine-color-cyan-4)',
+        5: 'var(--mantine-color-cyan-5)',
+        6: 'var(--mantine-color-cyan-6)',
+        7: 'var(--mantine-color-cyan-7)',
+        8: 'var(--mantine-color-cyan-8)',
+        9: 'var(--mantine-color-cyan-9)'
       },
       teal: {
-        text: 'var(--color-teal-text)',
+        text: 'var(--mantine-color-teal-text)',
         filled: {
-          DEFAULT: 'var(--color-teal-filled)',
-          hover: 'var(--color-teal-filled-hover)'
+          DEFAULT: 'var(--mantine-color-teal-filled)',
+          hover: 'var(--mantine-color-teal-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-teal-outline)',
-          hover: 'var(--color-teal-outline-hover)'
+          DEFAULT: 'var(--mantine-color-teal-outline)',
+          hover: 'var(--mantine-color-teal-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-teal-light)',
-          hover: 'var(--color-teal-light-hover)',
-          color: 'var(--color-teal-color)'
+          DEFAULT: 'var(--mantine-color-teal-light)',
+          hover: 'var(--mantine-color-teal-light-hover)',
+          color: 'var(--mantine-color-teal-color)'
         },
-        0: 'var(--color-teal-0)',
-        1: 'var(--color-teal-1)',
-        2: 'var(--color-teal-2)',
-        3: 'var(--color-teal-3)',
-        4: 'var(--color-teal-4)',
-        5: 'var(--color-teal-5)',
-        6: 'var(--color-teal-6)',
-        7: 'var(--color-teal-7)',
-        8: 'var(--color-teal-8)',
-        9: 'var(--color-teal-9)'
+        0: 'var(--mantine-color-teal-0)',
+        1: 'var(--mantine-color-teal-1)',
+        2: 'var(--mantine-color-teal-2)',
+        3: 'var(--mantine-color-teal-3)',
+        4: 'var(--mantine-color-teal-4)',
+        5: 'var(--mantine-color-teal-5)',
+        6: 'var(--mantine-color-teal-6)',
+        7: 'var(--mantine-color-teal-7)',
+        8: 'var(--mantine-color-teal-8)',
+        9: 'var(--mantine-color-teal-9)'
       },
       green: {
-        text: 'var(--color-green-text)',
+        text: 'var(--mantine-color-green-text)',
         filled: {
-          DEFAULT: 'var(--color-green-filled)',
-          hover: 'var(--color-green-filled-hover)'
+          DEFAULT: 'var(--mantine-color-green-filled)',
+          hover: 'var(--mantine-color-green-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-green-outline)',
-          hover: 'var(--color-green-outline-hover)'
+          DEFAULT: 'var(--mantine-color-green-outline)',
+          hover: 'var(--mantine-color-green-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-green-light)',
-          hover: 'var(--color-green-light-hover)',
-          color: 'var(--color-green-color)'
+          DEFAULT: 'var(--mantine-color-green-light)',
+          hover: 'var(--mantine-color-green-light-hover)',
+          color: 'var(--mantine-color-green-color)'
         },
-        0: 'var(--color-green-0)',
-        1: 'var(--color-green-1)',
-        2: 'var(--color-green-2)',
-        3: 'var(--color-green-3)',
-        4: 'var(--color-green-4)',
-        5: 'var(--color-green-5)',
-        6: 'var(--color-green-6)',
-        7: 'var(--color-green-7)',
-        8: 'var(--color-green-8)',
-        9: 'var(--color-green-9)'
+        0: 'var(--mantine-color-green-0)',
+        1: 'var(--mantine-color-green-1)',
+        2: 'var(--mantine-color-green-2)',
+        3: 'var(--mantine-color-green-3)',
+        4: 'var(--mantine-color-green-4)',
+        5: 'var(--mantine-color-green-5)',
+        6: 'var(--mantine-color-green-6)',
+        7: 'var(--mantine-color-green-7)',
+        8: 'var(--mantine-color-green-8)',
+        9: 'var(--mantine-color-green-9)'
       },
       lime: {
-        text: 'var(--color-lime-text)',
+        text: 'var(--mantine-color-lime-text)',
         filled: {
-          DEFAULT: 'var(--color-lime-filled)',
-          hover: 'var(--color-lime-filled-hover)'
+          DEFAULT: 'var(--mantine-color-lime-filled)',
+          hover: 'var(--mantine-color-lime-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-lime-outline)',
-          hover: 'var(--color-lime-outline-hover)'
+          DEFAULT: 'var(--mantine-color-lime-outline)',
+          hover: 'var(--mantine-color-lime-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-lime-light)',
-          hover: 'var(--color-lime-light-hover)',
-          color: 'var(--color-lime-color)'
+          DEFAULT: 'var(--mantine-color-lime-light)',
+          hover: 'var(--mantine-color-lime-light-hover)',
+          color: 'var(--mantine-color-lime-color)'
         },
-        0: 'var(--color-lime-0)',
-        1: 'var(--color-lime-1)',
-        2: 'var(--color-lime-2)',
-        3: 'var(--color-lime-3)',
-        4: 'var(--color-lime-4)',
-        5: 'var(--color-lime-5)',
-        6: 'var(--color-lime-6)',
-        7: 'var(--color-lime-7)',
-        8: 'var(--color-lime-8)',
-        9: 'var(--color-lime-9)'
+        0: 'var(--mantine-color-lime-0)',
+        1: 'var(--mantine-color-lime-1)',
+        2: 'var(--mantine-color-lime-2)',
+        3: 'var(--mantine-color-lime-3)',
+        4: 'var(--mantine-color-lime-4)',
+        5: 'var(--mantine-color-lime-5)',
+        6: 'var(--mantine-color-lime-6)',
+        7: 'var(--mantine-color-lime-7)',
+        8: 'var(--mantine-color-lime-8)',
+        9: 'var(--mantine-color-lime-9)'
       },
       yellow: {
-        text: 'var(--color-yellow-text)',
+        text: 'var(--mantine-color-yellow-text)',
         filled: {
-          DEFAULT: 'var(--color-yellow-filled)',
-          hover: 'var(--color-yellow-filled-hover)'
+          DEFAULT: 'var(--mantine-color-yellow-filled)',
+          hover: 'var(--mantine-color-yellow-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-yellow-outline)',
-          hover: 'var(--color-yellow-outline-hover)'
+          DEFAULT: 'var(--mantine-color-yellow-outline)',
+          hover: 'var(--mantine-color-yellow-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-yellow-light)',
-          hover: 'var(--color-yellow-light-hover)',
-          color: 'var(--color-yellow-color)'
+          DEFAULT: 'var(--mantine-color-yellow-light)',
+          hover: 'var(--mantine-color-yellow-light-hover)',
+          color: 'var(--mantine-color-yellow-color)'
         },
-        0: 'var(--color-yellow-0)',
-        1: 'var(--color-yellow-1)',
-        2: 'var(--color-yellow-2)',
-        3: 'var(--color-yellow-3)',
-        4: 'var(--color-yellow-4)',
-        5: 'var(--color-yellow-5)',
-        6: 'var(--color-yellow-6)',
-        7: 'var(--color-yellow-7)',
-        8: 'var(--color-yellow-8)',
-        9: 'var(--color-yellow-9)'
+        0: 'var(--mantine-color-yellow-0)',
+        1: 'var(--mantine-color-yellow-1)',
+        2: 'var(--mantine-color-yellow-2)',
+        3: 'var(--mantine-color-yellow-3)',
+        4: 'var(--mantine-color-yellow-4)',
+        5: 'var(--mantine-color-yellow-5)',
+        6: 'var(--mantine-color-yellow-6)',
+        7: 'var(--mantine-color-yellow-7)',
+        8: 'var(--mantine-color-yellow-8)',
+        9: 'var(--mantine-color-yellow-9)'
       },
       orange: {
-        text: 'var(--color-orange-text)',
+        text: 'var(--mantine-color-orange-text)',
         filled: {
-          DEFAULT: 'var(--color-orange-filled)',
-          hover: 'var(--color-orange-filled-hover)'
+          DEFAULT: 'var(--mantine-color-orange-filled)',
+          hover: 'var(--mantine-color-orange-filled-hover)'
         },
         outline: {
-          DEFAULT: 'var(--color-orange-outline)',
-          hover: 'var(--color-orange-outline-hover)'
+          DEFAULT: 'var(--mantine-color-orange-outline)',
+          hover: 'var(--mantine-color-orange-outline-hover)'
         },
         light: {
-          DEFAULT: 'var(--color-orange-light)',
-          hover: 'var(--color-orange-light-hover)',
-          color: 'var(--color-orange-color)'
+          DEFAULT: 'var(--mantine-color-orange-light)',
+          hover: 'var(--mantine-color-orange-light-hover)',
+          color: 'var(--mantine-color-orange-color)'
         },
-        0: 'var(--color-orange-0)',
-        1: 'var(--color-orange-1)',
-        2: 'var(--color-orange-2)',
-        3: 'var(--color-orange-3)',
-        4: 'var(--color-orange-4)',
-        5: 'var(--color-orange-5)',
-        6: 'var(--color-orange-6)',
-        7: 'var(--color-orange-7)',
-        8: 'var(--color-orange-8)',
-        9: 'var(--color-orange-9)'
+        0: 'var(--mantine-color-orange-0)',
+        1: 'var(--mantine-color-orange-1)',
+        2: 'var(--mantine-color-orange-2)',
+        3: 'var(--mantine-color-orange-3)',
+        4: 'var(--mantine-color-orange-4)',
+        5: 'var(--mantine-color-orange-5)',
+        6: 'var(--mantine-color-orange-6)',
+        7: 'var(--mantine-color-orange-7)',
+        8: 'var(--mantine-color-orange-8)',
+        9: 'var(--mantine-color-orange-9)'
       }
     },
     extend: {
       spacing: {
         px: '0.8px',
         '9/10': '90%',
-        '2xs': 'var(--spacing-2xs)',
-        xs: 'var(--spacing-xs)',
-        sm: 'var(--spacing-sm)',
-        md: 'var(--spacing-md)',
-        lg: 'var(--spacing-lg)',
-        xl: 'var(--spacing-xl)',
-        '2xl': 'var(--spacing-2xl)'
+        '2xs': 'var(--mantine-spacing-2xs)',
+        xs: 'var(--mantine-spacing-xs)',
+        sm: 'var(--mantine-spacing-sm)',
+        md: 'var(--mantine-spacing-md)',
+        lg: 'var(--mantine-spacing-lg)',
+        xl: 'var(--mantine-spacing-xl)',
+        '2xl': 'var(--mantine-spacing-2xl)'
       },
       fontSize: {
-        xs: 'var(--font-size-xs)',
-        sm: 'var(--font-size-sm)',
-        md: 'var(--font-size-md)',
-        lg: 'var(--font-size-lg)',
-        xl: 'var(--font-size-xl)'
+        xs: 'var(--mantine-font-size-xs)',
+        sm: 'var(--mantine-font-size-sm)',
+        md: 'var(--mantine-font-size-md)',
+        lg: 'var(--mantine-font-size-lg)',
+        xl: 'var(--mantine-font-size-xl)'
       },
       lineHeight: {
-        xs: 'var(--line-height-xs)',
-        sm: 'var(--line-height-sm)',
-        md: 'var(--line-height-md)',
-        lg: 'var(--line-height-lg)',
-        xl: 'var(--line-height-xl)'
+        xs: 'var(--mantine-line-height-xs)',
+        sm: 'var(--mantine-line-height-sm)',
+        md: 'var(--mantine-line-height-md)',
+        lg: 'var(--mantine-line-height-lg)',
+        xl: 'var(--mantine-line-height-xl)'
       },
       boxShadow: {
-        xs: 'var(--shadow-xs)',
-        sm: 'var(--shadow-sm)',
-        md: 'var(--shadow-md)',
-        lg: 'var(--shadow-lg)',
-        xl: 'var(--shadow-xl)'
+        xs: 'var(--mantine-shadow-xs)',
+        sm: 'var(--mantine-shadow-sm)',
+        md: 'var(--mantine-shadow-md)',
+        lg: 'var(--mantine-shadow-lg)',
+        xl: 'var(--mantine-shadow-xl)'
       },
       dropShadow: {
-        xs: 'var(--shadow-xs)',
-        sm: 'var(--shadow-sm)',
-        md: 'var(--shadow-md)',
-        lg: 'var(--shadow-lg)',
-        xl: 'var(--shadow-xl)'
+        xs: 'var(--mantine-shadow-xs)',
+        sm: 'var(--mantine-shadow-sm)',
+        md: 'var(--mantine-shadow-md)',
+        lg: 'var(--mantine-shadow-lg)',
+        xl: 'var(--mantine-shadow-xl)'
       },
       outlineWidth: {
-        DEFAULT: 'var(--outline-width)'
+        DEFAULT: '2px'
       },
       outlineColor: {
-        DEFAULT: 'var(--outline-color)'
+        DEFAULT: 'inherit'
       },
       outlineOffset: {
-        DEFAULT: 'var(--outline-offset)'
-      },
-      bordeWidth: {
-        DEFAULT: '.8px',
-        '1': '.8px'
-      },
-      borderColor: {
-        DEFAULT: 'var(--color-border)'
+        DEFAULT: '2px'
       },
       borderRadius: {
-        DEFAULT: 'var(--radius)',
-        xs: 'var(--radius-xs)',
-        sm: 'var(--radius-sm)',
-        md: 'var(--radius-md)',
-        lg: 'var(--radius-lg)',
-        xl: 'var(--radius-xl)',
+        DEFAULT: 'var(--mantine-radius)',
+        xs: 'var(--mantine-radius-xs)',
+        sm: 'var(--mantine-radius-sm)',
+        md: 'var(--mantine-radius-md)',
+        lg: 'var(--mantine-radius-lg)',
+        xl: 'var(--mantine-radius-xl)',
         inherit: 'inherit'
       },
       zIndex: {
-        app: 'var(--z-index-app)',
-        modal: 'var(--z-index-modal)',
-        popover: 'var(--z-index-popover)',
-        overlay: 'var(--z-index-overlay)',
-        max: 'var(--z-index-max)'
+        app: 'var(--mantine-z-index-app)',
+        modal: 'var(--mantine-z-index-modal)',
+        popover: 'var(--mantine-z-index-popover)',
+        overlay: 'var(--mantine-z-index-overlay)',
+        max: 'var(--mantine-z-index-max)'
       },
       minHeight: {
         bounds: 'var(--max-h)'
@@ -504,9 +498,9 @@ const config: Config = {
         bounds: 'var(--max-w)'
       },
       fontFamily: {
-        title: 'var(--font-family-title)',
-        display: 'var(--font-family-display)',
-        monospace: 'var(--font-family-monospace)'
+        title: 'var(--mantine-font-family-headings)',
+        display: 'var(--mantine-font-family)',
+        monospace: 'var(--mantine-font-family-monospace)'
       },
       data: {
         closed: 'state=closed',
@@ -521,7 +515,7 @@ const config: Config = {
       },
       animation: {
         'scroll-indicator':
-          'scroll-indicator var(--duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite'
+          'scroll-indicator var(--mantine-duration, 2s) cubic-bezier(0.87, 0, 0.13, 1) infinite'
       },
       transitionTimingFunction: {
         backOut: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
@@ -531,14 +525,14 @@ const config: Config = {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant('dark', [
-        '&[data-mantine-color-scheme="dark"]',
-        '[data-mantine-color-scheme="dark"] > &:not([data-mantine-color-scheme="light"])',
-        '[data-mantine-color-scheme="dark"]:not(:has([data-mantine-color-scheme="light"])) &'
+        '&[data-theme="dark"]',
+        '[data-theme="dark"] > &:not([data-theme="light"])',
+        '[data-theme="dark"]:not(:has([data-theme="light"])) &'
       ]);
       addVariant('light', [
-        '&[data-mantine-color-scheme="light"]',
-        '[data-mantine-color-scheme="light"] > &:not([data-mantine-color-scheme="dark"])',
-        '[data-mantine-color-scheme="light"]:not(:has([data-mantine-color-scheme="dark"])) &'
+        '&[data-theme="light"]',
+        '[data-theme="light"] > &:not([data-theme="dark"])',
+        '[data-theme="light"]:not(:has([data-theme="dark"])) &'
       ]);
     })
   ]

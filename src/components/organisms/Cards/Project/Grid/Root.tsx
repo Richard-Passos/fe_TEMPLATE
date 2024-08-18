@@ -63,9 +63,9 @@ const GridProjectCardOrganism = (
               <Image
                 alt={data.image.alt}
                 className='size-full object-cover transition-transform duration-300 group-hover:scale-110'
+                height={288}
                 src={data.image.src}
                 width={288}
-                height={288}
               />
             </div>
           </ScrollAnimate>
@@ -80,7 +80,7 @@ const GridProjectCardOrganism = (
         {data.roles
           .toSorted((a, b) => a.localeCompare(b))
           .map((role, i, arr) => (
-            <Fragment key={i}>
+            <Fragment key={role}>
               <li className='line-clamp-1 break-all'>{role}</li>
 
               {i < arr.length - 1 && <li>&</li>}

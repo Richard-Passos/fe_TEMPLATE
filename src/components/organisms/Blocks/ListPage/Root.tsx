@@ -42,15 +42,24 @@ const ListPageBlockOrganism = (
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
-            className='[--gap:--spacing-md]'
+            className='[--gap:theme(spacing.sm)]'
             key={item}
             order={5}
           >
             <span>&nbsp;{item}</span>
+
             <span>&nbsp;·</span>
+
             <span className='opacity-30 dark:opacity-10'>&nbsp;{item}</span>
-            <span className='opacity-30 dark:opacity-10'>&nbsp;·</span>
-            <span className='opacity-30 dark:opacity-10'>&nbsp;{item}</span>
+
+            <span className='opacity-30 dark:opacity-10 max-sm:hidden'>
+              &nbsp;·
+            </span>
+
+            <span className='opacity-30 dark:opacity-10 max-sm:hidden'>
+              &nbsp;{item}
+            </span>
+
             <span>&nbsp;·</span>
           </ListHorizontalScroll.Item>
         ))}

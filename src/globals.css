@@ -428,11 +428,11 @@
   }
 
   .border-x {
-    @apply border-[.8px] border-solid border-border;
+    @apply border-x-[.8px] border-solid border-border;
   }
 
   .border-y {
-    @apply border-[.8px] border-solid border-border;
+    @apply border-y-[.8px] border-solid border-border;
   }
 
   .outline {

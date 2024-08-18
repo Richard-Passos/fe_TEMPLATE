@@ -34,7 +34,7 @@ const HeaderMenuTriggerOrganism = (
           config={animationConfig}
           smoothConfig={smoothConfig}
         >
-          <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max flex items-center justify-center [--side:--spacing-lg] [--tw-scale-y:--tw-scale-x] data-open:![--tw-scale-x:1] sm:[--side:--spacing-xl]'>
+          <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max flex items-center justify-center [--side:theme(spacing.lg)] [--tw-scale-y:--tw-scale-x] data-open:![--tw-scale-x:1] sm:[--side:theme(spacing.xl)]'>
             <HeaderMenuTriggerButton
               className={cn(
                 'rounded-full ![--ai-size:calc(var(--size)*var(--mantine-scale))] [--size:3.75rem] sm:[--size:4.5rem]',

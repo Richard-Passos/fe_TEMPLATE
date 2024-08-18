@@ -44,7 +44,7 @@ const ListHorizontalScrollItemMolecule = (
     <ScrollAnimate config={ANIMATION_CONFIG(baseVelocity >= 0 ? 'ltr' : 'rtl')}>
       <Title
         className={cn(
-          'border-x-0 border-y border-solid border-gray-3 bg-body py-md odd:-rotate-[.5deg] even:rotate-[.5deg] dark:border-dark-4 light:shadow',
+          'border-y bg-body py-md odd:-rotate-[.5deg] even:rotate-[.5deg]',
           className
         )}
         component='li'

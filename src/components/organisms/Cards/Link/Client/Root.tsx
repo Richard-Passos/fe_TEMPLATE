@@ -8,6 +8,7 @@ import UnstyledLink, {
   UnstyledLinkProps
 } from '@/components/atoms/Link/Unstyled';
 import { CardRoot, CardRootProps } from '@/components/molecules/Card';
+import { cn } from '@/utils';
 
 type LinkCardClientOrganismOwnProps = {};
 
@@ -18,11 +19,15 @@ type LinkCardClientOrganismProps = LinkCardClientOrganismOwnProps &
   >;
 
 const LinkCardClientOrganism = (
-  props: LinkCardClientOrganismProps,
+  { className, ...props }: LinkCardClientOrganismProps,
   ref: LinkCardClientOrganismProps['ref']
 ) => {
   return (
     <CardRoot
+      className={cn(
+        'dark:hover:bg-[--button-hover] light:hover:bg-[--button-hover]',
+        className
+      )}
       component={(props: ButtonProps & UnstyledLinkProps) => (
         <Button
           component={UnstyledLink}

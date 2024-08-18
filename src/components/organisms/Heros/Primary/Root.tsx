@@ -45,7 +45,7 @@ const PrimaryHeroOrganism = (
         className
       )}
     >
-      <div className='relative flex w-full grow overflow-hidden rounded-lg border'>
+      <div className='relative flex w-full grow overflow-hidden rounded-lg'>
         <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
             <div className='flex w-full grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>
@@ -70,7 +70,7 @@ const PrimaryHeroOrganism = (
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border border-solid border-border opacity-60' />
+        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
       <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />

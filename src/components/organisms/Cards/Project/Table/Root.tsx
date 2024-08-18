@@ -29,7 +29,7 @@ const TableProjectCardOrganism = (
   return (
     <Link
       className={cn(
-        'group/item relative font-normal text-current no-underline hover:z-10 *:focus-visible:outline',
+        'group/item relative font-normal text-current no-underline hover:z-10 focus-visible:outline-0 *:focus-visible:outline',
         className
       )}
       ref={ref}
@@ -47,7 +47,7 @@ const TableProjectCardOrganism = (
             />
           </div>
         }
-        className='top-px -mt-px flex gap-xs border-x-0 border-y border-solid border-border px-[7.5%] py-xl transition-[transform,opacity] [--opacity:.25] dark:[--opacity:.05] group-hover:[*:not(:hover)>&]:scale-x-95 group-hover:[*:not(:hover)>&]:opacity-[--opacity]'
+        className='gap-xs px-[7.5%] py-xl transition-[transform,opacity] group-hover:[*:not(:hover)>&]:scale-x-95 group-hover:[*:not(:hover)>&]:opacity-50'
       >
         <Text className='relative z-10 mb-auto inline-flex translate-y-0.5 text-sm font-semibold text-dimmed'>
           {`${data.index + 1}`.padStart(2, '0')}/

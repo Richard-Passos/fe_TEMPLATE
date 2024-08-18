@@ -133,7 +133,25 @@
           "animation": "rotateLeft"
         }
       },
-      "blocks": {},
+      "blocks": {
+        "mission": {
+          "description": "That's my mission — Each line of code refines my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
+          "items": {
+            "0": {
+              "text": "IMPROVE",
+              "icon": "/icons/rocket.svg"
+            },
+            "1": {
+              "text": "INSPIRE",
+              "icon": "/icons/globe.svg"
+            },
+            "2": {
+              "text": "REPEAT",
+              "icon": "/icons/smile.svg"
+            }
+          }
+        }
+      },
       "metadata": {
         "title": "Work",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -423,12 +441,12 @@
   },
   "skills": {
     "hard": {
-      "React.js": {
+      "ReactJS": {
         "title": "React.js",
         "icon": "/icons/react.svg",
         "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
       },
-      "Node.js": {
+      "NodeJS": {
         "title": "Node.js",
         "icon": "/icons/nodejs.svg",
         "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
@@ -438,7 +456,7 @@
         "icon": "/icons/react.svg",
         "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
       },
-      "Next.js": {
+      "NextJS": {
         "title": "Next.js",
         "icon": "/icons/nextjs.svg",
         "description": "React framework for building server-rendered and statically-generated web applications."

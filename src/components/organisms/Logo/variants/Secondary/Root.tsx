@@ -19,9 +19,9 @@ const LogoSecondaryVariantOrganism = (
 ) => {
   return (
     <Action
+      className={cn('![--button-padding-x:theme(spacing.xs)]', className)}
       ref={ref}
       size='md'
-      className={cn('![--action-padding-x:--spacing-xs]', className)}
       {...props}
     >
       <Icon

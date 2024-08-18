@@ -17,10 +17,12 @@ const CardMolecule = (
 ) => {
   return (
     <Card
-      className={cn('rounded-md p-lg', className)}
+      className={cn(
+        'rounded-md border p-lg dark:bg-black light:bg-white',
+        className
+      )}
       component='li'
       ref={ref}
-      withBorder
       {...props}
     />
   );

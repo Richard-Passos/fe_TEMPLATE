@@ -7,7 +7,7 @@ import { CtaTextBlockProps } from '@/components/organisms/Blocks/CtaText';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { get, keys } from '@/utils';
+import { get, keys, times } from '@/utils';
 
 import { LayoutParams } from './layout';
 
@@ -26,7 +26,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
     <PageTemplate
       blocks={[
         {
-          type: 'SelectProjectsCatalog',
+          type: 'ProjectsCatalog',
           theme: 'dark',
           id: 'scroll-to',
           data: {
@@ -36,6 +36,15 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
             description: t('blocks.selectedProjects.description'),
             subtitle: t('blocks.selectedProjects.subtitle'),
             empty: t('blocks.selectedProjects.empty'),
+            items: times(5, String).map((id, i) => ({
+              slug: `title-${id}`,
+              title: `Title - ${id}`,
+              roles: ['design', 'development'],
+              image: {
+                src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,
+                alt: ''
+              }
+            })),
             action: {
               label: t('blocks.selectedProjects.action.label')
             }

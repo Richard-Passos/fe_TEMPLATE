@@ -10,7 +10,6 @@ type UiProviderOrganismProps = UiProviderOrganismOwnProps &
 const UiProviderOrganism = (props: UiProviderOrganismProps) => {
   return (
     <MantineProvider
-      cssVariablesSelector='*'
       defaultColorScheme={defaultColorScheme}
       theme={theme}
       {...props}

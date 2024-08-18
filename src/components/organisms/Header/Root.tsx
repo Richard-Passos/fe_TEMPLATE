@@ -42,7 +42,7 @@ const HeaderOrganism = (
         {...props}
       >
         <Logo
-          className='-ml-[--action-padding-x]'
+          className='-ml-[--button-padding-x]'
           variant='primary'
         />
 

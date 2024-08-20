@@ -20,6 +20,9 @@ const SectionTransitionOrganism = (
   ref: SectionTransitionOrganismProps['ref']
 ) => {
   const animationConfig: ScrollAnimateConfigOptions = {
+    scrollConfig: {
+      offset: ['0 1', '-0.05 0']
+    },
     prop: '--h',
     propPoints: ['0%', '100%']
   };

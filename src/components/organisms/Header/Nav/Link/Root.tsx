@@ -27,7 +27,7 @@ const HeaderNavLinkOrganism = (
   ref: HeaderNavLinkOrganismProps['ref']
 ) => {
   return (
-    <Magnetic>
+    <Magnetic.Root>
       <Link
         className={cn(
           'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-inherit no-underline transition-none',
@@ -54,7 +54,7 @@ const HeaderNavLinkOrganism = (
           />
         )}
       </Link>
-    </Magnetic>
+    </Magnetic.Root>
   );
 };
 

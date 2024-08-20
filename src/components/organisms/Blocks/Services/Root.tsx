@@ -1,8 +1,6 @@
 import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 
-import { Image, ScrollAnimate, Title } from '@/components/atoms';
-import { ImageProps } from '@/components/atoms/Image';
-import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
+import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { Action } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
@@ -11,25 +9,22 @@ import { ServiceCardProps } from '@/components/organisms/Cards/Service';
 import { cn, renderComp } from '@/utils';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
-
-const ANIMATION_CONFIG = {
-  prop: 'y',
-  propPoints: ['-13%', '0%']
-} as ScrollAnimateConfigOptions;
+import ServicesBlockImage from './Image';
+import { ServicesBlockImageOrganismProps } from './Image/Root';
 
 type ServicesBlockOrganismOwnProps = {
-  data: PrimaryLayoutBlockProps['data'] & {
-    subtitle?: ReactNode;
-    image: Pick<ImageProps, 'src' | 'alt'>;
-    items: ServiceCardProps['data'][];
-    action: {
-      label: ReactNode;
+  data: PrimaryLayoutBlockProps['data'] &
+    ServicesBlockImageOrganismProps['data'] & {
+      subtitle?: ReactNode;
+      items: ServiceCardProps['data'][];
+      action: {
+        label: ReactNode;
+      };
     };
-  };
   wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
   subtitleProps?: Partial<TitleProps>;
-  imageProps?: Partial<any>;
-  listProps?: Partial<any>;
+  imageProps?: Partial<ServicesBlockImageOrganismProps>;
+  listProps?: Partial<ComponentPropsWithRef<'ul'>>;
   actionProps?: Partial<ActionProps>;
 };
 
@@ -80,22 +75,14 @@ const ServicesBlockOrganism = (
         )}
 
         <div className='grid gap-xl sm:grid-cols-2'>
-          <div className='relative size-full'>
-            <div className='rounded-[--radius] border p-[--p] [--p:theme(spacing.xs)] [--radius:theme(borderRadius.xl)]'>
-              <div className='sticky top-2xl aspect-[1/1.15] w-full overflow-hidden rounded-[calc(var(--radius)-var(--p))] bg-gray-1 dark:bg-dark-7 max-sm:hidden'>
-                <ScrollAnimate config={ANIMATION_CONFIG}>
-                  <Image
-                    alt={data.image.alt}
-                    height={605}
-                    src={data.image.src}
-                    width={465}
-                    {...imageProps}
-                    className={cn('object-cover', imageProps?.className)}
-                  />
-                </ScrollAnimate>
-              </div>
-            </div>
-          </div>
+          <ServicesBlockImage
+            data={{
+              image: data.image,
+              icons: data.icons
+            }}
+            {...imageProps}
+            className={cn('max-sm:hidden', imageProps?.className)}
+          />
 
           <ul
             {...listProps}

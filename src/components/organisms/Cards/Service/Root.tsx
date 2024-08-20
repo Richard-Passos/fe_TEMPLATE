@@ -57,8 +57,7 @@ const ServiceCardOrganism = (
       />
 
       <Title
-        component='h4'
-        order={5}
+        order={4}
         {...titleProps}
         className={cn('mt-lg', titleProps?.className)}
       >

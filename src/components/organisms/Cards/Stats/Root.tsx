@@ -41,7 +41,7 @@ const StatsCardOrganism = (
       </Title>
 
       <Title
-        order={5}
+        order={4}
         {...titleProps}
         className={cn(
           'ml-auto whitespace-pre-line text-end font-semibold leading-none text-dimmed',

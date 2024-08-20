@@ -43,7 +43,8 @@ const TableProjectCardOrganism = (
           <div className='relative z-10 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
             <Title
               className='basis-full sm:basis-1/2'
-              order={4}
+              component='h4'
+              order={3}
             >
               {data.title}
             </Title>

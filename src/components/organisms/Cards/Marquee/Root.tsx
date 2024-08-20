@@ -31,7 +31,7 @@ const MarqueeCardOrganism = (
 
       <Card.Section className='my-auto flex flex-col items-center justify-center gap-sm'>
         <Title
-          className='text-center font-semibold'
+          className='text-center'
           component='h4'
           order={5}
         >

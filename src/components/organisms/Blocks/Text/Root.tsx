@@ -42,7 +42,7 @@ const TextBlockOrganism = (
       {...props}
     >
       <Title
-        order={3}
+        order={2}
         {...titleProps}
         className={cn('max-w-2xl', titleProps?.className)}
       >

@@ -74,11 +74,10 @@ const ServicesBlockOrganism = (
           [data.subtitle]
         )}
 
-        <div className='grid gap-xl sm:grid-cols-12'>
+        <div className='grid gap-md sm:grid-cols-12 md:gap-xl'>
           <ServicesBlockImage
             data={{
-              image: data.image,
-              icons: data.icons
+              image: data.image
             }}
             {...imageProps}
             className={cn(

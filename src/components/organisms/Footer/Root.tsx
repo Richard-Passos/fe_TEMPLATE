@@ -63,7 +63,7 @@ const FooterOrganism = (
         <Title
           className='leading-none'
           component='h2'
-          order={4}
+          order={3}
         >
           {t.rich('cta.title')}
         </Title>

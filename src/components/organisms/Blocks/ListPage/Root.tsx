@@ -44,7 +44,7 @@ const ListPageBlockOrganism = (
             baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
             className='[--gap:theme(spacing.sm)]'
             key={item}
-            order={5}
+            order={4}
           >
             <span>&nbsp;{item}</span>
 

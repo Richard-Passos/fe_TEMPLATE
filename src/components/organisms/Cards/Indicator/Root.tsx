@@ -30,7 +30,7 @@ const BoldCardOrganism = (
 
       <Title
         component='p'
-        order={4}
+        order={3}
       >
         {data.description}
       </Title>

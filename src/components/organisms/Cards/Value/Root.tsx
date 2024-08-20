@@ -48,7 +48,7 @@ const ValueCardOrganism = (
       </div>
 
       <Title
-        order={5}
+        order={4}
         {...titleProps}
         className={cn('mt-lg', titleProps?.className)}
       >

@@ -27,7 +27,7 @@ const TextCardOrganism = (
       <Title
         className='font-medium'
         component='p'
-        order={5}
+        order={4}
       >
         {data.description}
       </Title>

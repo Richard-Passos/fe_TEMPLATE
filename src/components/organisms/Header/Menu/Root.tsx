@@ -54,7 +54,10 @@ const HeaderMenuOrganism = (
       >
         <nav className='flex flex-col gap-xs'>
           {keys(get(messages, 'header.nav.full')).map((key) => (
-            <Link href={gt(`header.nav.full.${key}.href`)}>
+            <Link
+              href={gt(`header.nav.full.${key}.href`)}
+              key={key}
+            >
               {gt(`header.nav.full.${key}.label`)}
             </Link>
           ))}

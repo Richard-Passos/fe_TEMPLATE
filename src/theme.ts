@@ -199,7 +199,7 @@ const themeOverride = createTheme({
   focusClassName: 'focus-visible:outline',
   headings: {
     fontFamily: fonts.title.style.fontFamily,
-    fontWeight: '800',
+    fontWeight: '700',
     textWrap: 'wrap',
     sizes: {
       h1: {
@@ -253,7 +253,7 @@ const themeOverride = createTheme({
     sm: 'calc(0.25rem * var(--mantine-scale))',
     md: 'calc(0.5rem * var(--mantine-scale))',
     lg: 'calc(1rem * var(--mantine-scale))',
-    xl: 'calc(2rem * var(--mantine-scale))'
+    xl: 'calc(1.5rem * var(--mantine-scale))'
   },
   spacing: {
     '2xs': 'calc(0.05rem * var(--mantine-scale))',

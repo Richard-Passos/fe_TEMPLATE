@@ -14,6 +14,7 @@ import LocalTime from './LocalTime';
 import Magnetic from './Magnetic';
 import Marquee from './Marquee';
 import Portal from './Portal';
+import Progress from './Progress';
 import ScrollAnimate from './ScrollAnimate';
 import Select from './Select';
 import SmoothScroll from './SmoothScroll';
@@ -37,6 +38,7 @@ const Atoms = {
   Magnetic,
   Marquee,
   Portal,
+  Progress,
   ScrollAnimate,
   Select,
   SmoothScroll,
@@ -62,6 +64,7 @@ export {
   Magnetic,
   Marquee,
   Portal,
+  Progress,
   ScrollAnimate,
   Select,
   SmoothScroll,

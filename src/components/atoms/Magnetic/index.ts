@@ -1,4 +1,11 @@
-import Magnetic, { MagneticAtomProps as MagneticProps } from './Root';
+import MagneticContainer, { MagneticContainerProps } from './Container';
+import MagneticRoot, { MagneticAtomProps as MagneticRootProps } from './Root';
+
+const Magnetic = {
+  Root: MagneticRoot,
+  Container: MagneticContainer
+};
 
 export default Magnetic;
-export type { MagneticProps };
+export { MagneticRoot, MagneticContainer };
+export type { MagneticRootProps, MagneticContainerProps };

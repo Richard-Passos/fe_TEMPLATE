@@ -1,6 +1,7 @@
 import Action from './Action';
 import BentoGrid from './BentoGrid';
 import Card from './Card';
+import Carousel from './Carousel';
 import Catalog from './Catalog';
 import Drawer from './Drawer';
 import List from './List';
@@ -14,6 +15,7 @@ const Molecules = {
   Action,
   BentoGrid,
   Card,
+  Carousel,
   Catalog,
   Drawer,
   List,
@@ -29,6 +31,7 @@ export {
   Action,
   BentoGrid,
   Card,
+  Carousel,
   Catalog,
   Drawer,
   List,

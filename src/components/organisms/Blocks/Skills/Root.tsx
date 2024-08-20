@@ -1,114 +1,51 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
-import { ArrowLeftIcon, ArrowRightIcon } from '@/components/atoms/Icon/icons';
-import { Carousel } from '@/components/molecules';
-import {
-  CarouselActionsProps,
-  CarouselActiveIdxProps,
-  CarouselProgressProps,
-  CarouselTrackProps
-} from '@/components/molecules/Carousel';
+import { HorizontalScroll } from '@/components/atoms';
 import SkillCard, { SkillCardProps } from '@/components/organisms/Cards/Skill';
 import { cn } from '@/utils';
 
-import SkillsActionBlock, { SkillsActionBlockProps } from './Action';
-import SkillsClientBlock, { SkillsClientBlockProps } from './Client';
+import SecondaryLayoutBlock, {
+  SecondaryLayoutBlockProps
+} from '../Layout/Secondary';
 
 type SkillsBlockOrganismOwnProps = {
-  data: SkillsClientBlockProps['data'] & {
-    items: SkillCardProps['data'][];
+  data: SecondaryLayoutBlockProps['data'] & {
+    items: SkillCardProps['data'][][];
   };
-  subChildrenProps?: Partial<ComponentPropsWithRef<'section'>>;
-  activeIdxProps?: Partial<CarouselActiveIdxProps>;
-  progressProps?: Partial<CarouselProgressProps>;
-  actionsProps?: Partial<CarouselActionsProps>;
-  prevProps?: Partial<SkillsActionBlockProps>;
-  nextProps?: Partial<SkillsActionBlockProps>;
-  trackProps?: Partial<CarouselTrackProps>;
 };
 
 type SkillsBlockOrganismProps = SkillsBlockOrganismOwnProps &
-  Omit<SkillsClientBlockProps, keyof SkillsBlockOrganismOwnProps>;
+  Omit<SecondaryLayoutBlockProps, keyof SkillsBlockOrganismOwnProps>;
 
 const SkillsBlockOrganism = (
-  {
-    className,
-    data,
-    subChildrenProps,
-    activeIdxProps,
-    progressProps,
-    actionsProps,
-    prevProps,
-    nextProps,
-    trackProps,
-    ...props
-  }: SkillsBlockOrganismProps,
-  ref: SkillsActionBlockProps['ref']
+  { className, data, ...props }: SkillsBlockOrganismProps,
+  ref: SkillsBlockOrganismProps['ref']
 ) => {
   return (
-    <SkillsClientBlock
+    <SecondaryLayoutBlock
       className={cn('min-h-fit 2xl:min-h-fit', className)}
       data={{
-        title: data.title,
-        subtitle: data.subtitle
+        title: data.title
       }}
-      options={{ slideFocus: true }}
       ref={ref}
-      subChildren={
-        <section
-          {...subChildrenProps}
-          className={cn(
-            'flex w-full items-center gap-sm sm:max-w-xl',
-            subChildrenProps?.className
-          )}
-        >
-          <Carousel.ActiveIdx
-            length={data.items.length}
-            {...activeIdxProps}
-            className={cn('shrink-0', activeIdxProps?.className)}
-          />
-
-          <Carousel.Progress
-            {...progressProps}
-            className={cn('grow', progressProps?.className)}
-          />
-
-          <Carousel.Actions {...actionsProps}>
-            <SkillsActionBlock
-              action='prev'
-              isIconOnly
-              size='input-sm'
-              variant='default'
-              {...prevProps}
-            >
-              <ArrowLeftIcon className='absolute aspect-square h-1/2 w-auto' />
-            </SkillsActionBlock>
-
-            <SkillsActionBlock
-              action='next'
-              isIconOnly
-              size='input-sm'
-              variant='default'
-              {...nextProps}
-            >
-              <ArrowRightIcon className='absolute aspect-square h-1/2 w-auto' />
-            </SkillsActionBlock>
-          </Carousel.Actions>
-        </section>
-      }
       {...props}
     >
-      <Carousel.Track {...trackProps}>
-        {data.items?.map((data) => (
-          <Carousel.Item
-            className='focus-visible:outline-0 *:focus-visible:outline'
-            key={data.id}
+      <div className='flex w-full flex-col gap-[--gap] [--gap:theme(spacing.xs)]'>
+        {data.items.map((items, i) => (
+          <HorizontalScroll
+            baseVelocity={i % 2 === 0 ? 1 : -1}
+            key={i}
           >
-            <SkillCard data={data} />
-          </Carousel.Item>
+            {items.map((data) => (
+              <SkillCard
+                data={data}
+                key={data.id}
+              />
+            ))}
+          </HorizontalScroll>
         ))}
-      </Carousel.Track>
-    </SkillsClientBlock>
+      </div>
+    </SecondaryLayoutBlock>
   );
 };
 

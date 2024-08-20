@@ -9,10 +9,7 @@ type ImageAtomOwnProps = {
 type ImageAtomProps = ImageAtomOwnProps &
   Omit<ImageProps & NextImageProps, keyof ImageAtomOwnProps>;
 
-const ImageAtom = (
-  { className, ...props }: ImageAtomProps,
-  ref: ImageAtomProps['ref']
-) => {
+const ImageAtom = (props: ImageAtomProps, ref: ImageAtomProps['ref']) => {
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
     <Image

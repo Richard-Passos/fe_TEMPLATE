@@ -40,8 +40,7 @@ const ValuesBlockOrganism = (
   return (
     <SecondaryLayoutBlock
       data={{
-        title: data.title,
-        subtitle: data.subtitle
+        title: data.title
       }}
       ref={ref}
       {...props}

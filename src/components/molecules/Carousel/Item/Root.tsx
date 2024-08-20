@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-ignore
 import { SplideSlide } from '@splidejs/react-splide';
 import { ComponentPropsWithRef } from 'react';
 

@@ -42,7 +42,7 @@
         },
         "aboutBentoGrid": {
           "title": { "0": "ABOUT", "1": "ME" },
-          "description": "Get to know the person behind the code — this is where you can connect with who I am beyond the screen.",
+          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate.",
           "templates": {
             "base": {
               "0": "item-0",
@@ -79,7 +79,7 @@
             },
             "values": {
               "icon": "/icons/fingerprint.svg",
-              "title": "My values"
+              "title": "MY VALUES"
             },
             "improving": {
               "icon": "/icons/rocket.svg",
@@ -165,24 +165,6 @@
             "src": "/images/parallax-00.jpg",
             "alt": ""
           },
-          "icons": {
-            "topLeft": {
-              "src": "/icons/smile.svg",
-              "animation": "rotateRight"
-            },
-            "topRight": {
-              "src": "/icons/smile.svg",
-              "animation": "rotateLeft"
-            },
-            "bottomLeft": {
-              "src": "/icons/smile.svg",
-              "animation": "rotateRight"
-            },
-            "bottomRight": {
-              "src": "/icons/smile.svg",
-              "animation": "rotateLeft"
-            }
-          },
           "action": {
             "label": "Contact me"
           }
@@ -202,10 +184,10 @@
           "subtitle": "SOME STATISTICS..."
         },
         "skills": {
-          "title": "SOME SKILLS"
+          "title": "Some skills"
         },
         "values": {
-          "title": "MY VALUES",
+          "title": "My values",
           "icons": {
             "left": {
               "src": "/icons/globe.svg",

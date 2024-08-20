@@ -2,7 +2,6 @@ import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/components/atoms';
-import { ServicesBlockOrganismProps } from '@/components/organisms/Blocks/Services/Root';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
@@ -55,18 +54,6 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               src: t('blocks.services.image.src'),
               alt: t('blocks.services.image.alt')
             },
-            icons: keys(
-              get(messages, 'pages.work.blocks.services.icons')
-            ).reduce(
-              (obj, key) => ({
-                ...obj,
-                [key]: {
-                  src: t(`blocks.services.icons.${key}.src`),
-                  animation: t(`blocks.services.icons.${key}.animation`)
-                }
-              }),
-              {}
-            ) as ServicesBlockOrganismProps['data']['icons'],
             items: keys(get(messages, 'services')).map((key, i) => ({
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
               title: gt(`services.${key}.title`),

@@ -37,7 +37,7 @@ const CarouselMolecule = forwardRef(
       <Splide
         className={cn('flex w-full flex-col items-center', className)}
         hasTrack={false}
-        onMove={(carousel) => {
+        onMove={(carousel: any) => {
           const end = carousel.length - 1,
             rate = Math.min(carousel.index / end, 1);
 

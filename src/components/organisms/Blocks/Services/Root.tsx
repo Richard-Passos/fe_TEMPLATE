@@ -74,20 +74,23 @@ const ServicesBlockOrganism = (
           [data.subtitle]
         )}
 
-        <div className='grid gap-xl sm:grid-cols-2'>
+        <div className='grid gap-xl sm:grid-cols-12'>
           <ServicesBlockImage
             data={{
               image: data.image,
               icons: data.icons
             }}
             {...imageProps}
-            className={cn('max-sm:hidden', imageProps?.className)}
+            className={cn(
+              'max-sm:hidden sm:col-span-5 md:col-span-6',
+              imageProps?.className
+            )}
           />
 
           <ul
             {...listProps}
             className={cn(
-              'm-0 flex list-none flex-col gap-xs p-0 sm:py-xl',
+              'm-0 flex list-none flex-col gap-xs p-0 sm:col-span-7 sm:py-xl md:col-span-6',
               listProps?.className
             )}
           >

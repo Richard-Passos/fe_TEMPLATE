@@ -1,4 +1,4 @@
-import BoldCard, { BoldCardOrganismProps as BoldCardProps } from './Root';
+import ValueCard, { ValueCardOrganismProps as ValueCardProps } from './Root';
 
-export default BoldCard;
-export type { BoldCardProps };
+export default ValueCard;
+export type { ValueCardProps };

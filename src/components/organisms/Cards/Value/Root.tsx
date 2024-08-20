@@ -1,23 +1,37 @@
 import { forwardRef } from 'react';
 
-import { Icon, Title } from '@/components/atoms';
-import { Card } from '@/components/molecules';
-import { CardRootProps } from '@/components/molecules/Card';
+import { Icon, Text, Title } from '@/components/atoms';
+import { IconProps } from '@/components/atoms/Icon';
+import { TextProps } from '@/components/atoms/Text';
+import { TitleProps } from '@/components/atoms/Title';
+import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
-type BoldCardOrganismOwnProps = {
+type ValueCardOrganismOwnProps = {
   data: {
-    icon: string;
-    description: string;
+    id: string;
+    icon: IconProps['src'];
+    title: TitleProps['children'];
+    description: TextProps['children'];
   };
+  iconProps?: Partial<IconProps>;
+  titleProps?: Partial<TitleProps>;
+  descriptionProps?: Partial<TextProps>;
 };
 
-type BoldCardOrganismProps = BoldCardOrganismOwnProps &
-  Omit<CardRootProps, keyof BoldCardOrganismOwnProps>;
+type ValueCardOrganismProps = ValueCardOrganismOwnProps &
+  Omit<CardRootProps, keyof ValueCardOrganismOwnProps>;
 
-const BoldCardOrganism = (
-  { className, data, ...props }: BoldCardOrganismProps,
-  ref: BoldCardOrganismProps['ref']
+const ValueCardOrganism = (
+  {
+    className,
+    data,
+    iconProps,
+    titleProps,
+    descriptionProps,
+    ...props
+  }: ValueCardOrganismProps,
+  ref: ValueCardOrganismProps['ref']
 ) => {
   return (
     <Card.Root
@@ -25,19 +39,34 @@ const BoldCardOrganism = (
       ref={ref}
       {...props}
     >
-      <div className='size-8'>
-        <Icon src={data.icon} />
+      <div className='flex size-12 items-center justify-center rounded-sm bg-gray-0 dark:bg-dark-7'>
+        <Icon
+          src={data.icon}
+          {...iconProps}
+          className={cn('size-1/2', iconProps?.className)}
+        />
       </div>
 
       <Title
-        component='p'
-        order={4}
+        order={5}
+        {...titleProps}
+        className={cn('mt-lg', titleProps?.className)}
+      >
+        {data.title}
+      </Title>
+
+      <Text
+        {...descriptionProps}
+        className={cn(
+          'leading-relaxed text-dimmed',
+          descriptionProps?.className
+        )}
       >
         {data.description}
-      </Title>
+      </Text>
     </Card.Root>
   );
 };
 
-export default forwardRef(BoldCardOrganism);
-export type { BoldCardOrganismProps };
+export default forwardRef(ValueCardOrganism);
+export type { ValueCardOrganismProps };

@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 
 import { Badge, Icon, Marquee, Title } from '@/components/atoms';
-import { Card } from '@/components/molecules';
-import { CardRootProps } from '@/components/molecules/Card';
+import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
 type MarqueeCardOrganismOwnProps = {

@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 
 import { Icon, Text } from '@/components/atoms';
-import { Card } from '@/components/molecules';
-import { CardRootProps } from '@/components/molecules/Card';
+import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
 type SimpleCardOrganismOwnProps = {

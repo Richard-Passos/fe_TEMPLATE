@@ -1,10 +1,9 @@
 import { forwardRef } from 'react';
 
-import { Image, Link, Text, Title } from '@/components/atoms';
+import { Image, Link, Magnetic, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
+import { CardRoot } from '@/components/molecules/Card';
 import { cn, renderComp } from '@/utils';
-
-import TableProjectCardMagneticContainer from './MagneticContainer';
 
 type TableProjectCardOrganismOwnProps = {
   data: {
@@ -35,45 +34,54 @@ const TableProjectCardOrganism = (
       ref={ref}
       {...props}
     >
-      <TableProjectCardMagneticContainer
-        box={
-          <div className='size-72 scale-90 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] group-hover/item:scale-100 group-hover/item:opacity-100 dark:bg-dark-7'>
-            <Image
-              alt={data.image.alt}
-              className='object-cover'
-              height={288}
-              src={data.image.src}
-              width={288}
-            />
-          </div>
-        }
-        className='gap-xs px-[7.5%] py-xl transition-[transform,opacity] group-hover:[*:not(:hover)>&]:scale-x-95 group-hover:[*:not(:hover)>&]:opacity-50'
-      >
-        <Text className='relative z-10 mb-auto inline-flex translate-y-0.5 text-sm font-semibold text-dimmed'>
-          {`${data.index + 1}`.padStart(2, '0')}/
-        </Text>
-
-        <div className='relative z-10 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
-          <Title
-            className='basis-full uppercase sm:basis-1/2'
-            component='h4'
-            order={3}
-          >
-            {data.title}
-          </Title>
-
-          <Text className='grow basis-2/3 overflow-hidden text-ellipsis text-sm font-medium lowercase sm:basis-0 sm:text-end'>
-            {data.roles.toSorted((a, b) => a.localeCompare(b)).join(' & ')}
+      <Magnetic.Container>
+        <CardRoot className='relative flex-row items-center justify-center gap-xs overflow-visible px-[7.5%] py-xl transition-[transform,opacity] group-hover:[*:not(:hover)>&]:scale-x-95 group-hover:[*:not(:hover)>&]:opacity-50'>
+          <Text className='relative z-10 mb-auto inline-flex translate-y-0.5 text-sm font-semibold text-dimmed'>
+            {`${data.index + 1}`.padStart(2, '0')}/
           </Text>
 
-          {renderComp(
-            <Text className='grow basis-0 text-end text-sm font-semibold sm:text-center'>
-              {data.year}
-            </Text>,
-            [data.year]
-          )}
-        </div>
-      </TableProjectCardMagneticContainer>
+          <div className='relative z-10 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
+            <Title
+              className='basis-full uppercase sm:basis-1/2'
+              component='h4'
+              order={3}
+            >
+              {data.title}
+            </Title>
+
+            <Text className='grow basis-2/3 overflow-hidden text-ellipsis text-sm font-medium lowercase sm:basis-0 sm:text-end'>
+              {data.roles.toSorted((a, b) => a.localeCompare(b)).join(' & ')}
+            </Text>
+
+            {renderComp(
+              <Text className='grow basis-0 text-end text-sm font-semibold sm:text-center'>
+                {data.year}
+              </Text>,
+              [data.year]
+            )}
+          </div>
+
+          <Magnetic.Root
+            limit={{ x: 0.2, y: 0.35 }}
+            smoothConfig={{
+              damping: 15,
+              stiffness: 150
+            }}
+          >
+            <div className='pointer-events-none absolute'>
+              <div className='size-72 scale-90 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] group-hover/item:scale-100 group-hover/item:opacity-100 dark:bg-dark-7'>
+                <Image
+                  alt={data.image.alt}
+                  className='object-cover'
+                  height={288}
+                  src={data.image.src}
+                  width={288}
+                />
+              </div>
+            </div>
+          </Magnetic.Root>
+        </CardRoot>
+      </Magnetic.Container>
     </Link>
   );
 };

@@ -214,8 +214,8 @@ const themeOverride = createTheme({
       },
       h3: {
         fontSize:
-          'calc(clamp(2rem, 1rem + 2.0833vw, 3rem) * var(--mantine-scale))',
-        lineHeight: '1.4'
+          'calc(clamp(2.25rem, 1rem + 2.6042vw, 3.5rem) * var(--mantine-scale))',
+        lineHeight: '1.3'
       },
       h4: {
         fontSize:

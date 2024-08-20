@@ -1,42 +1,46 @@
+import { ImageProps } from 'next/image';
 import { forwardRef } from 'react';
 
-import { Icon, Title } from '@/components/atoms';
+import { Image, ScrollAnimate } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
-type BoldCardOrganismOwnProps = {
-  data: {
-    icon: string;
-    description: string;
-  };
+type ImageCardOrganismOwnProps = {
+  data: Pick<ImageProps, 'src' | 'alt'>;
+  imageProps?: Partial<ImageProps>;
 };
 
-type BoldCardOrganismProps = BoldCardOrganismOwnProps &
-  Omit<CardRootProps, keyof BoldCardOrganismOwnProps>;
+type ImageCardOrganismProps = ImageCardOrganismOwnProps &
+  Omit<CardRootProps, keyof ImageCardOrganismOwnProps>;
 
-const BoldCardOrganism = (
-  { className, data, ...props }: BoldCardOrganismProps,
-  ref: BoldCardOrganismProps['ref']
+const ImageCardOrganism = (
+  { className, data, imageProps, ...props }: ImageCardOrganismProps,
+  ref: ImageCardOrganismProps['ref']
 ) => {
   return (
     <Card.Root
-      className={cn('min-h-52 flex-col justify-between', className)}
+      className={cn('size-full', className)}
+      padding='xs'
+      radius='xl'
       ref={ref}
       {...props}
     >
-      <div className='size-8'>
-        <Icon src={data.icon} />
+      <div className='size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))]'>
+        <div className='relative h-[115%]'>
+          <ScrollAnimate config={{ prop: 'y', propPoints: ['-13%', '0%'] }}>
+            <Image
+              alt={data.alt}
+              fill
+              src={data.src}
+              {...imageProps}
+              className={cn('object-cover', imageProps?.className)}
+            />
+          </ScrollAnimate>
+        </div>
       </div>
-
-      <Title
-        component='p'
-        order={4}
-      >
-        {data.description}
-      </Title>
     </Card.Root>
   );
 };
 
-export default forwardRef(BoldCardOrganism);
-export type { BoldCardOrganismProps };
+export default forwardRef(ImageCardOrganism);
+export type { ImageCardOrganismProps };

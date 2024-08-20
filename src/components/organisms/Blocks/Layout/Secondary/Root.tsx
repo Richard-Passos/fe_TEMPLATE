@@ -1,24 +1,16 @@
 import { createPolymorphicComponent } from '@mantine/core';
-import { ReactNode, forwardRef } from 'react';
+import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 
+import { Title } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
-import SecondaryLayoutBlockHeader, {
-  SecondaryLayoutBlockHeaderProps
-} from './Header';
-import SecondaryLayoutBlockWrapper, {
-  SecondaryLayoutBlockWrapperProps
-} from './Wrapper';
-
 type SecondaryLayoutBlockOrganismOwnProps = {
   data: {
-    title: SecondaryLayoutBlockHeaderProps['texts'];
-    subtitle?: SecondaryLayoutBlockHeaderProps['subtitle'];
+    title: ReactNode;
   };
   subChildren?: ReactNode;
-  wrapperProps?: Partial<SecondaryLayoutBlockWrapperProps>;
-  headerProps?: Partial<SecondaryLayoutBlockHeaderProps>;
+  headerProps?: Partial<ComponentPropsWithRef<'header'>>;
 };
 
 type SecondaryLayoutBlockOrganismProps = SecondaryLayoutBlockOrganismOwnProps &
@@ -29,7 +21,6 @@ const SecondaryLayoutBlockOrganism = (
     data,
     subChildren,
     children,
-    wrapperProps,
     headerProps,
     ...props
   }: SecondaryLayoutBlockOrganismProps,
@@ -40,19 +31,17 @@ const SecondaryLayoutBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <SecondaryLayoutBlockWrapper
-        {...wrapperProps}
-        className={cn('mb-[--section-spacing-md]', wrapperProps?.className)}
+      <header
+        {...headerProps}
+        className={cn(
+          'mb-[--section-spacing-sm] flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end',
+          headerProps?.className
+        )}
       >
-        <SecondaryLayoutBlockHeader
-          subtitle={data.subtitle}
-          texts={data.title}
-          {...headerProps}
-          className={cn('shrink-0', headerProps?.className)}
-        />
+        <Title order={2}>{data.title}</Title>
 
         {subChildren}
-      </SecondaryLayoutBlockWrapper>
+      </header>
 
       {children}
     </Section>

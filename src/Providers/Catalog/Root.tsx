@@ -53,7 +53,7 @@ const CatalogProvider = <T,>({
   const isLastPage = meta.page >= meta.totalPages,
     isEmpty = !items.length;
 
-  const context = useMemo(
+  const value: CatalogContextInitialState<T> = useMemo(
     () => ({
       id,
       items,
@@ -67,7 +67,7 @@ const CatalogProvider = <T,>({
 
   return (
     <CatalogContext.Provider
-      value={context}
+      value={value}
       {...props}
     />
   );

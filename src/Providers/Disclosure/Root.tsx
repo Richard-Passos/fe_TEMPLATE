@@ -28,7 +28,7 @@ const DisclosureProvider = ({
     ? 'open'
     : 'closed';
 
-  const context = useMemo(
+  const value: DisclosureContextInitialState = useMemo(
     () => ({
       id,
       isOpen,
@@ -40,7 +40,7 @@ const DisclosureProvider = ({
 
   return (
     <DisclosureContext.Provider
-      value={context}
+      value={value}
       {...props}
     />
   );

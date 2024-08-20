@@ -15,7 +15,7 @@ const BentoGridItemIcons = ({ className, data = [], ...props }) => {
           className='aspect-square w-1/3 transition-transform first:-translate-x-full last:translate-x-full odd:absolute odd:bottom-0 odd:translate-y-[70%] even:-mb-[15%] hover:-translate-y-[15%] odd:hover:translate-y-1/2'
         >
           <Icon
-            className='size-full text-muted'
+            className='text-muted size-full'
             {...icon}
           />
         </div>

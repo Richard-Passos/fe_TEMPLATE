@@ -11,15 +11,15 @@ const ANIMATION_CONFIG = {
     scrollPoints: [0, 400],
     prop: 'rotate',
     propPoints: ['0deg', '360deg'],
-    transformConfig: { clamp: false },
+    transformConfig: { clamp: false }
   },
   rotate2: {
     scroll: 'scrollY',
     scrollPoints: [0, 400],
     prop: 'rotate',
     propPoints: ['0deg', '-360deg'],
-    transformConfig: { clamp: false },
-  },
+    transformConfig: { clamp: false }
+  }
 };
 
 const BentoGridItemHorizontalScroll = ({ className, data = {}, ...props }) => {
@@ -33,7 +33,7 @@ const BentoGridItemHorizontalScroll = ({ className, data = {}, ...props }) => {
       <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate1}>
         <div className='size-6'>
           <Icon
-            className='size-full text-muted-content'
+            className='text-muted-content size-full'
             {...icons[0]}
           />
         </div>
@@ -41,7 +41,7 @@ const BentoGridItemHorizontalScroll = ({ className, data = {}, ...props }) => {
 
       <HorizontalScroll
         baseVelocity={1.25}
-        className='text-sm uppercase text-muted-content'
+        className='text-muted-content text-sm uppercase'
       >
         {data.description}&nbsp;
       </HorizontalScroll>
@@ -49,7 +49,7 @@ const BentoGridItemHorizontalScroll = ({ className, data = {}, ...props }) => {
       <ScrollAnimateTransform config={ANIMATION_CONFIG.rotate2}>
         <div className='size-6'>
           <Icon
-            className='size-full text-muted-content'
+            className='text-muted-content size-full'
             {...icons[1]}
           />
         </div>

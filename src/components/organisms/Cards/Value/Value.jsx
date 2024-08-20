@@ -11,7 +11,7 @@ const BentoGridItemValue = ({ className, data = {}, ...props }) => {
     >
       <div
         className={cn(
-          'flex size-12 items-center justify-center rounded-sm bg-muted',
+          'bg-muted flex size-12 items-center justify-center rounded-sm'
         )}
         {...props}
       >
@@ -25,7 +25,7 @@ const BentoGridItemValue = ({ className, data = {}, ...props }) => {
         {data.title}
       </Text.Title>
 
-      <Text className='mt-2 text-muted-content first-letter:uppercase'>
+      <Text className='text-muted-content mt-2 first-letter:uppercase'>
         {data.description}
       </Text>
     </Item>

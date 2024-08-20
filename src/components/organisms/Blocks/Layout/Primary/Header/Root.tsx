@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Divider, Text, Title } from '@/components/atoms';
+import { lineLeftScrollAnim } from '@/animations/scroll';
+import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { TextProps } from '@/components/atoms/Text';
-import { ScrollText } from '@/components/molecules';
 import { ScrollTextProps } from '@/components/molecules/ScrollText';
 import { cn, renderComp } from '@/utils';
 
@@ -46,14 +46,30 @@ const PrimaryLayoutBlockHeaderOrganism = (
             className='flex items-center gap-xl'
             key={i}
           >
-            {text} <span className='h-2 grow border bg-white dark:bg-black' />
+            {text}
+
+            <span className='relative h-2 grow'>
+              <ScrollAnimate
+                config={lineLeftScrollAnim}
+                layout
+              >
+                <span className='absolute inset-0 border bg-white dark:bg-black' />
+              </ScrollAnimate>
+            </span>
           </span>
         ))}
 
         <span className='mx-auto flex w-9/10 items-center gap-xl max-sm:first:w-full'>
           <span>{lastText}</span>
 
-          <span className='h-2 grow border bg-white dark:bg-black' />
+          <span className='relative h-2 grow'>
+            <ScrollAnimate
+              config={lineLeftScrollAnim}
+              layout
+            >
+              <span className='absolute inset-0 border bg-white dark:bg-black' />
+            </ScrollAnimate>
+          </span>
 
           {renderComp(
             <Text

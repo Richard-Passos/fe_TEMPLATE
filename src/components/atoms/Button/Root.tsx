@@ -8,6 +8,7 @@ import {
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
+import { cn } from '@/utils';
 
 type ButtonAtomOwnProps = {
   isIconOnly?: boolean;
@@ -21,12 +22,13 @@ type ButtonAtomProps = ButtonAtomOwnProps &
   >;
 
 const ButtonAtom = (
-  { style, isIconOnly, ...props }: ButtonAtomProps,
+  { style, isIconOnly, className, ...props }: ButtonAtomProps,
   ref: ButtonAtomProps['ref']
 ) => {
   if (isIconOnly)
     return (
       <ActionIcon
+        className={cn('disabled:pointer-events-none', className)}
         ref={ref}
         style={{
           '--button-bg': 'var(--ai-bg)',
@@ -42,6 +44,7 @@ const ButtonAtom = (
 
   return (
     <Button
+      className={cn('disabled:pointer-events-none', className)}
       ref={ref}
       style={style}
       {...props}

@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 import { ComponentPropsWithRef, RefObject, forwardRef, useRef } from 'react';
 
 import { useEventListener, useSmooth } from '@/hooks';
+import { useMagneticContext } from '@/hooks/contexts';
 import { UseSmoothParams } from '@/hooks/useSmooth';
 import { setRefs } from '@/utils';
 
 const magneticAtomSmoothConfig = { damping: 7, stiffness: 100, mass: 0.5 };
 
 type MagneticAtomOwnProps = {
-  container?: RefObject<HTMLElement>;
   smoothConfig?: UseSmoothParams['1'];
   limit?: { x: number; y: number };
 };
@@ -22,7 +22,6 @@ type MagneticAtomProps = MagneticAtomOwnProps &
 
 const MagneticAtom = (
   {
-    container,
     smoothConfig,
     limit = { x: 0.35, y: 0.35 },
     style,
@@ -31,6 +30,7 @@ const MagneticAtom = (
   ref: MagneticAtomProps['ref']
 ) => {
   const innerRef = useRef<HTMLElement>(null),
+    { container } = useMagneticContext(),
     position = {
       x: useSmooth(0, { ...magneticAtomSmoothConfig, ...smoothConfig }),
       y: useSmooth(0, { ...magneticAtomSmoothConfig, ...smoothConfig })
@@ -63,7 +63,7 @@ const MagneticAtom = (
       position.y.set(pos.y);
     };
 
-  const element = container ?? innerRef;
+  const element = container.current ? container : innerRef;
 
   useEventListener('mousemove', (ev) => updatePosition(ev, element), element);
   useEventListener('mouseleave', resetPosition, element);

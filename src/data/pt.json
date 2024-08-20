@@ -17,9 +17,9 @@
           "title": { "0": "ABOUT", "1": "WORK" },
           "subtitle": "SELECTED WORKS",
           "empty": "Sorry, selected projects not found.",
-          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate. Discover the impact of a partnership that propels you to digital prominence.",
+          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate.",
           "action": {
-            "label": "All projects"
+            "label": "· All projects ·"
           }
         },
         "listWorkPage": {
@@ -29,7 +29,7 @@
             "2": "SERVICES"
           },
           "action": {
-            "label": "Explore"
+            "label": "· Explore ·"
           }
         },
         "but": {
@@ -101,7 +101,7 @@
             "2": "PERSONALITY"
           },
           "action": {
-            "label": "Explore"
+            "label": "· Explore ·"
           }
         },
         "cta": {
@@ -148,6 +148,65 @@
             "2": {
               "text": "REPEAT",
               "icon": "/icons/smile.svg"
+            }
+          }
+        },
+        "services": {
+          "title": {
+            "0": "SERVICES"
+          },
+          "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
+          "subtitle": "I COULD HELP YOU WITH...",
+          "image": {
+            "src": "/images/parallax-00.jpg",
+            "alt": ""
+          },
+          "action": {
+            "label": "· Contact me ·"
+          }
+        },
+        "selectedProjects": {
+          "title": { "0": "SELECTED", "1": "WORKS" },
+          "description": "Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.",
+          "subtitle": "",
+          "empty": "Sorry, selected projects not found.",
+          "action": {
+            "label": "· All projects ·"
+          }
+        },
+        "whyMe": {
+          "title": { "0": "WHY PICK", "1": "ME" },
+          "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
+          "subtitle": "SOME STATISTICS..."
+        },
+        "hardSkills": {
+          "title": {
+            "0": "HARD",
+            "1": "SKILLS"
+          },
+          "subtitle": "The best in market"
+        },
+        "softSkills": {
+          "title": {
+            "0": "SOFT",
+            "1": "SKILLS"
+          },
+          "subtitle": "The best as person"
+        },
+        "values": {
+          "title": {
+            "0": "MY",
+            "1": "VALUES"
+          },
+          "subtitle": "Elevating standards",
+          "icons": {
+            "left": {
+              "src": "/icons/globe.svg",
+              "animation": "rotateRight"
+            },
+            "right": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateLeft"
             }
           }
         }
@@ -255,10 +314,10 @@
       "title": "The Portfolio",
       "label": "Menu",
       "open": {
-        "label": "Open menu"
+        "label": "Openenu ·"
       },
       "close": {
-        "label": "Close menu"
+        "label": "Closeenu ·"
       }
     },
     "nav": {
@@ -312,7 +371,7 @@
       "title": "LET'S MAKE <br></br> THEM FLY",
       "subtitle": "Is your great ideas ready?",
       "action": {
-        "label": "Get in touch"
+        "label": "· Get in touch ·"
       }
     },
     "location": "{ country } —  { state }",
@@ -356,84 +415,78 @@
     }
   },
   "services": {
-    "frontEnd": {
+    "0": {
       "title": "Front end",
       "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
     },
-    "backEnd": {
+    "2": {
       "title": "Back end",
       "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
     },
-    "fullStack": {
+    "3": {
       "title": "Full stack",
       "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
     }
   },
   "stats": {
-    "projectsCompleted": {
-      "title": "10ᐩ",
-      "description": "Projects \ncompleted"
+    "0": {
+      "title": "Projects \ncompleted",
+      "value": "10ᐩ"
     },
-    "yearsExperience": {
-      "title": "1ᐩ",
-      "description": "Years of \nexperience"
+    "1": {
+      "title": "Years of \nexperience",
+      "value": "1ᐩ"
     },
-    "greaProjects": {
-      "title": "100%",
-      "description": "Great \nprojects"
+    "2": {
+      "title": "Great \nprojects",
+      "value": "100%"
     },
-    "ontimeDeliveries": {
-      "title": "100%",
-      "description": "On-time \ndeliveries"
+    "3": {
+      "title": "On-time \ndeliveries",
+      "value": "100%"
     }
   },
   "values": {
     "work": {
-      "Learning": {
+      "0": {
         "icon": "/icons/graduation-cap.svg",
         "title": "Learning",
         "description": "Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices."
       },
-      "Excellence": {
+      "1": {
         "icon": "/icons/trophy.svg",
-
         "title": "Excellence",
         "description": "Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions."
       },
-      "Quality-oriented": {
+      "2": {
         "icon": "/icons/check-badge.svg",
         "title": "Quality-oriented",
         "description": "Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions."
       },
-      "Customer-oriented": {
+      "3": {
         "icon": "/icons/smile.svg",
-
         "title": "Customer-oriented",
         "description": "Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded."
       }
     },
     "personal": {
-      "Integrity": {
+      "0": {
         "icon": "/icons/shield.svg",
-
         "title": "Integrity",
         "description": "I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships."
       },
-      "Curiosity": {
+      "1": {
         "icon": "/icons/globe.svg",
-
         "title": "Curiosity",
         "description": "My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth."
       },
-      "Respect": {
+      "2": {
         "icon": "/icons/puzzle.svg",
-
         "title": "Respect",
         "description": "I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience."
       },
-      "Gratitude": {
+      "3": {
         "icon": "/icons/smile.svg",
-
         "title": "Gratitude",
         "description": "I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment."
       }
@@ -441,99 +494,99 @@
   },
   "skills": {
     "hard": {
-      "ReactJS": {
+      "0": {
         "title": "React.js",
         "icon": "/icons/react.svg",
         "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
       },
-      "NodeJS": {
+      "1": {
         "title": "Node.js",
         "icon": "/icons/nodejs.svg",
         "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
       },
-      "React Native": {
+      "2": {
         "title": "React Native",
         "icon": "/icons/react.svg",
         "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
       },
-      "NextJS": {
+      "3": {
         "title": "Next.js",
         "icon": "/icons/nextjs.svg",
         "description": "React framework for building server-rendered and statically-generated web applications."
       },
-      "JavaScript": {
+      "4": {
         "title": "JavaScript",
         "icon": "/icons/javascript.svg",
         "description": "Backbone of dynamic web development, enabling interactive and responsive user experiences."
       },
-      "Jest": {
+      "5": {
         "title": "Jest",
         "icon": "/icons/jest.svg",
         "description": "A powerful JavaScript testing framework for seamless unit and integration testing."
       },
-      "MongoDB": {
+      "6": {
         "title": "MongoDB",
         "icon": "/icons/mongodb.svg",
         "description": "A powerful, flexible NoSQL database solution for modern application development."
       },
-      "Git": {
+      "7": {
         "title": "Git",
         "icon": "/icons/git.svg",
         "description": "Version control system for efficient collaboration and code management."
       },
-      "TailwindCSS": {
+      "8": {
         "title": "TailwindCSS",
         "icon": "/icons/tailwindcss.svg",
         "description": "Utility-first CSS framework for rapid development."
       },
-      "Styled-components": {
+      "9": {
         "title": "Styled-components",
         "icon": "/icons/styled-components.svg",
         "description": "CSS-in-JS for seamless styling and component-based design."
       },
-      "HTML": {
+      "10": {
         "title": "HTML",
         "icon": "/icons/html.svg",
         "description": "Foundation of web development, used to create the structure and content of web pages."
       },
-      "CSS": {
+      "11": {
         "title": "CSS",
         "icon": "/icons/css.svg",
         "description": "Styling language for web development, shaping the visual presentation of websites."
       }
     },
     "soft": {
-      "Problem-solving": {
+      "1": {
         "title": "Problem-solving",
         "icon": "/icons/puzzle.svg",
         "description": "Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
       },
-      "Detail-oriented": {
+      "2": {
         "title": "Detail-oriented",
         "icon": "/icons/eye.svg",
         "description": "Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
       },
-      "Communication": {
+      "3": {
         "title": "Communication",
         "icon": "/icons/chat.svg",
         "description": "Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
       },
-      "Adaptability": {
+      "4": {
         "title": "Adaptability",
         "icon": "/icons/adjustments.svg",
         "description": "Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
       },
-      "Time management": {
+      "5": {
         "title": "Time management",
         "icon": "/icons/calendar.svg",
         "description": "Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
       },
-      "Critical thinking": {
+      "6": {
         "title": "Critical thinking",
         "icon": "/icons/compass.svg",
         "description": "Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
       },
-      "Synthetic thinking": {
+      "7": {
         "title": "Synthetic thinking",
         "icon": "/icons/share.svg",
         "description": "Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."

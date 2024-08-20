@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-ignore
 import { SplideTrack } from '@splidejs/react-splide';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 

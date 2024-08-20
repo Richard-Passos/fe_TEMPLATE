@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-ignore
 import { Options, Splide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';

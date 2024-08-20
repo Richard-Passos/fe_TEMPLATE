@@ -50,7 +50,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
           </span>
         ))}
 
-        <span className='mx-auto flex w-9/10 items-center gap-xl'>
+        <span className='mx-auto flex w-9/10 items-center gap-xl max-sm:first:w-full'>
           <span>{lastText}</span>
 
           <span className='h-2 grow border bg-white dark:bg-black' />
@@ -58,7 +58,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
           {renderComp(
             <Text
               aria-hidden
-              className='max-w-sm font-display text-sm font-medium leading-relaxed max-md:hidden'
+              className='max-w-sm font-display text-sm font-medium leading-relaxed max-lg:hidden'
               component='span'
             >
               {description}
@@ -69,7 +69,9 @@ const PrimaryLayoutBlockHeaderOrganism = (
       </Title>
 
       {renderComp(
-        <Text className='mt-sm w-9/10 md:sr-only'>{description}</Text>,
+        <Text className='mr-auto mt-sm sm:ml-[5%] sm:max-w-xl lg:sr-only'>
+          {description}
+        </Text>,
         [description]
       )}
     </header>

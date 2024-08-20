@@ -24,7 +24,7 @@ const MarqueeAtom = ({ children, ...props }: MarqueeAtomProps) => {
       {...props}
     >
       <ul
-        className='m-0 flex items-center p-0 *:mx-[calc(var(--gap)/2)]'
+        className='m-0 flex list-none items-center p-0 *:mx-[calc(var(--gap)/2)]'
         ref={childrenRef}
       >
         {children}
@@ -33,7 +33,7 @@ const MarqueeAtom = ({ children, ...props }: MarqueeAtomProps) => {
       {times(childrenCount, String).map((id) => (
         <ul
           aria-hidden
-          className='m-0 flex items-center p-0 *:mx-[calc(var(--gap)/2)]'
+          className='m-0 flex list-none items-center p-0 *:mx-[calc(var(--gap)/2)]'
           key={id}
         >
           {children}

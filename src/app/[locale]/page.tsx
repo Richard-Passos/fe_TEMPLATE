@@ -53,6 +53,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
         {
           type: 'ListPage',
           theme: 'dark',
+          id: 'listWorkPage',
           data: {
             items: keys(
               get(messages, 'pages.home.blocks.listWorkPage.items')
@@ -66,32 +67,46 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
         {
           type: 'But',
           theme: 'light',
+          id: 'but',
           data: {
             title: t('blocks.but.title'),
             description: t('blocks.but.description')
           }
         },
         {
-          type: 'AnimatedBentoGrid',
+          type: 'BentoGrid',
           theme: 'dark',
+          id: 'aboutBentoGrid',
+          hasAnimation: true,
           data: {
             title: keys(
               get(messages, 'pages.home.blocks.aboutBentoGrid.title')
             ).map((key) => t(`blocks.aboutBentoGrid.title.${key}`)),
-            templates: keys(
-              get(messages, 'pages.home.blocks.aboutBentoGrid.templates')
-            ).reduce(
-              (obj, key) => ({
-                ...obj,
-                [key]: keys(
-                  get(
-                    messages,
-                    `pages.home.blocks.aboutBentoGrid.templates.${key}`
-                  )
-                ).map((k) => t(`blocks.aboutBentoGrid.templates.${key}.${k}`))
-              }),
-              {}
-            ) as BentoGridBlockProps['data']['templates'],
+            templates: {
+              base: [
+                'item-0',
+                'item-1',
+                'item-2',
+                'item-3',
+                'item-4',
+                'item-5',
+                'item-6'
+              ],
+              sm: [
+                'item-0 item-0',
+                'item-1 item-2',
+                'item-3 item-4',
+                'item-5 item-6'
+              ],
+              lg: [
+                '. item-0 item-0',
+                '. item-0 item-0',
+                'item-1 item-2 item-3',
+                'item-1 item-2 item-4',
+                'item-5 item-5 item-6',
+                'item-5 item-5 item-6'
+              ]
+            },
             items: [
               {
                 type: 'Description',
@@ -169,6 +184,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
         {
           type: 'ListPage',
           theme: 'dark',
+          id: 'listAboutPage',
           data: {
             items: keys(
               get(messages, 'pages.home.blocks.listAboutPage.items')
@@ -182,6 +198,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
         {
           type: 'CtaText',
           theme: 'dark',
+          id: 'cta',
           data: {
             description: t('blocks.cta.description'),
             icons: {

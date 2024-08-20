@@ -1,10 +1,12 @@
 import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { Link } from '@/components/atoms';
+import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { get, keys } from '@/utils';
+import { get, keys, times } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -18,6 +20,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
   unstable_setRequestLocale(locale);
 
   const t = useTranslations('pages.work'),
+    gt = useTranslations(),
     messages = useMessages() as unknown as IntlMessages;
 
   return (
@@ -26,6 +29,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
         {
           type: 'ListMission',
           theme: 'dark',
+          id: 'scroll-to',
           data: {
             items: keys(get(messages, 'pages.work.blocks.mission.items')).map(
               (key) => ({
@@ -34,6 +38,149 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               })
             ),
             description: t.rich('blocks.mission.description')
+          }
+        },
+        {
+          type: 'Services',
+          theme: 'light',
+          id: 'services',
+          data: {
+            title: keys(get(messages, 'pages.work.blocks.services.title')).map(
+              (key) => t(`blocks.services.title.${key}`)
+            ),
+            description: t.rich('blocks.services.description'),
+            subtitle: t.rich('blocks.services.subtitle'),
+            image: {
+              src: t('blocks.services.image.src'),
+              alt: t('blocks.services.image.alt')
+            },
+            items: keys(get(messages, 'services')).map((key, i) => ({
+              id: `· ${(i + 1).toString().padStart(2, '0')}`,
+              title: gt(`services.${key}.title`),
+              description: gt(`services.${key}.description`)
+            })),
+            action: {
+              label: t('blocks.services.action.label')
+            }
+          }
+        },
+        {
+          type: 'ProjectsCatalog',
+          theme: 'light',
+          id: 'selectedProjects',
+          data: {
+            title: keys(
+              get(messages, 'pages.work.blocks.selectedProjects.title')
+            ).map((key) => t(`blocks.selectedProjects.title.${key}`)),
+            description: t('blocks.selectedProjects.description'),
+            subtitle: t('blocks.selectedProjects.subtitle'),
+            empty: t('blocks.selectedProjects.empty'),
+            items: times(5, String).map((id, i) => ({
+              slug: `title-${id}`,
+              title: `Title - ${id}`,
+              roles: ['design', 'development'],
+              image: {
+                src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,
+                alt: ''
+              }
+            })),
+            action: {
+              label: t('blocks.selectedProjects.action.label')
+            }
+          }
+        },
+        {
+          type: 'Stats',
+          theme: 'dark',
+          id: 'whyMe',
+          data: {
+            title: keys(get(messages, 'pages.work.blocks.whyMe.title')).map(
+              (key) => t(`blocks.whyMe.title.${key}`)
+            ),
+            description: t.rich('blocks.whyMe.description', {
+              contact: (chunks) => (
+                <Link
+                  className='text-[1em]'
+                  href='/contact'
+                >
+                  {chunks}
+                </Link>
+              )
+            }),
+            subtitle: t.rich('blocks.whyMe.subtitle'),
+            items: keys(get(messages, 'stats')).map((key) => ({
+              id: key,
+              title: gt.rich(`stats.${key}.title`),
+              value: gt.rich(`stats.${key}.value`)
+            }))
+          }
+        },
+        {
+          type: 'Skills',
+          theme: 'light',
+          id: 'hardSkills',
+          data: {
+            title: keys(
+              get(messages, 'pages.work.blocks.hardSkills.title')
+            ).map((key) => t(`blocks.hardSkills.title.${key}`)),
+            subtitle: t('blocks.hardSkills.subtitle'),
+            items: keys(get(messages, 'skills.hard')).map((key, i) => ({
+              id: `${(i + 1).toString().padStart(2, '0')}/`,
+              title: gt.rich(`skills.hard.${key}.title`),
+              description: gt.rich(`skills.hard.${key}.description`),
+              icon: gt.rich(`skills.hard.${key}.icon`)
+            }))
+          }
+        },
+        {
+          type: 'Skills',
+          theme: 'light',
+          id: 'softSkills',
+          data: {
+            title: keys(
+              get(messages, 'pages.work.blocks.softSkills.title')
+            ).map((key) => t(`blocks.softSkills.title.${key}`)),
+            subtitle: t('blocks.softSkills.subtitle'),
+            items: keys(get(messages, 'skills.soft')).map((key, i) => ({
+              id: `${(i + 1).toString().padStart(2, '0')}/`,
+              title: gt.rich(`skills.soft.${key}.title`),
+              description: gt.rich(`skills.soft.${key}.description`),
+              icon: gt.rich(`skills.soft.${key}.icon`)
+            }))
+          }
+        },
+        {
+          type: 'Values',
+          theme: 'dark',
+          id: 'values',
+          data: {
+            title: keys(get(messages, 'pages.work.blocks.values.title')).map(
+              (key) => t(`blocks.values.title.${key}`)
+            ),
+            subtitle: t('blocks.values.subtitle'),
+            templates: {
+              base: ['item-0', 'item-1', 'item-2', 'item-3'],
+              sm: ['item-0 item-1', 'item-2 item-3'],
+              lg: ['item-0 item-1 .', '. item-2 item-3']
+            },
+            items: keys(get(messages, 'values.personal')).map((key) => ({
+              id: key,
+              title: gt.rich(`values.personal.${key}.title`),
+              description: gt.rich(`values.personal.${key}.description`),
+              icon: gt.rich(`values.personal.${key}.icon`)
+            })),
+            icons: {
+              left: {
+                src: t('blocks.values.icons.left.src'),
+                animation: t('blocks.values.icons.left.animation'),
+                y: 'bottom'
+              },
+              right: {
+                src: t('blocks.values.icons.right.src'),
+                animation: t('blocks.values.icons.right.animation'),
+                y: 'top'
+              }
+            } as ValuesBlockProps['data']['icons']
           }
         }
       ]}

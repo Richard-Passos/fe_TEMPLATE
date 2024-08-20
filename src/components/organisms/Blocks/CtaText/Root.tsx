@@ -29,7 +29,7 @@ const CtaTextBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <Text className='relative z-10 w-9/10 max-w-screen-lg text-center text-3xl font-semibold leading-tight sm:text-[3.25rem]'>
+      <Text className='relative z-10 w-9/10 max-w-screen-lg text-center text-xl font-semibold !leading-tight md:text-4xl lg:text-[3.25rem]'>
         <TextScrollAnimate text={data.description} />
       </Text>
 

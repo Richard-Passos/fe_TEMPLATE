@@ -23,11 +23,12 @@ const ProjectsCatalogGridBlockOrganism = <T,>(
       {...props}
     >
       {({ slug, ...data }, i) => (
-        <GridProjectCard
-          data={{ index: i, ...data }}
-          href={`projects/${slug}`}
-          key={data.title}
-        />
+        <li key={slug}>
+          <GridProjectCard
+            data={{ index: i, ...data }}
+            href={`projects/${slug}`}
+          />
+        </li>
       )}
     </CatalogList>
   );

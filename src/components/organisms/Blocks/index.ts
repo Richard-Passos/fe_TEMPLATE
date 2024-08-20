@@ -1,28 +1,37 @@
-import AnimatedBentoGridBlock from './AnimatedBentoGrid';
 import BentoGridBlock from './BentoGrid';
 import ButBlock from './But';
 import CtaTextBlock from './CtaText';
 import ListMissionBlock from './ListMission';
 import ListPageBlock from './ListPage';
 import ProjectsCatalogBlock from './ProjectsCatalog';
+import ServicesBlock from './Services';
+import SkillsBlock from './Skills';
+import StatsBlock from './Stats';
+import ValuesBlock from './Values';
 
 const Blocks = {
-  AnimatedBentoGrid: AnimatedBentoGridBlock,
   BentoGrid: BentoGridBlock,
   But: ButBlock,
   CtaText: CtaTextBlock,
   ListMission: ListMissionBlock,
   ListPage: ListPageBlock,
-  ProjectsCatalog: ProjectsCatalogBlock
+  ProjectsCatalog: ProjectsCatalogBlock,
+  Services: ServicesBlock,
+  Skills: SkillsBlock,
+  Stats: StatsBlock,
+  Values: ValuesBlock
 };
 
 export default Blocks;
 export {
-  AnimatedBentoGridBlock,
   BentoGridBlock,
   ButBlock,
   CtaTextBlock,
   ListMissionBlock,
   ListPageBlock,
-  ProjectsCatalogBlock
+  ProjectsCatalogBlock,
+  ServicesBlock,
+  SkillsBlock,
+  StatsBlock,
+  ValuesBlock
 };

@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Text, Title } from '@/components/atoms';
+import { Divider, Text, Title } from '@/components/atoms';
 import { TextProps } from '@/components/atoms/Text';
 import { ScrollText } from '@/components/molecules';
 import { ScrollTextProps } from '@/components/molecules/ScrollText';
@@ -27,45 +27,40 @@ const PrimaryLayoutBlockHeaderOrganism = (
   }: PrimaryLayoutBlockHeaderOrganismProps,
   ref: PrimaryLayoutBlockHeaderOrganismProps['ref']
 ) => {
+  const lastText = texts.at(-1),
+    restTexts = texts.slice(0, -1);
+
   return (
     <header
       aria-label={texts.join(' ')}
-      className={cn('flex w-full flex-col items-center', className)}
+      className={cn('flex w-9/10 flex-col items-center', className)}
       ref={ref}
       {...props}
     >
       <Title
-        className={cn(
-          'w-full md:grid md:grid-cols-12 md:items-center',
-          className
-        )}
+        className='flex w-full flex-col'
         order={2}
       >
-        {texts.map((text, i, arr) => (
-          <ScrollText
-            className={cn(
-              i % 2 === 0
-                ? 'max-lg:*:!-translate-x-[20%] max-sm:*:!-translate-x-[10%]'
-                : 'max-lg:*:!-translate-x-[25%] max-sm:*:!-translate-x-[20%]',
-              i !== arr.length - 1
-                ? 'md:col-span-full'
-                : 'md:col-span-6 lg:col-span-7'
-            )}
-            key={i}
-            text={text}
-          />
+        {restTexts.map((text, i) => (
+          <span key={i}>{text}</span>
         ))}
 
-        {renderComp(
-          <Text
-            aria-hidden
-            className='px-xl font-display max-md:hidden md:col-span-6 lg:col-span-5'
-            component='span'
-          >
-            {description}
-          </Text>,
-          [description]
-        )}
+        <span className='mx-auto flex w-9/10 items-center gap-xl'>
+          <span>{lastText}</span>
+
+          <span className='h-0.5 grow bg-border' />
+
+          {renderComp(
+            <Text
+              aria-hidden
+              className='max-w-sm font-display text-sm font-medium leading-relaxed max-md:hidden'
+              component='span'
+            >
+              {description}
+            </Text>,
+            [description]
+          )}
+        </span>
       </Title>
 
       {renderComp(

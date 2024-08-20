@@ -34,7 +34,7 @@ const ListPageBlockOrganism = (
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn('min-h-fit', className)}
+      className={cn('min-h-fit 2xl:min-h-bounds', className)}
       ref={ref}
       {...props}
     >
@@ -70,7 +70,7 @@ const ListPageBlockOrganism = (
         size='md'
         variant='default'
         {...actionProps}
-        className={cn('my-xl', actionProps?.className)}
+        className={cn('mt-xl', actionProps?.className)}
       >
         {data.action.label}
       </Action>

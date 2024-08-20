@@ -12,14 +12,14 @@ type BentoGridBlockOrganismOwnProps = {
     templates: BentoGridRootProps['templates'];
     items: TypeVariants<Omit<typeof Cards, 'Project'>>[];
   };
-  withAnimation?: boolean;
+  hasAnimation?: boolean;
 };
 
 type BentoGridBlockOrganismProps = BentoGridBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof BentoGridBlockOrganismOwnProps | 'data'>;
 
 const BentoGridBlockOrganism = (
-  { data, withAnimation, ...props }: BentoGridBlockOrganismProps,
+  { data, hasAnimation, ...props }: BentoGridBlockOrganismProps,
   ref: BentoGridBlockOrganismProps['ref']
 ) => {
   return (
@@ -32,20 +32,27 @@ const BentoGridBlockOrganism = (
       {...props}
     >
       <BentoGrid.Root
-        className='mt-xl max-w-screen-lg pt-md'
+        className='w-9/10 max-w-screen-lg'
         templates={data.templates}
       >
         {data.items.map(({ type, data }, i) => {
           const Card = Cards[type] as ComponentType<any>;
 
-          return (
+          const Item = (
             <BentoGrid.Item
               index={i}
-              key={i}
+              {...(!hasAnimation && { key: i })}
             >
               <Card data={data} />
             </BentoGrid.Item>
           );
+
+          if (hasAnimation)
+            return (
+              <BentoGrid.ScrollAnimate key={i}>{Item}</BentoGrid.ScrollAnimate>
+            );
+
+          return Item;
         })}
       </BentoGrid.Root>
     </PrimaryLayoutBlock>

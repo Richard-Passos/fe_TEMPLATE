@@ -64,45 +64,49 @@ const ProjectsCatalogBlockOrganism = (
         items={data.items}
         {...catalogProps}
         className={cn(
-          'mt-xl flex w-9/10 max-w-screen-lg flex-col items-center pt-md',
+          'grid w-9/10 max-w-screen-xl sm:grid-cols-12 sm:grid-rows-12',
           catalogProps?.className
         )}
       >
-        {renderComp(
-          <Title
-            className='mb-md mr-auto text-dimmed'
-            component='h3'
-            order={6}
-            {...subtitleProps}
-          >
-            {data.subtitle}
-          </Title>,
-          [data.subtitle]
-        )}
-
-        <Catalog.Empty {...emptyProps}>
-          <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
-        </Catalog.Empty>
-
-        <ProjectsCatalogTableBlock
-          {...tableProps}
-          className={cn(
-            'group relative z-20 w-full max-sm:hidden',
-            tableProps?.className
+        <div className='size-full pb-md sm:col-span-4 sm:row-span-11'>
+          {renderComp(
+            <Title
+              className='sticky top-xl text-dimmed'
+              component='h3'
+              order={6}
+              {...subtitleProps}
+            >
+              {data.subtitle}
+            </Title>,
+            [data.subtitle]
           )}
-        />
+        </div>
 
-        <ProjectsCatalogGridBlock
-          {...gridProps}
-          className={cn('w-full sm:hidden', gridProps?.className)}
-        />
+        <div className='flex flex-col items-center sm:col-span-8 sm:col-end-13 sm:row-span-full'>
+          <Catalog.Empty {...emptyProps}>
+            <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
+          </Catalog.Empty>
+
+          <ProjectsCatalogTableBlock
+            {...tableProps}
+            className={cn(
+              'group relative z-20 w-full max-sm:hidden',
+              tableProps?.className
+            )}
+          />
+
+          <ProjectsCatalogGridBlock
+            {...gridProps}
+            className={cn('w-full sm:hidden', gridProps?.className)}
+          />
+        </div>
 
         <Action
-          href='projects'
+          href='/projects'
           size='md'
           variant='default'
           {...actionProps}
-          className={cn('mt-xl', actionProps?.className)}
+          className={cn('w-fit self-end sm:col-span-4', actionProps?.className)}
         >
           {data.action.label}
         </Action>

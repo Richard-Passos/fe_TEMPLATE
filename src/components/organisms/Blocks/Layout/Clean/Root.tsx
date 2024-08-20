@@ -1,3 +1,4 @@
+import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
 import Section, { SectionProps } from '@/components/organisms/Section';
@@ -21,5 +22,8 @@ const CleanLayoutBlockOrganism = (
   );
 };
 
-export default forwardRef(CleanLayoutBlockOrganism);
+export default createPolymorphicComponent<
+  'section',
+  CleanLayoutBlockOrganismProps
+>(forwardRef(CleanLayoutBlockOrganism));
 export type { CleanLayoutBlockOrganismProps };

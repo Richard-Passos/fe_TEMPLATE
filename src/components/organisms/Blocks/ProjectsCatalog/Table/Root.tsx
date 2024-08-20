@@ -23,11 +23,12 @@ const ProjectsCatalogTableBlockOrganism = <T,>(
       {...props}
     >
       {({ slug, ...data }, i) => (
-        <TableProjectCard
-          data={{ index: i, ...data }}
-          href={`projects/${slug}`}
-          key={data.title}
-        />
+        <li key={slug}>
+          <TableProjectCard
+            data={{ index: i, ...data }}
+            href={`projects/${slug}`}
+          />
+        </li>
       )}
     </CatalogList>
   );

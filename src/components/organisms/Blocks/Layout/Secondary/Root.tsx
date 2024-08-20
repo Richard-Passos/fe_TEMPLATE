@@ -1,3 +1,4 @@
+import { createPolymorphicComponent } from '@mantine/core';
 import { ReactNode, forwardRef } from 'react';
 
 import Section, { SectionProps } from '@/components/organisms/Section';
@@ -6,9 +7,6 @@ import { cn } from '@/utils';
 import SecondaryLayoutBlockHeader, {
   SecondaryLayoutBlockHeaderProps
 } from './Header';
-import SecondaryLayoutBlockSubChildren, {
-  SecondaryLayoutBlockSubChildrenProps
-} from './SubChildren';
 import SecondaryLayoutBlockWrapper, {
   SecondaryLayoutBlockWrapperProps
 } from './Wrapper';
@@ -21,7 +19,6 @@ type SecondaryLayoutBlockOrganismOwnProps = {
   subChildren?: ReactNode;
   wrapperProps?: Partial<SecondaryLayoutBlockWrapperProps>;
   headerProps?: Partial<SecondaryLayoutBlockHeaderProps>;
-  subChildrenProps?: Partial<SecondaryLayoutBlockSubChildrenProps>;
 };
 
 type SecondaryLayoutBlockOrganismProps = SecondaryLayoutBlockOrganismOwnProps &
@@ -34,7 +31,6 @@ const SecondaryLayoutBlockOrganism = (
     children,
     wrapperProps,
     headerProps,
-    subChildrenProps,
     ...props
   }: SecondaryLayoutBlockOrganismProps,
   ref: SecondaryLayoutBlockOrganismProps['ref']
@@ -44,7 +40,10 @@ const SecondaryLayoutBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <SecondaryLayoutBlockWrapper {...wrapperProps}>
+      <SecondaryLayoutBlockWrapper
+        {...wrapperProps}
+        className={cn('mb-[--section-spacing-md]', wrapperProps?.className)}
+      >
         <SecondaryLayoutBlockHeader
           subtitle={data.subtitle}
           texts={data.title}
@@ -52,9 +51,7 @@ const SecondaryLayoutBlockOrganism = (
           className={cn('shrink-0', headerProps?.className)}
         />
 
-        <SecondaryLayoutBlockSubChildren {...subChildrenProps}>
-          {subChildren}
-        </SecondaryLayoutBlockSubChildren>
+        {subChildren}
       </SecondaryLayoutBlockWrapper>
 
       {children}
@@ -62,5 +59,8 @@ const SecondaryLayoutBlockOrganism = (
   );
 };
 
-export default forwardRef(SecondaryLayoutBlockOrganism);
+export default createPolymorphicComponent<
+  'section',
+  SecondaryLayoutBlockOrganismProps
+>(forwardRef(SecondaryLayoutBlockOrganism));
 export type { SecondaryLayoutBlockOrganismProps };

@@ -1,7 +1,10 @@
+import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
 import Section, { SectionProps } from '@/components/organisms/Section';
+import { cn } from '@/utils';
 
+import { PrimaryLayoutBlockProps } from '.';
 import PrimaryLayoutBlockHeader, {
   PrimaryLayoutBlockHeaderProps
 } from './Header';
@@ -11,14 +14,14 @@ type PrimaryLayoutBlockOrganismOwnProps = {
     title: PrimaryLayoutBlockHeaderProps['texts'];
     description?: PrimaryLayoutBlockHeaderProps['description'];
   };
-  titleProps?: Partial<PrimaryLayoutBlockHeaderProps>;
+  headerProps?: Partial<PrimaryLayoutBlockHeaderProps>;
 };
 
 type PrimaryLayoutBlockOrganismProps = PrimaryLayoutBlockOrganismOwnProps &
   Omit<SectionProps, keyof PrimaryLayoutBlockOrganismOwnProps>;
 
 const PrimaryLayoutBlockOrganism = (
-  { children, data, titleProps, ...props }: PrimaryLayoutBlockOrganismProps,
+  { children, data, headerProps, ...props }: PrimaryLayoutBlockOrganismProps,
   ref: PrimaryLayoutBlockOrganismProps['ref']
 ) => {
   return (
@@ -29,7 +32,8 @@ const PrimaryLayoutBlockOrganism = (
       <PrimaryLayoutBlockHeader
         description={data.description}
         texts={data.title}
-        {...titleProps}
+        {...headerProps}
+        className={cn('mb-[--section-spacing-md]', headerProps?.className)}
       />
 
       {children}
@@ -37,5 +41,7 @@ const PrimaryLayoutBlockOrganism = (
   );
 };
 
-export default forwardRef(PrimaryLayoutBlockOrganism);
+export default createPolymorphicComponent<'section', PrimaryLayoutBlockProps>(
+  forwardRef(PrimaryLayoutBlockOrganism)
+);
 export type { PrimaryLayoutBlockOrganismProps };

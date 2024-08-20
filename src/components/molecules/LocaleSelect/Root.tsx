@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
 import { forwardRef } from 'react';
 
 import { Select } from '@/components/atoms';
@@ -24,8 +23,7 @@ const LocaleSelectMolecule = (
 ) => {
   const locale = useLocale(),
     router = useRouter(),
-    pathname = usePathname(),
-    searchParams = useSearchParams();
+    pathname = usePathname();
 
   return (
     <Select
@@ -44,7 +42,7 @@ const LocaleSelectMolecule = (
       onChange={(locale, options) => {
         if (!isLocale(locale)) return;
 
-        router.replace(`${pathname}?${searchParams}`, { locale });
+        router.replace(`${pathname}`, { locale });
 
         props.onChange?.(locale, options);
       }}

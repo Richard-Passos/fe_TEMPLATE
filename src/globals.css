@@ -423,16 +423,10 @@
 }
 
 @layer utilities {
-  .border {
-    @apply border-[.8px] border-solid border-border;
-  }
-
-  .border-x {
-    @apply border-x-[.8px] border-solid border-border;
-  }
-
+  .border,
+  .border-x,
   .border-y {
-    @apply border-y-[.8px] border-solid border-border;
+    @apply border-solid border-border;
   }
 
   .outline {

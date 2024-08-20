@@ -13,7 +13,7 @@ const ListHorizontalScrollOrganism = (
 ) => {
   return (
     <ul
-      className={cn('m-0 w-full overflow-x-clip p-0', className)}
+      className={cn('m-0 w-full list-none overflow-x-clip p-0', className)}
       ref={ref}
       {...props}
     />

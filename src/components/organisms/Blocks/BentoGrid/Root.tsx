@@ -35,7 +35,7 @@ const BentoGridBlockOrganism = (
         className='w-9/10 max-w-screen-lg'
         templates={data.templates}
       >
-        {data.items.map(({ type, data }, i) => {
+        {data.items.map(({ type, ...props }, i) => {
           const Card = Cards[type] as ComponentType<any>;
 
           const Item = (
@@ -43,7 +43,7 @@ const BentoGridBlockOrganism = (
               index={i}
               {...(!hasAnimation && { key: i })}
             >
-              <Card data={data} />
+              <Card {...props} />
             </BentoGrid.Item>
           );
 

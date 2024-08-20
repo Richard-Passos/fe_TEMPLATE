@@ -22,6 +22,23 @@
             "label": "· All projects ·"
           }
         },
+        "toExpect": {
+          "title": "EXPECT FROM ME",
+          "items": {
+            "0": {
+              "description": "I'll bring years of experience."
+            },
+            "1": {
+              "description": "Listen, challenge and reconnect the dots — joining your team with conviction and openness."
+            },
+            "2": {
+              "description": "Bridge the gap between creative and commercial objectives — speaking both languages."
+            },
+            "3": {
+              "description": "Recognise potential — pushing brands."
+            }
+          }
+        },
         "listWorkPage": {
           "items": {
             "0": "MISSION",
@@ -38,7 +55,7 @@
         },
         "aboutBentoGrid": {
           "title": { "0": "ABOUT", "1": "ME" },
-          "description": "🤟 Hey — I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "description": "Get to know the person behind the code — this is where you can connect with who I am beyond the screen.",
           "templates": {
             "base": {
               "0": "item-0",

@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 
 import { Icon, Text, Title } from '@/components/atoms';
+import UnstyledLink from '@/components/atoms/Link/Unstyled';
+import { CardRoot, CardRootProps } from '@/components/molecules/Card';
 import { urlRegex } from '@/constants/regexs';
 import { cn } from '@/utils';
-
-import LinkCardClient, { LinkCardClientProps } from './Client';
 
 type LinkCardOrganismOwnProps = {
   data: {
@@ -15,20 +15,22 @@ type LinkCardOrganismOwnProps = {
 };
 
 type LinkCardOrganismProps = LinkCardOrganismOwnProps &
-  Omit<LinkCardClientProps, keyof LinkCardOrganismOwnProps | 'href'>;
+  Omit<CardRootProps, keyof LinkCardOrganismOwnProps>;
 
 const LinkCardOrganism = (
   { className, data, ...props }: LinkCardOrganismProps,
   ref: LinkCardOrganismProps['ref']
 ) => {
   return (
-    <LinkCardClient
-      className={cn('min-h-52', className)}
-      href={data.href}
+    <CardRoot
+      className={cn('min-h-52 overflow-visible border-transparent', className)}
       ref={ref}
       {...props}
     >
-      <div className='flex min-h-52 flex-col items-center justify-center'>
+      <UnstyledLink
+        className='-m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center rounded-inherit border p-[--card-padding] font-normal text-current no-underline hover:bg-gray-0 dark:hover:bg-dark-5'
+        href={data.href}
+      >
         <div className='flex size-10 items-center justify-center rounded-sm border'>
           <Icon
             className='size-2/3'
@@ -44,10 +46,10 @@ const LinkCardOrganism = (
         </Title>
 
         <Text className='text-center text-sm text-dimmed'>
-          {data.href?.replace(urlRegex, '$3$4')}
+          {data.href.replace(urlRegex, '$3$4')}
         </Text>
-      </div>
-    </LinkCardClient>
+      </UnstyledLink>
+    </CardRoot>
   );
 };
 

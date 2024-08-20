@@ -470,7 +470,7 @@ const config: Config = {
         DEFAULT: '2px'
       },
       borderRadius: {
-        DEFAULT: 'var(--mantine-radius)',
+        DEFAULT: 'var(--mantine-radius-default)',
         xs: 'var(--mantine-radius-xs)',
         sm: 'var(--mantine-radius-sm)',
         md: 'var(--mantine-radius-md)',

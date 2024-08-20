@@ -101,7 +101,7 @@ const ButBlockOrganism = (
         <div className='flex w-9/10 items-center justify-center'>
           <Title
             component='p'
-            order={2}
+            order={1}
             {...descriptionProps}
             className={cn(
               'relative top-[--top] text-center font-medium',

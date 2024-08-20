@@ -128,7 +128,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               id: `${(i + 1).toString().padStart(2, '0')}/`,
               title: gt.rich(`skills.hard.${key}.title`),
               description: gt.rich(`skills.hard.${key}.description`),
-              icon: gt.rich(`skills.hard.${key}.icon`)
+              icon: gt(`skills.hard.${key}.icon`)
             }))
           }
         },
@@ -145,7 +145,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               id: `${(i + 1).toString().padStart(2, '0')}/`,
               title: gt.rich(`skills.soft.${key}.title`),
               description: gt.rich(`skills.soft.${key}.description`),
-              icon: gt.rich(`skills.soft.${key}.icon`)
+              icon: gt(`skills.soft.${key}.icon`)
             }))
           }
         },
@@ -167,7 +167,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               id: key,
               title: gt.rich(`values.personal.${key}.title`),
               description: gt.rich(`values.personal.${key}.description`),
-              icon: gt.rich(`values.personal.${key}.icon`)
+              icon: gt(`values.personal.${key}.icon`)
             })),
             icons: {
               left: {

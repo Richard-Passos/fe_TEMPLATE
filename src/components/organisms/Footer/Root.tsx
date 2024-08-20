@@ -51,7 +51,7 @@ const FooterOrganism = (
       }
       {...props}
     >
-      <section className='mb-xl w-9/10 pt-[--py]'>
+      <section className='mb-xl w-9/10 pt-[--section-spacing-md]'>
         <Title
           className='font-semibold'
           component='h3'
@@ -68,7 +68,7 @@ const FooterOrganism = (
           {t.rich('cta.title')}
         </Title>
 
-        <nav className='mt-md flex flex-wrap items-center gap-xs'>
+        <div className='mt-md flex flex-wrap items-center gap-xs'>
           <Action
             href='contact'
             variant='default'
@@ -86,12 +86,12 @@ const FooterOrganism = (
               variant='default'
             >
               <Icon
-                className='absolute aspect-square h-2/3 w-auto'
+                className='absolute size-2/3'
                 src={pt(`socials.${key}.icon`)}
               />
             </Action>
           ))}
-        </nav>
+        </div>
       </section>
 
       <div className='mt-auto flex w-9/10 items-end justify-between'>

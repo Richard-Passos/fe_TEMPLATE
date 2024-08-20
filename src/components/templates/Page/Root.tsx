@@ -3,6 +3,7 @@ import { ComponentType } from 'react';
 import Blocks from '@/components/organisms/Blocks';
 import Heros from '@/components/organisms/Heros';
 import { Theme, TypeVariants } from '@/types';
+import { cn } from '@/utils';
 
 type PageTemplateOrganismProps = {
   hero: TypeVariants<typeof Heros>;
@@ -21,13 +22,20 @@ const PageTemplateOrganism = ({ hero, blocks }: PageTemplateOrganismProps) => {
         theme={hero.theme}
       />
 
-      {blocks?.map(({ type, theme, ...props }, i) => {
+      {blocks?.map(({ type, id, className, theme, ...props }) => {
         const Block = Blocks[type] as ComponentType<any>;
+
+        const isSameTheme = lastTheme === theme;
 
         const Component = (
           <Block
-            hasTransition={lastTheme !== theme}
-            key={i}
+            className={cn(
+              'last:pb-[--section-spacing-lg] has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]',
+              className
+            )}
+            hasTransition={!isSameTheme}
+            id={id}
+            key={id}
             theme={theme}
             {...props}
           />

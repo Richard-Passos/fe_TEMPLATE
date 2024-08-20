@@ -2,7 +2,6 @@ import { useMessages, useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { LocalTime } from '@/components/atoms';
-import { BentoGridBlockProps } from '@/components/organisms/Blocks/BentoGrid';
 import { CtaTextBlockProps } from '@/components/organisms/Blocks/CtaText';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';

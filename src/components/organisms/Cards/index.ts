@@ -7,6 +7,7 @@ import ServiceCard from './Service';
 import SimpleCard from './Simple';
 import SkillCard from './Skill';
 import StatsCard from './Stats';
+import TextCard from './Text';
 import TimeCard from './Time';
 import ValueCard from './Value';
 
@@ -20,6 +21,7 @@ const Cards = {
   Simple: SimpleCard,
   Skill: SkillCard,
   Stats: StatsCard,
+  Text: TextCard,
   Time: TimeCard,
   Value: ValueCard
 };
@@ -35,6 +37,7 @@ export {
   SimpleCard,
   SkillCard,
   StatsCard,
+  TextCard,
   TimeCard,
   ValueCard
 };

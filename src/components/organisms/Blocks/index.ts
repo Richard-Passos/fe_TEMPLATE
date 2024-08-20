@@ -4,6 +4,7 @@ import CtaTextBlock from './CtaText';
 import ListMissionBlock from './ListMission';
 import ListPageBlock from './ListPage';
 import ProjectsCatalogBlock from './ProjectsCatalog';
+import SecondaryBentoGridBlock from './SecondaryBentoGrid';
 import ServicesBlock from './Services';
 import SkillsBlock from './Skills';
 import StatsBlock from './Stats';
@@ -16,6 +17,7 @@ const Blocks = {
   ListMission: ListMissionBlock,
   ListPage: ListPageBlock,
   ProjectsCatalog: ProjectsCatalogBlock,
+  SecondaryBentoGrid: SecondaryBentoGridBlock,
   Services: ServicesBlock,
   Skills: SkillsBlock,
   Stats: StatsBlock,
@@ -30,6 +32,7 @@ export {
   ListMissionBlock,
   ListPageBlock,
   ProjectsCatalogBlock,
+  SecondaryBentoGridBlock,
   ServicesBlock,
   SkillsBlock,
   StatsBlock,

@@ -64,11 +64,11 @@ const ProjectsCatalogBlockOrganism = (
         items={data.items}
         {...catalogProps}
         className={cn(
-          'grid w-9/10 max-w-screen-xl sm:grid-cols-12 sm:grid-rows-12',
+          'grid w-9/10 max-w-screen-xl sm:grid-cols-12',
           catalogProps?.className
         )}
       >
-        <div className='size-full pb-md sm:col-span-4 sm:row-span-11'>
+        <div className='size-full max-sm:mb-md sm:col-span-4'>
           {renderComp(
             <Title
               className='sticky top-xl text-dimmed'
@@ -82,7 +82,7 @@ const ProjectsCatalogBlockOrganism = (
           )}
         </div>
 
-        <div className='flex flex-col items-center sm:col-span-8 sm:col-end-13 sm:row-span-full'>
+        <div className='flex flex-col items-center sm:col-span-8'>
           <Catalog.Empty {...emptyProps}>
             <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
           </Catalog.Empty>
@@ -101,15 +101,17 @@ const ProjectsCatalogBlockOrganism = (
           />
         </div>
 
-        <Action
-          href='/projects'
-          size='md'
-          variant='default'
-          {...actionProps}
-          className={cn('w-fit self-end sm:col-span-4', actionProps?.className)}
-        >
-          {data.action.label}
-        </Action>
+        <div className='mt-xl flex justify-center sm:col-span-full'>
+          <Action
+            href='/projects'
+            size='md'
+            variant='default'
+            {...actionProps}
+            className={cn('sm:ml-auto', actionProps?.className)}
+          >
+            {data.action.label}
+          </Action>
+        </div>
       </Catalog.Root>
     </PrimaryLayoutBlock>
   );

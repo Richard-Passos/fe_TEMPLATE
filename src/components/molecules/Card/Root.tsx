@@ -5,7 +5,7 @@ import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 type CardMoleculeOwnProps = {
-  ref?: PolymorphicRef<'li'>;
+  ref?: PolymorphicRef<'div'>;
 };
 
 type CardMoleculeProps = CardMoleculeOwnProps &
@@ -17,18 +17,16 @@ const CardMolecule = (
 ) => {
   return (
     <Card
-      className={cn(
-        'rounded-md border p-lg dark:bg-black light:bg-white',
-        className
-      )}
-      component='li'
+      className={cn('border dark:bg-black light:bg-white', className)}
+      padding='lg'
+      radius='md'
       ref={ref}
       {...props}
     />
   );
 };
 
-export default createPolymorphicComponent<'li', CardMoleculeProps>(
+export default createPolymorphicComponent<'div', CardMoleculeProps>(
   forwardRef(CardMolecule)
 );
 export type { CardMoleculeProps };

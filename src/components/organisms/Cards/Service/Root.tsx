@@ -24,6 +24,7 @@ type ServiceCardOrganismProps = ServiceCardOrganismOwnProps &
 
 const ServiceCardOrganism = (
   {
+    className,
     data,
     indexProps,
     dividerProps,
@@ -35,6 +36,7 @@ const ServiceCardOrganism = (
 ) => {
   return (
     <Card.Root
+      className={cn('!border-transparent !bg-transparent', className)}
       ref={ref}
       {...props}
     >
@@ -65,7 +67,10 @@ const ServiceCardOrganism = (
 
       <Text
         {...descriptionProps}
-        className={cn('text-sm leading-relaxed', descriptionProps?.className)}
+        className={cn(
+          'text-sm leading-relaxed text-dimmed',
+          descriptionProps?.className
+        )}
       >
         {data.description}
       </Text>

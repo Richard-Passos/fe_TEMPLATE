@@ -33,7 +33,7 @@ const StatsCardOrganism = (
     >
       <Title
         component='p'
-        order={2}
+        order={1}
         {...valueProps}
         className={cn('font-semibold leading-none', valueProps?.className)}
       >

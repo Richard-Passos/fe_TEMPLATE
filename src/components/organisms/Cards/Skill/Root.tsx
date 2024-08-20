@@ -2,8 +2,6 @@ import { forwardRef } from 'react';
 
 import { Icon, Magnetic, Text, Title } from '@/components/atoms';
 import { IconProps } from '@/components/atoms/Icon';
-import { PlusIcon } from '@/components/atoms/Icon/icons';
-import { MagneticRootProps } from '@/components/atoms/Magnetic';
 import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
@@ -13,7 +11,6 @@ type SkillCardOrganismOwnProps = {
   data: {
     id: string;
     title: TitleProps['children'];
-    description: TextProps['children'];
     icon: IconProps['src'];
   };
   idProps?: Partial<TitleProps>;
@@ -42,8 +39,7 @@ const SkillCardOrganism = (
   return (
     <Magnetic.Container>
       <Card.Root
-        className={cn('w-[90vw] max-w-72', className)}
-        data-state='open'
+        className={cn('w-72', className)}
         ref={ref}
         {...props}
       >
@@ -57,7 +53,6 @@ const SkillCardOrganism = (
 
           <section>
             <Title
-              className='leading-tight'
               component='h4'
               order={6}
             >

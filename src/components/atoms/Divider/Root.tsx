@@ -1,6 +1,8 @@
 import { Divider, DividerProps } from '@mantine/core';
+import { forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
+import { cn } from '@/utils';
 
 type DividerAtomOwnProps = {
   ref?: PolymorphicRef<'div'>;
@@ -9,7 +11,21 @@ type DividerAtomOwnProps = {
 type DividerAtomProps = DividerAtomOwnProps &
   Omit<DividerProps, keyof DividerAtomOwnProps>;
 
-const DividerAtom = Divider;
+const DividerAtom = (
+  { className, ...props }: DividerAtomProps,
+  ref: DividerAtomProps['ref']
+) => {
+  return (
+    <Divider
+      className={cn(
+        '[--divider-color:theme(colors.border)] dark:[--divider-color:theme(colors.border)]',
+        className
+      )}
+      ref={ref}
+      {...props}
+    />
+  );
+};
 
-export default DividerAtom;
+export default forwardRef(DividerAtom);
 export type { DividerAtomProps };

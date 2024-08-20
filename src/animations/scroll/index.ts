@@ -1,10 +1,12 @@
-import rotateLeft from './rotateLeft';
-import rotateRight from './rotateRight';
+import lineLeftScrollAnim from './lineLeft';
+import rotateLeftScrollAnim from './rotateLeft';
+import rotateRightScrollAnim from './rotateRight';
 
 const scrollAnimations = {
-  rotateLeft,
-  rotateRight
+  lineLeft: lineLeftScrollAnim,
+  rotateLeft: rotateLeftScrollAnim,
+  rotateRight: rotateRightScrollAnim
 };
 
 export default scrollAnimations;
-export { rotateLeft, rotateRight };
+export { lineLeftScrollAnim, rotateLeftScrollAnim, rotateRightScrollAnim };

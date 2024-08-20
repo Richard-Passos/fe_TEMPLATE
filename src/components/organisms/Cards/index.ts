@@ -1,5 +1,6 @@
 import BoldCard from './Bold';
 import DescriptionCard from './Description';
+import ImageCard from './Image';
 import LinkCard from './Link';
 import MarqueeCard from './Marquee';
 import ProjectCard from './Project';
@@ -14,6 +15,7 @@ import ValueCard from './Value';
 const Cards = {
   Bold: BoldCard,
   Description: DescriptionCard,
+  Image: ImageCard,
   Link: LinkCard,
   Marquee: MarqueeCard,
   Project: ProjectCard,
@@ -30,6 +32,7 @@ export default Cards;
 export {
   BoldCard,
   DescriptionCard,
+  ImageCard,
   LinkCard,
   MarqueeCard,
   ProjectCard,

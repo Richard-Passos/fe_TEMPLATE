@@ -1,14 +1,16 @@
 import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
-import { Button, Magnetic } from '@/components/atoms';
+import { Button } from '@/components/atoms';
 import { ButtonProps } from '@/components/atoms/Button';
-import { MagneticProps } from '@/components/atoms/Magnetic';
+import { MagneticRoot, MagneticRootProps } from '@/components/atoms/Magnetic';
 import { cn } from '@/utils';
 
 import Link, { LinkProps } from './Link';
 
-type ActionMoleculeOwnProps = Partial<Pick<MagneticProps, 'limit'>> & {
+type ActionMoleculeOwnProps = Partial<
+  Pick<MagneticRootProps, 'limit' | 'smoothConfig'>
+> & {
   href?: string;
   ref?: any;
 };
@@ -20,6 +22,7 @@ const ActionMolecule = (
   {
     href,
     limit = { x: 0.35, y: 0.35 },
+    smoothConfig,
     className,
     children,
     ...props
@@ -28,11 +31,14 @@ const ActionMolecule = (
 ) => {
   const Content = (
     <>
-      <Magnetic limit={{ x: limit.x * 0.8, y: limit.y * 0.8 }}>
+      <MagneticRoot
+        limit={{ x: limit.x * 0.8, y: limit.y * 0.8 }}
+        smoothConfig={smoothConfig}
+      >
         <span className='relative z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit px-[--button-padding-x]'>
           {children}
         </span>
-      </Magnetic>
+      </MagneticRoot>
 
       <span className='absolute inset-0 bg-[--button-hover] transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)]' />
     </>
@@ -45,7 +51,10 @@ const ActionMolecule = (
 
   if (href)
     return (
-      <Magnetic limit={limit}>
+      <MagneticRoot
+        limit={limit}
+        smoothConfig={smoothConfig}
+      >
         <Link
           className={className}
           href={href}
@@ -54,11 +63,14 @@ const ActionMolecule = (
         >
           {Content}
         </Link>
-      </Magnetic>
+      </MagneticRoot>
     );
 
   return (
-    <Magnetic limit={limit}>
+    <MagneticRoot
+      limit={limit}
+      smoothConfig={smoothConfig}
+    >
       <Button
         className={className}
         ref={ref}
@@ -66,7 +78,7 @@ const ActionMolecule = (
       >
         {Content}
       </Button>
-    </Magnetic>
+    </MagneticRoot>
   );
 };
 

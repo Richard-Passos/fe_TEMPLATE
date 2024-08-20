@@ -50,46 +50,12 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           }
         },
         {
-          type: 'SecondaryBentoGrid',
+          type: 'Text',
           theme: 'dark',
           id: 'toExpect',
-          hasAnimation: true,
           data: {
             title: t.rich('blocks.toExpect.title'),
-            templates: {
-              base: ['item-0', 'item-1', 'item-2', 'item-3'],
-              sm: ['item-0 item-1', 'item-2 item-3'],
-              md: [
-                'item-0 item-0 item-1 item-1 item-1',
-                'item-2 item-2 item-2 item-3 item-3'
-              ]
-            },
-            items: [
-              {
-                type: 'Text',
-                data: {
-                  description: t('blocks.toExpect.items.0.description')
-                }
-              },
-              {
-                type: 'Text',
-                data: {
-                  description: t('blocks.toExpect.items.1.description')
-                }
-              },
-              {
-                type: 'Text',
-                data: {
-                  description: t('blocks.toExpect.items.2.description')
-                }
-              },
-              {
-                type: 'Text',
-                data: {
-                  description: t('blocks.toExpect.items.3.description')
-                }
-              }
-            ]
+            description: t.rich('blocks.toExpect.description')
           }
         },
         {

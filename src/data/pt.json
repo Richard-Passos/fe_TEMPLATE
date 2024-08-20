@@ -19,25 +19,12 @@
           "empty": "Sorry, selected projects not found.",
           "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate.",
           "action": {
-            "label": "· All projects ·"
+            "label": "All projects"
           }
         },
         "toExpect": {
-          "title": "EXPECT FROM ME",
-          "items": {
-            "0": {
-              "description": "I'll bring years of experience."
-            },
-            "1": {
-              "description": "Listen, challenge and reconnect the dots — joining your team with conviction and openness."
-            },
-            "2": {
-              "description": "Bridge the gap between creative and commercial objectives — speaking both languages."
-            },
-            "3": {
-              "description": "Recognise potential — pushing brands."
-            }
-          }
+          "title": "Here’s what you can expect from me",
+          "description": "Listen, challenge and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness."
         },
         "listWorkPage": {
           "items": {
@@ -46,7 +33,7 @@
             "2": "SERVICES"
           },
           "action": {
-            "label": "· Explore ·"
+            "label": "Explore"
           }
         },
         "but": {
@@ -118,7 +105,7 @@
             "2": "PERSONALITY"
           },
           "action": {
-            "label": "· Explore ·"
+            "label": "Explore"
           }
         },
         "cta": {
@@ -197,7 +184,7 @@
             }
           },
           "action": {
-            "label": "· Contact me ·"
+            "label": "Contact me"
           }
         },
         "selectedProjects": {
@@ -206,7 +193,7 @@
           "subtitle": "",
           "empty": "Sorry, selected projects not found.",
           "action": {
-            "label": "· All projects ·"
+            "label": "All projects"
           }
         },
         "whyMe": {
@@ -334,10 +321,10 @@
       "title": "The Portfolio",
       "label": "Menu",
       "open": {
-        "label": "Openenu ·"
+        "label": "Openenu"
       },
       "close": {
-        "label": "Closeenu ·"
+        "label": "Closeenu"
       }
     },
     "nav": {
@@ -391,7 +378,7 @@
       "title": "LET'S MAKE <br></br> THEM FLY",
       "subtitle": "Is your great ideas ready?",
       "action": {
-        "label": "· Get in touch ·"
+        "label": "Get in touch"
       }
     },
     "location": "{ country } —  { state }",

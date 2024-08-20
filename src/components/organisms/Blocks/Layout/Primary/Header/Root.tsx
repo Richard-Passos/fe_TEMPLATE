@@ -39,16 +39,21 @@ const PrimaryLayoutBlockHeaderOrganism = (
     >
       <Title
         className='flex w-full flex-col'
-        order={2}
+        order={1}
       >
         {restTexts.map((text, i) => (
-          <span key={i}>{text}</span>
+          <span
+            className='flex items-center gap-xl'
+            key={i}
+          >
+            {text} <span className='h-2 grow border bg-white dark:bg-black' />
+          </span>
         ))}
 
         <span className='mx-auto flex w-9/10 items-center gap-xl'>
           <span>{lastText}</span>
 
-          <span className='h-0.5 grow bg-border' />
+          <span className='h-2 grow border bg-white dark:bg-black' />
 
           {renderComp(
             <Text

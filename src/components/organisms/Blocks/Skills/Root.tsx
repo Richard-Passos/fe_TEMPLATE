@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/atoms/Icon/icons';
 import { Carousel } from '@/components/molecules';
@@ -30,19 +30,21 @@ type SkillsBlockOrganismOwnProps = {
 type SkillsBlockOrganismProps = SkillsBlockOrganismOwnProps &
   Omit<SkillsClientBlockProps, keyof SkillsBlockOrganismOwnProps>;
 
-const SkillsBlockOrganism = ({
-  className,
-  data,
-  options,
-  subChildrenProps,
-  activeIdxProps,
-  progressProps,
-  actionsProps,
-  prevProps,
-  nextProps,
-  trackProps,
-  ...props
-}: SkillsBlockOrganismProps) => {
+const SkillsBlockOrganism = (
+  {
+    className,
+    data,
+    subChildrenProps,
+    activeIdxProps,
+    progressProps,
+    actionsProps,
+    prevProps,
+    nextProps,
+    trackProps,
+    ...props
+  }: SkillsBlockOrganismProps,
+  ref: SkillsActionBlockProps['ref']
+) => {
   return (
     <SkillsClientBlock
       className={cn('min-h-fit 2xl:min-h-fit', className)}
@@ -50,7 +52,8 @@ const SkillsBlockOrganism = ({
         title: data.title,
         subtitle: data.subtitle
       }}
-      options={{ slideFocus: true, options }}
+      options={{ slideFocus: true }}
+      ref={ref}
       subChildren={
         <section
           {...subChildrenProps}
@@ -109,5 +112,5 @@ const SkillsBlockOrganism = ({
   );
 };
 
-export default SkillsBlockOrganism;
+export default forwardRef(SkillsBlockOrganism);
 export type { SkillsBlockOrganismProps };

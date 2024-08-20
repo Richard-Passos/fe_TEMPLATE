@@ -161,6 +161,24 @@
             "src": "/images/parallax-00.jpg",
             "alt": ""
           },
+          "icons": {
+            "topLeft": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateRight"
+            },
+            "topRight": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateLeft"
+            },
+            "bottomLeft": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateRight"
+            },
+            "bottomRight": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateLeft"
+            }
+          },
           "action": {
             "label": "· Contact me ·"
           }
@@ -179,26 +197,11 @@
           "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
           "subtitle": "SOME STATISTICS..."
         },
-        "hardSkills": {
-          "title": {
-            "0": "HARD",
-            "1": "SKILLS"
-          },
-          "subtitle": "The best in market"
-        },
-        "softSkills": {
-          "title": {
-            "0": "SOFT",
-            "1": "SKILLS"
-          },
-          "subtitle": "The best as person"
+        "skills": {
+          "title": "SOME SKILLS"
         },
         "values": {
-          "title": {
-            "0": "MY",
-            "1": "VALUES"
-          },
-          "subtitle": "Elevating standards",
+          "title": "MY VALUES",
           "icons": {
             "left": {
               "src": "/icons/globe.svg",
@@ -543,16 +546,6 @@
         "title": "Styled-components",
         "icon": "/icons/styled-components.svg",
         "description": "CSS-in-JS for seamless styling and component-based design."
-      },
-      "10": {
-        "title": "HTML",
-        "icon": "/icons/html.svg",
-        "description": "Foundation of web development, used to create the structure and content of web pages."
-      },
-      "11": {
-        "title": "CSS",
-        "icon": "/icons/css.svg",
-        "description": "Styling language for web development, shaping the visual presentation of websites."
       }
     },
     "soft": {

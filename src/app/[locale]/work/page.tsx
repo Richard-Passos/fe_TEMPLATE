@@ -2,6 +2,7 @@ import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/components/atoms';
+import { ServicesBlockOrganismProps } from '@/components/organisms/Blocks/Services/Root';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
@@ -42,7 +43,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
         },
         {
           type: 'Services',
-          theme: 'light',
+          theme: 'dark',
           id: 'services',
           data: {
             title: keys(get(messages, 'pages.work.blocks.services.title')).map(
@@ -54,6 +55,18 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               src: t('blocks.services.image.src'),
               alt: t('blocks.services.image.alt')
             },
+            icons: keys(
+              get(messages, 'pages.work.blocks.services.icons')
+            ).reduce(
+              (obj, key) => ({
+                ...obj,
+                [key]: {
+                  src: t(`blocks.services.icons.${key}.src`),
+                  animation: t(`blocks.services.icons.${key}.animation`)
+                }
+              }),
+              {}
+            ) as ServicesBlockOrganismProps['data']['icons'],
             items: keys(get(messages, 'services')).map((key, i) => ({
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
               title: gt(`services.${key}.title`),
@@ -117,47 +130,31 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
         },
         {
           type: 'Skills',
-          theme: 'light',
-          id: 'hardSkills',
+          theme: 'dark',
+          id: 'skills',
           data: {
-            title: keys(
-              get(messages, 'pages.work.blocks.hardSkills.title')
-            ).map((key) => t(`blocks.hardSkills.title.${key}`)),
-            subtitle: t('blocks.hardSkills.subtitle'),
-            items: keys(get(messages, 'skills.hard')).map((key, i) => ({
-              id: `${(i + 1).toString().padStart(2, '0')}/`,
-              title: gt.rich(`skills.hard.${key}.title`),
-              description: gt.rich(`skills.hard.${key}.description`),
-              icon: gt(`skills.hard.${key}.icon`)
-            }))
+            title: t.rich('blocks.skills.title'),
+            items: [
+              keys(get(messages, 'skills.hard')).map((key, i) => ({
+                id: `${(i + 1).toString().padStart(2, '0')}/`,
+                title: gt(`skills.hard.${key}.title`),
+                icon: gt(`skills.hard.${key}.icon`)
+              })),
+              keys(get(messages, 'skills.soft')).map((key, i) => ({
+                id: `${(i + 1).toString().padStart(2, '0')}/`,
+                title: gt(`skills.soft.${key}.title`),
+                icon: gt(`skills.soft.${key}.icon`)
+              }))
+            ]
           }
         },
-        {
-          type: 'Skills',
-          theme: 'light',
-          id: 'softSkills',
-          data: {
-            title: keys(
-              get(messages, 'pages.work.blocks.softSkills.title')
-            ).map((key) => t(`blocks.softSkills.title.${key}`)),
-            subtitle: t('blocks.softSkills.subtitle'),
-            items: keys(get(messages, 'skills.soft')).map((key, i) => ({
-              id: `${(i + 1).toString().padStart(2, '0')}/`,
-              title: gt.rich(`skills.soft.${key}.title`),
-              description: gt.rich(`skills.soft.${key}.description`),
-              icon: gt(`skills.soft.${key}.icon`)
-            }))
-          }
-        },
+
         {
           type: 'Values',
           theme: 'dark',
           id: 'values',
           data: {
-            title: keys(get(messages, 'pages.work.blocks.values.title')).map(
-              (key) => t(`blocks.values.title.${key}`)
-            ),
-            subtitle: t('blocks.values.subtitle'),
+            title: t.rich('blocks.values.title'),
             templates: {
               base: ['item-0', 'item-1', 'item-2', 'item-3'],
               sm: ['item-0 item-1', 'item-2 item-3'],

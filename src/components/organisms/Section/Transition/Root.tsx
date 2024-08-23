@@ -3,6 +3,7 @@
 import { DefaultMantineColor, StyleProp } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
+import { yFullScrollAnim } from '@/animations/scroll';
 import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate/Root';
 import { cn } from '@/utils';
@@ -31,7 +32,7 @@ const SectionTransitionOrganism = (
     <ScrollAnimate config={animationConfig}>
       <div
         className={cn(
-          'pointer-events-none absolute top-px h-20 w-screen',
+          'pointer-events-none absolute left-1/2 top-px h-20 w-screen -translate-x-1/2',
           className
         )}
         ref={ref}
@@ -50,9 +51,7 @@ const SectionTransitionOrganism = (
             color={color}
           >
             <div className={cn('absolute inset-0', !reverse && 'rotate-180')}>
-              <ScrollAnimate
-                config={{ prop: 'y', propPoints: ['-100%', '100%'] }}
-              >
+              <ScrollAnimate config={yFullScrollAnim}>
                 <Lines
                   className={cn(
                     !reverse &&

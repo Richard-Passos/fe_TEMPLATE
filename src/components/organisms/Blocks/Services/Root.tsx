@@ -17,7 +17,7 @@ type ServicesBlockOrganismOwnProps = {
     ServicesBlockImageOrganismProps['data'] & {
       subtitle?: ReactNode;
       items: ServiceCardProps['data'][];
-      action: {
+      action?: {
         label: ReactNode;
       };
     };
@@ -101,15 +101,18 @@ const ServicesBlockOrganism = (
           </ul>
         </div>
 
-        <Action
-          href='/contact'
-          size='md'
-          variant='default'
-          {...actionProps}
-          className={cn('mt-xl', actionProps?.className)}
-        >
-          {data.action.label}
-        </Action>
+        {renderComp(
+          <Action
+            href='/contact'
+            size='md'
+            variant='default'
+            {...actionProps}
+            className={cn('mt-xl', actionProps?.className)}
+          >
+            {data.action?.label}
+          </Action>,
+          [data.action]
+        )}
       </section>
     </PrimaryLayoutBlock>
   );

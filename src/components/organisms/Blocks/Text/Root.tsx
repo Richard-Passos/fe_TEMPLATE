@@ -1,8 +1,7 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
-import { ScrollAnimate, Text, Title } from '@/components/atoms';
-import { TextProps } from '@/components/atoms/Text';
+import { ScrollAnimate, Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
 
@@ -11,11 +10,10 @@ import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 type TextBlockOrganismOwnProps = {
   data: {
     title: TitleProps['children'];
-    description?: TextProps['children'];
+    description?: ReactNode;
   };
   wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
   titleProps?: Partial<TitleProps>;
-  descriptionProps?: Partial<TextProps>;
 };
 
 type TextBlockOrganismProps = TextBlockOrganismOwnProps &
@@ -27,7 +25,6 @@ const TextBlockOrganism = (
     data,
     wrapperProps,
     titleProps,
-    descriptionProps,
     ...props
   }: TextBlockOrganismProps,
   ref: TextBlockOrganismProps['ref']
@@ -42,9 +39,9 @@ const TextBlockOrganism = (
       {...props}
     >
       <Title
-        order={2}
+        order={3}
         {...titleProps}
-        className={cn('max-w-2xl', titleProps?.className)}
+        className={cn('max-w-lg', titleProps?.className)}
       >
         {data.title}
       </Title>
@@ -52,7 +49,7 @@ const TextBlockOrganism = (
       <div
         {...wrapperProps}
         className={cn(
-          'mt-xl flex items-start gap-md sm:ml-[5%]',
+          'mt-lg flex items-start gap-md sm:ml-[5%]',
           wrapperProps?.className
         )}
       >
@@ -65,15 +62,7 @@ const TextBlockOrganism = (
           </ScrollAnimate>
         </span>
 
-        <Text
-          {...descriptionProps}
-          className={cn(
-            'w-full max-w-md leading-relaxed sm:text-lg',
-            descriptionProps?.className
-          )}
-        >
-          {data.description}
-        </Text>
+        <section className='flex flex-col gap-md'>{data.description}</section>
       </div>
     </CleanLayoutBlock>
   );

@@ -25,7 +25,7 @@ const LogoOrganism = (
 
   return (
     <Variant
-      className={cn('border-transparent', className)}
+      className={cn('border-transparent ![--button-bg:transparent]', className)}
       href='/'
       icon={t('icon')}
       label={t('label')}

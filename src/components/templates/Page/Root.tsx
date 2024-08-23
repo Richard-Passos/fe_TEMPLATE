@@ -11,7 +11,7 @@ type PageTemplateOrganismProps = {
 };
 
 const PageTemplateOrganism = ({ hero, blocks }: PageTemplateOrganismProps) => {
-  let lastTheme: Theme;
+  let lastTheme: Theme = hero.theme;
 
   const Hero = Heros[hero.type] as ComponentType<any>;
 

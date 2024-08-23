@@ -975,15 +975,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/form@npm:^7.11.2":
-  version: 7.11.2
-  resolution: "@mantine/form@npm:7.11.2"
+"@mantine/form@npm:^7.12.1":
+  version: 7.12.1
+  resolution: "@mantine/form@npm:7.12.1"
   dependencies:
     fast-deep-equal: "npm:^3.1.3"
     klona: "npm:^2.0.6"
   peerDependencies:
     react: ^18.2.0
-  checksum: 10c0/79690c28b67556a51010115e2d405dfd45618a630770efcbbc193a2e8bc7cf48b116faf1e65106dea8a4e0a09eb703639369ff518c700ca212016f739390089a
+  checksum: 10c0/d80835941b8c1d82626f2d66efbff062dba00bd88f3bff755d30d8b100312cb8b17e4aef1248207bdc97606f8d0bcb4233894c8341bc108e2b4797105260915f
   languageName: node
   linkType: hard
 
@@ -5986,7 +5986,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@mantine/core": "npm:^7.11.2"
-    "@mantine/form": "npm:^7.11.2"
+    "@mantine/form": "npm:^7.12.1"
     "@mantine/hooks": "npm:^7.11.2"
     "@radix-ui/react-slot": "npm:^1.1.0"
     "@reduxjs/toolkit": "npm:^2.2.6"

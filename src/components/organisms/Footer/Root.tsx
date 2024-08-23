@@ -1,6 +1,7 @@
 import { useMessages, useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
+import { yFullScrollAnim } from '@/animations/scroll';
 import {
   Icon,
   Lines,
@@ -15,7 +16,6 @@ import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { Namespace } from '@/types';
 import { cn, keys } from '@/utils';
-import { yFullScrollAnim } from '@/animations/scroll';
 
 type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 

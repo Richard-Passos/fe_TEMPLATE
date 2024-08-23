@@ -3,6 +3,7 @@
 import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef, useRef } from 'react';
 
+import { yFullScrollAnim } from '@/animations/scroll';
 import { Bg, Box, Lines, ScrollAnimate } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
 import { BoxProps } from '@/components/atoms/Box';
@@ -11,7 +12,6 @@ import { cn, setRefs } from '@/utils';
 
 import Transition, { TransitionProps } from './Transition';
 import useSetTheme from './useSetTheme';
-import { yFullScrollAnim } from '@/animations/scroll';
 
 type SectionOrganismOwnProps = {
   bg?: BgProps['color'] | TransitionProps['color'];

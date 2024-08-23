@@ -4,7 +4,6 @@ import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
 import { cn } from '@/utils';
 
-
 type ServicesBlockImageOrganismOwnProps = {
   data: {
     image: Pick<ImageProps, 'src' | 'alt'>;

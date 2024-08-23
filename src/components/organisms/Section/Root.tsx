@@ -11,6 +11,7 @@ import { cn, setRefs } from '@/utils';
 
 import Transition, { TransitionProps } from './Transition';
 import useSetTheme from './useSetTheme';
+import { yFullScrollAnim } from '@/animations/scroll';
 
 type SectionOrganismOwnProps = {
   bg?: BgProps['color'] | TransitionProps['color'];
@@ -66,7 +67,7 @@ const SectionOrganism = (
         color={bg}
         {...bgProps}
       >
-        <ScrollAnimate config={{ prop: 'y', propPoints: ['-100%', '100%'] }}>
+        <ScrollAnimate config={yFullScrollAnim}>
           <Lines />
         </ScrollAnimate>
       </Bg>

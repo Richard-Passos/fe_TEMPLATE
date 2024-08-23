@@ -2,8 +2,7 @@ import { ReactNode, forwardRef } from 'react';
 
 import { Text, Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
-import { Action, Catalog } from '@/components/molecules';
-import { ActionProps } from '@/components/molecules/Action';
+import { Catalog } from '@/components/molecules';
 import {
   CatalogEmptyProps,
   CatalogRootProps
@@ -23,16 +22,12 @@ type ProjectsCatalogBlockOrganismOwnProps = {
     subtitle?: ReactNode;
     empty: ReactNode;
     items: any[];
-    action: {
-      label: ReactNode;
-    };
   };
   catalogProps?: Partial<CatalogRootProps>;
   subtitleProps?: Partial<TitleProps>;
   emptyProps?: Partial<CatalogEmptyProps>;
   tableProps?: Partial<ProjectsCatalogTableBlockProps<unknown>>;
   gridProps?: Partial<ProjectsCatalogGridBlockProps<unknown>>;
-  actionProps?: Partial<ActionProps>;
 };
 
 type ProjectsCatalogBlockOrganismProps = ProjectsCatalogBlockOrganismOwnProps &
@@ -46,7 +41,6 @@ const ProjectsCatalogBlockOrganism = (
     emptyProps,
     tableProps,
     gridProps,
-    actionProps,
     ...props
   }: ProjectsCatalogBlockOrganismProps,
   ref: ProjectsCatalogBlockOrganismProps['ref']
@@ -68,7 +62,7 @@ const ProjectsCatalogBlockOrganism = (
           catalogProps?.className
         )}
       >
-        <div className='size-full max-sm:mb-md sm:col-span-4'>
+        <div className='size-full max-sm:mb-md sm:col-span-5'>
           {renderComp(
             <Title
               className='sticky top-xl text-dimmed'
@@ -82,7 +76,7 @@ const ProjectsCatalogBlockOrganism = (
           )}
         </div>
 
-        <div className='flex flex-col items-center sm:col-span-8'>
+        <div className='flex flex-col items-center sm:col-span-7'>
           <Catalog.Empty {...emptyProps}>
             <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
           </Catalog.Empty>
@@ -99,18 +93,6 @@ const ProjectsCatalogBlockOrganism = (
             {...gridProps}
             className={cn('w-full sm:hidden', gridProps?.className)}
           />
-        </div>
-
-        <div className='mt-xl flex justify-center sm:col-span-full'>
-          <Action
-            href='/projects'
-            size='md'
-            variant='default'
-            {...actionProps}
-            className={cn('sm:ml-auto', actionProps?.className)}
-          >
-            {data.action.label}
-          </Action>
         </div>
       </Catalog.Root>
     </PrimaryLayoutBlock>

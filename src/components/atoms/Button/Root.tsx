@@ -38,6 +38,7 @@ const ButtonAtom = (
           '--button-hover': 'var(--ai-hover)',
           ...style
         }}
+        variant='filled'
         {...props}
       />
     );

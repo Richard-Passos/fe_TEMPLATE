@@ -1,6 +1,9 @@
+import AboutBlock from './About';
 import BentoGridBlock from './BentoGrid';
 import ButBlock from './But';
+import ContactFormBlock from './ContactForm';
 import CtaTextBlock from './CtaText';
+import ImagesBlock from './Images';
 import ListMissionBlock from './ListMission';
 import ListPageBlock from './ListPage';
 import ProjectsCatalogBlock from './ProjectsCatalog';
@@ -11,9 +14,12 @@ import TextBlock from './Text';
 import ValuesBlock from './Values';
 
 const Blocks = {
+  About: AboutBlock,
   BentoGrid: BentoGridBlock,
   But: ButBlock,
+  ContactForm: ContactFormBlock,
   CtaText: CtaTextBlock,
+  Images: ImagesBlock,
   ListMission: ListMissionBlock,
   ListPage: ListPageBlock,
   ProjectsCatalog: ProjectsCatalogBlock,
@@ -26,9 +32,12 @@ const Blocks = {
 
 export default Blocks;
 export {
+  AboutBlock,
   BentoGridBlock,
   ButBlock,
+  ContactFormBlock,
   CtaTextBlock,
+  ImagesBlock,
   ListMissionBlock,
   ListPageBlock,
   ProjectsCatalogBlock,

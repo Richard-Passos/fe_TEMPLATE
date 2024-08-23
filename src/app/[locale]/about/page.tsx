@@ -1,9 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
-import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
+import { AboutBlockTextDescription } from '@/components/organisms/Blocks/About/Text/Rich';
+import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PageTemplate } from '@/components/templates';
+import { get, keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -16,48 +17,124 @@ type AboutPageProps = AboutPageOwnProps & AboutPageParams;
 const AboutPage = ({ params: { locale } }: AboutPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations('pages.about');
+  const t = useTranslations('pages.about'),
+    gt = useTranslations(),
+    messages = useMessages() as unknown as IntlMessages;
 
   return (
     <PageTemplate
-      hero={{
-        type: 'Primary',
-        theme: 'light',
-        data: {
-          title: t.rich('hero.title', {
-            Start: (chunks) => (
-              <PrimaryHeroTitleRich.Start>{chunks}</PrimaryHeroTitleRich.Start>
+      blocks={[
+        {
+          type: 'Images',
+          theme: 'dark',
+          id: 'images',
+          data: {
+            items: [
+              {
+                image: {
+                  src: t('blocks.images.items.0.image.src'),
+                  alt: t('blocks.images.items.0.image.alt'),
+                  width: 200,
+                  height: 250
+                }
+              },
+              {
+                image: {
+                  src: t('blocks.images.items.1.image.src'),
+                  alt: t('blocks.images.items.1.image.alt'),
+                  width: 200,
+                  height: 250
+                }
+              },
+              {
+                image: {
+                  src: t('blocks.images.items.2.image.src'),
+                  alt: t('blocks.images.items.2.image.alt'),
+                  width: 200,
+                  height: 250
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'About',
+          theme: 'dark',
+          id: 'about',
+          data: {
+            title: keys(get(messages, 'pages.about.blocks.about.title')).map(
+              (key) => t(`blocks.about.title.${key}`)
             ),
-            Center: (chunks) => (
-              <PrimaryHeroTitleRich.Center>
-                {chunks}
-              </PrimaryHeroTitleRich.Center>
-            ),
-            End: (chunks) => (
-              <PrimaryHeroTitleRich.End>{chunks}</PrimaryHeroTitleRich.End>
-            ),
-            Description: () => (
-              <PrimaryHeroTitleRich.Description>
-                {t.rich('hero.description')}
-              </PrimaryHeroTitleRich.Description>
-            )
-          }),
-          description: t.rich('hero.description'),
-          left: {
-            type: 'Icon',
-            data: {
-              src: t('hero.left.src'),
-              animation: t(
-                'hero.left.animation'
-              ) as PrimaryHeroExtraIconProps['data']['animation']
-            }
-          },
-          right: {
-            type: 'Text',
-            data: {
-              text: t('hero.right.text')
+            description: t.rich('blocks.about.description'),
+            intro: {
+              title: t.rich('blocks.about.intro.title'),
+              description: t.rich('blocks.about.intro.description', {
+                p: (chunks) => (
+                  <AboutBlockTextDescription>
+                    {chunks}
+                  </AboutBlockTextDescription>
+                )
+              })
+            },
+            personality: {
+              title: t.rich('blocks.about.personality.title'),
+              description: t.rich('blocks.about.personality.description', {
+                p: (chunks) => (
+                  <AboutBlockTextDescription>
+                    {chunks}
+                  </AboutBlockTextDescription>
+                )
+              })
+            },
+            mission: {
+              title: t.rich('blocks.about.mission.title'),
+              description: t.rich('blocks.about.mission.description', {
+                p: (chunks) => (
+                  <AboutBlockTextDescription>
+                    {chunks}
+                  </AboutBlockTextDescription>
+                )
+              })
             }
           }
+        },
+        {
+          type: 'Values',
+          theme: 'dark',
+          id: 'values',
+          data: {
+            title: t.rich('blocks.values.title'),
+            templates: {
+              base: ['item-0', 'item-1', 'item-2', 'item-3'],
+              sm: ['item-0 item-1', 'item-2 item-3'],
+              lg: ['item-0 item-1 .', '. item-2 item-3']
+            },
+            items: keys(get(messages, 'values.personal')).map((key) => ({
+              id: key,
+              title: gt.rich(`values.personal.${key}.title`),
+              description: gt.rich(`values.personal.${key}.description`),
+              icon: gt(`values.personal.${key}.icon`)
+            })),
+            icons: {
+              left: {
+                src: t('blocks.values.icons.left.src'),
+                animation: t('blocks.values.icons.left.animation'),
+                y: 'bottom'
+              },
+              right: {
+                src: t('blocks.values.icons.right.src'),
+                animation: t('blocks.values.icons.right.animation'),
+                y: 'top'
+              }
+            } as ValuesBlockProps['data']['icons']
+          }
+        }
+      ]}
+      hero={{
+        type: 'Secondary',
+        theme: 'dark',
+        data: {
+          title: t.rich('hero.title')
         }
       }}
     />

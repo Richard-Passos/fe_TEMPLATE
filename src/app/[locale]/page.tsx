@@ -3,6 +3,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { LocalTime } from '@/components/atoms';
 import { CtaTextBlockProps } from '@/components/organisms/Blocks/CtaText';
+import { TextBlockDescription } from '@/components/organisms/Blocks/Text/Rich';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
@@ -43,10 +44,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                 src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,
                 alt: ''
               }
-            })),
-            action: {
-              label: t('blocks.selectedProjects.action.label')
-            }
+            }))
           }
         },
         {
@@ -55,7 +53,11 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           id: 'toExpect',
           data: {
             title: t.rich('blocks.toExpect.title'),
-            description: t.rich('blocks.toExpect.description')
+            description: t.rich('blocks.toExpect.description', {
+              p: (chunks) => (
+                <TextBlockDescription>{chunks}</TextBlockDescription>
+              )
+            })
           }
         },
         {

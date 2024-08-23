@@ -1,9 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
-import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
+import { ServicesBlockProps } from '@/components/organisms/Blocks/Services';
 import { PageTemplate } from '@/components/templates';
+import { get, keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -16,48 +16,114 @@ type ContactPageProps = ContactPageOwnProps & ContactPageParams;
 const ContactPage = ({ params: { locale } }: ContactPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations('pages.contact');
+  const t = useTranslations('pages.contact'),
+    gt = useTranslations(),
+    messages = useMessages() as unknown as IntlMessages;
 
   return (
     <PageTemplate
-      hero={{
-        type: 'Primary',
-        theme: 'light',
-        data: {
-          title: t.rich('hero.title', {
-            Start: (chunks) => (
-              <PrimaryHeroTitleRich.Start>{chunks}</PrimaryHeroTitleRich.Start>
-            ),
-            Center: (chunks) => (
-              <PrimaryHeroTitleRich.Center>
-                {chunks}
-              </PrimaryHeroTitleRich.Center>
-            ),
-            End: (chunks) => (
-              <PrimaryHeroTitleRich.End>{chunks}</PrimaryHeroTitleRich.End>
-            ),
-            Description: () => (
-              <PrimaryHeroTitleRich.Description>
-                {t.rich('hero.description')}
-              </PrimaryHeroTitleRich.Description>
-            )
-          }),
-          description: t.rich('hero.description'),
-          left: {
-            type: 'Icon',
-            data: {
-              src: t('hero.left.src'),
-              animation: t(
-                'hero.left.animation'
-              ) as PrimaryHeroExtraIconProps['data']['animation']
-            }
-          },
-          right: {
-            type: 'Text',
-            data: {
-              text: t('hero.right.text')
+      blocks={[
+        {
+          type: 'ContactForm',
+          theme: 'dark',
+          id: 'contactForm',
+          transitionProps: {
+            reverse: true,
+            'data-theme': 'light'
+          } as ServicesBlockProps['transitionProps'],
+          data: {
+            title: t.rich('blocks.contactForm.title'),
+            description: t.rich('blocks.contactForm.description'),
+            optionalLabel: t.rich('blocks.contactForm.optionalLabel'),
+            to: {
+              label: t.rich('blocks.contactForm.to.label'),
+              subject: t('blocks.contactForm.to.subject', {
+                name: gt('personal.name.first')
+              }),
+              email: gt('personal.email')
+            },
+            fields: {
+              name: {
+                label: t('blocks.contactForm.fields.name.label'),
+                placeholder: t('blocks.contactForm.fields.name.placeholder'),
+                initialValue: t('blocks.contactForm.fields.name.initialValue'),
+                errors: {
+                  min: t('blocks.contactForm.fields.name.errors.min')
+                }
+              },
+              email: {
+                label: t('blocks.contactForm.fields.email.label'),
+                placeholder: t('blocks.contactForm.fields.email.placeholder'),
+                initialValue: t('blocks.contactForm.fields.email.initialValue'),
+                errors: {
+                  email: t('blocks.contactForm.fields.email.errors.email')
+                }
+              },
+              subject: {
+                label: t('blocks.contactForm.fields.subject.label'),
+                placeholder: t('blocks.contactForm.fields.subject.placeholder'),
+                initialValue: t(
+                  'blocks.contactForm.fields.subject.initialValue'
+                )
+              },
+              service: {
+                label: t('blocks.contactForm.fields.service.label'),
+                placeholder: t('blocks.contactForm.fields.service.placeholder'),
+                initialValue: t(
+                  'blocks.contactForm.fields.service.initialValue'
+                ),
+                data: keys(get(messages, 'services')).map((key) => ({
+                  value: key,
+                  label: gt(`services.${key}.title`)
+                }))
+              },
+              message: {
+                label: t('blocks.contactForm.fields.message.label'),
+                placeholder: t(
+                  'blocks.contactForm.fields.message.placeholder',
+                  { name: gt('personal.name.first') }
+                ),
+                initialValue: t(
+                  'blocks.contactForm.fields.message.initialValue'
+                ),
+                errors: {
+                  min: t('blocks.contactForm.fields.message.errors.min'),
+                  max: t('blocks.contactForm.fields.message.errors.max')
+                }
+              },
+              submit: {
+                label: t('blocks.contactForm.fields.submit.label')
+              }
             }
           }
+        },
+        {
+          type: 'Services',
+          theme: 'dark',
+          id: 'services',
+          data: {
+            title: keys(
+              get(messages, 'pages.contact.blocks.services.title')
+            ).map((key) => t(`blocks.services.title.${key}`)),
+            description: t.rich('blocks.services.description'),
+            subtitle: t.rich('blocks.services.subtitle'),
+            image: {
+              src: t('blocks.services.image.src'),
+              alt: t('blocks.services.image.alt')
+            },
+            items: keys(get(messages, 'services')).map((key, i) => ({
+              id: `· ${(i + 1).toString().padStart(2, '0')}`,
+              title: gt(`services.${key}.title`),
+              description: gt(`services.${key}.description`)
+            }))
+          }
+        }
+      ]}
+      hero={{
+        type: 'Secondary',
+        theme: 'light',
+        data: {
+          title: t.rich('hero.title')
         }
       }}
     />

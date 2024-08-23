@@ -83,10 +83,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
                 src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,
                 alt: ''
               }
-            })),
-            action: {
-              label: t('blocks.selectedProjects.action.label')
-            }
+            }))
           }
         },
         {
@@ -118,24 +115,29 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
         {
           type: 'Skills',
           theme: 'dark',
-          id: 'skills',
+          id: 'hardSkills',
           data: {
-            title: t.rich('blocks.skills.title'),
-            items: [
-              keys(get(messages, 'skills.hard')).map((key, i) => ({
-                id: `${(i + 1).toString().padStart(2, '0')}/`,
-                title: gt(`skills.hard.${key}.title`),
-                icon: gt(`skills.hard.${key}.icon`)
-              })),
-              keys(get(messages, 'skills.soft')).map((key, i) => ({
-                id: `${(i + 1).toString().padStart(2, '0')}/`,
-                title: gt(`skills.soft.${key}.title`),
-                icon: gt(`skills.soft.${key}.icon`)
-              }))
-            ]
+            title: t.rich('blocks.hardSkills.title'),
+            items: keys(get(messages, 'skills.hard')).map((key) => ({
+              id: key,
+              title: gt(`skills.hard.${key}.title`),
+              icon: gt(`skills.hard.${key}.icon`)
+            }))
           }
         },
-
+        {
+          type: 'Skills',
+          theme: 'dark',
+          id: 'softSkills',
+          data: {
+            title: t.rich('blocks.softSkills.title'),
+            items: keys(get(messages, 'skills.soft')).map((key) => ({
+              id: key,
+              title: gt(`skills.soft.${key}.title`),
+              icon: gt(`skills.soft.${key}.icon`)
+            }))
+          }
+        },
         {
           type: 'Values',
           theme: 'dark',
@@ -147,11 +149,11 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               sm: ['item-0 item-1', 'item-2 item-3'],
               lg: ['item-0 item-1 .', '. item-2 item-3']
             },
-            items: keys(get(messages, 'values.personal')).map((key) => ({
+            items: keys(get(messages, 'values.work')).map((key) => ({
               id: key,
-              title: gt.rich(`values.personal.${key}.title`),
-              description: gt.rich(`values.personal.${key}.description`),
-              icon: gt(`values.personal.${key}.icon`)
+              title: gt.rich(`values.work.${key}.title`),
+              description: gt.rich(`values.work.${key}.description`),
+              icon: gt(`values.work.${key}.icon`)
             })),
             icons: {
               left: {

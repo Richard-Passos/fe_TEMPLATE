@@ -18,6 +18,16 @@
     @apply not-italic [-webkit-text-fill-color:transparent] [-webkit-text-stroke-color:currentColor] [-webkit-text-stroke-width:theme(spacing[0.5])] [background-clip:text];
   }
 
+  .border,
+  .border-x,
+  .border-y {
+    @apply border-solid border-border;
+  }
+
+  .outline {
+    @apply outline-offset;
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }
@@ -39,6 +49,8 @@
   }
 
   [data-theme='light'] {
+    color-scheme: light;
+
     /* 
       Mantine Colors
     */
@@ -190,6 +202,8 @@
   }
 
   [data-theme='dark'] {
+    color-scheme: dark;
+
     /* 
       Mantine Colors
     */
@@ -419,17 +433,5 @@
     --mantine-color-orange-light-color: var(--mantine-color-orange-2);
     --mantine-color-orange-outline: var(--mantine-color-orange-3);
     --mantine-color-orange-outline-hover: rgba(255, 192, 120, 0.05);
-  }
-}
-
-@layer utilities {
-  .border,
-  .border-x,
-  .border-y {
-    @apply border-solid border-border;
-  }
-
-  .outline {
-    @apply outline-offset;
   }
 }

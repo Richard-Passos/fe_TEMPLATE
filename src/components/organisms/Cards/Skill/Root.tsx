@@ -1,10 +1,9 @@
-import { forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Icon, Magnetic, Text, Title } from '@/components/atoms';
+import { Icon, Title } from '@/components/atoms';
 import { IconProps } from '@/components/atoms/Icon';
-import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
-import Card, { CardRootProps } from '@/components/molecules/Card';
+import Card from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
 type SkillCardOrganismOwnProps = {
@@ -13,57 +12,46 @@ type SkillCardOrganismOwnProps = {
     title: TitleProps['children'];
     icon: IconProps['src'];
   };
-  idProps?: Partial<TitleProps>;
   iconProps?: Partial<IconProps>;
-  descriptionProps?: Partial<TextProps>;
   titleProps?: Partial<TitleProps>;
-  watermarkProps?: Partial<IconProps>;
 };
 
 type SkillCardOrganismProps = SkillCardOrganismOwnProps &
-  Omit<CardRootProps, keyof SkillCardOrganismOwnProps>;
+  Omit<ComponentPropsWithRef<'div'>, keyof SkillCardOrganismOwnProps>;
 
 const SkillCardOrganism = (
-  {
-    className,
-    data,
-    idProps,
-    iconProps,
-    descriptionProps,
-    titleProps,
-    watermarkProps,
-    ...props
-  }: SkillCardOrganismProps,
+  { className, data, iconProps, titleProps, ...props }: SkillCardOrganismProps,
   ref: SkillCardOrganismProps['ref']
 ) => {
   return (
-    <Magnetic.Container>
-      <Card.Root
-        className={cn('w-72', className)}
-        ref={ref}
-        {...props}
-      >
-        <div className='flex gap-sm'>
-          <div className='flex size-12 items-center justify-center rounded border'>
+    <div
+      className={cn(
+        'aspect-square w-full [perspective:1000px] *:hover:[transform:rotateY(180deg)]',
+        className
+      )}
+      ref={ref}
+      {...props}
+    >
+      <div className='relative size-full transition-transform duration-500 ease-backOut [transform-style:preserve-3d]'>
+        <Card.Root className='absolute inset-0 flex items-center justify-center [backface-visibility:hidden]'>
+          <div className='flex size-1/2 items-center justify-center rounded bg-gray-1 dark:bg-dark-5'>
             <Icon
               className='size-1/2'
               src={data.icon}
             />
           </div>
+        </Card.Root>
 
-          <section>
-            <Title
-              component='h4'
-              order={6}
-            >
-              {data.title}
-            </Title>
-
-            <Text className='text-xs text-dimmed'>{data.title}</Text>
-          </section>
-        </div>
-      </Card.Root>
-    </Magnetic.Container>
+        <Card.Root className='absolute inset-0 items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]'>
+          <Title
+            className='w-full break-words text-center'
+            order={5}
+          >
+            {data.title}
+          </Title>
+        </Card.Root>
+      </div>
+    </div>
   );
 };
 

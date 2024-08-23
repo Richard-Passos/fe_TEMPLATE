@@ -15,6 +15,7 @@ import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { Namespace } from '@/types';
 import { cn, keys } from '@/utils';
+import { yFullScrollAnim } from '@/animations/scroll';
 
 type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 
@@ -147,7 +148,7 @@ const FooterOrganism = (
       </div>
 
       <div className='absolute inset-[15%] -z-10 w-auto overflow-hidden rounded-lg'>
-        <ScrollAnimate config={{ prop: 'y', propPoints: ['-100%', '100%'] }}>
+        <ScrollAnimate config={yFullScrollAnim}>
           <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
 

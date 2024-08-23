@@ -4,6 +4,7 @@ import Card from './Card';
 import Carousel from './Carousel';
 import Catalog from './Catalog';
 import Drawer from './Drawer';
+import Form from './Form';
 import List from './List';
 import ListHorizontalScroll from './ListHorizontalScroll';
 import LocaleSelect from './LocaleSelect';
@@ -18,6 +19,7 @@ const Molecules = {
   Carousel,
   Catalog,
   Drawer,
+  Form,
   List,
   ListHorizontalScroll,
   LocaleSelect,
@@ -34,6 +36,7 @@ export {
   Carousel,
   Catalog,
   Drawer,
+  Form,
   List,
   ListHorizontalScroll,
   LocaleSelect,

@@ -19,6 +19,8 @@ import ScrollAnimate from './ScrollAnimate';
 import Select from './Select';
 import SmoothScroll from './SmoothScroll';
 import Text from './Text';
+import TextInput from './TextInput';
+import Textarea from './Textarea';
 import Title from './Title';
 
 const Atoms = {
@@ -43,6 +45,8 @@ const Atoms = {
   Select,
   SmoothScroll,
   Text,
+  Textarea,
+  TextInput,
   Title
 };
 
@@ -69,5 +73,7 @@ export {
   Select,
   SmoothScroll,
   Text,
+  Textarea,
+  TextInput,
   Title
 };

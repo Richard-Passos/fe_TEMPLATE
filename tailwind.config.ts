@@ -527,12 +527,12 @@ const config: Config = {
       addVariant('dark', [
         '&[data-theme="dark"]',
         '[data-theme="dark"] > &:not([data-theme="light"])',
-        '[data-theme="dark"]:not(:has([data-theme="light"])) &'
+        '[data-theme="dark"] > :not([data-theme="light"]) &'
       ]);
       addVariant('light', [
         '&[data-theme="light"]',
         '[data-theme="light"] > &:not([data-theme="dark"])',
-        '[data-theme="light"]:not(:has([data-theme="dark"])) &'
+        '[data-theme="light"] > :not([data-theme="dark"]) &'
       ]);
     })
   ]

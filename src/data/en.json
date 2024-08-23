@@ -17,14 +17,11 @@
           "title": { "0": "ABOUT", "1": "WORK" },
           "subtitle": "SELECTED WORKS",
           "empty": "Sorry, selected projects not found.",
-          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate.",
-          "action": {
-            "label": "All projects"
-          }
+          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate."
         },
         "toExpect": {
           "title": "Here’s what you can expect from me",
-          "description": "Listen, challenge and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness."
+          "description": "<p>Listen, challenge and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p>"
         },
         "listWorkPage": {
           "items": {
@@ -173,18 +170,18 @@
           "title": { "0": "SELECTED", "1": "WORKS" },
           "description": "Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.",
           "subtitle": "",
-          "empty": "Sorry, selected projects not found.",
-          "action": {
-            "label": "All projects"
-          }
+          "empty": "Sorry, selected projects not found."
         },
         "whyMe": {
           "title": { "0": "WHY PICK", "1": "ME" },
           "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
           "subtitle": "SOME STATISTICS..."
         },
-        "skills": {
-          "title": "Some skills"
+        "hardSkills": {
+          "title": "Hard skills"
+        },
+        "softSkills": {
+          "title": "Soft skills"
         },
         "values": {
           "title": "My values",
@@ -207,19 +204,63 @@
     },
     "about": {
       "hero": {
-        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight"
+        "title": "HEART CONQUERING PERSON"
+      },
+      "blocks": {
+        "images": {
+          "items": {
+            "0": {
+              "image": {
+                "src": "/images/parallax-00.jpg",
+                "alt": ""
+              }
+            },
+            "1": {
+              "image": {
+                "src": "/images/parallax-01.jpg",
+                "alt": ""
+              }
+            },
+            "2": {
+              "image": {
+                "src": "/images/parallax-02.jpg",
+                "alt": ""
+              }
+            }
+          }
         },
-        "right": {
-          "type": "text",
-          "text": "(about)"
+        "about": {
+          "title": {
+            "0": "WHO I AM"
+          },
+          "description": "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "intro": {
+            "title": "Introducion",
+            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p> <p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+          },
+          "personality": {
+            "title": "Personality",
+            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+          },
+          "mission": {
+            "title": "Mission",
+            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+          }
+        },
+        "values": {
+          "title": "My values",
+          "icons": {
+            "left": {
+              "src": "/icons/smile.svg",
+              "animation": "rotateRight"
+            },
+            "right": {
+              "src": "/icons/globe.svg",
+              "animation": "rotateLeft"
+            }
+          }
         }
       },
-      "blocks": {},
       "metadata": {
         "title": "About",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -227,19 +268,73 @@
     },
     "contact": {
       "hero": {
-        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight"
+        "title": "DROWNING WITH GREAT IDEAS?"
+      },
+      "blocks": {
+        "services": {
+          "title": {
+            "0": "SERVICES"
+          },
+          "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
+          "subtitle": "I COULD HELP YOU WITH...",
+          "image": {
+            "src": "/images/parallax-00.jpg",
+            "alt": ""
+          },
+          "action": {
+            "label": "Contact me"
+          }
         },
-        "right": {
-          "type": "text",
-          "text": "(contact)"
+        "contactForm": {
+          "title": "I'd love to hear from you",
+          "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+          "optionalLabel": "optional",
+          "to": {
+            "label": "To",
+            "subject": "👋 Hey { name }, I'd like to hire you!"
+          },
+          "fields": {
+            "name": {
+              "label": "Name",
+              "placeholder": "John Doe",
+              "initialValue": "",
+              "errors": {
+                "min": "Please, that can't be your name."
+              }
+            },
+            "email": {
+              "label": "Email",
+              "placeholder": "john@doe.com",
+              "initialValue": "",
+              "errors": {
+                "email": "That email adress looks a bit weird."
+              }
+            },
+            "subject": {
+              "label": "Subject",
+              "placeholder": "I wanna hire you!",
+              "initialValue": ""
+            },
+            "service": {
+              "label": "Service",
+              "placeholder": "Select a service...",
+              "initialValue": ""
+            },
+            "message": {
+              "label": "Message",
+              "placeholder": "👋 Hey { name }! I would love if you could help me with...",
+              "initialValue": "",
+              "errors": {
+                "min": "Come on... you can do better than that.",
+                "max": "Come on... take it easy."
+              }
+            },
+            "submit": {
+              "label": "Send message"
+            }
+          }
         }
       },
-      "blocks": {},
       "metadata": {
         "title": "Contact",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
@@ -368,11 +463,15 @@
     "copyright": "© 2024 <legal>Legal</legal>"
   },
   "personal": {
-    "name": "FE Typescript",
+    "name": {
+      "first": "Richard",
+      "last": "Passos"
+    },
+    "email": "hi.richardp@gmail.com",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
     "availability": "Available to work",
     "logo": {
-      "label": "FE Typescript",
+      "label": "Richard Passos",
       "icon": "/icons/logo.svg",
       "favicon": "/icons/favicon.ico"
     },

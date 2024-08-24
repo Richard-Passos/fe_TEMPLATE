@@ -31,7 +31,7 @@ const BoldCardOrganism = (
       <Title
         className='mt-xs font-medium leading-none'
         component='p'
-        order={3}
+        order={4}
       >
         {data.description}
       </Title>

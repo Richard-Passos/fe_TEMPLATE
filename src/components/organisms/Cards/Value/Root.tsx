@@ -35,11 +35,11 @@ const ValueCardOrganism = (
 ) => {
   return (
     <Card.Root
-      className={cn('min-h-52 flex-col justify-between', className)}
+      className={cn('min-h-52', className)}
       ref={ref}
       {...props}
     >
-      <div className='flex size-12 items-center justify-center rounded-sm bg-gray-0 dark:bg-dark-7'>
+      <div className='flex size-12 items-center justify-center rounded-sm bg-gray-1 dark:bg-dark-5'>
         <Icon
           src={data.icon}
           {...iconProps}
@@ -48,7 +48,8 @@ const ValueCardOrganism = (
       </div>
 
       <Title
-        order={4}
+        component='h4'
+        order={5}
         {...titleProps}
         className={cn('mt-lg', titleProps?.className)}
       >
@@ -58,7 +59,7 @@ const ValueCardOrganism = (
       <Text
         {...descriptionProps}
         className={cn(
-          'leading-relaxed text-dimmed',
+          'mt-[calc(theme(spacing.xs)/2)] leading-relaxed text-dimmed',
           descriptionProps?.className
         )}
       >

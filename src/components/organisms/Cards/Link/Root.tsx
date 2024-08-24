@@ -39,8 +39,8 @@ const LinkCardOrganism = (
         </div>
 
         <Title
-          className='mt-sm text-center'
-          order={6}
+          className='mt-sm text-center text-sm'
+          order={4}
         >
           {data.title}
         </Title>

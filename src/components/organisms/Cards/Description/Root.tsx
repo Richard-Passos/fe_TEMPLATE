@@ -33,7 +33,7 @@ const DescriptionCardOrganism = (
         {data.title}
       </Badge>
 
-      <Text className='mt-xs'>{data.description}</Text>
+      <Text className='mt-lg text-dimmed'>{data.description}</Text>
     </Card.Root>
   );
 };

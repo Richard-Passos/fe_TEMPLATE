@@ -36,7 +36,7 @@ const ServiceCardOrganism = (
 ) => {
   return (
     <Card.Root
-      className={cn('!border-transparent !bg-transparent', className)}
+      className={cn('border-transparent !bg-transparent', className)}
       ref={ref}
       {...props}
     >
@@ -57,7 +57,8 @@ const ServiceCardOrganism = (
       />
 
       <Title
-        order={4}
+        component='h4'
+        order={5}
         {...titleProps}
         className={cn('mt-lg', titleProps?.className)}
       >
@@ -67,7 +68,7 @@ const ServiceCardOrganism = (
       <Text
         {...descriptionProps}
         className={cn(
-          'text-sm leading-relaxed text-dimmed',
+          'mt-[calc(theme(spacing.xs)/2)] text-sm leading-relaxed text-dimmed',
           descriptionProps?.className
         )}
       >

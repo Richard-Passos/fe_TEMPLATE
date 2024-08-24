@@ -43,8 +43,7 @@ const TableProjectCardOrganism = (
           <div className='relative z-10 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
             <Title
               className='basis-full sm:basis-1/2'
-              component='h4'
-              order={3}
+              order={4}
             >
               {data.title}
             </Title>
@@ -54,7 +53,7 @@ const TableProjectCardOrganism = (
             </Text>
 
             {renderComp(
-              <Text className='grow basis-0 text-end text-sm font-semibold sm:text-center'>
+              <Text className='grow basis-0 text-end text-sm font-semibold sm:text-end'>
                 {data.year}
               </Text>,
               [data.year]
@@ -69,7 +68,7 @@ const TableProjectCardOrganism = (
             }}
           >
             <div className='pointer-events-none absolute'>
-              <div className='size-72 scale-90 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] group-hover/item:scale-100 group-hover/item:opacity-100 dark:bg-dark-7'>
+              <div className='size-72 scale-90 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] group-hover/item:scale-100 group-hover/item:opacity-100 dark:bg-dark-5'>
                 <Image
                   alt={data.image.alt}
                   className='object-cover'

@@ -26,13 +26,13 @@ const SkillCardOrganism = (
   return (
     <div
       className={cn(
-        'aspect-square w-full [perspective:1000px] *:hover:[transform:rotateY(180deg)]',
+        'group/card aspect-square w-full [perspective:1000px]',
         className
       )}
       ref={ref}
       {...props}
     >
-      <div className='relative size-full transition-transform duration-500 ease-backOut [transform-style:preserve-3d]'>
+      <div className='relative size-full transition-transform duration-500 ease-backOut [transform-style:preserve-3d] group-hover/card:[transform:rotateY(180deg)]'>
         <Card.Root className='absolute inset-0 flex items-center justify-center [backface-visibility:hidden]'>
           <div className='flex size-1/2 items-center justify-center rounded bg-gray-1 dark:bg-dark-5'>
             <Icon
@@ -45,7 +45,7 @@ const SkillCardOrganism = (
         <Card.Root className='absolute inset-0 items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]'>
           <Title
             className='w-full break-words text-center'
-            order={5}
+            order={6}
           >
             {data.title}
           </Title>

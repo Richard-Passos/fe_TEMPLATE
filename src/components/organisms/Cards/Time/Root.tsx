@@ -25,9 +25,9 @@ const TimeCardOrganism = (
       {...props}
     >
       <Title
-        className='text-center text-dimmed'
+        className='text-center text-sm text-dimmed'
         component='h4'
-        order={6}
+        order={4}
       >
         {data.title}
       </Title>

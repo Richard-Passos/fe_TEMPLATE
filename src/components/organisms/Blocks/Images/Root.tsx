@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 import ImagesBlockImage, { ImagesBlockImageProps } from './Image';
 
-const SCROLL_OFFSET = ['0 1', '0 0'],
+const SCROLL_OFFSET = ['.5 1', '.5 .6'],
   ANIMATION_CONFIG = {
     y1: {
       scrollConfig: {

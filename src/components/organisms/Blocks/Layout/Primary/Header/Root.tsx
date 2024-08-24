@@ -39,7 +39,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
     >
       <Title
         className='flex w-full flex-col'
-        order={1}
+        order={2}
       >
         {restTexts.map((text, i) => (
           <span
@@ -74,7 +74,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
           {renderComp(
             <Text
               aria-hidden
-              className='max-w-sm font-display text-sm font-medium leading-relaxed max-lg:hidden'
+              className='max-w-sm font-display text-sm font-medium leading-relaxed text-dimmed max-lg:hidden'
               component='span'
             >
               {description}
@@ -85,7 +85,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
       </Title>
 
       {renderComp(
-        <Text className='mr-auto mt-sm sm:ml-[5%] sm:max-w-xl lg:sr-only'>
+        <Text className='mr-auto mt-sm text-sm text-dimmed sm:ml-[5%] sm:max-w-xl lg:sr-only'>
           {description}
         </Text>,
         [description]

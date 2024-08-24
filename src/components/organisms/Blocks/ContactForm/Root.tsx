@@ -46,8 +46,8 @@ const ContactFormBlockOrganism = (
 
       <div className='sm:col-span-7'>
         <Title
-          className='sm:max-w-lg'
-          order={2}
+          className='sm:max-w-md'
+          order={3}
         >
           {data.title}
         </Title>

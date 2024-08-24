@@ -10,16 +10,16 @@ const themeOverride = createTheme({
   black: 'hsl(0 0% 4.7%)',
   colors: {
     dark: [
-      'hsl(0 0% 65.7%)',
-      'hsl(0 0% 55.7%)',
-      'hsl(0 0% 45.7%)',
-      'hsl(0 0% 35.7%)',
-      'hsl(0 0% 15.7%)',
-      'hsl(0 0% 5.7%)',
-      'hsl(0 0% 4.7%)',
-      'hsl(0 0% 5.7%)',
-      'hsl(0 0% 2.7%)',
-      'hsl(0 0% 1.7%)'
+      'hsl(0 0% 70%)',
+      'hsl(0 0% 60%)',
+      'hsl(0 0% 45%)',
+      'hsl(0 0% 30%)',
+      'hsl(0 0% 15%)',
+      'hsl(0 0% 6%)',
+      'hsl(0 0% 5%)',
+      'hsl(0 0% 6%)',
+      'hsl(0 0% 3%)',
+      'hsl(0 0% 1.5%)'
     ],
     gray: [
       '#f4f5f6',
@@ -209,27 +209,27 @@ const themeOverride = createTheme({
       },
       h2: {
         fontSize:
-          'calc(clamp(2.25rem, 1rem + 2.6042vw, 3.5rem) * var(--mantine-scale))',
-        lineHeight: '1.15'
+          'calc(clamp(3rem, 1rem + 4.1667vw, 5rem) * var(--mantine-scale))',
+        lineHeight: '1'
       },
       h3: {
+        fontSize:
+          'calc(clamp(2.25rem, 1.5rem + 1.5625vw, 3rem) * var(--mantine-scale))',
+        lineHeight: '1.2'
+      },
+      h4: {
         fontSize:
           'calc(clamp(2rem, 1.5rem + 1.0417vw, 2.5rem) * var(--mantine-scale))',
         lineHeight: '1.3'
       },
-      h4: {
-        fontSize:
-          'calc(clamp(1.5rem, 1rem + 1.0417vw, 2rem) * var(--mantine-scale))',
-        lineHeight: '1.45'
-      },
       h5: {
         fontSize:
-          'calc(clamp(1rem, 0.5rem + 1.0417vw, 1.5rem) * var(--mantine-scale))',
-        lineHeight: '1.5'
+          'calc(clamp(1.25rem, 1rem + 0.5208vw, 1.5rem) * var(--mantine-scale))',
+        lineHeight: '1.4'
       },
       h6: {
         fontSize:
-          'calc(clamp(0.75rem, 0.5rem + 0.5208vw, 1rem) * var(--mantine-scale))',
+          'calc(clamp(0.75rem, 0.5rem + 0.5208vw, 1rem)  * var(--mantine-scale))',
         lineHeight: '1.5'
       }
     }

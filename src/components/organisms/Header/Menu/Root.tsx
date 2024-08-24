@@ -28,6 +28,8 @@ const HeaderMenuOrganism = (
     gt = useTranslations(),
     messages = useMessages() as unknown as IntlMessages;
 
+  const itemsKeys = keys(get(messages, 'header.nav'));
+
   return (
     <Drawer.Root
       className={cn('*:left-0', className)}
@@ -53,12 +55,12 @@ const HeaderMenuOrganism = (
         title={t('title')}
       >
         <nav className='flex flex-col gap-xs'>
-          {keys(get(messages, 'header.nav.full')).map((key) => (
+          {itemsKeys.map((key) => (
             <Link
-              href={gt(`header.nav.full.${key}.href`)}
+              href={gt(`header.nav.${key}.href`)}
               key={key}
             >
-              {gt(`header.nav.full.${key}.label`)}
+              {gt(`header.nav.${key}.label`)}
             </Link>
           ))}
         </nav>

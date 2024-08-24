@@ -54,9 +54,8 @@ const FooterOrganism = (
     >
       <section className='mb-xl w-9/10 pt-[--section-spacing-md]'>
         <Title
-          className='font-semibold'
-          component='h3'
-          order={6}
+          className='text-sm font-semibold'
+          order={3}
         >
           {t('cta.subtitle')}
         </Title>

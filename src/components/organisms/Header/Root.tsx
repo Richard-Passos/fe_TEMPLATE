@@ -22,9 +22,9 @@ const HeaderOrganism = (
   const t = useTranslations('header'),
     messages = useMessages() as unknown as IntlMessages;
 
-  const items = keys(get(messages, 'header.nav.short')).map((key) => ({
-    href: t(`nav.short.${key}.href`),
-    label: t(`nav.short.${key}.label`)
+  const items = keys(get(messages, 'header.nav')).map((key) => ({
+    href: t(`nav.${key}.href`),
+    label: t(`nav.${key}.label`)
   }));
 
   return (

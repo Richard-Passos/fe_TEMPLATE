@@ -78,6 +78,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
             items: times(5, String).map((id, i) => ({
               slug: `title-${id}`,
               title: `Title - ${id}`,
+              year: 2024,
               roles: ['design', 'development'],
               image: {
                 src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,

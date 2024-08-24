@@ -41,10 +41,9 @@ const ListPageBlockOrganism = (
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
-            className='[--gap:theme(spacing.sm)]'
+            baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
+            className='text-2xl [--gap:theme(spacing.sm)] sm:text-3xl'
             key={item}
-            order={4}
           >
             <span>&nbsp;{item}</span>
 

@@ -39,10 +39,10 @@ const ListMissionBlockOrganism = (
       <ListHorizontalScroll.Root {...listProps}>
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
-            baseVelocity={(1 + 0.35 * i) * (i % 2 === 0 ? 1 : -1)}
+            baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
             className='py-xl [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
             key={item.text + item.icon}
-            order={1}
+            order={2}
           >
             <span>{item.text}</span>
 
@@ -67,7 +67,7 @@ const ListMissionBlockOrganism = (
         ))}
       </ListHorizontalScroll.Root>
 
-      <Text className='mt-xl w-9/10 text-center font-medium leading-relaxed sm:max-w-2xl sm:text-lg'>
+      <Text className='mt-xl w-9/10 text-center leading-relaxed sm:max-w-xl'>
         {data.description}
       </Text>
     </CleanLayoutBlock>

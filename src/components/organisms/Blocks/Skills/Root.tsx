@@ -36,7 +36,7 @@ const SkillsBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <ul className='m-0 grid gap-xs p-0 [direction:rtl] sm:col-span-7 sm:col-end-13 sm:grid-cols-3 md:grid-cols-4'>
+      <ul className='m-0 grid grid-cols-3 gap-xs p-0 [direction:rtl] sm:col-span-8 sm:!col-end-13 sm:grid-cols-3 md:grid-cols-4 lg:col-span-7'>
         {data.items.map((data) => (
           <SkillCard
             data={data}

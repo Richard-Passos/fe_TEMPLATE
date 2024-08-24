@@ -62,12 +62,11 @@ const ProjectsCatalogBlockOrganism = (
           catalogProps?.className
         )}
       >
-        <div className='size-full max-sm:mb-md sm:col-span-5'>
+        <div className='size-full max-sm:mb-md sm:col-span-4 md:col-span-5'>
           {renderComp(
             <Title
-              className='sticky top-xl text-dimmed'
-              component='h3'
-              order={6}
+              className='sticky top-xl text-sm text-dimmed'
+              order={3}
               {...subtitleProps}
             >
               {data.subtitle}
@@ -76,7 +75,7 @@ const ProjectsCatalogBlockOrganism = (
           )}
         </div>
 
-        <div className='flex flex-col items-center sm:col-span-7'>
+        <div className='flex flex-col items-center sm:col-span-8 md:col-span-7'>
           <Catalog.Empty {...emptyProps}>
             <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
           </Catalog.Empty>

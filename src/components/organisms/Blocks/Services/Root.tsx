@@ -61,11 +61,10 @@ const ServicesBlockOrganism = (
       >
         {renderComp(
           <Title
-            component='h3'
-            order={6}
+            order={3}
             {...subtitleProps}
             className={cn(
-              'mb-md mr-auto text-dimmed',
+              'mb-md mr-auto text-sm text-dimmed',
               subtitleProps?.className
             )}
           >

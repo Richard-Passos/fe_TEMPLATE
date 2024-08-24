@@ -1,7 +1,8 @@
 import { createPolymorphicComponent } from '@mantine/core';
 import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 
-import { Title } from '@/components/atoms';
+import { lineLeftScrollAnim } from '@/animations/scroll';
+import { ScrollAnimate, Title } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
@@ -38,7 +39,23 @@ const SecondaryLayoutBlockOrganism = (
           headerProps?.className
         )}
       >
-        <Title order={2}>{data.title}</Title>
+        <div className='flex items-center gap-xs'>
+          <span className='relative h-2 w-12'>
+            <ScrollAnimate
+              config={lineLeftScrollAnim}
+              layout
+            >
+              <span className='absolute inset-0 border bg-white dark:bg-black' />
+            </ScrollAnimate>
+          </span>
+
+          <Title
+            component='h2'
+            order={3}
+          >
+            {data.title}
+          </Title>
+        </div>
 
         {subChildren}
       </header>

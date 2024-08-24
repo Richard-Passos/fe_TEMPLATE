@@ -447,6 +447,7 @@ const config: Config = {
         xl: 'var(--mantine-line-height-xl)'
       },
       boxShadow: {
+        DEFAULT: 'var(--mantine-shadow-md)',
         xs: 'var(--mantine-shadow-xs)',
         sm: 'var(--mantine-shadow-sm)',
         md: 'var(--mantine-shadow-md)',
@@ -454,6 +455,7 @@ const config: Config = {
         xl: 'var(--mantine-shadow-xl)'
       },
       dropShadow: {
+        DEFAULT: 'var(--mantine-shadow-md)',
         xs: 'var(--mantine-shadow-xs)',
         sm: 'var(--mantine-shadow-sm)',
         md: 'var(--mantine-shadow-md)',

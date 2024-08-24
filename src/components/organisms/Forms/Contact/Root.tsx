@@ -50,8 +50,8 @@ const ContactFormOrganism = (
     schema = {
       name: z.string().min(2, fields.name.errors.min),
       email: z.string().email(fields.email.errors.email),
-      subject: z.string().optional(),
-      service: z.string().optional(),
+      subject: z.any().optional(),
+      service: z.any().optional(),
       message: z
         .string()
         .min(2, fields.message.errors.min)

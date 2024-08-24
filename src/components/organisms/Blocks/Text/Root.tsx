@@ -48,10 +48,7 @@ const TextBlockOrganism = (
 
       <div
         {...wrapperProps}
-        className={cn(
-          'mt-lg flex items-start gap-md sm:ml-[5%]',
-          wrapperProps?.className
-        )}
+        className={cn('mt-lg flex items-start gap-md', wrapperProps?.className)}
       >
         <span className='relative mt-2.5 h-2 w-12 shrink-0'>
           <ScrollAnimate

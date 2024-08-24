@@ -21,7 +21,7 @@
         },
         "toExpect": {
           "title": "Here’s what you can expect from me",
-          "description": "<p>Listen, challenge and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p>"
+          "description": "<p>Listen, challenge and reconnect the dots — <strong>joining your team</strong> with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p> <p>Listen, <strong>challenge</strong> and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p>"
         },
         "listWorkPage": {
           "items": {
@@ -68,7 +68,7 @@
           "items": {
             "description": {
               "title": "#about",
-              "description": "🤟 <strong>Hey —</strong> I'm Richard an awesome full stack developer based in <country></country>. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
+              "description": "🤟 <text><strong>Hey —</strong></text> I'm Richard an awesome full stack developer based in <country></country>. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
             },
             "location": {
               "icon": "/icons/globe.svg",
@@ -136,7 +136,7 @@
       },
       "blocks": {
         "mission": {
-          "description": "That's my mission — Each line of code refines my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
+          "description": "<strong>That's my mission —</strong> Each line of code refines my skills, crafting <strong>high-impact solutions</strong>. Every project is an opportunity to <strong>inspire</strong> clients, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
           "items": {
             "0": {
               "text": "IMPROVE",
@@ -340,26 +340,6 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
-    "projects": {
-      "hero": {
-        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight"
-        },
-        "right": {
-          "type": "text",
-          "text": "(projects)"
-        }
-      },
-      "blocks": {},
-      "metadata": {
-        "title": "Projects",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
-      }
-    },
     "singleProject": {
       "hero": {
         "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
@@ -405,45 +385,21 @@
       }
     },
     "nav": {
-      "short": {
-        "home": {
-          "href": "/",
-          "label": "Home"
-        },
-        "work": {
-          "href": "/work",
-          "label": "Work"
-        },
-        "about": {
-          "href": "/about",
-          "label": "About"
-        },
-        "contact": {
-          "href": "/contact",
-          "label": "Contact"
-        }
+      "home": {
+        "href": "/",
+        "label": "Home"
       },
-      "full": {
-        "home": {
-          "href": "/",
-          "label": "Home"
-        },
-        "work": {
-          "href": "/work",
-          "label": "Work"
-        },
-        "projects": {
-          "href": "/projects",
-          "label": "Projects"
-        },
-        "about": {
-          "href": "/about",
-          "label": "About"
-        },
-        "contact": {
-          "href": "/contact",
-          "label": "Contact"
-        }
+      "work": {
+        "href": "/work",
+        "label": "Work"
+      },
+      "about": {
+        "href": "/about",
+        "label": "About"
+      },
+      "contact": {
+        "href": "/contact",
+        "label": "Contact"
       }
     },
     "locale": {

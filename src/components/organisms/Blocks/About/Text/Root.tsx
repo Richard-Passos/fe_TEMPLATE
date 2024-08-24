@@ -38,7 +38,7 @@ const AboutBlockTextOrganism = (
       <div
         {...wrapperProps}
         className={cn(
-          'mt-lg flex items-start gap-md sm:ml-[5%]',
+          'mt-md flex items-start gap-md sm:ml-[5%]',
           wrapperProps?.className
         )}
       >

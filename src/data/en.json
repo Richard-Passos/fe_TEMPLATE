@@ -428,7 +428,8 @@
     "availability": "Available to work",
     "logo": {
       "label": "Richard Passos",
-      "icon": "/icons/logo.svg",
+      "primary": "/icons/logo-a.svg",
+      "secondary": "/icons/logo-b.svg",
       "favicon": "/icons/favicon.ico"
     },
     "location": {

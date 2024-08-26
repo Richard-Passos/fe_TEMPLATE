@@ -14,6 +14,17 @@ import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
 import { setRefs, transformTemplate } from '@/utils';
 
+const MAPED_TRANSFORM = {
+  x: '--anim-x',
+  y: '--anim-y',
+  rotate: '--anim-rotate',
+  rotateX: '--anim-rotate-x',
+  rotateY: '--anim-rotate-y',
+  scale: '--anim-scale',
+  scaleX: '--anim-scale-x',
+  scaleY: '--anim-scale-y'
+};
+
 type ScrollAnimateConfigOptions = {
   scrollConfig?: UseScrollOptions;
   scroll?: keyof ReturnType<typeof useScroll>;
@@ -70,7 +81,8 @@ const ScrollAnimateAtom = (
     <MotionChild
       ref={setRefs(ref, innerRef)}
       style={{
-        [options.prop]: smoothConfig ? smoothProp : prop,
+        [MAPED_TRANSFORM[options.prop as keyof typeof MAPED_TRANSFORM] ??
+        options.prop]: smoothConfig ? smoothProp : prop,
         ...style
       }}
       transformTemplate={transformTemplate}

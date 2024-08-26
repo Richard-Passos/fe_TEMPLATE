@@ -229,7 +229,7 @@ const themeOverride = createTheme({
       },
       h6: {
         fontSize:
-          'calc(clamp(0.75rem, 0.5rem + 0.5208vw, 1rem)  * var(--mantine-scale))',
+          'calc(clamp(0.75rem, 0.6253rem + 0.2597vw, 0.875rem)  * var(--mantine-scale))',
         lineHeight: '1.5'
       }
     }

@@ -1,19 +1,16 @@
 import { useTranslations } from 'next-intl';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
-import { capitalize, cn } from '@/utils';
-
-import Variants from './variants';
+import { Icon } from '@/components/atoms';
+import Action, { ActionProps } from '@/components/molecules/Action';
+import { cn } from '@/utils';
 
 type LogoOrganismOwnProps = {
-  variant: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
 };
 
 type LogoOrganismProps = LogoOrganismOwnProps &
-  Omit<
-    Partial<ComponentPropsWithRef<typeof Variants.Primary>>,
-    keyof LogoOrganismOwnProps
-  >;
+  Omit<ActionProps, keyof LogoOrganismOwnProps>;
 
 const LogoOrganism = (
   { variant = 'primary', className, ...props }: LogoOrganismProps,
@@ -21,20 +18,24 @@ const LogoOrganism = (
 ) => {
   const t = useTranslations('personal.logo');
 
-  const Variant = Variants[capitalize(variant) as Capitalize<typeof variant>];
-
   return (
-    <Variant
-      className={cn('border-transparent ![--button-bg:transparent]', className)}
+    <Action
+      className={cn(
+        'border-transparent ![--button-bg:transparent] ![--button-padding-x:theme(spacing.xs)]',
+        className
+      )}
       href='/'
-      icon={t('icon')}
-      label={t('label')}
       limit={{ x: 0, y: 0 }}
       ref={ref}
       size='md'
       variant='default'
       {...props}
-    />
+    >
+      <Icon
+        className='h-2/3'
+        src={t(variant)}
+      />
+    </Action>
   );
 };
 

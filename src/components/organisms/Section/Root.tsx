@@ -7,7 +7,6 @@ import { yFullScrollAnim } from '@/animations/scroll';
 import { Bg, Box, Lines, ScrollAnimate } from '@/components/atoms';
 import { BgProps } from '@/components/atoms/Bg';
 import { BoxProps } from '@/components/atoms/Box';
-import { Theme } from '@/types';
 import { cn, setRefs } from '@/utils';
 
 import Transition, { TransitionProps } from './Transition';
@@ -15,7 +14,8 @@ import useSetTheme from './useSetTheme';
 
 type SectionOrganismOwnProps = {
   bg?: BgProps['color'] | TransitionProps['color'];
-  theme: Theme;
+  theme: Parameters<typeof useSetTheme>['1'];
+  forceTheme?: Parameters<typeof useSetTheme>['2'];
   bgProps?: Partial<BgProps>;
   hasTransition?: boolean;
   transitionProps?: Partial<TransitionProps>;
@@ -28,9 +28,10 @@ const SectionOrganism = (
   {
     bg,
     hasTransition = true,
-    children,
     className,
     theme,
+    children,
+    forceTheme,
     bgProps,
     transitionProps,
     ...props
@@ -39,7 +40,7 @@ const SectionOrganism = (
 ) => {
   const innerRef = useRef<HTMLDivElement>(null);
 
-  useSetTheme(innerRef, theme);
+  useSetTheme(innerRef, theme, forceTheme);
 
   return (
     <Box

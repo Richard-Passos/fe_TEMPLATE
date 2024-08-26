@@ -69,8 +69,8 @@ const ContactFormOrganism = (
     >
       <div className='relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-black sm:col-span-full'>
         <Title
-          className='text-sm'
-          order={3}
+          component='h3'
+          order={6}
         >
           {to.label}:&nbsp;
           <Link

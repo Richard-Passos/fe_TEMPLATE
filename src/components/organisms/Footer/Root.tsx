@@ -54,8 +54,9 @@ const FooterOrganism = (
     >
       <section className='mb-xl w-9/10 pt-[--section-spacing-md]'>
         <Title
-          className='text-sm font-semibold'
-          order={3}
+          className='font-semibold'
+          component='h3'
+          order={6}
         >
           {t('cta.subtitle')}
         </Title>
@@ -69,12 +70,7 @@ const FooterOrganism = (
         </Title>
 
         <div className='mt-md flex flex-wrap items-center gap-xs'>
-          <Action
-            href='contact'
-            variant='default'
-          >
-            {t('cta.action.label')}
-          </Action>
+          <Action href='contact'>{t('cta.action.label')}</Action>
 
           {socialKeys.map((key) => (
             <Action
@@ -140,9 +136,9 @@ const FooterOrganism = (
       <div className='w-full overflow-hidden'>
         <Logo
           aria-hidden
-          className='h-auto w-full ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] sm:-mb-[8%] [&_svg]:h-full'
+          className='h-auto w-full ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] [&_svg]:h-full'
           tabIndex={-1}
-          variant='primary'
+          variant='secondary'
         />
       </div>
 

@@ -50,6 +50,7 @@ const SecondaryLayoutBlockOrganism = (
           </span>
 
           <Title
+            className='break-words'
             component='h2'
             order={3}
           >

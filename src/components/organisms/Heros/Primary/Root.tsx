@@ -53,7 +53,7 @@ const PrimaryHeroOrganism = (
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
               <div className='mt-sm grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                <Text className='col-span-full max-w-lg justify-self-center text-center md:col-span-4 lg:sr-only'>
+                <Text className='col-span-full justify-self-center text-center sm:max-w-md md:col-span-4 lg:sr-only'>
                   {data.description}
                 </Text>
 
@@ -71,7 +71,7 @@ const PrimaryHeroOrganism = (
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
       <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />

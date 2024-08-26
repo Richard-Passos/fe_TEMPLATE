@@ -4,7 +4,6 @@ import { Icon, Text } from '@/components/atoms';
 import { ListHorizontalScroll } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
 import { ListHorizontalScrollRootProps } from '@/components/molecules/ListHorizontalScroll';
-import { cn } from '@/utils';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
@@ -21,18 +20,11 @@ type ListMissionBlockOrganismProps = ListMissionBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ListMissionBlockOrganismOwnProps>;
 
 const ListMissionBlockOrganism = (
-  {
-    data,
-    className,
-    listProps,
-    actionProps,
-    ...props
-  }: ListMissionBlockOrganismProps,
+  { data, listProps, actionProps, ...props }: ListMissionBlockOrganismProps,
   ref: ListMissionBlockOrganismProps['ref']
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn('min-h-fit overflow-x-clip 2xl:min-h-bounds', className)}
       ref={ref}
       {...props}
     >
@@ -52,7 +44,7 @@ const ListMissionBlockOrganism = (
 
             <span className='opacity-30 dark:opacity-10'>{item.text}</span>
 
-            <div className='size-[1em] rotate-[--rotate] opacity-30 dark:opacity-10 max-sm:hidden'>
+            <div className='size-[1em] opacity-30 rotate-[--rotate] dark:opacity-10 max-sm:hidden'>
               <Icon src={item.icon} />
             </div>
 

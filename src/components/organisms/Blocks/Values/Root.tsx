@@ -74,6 +74,7 @@ const ValuesBlockOrganism = (
           left={data.icons.left}
           right={data.icons.right}
           {...iconsProps}
+          className={cn('max-lg:hidden', iconsProps?.className)}
         />
       </div>
     </SecondaryLayoutBlock>

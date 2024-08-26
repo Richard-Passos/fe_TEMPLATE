@@ -35,19 +35,19 @@ const AboutBlockOrganism = (
       <section
         {...wrapperProps}
         className={cn(
-          'grid w-9/10 max-w-screen-lg gap-md sm:grid-cols-12 md:gap-2xl',
+          'flex w-9/10 max-w-screen-lg gap-md md:gap-2xl',
           wrapperProps?.className
         )}
       >
-        <div className='relative size-full overflow-hidden bg-white dark:bg-black sm:col-span-5'>
+        <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-black max-sm:hidden'>
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>
 
-          <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
+          <span className='absolute inset-0 rounded-inherit border opacity-60' />
         </div>
 
-        <section className='my-2xl flex flex-col gap-xl sm:col-span-7'>
+        <section className='flex max-w-xl grow flex-col gap-xl sm:my-2xl'>
           <AboutBlockText data={data.intro} />
 
           <AboutBlockText data={data.personality} />

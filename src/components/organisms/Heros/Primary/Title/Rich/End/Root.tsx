@@ -17,7 +17,7 @@ const PrimaryHeroTitleEndOrganism = (
   return (
     <span
       className={cn(
-        'flex w-full justify-center gap-[.2em] lg:justify-end',
+        'flex w-full flex-wrap justify-center gap-x-[.2em] lg:justify-end',
         className
       )}
       ref={ref}

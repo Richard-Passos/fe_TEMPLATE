@@ -28,6 +28,10 @@
     @apply outline-offset;
   }
 
+  .break-words {
+    word-break: break-word;
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }

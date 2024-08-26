@@ -15,7 +15,7 @@ const CleanLayoutBlockOrganism = (
 ) => {
   return (
     <Section
-      className={cn('justify-center', className)}
+      className={cn('min-h-fit justify-center 2xl:min-h-fit', className)}
       ref={ref}
       {...props}
     />

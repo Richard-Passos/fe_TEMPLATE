@@ -31,10 +31,7 @@ const TextBlockOrganism = (
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn(
-        'min-h-fit w-9/10 max-w-screen-lg pt-0 2xl:min-h-fit',
-        className
-      )}
+      className={cn('w-9/10 max-w-screen-lg pt-0', className)}
       ref={ref}
       {...props}
     >

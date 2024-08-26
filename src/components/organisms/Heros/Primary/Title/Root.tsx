@@ -16,7 +16,7 @@ const PrimaryHeroTitleOrganism = (
   return (
     <Title
       className={cn(
-        'flex w-full max-w-6xl flex-col items-center text-center font-black [word-break:break-word]',
+        'flex w-full max-w-6xl flex-col items-center break-words text-center font-black',
         className
       )}
       order={1}

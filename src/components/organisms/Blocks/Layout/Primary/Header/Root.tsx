@@ -38,7 +38,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
       {...props}
     >
       <Title
-        className='flex w-full flex-col'
+        className='flex w-full flex-col break-words'
         order={2}
       >
         {restTexts.map((text, i) => (
@@ -85,7 +85,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
       </Title>
 
       {renderComp(
-        <Text className='mr-auto mt-sm text-sm text-dimmed sm:ml-[5%] sm:max-w-xl lg:sr-only'>
+        <Text className='mr-auto mt-sm text-sm text-dimmed sm:ml-[5%] sm:max-w-sm lg:sr-only'>
           {description}
         </Text>,
         [description]

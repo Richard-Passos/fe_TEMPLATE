@@ -62,7 +62,7 @@ const FooterOrganism = (
         </Title>
 
         <Title
-          className='leading-none'
+          className='break-words leading-none'
           component='h2'
           order={3}
         >

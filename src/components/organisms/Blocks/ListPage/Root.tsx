@@ -23,18 +23,11 @@ type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
 
 const ListPageBlockOrganism = (
-  {
-    data,
-    className,
-    listProps,
-    actionProps,
-    ...props
-  }: ListPageBlockOrganismProps,
+  { data, listProps, actionProps, ...props }: ListPageBlockOrganismProps,
   ref: ListPageBlockOrganismProps['ref']
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn('min-h-fit 2xl:min-h-bounds', className)}
       ref={ref}
       {...props}
     >

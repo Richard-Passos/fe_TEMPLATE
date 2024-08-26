@@ -136,7 +136,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='message'>
         <Textarea
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-9'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-full md:col-span-9'
           label={fields.message.label}
           placeholder={fields.message.placeholder}
           size='md'
@@ -144,15 +144,15 @@ const ContactFormOrganism = (
         />
       </Form.Control>
 
-      <div className='relative right-px top-px -mr-px -mt-px flex size-9/10 border bg-white p-xs dark:bg-black sm:col-span-3'>
+      <div className='relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-black sm:col-span-4 md:col-span-3 md:aspect-video md:size-9/10'>
         <Form.Submit>
           <Action
-            aria-label={fields.submit.label}
-            className='size-full'
-            isIconOnly
+            className='md:size-full'
             limit={{ x: 0.2, y: 0.2 }}
           >
-            <PaperPlaneIcon />
+            <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
+
+            <span className='md:sr-only'>{fields.submit.label}</span>
           </Action>
         </Form.Submit>
       </div>

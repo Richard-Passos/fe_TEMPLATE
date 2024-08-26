@@ -16,7 +16,10 @@ const PrimaryHeroTitleEndOrganism = (
 ) => {
   return (
     <span
-      className={cn('lg:ml-auto', className)}
+      className={cn(
+        'flex w-full justify-center gap-[.2em] lg:justify-end',
+        className
+      )}
       ref={ref}
       {...props}
     />

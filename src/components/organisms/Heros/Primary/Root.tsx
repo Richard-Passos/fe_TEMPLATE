@@ -37,6 +37,7 @@ const PrimaryHeroOrganism = (
       bgProps={{
         className: '*:hidden'
       }}
+      forceTheme
       hasTransition={false}
       ref={ref}
       {...props}
@@ -48,7 +49,7 @@ const PrimaryHeroOrganism = (
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
         <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
-            <div className='flex w-full grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:scale-[--scale] sm:opacity-[--opacity]'>
+            <div className='flex w-full grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:opacity-[--opacity] sm:scale-[--scale]'>
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
               <div className='mt-sm grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>

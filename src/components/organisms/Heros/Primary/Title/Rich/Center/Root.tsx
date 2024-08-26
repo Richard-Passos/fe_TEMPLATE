@@ -17,7 +17,10 @@ const PrimaryHeroTitleCenterOrganism = (
 ) => {
   return (
     <span
-      className={cn('flex w-full justify-center lg:justify-evenly', className)}
+      className={cn(
+        'flex w-full justify-center gap-[.2em] lg:justify-evenly',
+        className
+      )}
       ref={ref}
       {...props}
     />

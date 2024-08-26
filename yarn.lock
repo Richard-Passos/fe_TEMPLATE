@@ -1279,6 +1279,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:0.5.12":
+  version: 0.5.12
+  resolution: "@swc/helpers@npm:0.5.12"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/44693c0f34d772d63f3a6fb461964ec583055549a96df9790afec125b2ba06929a63cf9a165a9aaf22317779f460f8caafa94458b70d5cb2bc057b6ba9b5d02c
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.5.5":
   version: 0.5.5
   resolution: "@swc/helpers@npm:0.5.5"
@@ -5209,7 +5218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21":
+"lodash@npm:4.17.21, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
@@ -6028,6 +6037,7 @@ __metadata:
     redux-persist: "npm:^6.0.0"
     tailwind-merge: "npm:^2.4.0"
     tailwindcss: "npm:^3.4.6"
+    tailwindcss-3d: "npm:^1.0.7"
     typescript: "npm:^5.5.4"
     usehooks-ts: "npm:^3.1.0"
     zod: "npm:^3.23.8"
@@ -7244,6 +7254,18 @@ __metadata:
   version: 2.4.0
   resolution: "tailwind-merge@npm:2.4.0"
   checksum: 10c0/77bd20647d08db78a0bdf7b57d4b904479aee7727f44570f8834d62a1aa56f42d7ae68ac959e3d610c9f188aa164eeefb6c43df4f0c8bb7cfc3418e1575bfecb
+  languageName: node
+  linkType: hard
+
+"tailwindcss-3d@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "tailwindcss-3d@npm:1.0.7"
+  dependencies:
+    "@swc/helpers": "npm:0.5.12"
+    lodash: "npm:4.17.21"
+  peerDependencies:
+    tailwindcss: ">=3.2.0"
+  checksum: 10c0/e0fe0f58f6cf6329c8b474dc481bcbe2b53aba44ac8a754b640fada18709bdd203afced2747969a8e8fa2294ae85905df3b39d2504f5c0a3f824fc692fdf25e5
   languageName: node
   linkType: hard
 

@@ -24,45 +24,43 @@ type ContactFormBlockOrganismProps = ContactFormBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ContactFormBlockOrganismOwnProps>;
 
 const ContactFormBlockOrganism = (
-  { data, className, ...props }: ContactFormBlockOrganismProps,
+  { data, ...props }: ContactFormBlockOrganismProps,
   ref: ContactFormBlockOrganismProps['ref']
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn(
-        'grid w-9/10 max-w-screen-xl gap-xl sm:grid-cols-12',
-        className
-      )}
       ref={ref}
       {...props}
     >
-      <div className='relative size-full overflow-hidden bg-white dark:bg-black sm:col-span-5'>
-        <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
-        </ScrollAnimate>
+      <section className='grid w-9/10 max-w-screen-xl gap-xl sm:grid-cols-12'>
+        <div className='relative size-full overflow-hidden bg-white dark:bg-black sm:col-span-5'>
+          <ScrollAnimate config={yFullScrollAnim}>
+            <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
+          </ScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
-      </div>
+          <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
+        </div>
 
-      <div className='sm:col-span-7'>
-        <Title
-          className='sm:max-w-md'
-          order={3}
-        >
-          {data.title}
-        </Title>
+        <div className='sm:col-span-7'>
+          <Title
+            className='sm:max-w-md'
+            order={3}
+          >
+            {data.title}
+          </Title>
 
-        <Text className='mt-xs text-sm text-dimmed sm:max-w-sm'>
-          {data.description}
-        </Text>
+          <Text className='mt-xs text-sm text-dimmed sm:max-w-sm'>
+            {data.description}
+          </Text>
 
-        <ContactForm
-          className='mt-xl'
-          fields={data.fields}
-          optionalLabel={data.optionalLabel}
-          to={data.to}
-        />
-      </div>
+          <ContactForm
+            className='mt-xl'
+            fields={data.fields}
+            optionalLabel={data.optionalLabel}
+            to={data.to}
+          />
+        </div>
+      </section>
     </CleanLayoutBlock>
   );
 };

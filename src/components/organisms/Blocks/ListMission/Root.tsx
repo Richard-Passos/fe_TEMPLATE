@@ -32,7 +32,7 @@ const ListMissionBlockOrganism = (
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn('min-h-fit 2xl:min-h-bounds', className)}
+      className={cn('min-h-fit overflow-x-clip 2xl:min-h-bounds', className)}
       ref={ref}
       {...props}
     >

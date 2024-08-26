@@ -32,7 +32,7 @@ const TextBlockOrganism = (
   return (
     <CleanLayoutBlock
       className={cn(
-        'min-h-fit w-9/10 max-w-screen-lg items-start pt-0 2xl:min-h-fit',
+        'min-h-fit w-9/10 max-w-screen-lg pt-0 2xl:min-h-fit',
         className
       )}
       ref={ref}
@@ -41,14 +41,14 @@ const TextBlockOrganism = (
       <Title
         order={3}
         {...titleProps}
-        className={cn('max-w-lg', titleProps?.className)}
+        className={cn('mr-auto max-w-lg', titleProps?.className)}
       >
         {data.title}
       </Title>
 
       <div
         {...wrapperProps}
-        className={cn('mt-lg flex items-start gap-md', wrapperProps?.className)}
+        className={cn('mr-auto mt-lg flex gap-md', wrapperProps?.className)}
       >
         <span className='relative mt-2.5 h-2 w-12 shrink-0'>
           <ScrollAnimate

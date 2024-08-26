@@ -10,17 +10,6 @@ import ImagesBlockImage, { ImagesBlockImageProps } from './Image';
 
 const SCROLL_OFFSET = ['.5 1', '.5 .6'],
   ANIMATION_CONFIG = {
-    y1: {
-      scrollConfig: {
-        offset: SCROLL_OFFSET
-      },
-      prop: '--y',
-      propPoints: ['-5%', '0%']
-    } as ScrollAnimateConfigOptions,
-    y2: {
-      prop: 'y',
-      propPoints: ['-13%', '0%']
-    } as ScrollAnimateConfigOptions,
     x: {
       scrollConfig: {
         offset: SCROLL_OFFSET
@@ -55,33 +44,31 @@ const ImagesBlockOrganism = (
   ref: ImagesBlockOrganismProps['ref']
 ) => {
   return (
-    <ScrollAnimate config={ANIMATION_CONFIG.y1}>
-      <ScrollAnimate config={ANIMATION_CONFIG.x}>
-        <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
-          <CleanLayoutBlock
-            className={cn(
-              'grid min-h-fit w-9/10 max-w-screen-lg gap-[--gap] pt-0 [--gap:theme(spacing.xs)] sm:grid-cols-3 sm:[--x:calc(var(--smooth-x)*(var(--gap)+35%))] 2xl:min-h-fit',
-              className
-            )}
-            ref={ref}
-            {...props}
-          >
-            <ImagesBlockImage
-              className='sm:mt-[25%] sm:translate-x-[--x] sm:translate-y-[--y] sm:-rotate-[--rotate]'
-              data={data.items[0]}
-            />
+    <ScrollAnimate config={ANIMATION_CONFIG.x}>
+      <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
+        <CleanLayoutBlock
+          className={cn(
+            'min-h-fit w-9/10 max-w-screen-lg gap-[--gap] pt-0 [--gap:theme(spacing.xs)] sm:flex-row sm:items-start sm:[--x:calc(var(--smooth-x)*(var(--gap)+35%))] 2xl:min-h-fit',
+            className
+          )}
+          ref={ref}
+          {...props}
+        >
+          <ImagesBlockImage
+            className='mt-[7.5%] sm:translate-x-[--x] sm:-rotate-[--rotate]'
+            data={data.items[0]}
+          />
 
-            <ImagesBlockImage
-              className='z-10 sm:-mt-[25%]'
-              data={data.items[1]}
-            />
+          <ImagesBlockImage
+            className='z-10'
+            data={data.items[1]}
+          />
 
-            <ImagesBlockImage
-              className='max-sm:hidden sm:mt-[25%] sm:-translate-x-[--x] sm:translate-y-[--y] sm:rotate-[--rotate]'
-              data={data.items[2]}
-            />
-          </CleanLayoutBlock>
-        </ScrollAnimate>
+          <ImagesBlockImage
+            className='mt-[7.5%] max-sm:hidden sm:-translate-x-[--x] sm:rotate-[--rotate]'
+            data={data.items[2]}
+          />
+        </CleanLayoutBlock>
       </ScrollAnimate>
     </ScrollAnimate>
   );

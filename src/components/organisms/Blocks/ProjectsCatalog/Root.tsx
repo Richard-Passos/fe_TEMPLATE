@@ -65,8 +65,9 @@ const ProjectsCatalogBlockOrganism = (
         <div className='size-full max-sm:mb-md sm:col-span-4 md:col-span-5'>
           {renderComp(
             <Title
-              className='sticky top-xl text-sm text-dimmed'
-              order={3}
+              className='sticky top-xl text-dimmed'
+              component='h3'
+              order={6}
               {...subtitleProps}
             >
               {data.subtitle}
@@ -83,7 +84,7 @@ const ProjectsCatalogBlockOrganism = (
           <ProjectsCatalogTableBlock
             {...tableProps}
             className={cn(
-              'group relative z-20 w-full max-sm:hidden',
+              'relative z-20 w-full max-sm:hidden',
               tableProps?.className
             )}
           />

@@ -40,7 +40,7 @@ const SecondaryLayoutBlockOrganism = (
         )}
       >
         <div className='flex items-center gap-xs'>
-          <span className='relative h-2 w-12'>
+          <span className='relative h-2 w-6 sm:w-12'>
             <ScrollAnimate
               config={lineLeftScrollAnim}
               layout

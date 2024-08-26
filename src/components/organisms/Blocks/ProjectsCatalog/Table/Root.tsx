@@ -18,12 +18,15 @@ const ProjectsCatalogTableBlockOrganism = <T,>(
 ) => {
   return (
     <CatalogList
-      className={cn('flex flex-col gap-xs', className)}
+      className={cn('group/list', className)}
       ref={ref}
       {...props}
     >
       {({ slug, ...data }, i) => (
-        <li key={slug}>
+        <li
+          className='py-[calc(theme(spacing.xs)/2)] first:pt-0 last:pb-0'
+          key={slug}
+        >
           <TableProjectCard
             data={{ index: i, ...data }}
             href={`projects/${slug}`}

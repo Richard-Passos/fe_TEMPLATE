@@ -25,13 +25,6 @@ const SCROLL_OFFSET = ['0 1', '0 .55'],
       },
       prop: '--x',
       propPoints: ['-25%', '0%']
-    } as ScrollAnimateConfigOptions,
-    rotate: {
-      scrollConfig: {
-        offset: SCROLL_OFFSET
-      },
-      prop: '--rotate',
-      propPoints: ['-12deg', '0deg']
     } as ScrollAnimateConfigOptions
   };
 
@@ -52,6 +45,7 @@ type StatsBlockOrganismProps = StatsBlockOrganismOwnProps &
 
 const StatsBlockOrganism = (
   {
+    className,
     data,
     wrapperProps,
     subtitleProps,
@@ -64,6 +58,7 @@ const StatsBlockOrganism = (
 ) => {
   return (
     <PrimaryLayoutBlock
+      className={cn('overflow-x-clip', className)}
       data={{
         title: data.title,
         description: data.description
@@ -80,10 +75,11 @@ const StatsBlockOrganism = (
       >
         {renderComp(
           <Title
-            order={3}
+            component='h3'
+            order={6}
             {...subtitleProps}
             className={cn(
-              'mb-md mr-auto text-sm text-dimmed',
+              'mb-md mr-auto text-dimmed',
               subtitleProps?.className
             )}
           >
@@ -99,11 +95,9 @@ const StatsBlockOrganism = (
               key={data.id}
             >
               <ScrollAnimate config={ANIMATION_CONFIG.x}>
-                <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
-                  <li className='h-fit translate-x-[--x] rotate-[--rotate] even:-translate-x-[--x] even:-rotate-[--rotate] md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl'>
-                    <StatsCard data={data} />
-                  </li>
-                </ScrollAnimate>
+                <li className='h-fit translate-x-[--x] even:-translate-x-[--x] md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl'>
+                  <StatsCard data={data} />
+                </li>
               </ScrollAnimate>
             </ScrollAnimate>
           ))}

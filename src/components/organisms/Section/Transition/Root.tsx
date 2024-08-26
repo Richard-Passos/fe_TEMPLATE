@@ -32,7 +32,7 @@ const SectionTransitionOrganism = (
     <ScrollAnimate config={animationConfig}>
       <div
         className={cn(
-          'pointer-events-none absolute left-1/2 top-px h-20 w-screen -translate-x-1/2',
+          'pointer-events-none absolute top-px h-20 w-screen',
           className
         )}
         ref={ref}
@@ -40,26 +40,19 @@ const SectionTransitionOrganism = (
       >
         <div
           className={cn(
-            'relative w-full overflow-hidden',
+            'relative flex w-full justify-center overflow-hidden',
             reverse
               ? 'h-[calc(100%-var(--h))] -translate-y-0.5'
               : 'h-[--h] -translate-y-full rotate-180'
           )}
         >
           <Bg
-            className='pointer-events-auto left-1/2 z-0 h-[750%] w-[150%] -translate-x-1/2 -translate-y-[86.666%] rounded-[50%]'
+            className='pointer-events-auto z-0 h-[750%] w-[150%] -translate-y-[86.666%] rounded-[50%]'
             color={color}
           >
-            <div className={cn('absolute inset-0', !reverse && 'rotate-180')}>
-              <ScrollAnimate config={yFullScrollAnim}>
-                <Lines
-                  className={cn(
-                    !reverse &&
-                      '-translate-x-[(50%_-_var(--removed-body-scroll-bar-size,0px)/2)]'
-                  )}
-                />
-              </ScrollAnimate>
-            </div>
+            <ScrollAnimate config={yFullScrollAnim}>
+              <Lines className={cn(!reverse && 'rotate-180')} />
+            </ScrollAnimate>
           </Bg>
         </div>
       </div>

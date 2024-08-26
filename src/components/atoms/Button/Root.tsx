@@ -48,6 +48,7 @@ const ButtonAtom = (
       className={cn('disabled:pointer-events-none', className)}
       ref={ref}
       style={style}
+      variant='filled'
       {...props}
     />
   );

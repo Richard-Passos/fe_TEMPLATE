@@ -28,15 +28,24 @@ const TableProjectCardOrganism = (
   return (
     <Link
       className={cn(
-        'group/item relative font-normal text-current no-underline hover:z-10 focus-visible:outline-0 *:focus-visible:outline',
+        'group/item relative font-normal text-current hover:z-10 focus-visible:outline-0',
         className
       )}
       ref={ref}
+      underline='never'
       {...props}
     >
       <Magnetic.Container>
-        <CardRoot className='relative flex-row items-center justify-center gap-xs overflow-visible px-[7.5%] py-xl transition-[transform,opacity] group-hover:[*:not(:hover)>&]:scale-x-95 group-hover:[*:not(:hover)>&]:opacity-50'>
-          <Text className='relative z-10 mb-auto inline-flex translate-y-0.5 text-sm font-semibold text-dimmed'>
+        <CardRoot
+          className={cn(
+            'relative flex-row items-center justify-center gap-xs overflow-visible px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
+
+            'group-hover/list:scale-x-90 group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100',
+
+            'group-hover/list:[>:not(:hover)_&]:opacity-50'
+          )}
+        >
+          <Text className='relative z-10 mb-auto inline-flex text-sm font-semibold text-dimmed translate-y-0.5'>
             {`${data.index + 1}`.padStart(2, '0')}/
           </Text>
 
@@ -68,7 +77,7 @@ const TableProjectCardOrganism = (
             }}
           >
             <div className='pointer-events-none absolute'>
-              <div className='size-72 scale-90 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] group-hover/item:scale-100 group-hover/item:opacity-100 dark:bg-dark-5'>
+              <div className='size-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] scale-90 group-hover/item:opacity-100 group-hover/item:scale-100 dark:bg-dark-5'>
                 <Image
                   alt={data.image.alt}
                   className='object-cover'

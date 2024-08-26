@@ -37,10 +37,7 @@ const HeaderOrganism = (
         ref={ref}
         {...props}
       >
-        <Logo
-          className='-ml-[--button-padding-x]'
-          variant='primary'
-        />
+        <Logo className='-ml-[--button-padding-x]' />
 
         <div className='flex items-center gap-xs max-md:hidden'>
           <Nav items={items} />

@@ -24,6 +24,7 @@ const SecondaryHeroOrganism = (
         'min-h-fit pt-[calc(var(--header-h)+var(--section-spacing-md))] 2xl:min-h-fit',
         className
       )}
+      forceTheme
       hasTransition={false}
       ref={ref}
       {...props}
@@ -36,7 +37,7 @@ const SecondaryHeroOrganism = (
           {data.title}
         </Title>
 
-        <div className='absolute inset-y-0 right-0 w-full max-w-md overflow-hidden rounded-lg bg-white dark:bg-black'>
+        <div className='absolute inset-y-0 right-0 flex w-full max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-black'>
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>

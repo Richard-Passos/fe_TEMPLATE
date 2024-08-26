@@ -1,26 +1,29 @@
 'use client';
 
 import { useScroll } from 'framer-motion';
-import { RefObject, useCallback, useRef } from 'react';
+import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import {
   useColorScheme,
   useComputedColorScheme,
   useUpdateEffect
 } from '@/hooks';
+import { Theme } from '@/types';
 
-type Theme = 'light' | 'dark';
-
-const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
+const useSetTheme = (
+  ref: RefObject<HTMLElement>,
+  theme: Theme,
+  force?: boolean
+) => {
   const { setColorScheme } = useColorScheme(),
     activeTheme = useComputedColorScheme();
 
   const lastTheme = useRef<Theme>(activeTheme);
 
-  const { scrollYProgress: y } = useScroll({
+  /* const { scrollYProgress: y } = useScroll({
     target: ref,
     offset: ['0 0.10001', '0 0.1']
-  });
+  }); */
 
   const handleSetTheme = useCallback(
     (theme: Theme, last: Theme) => {
@@ -31,7 +34,7 @@ const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
     [setColorScheme]
   );
 
-  useUpdateEffect(() => {
+  /* useUpdateEffect(() => {
     const unsubscribe = y.on('change', (y) => {
       if (y === 0) handleSetTheme(lastTheme.current, theme);
       else if (y === 1) handleSetTheme(theme, activeTheme);
@@ -40,9 +43,11 @@ const useSetTheme = (ref: RefObject<HTMLElement>, theme: Theme) => {
     return () => {
       unsubscribe();
     };
-  }, [y, handleSetTheme, theme, activeTheme]);
+  }, [y, handleSetTheme, theme, activeTheme]); */
 
-  return activeTheme;
+  useEffect(() => {
+    if (force) handleSetTheme(theme, activeTheme);
+  }, [force]);
 };
 
 export default useSetTheme;

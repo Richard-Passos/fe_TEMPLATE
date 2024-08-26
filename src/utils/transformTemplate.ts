@@ -10,21 +10,20 @@ type Transform = {
 };
 
 const transformTemplate = (transform: Transform) => {
-  const translate = `translate(${transform.x ?? 'var(--tw-translate-x)'}, ${
-      transform.y ?? 'var(--tw-translate-y)'
-    })`,
-    rotate =
-      transform.rotateX || transform.rotateY
-        ? `rotateX(${
-            transform.rotateX ?? 'var(--tw-rotate-x, 0deg)'
-          }) rotateY(${transform.rotateY ?? 'var(--tw-rotate-y, 0deg)'})`
-        : `rotate(${transform.rotate ?? 'var(--tw-rotate)'})`,
-    scale = `scale(${
-      transform.scale ??
-      `${transform.scaleX ?? 'var(--tw-scale-x)'}, ${
-        transform.scaleY ?? 'var(--tw-scale-y)'
-      }`
-    })`;
+  const translate = `translate(${
+    transform.x ?? 'var(--anim-x, 0)'
+  }, ${transform.y ?? 'var(--anim-y, 0)'})`;
+
+  const rotate = `rotateX(${
+    transform.rotateX ?? 'var(--anim-rotate-x, 0deg)'
+  }) rotateY(${transform.rotateY ?? 'var(--anim-rotate-y, 0deg)'}) rotateZ(${transform.rotate ?? 'var(--anim-rotate, 0deg)'})`;
+
+  const scale = `scale(${
+    transform.scale ??
+    `${transform.scaleX ?? 'var(--anim-scale-x, var(--anim-scale, 1))'}, ${
+      transform.scaleY ?? 'var(--anim-scale-y, var(--anim-scale, 1))'
+    }`
+  })`;
 
   return `${translate} ${rotate} ${scale}`;
 };

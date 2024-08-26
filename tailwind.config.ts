@@ -3,6 +3,7 @@ import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
+    './src/animations/active/.{js,ts}',
     './src/app/**/*.{jsx,tsx}',
     './src/components/**/*.{jsx,tsx}',
     './src/theme.{js,ts}',
@@ -525,6 +526,7 @@ const config: Config = {
     }
   },
   plugins: [
+    require('tailwindcss-3d'),
     plugin(({ addVariant }) => {
       addVariant('dark', [
         '&[data-theme="dark"]',

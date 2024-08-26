@@ -15,7 +15,7 @@ const LocalTimeAtom = (
   { nowOptions, formatOptions, ...props }: LocalTimeAtomProps,
   ref: LocalTimeAtomProps['ref']
 ) => {
-  const now = useNow({ updateInterval: 1000 * 10, ...nowOptions }),
+  const now = useNow({ updateInterval: 1000, ...nowOptions }),
     format = useFormatter();
 
   return (

@@ -7,12 +7,12 @@ type FormSubmitMoleculeOwnProps = {
   ref?: PolymorphicRef<'div'>;
 };
 
-type FormddSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
+type FormSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
   Omit<SlotProps, keyof FormSubmitMoleculeOwnProps>;
 
-const FormddSubmitMolecule = (
-  props: FormddSubmitMoleculeProps,
-  ref: FormddSubmitMoleculeProps['ref']
+const FormSubmitMolecule = (
+  props: FormSubmitMoleculeProps,
+  ref: FormSubmitMoleculeProps['ref']
 ) => {
   props = {
     ...props,
@@ -27,5 +27,5 @@ const FormddSubmitMolecule = (
   );
 };
 
-export default forwardRef(FormddSubmitMolecule);
-export type { FormddSubmitMoleculeProps };
+export default forwardRef(FormSubmitMolecule);
+export type { FormSubmitMoleculeProps };

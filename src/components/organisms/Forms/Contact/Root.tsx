@@ -1,4 +1,5 @@
 import { ReactNode, forwardRef } from 'react';
+import toast from 'react-hot-toast';
 import { z } from 'zod';
 
 import { Link, Select, TextInput, Textarea, Title } from '@/components/atoms';
@@ -9,8 +10,7 @@ import { Action, Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { Field } from '@/types';
 import { cn } from '@/utils';
-
-import ContactFormClient from './Client';
+import { sendEmail } from '@/utils/actions';
 
 type ContactFormOrganismOwnProps = {
   optionalLabel: ReactNode;
@@ -29,6 +29,11 @@ type ContactFormOrganismOwnProps = {
     email: string;
     subject: string;
   };
+  messages: {
+    loading: string;
+    success: string;
+    error: string;
+  };
 };
 
 type ContactFormOrganismProps = ContactFormOrganismOwnProps &
@@ -38,7 +43,14 @@ type ContactFormOrganismProps = ContactFormOrganismOwnProps &
   >;
 
 const ContactFormOrganism = (
-  { optionalLabel, to, fields, className, ...props }: ContactFormOrganismProps,
+  {
+    optionalLabel,
+    messages,
+    to,
+    fields,
+    className,
+    ...props
+  }: ContactFormOrganismProps,
   ref: ContactFormOrganismProps['ref']
 ) => {
   const defaultValues = {
@@ -61,10 +73,13 @@ const ContactFormOrganism = (
     });
 
   return (
-    <ContactFormClient
+    <Form.Root
       className={cn('grid sm:grid-cols-12', className)}
       defaultValues={defaultValues}
       ref={ref}
+      action={async (values) => {
+        toast.promise(sendEmail(values), messages);
+      }}
       schema={schema}
       {...props}
     >
@@ -157,7 +172,7 @@ const ContactFormOrganism = (
           </Action>
         </Form.Submit>
       </div>
-    </ContactFormClient>
+    </Form.Root>
   );
 };
 

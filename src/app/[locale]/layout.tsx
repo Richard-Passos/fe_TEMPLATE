@@ -3,7 +3,13 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
 import { SmoothScroll } from '@/components/atoms';
-import { Footer, Header, Main, Providers } from '@/components/organisms';
+import {
+  Footer,
+  Header,
+  Main,
+  Providers,
+  Toaster
+} from '@/components/organisms';
 import { locales } from '@/constants';
 import '@/globals.css';
 import { defaultColorScheme } from '@/theme';
@@ -36,6 +42,8 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             </Header.State>
 
             <Footer />
+
+            <Toaster />
           </SmoothScroll>
         </Providers>
       </body>

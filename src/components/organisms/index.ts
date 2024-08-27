@@ -7,6 +7,7 @@ import Logo from './Logo';
 import Main from './Main';
 import Providers from './Providers';
 import Section from './Section';
+import Toaster from './Toaster';
 
 const Organisms = {
   Blocks,
@@ -17,8 +18,20 @@ const Organisms = {
   Logo,
   Main,
   Providers,
-  Section
+  Section,
+  Toaster
 };
 
 export default Organisms;
-export { Blocks, Footer, Header, Heros, Icons, Logo, Main, Providers, Section };
+export {
+  Blocks,
+  Footer,
+  Header,
+  Heros,
+  Icons,
+  Logo,
+  Main,
+  Providers,
+  Section,
+  Toaster
+};

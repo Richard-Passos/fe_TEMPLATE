@@ -293,11 +293,16 @@
             "label": "To",
             "subject": "👋 Hey { name }, I'd like to hire you!"
           },
+          "messages": {
+            "loading": "Sending email...",
+            "success": "Email sent!",
+            "error": "Oops.. Please try again."
+          },
           "fields": {
             "name": {
               "label": "Name",
               "placeholder": "John Doe",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "min": "Please, that can't be your name."
               }
@@ -305,7 +310,7 @@
             "email": {
               "label": "Email",
               "placeholder": "john@doe.com",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "email": "That email adress looks a bit weird."
               }
@@ -313,17 +318,17 @@
             "subject": {
               "label": "Subject",
               "placeholder": "I wanna hire you!",
-              "initialValue": ""
+              "defaultValue": ""
             },
             "service": {
               "label": "Service",
               "placeholder": "Select a service...",
-              "initialValue": ""
+              "defaultValue": ""
             },
             "message": {
               "label": "Message",
               "placeholder": "👋 Hey { name }! I would love if you could help me with...",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "min": "Come on... you can do better than that.",
                 "max": "Come on... take it easy."
@@ -460,15 +465,15 @@
     }
   },
   "services": {
-    "0": {
+    "frontend": {
       "title": "Front end",
       "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
     },
-    "2": {
+    "backend": {
       "title": "Back end",
       "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
     },
-    "3": {
+    "fullstack": {
       "title": "Full stack",
       "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
     }

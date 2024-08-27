@@ -42,6 +42,11 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               }),
               email: gt('personal.email')
             },
+            messages: {
+              loading: t('blocks.contactForm.messages.loading'),
+              success: t('blocks.contactForm.messages.success'),
+              error: t('blocks.contactForm.messages.error')
+            },
             fields: {
               name: {
                 label: t('blocks.contactForm.fields.name.label'),

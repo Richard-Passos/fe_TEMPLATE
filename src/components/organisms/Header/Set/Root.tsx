@@ -1,6 +1,5 @@
 'use client';
 
-import { useComputedColorScheme } from '@mantine/core';
 import { Slot, SlotProps } from '@radix-ui/react-slot';
 import {
   ForwardedRef,
@@ -10,7 +9,7 @@ import {
   useRef
 } from 'react';
 
-import { useEventListener } from '@/hooks';
+import { useEventListener, useComputedColorScheme } from '@/hooks';
 import { useHeaderContext } from '@/hooks/contexts';
 import { setRefs } from '@/utils';
 

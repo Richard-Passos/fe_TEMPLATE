@@ -293,6 +293,11 @@
             "label": "To",
             "subject": "👋 Hey { name }, I'd like to hire you!"
           },
+          "messages": {
+            "loading": "Sending email...",
+            "success": "Email sent!",
+            "error": "Oops.. Please try again."
+          },
           "fields": {
             "name": {
               "label": "Name",
@@ -460,15 +465,15 @@
     }
   },
   "services": {
-    "0": {
+    "frontend": {
       "title": "Front end",
       "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
     },
-    "2": {
+    "backend": {
       "title": "Back end",
       "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
     },
-    "3": {
+    "fullstack": {
       "title": "Full stack",
       "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
     }

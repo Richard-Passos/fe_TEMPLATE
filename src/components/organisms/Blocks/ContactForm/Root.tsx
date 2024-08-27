@@ -14,7 +14,10 @@ import { cn } from '@/utils';
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 type ContactFormBlockOrganismOwnProps = {
-  data: Pick<ContactFormProps, 'fields' | 'to' | 'optionalLabel'> & {
+  data: Pick<
+    ContactFormProps,
+    'fields' | 'to' | 'optionalLabel' | 'messages'
+  > & {
     title: TitleProps['children'];
     description: TextProps['children'];
   };
@@ -61,6 +64,7 @@ const ContactFormBlockOrganism = (
           fields={data.fields}
           optionalLabel={data.optionalLabel}
           to={data.to}
+          messages={data.messages}
         />
       </div>
     </CleanLayoutBlock>

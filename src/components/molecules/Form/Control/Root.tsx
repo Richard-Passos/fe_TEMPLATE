@@ -1,7 +1,7 @@
 'use client';
 
 import { Slot, SlotProps } from '@radix-ui/react-slot';
-import { forwardRef } from 'react';
+import { FormEvent, forwardRef } from 'react';
 
 import { useFormContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
@@ -38,10 +38,13 @@ const FormControlMolecule = (
       ref={setRefs(ref, innerRef)}
       {...rest}
       {...props}
-      onChange={(event) => {
-        onChange(event);
+      onChange={(value: unknown) => {
+        const isEvent = (value: unknown): value is FormEvent<HTMLElement> =>
+          !!(value && typeof value === 'object' && 'target' in value);
 
-        props.onChange?.(event);
+        const event = isEvent(value) ? value : { target: { name, value } };
+
+        onChange(event);
       }}
     />
   );

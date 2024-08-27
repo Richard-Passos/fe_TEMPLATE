@@ -1,37 +1,44 @@
 'use client';
 
-import { createFormContext } from '@mantine/form';
-import { ComponentPropsWithoutRef } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ReactNode, useEffect } from 'react';
+import { FormProvider as HookFormProvider, useForm } from 'react-hook-form';
+import { Schema } from 'zod';
 
-const [MantineFormProvider, useFormContext, useForm] = createFormContext<any>();
-
-type FormProviderOwnProps<T> = {
-  initialValues: T;
-  schema: any;
+type FormProviderOwnProps = {
+  defaultValues: any;
+  schema: Schema;
+  shouldReset?: boolean;
+  children: ReactNode;
 };
 
-type FormProviderProps<T> = FormProviderOwnProps<T> &
-  Omit<ComponentPropsWithoutRef<typeof MantineFormProvider>, 'value' | 'form'>;
+type FormProviderProps = FormProviderOwnProps;
 
-const FormProvider = <T,>({
-  initialValues,
+const FormProvider = ({
+  defaultValues,
   schema,
+  shouldReset,
   ...props
-}: FormProviderProps<T>) => {
+}: FormProviderProps) => {
   const form = useForm({
-    mode: 'uncontrolled',
-    initialValues: initialValues,
-    validate: schema
+    resolver: zodResolver(schema),
+    defaultValues: defaultValues
   });
 
+  const { reset } = form,
+    { isSubmitSuccessful } = form.formState;
+
+  useEffect(() => {
+    if (isSubmitSuccessful && shouldReset) reset();
+  }, [isSubmitSuccessful, shouldReset, reset]);
+
   return (
-    <MantineFormProvider
-      form={form}
+    <HookFormProvider
+      {...form}
       {...props}
     />
   );
 };
 
 export default FormProvider;
-export { useFormContext };
 export type { FormProviderProps };

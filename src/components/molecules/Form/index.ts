@@ -1,6 +1,8 @@
 import FormControl, { FormControlProps } from './Control';
 import FormReset, { FormResetProps } from './Reset';
-import FormRoot, { FormMoleculeProps as FormRootProps } from './Root';
+import FormRoot, {
+  FormMoleculeWithProviderProps as FormRootProps
+} from './Root';
 import FormSubmit, { FormSubmitProps } from './Submit';
 
 const Form = {

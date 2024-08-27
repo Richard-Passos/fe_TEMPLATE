@@ -5,11 +5,10 @@ import { forwardRef } from 'react';
 
 import { useFormContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
+import { setRefs } from '@/utils';
 
 type FormControlMoleculeOwnProps = {
   name: string;
-  register?: ReturnType<typeof useFormContext>['getInputProps'];
-  registerType?: 'input' | 'checkbox';
   ref?: PolymorphicRef<'div'>;
 };
 
@@ -17,32 +16,32 @@ type FormControlMoleculeProps = FormControlMoleculeOwnProps &
   Omit<SlotProps, keyof FormControlMoleculeOwnProps>;
 
 const FormControlMolecule = (
-  {
-    name,
-    register,
-    registerType = 'input',
-    ...props
-  }: FormControlMoleculeProps,
+  { name, ...props }: FormControlMoleculeProps,
   ref: FormControlMoleculeProps['ref']
 ) => {
-  const { key, getInputProps } = useFormContext();
+  const { register, getFieldState, formState } = useFormContext();
 
-  const { onChange, ...rest } = (register ?? getInputProps)(name, {
-    type: registerType
-  });
+  const { error } = getFieldState(name, formState);
 
-  props = { ...props, name } as typeof props;
+  const {
+    onChange,
+    ref: innerRef,
+    ...rest
+  } = {
+    ...register(name),
+    name,
+    error: error?.message
+  };
 
   return (
     <Slot
-      key={key(name)}
-      ref={ref}
+      ref={setRefs(ref, innerRef)}
       {...rest}
       {...props}
-      onChange={(ev) => {
-        onChange(ev);
+      onChange={(event) => {
+        onChange(event);
 
-        props.onChange?.(ev);
+        props.onChange?.(event);
       }}
     />
   );

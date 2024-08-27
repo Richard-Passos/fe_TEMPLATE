@@ -1,4 +1,3 @@
-import { zodResolver } from '@mantine/form';
 import { ReactNode, forwardRef } from 'react';
 import { z } from 'zod';
 
@@ -10,6 +9,8 @@ import { Action, Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { Field } from '@/types';
 import { cn } from '@/utils';
+
+import ContactFormClient from './Client';
 
 type ContactFormOrganismOwnProps = {
   optionalLabel: ReactNode;
@@ -33,38 +34,38 @@ type ContactFormOrganismOwnProps = {
 type ContactFormOrganismProps = ContactFormOrganismOwnProps &
   Omit<
     FormRootProps,
-    keyof ContactFormOrganismOwnProps | 'schema' | 'initialValues'
+    keyof ContactFormOrganismOwnProps | 'schema' | 'defaultValues'
   >;
 
 const ContactFormOrganism = (
   { optionalLabel, to, fields, className, ...props }: ContactFormOrganismProps,
   ref: ContactFormOrganismProps['ref']
 ) => {
-  const initialValue = {
-      name: fields.name.initialValue,
-      email: fields.email.initialValue,
-      subject: fields.subject.initialValue,
-      service: fields.service.initialValue,
-      message: fields.message.initialValue
+  const defaultValues = {
+      name: fields.name.defaultValue,
+      email: fields.email.defaultValue,
+      subject: fields.subject.defaultValue,
+      service: fields.service.defaultValue,
+      message: fields.message.defaultValue
     },
-    schema = {
-      name: z.string().min(2, fields.name.errors.min),
-      email: z.string().email(fields.email.errors.email),
-      subject: z.any().optional(),
+    schema = z.object({
+      name: z.string().trim().min(2, fields.name.errors.min),
+      email: z.string().trim().email(fields.email.errors.email),
+      subject: z.string().trim().optional(),
       service: z.any().optional(),
       message: z
         .string()
+        .trim()
         .min(2, fields.message.errors.min)
         .max(300, fields.message.errors.max)
-    };
+    });
 
   return (
-    <Form.Root
+    <ContactFormClient
       className={cn('grid sm:grid-cols-12', className)}
-      initialValues={initialValue}
-      onSubmit={(values) => alert(JSON.stringify(values))}
+      defaultValues={defaultValues}
       ref={ref}
-      schema={zodResolver(z.object(schema))}
+      schema={schema}
       {...props}
     >
       <div className='relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-black sm:col-span-full'>
@@ -156,7 +157,7 @@ const ContactFormOrganism = (
           </Action>
         </Form.Submit>
       </div>
-    </Form.Root>
+    </ContactFormClient>
   );
 };
 

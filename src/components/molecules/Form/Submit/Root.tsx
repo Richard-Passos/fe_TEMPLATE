@@ -1,23 +1,31 @@
-import { Slot } from '@radix-ui/react-slot';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { Slot, SlotProps } from '@radix-ui/react-slot';
+import { forwardRef } from 'react';
 
-type FormSubmitMoleculeOwnProps = {};
+import { PolymorphicRef } from '@/types';
 
-type FormSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<'button'>, keyof FormSubmitMoleculeOwnProps>;
+type FormSubmitMoleculeOwnProps = {
+  ref?: PolymorphicRef<'div'>;
+};
 
-const FormSubmitMolecule = (
-  props: FormSubmitMoleculeProps,
-  ref: FormSubmitMoleculeProps['ref']
+type FormddSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
+  Omit<SlotProps, keyof FormSubmitMoleculeOwnProps>;
+
+const FormddSubmitMolecule = (
+  props: FormddSubmitMoleculeProps,
+  ref: FormddSubmitMoleculeProps['ref']
 ) => {
+  props = {
+    ...props,
+    type: 'submit'
+  } as typeof props;
+
   return (
     <Slot
       ref={ref}
-      type='submit'
       {...props}
     />
   );
 };
 
-export default forwardRef(FormSubmitMolecule);
-export type { FormSubmitMoleculeProps };
+export default forwardRef(FormddSubmitMolecule);
+export type { FormddSubmitMoleculeProps };

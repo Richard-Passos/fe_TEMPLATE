@@ -1,19 +1,33 @@
-import { Slot } from '@radix-ui/react-slot';
-import { ComponentPropsWithRef, forwardRef } from 'react';
+'use client';
 
-type FormResetMoleculeOwnProps = {};
+import { Slot, SlotProps } from '@radix-ui/react-slot';
+import { forwardRef } from 'react';
+
+import { useFormContext } from '@/hooks/contexts';
+import { PolymorphicRef } from '@/types';
+
+type FormResetMoleculeOwnProps = {
+  ref?: PolymorphicRef<'div'>;
+};
 
 type FormResetMoleculeProps = FormResetMoleculeOwnProps &
-  Omit<ComponentPropsWithRef<'button'>, keyof FormResetMoleculeOwnProps>;
+  Omit<SlotProps, keyof FormResetMoleculeOwnProps>;
 
 const FormResetMolecule = (
   props: FormResetMoleculeProps,
   ref: FormResetMoleculeProps['ref']
 ) => {
+  props = {
+    ...props,
+    type: 'reset'
+  } as typeof props;
+
+  const { reset } = useFormContext();
+
   return (
     <Slot
+      onClick={() => reset()}
       ref={ref}
-      type='reset'
       {...props}
     />
   );

@@ -46,7 +46,7 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               name: {
                 label: t('blocks.contactForm.fields.name.label'),
                 placeholder: t('blocks.contactForm.fields.name.placeholder'),
-                initialValue: t('blocks.contactForm.fields.name.initialValue'),
+                defaultValue: t('blocks.contactForm.fields.name.defaultValue'),
                 errors: {
                   min: t('blocks.contactForm.fields.name.errors.min')
                 }
@@ -54,7 +54,7 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               email: {
                 label: t('blocks.contactForm.fields.email.label'),
                 placeholder: t('blocks.contactForm.fields.email.placeholder'),
-                initialValue: t('blocks.contactForm.fields.email.initialValue'),
+                defaultValue: t('blocks.contactForm.fields.email.defaultValue'),
                 errors: {
                   email: t('blocks.contactForm.fields.email.errors.email')
                 }
@@ -62,15 +62,15 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               subject: {
                 label: t('blocks.contactForm.fields.subject.label'),
                 placeholder: t('blocks.contactForm.fields.subject.placeholder'),
-                initialValue: t(
-                  'blocks.contactForm.fields.subject.initialValue'
+                defaultValue: t(
+                  'blocks.contactForm.fields.subject.defaultValue'
                 )
               },
               service: {
                 label: t('blocks.contactForm.fields.service.label'),
                 placeholder: t('blocks.contactForm.fields.service.placeholder'),
-                initialValue: t(
-                  'blocks.contactForm.fields.service.initialValue'
+                defaultValue: t(
+                  'blocks.contactForm.fields.service.defaultValue'
                 ),
                 data: keys(get(messages, 'services')).map((key) => ({
                   value: key,
@@ -83,8 +83,8 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
                   'blocks.contactForm.fields.message.placeholder',
                   { name: gt('personal.name.first') }
                 ),
-                initialValue: t(
-                  'blocks.contactForm.fields.message.initialValue'
+                defaultValue: t(
+                  'blocks.contactForm.fields.message.defaultValue'
                 ),
                 errors: {
                   min: t('blocks.contactForm.fields.message.errors.min'),

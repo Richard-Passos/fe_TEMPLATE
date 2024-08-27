@@ -297,7 +297,7 @@
             "name": {
               "label": "Name",
               "placeholder": "John Doe",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "min": "Please, that can't be your name."
               }
@@ -305,7 +305,7 @@
             "email": {
               "label": "Email",
               "placeholder": "john@doe.com",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "email": "That email adress looks a bit weird."
               }
@@ -313,17 +313,17 @@
             "subject": {
               "label": "Subject",
               "placeholder": "I wanna hire you!",
-              "initialValue": ""
+              "defaultValue": ""
             },
             "service": {
               "label": "Service",
               "placeholder": "Select a service...",
-              "initialValue": ""
+              "defaultValue": ""
             },
             "message": {
               "label": "Message",
               "placeholder": "👋 Hey { name }! I would love if you could help me with...",
-              "initialValue": "",
+              "defaultValue": "",
               "errors": {
                 "min": "Come on... you can do better than that.",
                 "max": "Come on... take it easy."

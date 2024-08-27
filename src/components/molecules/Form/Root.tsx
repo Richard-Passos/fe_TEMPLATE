@@ -1,14 +1,14 @@
 'use client';
 
 import { ComponentPropsWithRef, forwardRef } from 'react';
+import { FieldValues, SubmitHandler } from 'react-hook-form';
 
 import FormProvider, { FormProviderProps } from '@/Providers/Form';
 import { useFormContext } from '@/hooks/contexts';
 
 type FormMoleculeOwnProps = {
-  handleValidationFailure?: Parameters<
-    ReturnType<typeof useFormContext>['onSubmit']
-  >['1'];
+  action?: SubmitHandler<FieldValues>;
+  onSubmit?: SubmitHandler<FieldValues>;
 };
 
 type FormMoleculeProps = FormMoleculeOwnProps &
@@ -16,32 +16,31 @@ type FormMoleculeProps = FormMoleculeOwnProps &
 
 const FormMolecule = forwardRef(
   (
-    { handleValidationFailure, ...props }: FormMoleculeProps,
+    { action, onSubmit, ...props }: FormMoleculeProps,
     ref: FormMoleculeProps['ref']
   ) => {
-    const { onSubmit, onReset } = useFormContext();
+    const { handleSubmit } = useFormContext();
 
-    const submit = () => ({
-      handleAction:
-        typeof props.action === 'function'
-          ? onSubmit(props.action, handleValidationFailure)
-          : () => props.action,
-      handleSubmit:
-        typeof props.onSubmit === 'function'
-          ? onSubmit(props.onSubmit, handleValidationFailure)
-          : () => props.onSubmit
-    });
+    const onSend = () => {
+      if (action) {
+        const onAction = handleSubmit(action);
 
-    const { handleAction, handleSubmit } = submit();
+        return {
+          action: () => onAction()
+        };
+      }
+
+      if (onSubmit)
+        return {
+          onSubmit: handleSubmit(onSubmit)
+        };
+    };
 
     return (
       <form
-        noValidate
-        onReset={onReset}
         ref={ref}
+        {...onSend()}
         {...props}
-        action={() => handleAction()}
-        onSubmit={handleSubmit}
       />
     );
   }
@@ -50,20 +49,26 @@ FormMolecule.displayName = 'FormMolecule';
 
 type FormMoleculeWithProviderOwnProps = {};
 
-type FormMoleculeWithProviderProps<T> = FormMoleculeWithProviderOwnProps &
+type FormMoleculeWithProviderProps = FormMoleculeWithProviderOwnProps &
   Omit<
-    FormProviderProps<T> & FormMoleculeProps,
+    Omit<FormProviderProps, 'children'> & FormMoleculeProps,
     keyof FormMoleculeWithProviderOwnProps
   >;
 
-const FormMoleculeWithProvider = <T,>(
-  { initialValues, schema, ...props }: FormMoleculeWithProviderProps<T>,
-  ref: FormMoleculeWithProviderProps<T>['ref']
+const FormMoleculeWithProvider = (
+  {
+    defaultValues,
+    schema,
+    shouldReset,
+    ...props
+  }: FormMoleculeWithProviderProps,
+  ref: FormMoleculeWithProviderProps['ref']
 ) => {
   return (
     <FormProvider
-      initialValues={initialValues}
+      defaultValues={defaultValues}
       schema={schema}
+      shouldReset={shouldReset}
     >
       <FormMolecule
         ref={ref}
@@ -74,4 +79,4 @@ const FormMoleculeWithProvider = <T,>(
 };
 
 export default forwardRef(FormMoleculeWithProvider);
-export type { FormMoleculeProps };
+export type { FormMoleculeWithProviderProps };

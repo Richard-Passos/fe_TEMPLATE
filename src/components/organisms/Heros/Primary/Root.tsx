@@ -53,7 +53,7 @@ const PrimaryHeroOrganism = (
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
               <div className='mt-sm grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                <Text className='col-span-full justify-self-center text-center sm:max-w-md md:col-span-4 lg:sr-only'>
+                <Text className='col-span-full max-w-md justify-self-center text-center font-medium md:col-span-4 lg:sr-only'>
                   {data.description}
                 </Text>
 

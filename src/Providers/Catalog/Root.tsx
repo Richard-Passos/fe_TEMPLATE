@@ -7,7 +7,7 @@ import {
   CatalogContextInitialState,
   catalogContextDefaultValue
 } from '@/contexts/Catalog';
-import { useFetch, useId, useQueryString } from '@/hooks';
+import { useId } from '@/hooks';
 
 type CatalogProviderOwnProps<T> = {
   items: T[];
@@ -25,44 +25,20 @@ const CatalogProvider = <T,>({
   url = '',
   ...props
 }: CatalogProviderProps<T>) => {
-  const id = useId(),
-    queryStr = useQueryString([]);
+  const id = useId();
 
-  const [pathname = '', query = ''] = url.split('?');
-
-  const { data: res, loading: isLoading } = useFetch<{
-    data: [];
-    meta: Pick<
-      CatalogContextInitialState<T>,
-      'page' | 'perPage' | 'totalPages' | 'totalResults'
-    >;
-  }>(pathname + `${queryStr}&${query}`);
-
-  const {
-    data,
-    meta = {
-      page: catalogContextDefaultValue.page,
-      perPage: catalogContextDefaultValue.perPage,
-      totalPages: catalogContextDefaultValue.totalPages,
-      totalResults: catalogContextDefaultValue.totalResults
-    }
-  } = res ?? {};
-
-  items = data ?? items;
-
-  const isLastPage = meta.page >= meta.totalPages,
+  const totalResults = items.length,
     isEmpty = !items.length;
 
   const value: CatalogContextInitialState<T> = useMemo(
     () => ({
+      ...catalogContextDefaultValue,
       id,
       items,
-      isLoading,
-      isLastPage,
-      isEmpty,
-      ...meta
+      totalResults,
+      isEmpty
     }),
-    [id, items, isLoading, isLastPage, isEmpty, meta]
+    [id, items, totalResults, isEmpty]
   );
 
   return (

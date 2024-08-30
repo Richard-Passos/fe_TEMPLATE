@@ -1,15 +1,15 @@
+import useBooleanContext from './useBoolean';
 import useCarouselContext from './useCarousel';
 import useCatalogContext from './useCatalog';
-import useDisclosureContext from './useDisclosure';
 import useFormContext from './useForm';
 import useHeaderContext from './useHeader';
 import useMagneticContext from './useMagnetic';
 import useSmoothScrollContext from './useSmoothScroll';
 
 const hooksContexts = {
+  useBoolean: useBooleanContext,
   useCarousel: useCarouselContext,
   useCatalog: useCatalogContext,
-  useDisclosure: useDisclosureContext,
   useForm: useFormContext,
   useHeader: useHeaderContext,
   useMagnetic: useMagneticContext,
@@ -18,9 +18,9 @@ const hooksContexts = {
 
 export default hooksContexts;
 export {
+  useBooleanContext,
   useCarouselContext,
   useCatalogContext,
-  useDisclosureContext,
   useFormContext,
   useHeaderContext,
   useMagneticContext,

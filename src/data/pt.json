@@ -2,8 +2,8 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "title": "<Start>Turning heads</Start> <End><em>&</em> <span>conquering</span></End> <Center><span>hearts</span> <Description></Description></Center>",
+        "description": "Hey there! I’m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
         "left": {
           "src": "/icons/smile.svg",
           "animation": "rotateRight"
@@ -14,32 +14,43 @@
       },
       "blocks": {
         "selectedProjects": {
-          "title": { "0": "ABOUT", "1": "WORK" },
-          "subtitle": "SELECTED WORKS",
-          "empty": "Sorry, selected projects not found.",
-          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate."
+          "title": {
+            "0": "Wor<em>k</em>",
+            "1": "<em>I</em>nsight"
+          },
+          "description": "Here are some examples of <text>my best works</text>",
+          "empty": "Sorry, selected projects not found."
         },
         "toExpect": {
           "title": "Here’s what you can expect from me",
-          "description": "<p>Listen, challenge and reconnect the dots — <strong>joining your team</strong> with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p> <p>Listen, <strong>challenge</strong> and reconnect the dots — joining your team with conviction and openness. Listen, challenge and reconnect the dots — joining your team with conviction and openness.</p>"
+          "description": "<p><text>A thoughtful collaborator</text> who thrives on finding innovative solutions and textbracing <text>new perspectives</text>. My approach is grounded in <text>keen observation</text> and <text>understanding</text> — allowing me to effectively navigate and connect <text>complex ideas</text>.</p> <p>I aim to blend effortlessly into your work culture, contributing to a <text>vibrant</text> and <text>synergistic atmosphere</text> where <text>ideas</text> and <text>goals</text> come together <text>seamlessly</text>.</p>"
         },
         "listWorkPage": {
           "items": {
-            "0": "MISSION",
-            "1": "HARD & SOFT SKILLS",
-            "2": "SERVICES"
+            "0": {
+              "text": "Mission",
+              "separator": "·"
+            },
+            "1": {
+              "text": "Hard & soft skills",
+              "separator": "·"
+            },
+            "2": {
+              "text": "Services",
+              "separator": "·"
+            }
           },
           "action": {
             "label": "Explore"
           }
         },
         "but": {
-          "title": "BUT",
-          "description": "it's not just about the tech."
+          "title": "But",
+          "description": "it’s not just about the tech."
         },
         "aboutBentoGrid": {
-          "title": { "0": "ABOUT", "1": "ME" },
-          "description": "Every detail is an opportunity. Every line of code I write goes beyond mere functionality — they shape digital experiences that captivate.",
+          "title": { "0": "Perso<em>n</em>", "1": "<em>I</em>nsight" },
+          "description": "",
           "templates": {
             "base": {
               "0": "item-0",
@@ -68,7 +79,7 @@
           "items": {
             "description": {
               "title": "#about",
-              "description": "🤟 <text><strong>Hey —</strong></text> I'm Richard an awesome full stack developer based in <country></country>. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games."
+              "description": "🤟 <text><strong>Hey —</strong></text> I’m Richard an awesome full stack developer based in <country></country>. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games."
             },
             "location": {
               "icon": "/icons/globe.svg",
@@ -76,7 +87,7 @@
             },
             "values": {
               "icon": "/icons/fingerprint.svg",
-              "title": "MY VALUES"
+              "title": "My values"
             },
             "improving": {
               "icon": "/icons/rocket.svg",
@@ -87,7 +98,7 @@
               "description": "I love to play games."
             },
             "localTime": {
-              "title": "MY LOCAL TIME"
+              "title": "My local time"
             },
             "buyCoffee": {
               "icon": "/icons/mug.svg",
@@ -97,16 +108,25 @@
         },
         "listAboutPage": {
           "items": {
-            "0": "BACKGROUND",
-            "1": "HOBBIES",
-            "2": "PERSONALITY"
+            "0": {
+              "text": "Background",
+              "separator": "·"
+            },
+            "1": {
+              "text": "Hobbies",
+              "separator": "·"
+            },
+            "2": {
+              "text": "Personality",
+              "separator": "·"
+            }
           },
           "action": {
             "label": "Explore"
           }
         },
         "cta": {
-          "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let's team up and...",
+          "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let’s team up and...",
           "icons": {
             "left": {
               "src": "/icons/smile.svg",
@@ -122,7 +142,7 @@
     },
     "work": {
       "hero": {
-        "title": "<Start>BEYOND CODE</Start> <End><span>BOUNDARIES</span> <em>&</em></End> <Center><span>RESULTS</span> <Description></Description></Center>",
+        "title": "<Start>Beyond code</Start> <End><span>boundaries</span> <em>&</em></End> <Center><span>results</span> <Description></Description></Center>",
         "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and  crafting high-impact, user-centered solutions.",
         "left": {
           "type": "text",
@@ -136,46 +156,48 @@
       },
       "blocks": {
         "mission": {
-          "description": "<strong>That's my mission —</strong> Each line of code refines my skills, crafting <strong>high-impact solutions</strong>. Every project is an opportunity to <strong>inspire</strong> clients, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
+          "description": "<strong>That’s my mission —</strong> Each line of code refines my skills, crafting <strong>high-impact solutions</strong>. Every project is an opportunity to <strong>inspire</strong> clients, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
           "items": {
             "0": {
-              "text": "IMPROVE",
+              "text": "Improve",
               "icon": "/icons/rocket.svg"
             },
             "1": {
-              "text": "INSPIRE",
+              "text": "Inspire",
               "icon": "/icons/globe.svg"
             },
             "2": {
-              "text": "REPEAT",
+              "text": "Repeat",
               "icon": "/icons/smile.svg"
             }
           }
         },
         "services": {
           "title": {
-            "0": "SERVICES"
+            "0": "Service<em>s</em>"
           },
-          "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
-          "subtitle": "I COULD HELP YOU WITH...",
+          "description": "",
+          "subtitle": "I could help you with...",
           "image": {
-            "src": "/images/parallax-00.jpg",
-            "alt": ""
+            "src": "/images/services.jpeg",
+            "alt": "Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms."
           },
           "action": {
             "label": "Contact me"
           }
         },
         "selectedProjects": {
-          "title": { "0": "SELECTED", "1": "WORKS" },
-          "description": "Each project is a tailored masterpiece, meticulously crafted to engage users with intuitive interfaces, great interactions and captivating experiences.",
-          "subtitle": "",
+          "title": { "0": "Selecte<em>d</em>", "1": "<em>W</em>orks" },
+          "description": "",
           "empty": "Sorry, selected projects not found."
         },
         "whyMe": {
-          "title": { "0": "WHY PICK", "1": "ME" },
+          "title": {
+            "0": "Why I’’<em>m</em> ",
+            "1": "<em>T</em>he fit<em>?</em>"
+          },
           "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
-          "subtitle": "SOME STATISTICS..."
+          "subtitle": "Some statistics..."
         },
         "hardSkills": {
           "title": "Hard skills"
@@ -204,47 +226,47 @@
     },
     "about": {
       "hero": {
-        "title": "HEART CONQUERING PERSON"
+        "title": "Person <em>who</em> wins hearts"
       },
       "blocks": {
         "images": {
           "items": {
             "0": {
               "image": {
-                "src": "/images/parallax-00.jpg",
-                "alt": ""
+                "src": "/images/about-01.jpeg",
+                "alt": "Richard Passos, a full-stack developer with short hair, stands against a wooden wall, wearing a light-colored T-shirt. Richard Passos has his arms crossed, showcasing a watch and a necklace."
               }
             },
             "1": {
               "image": {
-                "src": "/images/parallax-01.jpg",
-                "alt": ""
+                "src": "/images/about-02.jpeg",
+                "alt": "Richard Passos, a full-stack developer stands against a plain background wearing a black leather jacket over a white shirt, with their left hand in the jacket pocket."
               }
             },
             "2": {
               "image": {
-                "src": "/images/parallax-02.jpg",
-                "alt": ""
+                "src": "/images/about-03.jpeg",
+                "alt": "Richard Passos, a full-stack developer wearing a light gray hoodie with ’Brooklyn’ and other text printed on it stands against a wooden wall, looking to the left."
               }
             }
           }
         },
         "about": {
           "title": {
-            "0": "WHO I AM"
+            "0": "Who I <em>a</em>m"
           },
-          "description": "I'm Richard an awesome full stack developer based in Brazil. When I'm not coding, you can catch me in the gaming world — I'm a huge fan, especially when it comes to rogue-like games.",
+          "description": "",
           "intro": {
             "title": "Introducion",
-            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p> <p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+            "description": "<p>I’ve always been a curious and dedicated person, but for a while, I felt lost without a clear direction or passion. It wasn’t until I faced life that I discovered my true passion for development, which felt like a light bulb moment.</p> <p>This newfound interest was a turning point for me. Learning about the world of development sparked a deep excitement and sense of purpose. Since then. I now have a clear sense of my dreams and purpose, and I know exactly where I wanna be.</p>"
           },
           "personality": {
             "title": "Personality",
-            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+            "description": "<p>I’m a curious and self-taught individual who loves exploring new perspectives and cultures. With a knack for problem-solving and a detail-oriented mindset, I turn complex ideas into clear, practical answers.</p>"
           },
           "mission": {
             "title": "Mission",
-            "description": "<p>I've a mission to learn, cultivate, and make the most of. Learn from life and from people, from my successes and mistakes. Cultivate genuine relationships along the way. Make the most of opportunities and moments that life brings.</p>"
+            "description": "<p>I’ve a mission to learn, cultivate, and make the most of. Learn from life and people. Cultivate genuine relationships. Make the most of opportunities and moments.</p>"
           }
         },
         "values": {
@@ -268,30 +290,15 @@
     },
     "contact": {
       "hero": {
-        "title": "DROWNING WITH GREAT IDEAS?"
+        "title": "Wanna <em>turn</em> some heads<em>?</em>"
       },
       "blocks": {
-        "services": {
-          "title": {
-            "0": "SERVICES"
-          },
-          "description": "My solutions go beyond technological boundaries, they're not just algorithms and code. They are developed to generate high-impact results, driving you to digital prominence.",
-          "subtitle": "I COULD HELP YOU WITH...",
-          "image": {
-            "src": "/images/parallax-00.jpg",
-            "alt": ""
-          },
-          "action": {
-            "label": "Contact me"
-          }
-        },
         "contactForm": {
-          "title": "I'd love to hear from you",
-          "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+          "title": "No worries — I’ve got it covered",
           "optionalLabel": "optional",
           "to": {
             "label": "To",
-            "subject": "👋 Hey { name }, I'd like to hire you!"
+            "subject": "👋 Hey { name }, I’d like to hire you!"
           },
           "messages": {
             "loading": "Sending email...",
@@ -304,7 +311,7 @@
               "placeholder": "John Doe",
               "defaultValue": "",
               "errors": {
-                "min": "Please, that can't be your name."
+                "min": "Please, that can’t be your name."
               }
             },
             "email": {
@@ -338,6 +345,20 @@
               "label": "Send message"
             }
           }
+        },
+        "services": {
+          "title": {
+            "0": "Ser<em>vi</em>ces"
+          },
+          "description": "",
+          "subtitle": "I could help you with...",
+          "image": {
+            "src": "/images/services.jpeg",
+            "alt": "Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms."
+          },
+          "action": {
+            "label": "Contact me"
+          }
         }
       },
       "metadata": {
@@ -347,17 +368,7 @@
     },
     "singleProject": {
       "hero": {
-        "title": "<Start>TURNING HEADS</Start> <End><em>&</em> <span>CONQUERING</span></End> <Center><span>HEARTS</span> <Description></Description></Center>",
-        "description": "Hey there! I'm Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
-        "left": {
-          "type": "icon",
-          "src": "/icons/smile.svg",
-          "animation": "rotateRight"
-        },
-        "right": {
-          "type": "text",
-          "text": "(singleProject)"
-        }
+        "title": "Single Project Page"
       },
       "blocks": {}
     },
@@ -413,13 +424,14 @@
   },
   "footer": {
     "cta": {
-      "title": "LET'S MAKE <br></br> THEM FLY",
+      "title": "Let’s turn some heads",
       "subtitle": "Is your great ideas ready?",
       "action": {
         "label": "Get in touch"
       }
     },
-    "location": "{ country } —  { state }",
+    "locationSeparator": "—",
+    "description": "The full stack developer — who cares building solid and scalable products with a great user experience.",
     "madeBy": "Made with ❤️ by <creator>Richard</creator>",
     "copyright": "© 2024 <legal>Legal</legal>"
   },

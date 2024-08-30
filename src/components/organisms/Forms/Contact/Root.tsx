@@ -74,16 +74,16 @@ const ContactFormOrganism = (
 
   return (
     <Form.Root
-      className={cn('grid sm:grid-cols-12', className)}
-      defaultValues={defaultValues}
-      ref={ref}
       action={async (values) => {
         toast.promise(sendEmail(values), messages);
       }}
+      className={cn('grid sm:grid-cols-12', className)}
+      defaultValues={defaultValues}
+      ref={ref}
       schema={schema}
       {...props}
     >
-      <div className='relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-black sm:col-span-full'>
+      <div className='relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-dark-8 sm:col-span-full'>
         <Title
           component='h3'
           order={6}
@@ -100,7 +100,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='name'>
         <TextInput
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-6'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
           label={fields.name.label}
           placeholder={fields.name.placeholder}
           size='md'
@@ -110,7 +110,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='email'>
         <TextInput
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-6'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
           label={fields.email.label}
           placeholder={fields.email.placeholder}
           size='md'
@@ -121,7 +121,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='subject'>
         <TextInput
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-6'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -136,7 +136,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='service'>
         <Select
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-6'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
           data={fields.service.data}
           label={
             <>
@@ -152,7 +152,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='message'>
         <Textarea
-          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-black sm:col-span-full md:col-span-9'
+          className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-full md:col-span-9'
           label={fields.message.label}
           placeholder={fields.message.placeholder}
           size='md'
@@ -160,7 +160,7 @@ const ContactFormOrganism = (
         />
       </Form.Control>
 
-      <div className='relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-black sm:col-span-4 md:col-span-3 md:aspect-video md:size-9/10'>
+      <div className='relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-dark-8 sm:col-span-4 md:col-span-3 md:aspect-video md:size-9/10'>
         <Form.Submit>
           <Action
             className='md:size-full'

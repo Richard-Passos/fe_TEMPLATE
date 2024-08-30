@@ -185,7 +185,7 @@
     --mantine-color-orange-outline: var(--mantine-color-orange-6);
     --mantine-color-orange-outline-hover: rgba(253, 126, 20, 0.05);
 
-    --mantine-color-text: hsl(0 0% 4.7%);
+    --mantine-color-text: hsl(0 0% 7.5%);
     --mantine-color-body: hsl(0 0% 98%);
     --mantine-color-anchor: var(--mantine-color-red-6);
     --mantine-color-dark-light: rgba(0, 0, 0, 0.1);

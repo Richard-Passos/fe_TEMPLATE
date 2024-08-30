@@ -7,18 +7,18 @@ const themeOverride = createTheme({
   fontSmoothing: true,
   focusRing: 'auto',
   white: 'hsl(0 0% 98%)',
-  black: 'hsl(0 0% 4.7%)',
+  black: 'hsl(0 0% 7.5%)',
   colors: {
     dark: [
-      'hsl(0 0% 70%)',
+      'hsl(0 0% 75%)',
       'hsl(0 0% 60%)',
-      'hsl(0 0% 45%)',
+      'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',
       'hsl(0 0% 15%)',
       'hsl(0 0% 6%)',
       'hsl(0 0% 5%)',
       'hsl(0 0% 6%)',
-      'hsl(0 0% 3%)',
+      'hsl(0 0% 4.5%)',
       'hsl(0 0% 1.5%)'
     ],
     gray: [
@@ -204,32 +204,32 @@ const themeOverride = createTheme({
     sizes: {
       h1: {
         fontSize:
-          'calc(clamp(3.25rem, 0.25rem + 6.25vw, 6.25rem) * var(--mantine-scale))',
+          'calc(clamp(3.25rem, 1.1071rem + 5.3571vw, 6.25rem) * var(--mantine-scale))',
         lineHeight: '1'
       },
       h2: {
         fontSize:
-          'calc(clamp(3rem, 1rem + 4.1667vw, 5rem) * var(--mantine-scale))',
+          'calc(clamp(4rem, 1.1429rem + 7.1429vw, 8rem) * var(--mantine-scale))',
         lineHeight: '1'
       },
       h3: {
         fontSize:
-          'calc(clamp(2.25rem, 1.5rem + 1.5625vw, 3rem) * var(--mantine-scale))',
+          'calc(clamp(2.25rem, 1.7143rem + 1.3393vw, 3rem) * var(--mantine-scale))',
         lineHeight: '1.2'
       },
       h4: {
         fontSize:
-          'calc(clamp(2rem, 1.5rem + 1.0417vw, 2.5rem) * var(--mantine-scale))',
+          'calc(clamp(2rem, 1.6429rem + 0.8929vw, 2.5rem) * var(--mantine-scale))',
         lineHeight: '1.3'
       },
       h5: {
         fontSize:
-          'calc(clamp(1.25rem, 1rem + 0.5208vw, 1.5rem) * var(--mantine-scale))',
+          'calc(clamp(1.25rem, 1.0714rem + 0.4464vw, 1.5rem) * var(--mantine-scale))',
         lineHeight: '1.4'
       },
       h6: {
         fontSize:
-          'calc(clamp(0.75rem, 0.6253rem + 0.2597vw, 0.875rem)  * var(--mantine-scale))',
+          'calc(clamp(0.75rem, 0.6607rem + 0.2232vw, 0.875rem)  * var(--mantine-scale))',
         lineHeight: '1.5'
       }
     }

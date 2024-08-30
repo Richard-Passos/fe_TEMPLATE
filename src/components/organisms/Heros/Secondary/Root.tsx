@@ -31,13 +31,13 @@ const SecondaryHeroOrganism = (
     >
       <div className='relative w-9/10 max-w-screen-lg pb-[calc(theme(spacing.2xl)*1.5)] pt-2xl'>
         <Title
-          className='relative z-10 break-words md:w-3/4 md:break-all lg:w-9/10'
+          className='relative z-10 break-words uppercase max-sm:max-w-md sm:max-w-[75%]'
           order={1}
         >
           {data.title}
         </Title>
 
-        <div className='absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-black'>
+        <div className='absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-dark-8'>
           <ScrollAnimate config={yFullScrollAnim}>
             <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>

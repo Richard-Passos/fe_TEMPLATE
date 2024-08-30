@@ -11,9 +11,11 @@ import { get, keys, times } from '@/utils';
 
 import { LayoutParams } from './layout';
 
-type HomePageOwnProps = LayoutParams;
+type HomePageOwnProps = {};
 
-type HomePageProps = HomePageOwnProps;
+type HomePageParams = LayoutParams;
+
+type HomePageProps = HomePageOwnProps & HomePageParams;
 
 const HomePage = ({ params: { locale } }: HomePageProps) => {
   unstable_setRequestLocale(locale);
@@ -32,10 +34,12 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           data: {
             title: keys(
               get(messages, 'pages.home.blocks.selectedProjects.title')
-            ).map((key) => t(`blocks.selectedProjects.title.${key}`)),
-            description: t('blocks.selectedProjects.description'),
-            subtitle: t('blocks.selectedProjects.subtitle'),
-            empty: t('blocks.selectedProjects.empty'),
+            ).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.selectedProjects.title.${key}`)
+            })),
+            description: t.rich('blocks.selectedProjects.description'),
+            empty: t.rich('blocks.selectedProjects.empty'),
             items: times(5, String).map((id, i) => ({
               slug: `title-${id}`,
               title: `Title - ${id}`,
@@ -67,7 +71,11 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           data: {
             items: keys(
               get(messages, 'pages.home.blocks.listWorkPage.items')
-            ).map((key) => t(`blocks.listWorkPage.items.${key}`)),
+            ).map((key) => ({
+              id: key,
+              text: t(`blocks.listWorkPage.items.${key}.text`),
+              separator: t(`blocks.listWorkPage.items.${key}.separator`)
+            })),
             action: {
               label: t('blocks.listWorkPage.action.label'),
               href: '/work'
@@ -91,7 +99,10 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           data: {
             title: keys(
               get(messages, 'pages.home.blocks.aboutBentoGrid.title')
-            ).map((key) => t(`blocks.aboutBentoGrid.title.${key}`)),
+            ).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.aboutBentoGrid.title.${key}`)
+            })),
             description: t.rich('blocks.aboutBentoGrid.description'),
             templates: {
               base: [
@@ -121,6 +132,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
             items: [
               {
                 type: 'Description',
+                id: 'description',
                 data: {
                   title: t.rich(
                     'blocks.aboutBentoGrid.items.description.title'
@@ -135,6 +147,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Bold',
+                id: 'location',
                 data: {
                   icon: t('blocks.aboutBentoGrid.items.location.icon'),
                   description: t(
@@ -148,6 +161,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Marquee',
+                id: 'values',
                 data: {
                   icon: t('blocks.aboutBentoGrid.items.values.icon'),
                   title: t('blocks.aboutBentoGrid.items.values.title'),
@@ -158,6 +172,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Simple',
+                id: 'improving',
                 data: {
                   icon: t('blocks.aboutBentoGrid.items.improving.icon'),
                   description: t(
@@ -167,6 +182,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Simple',
+                id: 'hobbie',
                 data: {
                   icon: t('blocks.aboutBentoGrid.items.hobbie.icon'),
                   description: t(
@@ -176,6 +192,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Time',
+                id: 'localTime',
                 data: {
                   title: t('blocks.aboutBentoGrid.items.localTime.title'),
                   time: <LocalTime />
@@ -183,6 +200,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
               },
               {
                 type: 'Link',
+                id: 'buyCoffee',
                 data: {
                   icon: gt('personal.buyCoffee.icon'),
                   href: gt('personal.buyCoffee.href'),
@@ -199,7 +217,11 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           data: {
             items: keys(
               get(messages, 'pages.home.blocks.listAboutPage.items')
-            ).map((key) => t(`blocks.listAboutPage.items.${key}`)),
+            ).map((key) => ({
+              id: key,
+              text: t(`blocks.listAboutPage.items.${key}.text`),
+              separator: t(`blocks.listAboutPage.items.${key}.separator`)
+            })),
             action: {
               label: t('blocks.listAboutPage.action.label'),
               href: '/about'
@@ -230,6 +252,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
       hero={{
         type: 'Primary',
         theme: 'light',
+        id: 'hero',
         data: {
           title: t.rich('hero.title', {
             Start: (chunks) => (
@@ -251,6 +274,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           }),
           description: t.rich('hero.description'),
           left: {
+            id: 'left',
             type: 'Icon',
             data: {
               src: t('hero.left.src'),
@@ -260,6 +284,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
             }
           },
           right: {
+            id: 'right',
             type: 'Text',
             data: {
               text: t('hero.right.text')
@@ -272,4 +297,4 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
 };
 
 export default HomePage;
-export type { HomePageProps };
+export type { HomePageProps, HomePageParams };

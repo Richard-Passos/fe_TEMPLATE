@@ -18,7 +18,7 @@ const NotFoundPage = async () => {
       hero={{
         theme: 'dark',
         data: {
-          title: t('hero.title')
+          title: t.rich('hero.title')
         }
       }}
     />

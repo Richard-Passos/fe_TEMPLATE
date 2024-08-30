@@ -109,7 +109,10 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
           data: {
             title: keys(
               get(messages, 'pages.contact.blocks.services.title')
-            ).map((key) => t(`blocks.services.title.${key}`)),
+            ).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.services.title.${key}`)
+            })),
             description: t.rich('blocks.services.description'),
             subtitle: t.rich('blocks.services.subtitle'),
             image: {
@@ -127,6 +130,7 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
       hero={{
         type: 'Secondary',
         theme: 'light',
+        id: 'hero',
         data: {
           title: t.rich('hero.title')
         }

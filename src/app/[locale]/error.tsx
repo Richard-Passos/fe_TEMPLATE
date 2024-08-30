@@ -23,7 +23,7 @@ const ErrorPage = ({ error, reset }: ErrorPageProps) => {
       hero={{
         theme: 'dark',
         data: {
-          title: t('hero.title')
+          title: t.rich('hero.title')
         }
       }}
     />

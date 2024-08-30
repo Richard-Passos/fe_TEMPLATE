@@ -1,7 +1,7 @@
 import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { Link } from '@/components/atoms';
+import { Icon, Link } from '@/components/atoms';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
@@ -33,8 +33,9 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           data: {
             items: keys(get(messages, 'pages.work.blocks.mission.items')).map(
               (key) => ({
+                id: key,
                 text: t(`blocks.mission.items.${key}.text`),
-                icon: t(`blocks.mission.items.${key}.icon`)
+                separator: <Icon src={t(`blocks.mission.items.${key}.icon`)} />
               })
             ),
             description: t.rich('blocks.mission.description')
@@ -46,7 +47,10 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           id: 'services',
           data: {
             title: keys(get(messages, 'pages.work.blocks.services.title')).map(
-              (key) => t(`blocks.services.title.${key}`)
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.services.title.${key}`)
+              })
             ),
             description: t.rich('blocks.services.description'),
             subtitle: t.rich('blocks.services.subtitle'),
@@ -71,9 +75,11 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           data: {
             title: keys(
               get(messages, 'pages.work.blocks.selectedProjects.title')
-            ).map((key) => t(`blocks.selectedProjects.title.${key}`)),
-            description: t('blocks.selectedProjects.description'),
-            subtitle: t('blocks.selectedProjects.subtitle'),
+            ).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.selectedProjects.title.${key}`)
+            })),
+            description: t.rich('blocks.selectedProjects.description'),
             empty: t('blocks.selectedProjects.empty'),
             items: times(5, String).map((id, i) => ({
               slug: `title-${id}`,
@@ -93,7 +99,10 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           id: 'whyMe',
           data: {
             title: keys(get(messages, 'pages.work.blocks.whyMe.title')).map(
-              (key) => t(`blocks.whyMe.title.${key}`)
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.whyMe.title.${key}`)
+              })
             ),
             description: t.rich('blocks.whyMe.description', {
               contact: (chunks) => (
@@ -174,6 +183,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
       hero={{
         type: 'Primary',
         theme: 'light',
+        id: 'hero',
         data: {
           title: t.rich('hero.title', {
             Start: (chunks) => (
@@ -195,12 +205,14 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           }),
           description: t.rich('hero.description'),
           left: {
+            id: 'left',
             type: 'Text',
             data: {
               text: t('hero.left.text')
             }
           },
           right: {
+            id: 'right',
             type: 'Icon',
             data: {
               src: t('hero.right.src'),

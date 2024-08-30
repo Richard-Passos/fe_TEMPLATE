@@ -33,25 +33,19 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
               {
                 image: {
                   src: t('blocks.images.items.0.image.src'),
-                  alt: t('blocks.images.items.0.image.alt'),
-                  width: 200,
-                  height: 250
+                  alt: t('blocks.images.items.0.image.alt')
                 }
               },
               {
                 image: {
                   src: t('blocks.images.items.1.image.src'),
-                  alt: t('blocks.images.items.1.image.alt'),
-                  width: 200,
-                  height: 250
+                  alt: t('blocks.images.items.1.image.alt')
                 }
               },
               {
                 image: {
                   src: t('blocks.images.items.2.image.src'),
-                  alt: t('blocks.images.items.2.image.alt'),
-                  width: 200,
-                  height: 250
+                  alt: t('blocks.images.items.2.image.alt')
                 }
               }
             ]
@@ -63,7 +57,10 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
           id: 'about',
           data: {
             title: keys(get(messages, 'pages.about.blocks.about.title')).map(
-              (key) => t(`blocks.about.title.${key}`)
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.about.title.${key}`)
+              })
             ),
             description: t.rich('blocks.about.description'),
             intro: {
@@ -133,6 +130,7 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
       hero={{
         type: 'Secondary',
         theme: 'dark',
+        id: 'hero',
         data: {
           title: t.rich('hero.title')
         }

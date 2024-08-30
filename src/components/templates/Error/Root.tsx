@@ -27,13 +27,13 @@ const ErrorTemplateOrganism = ({
     <>
       <SecondaryHero {...hero} />
 
-      {blocks?.map(({ type, theme, ...props }, i) => {
+      {blocks?.map(({ type, id, theme, ...props }) => {
         const Block = Blocks[type] as ComponentType<any>;
 
         const Component = (
           <Block
             hasTransition={lastTheme !== theme}
-            key={i}
+            key={id}
             theme={theme}
             {...props}
           />

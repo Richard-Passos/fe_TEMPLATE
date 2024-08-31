@@ -33,7 +33,6 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
           } as ServicesBlockProps['transitionProps'],
           data: {
             title: t.rich('blocks.contactForm.title'),
-            description: t.rich('blocks.contactForm.description'),
             optionalLabel: t.rich('blocks.contactForm.optionalLabel'),
             to: {
               label: t.rich('blocks.contactForm.to.label'),

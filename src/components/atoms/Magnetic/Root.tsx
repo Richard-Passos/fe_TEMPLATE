@@ -3,7 +3,7 @@
 import { Slot } from '@radix-ui/react-slot';
 import { deviceType } from 'detect-it';
 import { motion } from 'framer-motion';
-import { ComponentPropsWithRef, RefObject, forwardRef, useRef } from 'react';
+import { ComponentPropsWithRef, forwardRef, useEffect, useRef } from 'react';
 
 import { useEventListener, useSmooth } from '@/hooks';
 import { useMagneticContext } from '@/hooks/contexts';
@@ -36,14 +36,13 @@ const MagneticAtom = (
       y: useSmooth(0, { ...magneticAtomSmoothConfig, ...smoothConfig })
     };
 
+  const element = useRef<HTMLElement | null>(null);
+
   const resetPosition = () => {
       position.x.set(0);
       position.y.set(0);
     },
-    updatePosition = (
-      { clientX, clientY }: MouseEvent,
-      element: RefObject<HTMLElement>
-    ) => {
+    updatePosition = ({ clientX, clientY }: MouseEvent) => {
       if (!element.current) return;
 
       const { left, top, width, height } =
@@ -63,9 +62,11 @@ const MagneticAtom = (
       position.y.set(pos.y);
     };
 
-  const element = container.current ? container : innerRef;
+  useEffect(() => {
+    element.current = container.current ?? innerRef.current;
+  }, [container]);
 
-  useEventListener('mousemove', (ev) => updatePosition(ev, element), element);
+  useEventListener('mousemove', updatePosition, element);
   useEventListener('mouseleave', resetPosition, element);
 
   return (

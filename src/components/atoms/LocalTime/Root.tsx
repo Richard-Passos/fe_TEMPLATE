@@ -3,6 +3,8 @@
 import { DateTimeFormatOptions, useFormatter, useNow } from 'next-intl';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
+import { timeZone } from '@/constants';
+
 type LocalTimeAtomOwnProps = {
   nowOptions?: Parameters<typeof useNow>[0];
   formatOptions?: DateTimeFormatOptions;
@@ -26,6 +28,7 @@ const LocalTimeAtom = (
       {format.dateTime(now, {
         hour: 'numeric',
         minute: 'numeric',
+        timeZone,
         ...formatOptions
       })}
     </span>

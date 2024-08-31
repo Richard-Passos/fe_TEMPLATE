@@ -35,13 +35,13 @@ const BentoGridBlockOrganism = (
         className='w-9/10 max-w-screen-lg'
         templates={data.templates}
       >
-        {data.items.map(({ type, ...props }, i) => {
+        {data.items.map(({ type, id, ...props }, i) => {
           const Card = Cards[type] as ComponentType<any>;
 
           const Item = (
             <BentoGrid.Item
               index={i}
-              {...(!hasAnimation && { key: i })}
+              {...(!hasAnimation && { key: id })}
             >
               <Card {...props} />
             </BentoGrid.Item>
@@ -49,7 +49,7 @@ const BentoGridBlockOrganism = (
 
           if (hasAnimation)
             return (
-              <BentoGrid.ScrollAnimate key={i}>{Item}</BentoGrid.ScrollAnimate>
+              <BentoGrid.ScrollAnimate key={id}>{Item}</BentoGrid.ScrollAnimate>
             );
 
           return Item;

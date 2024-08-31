@@ -30,12 +30,17 @@ const SkillsBlockOrganism = (
       {...props}
     >
       <div className='w-9/10 max-w-screen-xl'>
-        <ul className='m-0 flex max-w-screen-md flex-wrap justify-end gap-xs p-0 sm:ml-auto'>
+        <ul className='m-0 flex max-w-screen-md list-none flex-wrap justify-end gap-xs p-0 sm:ml-auto'>
           {data.items.map((data) => (
-            <SkillCard
-              data={data}
+            <li
+              className='w-full max-w-40'
               key={data.id}
-            />
+            >
+              <SkillCard
+                className='w-full'
+                data={data}
+              />
+            </li>
           ))}
         </ul>
       </div>

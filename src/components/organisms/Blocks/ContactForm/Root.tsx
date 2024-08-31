@@ -3,8 +3,7 @@
 import { forwardRef } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
-import { Lines, ScrollAnimate, Text, Title } from '@/components/atoms';
-import { TextProps } from '@/components/atoms/Text';
+import { Lines, ScrollAnimate, Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import ContactForm, {
   ContactFormProps
@@ -19,7 +18,6 @@ type ContactFormBlockOrganismOwnProps = {
     'fields' | 'to' | 'optionalLabel' | 'messages'
   > & {
     title: TitleProps['children'];
-    description: TextProps['children'];
   };
 };
 

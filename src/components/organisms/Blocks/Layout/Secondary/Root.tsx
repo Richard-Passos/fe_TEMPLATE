@@ -45,14 +45,14 @@ const SecondaryLayoutBlockOrganism = (
               config={lineLeftScrollAnim}
               layout
             >
-              <span className='absolute inset-0 border bg-white dark:bg-black' />
+              <span className='absolute inset-0 border bg-white dark:bg-dark-8' />
             </ScrollAnimate>
           </span>
 
           <Title
             className='break-words'
             component='h2'
-            order={3}
+            order={4}
           >
             {data.title}
           </Title>

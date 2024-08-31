@@ -51,7 +51,7 @@ const ValueCardOrganism = (
         component='h4'
         order={5}
         {...titleProps}
-        className={cn('mt-lg', titleProps?.className)}
+        className={cn('mt-xl', titleProps?.className)}
       >
         {data.title}
       </Title>

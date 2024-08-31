@@ -39,7 +39,7 @@ const ContactFormBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-black max-sm:hidden'>
+      <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden'>
         <ScrollAnimate config={yFullScrollAnim}>
           <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
@@ -47,24 +47,20 @@ const ContactFormBlockOrganism = (
         <span className='absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
-      <div className='max-w-screen-md grow'>
+      <div className='w-full max-w-screen-md grow sm:py-xl'>
         <Title
-          className='sm:max-w-md'
+          className='max-w-md'
           order={3}
         >
           {data.title}
         </Title>
 
-        <Text className='mt-xs text-sm text-dimmed sm:max-w-sm'>
-          {data.description}
-        </Text>
-
         <ContactForm
           className='mt-xl'
           fields={data.fields}
+          messages={data.messages}
           optionalLabel={data.optionalLabel}
           to={data.to}
-          messages={data.messages}
         />
       </div>
     </CleanLayoutBlock>

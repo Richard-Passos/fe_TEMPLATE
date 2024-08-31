@@ -65,7 +65,7 @@ const ServicesBlockOrganism = (
             order={6}
             {...subtitleProps}
             className={cn(
-              'mb-md mr-auto text-dimmed',
+              'mb-md mr-auto uppercase text-dimmed',
               subtitleProps?.className
             )}
           >

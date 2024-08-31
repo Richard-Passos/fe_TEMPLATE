@@ -75,11 +75,11 @@ const ButBlockOrganism = (
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
         <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
           <ScrollAnimate config={ANIMATION_CONFIG.y}>
-            <div className='row-span-2 flex translate-y-[--y] items-center justify-center py-md [clip-path:inset(0_-100%_0_0)]'>
+            <div className='row-span-2 flex items-center justify-center py-md translate-y-[--y] [clip-path:inset(0_-100%_0_0)]'>
               <Text
                 {...titleProps}
                 className={cn(
-                  'relative translate-x-[--x] text-[clamp(8rem,44vw,32rem)]/none font-bold tracking-tighter',
+                  'relative text-[clamp(8rem,44vw,32rem)]/none font-bold uppercase tracking-tighter translate-x-[--x]',
                   titleProps?.className
                 )}
               >

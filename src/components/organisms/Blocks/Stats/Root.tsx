@@ -87,7 +87,7 @@ const StatsBlockOrganism = (
             [data.subtitle]
           )}
 
-          <ul className='m-0 grid w-full list-none gap-sm p-0 md:grid-cols-2'>
+          <ul className='m-0 grid w-full list-none gap-sm p-0 sm:grid-cols-2'>
             {data.items.map((data) => (
               <ScrollAnimate
                 config={ANIMATION_CONFIG.opacity}

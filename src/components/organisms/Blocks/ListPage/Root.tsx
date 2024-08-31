@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
@@ -9,7 +9,7 @@ import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
 type ListPageBlockOrganismOwnProps = {
   data: {
-    items: string[];
+    items: { id: string; text: ReactNode; separator: ReactNode }[];
     action: {
       href: string;
       label: string;
@@ -35,24 +35,24 @@ const ListPageBlockOrganism = (
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
             baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
-            className='text-2xl [--gap:theme(spacing.sm)] sm:text-3xl'
-            key={item}
+            className='text-2xl uppercase [--gap:theme(spacing.sm)] sm:text-3xl'
+            key={item.id}
           >
-            <span>&nbsp;{item}</span>
+            <span>{item.text}</span>
 
-            <span>&nbsp;·</span>
+            <span>{item.separator}</span>
 
-            <span className='opacity-30 dark:opacity-10'>&nbsp;{item}</span>
+            <span className='opacity-30 dark:opacity-10'>{item.text}</span>
 
             <span className='opacity-30 dark:opacity-10 max-sm:hidden'>
-              &nbsp;·
+              {item.separator}
             </span>
 
             <span className='opacity-30 dark:opacity-10 max-sm:hidden'>
-              &nbsp;{item}
+              {item.text}
             </span>
 
-            <span>&nbsp;·</span>
+            <span>{item.separator}</span>
           </ListHorizontalScroll.Item>
         ))}
       </ListHorizontalScroll.Root>

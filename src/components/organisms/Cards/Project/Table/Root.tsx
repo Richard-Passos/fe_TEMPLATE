@@ -26,30 +26,30 @@ const TableProjectCardOrganism = (
   ref: TableProjectCardOrganismProps['ref']
 ) => {
   return (
-    <Link
-      className={cn(
-        'group/item relative font-normal text-current hover:z-10 focus-visible:outline-0',
-        className
-      )}
-      ref={ref}
-      underline='never'
-      {...props}
-    >
-      <Magnetic.Container>
+    <Magnetic.Container>
+      <Link
+        className={cn(
+          'group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0',
+          className
+        )}
+        ref={ref}
+        underline='never'
+        {...props}
+      >
         <CardRoot
           className={cn(
-            'relative flex-row items-center justify-center gap-xs overflow-visible px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
+            'flex-row items-center justify-center gap-xs px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
 
             'group-hover/list:scale-x-90 group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100',
 
             'group-hover/list:[>:not(:hover)_&]:opacity-50'
           )}
         >
-          <Text className='relative z-10 mb-auto inline-flex text-sm font-semibold text-dimmed translate-y-0.5'>
+          <Text className='relative z-20 mb-auto inline-flex text-sm font-semibold text-dimmed translate-y-0.5'>
             {`${data.index + 1}`.padStart(2, '0')}/
           </Text>
 
-          <div className='relative z-10 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
+          <div className='relative z-20 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
             <Title
               className='basis-full sm:basis-1/2'
               order={4}
@@ -68,29 +68,29 @@ const TableProjectCardOrganism = (
               [data.year]
             )}
           </div>
-
-          <Magnetic.Root
-            limit={{ x: 0.2, y: 0.35 }}
-            smoothConfig={{
-              damping: 15,
-              stiffness: 150
-            }}
-          >
-            <div className='pointer-events-none absolute'>
-              <div className='size-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-[transform,opacity] scale-90 group-hover/item:opacity-100 group-hover/item:scale-100 dark:bg-dark-5'>
-                <Image
-                  alt={data.image.alt}
-                  className='object-cover'
-                  height={288}
-                  src={data.image.src}
-                  width={288}
-                />
-              </div>
-            </div>
-          </Magnetic.Root>
         </CardRoot>
-      </Magnetic.Container>
-    </Link>
+
+        <Magnetic.Root
+          limit={{ x: 0.2, y: 0.2 }}
+          smoothConfig={{
+            damping: 15,
+            stiffness: 150
+          }}
+        >
+          <div className='pointer-events-none absolute z-10'>
+            <div className='size-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-5'>
+              <Image
+                alt={data.image.alt}
+                className='object-cover'
+                height={288}
+                src={data.image.src}
+                width={288}
+              />
+            </div>
+          </div>
+        </Magnetic.Root>
+      </Link>
+    </Magnetic.Container>
   );
 };
 

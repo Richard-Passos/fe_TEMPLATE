@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 
 import Button, { ButtonProps } from '@/components/atoms/Button';
-import { useDisclosureContext } from '@/hooks/contexts';
+import { useBooleanContext } from '@/hooks/contexts';
 
 type DrawerTriggerMoleculeOwnProps = {};
 
@@ -14,7 +14,9 @@ const DrawerTriggerMolecule = (
   props: DrawerTriggerMoleculeProps,
   ref: DrawerTriggerMoleculeProps['ref']
 ) => {
-  const { dataState, toggle } = useDisclosureContext();
+  const { value, toggle } = useBooleanContext();
+
+  const dataState = value ? 'open' : 'closed';
 
   return (
     <Button

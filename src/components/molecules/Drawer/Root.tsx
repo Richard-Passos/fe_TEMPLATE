@@ -3,11 +3,9 @@
 import { DrawerRoot, DrawerRootProps } from '@mantine/core';
 import { ReactNode, forwardRef } from 'react';
 
-import DisclosureProvider, {
-  DisclosureProviderProps
-} from '@/Providers/Disclosure';
+import BooleanProvider, { BooleanProviderProps } from '@/Providers/Boolean';
 import { useUpdateEffect } from '@/hooks';
-import { useDisclosureContext } from '@/hooks/contexts';
+import { useBooleanContext } from '@/hooks/contexts';
 import { usePathname } from '@/navigation';
 import { PolymorphicRef } from '@/types';
 
@@ -22,16 +20,18 @@ type DrawerMoleculeProps = DrawerMoleculeOwnProps &
 
 const DrawerMolecule = forwardRef(
   (props: DrawerMoleculeProps, ref: DrawerMoleculeProps['ref']) => {
-    const { isOpen, close, dataState } = useDisclosureContext(),
+    const { value, setFalse } = useBooleanContext(),
       pathname = usePathname();
+
+    const dataState = value ? 'open' : 'closed';
 
     useUpdateEffect(close, [close, pathname]);
 
     return (
       <DrawerRoot
         data-state={dataState}
-        onClose={close}
-        opened={isOpen}
+        onClose={setFalse}
+        opened={value}
         ref={ref}
         {...props}
       />
@@ -47,23 +47,23 @@ type DrawerWithProviderMoleculeOwnProps = {
 
 type DrawerWithProviderMoleculeProps = DrawerWithProviderMoleculeOwnProps &
   Omit<
-    DisclosureProviderProps & DrawerMoleculeProps,
+    BooleanProviderProps & DrawerMoleculeProps,
     keyof DrawerMoleculeOwnProps
   >;
 
 const DrawerWithProviderMolecule = (
-  { defaultIsOpen, trigger, ...props }: DrawerWithProviderMoleculeProps,
+  { defaultValue, trigger, ...props }: DrawerWithProviderMoleculeProps,
   ref: DrawerWithProviderMoleculeProps['ref']
 ) => {
   return (
-    <DisclosureProvider defaultIsOpen={defaultIsOpen}>
+    <BooleanProvider defaultValue={defaultValue}>
       <DrawerMolecule
         ref={ref}
         {...props}
       />
 
       {trigger}
-    </DisclosureProvider>
+    </BooleanProvider>
   );
 };
 

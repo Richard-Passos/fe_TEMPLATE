@@ -48,7 +48,6 @@ const MarqueeCardOrganism = (
                 variant: 'light',
                 color: 'gray'
               })}
-              component='li'
               key={item}
               size='lg'
             >

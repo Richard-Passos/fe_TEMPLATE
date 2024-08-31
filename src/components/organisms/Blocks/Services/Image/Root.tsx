@@ -42,14 +42,15 @@ const ServicesBlockImageOrganism = (
         )}
       >
         <ScrollAnimate config={{ prop: 'y', propPoints: ['-13%', '0%'] }}>
-          <Image
-            alt={data.image.alt}
-            height={605}
-            src={data.image.src}
-            width={465}
-            {...imageProps}
-            className={cn('h-[115%] object-cover', imageProps?.className)}
-          />
+          <div className='absolute h-[115%] w-full'>
+            <Image
+              alt={data.image.alt}
+              fill
+              src={data.image.src}
+              {...imageProps}
+              className={cn('object-cover', imageProps?.className)}
+            />
+          </div>
         </ScrollAnimate>
       </div>
     </div>

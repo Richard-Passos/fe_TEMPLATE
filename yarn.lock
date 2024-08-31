@@ -984,7 +984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^7.11.2":
+"@mantine/hooks@npm:7.11.2":
   version: 7.11.2
   resolution: "@mantine/hooks@npm:7.11.2"
   peerDependencies:
@@ -6181,7 +6181,7 @@ __metadata:
   dependencies:
     "@hookform/resolvers": "npm:^3.9.0"
     "@mantine/core": "npm:^7.11.2"
-    "@mantine/hooks": "npm:^7.11.2"
+    "@mantine/hooks": "npm:7.11.2"
     "@radix-ui/react-slot": "npm:^1.1.0"
     "@reduxjs/toolkit": "npm:^2.2.6"
     "@splidejs/react-splide": "npm:^0.7.12"

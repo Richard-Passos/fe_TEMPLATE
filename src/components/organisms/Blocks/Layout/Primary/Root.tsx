@@ -11,7 +11,7 @@ import PrimaryLayoutBlockHeader, {
 
 type PrimaryLayoutBlockOrganismOwnProps = {
   data: {
-    title: PrimaryLayoutBlockHeaderProps['texts'];
+    title: PrimaryLayoutBlockHeaderProps['title'];
     description?: PrimaryLayoutBlockHeaderProps['description'];
   };
   headerProps?: Partial<PrimaryLayoutBlockHeaderProps>;
@@ -31,7 +31,7 @@ const PrimaryLayoutBlockOrganism = (
     >
       <PrimaryLayoutBlockHeader
         description={data.description}
-        texts={data.title}
+        title={data.title}
         {...headerProps}
         className={cn('mb-[--section-spacing-md]', headerProps?.className)}
       />

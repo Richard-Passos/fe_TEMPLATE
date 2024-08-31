@@ -1,14 +1,15 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
 
-import { lineLeftScrollAnim } from '@/animations/scroll';
-import { ScrollAnimate, Text, Title } from '@/components/atoms';
+import { Text, Title } from '@/components/atoms';
 import { TextProps } from '@/components/atoms/Text';
-import { ScrollTextProps } from '@/components/molecules/ScrollText';
+import { TitleProps } from '@/components/atoms/Title';
 import { cn, renderComp } from '@/utils';
 
 type PrimaryLayoutBlockHeaderOrganismOwnProps = {
-  texts: ScrollTextProps['text'][];
+  title: { id: string; text: ReactNode }[];
   description?: TextProps['children'];
+  titleProps?: Partial<TitleProps>;
+  descriptionProps?: Partial<TextProps>;
 };
 
 type PrimaryLayoutBlockHeaderOrganismProps =
@@ -21,71 +22,49 @@ type PrimaryLayoutBlockHeaderOrganismProps =
 const PrimaryLayoutBlockHeaderOrganism = (
   {
     className,
-    texts,
+    title,
     description,
+    titleProps,
+    descriptionProps,
     ...props
   }: PrimaryLayoutBlockHeaderOrganismProps,
   ref: PrimaryLayoutBlockHeaderOrganismProps['ref']
 ) => {
-  const lastText = texts.at(-1),
-    restTexts = texts.slice(0, -1);
-
   return (
     <header
-      aria-label={texts.join(' ')}
-      className={cn('flex w-9/10 flex-col items-center', className)}
+      className={cn(
+        'flex w-9/10 gap-[--section-spacing-md] max-sm:flex-col sm:items-end',
+        className
+      )}
       ref={ref}
       {...props}
     >
       <Title
-        className='flex w-full flex-col break-words'
         order={2}
+        {...titleProps}
+        className={cn(
+          'shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase',
+          titleProps?.className
+        )}
       >
-        {restTexts.map((text, i) => (
+        {title.map((t) => (
           <span
-            className='flex items-center gap-xl'
-            key={i}
+            className='block odd:-ml-[min(10vw,theme(spacing.20))]'
+            key={t.id}
           >
-            {text}
-
-            <span className='relative h-2 grow'>
-              <ScrollAnimate
-                config={lineLeftScrollAnim}
-                layout
-              >
-                <span className='absolute inset-0 border bg-white dark:bg-black' />
-              </ScrollAnimate>
-            </span>
+            {t.text}
           </span>
         ))}
-
-        <span className='mx-auto flex w-9/10 items-center gap-xl max-sm:first:w-full'>
-          <span>{lastText}</span>
-
-          <span className='relative h-2 grow'>
-            <ScrollAnimate
-              config={lineLeftScrollAnim}
-              layout
-            >
-              <span className='absolute inset-0 border bg-white dark:bg-black' />
-            </ScrollAnimate>
-          </span>
-
-          {renderComp(
-            <Text
-              aria-hidden
-              className='max-w-sm font-display text-sm font-medium leading-relaxed text-dimmed max-lg:hidden'
-              component='span'
-            >
-              {description}
-            </Text>,
-            [description]
-          )}
-        </span>
       </Title>
 
       {renderComp(
-        <Text className='mr-auto mt-sm text-sm text-dimmed sm:ml-[5%] sm:max-w-sm lg:sr-only'>
+        <Text
+          {...descriptionProps}
+          className={cn(
+            'max-w-xs text-sm text-dimmed -translate-y-3.5',
+            descriptionProps?.className
+          )}
+        >
           {description}
         </Text>,
         [description]

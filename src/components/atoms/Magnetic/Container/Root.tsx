@@ -8,7 +8,7 @@ import { PolymorphicRef } from '@/types';
 import { setRefs } from '@/utils';
 
 type MagneticContainerAtomOwnProps = {
-  ref?: PolymorphicRef<any>;
+  ref?: PolymorphicRef<'div'>;
 };
 
 type MagneticContainerAtomProps = MagneticContainerAtomOwnProps &
@@ -18,7 +18,7 @@ const MagneticContainerAtom = (
   props: MagneticContainerAtomProps,
   ref: MagneticContainerAtomProps['ref']
 ) => {
-  const innerRef = useRef<HTMLElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   return (
     <MagneticProvider container={innerRef}>

@@ -8,7 +8,7 @@ import { cn } from '@/utils';
 
 type ImagesBlockImageOrganismOwnProps = {
   data: {
-    image: Pick<ImageProps, 'src' | 'alt' | 'width' | 'height'>;
+    image: Pick<ImageProps, 'src' | 'alt'>;
   };
 };
 
@@ -32,13 +32,14 @@ const ImagesBlockImageOrganism = (
     >
       <div className='relative size-full overflow-hidden rounded-[calc(var(--paper-radius)-var(--card-padding))] bg-gray-1 shadow-2xl dark:bg-dark-5'>
         <ScrollAnimate config={imageYScrollAnim}>
-          <Image
-            alt={data.image.alt}
-            className='h-[115%] object-cover'
-            height={data.image.height}
-            src={data.image.src}
-            width={data.image.width}
-          />
+          <div className='absolute h-[115%] w-full'>
+            <Image
+              alt={data.image.alt}
+              className='object-cover'
+              fill
+              src={data.image.src}
+            />
+          </div>
         </ScrollAnimate>
       </div>
     </CardRoot>

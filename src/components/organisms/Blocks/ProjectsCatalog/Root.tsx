@@ -1,7 +1,7 @@
 import { ReactNode, forwardRef } from 'react';
 
-import { Text, Title } from '@/components/atoms';
-import { TitleProps } from '@/components/atoms/Title';
+import { Text } from '@/components/atoms';
+import { TextProps } from '@/components/atoms/Text';
 import { Catalog } from '@/components/molecules';
 import {
   CatalogEmptyProps,
@@ -19,12 +19,12 @@ import ProjectsCatalogTableBlock, {
 
 type ProjectsCatalogBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
-    subtitle?: ReactNode;
+    description?: ReactNode;
     empty: ReactNode;
     items: any[];
   };
   catalogProps?: Partial<CatalogRootProps>;
-  subtitleProps?: Partial<TitleProps>;
+  descriptionProps?: Partial<TextProps>;
   emptyProps?: Partial<CatalogEmptyProps>;
   tableProps?: Partial<ProjectsCatalogTableBlockProps<unknown>>;
   gridProps?: Partial<ProjectsCatalogGridBlockProps<unknown>>;
@@ -37,7 +37,7 @@ const ProjectsCatalogBlockOrganism = (
   {
     data,
     catalogProps,
-    subtitleProps,
+    descriptionProps,
     emptyProps,
     tableProps,
     gridProps,
@@ -49,7 +49,6 @@ const ProjectsCatalogBlockOrganism = (
     <PrimaryLayoutBlock
       data={{
         title: data.title,
-        description: data.description
       }}
       ref={ref}
       {...props}
@@ -58,27 +57,23 @@ const ProjectsCatalogBlockOrganism = (
         items={data.items}
         {...catalogProps}
         className={cn(
-          'flex w-9/10 max-w-screen-xl gap-md max-md:flex-col',
+          'flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end',
           catalogProps?.className
         )}
       >
         {renderComp(
-          <div className='flex-1'>
-            <Title
-              className='sticky top-xl text-dimmed'
-              component='h3'
-              order={6}
-              {...subtitleProps}
-            >
-              {data.subtitle}
-            </Title>
-          </div>,
-          [data.subtitle]
+          <Text
+            className='w-full max-w-48 text-dimmed md:max-w-36'
+            {...descriptionProps}
+          >
+            {data.description}
+          </Text>,
+          [data.description]
         )}
 
-        <div className='flex max-w-screen-md grow flex-col items-center md:ml-auto'>
+        <div className='flex max-w-screen-md grow flex-col items-center'>
           <Catalog.Empty {...emptyProps}>
-            <Text className='text-center sm:max-w-2xl'>{data.empty}</Text>
+            <Text className='max-w-sm text-center'>{data.empty}</Text>
           </Catalog.Empty>
 
           <ProjectsCatalogTableBlock

@@ -2,8 +2,8 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "<Start>Turning heads</Start> <End><em>&</em> <span>conquering</span></End> <Center><span>hearts</span> <Description></Description></Center>",
-        "description": "Hey there! I’m Richard an awesome full stack developer — who cares building solid and scalable products with a great user experience.",
+        "title": "<Start>Gerando impacto</Start> <End><em>&</em> <span>conquistando</span></End> <Center><span>corações</span> <Description></Description></Center>",
+        "description": "Olá! Eu sou Richard, um incrível desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
         "left": {
           "src": "/icons/smile.svg",
           "animation": "rotateRight"
@@ -15,20 +15,20 @@
       "blocks": {
         "selectedProjects": {
           "title": {
-            "0": "Wor<em>k</em>",
-            "1": "<em>I</em>nsight"
+            "0": "Visã<em>o</em> <em>da</em>",
+            "1": "<em>C</em>arreira"
           },
-          "description": "Here are some examples of <text>my best works</text>",
-          "empty": "Sorry, selected projects not found."
+          "description": "Alguns exemplos dos <text>meus melhores trabalhos</text>",
+          "empty": "Desculpe, projetos selecionados não encontrados."
         },
         "toExpect": {
-          "title": "Here’s what you can expect from me",
-          "description": "<p><text>A thoughtful collaborator</text> who thrives on finding innovative solutions and textbracing <text>new perspectives</text>. My approach is grounded in <text>keen observation</text> and <text>understanding</text> — allowing me to effectively navigate and connect <text>complex ideas</text>.</p> <p>I aim to blend effortlessly into your work culture, contributing to a <text>vibrant</text> and <text>synergistic atmosphere</text> where <text>ideas</text> and <text>goals</text> come together <text>seamlessly</text>.</p>"
+          "title": "O que você pode esperar de mim",
+          "description": "<p><text>Um colaborador dedicado</text> que se destaca na busca de soluções inovadoras e na adoção de <text>novas perspectivas</text>. Minha abordagem é fundamentada em <text>observação detalhada</text> e <text>compreensão profunda</text>, o que me permite navegar e conectar <text>ideias complexas</text> com eficiência.</p> <p>Valorizo a integração com a cultura de trabalho da equipe, contribuindo ativamente para um ambiente <text>dinâmico</text> e <text>colaborativo</text>, onde ideias e objetivos se alinham para alcançar <text>resultados excepcionais</text>.</p>"
         },
         "listWorkPage": {
           "items": {
             "0": {
-              "text": "Mission",
+              "text": "Missão",
               "separator": "·"
             },
             "1": {
@@ -36,97 +36,75 @@
               "separator": "·"
             },
             "2": {
-              "text": "Services",
+              "text": "Serviços",
               "separator": "·"
             }
           },
           "action": {
-            "label": "Explore"
+            "label": "Explorar"
           }
         },
         "but": {
-          "title": "But",
-          "description": "it’s not just about the tech."
+          "title": "Mas",
+          "description": "não é só sobre tecnologia."
         },
         "aboutBentoGrid": {
-          "title": { "0": "Perso<em>n</em>", "1": "<em>I</em>nsight" },
-          "description": "",
-          "templates": {
-            "base": {
-              "0": "item-0",
-              "1": "item-1",
-              "2": "item-2",
-              "3": "item-3",
-              "4": "item-4",
-              "5": "item-5",
-              "6": "item-6"
-            },
-            "sm": {
-              "0": "item-0 item-0",
-              "1": "item-1 item-2",
-              "2": "item-3 item-4",
-              "3": "item-5 item-6"
-            },
-            "lg": {
-              "0": ". item-0 item-0",
-              "1": ". item-0 item-0",
-              "2": "item-1 item-2 item-3",
-              "3": "item-1 item-2 item-4",
-              "4": "item-5 item-5 item-6",
-              "5": "item-5 item-5 item-6"
-            }
+          "title": {
+            "0": "Visã<em>o</em> <em>da</em>",
+            "1": "<em>P</em>essoa"
           },
+          "description": "",
           "items": {
             "description": {
-              "title": "#about",
-              "description": "🤟 <text><strong>Hey —</strong></text> I’m Richard an awesome full stack developer based in <country></country>. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games."
+              "title": "#sobre",
+              "description": "🤟 <text><strong>Olá —</strong></text> Eu sou Richard, um incrível desenvolvedor full stack do <country></country>. Quando não estou programando, provavelmente estou no mundo dos jogos — sou um grande fã, especialmente de jogos rogue-like."
             },
             "location": {
               "icon": "/icons/globe.svg",
-              "description": "Based in { country }, { gmt }"
+              "description": "Localizado no { country }, { gmt }"
             },
             "values": {
               "icon": "/icons/fingerprint.svg",
-              "title": "My values"
+              "title": "Meus valores"
             },
             "improving": {
               "icon": "/icons/rocket.svg",
-              "description": "Improving a little bit every day."
+              "description": "Melhorando um pouco a cada dia."
             },
             "hobbie": {
               "icon": "/icons/game-controller.svg",
-              "description": "I love to play games."
+              "description": "Adoro jogar video-game."
             },
             "localTime": {
-              "title": "My local time"
+              "title": "Meu horário local"
             },
             "buyCoffee": {
               "icon": "/icons/mug.svg",
-              "title": "Buy me a coffee"
+              "title": "Me compre um café"
             }
           }
         },
         "listAboutPage": {
           "items": {
             "0": {
-              "text": "Background",
+              "text": "História",
               "separator": "·"
             },
             "1": {
-              "text": "Hobbies",
+              "text": "Personalidade",
               "separator": "·"
             },
             "2": {
-              "text": "Personality",
+              "text": "Hobbies",
               "separator": "·"
             }
           },
           "action": {
-            "label": "Explore"
+            "label": "Explorar"
           }
         },
         "cta": {
-          "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let’s team up and...",
+          "description": "Pronto para elevar suas ótimas ideias ao destaque digital com um dev que traz tanto habilidade quanto paixão para a mesa? Vamos nos unir e...",
           "icons": {
             "left": {
               "src": "/icons/smile.svg",
@@ -142,11 +120,11 @@
     },
     "work": {
       "hero": {
-        "title": "<Start>Beyond code</Start> <End><span>boundaries</span> <em>&</em></End> <Center><span>results</span> <Description></Description></Center>",
-        "description": "Helping brands achieve digital prominence. I bring a passion for cutting-edge technology and  crafting high-impact, user-centered solutions.",
+        "title": "<Start>Além de tech</Start> <End><span>algoritmos</span> <em>&</em></End> <Center><span>resultados</span> <Description></Description></Center>",
+        "description": "Ajudando marcas a alcançar o destaque digital. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.",
         "left": {
           "type": "text",
-          "text": "Available to work"
+          "text": "Disponível para trabalhar"
         },
         "right": {
           "type": "icon",
@@ -156,48 +134,48 @@
       },
       "blocks": {
         "mission": {
-          "description": "<strong>That’s my mission —</strong> Each line of code refines my skills, crafting <strong>high-impact solutions</strong>. Every project is an opportunity to <strong>inspire</strong> clients, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
+          "description": "<strong>Essa é minha missão —</strong> Cada linha de código <strong>melhora minhas habilidades</strong>, criando soluções de alto impacto. Cada projeto é uma oportunidade para <strong>inspirar clientes</strong>, colegas e a comunidade, promovendo um impacto positivo duradouro. A <strong>repetição gera excelência</strong>, impulsionando o destaque digital.",
           "items": {
             "0": {
-              "text": "Improve",
+              "text": "Melhorar",
               "icon": "/icons/rocket.svg"
             },
             "1": {
-              "text": "Inspire",
+              "text": "Inspirar",
               "icon": "/icons/globe.svg"
             },
             "2": {
-              "text": "Repeat",
+              "text": "Repetir",
               "icon": "/icons/smile.svg"
             }
           }
         },
         "services": {
           "title": {
-            "0": "Service<em>s</em>"
+            "0": "Serviço<em>s</em>"
           },
           "description": "",
-          "subtitle": "I could help you with...",
+          "subtitle": "Eu poderia te ajudar com...",
           "image": {
             "src": "/images/services.jpeg",
-            "alt": "Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms."
+            "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados."
           },
           "action": {
-            "label": "Contact me"
+            "label": "Entre em contato"
           }
         },
         "selectedProjects": {
-          "title": { "0": "Selecte<em>d</em>", "1": "<em>W</em>orks" },
+          "title": { "0": "Projeto<em>s</em>", "1": "<em>D</em>estaque" },
           "description": "",
-          "empty": "Sorry, selected projects not found."
+          "empty": "Desculpe, projetos selecionados não encontrados."
         },
         "whyMe": {
           "title": {
-            "0": "Why I’’<em>m</em> ",
-            "1": "<em>T</em>he fit<em>?</em>"
+            "0": "Por qu<em>e</em>",
+            "1": "<em>S</em>ou o fit<em>?</em>"
           },
-          "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
-          "subtitle": "Some statistics..."
+          "description": "Após projetos impactantes e uma personalidade que conquista corações a apenas <contact>um só clique</contact>. Escolha-me para alcançar resultados excelentes.",
+          "subtitle": "Algumas estatísticas..."
         },
         "hardSkills": {
           "title": "Hard skills"
@@ -206,7 +184,7 @@
           "title": "Soft skills"
         },
         "values": {
-          "title": "My values",
+          "title": "Meus valores",
           "icons": {
             "left": {
               "src": "/icons/globe.svg",
@@ -220,13 +198,13 @@
         }
       },
       "metadata": {
-        "title": "Work",
+        "title": "Trabalho",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "about": {
       "hero": {
-        "title": "Person <em>who</em> wins hearts"
+        "title": "Quer mai<em>s</em> <em>s</em>obre mim<em>?</em>"
       },
       "blocks": {
         "images": {
@@ -234,43 +212,49 @@
             "0": {
               "image": {
                 "src": "/images/about-01.jpeg",
-                "alt": "Richard Passos, a full-stack developer with short hair, stands against a wooden wall, wearing a light-colored T-shirt. Richard Passos has his arms crossed, showcasing a watch and a necklace."
+                "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, está contra uma parede de madeira, vestindo uma camiseta clara. Richard Passos está com os braços cruzados, mostrando um relógio e um colar."
               }
             },
             "1": {
               "image": {
                 "src": "/images/about-02.jpeg",
-                "alt": "Richard Passos, a full-stack developer stands against a plain background wearing a black leather jacket over a white shirt, with their left hand in the jacket pocket."
+                "alt": "Richard Passos, um desenvolvedor full stack, está contra um fundo neutro, vestindo uma jaqueta de couro preta sobre uma camisa branca, com a mão esquerda no bolso da jaqueta."
               }
             },
             "2": {
               "image": {
                 "src": "/images/about-03.jpeg",
-                "alt": "Richard Passos, a full-stack developer wearing a light gray hoodie with ’Brooklyn’ and other text printed on it stands against a wooden wall, looking to the left."
+                "alt": "Richard Passos, um desenvolvedor full stack vestindo um moletom cinza claro com 'Brooklyn' e outros textos impressos, está contra uma parede de madeira, olhando para a esquerda."
               }
             }
           }
         },
         "about": {
           "title": {
-            "0": "Who I <em>a</em>m"
+            "0": "Quem so<em>u</em>"
           },
           "description": "",
-          "intro": {
-            "title": "Introducion",
-            "description": "<p>I’ve always been a curious and dedicated person, but for a while, I felt lost without a clear direction or passion. It wasn’t until I faced life that I discovered my true passion for development, which felt like a light bulb moment.</p> <p>This newfound interest was a turning point for me. Learning about the world of development sparked a deep excitement and sense of purpose. Since then. I now have a clear sense of my dreams and purpose, and I know exactly where I wanna be.</p>"
-          },
-          "personality": {
-            "title": "Personality",
-            "description": "<p>I’m a curious and self-taught individual who loves exploring new perspectives and cultures. With a knack for problem-solving and a detail-oriented mindset, I turn complex ideas into clear, practical answers.</p>"
-          },
-          "mission": {
-            "title": "Mission",
-            "description": "<p>I’ve a mission to learn, cultivate, and make the most of. Learn from life and people. Cultivate genuine relationships. Make the most of opportunities and moments.</p>"
+          "texts": {
+            "intro": {
+              "title": "Introdução",
+              "description": "<p>Sempre fui uma pessoa curiosa e dedicada, mas por um tempo, me senti perdido sem uma direção ou paixão clara. Foi só quando enfrentei a vida que descobri minha verdadeira paixão pelo desenvolvimento, que foi como um momento de epifania.</p> <p>Esse novo interesse foi um ponto de virada para mim. Aprender sobre o mundo do desenvolvimento despertou um profundo entusiasmo e senso de propósito. Agora eu tenho meus sonhos, propósitos, e sei exatamente onde quero estar.</p>"
+            },
+            "personality": {
+              "title": "Personalidade",
+              "description": "<p>Sou uma pessoa curiosa e autodidata que adora explorar novas perspectivas e culturas. Com uma habilidade para resolver problemas e uma mentalidade detalhista, transformo ideias complexas em respostas claras e práticas.</p>"
+            },
+            "mission": {
+              "title": "Missão",
+              "description": "<p>Tenho uma missão de aprender, cultivar e aproveitar ao máximo. Aprender com a vida e as pessoas. Cultivar relacionamentos genuínos. Aproveitar ao máximo as oportunidades e os momentos.</p>"
+            },
+            "hobbies": {
+              "title": "Hobbies",
+              "description": "<p>Jogar, assistir séries/filmes, melhorar habilidades, conhecer novas culturas e aproveitar momentos de qualidade com amigos próximos.</p>"
+            }
           }
         },
         "values": {
-          "title": "My values",
+          "title": "Meus valores",
           "icons": {
             "left": {
               "src": "/icons/smile.svg",
@@ -284,155 +268,155 @@
         }
       },
       "metadata": {
-        "title": "About",
+        "title": "Sobre",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "contact": {
       "hero": {
-        "title": "Wanna <em>turn</em> some heads<em>?</em>"
+        "title": "Quer gera<em>r</em> <em>i</em>mpacto<em>?</em>"
       },
       "blocks": {
         "contactForm": {
-          "title": "No worries — I’ve got it covered",
-          "optionalLabel": "optional",
+          "title": "Sem estresse — Eu cuido disso",
+          "optionalLabel": "opcional",
           "to": {
-            "label": "To",
-            "subject": "👋 Hey { name }, I’d like to hire you!"
+            "label": "Para",
+            "subject": "👋 Olá { name }, eu gostaria de contratá-lo!"
           },
           "messages": {
-            "loading": "Sending email...",
-            "success": "Email sent!",
-            "error": "Oops.. Please try again."
+            "loading": "Enviando email...",
+            "success": "Email enviado!",
+            "error": "Oops... Por favor, tente novamente."
           },
           "fields": {
             "name": {
-              "label": "Name",
-              "placeholder": "John Doe",
+              "label": "Nome",
+              "placeholder": "Fulano Silva",
               "defaultValue": "",
               "errors": {
-                "min": "Please, that can’t be your name."
+                "min": "Por favor, esse não pode ser seu nome."
               }
             },
             "email": {
               "label": "Email",
-              "placeholder": "john@doe.com",
+              "placeholder": "fulano@silva.com",
               "defaultValue": "",
               "errors": {
-                "email": "That email adress looks a bit weird."
+                "email": "Esse email parece um pouco estranho."
               }
             },
             "subject": {
-              "label": "Subject",
-              "placeholder": "I wanna hire you!",
+              "label": "Assunto",
+              "placeholder": "Quero te contratar!",
               "defaultValue": ""
             },
             "service": {
-              "label": "Service",
-              "placeholder": "Select a service...",
+              "label": "Serviço",
+              "placeholder": "Selecione um serviço...",
               "defaultValue": ""
             },
             "message": {
-              "label": "Message",
-              "placeholder": "👋 Hey { name }! I would love if you could help me with...",
+              "label": "Mensagem",
+              "placeholder": "👋 Olá { name }! Eu adoraria se você pudesse me ajudar com...",
               "defaultValue": "",
               "errors": {
-                "min": "Come on... you can do better than that.",
-                "max": "Come on... take it easy."
+                "min": "Vamos lá... você pode fazer melhor que isso.",
+                "max": "Qual é... pega leve."
               }
             },
             "submit": {
-              "label": "Send message"
+              "label": "Enviar mensagem"
             }
           }
         },
         "services": {
           "title": {
-            "0": "Ser<em>vi</em>ces"
+            "0": "Ser<em>vi</em>ços"
           },
           "description": "",
-          "subtitle": "I could help you with...",
+          "subtitle": "Eu poderia te ajudar com...",
           "image": {
             "src": "/images/services.jpeg",
-            "alt": "Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms."
+            "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados."
           },
           "action": {
-            "label": "Contact me"
+            "label": ""
           }
         }
       },
       "metadata": {
-        "title": "Contact",
+        "title": "Contato",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "singleProject": {
       "hero": {
-        "title": "Single Project Page"
+        "title": "Página de Projeto Único"
       },
       "blocks": {}
     },
     "notFound": {
       "hero": {
-        "title": "Not Found!"
+        "title": "Não Encontrado!"
       },
       "blocks": {},
       "metadata": {
-        "title": "Not Found",
+        "title": "Não Encontrado",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo."
       }
     },
     "error": {
       "hero": {
-        "title": "Error!"
+        "title": "Erro!"
       },
       "blocks": {}
     }
   },
   "header": {
     "menu": {
-      "title": "The Portfolio",
+      "title": "O Portfólio",
       "label": "Menu",
       "open": {
-        "label": "Openenu"
+        "label": "Abrir menu"
       },
       "close": {
-        "label": "Closeenu"
+        "label": "Fechar menu"
       }
     },
     "nav": {
       "home": {
         "href": "/",
-        "label": "Home"
+        "label": "Início"
       },
       "work": {
         "href": "/work",
-        "label": "Work"
+        "label": "Trabalho"
       },
       "about": {
         "href": "/about",
-        "label": "About"
+        "label": "Sobre"
       },
       "contact": {
         "href": "/contact",
-        "label": "Contact"
+        "label": "Contato"
       }
     },
     "locale": {
-      "label": "Your locale"
+      "label": "Sua localidade"
     }
   },
   "footer": {
     "cta": {
-      "title": "Let’s turn some heads",
-      "subtitle": "Is your great ideas ready?",
+      "title": "Vamos gerar impacto",
+      "subtitle": "Suas ótimas ideias estão prontas?",
       "action": {
-        "label": "Get in touch"
+        "label": "Entre em contato"
       }
     },
     "locationSeparator": "—",
-    "description": "The full stack developer — who cares building solid and scalable products with a great user experience.",
-    "madeBy": "Made with ❤️ by <creator>Richard</creator>",
+    "description": "O dev full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
+    "madeBy": "Feito com ❤️ por <creator>Richard</creator>",
     "copyright": "© 2024 <legal>Legal</legal>"
   },
   "personal": {
@@ -441,8 +425,8 @@
       "last": "Passos"
     },
     "email": "hi.richardp@gmail.com",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
-    "availability": "Available to work",
+    "description": "Richard Passos é um desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
+    "availability": "Disponível para trabalhar",
     "logo": {
       "label": "Richard Passos",
       "primary": "/icons/logo-a.svg",
@@ -450,7 +434,7 @@
       "favicon": "/icons/favicon.ico"
     },
     "location": {
-      "country": "Brazil",
+      "country": "Brasil",
       "state": "RS",
       "gmt": "GMT-3"
     },
@@ -478,170 +462,153 @@
   },
   "services": {
     "frontend": {
-      "title": "Front end",
-      "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
+      "title": "Front End",
+      "description": "Desenvolvo interfaces de usuário com atenção meticulosa aos detalhes, focando em interações suaves e micro animações envolventes para melhorar a experiência do usuário."
     },
     "backend": {
-      "title": "Back end",
-      "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
+      "title": "Back End",
+      "description": "Construo sistemas back-end confiáveis que impulsionam a funcionalidade da sua plataforma, enfatizando a gestão eficiente de dados e soluções escaláveis para apoiar seu crescimento."
     },
     "fullstack": {
-      "title": "Full stack",
-      "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
+      "title": "Full Stack",
+      "description": "Integro soluções de ponta a ponta usando tecnologias front e back end, entregando resultados que aprimoram a experiência do usuário, escalabilidade e desempenho geral."
     }
   },
   "stats": {
-    "0": {
-      "title": "Projects \ncompleted",
+    "projectsCompleted": {
+      "title": "Projetos \ncompletados",
       "value": "10ᐩ"
     },
-    "1": {
-      "title": "Years of \nexperience",
+    "yearExperience": {
+      "title": "Anos de \nexperiência",
       "value": "1ᐩ"
     },
-    "2": {
-      "title": "Great \nprojects",
+    "greateProjects": {
+      "title": "Ótimos \nprojetos",
       "value": "100%"
     },
-    "3": {
-      "title": "On-time \ndeliveries",
+    "ontimeDeliveries": {
+      "title": "Entregas \npontuais",
       "value": "100%"
     }
   },
   "values": {
     "work": {
-      "0": {
+      "learning": {
         "icon": "/icons/graduation-cap.svg",
-        "title": "Learning",
-        "description": "Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices."
+        "title": "Aprendizado",
+        "description": "Adoto uma abordagem de aprendizado contínuo para me manter atualizado com novas tecnologias, frameworks e melhores práticas."
       },
-      "1": {
-        "icon": "/icons/trophy.svg",
-        "title": "Excellence",
-        "description": "Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions."
+      "resilience": {
+        "icon": "/icons/rocket.svg",
+        "title": "Resiliência",
+        "description": "Habilidade de superar desafios e contratempos mantendo o foco e a motivação para alcançar resultados de alta qualidade."
       },
-      "2": {
+      "qualityOriented": {
         "icon": "/icons/check-badge.svg",
-        "title": "Quality-oriented",
-        "description": "Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions."
+        "title": "Orientado à Qualidade",
+        "description": "Comprometido com altos padrões em todos os aspectos do desenvolvimento para garantir a entrega de soluções excepcionais."
       },
-      "3": {
+      "customerOriented": {
         "icon": "/icons/smile.svg",
-        "title": "Customer-oriented",
-        "description": "Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded."
+        "title": "Orientado ao Cliente",
+        "description": "Foco nas necessidades e expectativas do usuário final para criar software que atenda ou supere seus requisitos."
       }
     },
     "personal": {
-      "0": {
+      "integrity": {
         "icon": "/icons/shield.svg",
-        "title": "Integrity",
-        "description": "I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships."
+        "title": "Integridade",
+        "description": "Mantenho-me fiel aos meus valores, agindo com honestidade e transparência. Isso ajuda a construir relacionamentos fortes e genuínos."
       },
-      "1": {
+      "curiosity": {
         "icon": "/icons/globe.svg",
-        "title": "Curiosity",
-        "description": "My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth."
+        "title": "Curiosidade",
+        "description": "Minha curiosidade me impulsiona a explorar novas ideias e aprender com desafios. Cada oportunidade é uma chance para descoberta e crescimento."
       },
-      "2": {
+      "respect": {
         "icon": "/icons/puzzle.svg",
-        "title": "Respect",
-        "description": "I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience."
+        "title": "Respeito",
+        "description": "Valorizo as pessoas ao meu redor e suas perspectivas únicas. Estou aberto a ouvir e aprender, reconhecendo a importância de cada voz."
       },
-      "3": {
+      "gratitude": {
         "icon": "/icons/smile.svg",
-        "title": "Gratitude",
-        "description": "I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment."
+        "title": "Gratidão",
+        "description": "Mantenho uma mentalidade de gratidão, apreciando as pequenas coisas da vida. A gratidão me ajuda a permanecer motivado e realizado."
       }
     }
   },
   "skills": {
     "hard": {
-      "0": {
+      "reactJS": {
         "title": "React.js",
-        "icon": "/icons/react.svg",
-        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
+        "icon": "/icons/react.svg"
       },
-      "1": {
+      "nodeJS": {
         "title": "Node.js",
-        "icon": "/icons/nodejs.svg",
-        "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
+        "icon": "/icons/nodejs.svg"
       },
-      "2": {
+      "reactNative": {
         "title": "React Native",
-        "icon": "/icons/react.svg",
-        "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
+        "icon": "/icons/react.svg"
       },
-      "3": {
+      "nextJS": {
         "title": "Next.js",
-        "icon": "/icons/nextjs.svg",
-        "description": "React framework for building server-rendered and statically-generated web applications."
+        "icon": "/icons/nextjs.svg"
       },
-      "4": {
-        "title": "JavaScript",
-        "icon": "/icons/javascript.svg",
-        "description": "Backbone of dynamic web development, enabling interactive and responsive user experiences."
+      "TypeScript": {
+        "title": "TypeScript",
+        "icon": "/icons/javascript.svg"
       },
-      "5": {
+      "jest": {
         "title": "Jest",
-        "icon": "/icons/jest.svg",
-        "description": "A powerful JavaScript testing framework for seamless unit and integration testing."
+        "icon": "/icons/jest.svg"
       },
-      "6": {
+      "mongoDB": {
         "title": "MongoDB",
-        "icon": "/icons/mongodb.svg",
-        "description": "A powerful, flexible NoSQL database solution for modern application development."
+        "icon": "/icons/mongodb.svg"
       },
-      "7": {
+      "git": {
         "title": "Git",
-        "icon": "/icons/git.svg",
-        "description": "Version control system for efficient collaboration and code management."
+        "icon": "/icons/git.svg"
       },
-      "8": {
+      "tailwindCSS": {
         "title": "TailwindCSS",
-        "icon": "/icons/tailwindcss.svg",
-        "description": "Utility-first CSS framework for rapid development."
+        "icon": "/icons/tailwindcss.svg"
       },
-      "9": {
+      "styledComponents": {
         "title": "Styled-components",
-        "icon": "/icons/styled-components.svg",
-        "description": "CSS-in-JS for seamless styling and component-based design."
+        "icon": "/icons/styled-components.svg"
       }
     },
     "soft": {
-      "1": {
-        "title": "Problem-solving",
-        "icon": "/icons/puzzle.svg",
-        "description": "Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
+      "problemSolving": {
+        "title": "Resolução de Problemas",
+        "icon": "/icons/puzzle.svg"
       },
-      "2": {
-        "title": "Detail-oriented",
-        "icon": "/icons/eye.svg",
-        "description": "Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
+      "detailOriented": {
+        "title": "Atenção aos Detalhes",
+        "icon": "/icons/eye.svg"
       },
-      "3": {
-        "title": "Communication",
-        "icon": "/icons/chat.svg",
-        "description": "Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
+      "communication6": {
+        "title": "Comunicação",
+        "icon": "/icons/chat.svg"
       },
-      "4": {
-        "title": "Adaptability",
-        "icon": "/icons/adjustments.svg",
-        "description": "Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
+      "adaptability": {
+        "title": "Adaptabilidade",
+        "icon": "/icons/adjustments.svg"
       },
-      "5": {
-        "title": "Time management",
-        "icon": "/icons/calendar.svg",
-        "description": "Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
+      "timeManagement": {
+        "title": "Gestão do Tempo",
+        "icon": "/icons/calendar.svg"
       },
-      "6": {
-        "title": "Critical thinking",
-        "icon": "/icons/compass.svg",
-        "description": "Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
+      "criticalThinking": {
+        "title": "Pensamento Crítico",
+        "icon": "/icons/compass.svg"
       },
-      "7": {
-        "title": "Synthetic thinking",
-        "icon": "/icons/share.svg",
-        "description": "Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
+      "syntheticThinking": {
+        "title": "Pensamento Sintético",
+        "icon": "/icons/share.svg"
       }
     }
   }

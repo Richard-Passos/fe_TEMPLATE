@@ -31,7 +31,7 @@ const SecondaryHeroOrganism = (
     >
       <div className='relative w-9/10 max-w-screen-lg pb-[calc(theme(spacing.2xl)*1.5)] pt-2xl'>
         <Title
-          className='relative z-10 break-words uppercase max-sm:max-w-md sm:max-w-[75%]'
+          className='relative z-10 max-w-md break-words uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]'
           order={1}
         >
           {data.title}

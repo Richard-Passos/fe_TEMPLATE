@@ -122,7 +122,10 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
               title: gt(`services.${key}.title`),
               description: gt(`services.${key}.description`)
-            }))
+            })),
+            action: {
+              label: t('blocks.services.action.label')
+            }
           }
         }
       ]}

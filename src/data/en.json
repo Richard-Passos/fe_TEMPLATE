@@ -51,35 +51,10 @@
         "aboutBentoGrid": {
           "title": { "0": "Perso<em>n</em>", "1": "<em>I</em>nsight" },
           "description": "",
-          "templates": {
-            "base": {
-              "0": "item-0",
-              "1": "item-1",
-              "2": "item-2",
-              "3": "item-3",
-              "4": "item-4",
-              "5": "item-5",
-              "6": "item-6"
-            },
-            "sm": {
-              "0": "item-0 item-0",
-              "1": "item-1 item-2",
-              "2": "item-3 item-4",
-              "3": "item-5 item-6"
-            },
-            "lg": {
-              "0": ". item-0 item-0",
-              "1": ". item-0 item-0",
-              "2": "item-1 item-2 item-3",
-              "3": "item-1 item-2 item-4",
-              "4": "item-5 item-5 item-6",
-              "5": "item-5 item-5 item-6"
-            }
-          },
           "items": {
             "description": {
               "title": "#about",
-              "description": "🤟 <text><strong>Hey —</strong></text> I’m Richard an awesome full stack developer based in <country></country>. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games."
+              "description": "🤟 <text><strong>Hey —</strong></text> I’m Richard an awesome full stack developer from <country></country>. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games."
             },
             "location": {
               "icon": "/icons/globe.svg",
@@ -126,7 +101,7 @@
           }
         },
         "cta": {
-          "description": "Ready to fly your great ideas to digital prominance with a developer who brings both skill and passion to the table? Let’s team up and...",
+          "description": "Ready to turn your great ideas into digital prominance with a developer who brings both skill and passion to the table? Let’s team up and...",
           "icons": {
             "left": {
               "src": "/icons/smile.svg",
@@ -156,7 +131,7 @@
       },
       "blocks": {
         "mission": {
-          "description": "<strong>That’s my mission —</strong> Each line of code refines my skills, crafting <strong>high-impact solutions</strong>. Every project is an opportunity to <strong>inspire</strong> clients, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
+          "description": "<strong>That’s my mission —</strong> Each line of code <strong>improve my skills</strong>, crafting high-impact solutions. Every project is an opportunity to <strong>inspire clients</strong>, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
           "items": {
             "0": {
               "text": "Improve",
@@ -226,7 +201,7 @@
     },
     "about": {
       "hero": {
-        "title": "Person <em>who</em> wins hearts"
+        "title": "Gotta kno<em>w</em> <em>m</em>e better<em>?</em>"
       },
       "blocks": {
         "images": {
@@ -256,17 +231,23 @@
             "0": "Who I <em>a</em>m"
           },
           "description": "",
-          "intro": {
-            "title": "Introducion",
-            "description": "<p>I’ve always been a curious and dedicated person, but for a while, I felt lost without a clear direction or passion. It wasn’t until I faced life that I discovered my true passion for development, which felt like a light bulb moment.</p> <p>This newfound interest was a turning point for me. Learning about the world of development sparked a deep excitement and sense of purpose. Since then. I now have a clear sense of my dreams and purpose, and I know exactly where I wanna be.</p>"
-          },
-          "personality": {
-            "title": "Personality",
-            "description": "<p>I’m a curious and self-taught individual who loves exploring new perspectives and cultures. With a knack for problem-solving and a detail-oriented mindset, I turn complex ideas into clear, practical answers.</p>"
-          },
-          "mission": {
-            "title": "Mission",
-            "description": "<p>I’ve a mission to learn, cultivate, and make the most of. Learn from life and people. Cultivate genuine relationships. Make the most of opportunities and moments.</p>"
+          "texts": {
+            "intro": {
+              "title": "Introducion",
+              "description": "<p>I’ve always been a curious and dedicated person, but for a while, I felt lost without a clear direction or passion. It wasn’t until I faced life that I discovered my true passion for development, which felt like a light bulb moment.</p> <p>This newfound interest was a turning point for me. Learning about the world of development sparked a deep excitement and sense of purpose. Now I have my dreams, purposes, and I know exactly where I wanna be.</p>"
+            },
+            "personality": {
+              "title": "Personality",
+              "description": "<p>I’m a curious and self-taught individual who loves exploring new perspectives and cultures. With a knack for problem-solving and a detail-oriented mindset, I turn complex ideas into clear, practical answers.</p>"
+            },
+            "mission": {
+              "title": "Mission",
+              "description": "<p>I’ve a mission to learn, cultivate, and make the most of. Learn from life and people. Cultivate genuine relationships. Make the most of opportunities and moments.</p>"
+            },
+            "hobbies": {
+              "title": "Hobbies",
+              "description": "<p>Gaming, watching series/movies, improving skills, getting into new cultures and enjoying quality time with close friends.</p>"
+            }
           }
         },
         "values": {
@@ -290,7 +271,7 @@
     },
     "contact": {
       "hero": {
-        "title": "Wanna <em>turn</em> some heads<em>?</em>"
+        "title": "Wanna tur<em>n</em>  <em>s</em>ome heads<em>?</em>"
       },
       "blocks": {
         "contactForm": {
@@ -357,7 +338,7 @@
             "alt": "Richard Passos, a full-stack developer with short hair, wearing a black leather jacket and white shirt, stands against a plain background, crossing his arms."
           },
           "action": {
-            "label": "Contact me"
+            "label": ""
           }
         }
       },
@@ -441,7 +422,7 @@
       "last": "Passos"
     },
     "email": "hi.richardp@gmail.com",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.",
+    "description": "Richard Passos is a full stack developer — who cares building solid and scalable products with a great user experience.",
     "availability": "Available to work",
     "logo": {
       "label": "Richard Passos",
@@ -478,170 +459,153 @@
   },
   "services": {
     "frontend": {
-      "title": "Front end",
-      "description": "I craft captivating user interfaces with pixel-perfect precision, prioritizing seamless interactions and delightful micro animations to elevate user engagement."
+      "title": "Front End",
+      "description": "I build user interfaces with meticulous attention to detail, focusing on smooth interactions and engaging micro animations to enhance user experience."
     },
     "backend": {
-      "title": "Back end",
-      "description": "I engineer robust back-end systems that power your platform with efficiency and reliability, ensuring seamless data management and scalable functionality."
+      "title": "Back End",
+      "description": "I build reliable back-end systems that drive your platform's functionality, emphasizing efficient data management and scalable solutions to support your growth."
     },
     "fullstack": {
-      "title": "Full stack",
-      "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies to deliver high-impact results that prioritize user experience, scalability, and performance, ensuring a seamless digital experience."
+      "title": "Full Stack",
+      "description": "I integrate end-to-end solutions using cutting-edge front and back end technologies, delivering results that enhance user experience, scalability, and overall performance."
     }
   },
   "stats": {
-    "0": {
+    "projectsCompleted": {
       "title": "Projects \ncompleted",
       "value": "10ᐩ"
     },
-    "1": {
+    "yearExperience": {
       "title": "Years of \nexperience",
       "value": "1ᐩ"
     },
-    "2": {
+    "greateProjects": {
       "title": "Great \nprojects",
       "value": "100%"
     },
-    "3": {
+    "ontimeDeliveries": {
       "title": "On-time \ndeliveries",
       "value": "100%"
     }
   },
   "values": {
     "work": {
-      "0": {
+      "learning": {
         "icon": "/icons/graduation-cap.svg",
         "title": "Learning",
-        "description": "Embracing a mindset of lifelong learning to stay updated with the latest technologies, frameworks, and best practices."
+        "description": "Embracing a lifelong learning approach to stay updated with new technologies, frameworks, and best practices."
       },
-      "1": {
-        "icon": "/icons/trophy.svg",
-        "title": "Excellence",
-        "description": "Commitment to excellence drives the pursuit of mastery in all aspects of development, ensuring the delivery of top-tier solutions."
+      "resilience": {
+        "icon": "/icons/rocket.svg",
+        "title": "Resilience",
+        "description": "Ability to overcome challenges and setbacks while maintaining focus and motivation to achieve high-quality results."
       },
-      "2": {
+      "qualityOriented": {
         "icon": "/icons/check-badge.svg",
-        "title": "Quality-oriented",
-        "description": "Dedicated to mastering all aspects of development, my commitment to quality guarantees top-tier solutions."
+        "title": "Quality-Oriented",
+        "description": "Committed to high standards in all aspects of development to ensure the delivery of exceptional solutions."
       },
-      "3": {
+      "customerOriented": {
         "icon": "/icons/smile.svg",
-        "title": "Customer-oriented",
-        "description": "Keeping the end-user in mind when developing software, ensuring that their needs and expectations are met or exceeded."
+        "title": "Customer-Oriented",
+        "description": "Focusing on the end-user's needs and expectations to create software that meets or exceeds their requirements."
       }
     },
     "personal": {
-      "0": {
+      "integrity": {
         "icon": "/icons/shield.svg",
         "title": "Integrity",
-        "description": "I remain true to my values, striving to act with honesty and transparency. This allows me to build solid and genuine relationships."
+        "description": "I stay true to my values, acting with honesty and transparency. This helps me build strong, genuine relationships."
       },
-      "1": {
+      "curiosity": {
         "icon": "/icons/globe.svg",
         "title": "Curiosity",
-        "description": "My innate curiosity drives me to explore new ideas and discover new paths. Every challenge is an opportunity for learning and personal growth."
+        "description": "My curiosity drives me to explore new ideas and learn from challenges. I see each opportunity as a chance for growth and discovery."
       },
-      "2": {
+      "respect": {
         "icon": "/icons/puzzle.svg",
         "title": "Respect",
-        "description": "I deeply value the people around me and their unique stories. I am always open to listening and learning from others, recognizing the importance of each voice and experience."
+        "description": "I value the people around me and their unique perspectives. I am open to listening and learning, recognizing the importance of each voice."
       },
-      "3": {
+      "gratitude": {
         "icon": "/icons/smile.svg",
         "title": "Gratitude",
-        "description": "I cultivate a mindset of gratitude, recognizing and appreciating the little things in life. Gratitude keeps me focused and inspires me to live with purpose and fulfillment."
+        "description": "I maintain a mindset of gratitude, appreciating the small things in life. Gratitude helps me stay motivated and fulfilled."
       }
     }
   },
   "skills": {
     "hard": {
-      "0": {
+      "reactJS": {
         "title": "React.js",
-        "icon": "/icons/react.svg",
-        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces."
+        "icon": "/icons/react.svg"
       },
-      "1": {
+      "nodeJS": {
         "title": "Node.js",
-        "icon": "/icons/nodejs.svg",
-        "description": "A server-side JavaScript runtime environment for building scalable, high-performance applications."
+        "icon": "/icons/nodejs.svg"
       },
-      "2": {
+      "reactNative": {
         "title": "React Native",
-        "icon": "/icons/react.svg",
-        "description": "JavaScript library that uses React for agile development of cross-platform mobile applications."
+        "icon": "/icons/react.svg"
       },
-      "3": {
+      "nextJS": {
         "title": "Next.js",
-        "icon": "/icons/nextjs.svg",
-        "description": "React framework for building server-rendered and statically-generated web applications."
+        "icon": "/icons/nextjs.svg"
       },
-      "4": {
-        "title": "JavaScript",
-        "icon": "/icons/javascript.svg",
-        "description": "Backbone of dynamic web development, enabling interactive and responsive user experiences."
+      "TypeScript": {
+        "title": "TypeScript",
+        "icon": "/icons/javascript.svg"
       },
-      "5": {
+      "jest": {
         "title": "Jest",
-        "icon": "/icons/jest.svg",
-        "description": "A powerful JavaScript testing framework for seamless unit and integration testing."
+        "icon": "/icons/jest.svg"
       },
-      "6": {
+      "mongoDB": {
         "title": "MongoDB",
-        "icon": "/icons/mongodb.svg",
-        "description": "A powerful, flexible NoSQL database solution for modern application development."
+        "icon": "/icons/mongodb.svg"
       },
-      "7": {
+      "git": {
         "title": "Git",
-        "icon": "/icons/git.svg",
-        "description": "Version control system for efficient collaboration and code management."
+        "icon": "/icons/git.svg"
       },
-      "8": {
+      "tailwindCSS": {
         "title": "TailwindCSS",
-        "icon": "/icons/tailwindcss.svg",
-        "description": "Utility-first CSS framework for rapid development."
+        "icon": "/icons/tailwindcss.svg"
       },
-      "9": {
+      "styledComponents": {
         "title": "Styled-components",
-        "icon": "/icons/styled-components.svg",
-        "description": "CSS-in-JS for seamless styling and component-based design."
+        "icon": "/icons/styled-components.svg"
       }
     },
     "soft": {
-      "1": {
+      "problemSolving": {
         "title": "Problem-solving",
-        "icon": "/icons/puzzle.svg",
-        "description": "Ability to analyze complex issues and create effective solutions, ensuring seamless functionality and user satisfaction."
+        "icon": "/icons/puzzle.svg"
       },
-      "2": {
+      "detailOriented": {
         "title": "Detail-oriented",
-        "icon": "/icons/eye.svg",
-        "description": "Enable efficient identification and resolution of technical challenges, resulting in robust solutions and heightened client satisfaction."
+        "icon": "/icons/eye.svg"
       },
-      "3": {
-        "title": "Communication",
-        "icon": "/icons/chat.svg",
-        "description": "Clear and concise communication fosters collaboration within teams and facilitates understanding between clients and developers, ensuring project alignment."
+      "communication6": {
+        "title": "Communication6",
+        "icon": "/icons/chat.svg"
       },
-      "4": {
+      "adaptability": {
         "title": "Adaptability",
-        "icon": "/icons/adjustments.svg",
-        "description": "Flexibility in embracing new technologies and methodologies facilitates agile development and ensures project relevance"
+        "icon": "/icons/adjustments.svg"
       },
-      "5": {
+      "timeManagement": {
         "title": "Time management",
-        "icon": "/icons/calendar.svg",
-        "description": "Efficiently managing tasks and deadlines optimizes project timelines and enhances client satisfaction with timely deliverables."
+        "icon": "/icons/calendar.svg"
       },
-      "6": {
+      "criticalThinking": {
         "title": "Critical thinking",
-        "icon": "/icons/compass.svg",
-        "description": "Evaluating project requirements and potential solutions with discernment ensures effective decision-making and successful project execution."
+        "icon": "/icons/compass.svg"
       },
-      "7": {
+      "syntheticThinking": {
         "title": "Synthetic thinking",
-        "icon": "/icons/share.svg",
-        "description": "Enables holistic problem-solving by integrating diverse perspectives and technologies, delivering comprehensive solutions."
+        "icon": "/icons/share.svg"
       }
     }
   }

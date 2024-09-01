@@ -152,25 +152,31 @@ const ContactFormOrganism = (
 
       <Form.Control name='message'>
         <Textarea
+          autosize
           className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-full md:col-span-9'
           label={fields.message.label}
+          minRows={3}
           placeholder={fields.message.placeholder}
           size='md'
           variant='filled'
         />
       </Form.Control>
 
-      <div className='relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-dark-8 sm:col-span-4 md:col-span-3 md:aspect-video md:size-9/10'>
-        <Form.Submit>
-          <Action
-            className='md:size-full'
-            limit={{ x: 0.2, y: 0.2 }}
-          >
-            <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
+      <div className='size-full pb-sm pr-sm sm:col-span-4 md:col-span-3'>
+        <div className='sticky top-0 w-full'>
+          <div className='relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-dark-8 md:aspect-[1.3/1] md:w-full'>
+            <Form.Submit>
+              <Action
+                className='md:size-full'
+                limit={{ x: 0.2, y: 0.2 }}
+              >
+                <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
 
-            <span className='md:sr-only'>{fields.submit.label}</span>
-          </Action>
-        </Form.Submit>
+                <span className='md:sr-only'>{fields.submit.label}</span>
+              </Action>
+            </Form.Submit>
+          </div>
+        </div>
       </div>
     </Form.Root>
   );

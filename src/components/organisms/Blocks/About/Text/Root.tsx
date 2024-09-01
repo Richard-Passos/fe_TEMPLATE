@@ -28,7 +28,8 @@ const AboutBlockTextOrganism = (
       {...props}
     >
       <Title
-        order={3}
+        component='h3'
+        order={4}
         {...titleProps}
         className={cn('max-w-lg', titleProps?.className)}
       >

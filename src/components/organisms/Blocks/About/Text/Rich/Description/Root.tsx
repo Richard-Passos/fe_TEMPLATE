@@ -15,7 +15,10 @@ const AboutBlockTextDescriptionOrganism = (
 ) => {
   return (
     <Text
-      className={cn('w-full max-w-md leading-relaxed text-dimmed', className)}
+      className={cn(
+        'w-full max-w-md text-sm leading-relaxed text-dimmed',
+        className
+      )}
       ref={ref}
       {...props}
     />

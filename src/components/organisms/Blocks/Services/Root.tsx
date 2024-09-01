@@ -17,8 +17,8 @@ type ServicesBlockOrganismOwnProps = {
     ServicesBlockImageOrganismProps['data'] & {
       subtitle?: ReactNode;
       items: ServiceCardProps['data'][];
-      action?: {
-        label: ReactNode;
+      action: {
+        label?: ReactNode;
       };
     };
   wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
@@ -109,9 +109,9 @@ const ServicesBlockOrganism = (
             {...actionProps}
             className={cn('mt-xl', actionProps?.className)}
           >
-            {data.action?.label}
+            {data.action.label}
           </Action>,
-          [data.action]
+          [data.action.label]
         )}
       </section>
     </PrimaryLayoutBlock>

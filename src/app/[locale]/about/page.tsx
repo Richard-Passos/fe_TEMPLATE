@@ -63,36 +63,19 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
               })
             ),
             description: t.rich('blocks.about.description'),
-            intro: {
-              title: t.rich('blocks.about.intro.title'),
-              description: t.rich('blocks.about.intro.description', {
-                p: (chunks) => (
-                  <AboutBlockTextDescription>
-                    {chunks}
-                  </AboutBlockTextDescription>
-                )
+            texts: keys(get(messages, 'pages.about.blocks.about.texts')).map(
+              (key) => ({
+                id: key,
+                title: t.rich(`blocks.about.texts.${key}.title`),
+                description: t.rich(`blocks.about.texts.${key}.description`, {
+                  p: (chunks) => (
+                    <AboutBlockTextDescription>
+                      {chunks}
+                    </AboutBlockTextDescription>
+                  )
+                })
               })
-            },
-            personality: {
-              title: t.rich('blocks.about.personality.title'),
-              description: t.rich('blocks.about.personality.description', {
-                p: (chunks) => (
-                  <AboutBlockTextDescription>
-                    {chunks}
-                  </AboutBlockTextDescription>
-                )
-              })
-            },
-            mission: {
-              title: t.rich('blocks.about.mission.title'),
-              description: t.rich('blocks.about.mission.description', {
-                p: (chunks) => (
-                  <AboutBlockTextDescription>
-                    {chunks}
-                  </AboutBlockTextDescription>
-                )
-              })
-            }
+            )
           }
         },
         {

@@ -9,9 +9,7 @@ import AboutBlockText, { AboutBlockTextProps } from './Text';
 
 type AboutBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
-    intro: AboutBlockTextProps['data'];
-    personality: AboutBlockTextProps['data'];
-    mission: AboutBlockTextProps['data'];
+    texts: ({ id: string } & AboutBlockTextProps['data'])[];
   };
   wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
 };
@@ -48,11 +46,12 @@ const AboutBlockOrganism = (
         </div>
 
         <section className='flex max-w-xl grow flex-col gap-xl'>
-          <AboutBlockText data={data.intro} />
-
-          <AboutBlockText data={data.personality} />
-
-          <AboutBlockText data={data.mission} />
+          {data.texts.map(({ id, ...data }) => (
+            <AboutBlockText
+              data={data}
+              key={id}
+            />
+          ))}
         </section>
       </section>
     </PrimaryLayoutBlock>

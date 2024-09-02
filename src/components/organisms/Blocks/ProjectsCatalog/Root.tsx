@@ -91,7 +91,7 @@ const ProjectsCatalogBlockOrganism = (
 
           <ProjectsCatalogGridBlock
             {...gridProps}
-            className={cn('w-full sm:hidden', gridProps?.className)}
+            className={cn('ml-auto w-full sm:hidden', gridProps?.className)}
           />
         </div>
       </Catalog.Root>

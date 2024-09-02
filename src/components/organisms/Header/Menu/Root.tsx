@@ -67,7 +67,7 @@ const HeaderMenuOrganism = (
           )
         }}
         className={cn(
-          'flex flex-col p-2xl pt-[calc(theme(spacing.2xl)*1.5)] [--drawer-size:560px]',
+          'flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]',
           contentProps?.className
         )}
         hasCloseButton={false}
@@ -91,7 +91,7 @@ const HeaderMenuOrganism = (
           }}
         />
 
-        <div className='mt-auto flex gap-md px-md max-sm:flex-col'>
+        <div className='mt-auto flex flex-wrap gap-md px-md'>
           <LocaleSelect
             aria-label={t('locale.label')}
             className='mt-1'

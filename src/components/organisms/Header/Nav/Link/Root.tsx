@@ -58,7 +58,7 @@ const HeaderNavLinkOrganism = (
     },
     vertical: {
       classNames: {
-        link: 'text-6xl py-sm px-8',
+        link: 'text-5xl sm:text-6xl py-sm px-8',
         indicator: 'left-0 w-1 h-1/3'
       },
       limit: {
@@ -75,7 +75,7 @@ const HeaderNavLinkOrganism = (
     >
       <Link
         className={cn(
-          'group/link relative flex items-center justify-center rounded font-medium text-current no-underline hover:z-10',
+          'group/link relative flex items-center justify-center break-words rounded font-medium text-current no-underline hover:z-10',
           orientationProps[orientation].classNames?.link,
           className
         )}

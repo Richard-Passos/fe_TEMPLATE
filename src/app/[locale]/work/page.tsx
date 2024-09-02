@@ -6,7 +6,7 @@ import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { get, keys, times } from '@/utils';
+import { keys, times } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -31,7 +31,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           theme: 'dark',
           id: 'scroll-to',
           data: {
-            items: keys(get(messages, 'pages.work.blocks.mission.items')).map(
+            items: keys(messages.pages.work.blocks.mission.items).map(
               (key) => ({
                 id: key,
                 text: t(`blocks.mission.items.${key}.text`),
@@ -46,7 +46,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           theme: 'dark',
           id: 'services',
           data: {
-            title: keys(get(messages, 'pages.work.blocks.services.title')).map(
+            title: keys(messages.pages.work.blocks.services.title).map(
               (key) => ({
                 id: key,
                 text: t.rich(`blocks.services.title.${key}`)
@@ -58,7 +58,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               src: t('blocks.services.image.src'),
               alt: t('blocks.services.image.alt')
             },
-            items: keys(get(messages, 'services')).map((key, i) => ({
+            items: keys(messages.services).map((key, i) => ({
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
               title: gt(`services.${key}.title`),
               description: gt(`services.${key}.description`)
@@ -73,12 +73,12 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           theme: 'light',
           id: 'selectedProjects',
           data: {
-            title: keys(
-              get(messages, 'pages.work.blocks.selectedProjects.title')
-            ).map((key) => ({
-              id: key,
-              text: t.rich(`blocks.selectedProjects.title.${key}`)
-            })),
+            title: keys(messages.pages.work.blocks.selectedProjects.title).map(
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.selectedProjects.title.${key}`)
+              })
+            ),
             description: t.rich('blocks.selectedProjects.description'),
             empty: t('blocks.selectedProjects.empty'),
             items: times(5, String).map((id, i) => ({
@@ -98,12 +98,10 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           theme: 'dark',
           id: 'whyMe',
           data: {
-            title: keys(get(messages, 'pages.work.blocks.whyMe.title')).map(
-              (key) => ({
-                id: key,
-                text: t.rich(`blocks.whyMe.title.${key}`)
-              })
-            ),
+            title: keys(messages.pages.work.blocks.whyMe.title).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.whyMe.title.${key}`)
+            })),
             description: t.rich('blocks.whyMe.description', {
               contact: (chunks) => (
                 <Link
@@ -115,7 +113,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               )
             }),
             subtitle: t.rich('blocks.whyMe.subtitle'),
-            items: keys(get(messages, 'stats')).map((key) => ({
+            items: keys(messages.stats).map((key) => ({
               id: key,
               title: gt.rich(`stats.${key}.title`),
               value: gt.rich(`stats.${key}.value`)
@@ -128,7 +126,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           id: 'hardSkills',
           data: {
             title: t.rich('blocks.hardSkills.title'),
-            items: keys(get(messages, 'skills.hard')).map((key) => ({
+            items: keys(messages.skills.hard).map((key) => ({
               id: key,
               title: gt(`skills.hard.${key}.title`),
               icon: gt(`skills.hard.${key}.icon`)
@@ -141,7 +139,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
           id: 'softSkills',
           data: {
             title: t.rich('blocks.softSkills.title'),
-            items: keys(get(messages, 'skills.soft')).map((key) => ({
+            items: keys(messages.skills.soft).map((key) => ({
               id: key,
               title: gt(`skills.soft.${key}.title`),
               icon: gt(`skills.soft.${key}.icon`)
@@ -159,7 +157,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
               sm: ['item-0 item-1', 'item-2 item-3'],
               lg: ['item-0 item-1 .', '. item-2 item-3']
             },
-            items: keys(get(messages, 'values.work')).map((key) => ({
+            items: keys(messages.values.work).map((key) => ({
               id: key,
               title: gt.rich(`values.work.${key}.title`),
               description: gt.rich(`values.work.${key}.description`),

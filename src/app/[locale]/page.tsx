@@ -7,7 +7,7 @@ import { TextBlockDescription } from '@/components/organisms/Blocks/Text/Rich';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { get, keys, times } from '@/utils';
+import { keys, times } from '@/utils';
 
 import { LayoutParams } from './layout';
 
@@ -32,12 +32,12 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           theme: 'dark',
           id: 'scroll-to',
           data: {
-            title: keys(
-              get(messages, 'pages.home.blocks.selectedProjects.title')
-            ).map((key) => ({
-              id: key,
-              text: t.rich(`blocks.selectedProjects.title.${key}`)
-            })),
+            title: keys(messages.pages.home.blocks.selectedProjects.title).map(
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.selectedProjects.title.${key}`)
+              })
+            ),
             description: t.rich('blocks.selectedProjects.description'),
             empty: t.rich('blocks.selectedProjects.empty'),
             items: times(5, String).map((id, i) => ({
@@ -69,13 +69,13 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           theme: 'dark',
           id: 'listWorkPage',
           data: {
-            items: keys(
-              get(messages, 'pages.home.blocks.listWorkPage.items')
-            ).map((key) => ({
-              id: key,
-              text: t(`blocks.listWorkPage.items.${key}.text`),
-              separator: t(`blocks.listWorkPage.items.${key}.separator`)
-            })),
+            items: keys(messages.pages.home.blocks.listWorkPage.items).map(
+              (key) => ({
+                id: key,
+                text: t(`blocks.listWorkPage.items.${key}.text`),
+                separator: t(`blocks.listWorkPage.items.${key}.separator`)
+              })
+            ),
             action: {
               label: t('blocks.listWorkPage.action.label'),
               href: '/work'
@@ -97,12 +97,12 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           id: 'aboutBentoGrid',
           hasAnimation: true,
           data: {
-            title: keys(
-              get(messages, 'pages.home.blocks.aboutBentoGrid.title')
-            ).map((key) => ({
-              id: key,
-              text: t.rich(`blocks.aboutBentoGrid.title.${key}`)
-            })),
+            title: keys(messages.pages.home.blocks.aboutBentoGrid.title).map(
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.aboutBentoGrid.title.${key}`)
+              })
+            ),
             description: t.rich('blocks.aboutBentoGrid.description'),
             templates: {
               base: [
@@ -165,7 +165,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                 data: {
                   icon: t('blocks.aboutBentoGrid.items.values.icon'),
                   title: t('blocks.aboutBentoGrid.items.values.title'),
-                  items: keys(get(messages, 'values.personal')).map((key) =>
+                  items: keys(messages.values.personal).map((key) =>
                     gt(`values.personal.${key}.title`)
                   )
                 }
@@ -215,13 +215,13 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
           theme: 'dark',
           id: 'listAboutPage',
           data: {
-            items: keys(
-              get(messages, 'pages.home.blocks.listAboutPage.items')
-            ).map((key) => ({
-              id: key,
-              text: t(`blocks.listAboutPage.items.${key}.text`),
-              separator: t(`blocks.listAboutPage.items.${key}.separator`)
-            })),
+            items: keys(messages.pages.home.blocks.listAboutPage.items).map(
+              (key) => ({
+                id: key,
+                text: t(`blocks.listAboutPage.items.${key}.text`),
+                separator: t(`blocks.listAboutPage.items.${key}.separator`)
+              })
+            ),
             action: {
               label: t('blocks.listAboutPage.action.label'),
               href: '/about'

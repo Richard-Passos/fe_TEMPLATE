@@ -4,7 +4,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { AboutBlockTextDescription } from '@/components/organisms/Blocks/About/Text/Rich';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PageTemplate } from '@/components/templates';
-import { get, keys } from '@/utils';
+import { keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -56,26 +56,22 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
           theme: 'dark',
           id: 'about',
           data: {
-            title: keys(get(messages, 'pages.about.blocks.about.title')).map(
-              (key) => ({
-                id: key,
-                text: t.rich(`blocks.about.title.${key}`)
-              })
-            ),
+            title: keys(messages.pages.about.blocks.about.title).map((key) => ({
+              id: key,
+              text: t.rich(`blocks.about.title.${key}`)
+            })),
             description: t.rich('blocks.about.description'),
-            texts: keys(get(messages, 'pages.about.blocks.about.texts')).map(
-              (key) => ({
-                id: key,
-                title: t.rich(`blocks.about.texts.${key}.title`),
-                description: t.rich(`blocks.about.texts.${key}.description`, {
-                  p: (chunks) => (
-                    <AboutBlockTextDescription>
-                      {chunks}
-                    </AboutBlockTextDescription>
-                  )
-                })
+            texts: keys(messages.pages.about.blocks.about.texts).map((key) => ({
+              id: key,
+              title: t.rich(`blocks.about.texts.${key}.title`),
+              description: t.rich(`blocks.about.texts.${key}.description`, {
+                p: (chunks) => (
+                  <AboutBlockTextDescription>
+                    {chunks}
+                  </AboutBlockTextDescription>
+                )
               })
-            )
+            }))
           }
         },
         {
@@ -89,7 +85,7 @@ const AboutPage = ({ params: { locale } }: AboutPageProps) => {
               sm: ['item-0 item-1', 'item-2 item-3'],
               lg: ['item-0 item-1 .', '. item-2 item-3']
             },
-            items: keys(get(messages, 'values.personal')).map((key) => ({
+            items: keys(messages.values.personal).map((key) => ({
               id: key,
               title: gt.rich(`values.personal.${key}.title`),
               description: gt.rich(`values.personal.${key}.description`),

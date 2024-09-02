@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { ServicesBlockProps } from '@/components/organisms/Blocks/Services';
 import { PageTemplate } from '@/components/templates';
-import { get, keys } from '@/utils';
+import { keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -76,7 +76,7 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
                 defaultValue: t(
                   'blocks.contactForm.fields.service.defaultValue'
                 ),
-                data: keys(get(messages, 'services')).map((key) => ({
+                data: keys(messages.services).map((key) => ({
                   value: key,
                   label: gt(`services.${key}.title`)
                 }))
@@ -106,19 +106,19 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
           theme: 'dark',
           id: 'services',
           data: {
-            title: keys(
-              get(messages, 'pages.contact.blocks.services.title')
-            ).map((key) => ({
-              id: key,
-              text: t.rich(`blocks.services.title.${key}`)
-            })),
+            title: keys(messages.pages.contact.blocks.services.title).map(
+              (key) => ({
+                id: key,
+                text: t.rich(`blocks.services.title.${key}`)
+              })
+            ),
             description: t.rich('blocks.services.description'),
             subtitle: t.rich('blocks.services.subtitle'),
             image: {
               src: t('blocks.services.image.src'),
               alt: t('blocks.services.image.alt')
             },
-            items: keys(get(messages, 'services')).map((key, i) => ({
+            items: keys(messages.services).map((key, i) => ({
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
               title: gt(`services.${key}.title`),
               description: gt(`services.${key}.description`)

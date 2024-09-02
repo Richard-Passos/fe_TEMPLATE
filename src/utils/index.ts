@@ -2,7 +2,6 @@ import baseUrl from './baseUrl';
 import capitalize from './capitalize';
 import cn from './cn';
 import entries from './entries';
-import get from './get';
 import isExternalUrl from './isExternalUrl';
 import isLocale from './isLocale';
 import keys from './keys';
@@ -21,7 +20,6 @@ const utils = {
   capitalize,
   cn,
   entries,
-  get,
   keys,
   isExternalUrl,
   isLocale,
@@ -42,7 +40,6 @@ export {
   capitalize,
   cn,
   entries,
-  get,
   keys,
   isExternalUrl,
   isLocale,

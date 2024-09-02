@@ -66,7 +66,7 @@ const HorizontalScrollAtom = (
       {...props}
     >
       <motion.div
-        className='flex w-fit translate-x-[calc(var(--x)*1%)] gap-[--gap] whitespace-nowrap'
+        className='flex w-fit gap-[--gap] whitespace-nowrap translate-x-[calc(var(--x)*1%)]'
         style={
           { '--x': x } as ComponentPropsWithRef<typeof motion.div>['style']
         }

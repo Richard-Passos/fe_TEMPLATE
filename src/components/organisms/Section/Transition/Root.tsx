@@ -47,7 +47,7 @@ const SectionTransitionOrganism = (
           )}
         >
           <Bg
-            className='pointer-events-auto z-0 h-[750%] w-[150%] -translate-y-[86.666%] rounded-[50%]'
+            className='pointer-events-auto z-0 h-[750%] w-[150%] rounded-[50%] -translate-y-[86.666%]'
             color={color}
           >
             <ScrollAnimate config={yFullScrollAnim}>

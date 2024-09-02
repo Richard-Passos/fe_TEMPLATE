@@ -48,7 +48,7 @@ const ProjectsCatalogBlockOrganism = (
   return (
     <PrimaryLayoutBlock
       data={{
-        title: data.title,
+        title: data.title
       }}
       ref={ref}
       {...props}

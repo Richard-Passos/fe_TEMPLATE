@@ -33,7 +33,7 @@ const GridProjectCardOrganism = (
       ref={ref}
       {...props}
     >
-      <Text className='absolute left-sm top-sm z-10 -translate-y-full text-sm font-normal transition-[transform,clip-path] duration-300 [clip-path:inset(100%_0_0_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
+      <Text className='absolute left-sm top-sm z-10 text-sm font-normal transition-[transform,clip-path] duration-300 -translate-y-full [clip-path:inset(100%_0_0_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
         {`${data.index + 1}`.padStart(2, '0')}/
       </Text>
 
@@ -72,11 +72,11 @@ const GridProjectCardOrganism = (
         </ScrollAnimate>
       </div>
 
-      <Title className='absolute left-1/2 top-1/2 z-10 w-9/10 -translate-x-1/2 -translate-y-1/2 text-center text-[10vw] font-bold tracking-tight sm:text-[min(6vw,3rem)]'>
+      <Title className='absolute left-1/2 top-1/2 z-10 w-9/10 text-center text-[10vw] font-bold tracking-tight -translate-x-1/2 -translate-y-1/2 sm:text-[min(6vw,3rem)]'>
         {data.title}
       </Title>
 
-      <ul className='relative z-10 col-span-3 flex translate-y-full flex-wrap gap-1.5 text-sm font-normal lowercase transition-[transform,clip-path] duration-300 [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
+      <ul className='relative z-10 col-span-3 flex flex-wrap gap-1.5 text-sm font-normal lowercase transition-[transform,clip-path] duration-300 translate-y-full [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
         {data.roles
           .toSorted((a, b) => a.localeCompare(b))
           .map((role, i, arr) => (
@@ -89,7 +89,7 @@ const GridProjectCardOrganism = (
       </ul>
 
       {renderComp(
-        <Text className='relative z-10 translate-y-full justify-self-end text-sm font-normal transition-[transform,clip-path] duration-300 [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
+        <Text className='relative z-10 justify-self-end text-sm font-normal transition-[transform,clip-path] duration-300 translate-y-full [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
           {data.year}
         </Text>,
         [data.year]

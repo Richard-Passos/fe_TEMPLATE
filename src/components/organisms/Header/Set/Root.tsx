@@ -9,7 +9,7 @@ import {
   useRef
 } from 'react';
 
-import { useEventListener, useComputedColorScheme } from '@/hooks';
+import { useComputedColorScheme, useEventListener } from '@/hooks';
 import { useHeaderContext } from '@/hooks/contexts';
 import { setRefs } from '@/utils';
 

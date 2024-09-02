@@ -168,7 +168,7 @@
         },
         "whyMe": {
           "title": {
-            "0": "Why I’’<em>m</em> ",
+            "0": "Why I’<em>m</em>",
             "1": "<em>T</em>he fit<em>?</em>"
           },
           "description": "After head turning projects and a heart conquering personality just <contact>one click away</contact>, choose me to unlock boundless potential for your next project.",
@@ -485,7 +485,7 @@
     },
     "backend": {
       "title": "Back End",
-      "description": "I build reliable back-end systems that drive your platform's functionality, emphasizing efficient data management and scalable solutions to support your growth."
+      "description": "I build reliable back-end systems that drive your platform’s functionality, emphasizing efficient data management and scalable solutions to support your growth."
     },
     "fullstack": {
       "title": "Full Stack",
@@ -530,7 +530,7 @@
       "customerOriented": {
         "icon": "/icons/smile.svg",
         "title": "Customer-Oriented",
-        "description": "Focusing on the end-user's needs and expectations to create software that meets or exceeds their requirements."
+        "description": "Focusing on the end-user’s needs and expectations to create software that meets or exceeds their requirements."
       }
     },
     "personal": {

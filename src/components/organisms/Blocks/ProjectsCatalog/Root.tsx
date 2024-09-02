@@ -2,7 +2,7 @@ import { ReactNode, forwardRef } from 'react';
 
 import { Text } from '@/components/atoms';
 import { TextProps } from '@/components/atoms/Text';
-import { Catalog } from '@/components/molecules';
+import { Card, Catalog } from '@/components/molecules';
 import {
   CatalogEmptyProps,
   CatalogRootProps
@@ -72,8 +72,13 @@ const ProjectsCatalogBlockOrganism = (
         )}
 
         <div className='flex max-w-screen-md grow flex-col items-center'>
-          <Catalog.Empty {...emptyProps}>
-            <Text className='max-w-md text-center'>{data.empty}</Text>
+          <Catalog.Empty
+            {...emptyProps}
+            className='flex w-full'
+          >
+            <Card.Root className='min-h-52 items-center justify-center'>
+              <Text className='max-w-md text-center'>{data.empty}</Text>
+            </Card.Root>
           </Catalog.Empty>
 
           <ProjectsCatalogTableBlock

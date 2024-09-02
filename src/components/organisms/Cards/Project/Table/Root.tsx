@@ -78,13 +78,12 @@ const TableProjectCardOrganism = (
           }}
         >
           <div className='pointer-events-none absolute z-10'>
-            <div className='size-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-5'>
+            <div className='relative size-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-5'>
               <Image
                 alt={data.image.alt}
                 className='object-cover'
-                height={288}
+                fill
                 src={data.image.src}
-                width={288}
               />
             </div>
           </div>

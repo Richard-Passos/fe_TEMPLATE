@@ -1,5 +1,6 @@
-import { Fragment, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
+import { imageYScrollAnim } from '@/animations/scroll';
 import { Image, Link, ScrollAnimate, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
 import { cn, renderComp } from '@/utils';
@@ -27,75 +28,57 @@ const GridProjectCardOrganism = (
   return (
     <Link
       className={cn(
-        'group relative grid aspect-square w-full grid-cols-4 items-end overflow-hidden rounded-3xl p-sm font-normal text-current no-underline transition-transform duration-300 group-hover:scale-95 md:even:mt-xl md:[&:not(:last-child)]:even:-mb-xl',
+        'group/item block aspect-[1/1.1] w-full text-current',
         className
       )}
       ref={ref}
+      underline='never'
       {...props}
     >
-      <Text className='absolute left-sm top-sm z-10 text-sm font-normal transition-[transform,clip-path] duration-300 -translate-y-full [clip-path:inset(100%_0_0_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
-        {`${data.index + 1}`.padStart(2, '0')}/
-      </Text>
+      <div className='relative flex size-full flex-col'>
+        <div className='grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]'>
+          <div className='overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0'>
+            <div className='px-md pb-1'>
+              <Title
+                component='h4'
+                order={6}
+              >
+                {data.title}
+              </Title>
+            </div>
+          </div>
+        </div>
 
-      <div className='bg-muted absolute inset-0 overflow-hidden rounded-inherit border border-transparent'>
-        <ScrollAnimate
-          config={{
-            scrollConfig: {
-              offset: ['0 1', '0 .35']
-            },
-            prop: 'clipPath',
-            propPoints: [
-              'inset(50% 0 0 0 round 50% 50% 0 0)',
-              'inset(0% 0 0 0 round 0% 0% 0 0)'
-            ]
-          }}
-        >
-          <ScrollAnimate
-            config={{
-              scrollConfig: {
-                offset: ['0 1', '0 .35']
-              },
-              prop: 'scale',
-              propPoints: [1.1, 1]
-            }}
-          >
-            <div className='size-full'>
+        <div className='relative grow overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-5'>
+          <ScrollAnimate config={imageYScrollAnim}>
+            <div className='absolute h-[115%] w-full'>
               <Image
                 alt={data.image.alt}
-                className='size-full object-cover transition-transform duration-300 group-hover:scale-110'
-                height={288}
+                className='object-cover'
+                fill
                 src={data.image.src}
-                width={288}
               />
             </div>
           </ScrollAnimate>
-        </ScrollAnimate>
+        </div>
+
+        <div className='grid origin-bottom grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]'>
+          <div className='overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0'>
+            <div className='flex gap-lg px-md pt-1'>
+              <Text className='col-span-3 text-sm font-medium'>
+                {data.roles.join(' & ')}
+              </Text>
+
+              {renderComp(
+                <Text className='justify-self-end text-end text-sm font-medium'>
+                  {data.year}
+                </Text>,
+                [data.year]
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Title className='absolute left-1/2 top-1/2 z-10 w-9/10 text-center text-[10vw] font-bold tracking-tight -translate-x-1/2 -translate-y-1/2 sm:text-[min(6vw,3rem)]'>
-        {data.title}
-      </Title>
-
-      <ul className='relative z-10 col-span-3 flex flex-wrap gap-1.5 text-sm font-normal lowercase transition-[transform,clip-path] duration-300 translate-y-full [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
-        {data.roles
-          .toSorted((a, b) => a.localeCompare(b))
-          .map((role, i, arr) => (
-            <Fragment key={role}>
-              <li className='line-clamp-1 break-all'>{role}</li>
-
-              {i < arr.length - 1 && <li>&</li>}
-            </Fragment>
-          ))}
-      </ul>
-
-      {renderComp(
-        <Text className='relative z-10 justify-self-end text-sm font-normal transition-[transform,clip-path] duration-300 translate-y-full [clip-path:inset(0_0_100%_0)] group-hover:translate-y-0 group-hover:[clip-path:inset(0)]'>
-          {data.year}
-        </Text>,
-        [data.year]
-      )}
-
-      <span className='bg-main/60 absolute inset-0 rounded-inherit opacity-0 transition-[transform,opacity] duration-300 group-hover:opacity-100' />
     </Link>
   );
 };

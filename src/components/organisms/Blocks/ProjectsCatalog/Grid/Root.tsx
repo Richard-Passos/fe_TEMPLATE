@@ -18,12 +18,18 @@ const ProjectsCatalogGridBlockOrganism = <T,>(
 ) => {
   return (
     <CatalogList
-      className={cn('flex flex-col gap-xs', className)}
+      className={cn(
+        'grid max-w-sm gap-xs sm:max-w-3xl sm:grid-cols-2',
+        className
+      )}
       ref={ref}
       {...props}
     >
       {({ slug, ...data }, i) => (
-        <li key={slug}>
+        <li
+          className='h-fit sm:even:mt-2xl sm:[&:not(:last-child)]:even:-mb-2xl'
+          key={slug}
+        >
           <GridProjectCard
             data={{ index: i, ...data }}
             href={`projects/${slug}`}

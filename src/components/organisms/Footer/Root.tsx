@@ -122,7 +122,7 @@ const FooterOrganism = (
               <LocalTime />
             </Title>
 
-            <Text className='max-w-xs'>{t('description')}</Text>
+            <Text className='max-w-sm'>{t('description')}</Text>
           </section>
         </div>
 

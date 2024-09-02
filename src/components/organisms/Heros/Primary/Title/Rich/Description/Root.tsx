@@ -18,7 +18,7 @@ const PrimaryHeroTitleDescriptionOrganism = (
   return (
     <span
       className={cn(
-        'mt-auto max-w-sm text-start font-display text-[.14em]/normal font-medium normal-case -translate-y-3.5 max-lg:hidden',
+        'mt-auto max-w-md text-start font-display text-[.15em]/normal font-medium normal-case tracking-normal -translate-y-3.5 max-lg:hidden',
         className
       )}
       ref={ref}

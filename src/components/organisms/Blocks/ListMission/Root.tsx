@@ -55,7 +55,7 @@ const ListMissionBlockOrganism = (
         ))}
       </ListHorizontalScroll.Root>
 
-      <Text className='mt-xl w-9/10 max-w-xl text-center leading-relaxed'>
+      <Text className='mt-xl w-9/10 max-w-xl text-center leading-relaxed text-dimmed max-sm:text-sm'>
         {data.description}
       </Text>
     </CleanLayoutBlock>

@@ -74,22 +74,19 @@ const ServicesBlockOrganism = (
           [data.subtitle]
         )}
 
-        <div className='grid gap-md sm:grid-cols-12 md:gap-xl'>
+        <div className='flex w-full items-start justify-end gap-md md:gap-xl'>
           <ServicesBlockImage
             data={{
               image: data.image
             }}
             {...imageProps}
-            className={cn(
-              'max-sm:hidden sm:col-span-5 md:col-span-6',
-              imageProps?.className
-            )}
+            className={cn('grow basis-72 max-md:hidden', imageProps?.className)}
           />
 
           <ul
             {...listProps}
             className={cn(
-              'm-0 flex list-none flex-col gap-xs p-0 sm:col-span-7 sm:py-xl md:col-span-6',
+              'm-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col gap-xs p-0 sm:py-xl',
               listProps?.className
             )}
           >

@@ -49,21 +49,21 @@ const PrimaryHeroOrganism = (
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
         <PrimaryHeroScrollAnimate>
           <div className='relative flex w-full flex-col items-center justify-center'>
-            <div className='flex w-full grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:opacity-[--opacity] sm:scale-[--scale]'>
+            <div className='flex w-full max-w-screen-xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:opacity-[--opacity] sm:scale-[--scale]'>
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
-              <div className='mt-sm grid w-full max-w-screen-lg grid-cols-2 gap-sm md:grid-cols-6'>
-                <Text className='col-span-full max-w-md justify-self-center text-center font-medium md:col-span-4 lg:sr-only'>
-                  {data.description}
-                </Text>
-
-                <div className='md:-order-1'>
+              <div className='mt-sm grid w-full grid-cols-3 gap-sm'>
+                <div>
                   <Left {...leftProps} />
                 </div>
 
-                <div className='justify-self-end lg:col-end-7'>
+                <div className='col-end-4 justify-self-end text-end lg:order-last'>
                   <Right {...rightProps} />
                 </div>
+
+                <Text className='col-span-full max-w-md justify-self-center text-center font-medium lg:sr-only'>
+                  {data.description}
+                </Text>
               </div>
             </div>
 

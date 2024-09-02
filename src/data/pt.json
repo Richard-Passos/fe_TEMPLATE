@@ -134,7 +134,7 @@
       },
       "blocks": {
         "mission": {
-          "description": "<strong>Essa é minha missão —</strong> Cada linha de código <strong>melhora minhas habilidades</strong>, criando soluções de alto impacto. Cada projeto é uma oportunidade para <strong>inspirar clientes</strong>, colegas e a comunidade, promovendo um impacto positivo duradouro. A <strong>repetição gera excelência</strong>, impulsionando o destaque digital.",
+          "description": "Essa é minha missão — Cada linha de código melhora minhas habilidades, criando soluções de alto impacto. Cada projeto é uma oportunidade para inspirar clientes, colegas e a comunidade, promovendo um impacto positivo duradouro. A repetição gera excelência, impulsionando o destaque digital.",
           "items": {
             "0": {
               "text": "Melhorar",
@@ -174,7 +174,7 @@
             "0": "O que m<em>e</em>",
             "1": "<em>D</em>estaca<em>?</em>"
           },
-          "description": "Após projetos impactantes e uma personalidade que conquista corações a apenas <contact>um só clique</contact>. Escolha-me para alcançar resultados excelentes.",
+          "description": "Após projetos impactantes e uma personalidade que conquista corações a apenas <contact>um simples clique</contact>. Escolha-me para alcançar resultados excelentes.",
           "subtitle": "Algumas estatísticas..."
         },
         "hardSkills": {

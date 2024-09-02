@@ -73,7 +73,7 @@ const ProjectsCatalogBlockOrganism = (
 
         <div className='flex max-w-screen-md grow flex-col items-center'>
           <Catalog.Empty {...emptyProps}>
-            <Text className='max-w-sm text-center'>{data.empty}</Text>
+            <Text className='max-w-md text-center'>{data.empty}</Text>
           </Catalog.Empty>
 
           <ProjectsCatalogTableBlock

@@ -33,7 +33,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
   return (
     <header
       className={cn(
-        'flex w-9/10 gap-[--section-spacing-md] max-sm:flex-col sm:items-end',
+        'flex w-9/10 gap-[--section-spacing-md] max-md:flex-col md:items-end',
         className
       )}
       ref={ref}
@@ -61,7 +61,7 @@ const PrimaryLayoutBlockHeaderOrganism = (
         <Text
           {...descriptionProps}
           className={cn(
-            'max-w-xs text-sm text-dimmed -translate-y-3.5',
+            'max-w-md text-sm text-dimmed -translate-y-3.5',
             descriptionProps?.className
           )}
         >

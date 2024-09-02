@@ -16,7 +16,7 @@ const ANIMATION_CONFIG: {
     scrollConfig: {
       offset: ['0 0', '1 0']
     },
-    prop: 'y',
+    prop: '--y',
     propPoints: ['0%', '75%']
   },
   scale: {
@@ -49,7 +49,7 @@ const PrimaryHeroScrollAnimateOrganism = (
 ) => {
   return (
     <ScrollAnimate
-      className={cn('max-sm:!translate-y-0', className)}
+      className={cn('sm:translate-y-[--y]', className)}
       config={ANIMATION_CONFIG.y}
       ref={ref}
       {...props}

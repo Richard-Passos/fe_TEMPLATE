@@ -131,7 +131,7 @@
       },
       "blocks": {
         "mission": {
-          "description": "<strong>That’s my mission —</strong> Each line of code <strong>improve my skills</strong>, crafting high-impact solutions. Every project is an opportunity to <strong>inspire clients</strong>, coworkers, and the community, fostering enduring positive impact. Consistent <strong>repetition breeds excellence</strong>, driving digital prominence.",
+          "description": "That’s my mission — Each line of code improve my skills, crafting high-impact solutions. Every project is an opportunity to inspire clients, coworkers, and the community, fostering enduring positive impact. Consistent repetition breeds excellence, driving digital prominence.",
           "items": {
             "0": {
               "text": "Improve",

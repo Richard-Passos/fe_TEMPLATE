@@ -445,11 +445,16 @@
     "email": "hi.richardp@gmail.com",
     "description": "Richard Passos is a full stack developer — who cares building solid and scalable products with a great user experience.",
     "availability": "Available to work",
+    "manifest": "/manifest/en.json",
     "logo": {
-      "label": "Richard Passos",
       "primary": "/icons/logo-a.svg",
       "secondary": "/icons/logo-b.svg",
-      "favicon": "/icons/favicon.ico"
+      "favicon": {
+        "light": "/icons/favicon.ico",
+        "dark": "/icons/favicon.ico",
+        "apple": "/icons/apple-touch-icon.png",
+        "maskImage": "/icons/safari-pinned-tab.svg"
+      }
     },
     "location": {
       "country": "Brazil",

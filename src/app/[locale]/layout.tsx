@@ -1,4 +1,5 @@
 import { ColorSchemeScript } from '@mantine/core';
+import { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
@@ -51,7 +52,9 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
   );
 };
 
-const generateMetadata = async ({ params: { locale } }: LayoutParams) => {
+const generateMetadata = async ({
+  params: { locale }
+}: LayoutParams): Promise<Metadata> => {
   const t = await getTranslations({ locale, namespace: 'personal' });
 
   return {
@@ -61,8 +64,19 @@ const generateMetadata = async ({ params: { locale } }: LayoutParams) => {
     },
     description: t('description'),
     icons: {
-      icon: t('logo.favicon')
+      icon: [
+        { url: t('logo.favicon.light') },
+        { url: t('logo.favicon.dark'), media: '(prefers-color-scheme: dark)' }
+      ],
+      apple: t('logo.favicon.apple'),
+      other: [
+        {
+          rel: 'mask-icon',
+          url: t('logo.favicon.maskImage')
+        }
+      ]
     },
+    manifest: t('manifest'),
     openGraph: {
       title: `${t('name.first')} ${t('name.last')}`,
       description: t('description')

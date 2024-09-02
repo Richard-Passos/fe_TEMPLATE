@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import {
   getLocale,
   getTranslations,
@@ -25,7 +26,7 @@ const NotFoundPage = async () => {
   );
 };
 
-const generateMetadata = async () => {
+const generateMetadata = async (): Promise<Metadata> => {
   const locale = await getLocale();
 
   const t = await getTranslations({

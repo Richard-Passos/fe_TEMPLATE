@@ -448,11 +448,16 @@
     "email": "hi.richardp@gmail.com",
     "description": "Richard Passos é um desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
     "availability": "Disponível para trabalhar",
+    "manifest": "/manifest/pt.json",
     "logo": {
-      "label": "Richard Passos",
       "primary": "/icons/logo-a.svg",
       "secondary": "/icons/logo-b.svg",
-      "favicon": "/icons/favicon.ico"
+      "favicon": {
+        "light": "/icons/favicon.ico",
+        "dark": "/icons/favicon.ico",
+        "apple": "/icons/apple-touch-icon.png",
+        "maskImage": "/icons/safari-pinned-tab.svg"
+      }
     },
     "location": {
       "country": "Brasil",

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
@@ -39,7 +40,7 @@ const SingleProjectPage = ({
 
 const generateMetadata = async ({
   params: { locale, id }
-}: SingleProjectPageParams) => {
+}: SingleProjectPageParams): Promise<Metadata> => {
   /* const t = await getTranslations({
     locale,
     namespace: 'pages.singleProject.metadata'
@@ -53,6 +54,8 @@ const generateMetadata = async ({
       description: t('description')
     }
   }; */
+
+  return {};
 };
 
 const generateStaticParams = () =>

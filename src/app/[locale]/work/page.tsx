@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
@@ -225,7 +226,9 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
   );
 };
 
-const generateMetadata = async ({ params: { locale } }: WorkPageParams) => {
+const generateMetadata = async ({
+  params: { locale }
+}: WorkPageParams): Promise<Metadata> => {
   const t = await getTranslations({
     locale,
     namespace: 'pages.work.metadata'

@@ -6,17 +6,18 @@ import { ComponentPropsWithRef, forwardRef, useState } from 'react';
 import { useUpdateEffect } from '@/hooks';
 import { cn } from '@/utils';
 
-import Link from './Link';
+import HeaderNavLink, { HeaderNavLinkProps } from './Link';
 
 type HeaderNavOrganismOwnProps = {
   items: { href: string; label: string }[];
+  linkProps?: Partial<HeaderNavLinkProps>;
 };
 
 type HeaderNavOrganismProps = HeaderNavOrganismOwnProps &
   Omit<ComponentPropsWithRef<'nav'>, keyof HeaderNavOrganismOwnProps>;
 
 const HeaderNavOrganism = (
-  { items, className, ...props }: HeaderNavOrganismProps,
+  { items, className, linkProps, ...props }: HeaderNavOrganismProps,
   ref: HeaderNavOrganismProps['ref']
 ) => {
   const selectedLayoutSegment = useSelectedLayoutSegment();
@@ -32,14 +33,15 @@ const HeaderNavOrganism = (
   return (
     <nav
       className={cn(
-        'group flex w-full max-w-max items-center justify-center',
+        'group/nav flex w-full max-w-max items-center justify-center',
         className
       )}
       ref={ref}
       {...props}
     >
       {items.map((data) => (
-        <Link
+        <HeaderNavLink
+          href={data.href}
           isActive={active === data.href}
           key={data.href}
           onMouseEnter={() => {
@@ -49,10 +51,10 @@ const HeaderNavOrganism = (
             if (includesSegment) setActive(segment);
           }}
           shouldHide={!includesSegment}
-          {...data}
+          {...linkProps}
         >
           {data.label}
-        </Link>
+        </HeaderNavLink>
       ))}
     </nav>
   );

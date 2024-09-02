@@ -15,9 +15,11 @@ import {
 import { PropsWithChildren, ReactNode, forwardRef } from 'react';
 
 import { PolymorphicRef } from '@/types';
+import { cn, renderComp } from '@/utils';
 
 type DrawerContentMoleculeOwnProps = PropsWithChildren<{
   title?: ReactNode;
+  hasCloseButton?: boolean;
   overlayProps?: Partial<DrawerOverlayProps>;
   headerProps?: Partial<DrawerHeaderProps>;
   titleProps?: Partial<DrawerTitleProps>;
@@ -31,7 +33,9 @@ type DrawerContentMoleculeProps = DrawerContentMoleculeOwnProps &
 
 const DrawerContentMolecule = (
   {
+    className,
     title,
+    hasCloseButton,
     children,
     overlayProps,
     headerProps,
@@ -44,17 +48,34 @@ const DrawerContentMolecule = (
 ) => {
   return (
     <>
-      <DrawerOverlay {...overlayProps} />
+      <DrawerOverlay
+        backgroundOpacity={0.35}
+        data-lenis-prevent
+        {...overlayProps}
+      />
 
       <DrawerContent
+        data-lenis-prevent
         ref={ref}
         {...props}
+        classNames={{
+          ...props.classNames,
+          inner: cn('left-0', props.classNames?.inner),
+          content: cn(className, props.classNames?.content)
+        }}
       >
-        <DrawerHeader {...headerProps}>
-          <DrawerTitle {...titleProps}>{title}</DrawerTitle>
+        {renderComp(
+          <DrawerHeader {...headerProps}>
+            {renderComp(<DrawerTitle {...titleProps}>{title}</DrawerTitle>, [
+              title
+            ])}
 
-          <DrawerCloseButton {...closeProps} />
-        </DrawerHeader>
+            {renderComp(<DrawerCloseButton {...closeProps} />, [
+              hasCloseButton
+            ])}
+          </DrawerHeader>,
+          [title || hasCloseButton]
+        )}
 
         <DrawerBody {...bodyProps}>{children}</DrawerBody>
       </DrawerContent>

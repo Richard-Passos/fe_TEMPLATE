@@ -4,7 +4,7 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
 import { locales } from '@/constants';
-import { cn, get, keys } from '@/utils';
+import { cn, keys } from '@/utils';
 
 import HeaderMenu from './Menu';
 import Nav from './Nav';
@@ -22,7 +22,7 @@ const HeaderOrganism = (
   const t = useTranslations('header'),
     messages = useMessages() as unknown as IntlMessages;
 
-  const items = keys(get(messages, 'header.nav')).map((key) => ({
+  const items = keys(messages.header.nav).map((key) => ({
     href: t(`nav.${key}.href`),
     label: t(`nav.${key}.label`)
   }));

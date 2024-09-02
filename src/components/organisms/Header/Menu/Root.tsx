@@ -1,15 +1,17 @@
 import { useMessages, useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
-import { Link } from '@/components/atoms';
-import { Drawer } from '@/components/molecules';
+import { Icon, Title } from '@/components/atoms';
+import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import {
   DrawerContentProps,
   DrawerRootProps,
   DrawerTriggerProps
 } from '@/components/molecules/Drawer';
-import { cn, get, keys } from '@/utils';
+import { locales } from '@/constants';
+import { cn, keys } from '@/utils';
 
+import HeaderNav from '../Nav';
 import HeaderMenuTrigger from './Trigger';
 
 type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
@@ -25,14 +27,23 @@ const HeaderMenuOrganism = (
   ref: HeaderMenuOrganismProps['ref']
 ) => {
   const t = useTranslations('header.menu'),
-    gt = useTranslations(),
+    pt = useTranslations('personal'),
     messages = useMessages() as unknown as IntlMessages;
 
-  const itemsKeys = keys(get(messages, 'header.nav'));
+  const items = keys(messages.header.menu.nav).map((key) => ({
+    href: t(`nav.${key}.href`),
+    label: t(`nav.${key}.label`)
+  }));
+
+  const socials = keys(messages.personal.socials).map((key) => ({
+    label: pt(`socials.${key}.label`),
+    href: pt(`socials.${key}.href`),
+    icon: pt(`socials.${key}.icon`)
+  }));
 
   return (
     <Drawer.Root
-      className={cn('*:left-0', className)}
+      position='right'
       ref={ref}
       {...props}
       trigger={
@@ -46,24 +57,66 @@ const HeaderMenuOrganism = (
       }
     >
       <Drawer.Content
-        {...contentProps}
-        closeProps={{
-          'aria-label': t('close.label'),
-          ...contentProps?.closeProps
-        }}
-        overlayProps={contentProps?.overlayProps}
         title={t('title')}
+        {...contentProps}
+        bodyProps={{
+          ...contentProps?.bodyProps,
+          className: cn(
+            'p-0 grow flex flex-col gap-xl pt-xl',
+            contentProps?.bodyProps?.className
+          )
+        }}
+        className={cn(
+          'flex flex-col p-2xl pt-[calc(theme(spacing.2xl)*1.5)] [--drawer-size:560px]',
+          contentProps?.className
+        )}
+        hasCloseButton={false}
+        headerProps={{
+          ...contentProps?.headerProps,
+          className: cn(
+            'border relative border-x-0 border-t-0 py-0',
+            contentProps?.headerProps?.className
+          )
+        }}
       >
-        <nav className='flex flex-col gap-xs'>
-          {itemsKeys.map((key) => (
-            <Link
-              href={gt(`header.nav.${key}.href`)}
-              key={key}
-            >
-              {gt(`header.nav.${key}.label`)}
-            </Link>
-          ))}
-        </nav>
+        <HeaderNav
+          className='flex-col items-start'
+          data-autofocus
+          items={items}
+          linkProps={{
+            orientation: 'vertical',
+            indicatorProps: {
+              layoutId: 'headerMenuLinkActiveIndicator'
+            }
+          }}
+        />
+
+        <div className='mt-auto flex gap-md px-md max-sm:flex-col'>
+          <LocaleSelect
+            aria-label={t('locale.label')}
+            className='mt-1'
+            data={locales}
+          />
+
+          <div className='flex flex-wrap items-center gap-xs'>
+            {socials.map((data) => (
+              <Action
+                aria-label={data.label}
+                className='text-text'
+                href={data.href}
+                isIconOnly
+                key={data.href}
+                size='input-sm'
+                variant='default'
+              >
+                <Icon
+                  className='absolute size-2/3'
+                  src={data.icon}
+                />
+              </Action>
+            ))}
+          </div>
+        </div>
       </Drawer.Content>
     </Drawer.Root>
   );

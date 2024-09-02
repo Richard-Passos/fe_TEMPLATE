@@ -375,13 +375,34 @@
   },
   "header": {
     "menu": {
-      "title": "O Portfólio",
+      "title": "O Menu",
       "label": "Menu",
       "open": {
         "label": "Abrir menu"
       },
       "close": {
         "label": "Fechar menu"
+      },
+      "nav": {
+        "home": {
+          "href": "/",
+          "label": "Início"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Trabalho"
+        },
+        "about": {
+          "href": "/about",
+          "label": "Sobre"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contato"
+        }
+      },
+      "locale": {
+        "label": "Sua localidade"
       }
     },
     "nav": {

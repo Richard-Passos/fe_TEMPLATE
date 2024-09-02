@@ -372,13 +372,34 @@
   },
   "header": {
     "menu": {
-      "title": "The Portfolio",
+      "title": "The Menu",
       "label": "Menu",
       "open": {
-        "label": "Openenu"
+        "label": "Open menu"
       },
       "close": {
-        "label": "Closeenu"
+        "label": "Close menu"
+      },
+      "nav": {
+        "home": {
+          "href": "/",
+          "label": "Home"
+        },
+        "work": {
+          "href": "/work",
+          "label": "Work"
+        },
+        "about": {
+          "href": "/about",
+          "label": "About"
+        },
+        "contact": {
+          "href": "/contact",
+          "label": "Contact"
+        }
+      },
+      "locale": {
+        "label": "Your locale"
       }
     },
     "nav": {
@@ -588,7 +609,7 @@
         "icon": "/icons/eye.svg"
       },
       "communication6": {
-        "title": "Communication6",
+        "title": "Communication",
         "icon": "/icons/chat.svg"
       },
       "adaptability": {

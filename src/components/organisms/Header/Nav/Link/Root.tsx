@@ -1,16 +1,33 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
 import { Link, Magnetic } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
-import { smoothConfig } from '@/hooks/useSmooth';
+import { MagneticAtomProps } from '@/components/atoms/Magnetic/Root';
 import { cn } from '@/utils';
+
+import HeaderNavLinkIndicator, {
+  HeaderNavLinkIndicatorProps
+} from './Indicator';
+
+type HeaderNavLinkOrganismOrientationProps = {
+  classNames?: {
+    link?: LinkProps['className'];
+    indicator?: HeaderNavLinkIndicatorProps['className'];
+  };
+  styles?: {
+    link?: LinkProps['style'];
+    indicator?: HeaderNavLinkIndicatorProps['style'];
+  };
+} & Pick<MagneticAtomProps, 'limit'>;
 
 type HeaderNavLinkOrganismOwnProps = {
   isActive?: boolean;
   shouldHide?: boolean;
+  orientation?: 'horizontal' | 'vertical';
+  magneticProps?: Partial<MagneticAtomProps>;
+  indicatorProps?: Partial<HeaderNavLinkIndicatorProps>;
 };
 
 type HeaderNavLinkOrganismProps = HeaderNavLinkOrganismOwnProps &
@@ -21,36 +38,59 @@ const HeaderNavLinkOrganism = (
     className,
     isActive,
     shouldHide,
+    orientation = 'horizontal',
     children,
+    magneticProps,
+    indicatorProps,
     ...props
   }: HeaderNavLinkOrganismProps,
   ref: HeaderNavLinkOrganismProps['ref']
 ) => {
+  const orientationProps: {
+    horizontal: HeaderNavLinkOrganismOrientationProps;
+    vertical: HeaderNavLinkOrganismOrientationProps;
+  } = {
+    horizontal: {
+      classNames: {
+        link: 'h-10 text-center px-4',
+        indicator: 'bottom-0.5 h-[2.5px] w-1/4'
+      }
+    },
+    vertical: {
+      classNames: {
+        link: 'text-6xl py-sm px-8',
+        indicator: 'left-0 w-1 h-1/3'
+      },
+      limit: {
+        x: 0.1,
+        y: 0.1
+      }
+    }
+  };
+
   return (
-    <Magnetic.Root>
+    <Magnetic.Root
+      limit={orientationProps[orientation].limit}
+      {...magneticProps}
+    >
       <Link
         className={cn(
-          'group/link relative flex h-10 items-center justify-center rounded-sm px-4 font-semibold text-inherit no-underline transition-none',
+          'group/link relative flex items-center justify-center rounded font-medium text-current no-underline hover:z-10',
+          orientationProps[orientation].classNames?.link,
           className
         )}
         ref={ref}
         {...props}
       >
-        <span className='lowercase first-letter:capitalize'>{children}</span>
+        {children}
 
         {isActive && (
-          <motion.span
+          <HeaderNavLinkIndicator
+            {...indicatorProps}
             className={cn(
-              'absolute bottom-1 h-[.15em] w-1/3 bg-primary-filled',
-              shouldHide &&
-                '!opacity-0 transition-opacity delay-150 group-hover/link:!opacity-100 group-hover:delay-0'
+              orientationProps[orientation].classNames?.indicator,
+              indicatorProps?.className
             )}
-            layoutId='headerLinkActiveIndicator'
-            style={{ borderRadius: '9999px' }}
-            transition={{
-              type: 'spring',
-              ...smoothConfig
-            }}
           />
         )}
       </Link>
@@ -59,4 +99,7 @@ const HeaderNavLinkOrganism = (
 };
 
 export default forwardRef(HeaderNavLinkOrganism);
-export type { HeaderNavLinkOrganismProps };
+export type {
+  HeaderNavLinkOrganismProps,
+  HeaderNavLinkOrganismOrientationProps
+};

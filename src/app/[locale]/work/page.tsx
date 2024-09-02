@@ -81,13 +81,13 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
             ),
             description: t.rich('blocks.selectedProjects.description'),
             empty: t('blocks.selectedProjects.empty'),
-            items: times(5, String).map((id, i) => ({
+            items: times(5, String).map((id) => ({
               slug: `title-${id}`,
               title: `Title - ${id}`,
               year: 2024,
               roles: ['design', 'development'],
               image: {
-                src: `/images/project-${id.toString().padStart(2, '0')}.${i % 2 === 0 ? 'jpg' : 'png'}`,
+                src: `/images/project.jpeg`,
                 alt: ''
               }
             }))

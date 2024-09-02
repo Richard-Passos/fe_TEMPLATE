@@ -24,7 +24,6 @@ type HeaderNavLinkOrganismOrientationProps = {
 
 type HeaderNavLinkOrganismOwnProps = {
   isActive?: boolean;
-  shouldHide?: boolean;
   orientation?: 'horizontal' | 'vertical';
   magneticProps?: Partial<MagneticAtomProps>;
   indicatorProps?: Partial<HeaderNavLinkIndicatorProps>;
@@ -37,7 +36,6 @@ const HeaderNavLinkOrganism = (
   {
     className,
     isActive,
-    shouldHide,
     orientation = 'horizontal',
     children,
     magneticProps,

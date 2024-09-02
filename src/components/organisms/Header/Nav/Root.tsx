@@ -50,8 +50,11 @@ const HeaderNavOrganism = (
           onMouseLeave={() => {
             if (includesSegment) setActive(segment);
           }}
-          shouldHide={!includesSegment}
           {...linkProps}
+          indicatorProps={{
+            shouldHide: !includesSegment,
+            ...linkProps?.indicatorProps
+          }}
         >
           {data.label}
         </HeaderNavLink>

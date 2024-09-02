@@ -171,8 +171,8 @@
         },
         "whyMe": {
           "title": {
-            "0": "Por qu<em>e</em>",
-            "1": "<em>S</em>ou o fit<em>?</em>"
+            "0": "O que m<em>e</em>",
+            "1": "<em>D</em>estaca<em>?</em>"
           },
           "description": "Após projetos impactantes e uma personalidade que conquista corações a apenas <contact>um só clique</contact>. Escolha-me para alcançar resultados excelentes.",
           "subtitle": "Algumas estatísticas..."
@@ -204,7 +204,7 @@
     },
     "about": {
       "hero": {
-        "title": "Quer mai<em>s</em> <em>s</em>obre mim<em>?</em>"
+        "title": "Saiba mai<em>s</em> <em>s</em>obre mim<em>!</em>"
       },
       "blocks": {
         "images": {

@@ -33,7 +33,11 @@ const FooterOrganism = (
 
   const messages = useMessages() as unknown as IntlMessages;
 
-  const socialKeys = keys(messages.personal.socials);
+  const socials = keys(messages.personal.socials).map((key) => ({
+    label: pt(`socials.${key}.label`),
+    href: pt(`socials.${key}.href`),
+    icon: pt(`socials.${key}.icon`)
+  }));
 
   return (
     <Section
@@ -73,18 +77,18 @@ const FooterOrganism = (
           <div className='mt-md flex flex-wrap items-center gap-xs'>
             <Action href='contact'>{t('cta.action.label')}</Action>
 
-            {socialKeys.map((key) => (
+            {socials.map((data) => (
               <Action
-                aria-label={pt(`socials.${key}.label`)}
-                href={pt(`socials.${key}.href`)}
+                aria-label={data.label}
+                href={data.href}
                 isIconOnly
-                key={key}
+                key={data.href}
                 size='input-sm'
                 variant='default'
               >
                 <Icon
                   className='absolute size-2/3'
-                  src={pt(`socials.${key}.icon`)}
+                  src={data.icon}
                 />
               </Action>
             ))}

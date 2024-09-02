@@ -1,7 +1,7 @@
 import { useMessages, useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
-import { Icon, Title } from '@/components/atoms';
+import { Icon } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import {
   DrawerContentProps,

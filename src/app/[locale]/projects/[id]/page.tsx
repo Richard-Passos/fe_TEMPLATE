@@ -147,7 +147,7 @@ const generateStaticParams = async ({
     `/api/projects?locale=${locale}&is-selected=true`
   );
 
-  if (!data.ok) return;
+  if (!data.ok) return [];
 
   const projects = data.data;
 

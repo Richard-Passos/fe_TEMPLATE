@@ -1,6 +1,10 @@
 import { ColorSchemeScript } from '@mantine/core';
 import { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale
+} from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
 import { SmoothScroll } from '@/components/atoms';
@@ -14,6 +18,7 @@ import {
 import { locales } from '@/constants';
 import '@/globals.css';
 import { defaultColorScheme } from '@/theme';
+import { baseUrl, values } from '@/utils';
 
 type LayoutOwnProps = PropsWithChildren<{}>;
 
@@ -55,7 +60,8 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 const generateMetadata = async ({
   params: { locale }
 }: LayoutParams): Promise<Metadata> => {
-  const t = await getTranslations({ locale, namespace: 'personal' });
+  const t = await getTranslations({ locale, namespace: 'personal' }),
+    messages = (await getMessages()) as unknown as IntlMessages;
 
   return {
     title: {
@@ -77,9 +83,15 @@ const generateMetadata = async ({
       ]
     },
     manifest: t('manifest'),
+    keywords: values(messages.personal.keywords),
+    authors: values(messages.personal.authors),
     openGraph: {
       title: `${t('name.first')} ${t('name.last')}`,
-      description: t('description')
+      description: t('description'),
+      url: baseUrl,
+      siteName: `${t('name.first')} ${t('name.last')}`,
+      locale: locale,
+      type: 'website'
     }
   };
 };

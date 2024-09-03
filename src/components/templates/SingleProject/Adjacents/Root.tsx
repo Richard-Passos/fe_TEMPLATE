@@ -39,6 +39,7 @@ const SingleProjectAdjacentsTemplate = (
         <Action
           className='h-fit'
           disabled={!data.prev.href}
+          href={data.prev.href}
           variant='light'
         >
           <div className='flex justify-start gap-2 py-sm'>
@@ -57,6 +58,7 @@ const SingleProjectAdjacentsTemplate = (
         <Action
           className='h-fit'
           disabled={!data.next.href}
+          href={data.next.href}
           variant='light'
         >
           <div className='flex justify-end gap-2 py-sm'>

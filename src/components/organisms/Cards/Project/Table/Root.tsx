@@ -3,19 +3,11 @@ import { forwardRef } from 'react';
 import { Image, Link, Magnetic, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
 import { CardRoot } from '@/components/molecules/Card';
-import { cn, renderComp } from '@/utils';
+import { Project } from '@/types';
+import { cn, renderComp, values } from '@/utils';
 
 type TableProjectCardOrganismOwnProps = {
-  data: {
-    index: number;
-    title: string;
-    roles: string[];
-    image: {
-      src: string;
-      alt: string;
-    };
-    year?: number;
-  };
+  data: Project & { index: number };
 };
 
 type TableProjectCardOrganismProps = TableProjectCardOrganismOwnProps &
@@ -58,7 +50,9 @@ const TableProjectCardOrganism = (
             </Title>
 
             <Text className='grow basis-2/3 overflow-hidden text-ellipsis text-sm font-medium lowercase sm:basis-0 sm:text-end'>
-              {data.roles.toSorted((a, b) => a.localeCompare(b)).join(' & ')}
+              {values(data.roles)
+                .toSorted((a, b) => a.localeCompare(b))
+                .join(' & ')}
             </Text>
 
             {renderComp(
@@ -80,10 +74,10 @@ const TableProjectCardOrganism = (
           <div className='pointer-events-none absolute z-10'>
             <div className='relative aspect-[1/1.1] w-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-5'>
               <Image
-                alt={data.image.alt}
+                alt={data.thumbnail.alt}
                 className='object-cover'
                 fill
-                src={data.image.src}
+                src={data.thumbnail.src}
               />
             </div>
           </div>

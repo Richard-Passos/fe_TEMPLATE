@@ -3,19 +3,11 @@ import { forwardRef } from 'react';
 import { imageYScrollAnim } from '@/animations/scroll';
 import { Image, Link, ScrollAnimate, Text, Title } from '@/components/atoms';
 import { LinkProps } from '@/components/atoms/Link';
-import { cn, renderComp } from '@/utils';
+import { Project } from '@/types';
+import { cn, renderComp, values } from '@/utils';
 
 type GridProjectCardOrganismOwnProps = {
-  data: {
-    index: number;
-    title: string;
-    image: {
-      src: string;
-      alt: string;
-    };
-    roles: string[];
-    year?: number;
-  };
+  data: Project;
 };
 
 type GridProjectCardOrganismProps = GridProjectCardOrganismOwnProps &
@@ -53,10 +45,10 @@ const GridProjectCardOrganism = (
           <ScrollAnimate config={imageYScrollAnim}>
             <div className='absolute h-[115%] w-full'>
               <Image
-                alt={data.image.alt}
+                alt={data.thumbnail.alt}
                 className='object-cover'
                 fill
-                src={data.image.src}
+                src={data.thumbnail.src}
               />
             </div>
           </ScrollAnimate>
@@ -66,7 +58,9 @@ const GridProjectCardOrganism = (
           <div className='overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0'>
             <div className='flex gap-lg px-md pt-1'>
               <Text className='col-span-3 text-sm font-medium'>
-                {data.roles.join(' & ')}
+                {values(data.roles)
+                  .toSorted((a, b) => a.localeCompare(b))
+                  .join(' & ')}
               </Text>
 
               {renderComp(

@@ -5,13 +5,14 @@ import { isExternalUrl } from '@/utils';
 
 type UnstyledLinkAtomOwnProps = {
   href: string;
+  disabled?: boolean;
 };
 
 type UnstyledLinkAtomProps = UnstyledLinkAtomOwnProps &
   Omit<ComponentPropsWithRef<typeof Link>, keyof UnstyledLinkAtomOwnProps>;
 
 const UnstyledLinkAtom = (
-  { href, ...props }: UnstyledLinkAtomProps,
+  { href, disabled, ...props }: UnstyledLinkAtomProps,
   ref: UnstyledLinkAtomProps['ref']
 ) => {
   const isExternal = isExternalUrl(href);
@@ -20,8 +21,10 @@ const UnstyledLinkAtom = (
 
   return (
     <Link
-      href={href}
+      aria-disabled={disabled}
+      href={disabled ? '' : href}
       ref={ref}
+      tabIndex={disabled ? -1 : 0}
       {...(isExternal && externalLinkProps)}
       {...props}
     />

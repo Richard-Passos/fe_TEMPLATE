@@ -39,6 +39,7 @@ const TextareaAtom = (
     className,
     size = 'sm',
     variant = 'default',
+    disabled,
     labelProps,
     ...props
   }: TextareaAtomProps,
@@ -46,11 +47,14 @@ const TextareaAtom = (
 ) => {
   return (
     <Textarea
+      aria-disabled={disabled}
       className={cn(
+        'aria-disabled:[&_textarea]:bg-gray-1 aria-disabled:[&_textarea]:text-gray-6 dark:aria-disabled:[&_textarea]:bg-dark-6 dark:aria-disabled:[&_textarea]:text-dark-2',
         CLASS_NAMES.size[size],
         CLASS_NAMES.variant[variant],
         className
       )}
+      disabled={disabled}
       labelProps={{
         ...labelProps,
         className: cn('text-sm', labelProps?.className)

@@ -35,6 +35,7 @@ const SelectAtom = (
     className,
     size = 'sm',
     variant = 'default',
+    disabled,
     comboboxProps,
     labelProps,
     ...props
@@ -43,7 +44,9 @@ const SelectAtom = (
 ) => {
   return (
     <Select
+      aria-disabled={disabled}
       className={cn(
+        'aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6 dark:aria-disabled:[&_input]:bg-dark-6 dark:aria-disabled:[&_input]:text-dark-2',
         CLASS_NAMES.size[size],
         CLASS_NAMES.variant[variant],
         className
@@ -65,6 +68,7 @@ const SelectAtom = (
           )
         }
       }}
+      disabled={disabled}
       labelProps={{
         ...labelProps,
         className: cn('text-sm', labelProps?.className)

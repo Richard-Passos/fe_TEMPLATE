@@ -21,7 +21,8 @@ type ActionMoleculeProps = ActionMoleculeOwnProps &
 const ActionMolecule = (
   {
     href,
-    limit = { x: 0.35, y: 0.35 },
+    disabled,
+    limit = disabled ? { x: 0, y: 0 } : { x: 0.35, y: 0.35 },
     smoothConfig,
     className,
     children,
@@ -40,7 +41,7 @@ const ActionMolecule = (
         </span>
       </MagneticRoot>
 
-      <span className='absolute inset-0 bg-[--button-hover] transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)]' />
+      <span className='absolute inset-0 bg-[--button-hover] transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)] group-aria-disabled/action:hidden' />
     </>
   );
 
@@ -57,6 +58,7 @@ const ActionMolecule = (
       >
         <Link
           className={className}
+          disabled={disabled}
           href={href}
           ref={ref}
           {...(props as Omit<LinkProps, keyof ActionMoleculeOwnProps>)}
@@ -73,6 +75,7 @@ const ActionMolecule = (
     >
       <Button
         className={className}
+        disabled={disabled}
         ref={ref}
         {...(props as Omit<ButtonProps, keyof ActionMoleculeOwnProps>)}
       >

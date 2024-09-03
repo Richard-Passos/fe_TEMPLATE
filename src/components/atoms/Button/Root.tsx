@@ -22,13 +22,20 @@ type ButtonAtomProps = ButtonAtomOwnProps &
   >;
 
 const ButtonAtom = (
-  { style, isIconOnly, className, ...props }: ButtonAtomProps,
+  { isIconOnly, disabled, className, style, ...props }: ButtonAtomProps,
   ref: ButtonAtomProps['ref']
 ) => {
+  className = cn(
+    'aria-disabled:bg-gray-1 aria-disabled:text-gray-5 dark:aria-disabled:bg-dark-6 dark:aria-disabled:text-dark-3',
+    className
+  );
+
   if (isIconOnly)
     return (
       <ActionIcon
-        className={cn('disabled:pointer-events-none', className)}
+        aria-disabled={disabled}
+        className={className}
+        disabled={disabled}
         ref={ref}
         style={{
           '--button-bg': 'var(--ai-bg)',
@@ -45,7 +52,9 @@ const ButtonAtom = (
 
   return (
     <Button
-      className={cn('disabled:pointer-events-none', className)}
+      aria-disabled={disabled}
+      className={className}
+      disabled={disabled}
       ref={ref}
       style={style}
       variant='filled'

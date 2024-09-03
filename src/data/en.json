@@ -349,9 +349,24 @@
     },
     "singleProject": {
       "hero": {
-        "title": "Single Project Page"
+        "subtitle": "{ roles } — { year }",
+        "action": {
+          "label": "Live site"
+        }
       },
-      "blocks": {}
+      "blocks": {
+        "images": {
+          "description": "Here are some <text>awesome shots</text>"
+        },
+        "adjacents": {
+          "prev": {
+            "label": "Prev project"
+          },
+          "next": {
+            "label": "Next project"
+          }
+        }
+      }
     },
     "notFound": {
       "hero": {
@@ -446,6 +461,33 @@
     "description": "Richard Passos is a full stack developer — who cares building solid and scalable products with a great user experience.",
     "availability": "Available to work",
     "manifest": "/manifest/en.json",
+    "authors": {
+      "richardPassos": {
+        "name": "Richard Passos",
+        "url": "https://github.com/Richard-Passos"
+      }
+    },
+    "keywords": {
+      "fullStackDeveloper": "Full Stack Developer",
+      "reactJs": "React.js",
+      "nodeJs": "Node.js",
+      "reactNative": "React Native",
+      "nextJs": "Next.js",
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "jest": "Jest",
+      "mongoDB": "MongoDB",
+      "git": "Git",
+      "tailwindCss": "TailwindCSS",
+      "styledComponents": "Styled-components",
+      "problemSolving": "Problem-solving",
+      "detailOriented": "Detail-oriented",
+      "communication": "Communication",
+      "adaptability": "Adaptability",
+      "timeManagement": "Time management",
+      "criticalThinking": "Critical thinking",
+      "syntheticThinking": "Synthetic thinking"
+    },
     "logo": {
       "primary": "/icons/logo-a.svg",
       "secondary": "/icons/logo-b.svg",
@@ -506,7 +548,7 @@
       "title": "Years of \nexperience",
       "value": "1ᐩ"
     },
-    "greateProjects": {
+    "greatProjects": {
       "title": "Great \nprojects",
       "value": "100%"
     },
@@ -563,11 +605,11 @@
   },
   "skills": {
     "hard": {
-      "reactJS": {
+      "reactjs": {
         "title": "React.js",
         "icon": "/icons/react.svg"
       },
-      "nodeJS": {
+      "nodejs": {
         "title": "Node.js",
         "icon": "/icons/nodejs.svg"
       },
@@ -575,13 +617,13 @@
         "title": "React Native",
         "icon": "/icons/react.svg"
       },
-      "nextJS": {
+      "nextjs": {
         "title": "Next.js",
         "icon": "/icons/nextjs.svg"
       },
       "TypeScript": {
         "title": "TypeScript",
-        "icon": "/icons/javascript.svg"
+        "icon": "/icons/typescript.svg"
       },
       "jest": {
         "title": "Jest",
@@ -632,6 +674,198 @@
       "syntheticThinking": {
         "title": "Synthetic thinking",
         "icon": "/icons/share.svg"
+      }
+    }
+  },
+  "projects": {
+    "project-00": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Project-00",
+      "roles": { "design": "Design" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-01": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Project-01",
+      "roles": { "development": "Development" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-02": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Project-02",
+      "roles": { "design": "Design", "development": "Development" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-03": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Project-03",
+      "roles": { "design": "Design", "development": "Development" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-04": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Project-04",
+      "roles": { "design": "Design", "development": "Development" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
       }
     }
   }

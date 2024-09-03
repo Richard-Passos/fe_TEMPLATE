@@ -352,9 +352,24 @@
     },
     "singleProject": {
       "hero": {
-        "title": "Página de Projeto Único"
+        "subtitle": "{ roles } — { year }",
+        "action": {
+          "label": "Ir ao site"
+        }
       },
-      "blocks": {}
+      "blocks": {
+        "images": {
+          "description": "Aqui estão algumas <text>ótimas imagens</text>"
+        },
+        "adjacents": {
+          "prev": {
+            "label": "Projeto anterior"
+          },
+          "next": {
+            "label": "Próximo projeto"
+          }
+        }
+      }
     },
     "notFound": {
       "hero": {
@@ -449,6 +464,33 @@
     "description": "Richard Passos é um desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
     "availability": "Disponível para trabalhar",
     "manifest": "/manifest/pt.json",
+    "authors": {
+      "richardPassos": {
+        "name": "Richard Passos",
+        "url": "https://github.com/Richard-Passos"
+      }
+    },
+    "keywords": {
+      "fullStackDeveloper": "Desenvolvedor Full Stack",
+      "reactJs": "React.js",
+      "nodeJs": "Node.js",
+      "reactNative": "React Native",
+      "nextJs": "Next.js",
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "jest": "Jest",
+      "mongoDB": "MongoDB",
+      "git": "Git",
+      "tailwindCss": "TailwindCSS",
+      "styledComponents": "Styled-components",
+      "problemSolving": "Problem-solving",
+      "detailOriented": "Detail-oriented",
+      "communication": "Communication",
+      "adaptability": "Adaptability",
+      "timeManagement": "Time management",
+      "criticalThinking": "Critical thinking",
+      "syntheticThinking": "Synthetic thinking"
+    },
     "logo": {
       "primary": "/icons/logo-a.svg",
       "secondary": "/icons/logo-b.svg",
@@ -509,7 +551,7 @@
       "title": "Anos de \nexperiência",
       "value": "1ᐩ"
     },
-    "greateProjects": {
+    "greatProjects": {
       "title": "Ótimos \nprojetos",
       "value": "100%"
     },
@@ -566,11 +608,11 @@
   },
   "skills": {
     "hard": {
-      "reactJS": {
+      "reactjs": {
         "title": "React.js",
         "icon": "/icons/react.svg"
       },
-      "nodeJS": {
+      "nodejs": {
         "title": "Node.js",
         "icon": "/icons/nodejs.svg"
       },
@@ -578,7 +620,7 @@
         "title": "React Native",
         "icon": "/icons/react.svg"
       },
-      "nextJS": {
+      "nextjs": {
         "title": "Next.js",
         "icon": "/icons/nextjs.svg"
       },
@@ -635,6 +677,198 @@
       "syntheticThinking": {
         "title": "Pensamento Sintético",
         "icon": "/icons/share.svg"
+      }
+    }
+  },
+  "projects": {
+    "project-00": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Projeto-00",
+      "roles": { "design": "Design" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-01": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Projeto-01",
+      "roles": { "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-02": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Projeto-02",
+      "roles": { "design": "Design", "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-03": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Projeto-03",
+      "roles": { "design": "Design", "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
+      }
+    },
+    "project-04": {
+      "isSelected": true,
+      "href": "#",
+      "title": "Projeto-04",
+      "roles": { "design": "Design", "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "thumbnail": {
+        "src": "/images/project.jpeg",
+        "alt": ""
+      },
+      "gif": {
+        "src": "/images/alpaca.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        },
+        "4": {
+          "src": "/images/project.jpeg",
+          "alt": ""
+        }
       }
     }
   }

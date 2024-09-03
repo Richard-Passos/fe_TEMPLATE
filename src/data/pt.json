@@ -721,7 +721,7 @@
     },
     "project-01": {
       "isSelected": true,
-      "href": "#",
+      "href": "",
       "title": "Projeto-01",
       "roles": { "development": "Desenvolvimento" },
       "year": 2024,

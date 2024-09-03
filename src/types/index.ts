@@ -4,6 +4,7 @@ import Field from './Field';
 import Namespace from './Namespace';
 import PolymorphicRef from './PolymorphicRef';
 import Prettify from './Prettify';
+import Project from './Project';
 import Theme from './Theme';
 import TypeVariants from './TypeVariants';
 
@@ -14,6 +15,7 @@ export type {
   Namespace,
   PolymorphicRef,
   Prettify,
+  Project,
   Theme,
   TypeVariants
 };

@@ -10,6 +10,7 @@ import normId from './normId';
 import normKey from './normKey';
 import pick from './pick';
 import renderComp from './renderComp';
+import request from './request';
 import setRefs from './setRefs';
 import times from './times';
 import transformTemplate from './transformTemplate';
@@ -28,6 +29,7 @@ const utils = {
   normKey,
   pick,
   renderComp,
+  request,
   setRefs,
   times,
   transformTemplate,
@@ -48,6 +50,7 @@ export {
   normKey,
   pick,
   renderComp,
+  request,
   setRefs,
   times,
   transformTemplate,

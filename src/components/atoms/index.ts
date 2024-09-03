@@ -17,6 +17,7 @@ import Portal from './Portal';
 import Progress from './Progress';
 import ScrollAnimate from './ScrollAnimate';
 import Select from './Select';
+import Slot from './Slot';
 import SmoothScroll from './SmoothScroll';
 import Text from './Text';
 import TextInput from './TextInput';
@@ -43,6 +44,7 @@ const Atoms = {
   Progress,
   ScrollAnimate,
   Select,
+  Slot,
   SmoothScroll,
   Text,
   Textarea,
@@ -71,6 +73,7 @@ export {
   Progress,
   ScrollAnimate,
   Select,
+  Slot,
   SmoothScroll,
   Text,
   Textarea,

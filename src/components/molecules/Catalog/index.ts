@@ -1,7 +1,7 @@
 import CatalogEmpty, { CatalogEmptyProps } from './Empty';
 import CatalogFilter from './Filter';
 import CatalogLastPage, { CatalogLastPageProps } from './LastPage';
-import CatalogList, { CatalogListProps } from './List';
+import CatalogList from './List';
 import CatalogLoadMore, { CatalogLoadMoreProps } from './LoadMore';
 import CatalogRoot, { CatalogMoleculeProps as CatalogRootProps } from './Root';
 
@@ -27,6 +27,5 @@ export type {
   CatalogRootProps,
   CatalogEmptyProps,
   CatalogLastPageProps,
-  CatalogListProps,
   CatalogLoadMoreProps
 };

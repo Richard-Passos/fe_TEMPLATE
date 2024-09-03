@@ -1,6 +1,13 @@
-import CatalogList, {
-  CatalogListMoleculeProps as CatalogListProps
+import CatalogListItems, { CatalogListItemsProps } from './Items';
+import CatalogListRoot, {
+  CatalogListMoleculeProps as CatalogListRootProps
 } from './Root';
 
+const CatalogList = {
+  Root: CatalogListRoot,
+  Items: CatalogListItems
+};
+
 export default CatalogList;
-export type { CatalogListProps };
+export { CatalogListRoot, CatalogListItems };
+export type { CatalogListRootProps, CatalogListItemsProps };

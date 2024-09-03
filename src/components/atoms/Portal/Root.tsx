@@ -1,9 +1,10 @@
 'use client';
 
-import { Portal, PortalProps, useComputedColorScheme } from '@mantine/core';
+import { OptionalPortal, OptionalPortalProps } from '@mantine/core';
 import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
+import { useComputedColorScheme } from '@/hooks';
 import { PolymorphicRef } from '@/types';
 
 type PortalAtomOwnProps = {
@@ -11,21 +12,22 @@ type PortalAtomOwnProps = {
 };
 
 type PortalAtomProps = PortalAtomOwnProps &
-  Omit<PortalProps, keyof PortalAtomOwnProps>;
+  Omit<OptionalPortalProps, keyof PortalAtomOwnProps>;
 
 const PortalAtom = (
-  { children, ...props }: PortalAtomProps,
+  { withinPortal = true, children, ...props }: PortalAtomProps,
   ref: PortalAtomProps['ref']
 ) => {
   const theme = useComputedColorScheme();
 
   return (
-    <Portal
+    <OptionalPortal
       ref={ref}
+      withinPortal={withinPortal}
       {...props}
     >
       <Slot data-theme={theme}>{children}</Slot>
-    </Portal>
+    </OptionalPortal>
   );
 };
 

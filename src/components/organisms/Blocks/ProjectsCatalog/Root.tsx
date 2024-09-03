@@ -7,6 +7,7 @@ import {
   CatalogEmptyProps,
   CatalogRootProps
 } from '@/components/molecules/Catalog';
+import { Project } from '@/types';
 import { cn, renderComp } from '@/utils';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
@@ -21,13 +22,13 @@ type ProjectsCatalogBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
     description?: ReactNode;
     empty: ReactNode;
-    items: any[];
+    items: Project[];
   };
   catalogProps?: Partial<CatalogRootProps>;
   descriptionProps?: Partial<TextProps>;
   emptyProps?: Partial<CatalogEmptyProps>;
-  tableProps?: Partial<ProjectsCatalogTableBlockProps<unknown>>;
-  gridProps?: Partial<ProjectsCatalogGridBlockProps<unknown>>;
+  tableProps?: Partial<ProjectsCatalogTableBlockProps>;
+  gridProps?: Partial<ProjectsCatalogGridBlockProps>;
 };
 
 type ProjectsCatalogBlockOrganismProps = ProjectsCatalogBlockOrganismOwnProps &

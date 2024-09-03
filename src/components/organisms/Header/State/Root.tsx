@@ -1,13 +1,11 @@
 'use client';
 
-import { Slot, SlotProps } from '@radix-ui/react-slot';
-import { CSSProperties, ForwardedRef, forwardRef } from 'react';
+import { CSSProperties, forwardRef } from 'react';
 
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useHeaderContext } from '@/hooks/contexts';
 
-type HeaderStateOrganismOwnProps = {
-  ref?: ForwardedRef<HTMLElement>;
-};
+type HeaderStateOrganismOwnProps = {};
 
 type HeaderStateOrganismProps = HeaderStateOrganismOwnProps &
   Omit<SlotProps, keyof HeaderStateOrganismOwnProps>;

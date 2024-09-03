@@ -1,15 +1,13 @@
 'use client';
 
-import { Slot, SlotProps } from '@radix-ui/react-slot';
 import { FormEvent, forwardRef } from 'react';
 
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
-import { PolymorphicRef } from '@/types';
 import { setRefs } from '@/utils';
 
 type FormControlMoleculeOwnProps = {
   name: string;
-  ref?: PolymorphicRef<'div'>;
 };
 
 type FormControlMoleculeProps = FormControlMoleculeOwnProps &

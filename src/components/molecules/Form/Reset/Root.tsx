@@ -1,14 +1,11 @@
 'use client';
 
-import { Slot, SlotProps } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
-import { PolymorphicRef } from '@/types';
 
-type FormResetMoleculeOwnProps = {
-  ref?: PolymorphicRef<'div'>;
-};
+type FormResetMoleculeOwnProps = {};
 
 type FormResetMoleculeProps = FormResetMoleculeOwnProps &
   Omit<SlotProps, keyof FormResetMoleculeOwnProps>;

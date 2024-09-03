@@ -1,11 +1,8 @@
-import { Slot, SlotProps } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 
-type FormSubmitMoleculeOwnProps = {
-  ref?: PolymorphicRef<'div'>;
-};
+type FormSubmitMoleculeOwnProps = {};
 
 type FormSubmitMoleculeProps = FormSubmitMoleculeOwnProps &
   Omit<SlotProps, keyof FormSubmitMoleculeOwnProps>;

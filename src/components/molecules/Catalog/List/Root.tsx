@@ -1,48 +1,44 @@
 'use client';
 
-import { createPolymorphicComponent } from '@mantine/core';
-import { ReactNode, forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import Box, { BoxProps } from '@/components/atoms/Box';
+import Slot, { AsChildProps } from '@/components/atoms/Slot';
 import { useCatalogContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
-type CatalogListMoleculeChildren<T> = (
-  value: T,
-  index: number,
-  array: T[]
-) => ReactNode;
+type CatalogListMoleculeOwnProps = {};
 
-type CatalogListMoleculeOwnProps<T> = {
-  children?: ReactNode | CatalogListMoleculeChildren<T>;
-  ref?: PolymorphicRef<'ul'> & BoxProps['ref'];
-};
+type CatalogListMoleculeProps = AsChildProps<
+  CatalogListMoleculeOwnProps &
+    Omit<ComponentPropsWithRef<'ul'>, keyof CatalogListMoleculeOwnProps>
+>;
 
-type CatalogListMoleculeProps<T> = CatalogListMoleculeOwnProps<T> &
-  Omit<BoxProps, keyof CatalogListMoleculeOwnProps<T>>;
-
-const CatalogListMolecule = <T,>(
-  { className, children, ...props }: CatalogListMoleculeProps<T>,
-  ref: CatalogListMoleculeProps<T>['ref']
+const CatalogListMolecule = (
+  { asChild, className, ...props }: CatalogListMoleculeProps,
+  ref: CatalogListMoleculeProps['ref']
 ) => {
-  const { items } = useCatalogContext<T>();
+  const { items } = useCatalogContext();
 
   if (!items.length) return null;
 
+  if (asChild)
+    return (
+      <Slot
+        className={className}
+        ref={ref}
+        {...props}
+      />
+    );
+
   return (
-    <Box
+    <ul
       className={cn('m-0 list-none p-0', className)}
-      component='ul'
-      ref={ref}
-      {...props}
-    >
-      {typeof children === 'function' ? items.map(children) : children}
-    </Box>
+      ref={ref as PolymorphicRef<'ul'>}
+      {...(props as ComponentPropsWithRef<'ul'>)}
+    />
   );
 };
 
-export default createPolymorphicComponent<'ul', CatalogListMoleculeProps<any>>(
-  forwardRef(CatalogListMolecule)
-);
-export type { CatalogListMoleculeProps, CatalogListMoleculeChildren };
+export default forwardRef(CatalogListMolecule);
+export type { CatalogListMoleculeProps };

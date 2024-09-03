@@ -35,7 +35,7 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
   const messages = m as unknown as IntlMessages;
 
   const projects: ProjectsCatalogBlockProps['data']['items'] = data.ok
-    ? data.data
+    ? data.data.map(({ year, ...d }) => d)
     : [];
 
   return (

@@ -74,14 +74,15 @@ const SingleProjectHeroTemplate = (
             <div className='absolute left-0 top-0 z-10 -translate-y-1/2 translate-x-1/2'>
               <Action
                 className='aspect-square rounded-full ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]'
+                disabled={!data.action?.href}
                 href={data.action?.href}
               >
-                {data.action?.label}{' '}
+                {data.action?.label}&nbsp;
                 <ArrowUpRightIcon className='size-[1.25em] shrink-0' />
               </Action>
             </div>
           </ScrollAnimate>,
-          [data.action?.href ?? data.action?.label]
+          [data.action?.label]
         )}
 
         <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-5'>

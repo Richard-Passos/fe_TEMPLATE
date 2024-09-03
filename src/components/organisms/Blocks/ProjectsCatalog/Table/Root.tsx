@@ -2,38 +2,43 @@
 
 import { forwardRef } from 'react';
 
-import { CatalogList, CatalogListProps } from '@/components/molecules/Catalog';
+import CatalogList, {
+  CatalogListRootProps
+} from '@/components/molecules/Catalog/List';
 import { TableProjectCard } from '@/components/organisms/Cards/Project';
+import { Project } from '@/types';
 import { cn } from '@/utils';
 
 type ProjectsCatalogTableBlockOrganismOwnProps = {};
 
-type ProjectsCatalogTableBlockOrganismProps<T> =
+type ProjectsCatalogTableBlockOrganismProps =
   ProjectsCatalogTableBlockOrganismOwnProps &
-    Omit<CatalogListProps<T>, keyof ProjectsCatalogTableBlockOrganismOwnProps>;
+    Omit<CatalogListRootProps, keyof ProjectsCatalogTableBlockOrganismOwnProps>;
 
-const ProjectsCatalogTableBlockOrganism = <T,>(
-  { className, ...props }: ProjectsCatalogTableBlockOrganismProps<T>,
-  ref: ProjectsCatalogTableBlockOrganismProps<T>['ref']
+const ProjectsCatalogTableBlockOrganism = (
+  { className, ...props }: ProjectsCatalogTableBlockOrganismProps,
+  ref: ProjectsCatalogTableBlockOrganismProps['ref']
 ) => {
   return (
-    <CatalogList
+    <CatalogList.Root
       className={cn('group/list', className)}
       ref={ref}
       {...props}
     >
-      {({ slug, ...data }, i) => (
-        <li
-          className='py-[calc(theme(spacing.xs)/2)] first:pt-0 last:pb-0'
-          key={slug}
-        >
-          <TableProjectCard
-            data={{ index: i, ...data }}
-            href={`projects/${slug}`}
-          />
-        </li>
-      )}
-    </CatalogList>
+      <CatalogList.Items<Project>>
+        {(data, i) => (
+          <li
+            className='py-[calc(theme(spacing.xs)/2)] first:pt-0 last:pb-0'
+            key={data.slug}
+          >
+            <TableProjectCard
+              data={{ index: i, ...data }}
+              href={`projects/${data.slug}`}
+            />
+          </li>
+        )}
+      </CatalogList.Items>
+    </CatalogList.Root>
   );
 };
 

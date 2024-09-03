@@ -33,20 +33,18 @@ const DrawerMolecule = forwardRef(
 
     useUpdateEffect(setFalse, [setFalse, pathname]);
 
-    const content = (
-      <DrawerRoot
-        data-state={dataState}
-        onClose={setFalse}
-        opened={value}
-        ref={ref}
-        withinPortal={false}
-        {...props}
-      />
+    return (
+      <Portal {...portalProps}>
+        <DrawerRoot
+          data-state={dataState}
+          onClose={setFalse}
+          opened={value}
+          ref={ref}
+          withinPortal={false}
+          {...props}
+        />
+      </Portal>
     );
-
-    if (!withinPortal) content;
-
-    return <Portal {...portalProps}>{content}</Portal>;
   }
 );
 DrawerMolecule.displayName = 'DrawerMolecule';

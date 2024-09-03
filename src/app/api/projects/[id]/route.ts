@@ -49,10 +49,10 @@ const GET = async (
       } as SingleProjectResponse);
 
     const dataId = projectsIds.at(dataIndex)!,
-      prevId = projectsIds.at(
+      prevId = projectsIds.at(dataIndex > 0 ? dataIndex - 1 : -1),
+      nextId = projectsIds.at(
         dataIndex < projectsIds.length - 1 ? dataIndex + 1 : 0
-      ),
-      nextId = projectsIds.at(dataIndex > 0 ? dataIndex - 1 : -1);
+      );
 
     const data = {
         slug: dataId,

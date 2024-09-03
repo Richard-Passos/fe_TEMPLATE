@@ -5,12 +5,12 @@ import Heros from '@/components/organisms/Heros';
 import { Theme, TypeVariants } from '@/types';
 import { cn } from '@/utils';
 
-type PageTemplateOrganismProps = {
+type PageTemplateProps = {
   hero: TypeVariants<typeof Heros>;
   blocks?: TypeVariants<typeof Blocks>[];
 };
 
-const PageTemplateOrganism = ({ hero, blocks }: PageTemplateOrganismProps) => {
+const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
   let lastTheme: Theme = hero.theme;
 
   const Hero = Heros[hero.type] as ComponentType<any>;
@@ -48,5 +48,5 @@ const PageTemplateOrganism = ({ hero, blocks }: PageTemplateOrganismProps) => {
     </>
   );
 };
-export default PageTemplateOrganism;
-export type { PageTemplateOrganismProps };
+export default PageTemplate;
+export type { PageTemplateProps };

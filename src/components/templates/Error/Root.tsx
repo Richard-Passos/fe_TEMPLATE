@@ -5,22 +5,12 @@ import { SecondaryHero } from '@/components/organisms/Heros';
 import { SecondaryHeroProps } from '@/components/organisms/Heros/Secondary';
 import { Theme, TypeVariants } from '@/types';
 
-type ErrorTemplateOrganismProps = {
+type ErrorTemplateProps = {
   hero: SecondaryHeroProps;
   blocks?: TypeVariants<typeof Blocks>[];
-  message?: string;
-  reset?: () => void;
 };
 
-const ErrorTemplateOrganism = ({
-  hero,
-  blocks,
-  message,
-  reset
-}: ErrorTemplateOrganismProps) => {
-  console.log(message);
-  console.log(reset);
-
+const ErrorTemplate = ({ hero, blocks }: ErrorTemplateProps) => {
   let lastTheme: Theme;
 
   return (
@@ -46,5 +36,5 @@ const ErrorTemplateOrganism = ({
     </>
   );
 };
-export default ErrorTemplateOrganism;
-export type { ErrorTemplateOrganismProps };
+export default ErrorTemplate;
+export type { ErrorTemplateProps };

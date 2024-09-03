@@ -1,14 +1,19 @@
-import { useMessages, useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale
+} from 'next-intl/server';
 
 import { LocalTime } from '@/components/atoms';
 import { CtaTextBlockProps } from '@/components/organisms/Blocks/CtaText';
+import { ProjectsCatalogBlockProps } from '@/components/organisms/Blocks/ProjectsCatalog';
 import { TextBlockDescription } from '@/components/organisms/Blocks/Text/Rich';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { keys, times } from '@/utils';
+import { keys, request, values } from '@/utils';
 
+import { ProjectsResponse } from '../api/projects/route';
 import { LayoutParams } from './layout';
 
 type HomePageOwnProps = {};
@@ -17,12 +22,21 @@ type HomePageParams = LayoutParams;
 
 type HomePageProps = HomePageOwnProps & HomePageParams;
 
-const HomePage = ({ params: { locale } }: HomePageProps) => {
+const HomePage = async ({ params: { locale } }: HomePageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations('pages.home'),
-    gt = useTranslations(),
-    messages = useMessages() as unknown as IntlMessages;
+  const [t, globalT, m, data] = await Promise.all([
+    getTranslations('pages.home'),
+    getTranslations(),
+    getMessages(),
+    request<ProjectsResponse>(`/api/projects?locale=${locale}&is-selected=true`)
+  ]);
+
+  const messages = m as unknown as IntlMessages;
+
+  const projects: ProjectsCatalogBlockProps['data']['items'] = data.ok
+    ? data.data
+    : [];
 
   return (
     <PageTemplate
@@ -40,15 +54,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
             ),
             description: t.rich('blocks.selectedProjects.description'),
             empty: t.rich('blocks.selectedProjects.empty'),
-            items: times(5, String).map((id) => ({
-              slug: `title-${id}`,
-              title: `Title - ${id}`,
-              roles: ['design', 'development'],
-              image: {
-                src: `/images/project.jpeg`,
-                alt: ''
-              }
-            }))
+            items: projects
           }
         },
         {
@@ -140,7 +146,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                   description: t.rich(
                     'blocks.aboutBentoGrid.items.description.description',
                     {
-                      country: () => gt('personal.location.country')
+                      country: () => globalT('personal.location.country')
                     }
                   )
                 }
@@ -153,8 +159,8 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                   description: t(
                     'blocks.aboutBentoGrid.items.location.description',
                     {
-                      country: gt('personal.location.country'),
-                      gmt: gt('personal.location.gmt')
+                      country: globalT('personal.location.country'),
+                      gmt: globalT('personal.location.gmt')
                     }
                   )
                 }
@@ -166,7 +172,7 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                   icon: t('blocks.aboutBentoGrid.items.values.icon'),
                   title: t('blocks.aboutBentoGrid.items.values.title'),
                   items: keys(messages.values.personal).map((key) =>
-                    gt(`values.personal.${key}.title`)
+                    globalT(`values.personal.${key}.title`)
                   )
                 }
               },
@@ -202,8 +208,8 @@ const HomePage = ({ params: { locale } }: HomePageProps) => {
                 type: 'Link',
                 id: 'buyCoffee',
                 data: {
-                  icon: gt('personal.buyCoffee.icon'),
-                  href: gt('personal.buyCoffee.href'),
+                  icon: globalT('personal.buyCoffee.icon'),
+                  href: globalT('personal.buyCoffee.href'),
                   title: t('blocks.aboutBentoGrid.items.buyCoffee.title')
                 }
               }

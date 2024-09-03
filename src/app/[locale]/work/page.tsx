@@ -1,13 +1,18 @@
 import { Metadata } from 'next';
-import { useMessages, useTranslations } from 'next-intl';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale
+} from 'next-intl/server';
 
+import { ProjectsResponse } from '@/app/api/projects/route';
 import { Icon, Link } from '@/components/atoms';
+import { ProjectsCatalogBlockProps } from '@/components/organisms/Blocks/ProjectsCatalog';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { keys, times } from '@/utils';
+import { keys, request } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -17,12 +22,20 @@ type WorkPageParams = LayoutParams;
 
 type WorkPageProps = WorkPageOwnProps & WorkPageParams;
 
-const WorkPage = ({ params: { locale } }: WorkPageProps) => {
+const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = useTranslations('pages.work'),
-    gt = useTranslations(),
-    messages = useMessages() as unknown as IntlMessages;
+  const t = await getTranslations('pages.work'),
+    gt = await getTranslations(),
+    messages = (await getMessages()) as unknown as IntlMessages;
+
+  const data = await request<ProjectsResponse>(
+    `/api/projects?locale=${locale}&is-selected=true`
+  );
+
+  const projects: ProjectsCatalogBlockProps['data']['items'] = data.ok
+    ? data.data
+    : [];
 
   return (
     <PageTemplate
@@ -82,16 +95,7 @@ const WorkPage = ({ params: { locale } }: WorkPageProps) => {
             ),
             description: t.rich('blocks.selectedProjects.description'),
             empty: t('blocks.selectedProjects.empty'),
-            items: times(5, String).map((id) => ({
-              slug: `title-${id}`,
-              title: `Title - ${id}`,
-              year: 2024,
-              roles: ['design', 'development'],
-              image: {
-                src: `/images/project.jpeg`,
-                alt: ''
-              }
-            }))
+            items: projects
           }
         },
         {

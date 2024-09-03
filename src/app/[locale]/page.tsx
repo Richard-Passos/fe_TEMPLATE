@@ -11,7 +11,7 @@ import { TextBlockDescription } from '@/components/organisms/Blocks/Text/Rich';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { keys, request, values } from '@/utils';
+import { keys, request } from '@/utils';
 
 import { ProjectsResponse } from '../api/projects/route';
 import { LayoutParams } from './layout';

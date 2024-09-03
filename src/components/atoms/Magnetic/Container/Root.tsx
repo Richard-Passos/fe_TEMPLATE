@@ -1,18 +1,15 @@
 'use client';
 
-import { Slot, SlotProps } from '@radix-ui/react-slot';
-import { forwardRef, useRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { ComponentPropsWithRef, forwardRef, useRef } from 'react';
 
 import { MagneticProvider } from '@/Providers';
-import { PolymorphicRef } from '@/types';
 import { setRefs } from '@/utils';
 
-type MagneticContainerAtomOwnProps = {
-  ref?: PolymorphicRef<'div'>;
-};
+type MagneticContainerAtomOwnProps = {};
 
 type MagneticContainerAtomProps = MagneticContainerAtomOwnProps &
-  Omit<SlotProps, keyof MagneticContainerAtomOwnProps>;
+  Omit<ComponentPropsWithRef<typeof Slot>, keyof MagneticContainerAtomOwnProps>;
 
 const MagneticContainerAtom = (
   props: MagneticContainerAtomProps,

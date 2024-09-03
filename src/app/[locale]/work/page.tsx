@@ -25,13 +25,14 @@ type WorkPageProps = WorkPageOwnProps & WorkPageParams;
 const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const t = await getTranslations('pages.work'),
-    gt = await getTranslations(),
-    messages = (await getMessages()) as unknown as IntlMessages;
+  const [t, globalT, m, data] = await Promise.all([
+    getTranslations('pages.work'),
+    getTranslations(),
+    getMessages(),
+    request<ProjectsResponse>(`/api/projects?locale=${locale}&is-selected=true`)
+  ]);
 
-  const data = await request<ProjectsResponse>(
-    `/api/projects?locale=${locale}&is-selected=true`
-  );
+  const messages = m as unknown as IntlMessages;
 
   const projects: ProjectsCatalogBlockProps['data']['items'] = data.ok
     ? data.data
@@ -74,8 +75,8 @@ const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
             },
             items: keys(messages.services).map((key, i) => ({
               id: `· ${(i + 1).toString().padStart(2, '0')}`,
-              title: gt(`services.${key}.title`),
-              description: gt(`services.${key}.description`)
+              title: globalT(`services.${key}.title`),
+              description: globalT(`services.${key}.description`)
             })),
             action: {
               label: t('blocks.services.action.label')
@@ -120,8 +121,8 @@ const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
             subtitle: t.rich('blocks.whyMe.subtitle'),
             items: keys(messages.stats).map((key) => ({
               id: key,
-              title: gt.rich(`stats.${key}.title`),
-              value: gt.rich(`stats.${key}.value`)
+              title: globalT.rich(`stats.${key}.title`),
+              value: globalT.rich(`stats.${key}.value`)
             }))
           }
         },
@@ -133,8 +134,8 @@ const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
             title: t.rich('blocks.hardSkills.title'),
             items: keys(messages.skills.hard).map((key) => ({
               id: key,
-              title: gt(`skills.hard.${key}.title`),
-              icon: gt(`skills.hard.${key}.icon`)
+              title: globalT(`skills.hard.${key}.title`),
+              icon: globalT(`skills.hard.${key}.icon`)
             }))
           }
         },
@@ -146,8 +147,8 @@ const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
             title: t.rich('blocks.softSkills.title'),
             items: keys(messages.skills.soft).map((key) => ({
               id: key,
-              title: gt(`skills.soft.${key}.title`),
-              icon: gt(`skills.soft.${key}.icon`)
+              title: globalT(`skills.soft.${key}.title`),
+              icon: globalT(`skills.soft.${key}.icon`)
             }))
           }
         },
@@ -164,9 +165,9 @@ const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
             },
             items: keys(messages.values.work).map((key) => ({
               id: key,
-              title: gt.rich(`values.work.${key}.title`),
-              description: gt.rich(`values.work.${key}.description`),
-              icon: gt(`values.work.${key}.icon`)
+              title: globalT.rich(`values.work.${key}.title`),
+              description: globalT.rich(`values.work.${key}.description`),
+              icon: globalT(`values.work.${key}.icon`)
             })),
             icons: {
               left: {

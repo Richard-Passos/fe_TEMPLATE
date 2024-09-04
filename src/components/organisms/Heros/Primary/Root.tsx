@@ -67,11 +67,11 @@ const PrimaryHeroOrganism = (
               </div>
             </div>
 
-            <Lines className='-z-10 !text-border [background-size:83.333px_66.666px]' />
+            <Lines className='top-auto -z-10 !text-border opacity-60 [background-size:83.333px_66.666px]' />
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border' />
+        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
       <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />

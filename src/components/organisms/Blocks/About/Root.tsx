@@ -39,10 +39,10 @@ const AboutBlockOrganism = (
       >
         <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='h-screen !text-border translate-y-0 [background-size:83.333px_66.666px]' />
+            <Lines className='h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>
 
-          <span className='absolute inset-0 rounded-inherit border' />
+          <span className='absolute inset-0 rounded-inherit border opacity-60' />
         </div>
 
         <section className='flex max-w-xl grow flex-col gap-xl'>

@@ -37,12 +37,12 @@ const SecondaryHeroOrganism = (
           {data.title}
         </Title>
 
-        <div className='absolute inset-y-0 right-0 w-2/3 max-w-md overflow-hidden rounded-lg bg-white dark:bg-dark-8'>
+        <div className='absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-dark-8'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='h-screen !text-border translate-y-0 [background-size:83.333px_66.666px]' />
+            <Lines className='top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>
 
-          <span className='absolute inset-0 rounded-inherit border' />
+          <span className='absolute inset-0 rounded-inherit border opacity-60' />
         </div>
       </div>
     </Section>

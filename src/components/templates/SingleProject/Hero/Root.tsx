@@ -41,7 +41,7 @@ const SingleProjectHeroTemplate = (
       ref={ref}
       {...props}
     >
-      <header className='flex min-h-[calc(var(--h)*.75)] w-9/10 flex-col items-center justify-center pb-[--section-spacing-md] pt-[calc(var(--header-h)+var(--section-spacing-md))] [--h:100svh] 2xl:[--h:--max-h]'>
+      <header className='flex min-h-[calc(var(--h)*.75)] w-9/10 flex-col items-center justify-center pb-[--section-spacing-md] pt-[calc(var(--header-height)+var(--section-spacing-md))] [--h:100svh] 2xl:[--h:--max-h]'>
         {renderComp(
           <Title
             className='mb-xs max-w-md text-center font-medium tracking-wide'
@@ -85,7 +85,7 @@ const SingleProjectHeroTemplate = (
           [data.action?.label]
         )}
 
-        <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-5'>
+        <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-6'>
           <Image
             alt={data.image.alt}
             className='object-cover'

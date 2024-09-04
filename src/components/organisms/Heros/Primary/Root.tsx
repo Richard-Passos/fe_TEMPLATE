@@ -42,7 +42,7 @@ const PrimaryHeroOrganism = (
       ref={ref}
       {...props}
       className={cn(
-        'min-h-svh p-[--inset] pt-[--header-h] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
+        'min-h-svh p-[--inset] pt-[--header-height] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
         className
       )}
     >
@@ -67,11 +67,11 @@ const PrimaryHeroOrganism = (
               </div>
             </div>
 
-            <Lines className='-z-10 !opacity-60 [background-size:83.333px_66.666px]' />
+            <Lines className='-z-10 !text-border [background-size:83.333px_66.666px]' />
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='pointer-events-none absolute inset-0 rounded-inherit border' />
       </div>
 
       <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />

@@ -21,7 +21,7 @@ const SecondaryHeroOrganism = (
   return (
     <Section
       className={cn(
-        'min-h-fit pt-[calc(var(--header-h)+var(--section-spacing-md))] 2xl:min-h-fit',
+        'min-h-fit pt-[calc(var(--header-height)+var(--section-spacing-md))] 2xl:min-h-fit',
         className
       )}
       forceTheme
@@ -37,12 +37,12 @@ const SecondaryHeroOrganism = (
           {data.title}
         </Title>
 
-        <div className='absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-dark-8'>
+        <div className='absolute inset-y-0 right-0 w-2/3 max-w-md overflow-hidden rounded-lg bg-white dark:bg-dark-8'>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
+            <Lines className='h-screen !text-border translate-y-0 [background-size:83.333px_66.666px]' />
           </ScrollAnimate>
 
-          <span className='absolute inset-0 rounded-inherit border opacity-60' />
+          <span className='absolute inset-0 rounded-inherit border' />
         </div>
       </div>
     </Section>

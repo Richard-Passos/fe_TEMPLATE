@@ -17,10 +17,7 @@ const CardMolecule = (
 ) => {
   return (
     <Card
-      className={cn(
-        'size-full border dark:bg-dark-8 light:bg-white',
-        className
-      )}
+      className={cn('size-full border bg-body', className)}
       padding='lg'
       radius='md'
       ref={ref}

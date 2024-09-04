@@ -8,7 +8,7 @@ import { cn, keys } from '@/utils';
 
 import HeaderMenu from './Menu';
 import Nav from './Nav';
-import Set from './Set';
+import HeaderTheme from './Theme';
 
 type HeaderOrganismOwnProps = {};
 
@@ -28,7 +28,7 @@ const HeaderOrganism = (
   }));
 
   return (
-    <Set>
+    <HeaderTheme>
       <header
         className={cn(
           'absolute z-10 flex w-full max-w-bounds flex-wrap items-center justify-between px-[6%] py-lg sm:px-[4%] sm:py-xl',
@@ -50,7 +50,7 @@ const HeaderOrganism = (
 
         <HeaderMenu />
       </header>
-    </Set>
+    </HeaderTheme>
   );
 };
 

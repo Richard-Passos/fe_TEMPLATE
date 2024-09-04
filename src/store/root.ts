@@ -2,6 +2,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { values } from '@/utils';
+
 import slices from './slices';
 
 const persistConfig = {
@@ -9,9 +11,17 @@ const persistConfig = {
   storage
 };
 
-const rootReducer = combineReducers({
-  [slices.header.name]: slices.header.reducer
-});
+const rootReducer = combineReducers(
+  values(slices).reduce(
+    (obj, slice) => ({
+      ...obj,
+      [slice.name]: slice.reducer
+    }),
+    {}
+  ) as {
+    [K in keyof typeof slices]: (typeof slices)[K]['reducer'];
+  }
+);
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

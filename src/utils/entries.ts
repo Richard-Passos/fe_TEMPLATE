@@ -1,5 +1,3 @@
-import lodashEntries from 'lodash/entries';
-
-const entries = lodashEntries;
+import entries from 'lodash/entries';
 
 export default entries;

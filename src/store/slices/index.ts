@@ -1,8 +1,8 @@
-import headerSlice from './header';
+import heightSlice from './height';
 
 const slices = {
-  header: headerSlice
+  height: heightSlice
 };
 
 export default slices;
-export { headerSlice };
+export { heightSlice };

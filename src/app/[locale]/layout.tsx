@@ -39,18 +39,14 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
               <Header />
             </Height.Set>
 
-            <Height.Get name={['header', 'main', 'footer']}>
-              <Height.Set name='main'>
-                <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
-                  {children}
-                </main>
-              </Height.Set>
+            <Height.Get name={['header', 'document']}>
+              <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+                {children}
+              </main>
             </Height.Get>
 
-            <Height.Get name={['main', 'footer']}>
-              <Height.Set name='footer'>
-                <Footer />
-              </Height.Set>
+            <Height.Get name='document'>
+              <Footer />
             </Height.Get>
 
             <Toaster />

@@ -3,7 +3,6 @@ import { forwardRef } from 'react';
 import { Portal, ScrollAnimate } from '@/components/atoms';
 import { MenuIcon, TimesIcon } from '@/components/atoms/Icon/icons';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
-import { HeaderState } from '@/components/organisms/Header';
 import { smoothConfig } from '@/hooks/useSmooth';
 import { cn } from '@/utils';
 
@@ -29,30 +28,28 @@ const HeaderMenuTriggerOrganism = (
 
   return (
     <Portal>
-      <HeaderState>
-        <ScrollAnimate
-          config={animationConfig}
-          smoothConfig={smoothConfig}
-        >
-          <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max flex items-center justify-center scale-[--scale] [--side:theme(spacing.lg)] has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]'>
-            <HeaderMenuTriggerButton
-              className={cn(
-                'rounded-full ![--ai-size:calc(var(--size)*var(--mantine-scale))] [--size:3.75rem] sm:[--size:4.5rem]',
-                className
-              )}
-              isIconOnly
-              limit={{ x: 0.5, y: 0.5 }}
-              ref={ref}
-              variant='default'
-              {...props}
-            >
-              <MenuIcon className='absolute size-[40%] group-data-open/action:hidden' />
+      <ScrollAnimate
+        config={animationConfig}
+        smoothConfig={smoothConfig}
+      >
+        <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max flex items-center justify-center scale-[--scale] [--side:theme(spacing.lg)] has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]'>
+          <HeaderMenuTriggerButton
+            className={cn(
+              'rounded-full ![--ai-size:calc(var(--size)*var(--mantine-scale))] [--size:3.75rem] sm:[--size:4.5rem]',
+              className
+            )}
+            isIconOnly
+            limit={{ x: 0.5, y: 0.5 }}
+            ref={ref}
+            variant='default'
+            {...props}
+          >
+            <MenuIcon className='absolute size-[40%] group-data-open/action:hidden' />
 
-              <TimesIcon className='absolute size-[40%] group-data-closed/action:hidden' />
-            </HeaderMenuTriggerButton>
-          </div>
-        </ScrollAnimate>
-      </HeaderState>
+            <TimesIcon className='absolute size-[40%] group-data-closed/action:hidden' />
+          </HeaderMenuTriggerButton>
+        </div>
+      </ScrollAnimate>
     </Portal>
   );
 };

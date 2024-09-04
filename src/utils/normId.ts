@@ -1,9 +1,13 @@
-const normId = (str: string) =>
-  str
-    ? (str[0] + str.slice(1).replace(/([A-Z])/g, '-$1'))
-        .replace(/[ _]/g, '-')
-        .replace(/-{2,}/, '-')
-        .toLowerCase()
-    : '';
+const normId = (str: string) => {
+  if (!str) return '';
+
+  str = str.trim();
+
+  str = str[0] + str.slice(1).replace(/([A-Z])/g, '-$1');
+
+  str.replace(/[ _-]+/g, '-').toLowerCase();
+
+  return str;
+};
 
 export default normId;

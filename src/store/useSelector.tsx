@@ -1,7 +1,5 @@
-import { useSelector as useReduxSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { RootState } from './root';
 
-const useSelector = useReduxSelector.withTypes<RootState>();
-
-export default useSelector;
+export default useSelector.withTypes<RootState>();

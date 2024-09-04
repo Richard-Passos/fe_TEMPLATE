@@ -10,14 +10,14 @@ const themeOverride = createTheme({
   black: 'hsl(0 0% 7.5%)',
   colors: {
     dark: [
-      'hsl(0 0% 75%)',
+      'hsl(0 0% 70%)',
       'hsl(0 0% 60%)',
       'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',
-      'hsl(0 0% 15%)',
+      'hsl(0 0% 12.5%)',
+      'hsl(0 0% 6.5%)',
       'hsl(0 0% 6%)',
       'hsl(0 0% 5%)',
-      'hsl(0 0% 6%)',
       'hsl(0 0% 4.5%)',
       'hsl(0 0% 1.5%)'
     ],

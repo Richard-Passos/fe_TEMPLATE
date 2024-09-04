@@ -2,7 +2,7 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "<Start>Gerando impacto</Start> <End><em>&</em> <span>conquistando</span></End> <Center><span>corações</span> <Description></Description></Center>",
+        "title": "<Start>Gerando impacto</Start> <End><em>&</em> <span>cativando</span></End> <Center><span>corações</span> <Description></Description></Center>",
         "description": "Olá! Eu sou Richard, um incrível desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
         "left": {
           "src": "/icons/smile.svg",
@@ -174,7 +174,7 @@
             "0": "O que m<em>e</em>",
             "1": "<em>D</em>estaca<em>?</em>"
           },
-          "description": "Após projetos impactantes e uma personalidade que conquista corações a apenas <contact>um simples clique</contact>. Escolha-me para alcançar resultados excelentes.",
+          "description": "Após projetos impactantes e uma personalidade cativante a apenas <contact>um simples clique</contact>. Escolha-me para alcançar resultados excelentes.",
           "subtitle": "Algumas estatísticas..."
         },
         "hardSkills": {

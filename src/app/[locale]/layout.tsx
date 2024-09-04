@@ -7,14 +7,8 @@ import {
 } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
-import { SmoothScroll } from '@/components/atoms';
-import {
-  Footer,
-  Header,
-  Main,
-  Providers,
-  Toaster
-} from '@/components/organisms';
+import { Height, SmoothScroll } from '@/components/atoms';
+import { Footer, Header, Providers, Toaster } from '@/components/organisms';
 import { locales } from '@/constants';
 import '@/globals.css';
 import { defaultColorScheme } from '@/theme';
@@ -41,13 +35,23 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <SmoothScroll>
-            <Header.Root />
+            <Height.Set name='header'>
+              <Header />
+            </Height.Set>
 
-            <Header.State>
-              <Main>{children}</Main>
-            </Header.State>
+            <Height.Get name={['header', 'main', 'footer']}>
+              <Height.Set name='main'>
+                <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+                  {children}
+                </main>
+              </Height.Set>
+            </Height.Get>
 
-            <Footer />
+            <Height.Get name={['main', 'footer']}>
+              <Height.Set name='footer'>
+                <Footer />
+              </Height.Set>
+            </Height.Get>
 
             <Toaster />
           </SmoothScroll>

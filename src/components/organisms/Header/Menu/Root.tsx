@@ -102,7 +102,6 @@ const HeaderMenuOrganism = (
             {socials.map((data) => (
               <Action
                 aria-label={data.label}
-                className='text-text'
                 href={data.href}
                 isIconOnly
                 key={data.href}

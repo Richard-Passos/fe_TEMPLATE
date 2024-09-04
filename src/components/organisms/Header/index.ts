@@ -1,11 +1,4 @@
-import HeaderRoot, { HeaderOrganismProps as HeaderRootProps } from './Root';
-import HeaderState, { HeaderStateProps } from './State';
-
-const Header = {
-  Root: HeaderRoot,
-  State: HeaderState
-};
+import Header, { HeaderOrganismProps as HeaderProps } from './Root';
 
 export default Header;
-export { HeaderRoot, HeaderState };
-export type { HeaderRootProps, HeaderStateProps };
+export type { HeaderProps };

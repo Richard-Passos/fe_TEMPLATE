@@ -4,7 +4,6 @@ import Header from './Header';
 import Heros from './Heros';
 import Icons from './Icons';
 import Logo from './Logo';
-import Main from './Main';
 import Providers from './Providers';
 import Section from './Section';
 import Toaster from './Toaster';
@@ -16,7 +15,6 @@ const Organisms = {
   Heros,
   Icons,
   Logo,
-  Main,
   Providers,
   Section,
   Toaster
@@ -30,7 +28,6 @@ export {
   Heros,
   Icons,
   Logo,
-  Main,
   Providers,
   Section,
   Toaster

@@ -2,7 +2,7 @@ import useBooleanContext from './useBoolean';
 import useCarouselContext from './useCarousel';
 import useCatalogContext from './useCatalog';
 import useFormContext from './useForm';
-import useHeaderContext from './useHeader';
+import useHeightContext from './useHeight';
 import useMagneticContext from './useMagnetic';
 import useSmoothScrollContext from './useSmoothScroll';
 
@@ -11,7 +11,7 @@ const hooksContexts = {
   useCarousel: useCarouselContext,
   useCatalog: useCatalogContext,
   useForm: useFormContext,
-  useHeader: useHeaderContext,
+  useHeight: useHeightContext,
   useMagnetic: useMagneticContext,
   useSmoothScroll: useSmoothScrollContext
 };
@@ -22,7 +22,7 @@ export {
   useCarouselContext,
   useCatalogContext,
   useFormContext,
-  useHeaderContext,
+  useHeightContext,
   useMagneticContext,
   useSmoothScrollContext
 };

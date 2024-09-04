@@ -3,6 +3,7 @@ import capitalize from './capitalize';
 import cn from './cn';
 import entries from './entries';
 import isExternalUrl from './isExternalUrl';
+import isFunction from './isFunction';
 import isLocale from './isLocale';
 import keys from './keys';
 import normCompName from './normCompName';
@@ -11,6 +12,7 @@ import normKey from './normKey';
 import pick from './pick';
 import renderComp from './renderComp';
 import request from './request';
+import setOrRemove from './setOrRemove';
 import setRefs from './setRefs';
 import times from './times';
 import transformTemplate from './transformTemplate';
@@ -23,6 +25,7 @@ const utils = {
   entries,
   keys,
   isExternalUrl,
+  isFunction,
   isLocale,
   normCompName,
   normId,
@@ -30,6 +33,7 @@ const utils = {
   pick,
   renderComp,
   request,
+  setOrRemove,
   setRefs,
   times,
   transformTemplate,
@@ -44,6 +48,7 @@ export {
   entries,
   keys,
   isExternalUrl,
+  isFunction,
   isLocale,
   normCompName,
   normId,
@@ -51,6 +56,7 @@ export {
   pick,
   renderComp,
   request,
+  setOrRemove,
   setRefs,
   times,
   transformTemplate,

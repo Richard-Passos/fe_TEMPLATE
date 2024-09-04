@@ -1,61 +1,100 @@
 'use client';
 
-import { DefaultMantineColor, StyleProp } from '@mantine/core';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { yFullScrollAnim } from '@/animations/scroll';
 import { Bg, Lines, ScrollAnimate } from '@/components/atoms';
+import { BgProps } from '@/components/atoms/Bg';
+import { LinesProps } from '@/components/atoms/Lines';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate/Root';
 import { cn } from '@/utils';
 
+const HEIGHT = '5rem';
+
 type SectionTransitionOrganismOwnProps = {
-  color?: StyleProp<DefaultMantineColor>;
   reverse?: boolean;
+  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
+  bgProps?: Partial<BgProps>;
+  linesProps?: Partial<LinesProps>;
 };
 
 type SectionTransitionOrganismProps = SectionTransitionOrganismOwnProps &
   Omit<ComponentPropsWithRef<'div'>, keyof SectionTransitionOrganismOwnProps>;
 
 const SectionTransitionOrganism = (
-  { color, reverse, className, ...props }: SectionTransitionOrganismProps,
+  {
+    reverse,
+    className,
+    style,
+    wrapperProps,
+    bgProps,
+    linesProps,
+    ...props
+  }: SectionTransitionOrganismProps,
   ref: SectionTransitionOrganismProps['ref']
 ) => {
-  const animationConfig: ScrollAnimateConfigOptions = {
-    scrollConfig: {
-      offset: ['0 1', '-0.05 0']
+  const animationConfig: {
+    [key in 'y' | 'radius']: ScrollAnimateConfigOptions;
+  } = {
+    y: {
+      scrollConfig: {
+        offset: ['0 1', '0 0']
+      },
+      prop: '--y',
+      propPoints: [HEIGHT, '0rem']
     },
-    prop: '--h',
-    propPoints: ['0%', '100%']
+    radius: {
+      scrollConfig: {
+        offset: ['1 1', '0 0']
+      },
+      prop: '--radius',
+      propPoints: ['0%', '50%']
+    }
   };
 
   return (
-    <ScrollAnimate config={animationConfig}>
-      <div
-        className={cn(
-          'pointer-events-none absolute top-px h-20 w-screen',
-          className
-        )}
-        ref={ref}
-        {...props}
-      >
+    <ScrollAnimate config={animationConfig.y}>
+      <ScrollAnimate config={animationConfig.radius}>
         <div
           className={cn(
-            'relative flex w-full justify-center overflow-hidden',
-            reverse
-              ? 'h-[calc(100%-var(--h))] -translate-y-0.5'
-              : 'h-[--h] -translate-y-full rotate-180'
+            'pointer-events-none absolute top-0 z-10 h-[--height] w-screen',
+            className
           )}
+          ref={ref}
+          style={
+            {
+              '--height': HEIGHT,
+              ...style
+            } as typeof style
+          }
+          {...props}
         >
-          <Bg
-            className='pointer-events-auto z-0 h-[750%] w-[150%] rounded-[50%] -translate-y-[86.666%]'
-            color={color}
+          <div
+            {...wrapperProps}
+            className={cn(
+              'relative size-full overflow-hidden',
+              reverse ? '-top-px' : 'bottom-full translate-y-px',
+              wrapperProps?.className
+            )}
           >
-            <ScrollAnimate config={yFullScrollAnim}>
-              <Lines className={cn(!reverse && 'rotate-180')} />
-            </ScrollAnimate>
-          </Bg>
+            <Bg
+              {...bgProps}
+              className={cn(
+                'pointer-events-auto -inset-x-[25%] z-0 aspect-[1/.25] size-auto',
+                reverse ? 'bottom-0 top-auto' : 'bottom-auto top-0',
+                bgProps?.className
+              )}
+              style={{
+                clipPath: reverse
+                  ? 'inset(0 0 calc(var(--height) - var(--y)) 0 round calc(50% - var(--radius)))'
+                  : 'inset(var(--y) 0 0 0 round var(--radius))',
+                ...bgProps?.style
+              }}
+            >
+              <Lines {...linesProps} />
+            </Bg>
+          </div>
         </div>
-      </div>
+      </ScrollAnimate>
     </ScrollAnimate>
   );
 };

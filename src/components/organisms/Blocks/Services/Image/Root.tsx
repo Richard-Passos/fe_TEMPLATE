@@ -37,7 +37,7 @@ const ServicesBlockImageOrganism = (
       <div
         {...wrapperProps}
         className={cn(
-          'relative size-full overflow-hidden rounded-[calc(var(--radius)-var(--p))] bg-gray-1 dark:bg-dark-5',
+          'relative size-full overflow-hidden rounded-[calc(var(--radius)-var(--p))] bg-gray-1 dark:bg-dark-6',
           wrapperProps?.className
         )}
       >

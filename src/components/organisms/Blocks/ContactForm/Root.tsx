@@ -39,10 +39,10 @@ const ContactFormBlockOrganism = (
     >
       <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
+          <Lines className='h-screen !text-border translate-y-0 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='absolute inset-0 rounded-inherit border' />
       </div>
 
       <div className='w-full max-w-screen-md grow sm:py-xl'>

@@ -48,7 +48,7 @@ const AboutBlockTextOrganism = (
             config={lineLeftScrollAnim}
             layout
           >
-            <span className='absolute inset-0 border bg-white dark:bg-dark-8' />
+            <span className='absolute inset-0 border bg-body' />
           </ScrollAnimate>
         </span>
 

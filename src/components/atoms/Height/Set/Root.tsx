@@ -10,22 +10,25 @@ import { setRefs } from '@/utils';
 
 type HeightSetAtomOwnProps = {
   name: keyof Heights;
+  isDocument?: boolean;
 };
 
 type HeightSetAtomProps = HeightSetAtomOwnProps &
   Omit<SlotProps, keyof HeightSetAtomOwnProps>;
 
 const HeightSetAtom = (
-  { name, ...props }: HeightSetAtomProps,
+  { name, isDocument, children, ...props }: HeightSetAtomProps,
   ref: HeightSetAtomProps['ref']
 ) => {
   const innerRef = useRef<HTMLElement>(null),
     { setHeight } = useHeightContext();
 
   const handleSetHeight = useCallback(() => {
-      if (!innerRef.current) return;
+      const element = isDocument ? document.documentElement : innerRef.current;
 
-      const height = innerRef.current.offsetHeight;
+      if (!element) return;
+
+      const height = element.offsetHeight;
 
       setHeight({ [name]: height });
     }, [name, setHeight]),
@@ -43,11 +46,15 @@ const HeightSetAtom = (
     };
   }, [handleSetHeight, resetHeight]);
 
+  if (isDocument) return children;
+
   return (
     <Slot
       ref={setRefs(ref, innerRef)}
       {...props}
-    />
+    >
+      {children}
+    </Slot>
   );
 };
 

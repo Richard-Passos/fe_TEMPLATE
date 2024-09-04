@@ -28,7 +28,7 @@ const LinkCardOrganism = (
       {...props}
     >
       <UnstyledLink
-        className='-m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center rounded-inherit border p-[--card-padding] font-normal text-current no-underline hover:bg-gray-0 dark:hover:bg-dark-5'
+        className='-m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center rounded-inherit border p-[--card-padding] font-normal text-current no-underline hover:bg-gray-0 dark:hover:bg-dark-6'
         href={data.href}
       >
         <div className='flex size-10 items-center justify-center rounded-sm border'>

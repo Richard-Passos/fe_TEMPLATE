@@ -41,7 +41,7 @@ const GridProjectCardOrganism = (
           </div>
         </div>
 
-        <div className='relative grow overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-5'>
+        <div className='dark:bg-6 relative grow overflow-hidden rounded-xl bg-gray-1'>
           <ScrollAnimate config={imageYScrollAnim}>
             <div className='absolute h-[115%] w-full'>
               <Image

@@ -36,7 +36,7 @@ const SkillCardOrganism = (
       >
         <div className='relative size-full transition-transform duration-500 ease-backOut transform-style-3d group-data-[active=true]/card:rotate-y-180'>
           <Card.Root className='absolute items-center justify-center backface-hidden'>
-            <div className='flex size-1/2 items-center justify-center rounded bg-gray-1 dark:bg-dark-5'>
+            <div className='flex size-1/2 items-center justify-center rounded bg-gray-1 dark:bg-dark-6'>
               <Icon
                 className='size-1/2'
                 src={data.icon}

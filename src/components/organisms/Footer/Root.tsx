@@ -23,7 +23,7 @@ type FooterOrganismProps = FooterOrganismOwnProps &
   Omit<SectionProps, keyof FooterOrganismOwnProps>;
 
 const FooterOrganism = (
-  { className, ...props }: FooterOrganismProps,
+  { className, transitionProps, ...props }: FooterOrganismProps,
   ref: FooterOrganismProps['ref']
 ) => {
   const namespace: Namespace = 'footer';
@@ -51,7 +51,8 @@ const FooterOrganism = (
       transitionProps={
         {
           reverse: true,
-          'data-theme': 'dark'
+          'data-theme': 'dark',
+          ...transitionProps
         } as SectionProps['transitionProps']
       }
       {...props}
@@ -157,10 +158,10 @@ const FooterOrganism = (
 
       <div className='absolute inset-[15%] overflow-hidden rounded-lg'>
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className='!opacity-60 [background-size:83.333px_66.666px]' />
+          <Lines className='h-screen !text-border translate-y-0 [background-size:83.333px_66.666px]' />
         </ScrollAnimate>
 
-        <span className='absolute inset-0 rounded-inherit border opacity-60' />
+        <span className='absolute inset-0 rounded-inherit border' />
       </div>
     </Section>
   );

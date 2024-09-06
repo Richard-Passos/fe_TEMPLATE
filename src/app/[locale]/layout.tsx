@@ -1,4 +1,5 @@
 import { ColorSchemeScript } from '@mantine/core';
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import {
   getMessages,
@@ -50,6 +51,8 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             </Height.Get>
 
             <Toaster />
+
+            <Analytics />
           </SmoothScroll>
         </Providers>
       </body>

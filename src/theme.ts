@@ -9,6 +9,7 @@ const themeOverride = createTheme({
   white: 'hsl(0 0% 98%)',
   black: 'hsl(0 0% 7.5%)',
   colors: {
+    primary: ['', '', '', '', '', '', '', '', '', ''],
     dark: [
       'hsl(0 0% 70%)',
       'hsl(0 0% 60%)',
@@ -182,7 +183,7 @@ const themeOverride = createTheme({
     light: 6,
     dark: 7
   },
-  primaryColor: 'red',
+  primaryColor: 'primary',
   autoContrast: false,
   luminanceThreshold: 0.3,
   fontFamily: fonts.display.style.fontFamily,

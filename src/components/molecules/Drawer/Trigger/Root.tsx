@@ -2,13 +2,13 @@
 
 import { forwardRef } from 'react';
 
-import Button, { ButtonProps } from '@/components/atoms/Button';
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useBooleanContext } from '@/hooks/contexts';
 
 type DrawerTriggerMoleculeOwnProps = {};
 
 type DrawerTriggerMoleculeProps = DrawerTriggerMoleculeOwnProps &
-  Omit<ButtonProps, keyof DrawerTriggerMoleculeOwnProps>;
+  Omit<SlotProps, keyof DrawerTriggerMoleculeOwnProps>;
 
 const DrawerTriggerMolecule = (
   props: DrawerTriggerMoleculeProps,
@@ -19,7 +19,7 @@ const DrawerTriggerMolecule = (
   const dataState = value ? 'open' : 'closed';
 
   return (
-    <Button
+    <Slot
       data-state={dataState}
       ref={ref}
       {...props}

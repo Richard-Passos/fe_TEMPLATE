@@ -11,12 +11,12 @@ type Project = {
     alt: string;
   };
   gif?: {
-    src: '/images/alpaca.webp';
+    src: string;
     alt: string;
   };
   images?: {
     [key: string]: {
-      src: '/images/project.jpeg';
+      src: string;
       alt: string;
     };
   };

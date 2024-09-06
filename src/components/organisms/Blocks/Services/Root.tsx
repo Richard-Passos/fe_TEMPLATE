@@ -100,6 +100,7 @@ const ServicesBlockOrganism = (
 
         {renderComp(
           <Action
+            as='link'
             href='/contact'
             size='md'
             variant='default'

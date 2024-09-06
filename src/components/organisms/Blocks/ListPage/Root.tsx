@@ -2,7 +2,10 @@ import { ReactNode, forwardRef } from 'react';
 
 import { Action, ListHorizontalScroll } from '@/components/molecules';
 import { ActionProps } from '@/components/molecules/Action';
-import { ListHorizontalScrollRootProps } from '@/components/molecules/ListHorizontalScroll';
+import {
+  ListHorizontalScrollItemProps,
+  ListHorizontalScrollRootProps
+} from '@/components/molecules/ListHorizontalScroll';
 import { cn } from '@/utils';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
@@ -16,6 +19,7 @@ type ListPageBlockOrganismOwnProps = {
     };
   };
   listProps?: Partial<ListHorizontalScrollRootProps>;
+  listItemProps?: Partial<ListHorizontalScrollItemProps>;
   actionProps?: Partial<ActionProps>;
 };
 
@@ -23,7 +27,13 @@ type ListPageBlockOrganismProps = ListPageBlockOrganismOwnProps &
   Omit<CleanLayoutBlockProps, keyof ListPageBlockOrganismOwnProps>;
 
 const ListPageBlockOrganism = (
-  { data, listProps, actionProps, ...props }: ListPageBlockOrganismProps,
+  {
+    data,
+    listProps,
+    listItemProps,
+    actionProps,
+    ...props
+  }: ListPageBlockOrganismProps,
   ref: ListPageBlockOrganismProps['ref']
 ) => {
   return (
@@ -35,8 +45,12 @@ const ListPageBlockOrganism = (
         {data.items.map((item, i) => (
           <ListHorizontalScroll.Item
             baseVelocity={(1.5 + 0.5 * i) * (i % 2 === 0 ? 1 : -1)}
-            className='text-2xl uppercase [--gap:theme(spacing.sm)] sm:text-3xl'
             key={item.id}
+            {...listItemProps}
+            className={cn(
+              'text-2xl uppercase [--gap:theme(spacing.sm)] sm:text-3xl',
+              listItemProps?.className
+            )}
           >
             <span>{item.text}</span>
 
@@ -58,6 +72,7 @@ const ListPageBlockOrganism = (
       </ListHorizontalScroll.Root>
 
       <Action
+        as='link'
         href={data.action.href}
         size='md'
         variant='default'

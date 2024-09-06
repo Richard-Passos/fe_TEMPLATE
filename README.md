@@ -1,10 +1,10 @@
-<h1 align="center">🗄️ Portfolio with Typescript</h1>
+<h1 align="center">🗄️ My Portfolio</h1>
 
 <br>
 
 ## 🚀 Run project
 
-Visit the live [website](https://portfoliowithtypescript.vercel.app)
+Visit the live [website](https://richardp.vercel.app)
 
 <br>
 

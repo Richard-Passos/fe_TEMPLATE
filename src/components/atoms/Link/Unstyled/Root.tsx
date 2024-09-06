@@ -9,7 +9,10 @@ type UnstyledLinkAtomOwnProps = {
 };
 
 type UnstyledLinkAtomProps = UnstyledLinkAtomOwnProps &
-  Omit<ComponentPropsWithRef<typeof Link>, keyof UnstyledLinkAtomOwnProps>;
+  Omit<
+    ComponentPropsWithRef<typeof Link>,
+    'as' | keyof UnstyledLinkAtomOwnProps
+  >;
 
 const UnstyledLinkAtom = (
   { href, disabled, ...props }: UnstyledLinkAtomProps,

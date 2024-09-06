@@ -458,46 +458,16 @@
       "last": "Passos"
     },
     "email": "hi.richardp@gmail.com",
-    "description": "Richard Passos is a full stack developer — who cares building solid and scalable products with a great user experience.",
+    "title": "{ name } an awesome Full Stack Developer",
+    "description": "Helping brands achieve digital prominence. Based in { country }. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.",
     "availability": "Available to work",
+    "keywords": "Full Stack Developer, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Problem-solving, Detail-oriented, Communication, Adaptability, Time management, Critical thinking, Synthetic thinking",
     "authors": {
       "richardPassos": {
         "name": "Richard Passos",
         "url": "https://github.com/Richard-Passos"
       }
     },
-    "keywords": {
-      "fullStackDeveloper": "Full Stack Developer",
-      "reactJs": "React.js",
-      "nodeJs": "Node.js",
-      "reactNative": "React Native",
-      "nextJs": "Next.js",
-      "typescript": "TypeScript",
-      "javascript": "JavaScript",
-      "jest": "Jest",
-      "mongoDB": "MongoDB",
-      "git": "Git",
-      "tailwindCss": "TailwindCSS",
-      "styledComponents": "Styled-components",
-      "problemSolving": "Problem-solving",
-      "detailOriented": "Detail-oriented",
-      "communication": "Communication",
-      "adaptability": "Adaptability",
-      "timeManagement": "Time management",
-      "criticalThinking": "Critical thinking",
-      "syntheticThinking": "Synthetic thinking"
-    },
-    "logo": {
-      "primary": "/icons/logo-a.svg",
-      "secondary": "/icons/logo-b.svg",
-      "favicon": {
-        "light": "/favicons/favicon.ico",
-        "dark": "/favicons/favicon-dark.ico",
-        "apple": "/favicons/apple-touch-icon.png",
-        "maskImage": "/favicons/safari-pinned-tab.svg"
-      }
-    },
-    "manifest": "/favicons/manifest.json",
     "location": {
       "country": "Brazil",
       "state": "RS",

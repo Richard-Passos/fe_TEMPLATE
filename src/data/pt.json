@@ -461,7 +461,8 @@
       "last": "Passos"
     },
     "email": "hi.richardp@gmail.com",
-    "description": "Richard Passos é um desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
+    "title": "{ name } um ótimo Desenvolvedor Full Stack",
+    "description": "Ajudando marcas a alcançar o destaque digital. Localizado no { country }. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.",
     "availability": "Disponível para trabalhar",
     "authors": {
       "richardPassos": {
@@ -469,38 +470,7 @@
         "url": "https://github.com/Richard-Passos"
       }
     },
-    "keywords": {
-      "fullStackDeveloper": "Desenvolvedor Full Stack",
-      "reactJs": "React.js",
-      "nodeJs": "Node.js",
-      "reactNative": "React Native",
-      "nextJs": "Next.js",
-      "typescript": "TypeScript",
-      "javascript": "JavaScript",
-      "jest": "Jest",
-      "mongoDB": "MongoDB",
-      "git": "Git",
-      "tailwindCss": "TailwindCSS",
-      "styledComponents": "Styled-components",
-      "problemSolving": "Problem-solving",
-      "detailOriented": "Detail-oriented",
-      "communication": "Communication",
-      "adaptability": "Adaptability",
-      "timeManagement": "Time management",
-      "criticalThinking": "Critical thinking",
-      "syntheticThinking": "Synthetic thinking"
-    },
-    "logo": {
-      "primary": "/icons/logo-a.svg",
-      "secondary": "/icons/logo-b.svg",
-      "favicon": {
-        "light": "/favicons/favicon.ico",
-        "dark": "/favicons/favicon-dark.ico",
-        "apple": "/favicons/apple-touch-icon.png",
-        "maskImage": "/favicons/safari-pinned-tab.svg"
-      }
-    },
-    "manifest": "/favicons/manifest.json",
+    "keywords": "Desenvolvedor Full Stack, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Resolução de problemas, Orientado a detalhes, Comunicação, Adaptabilidade, Gestão de tempo, Pensamento crítico, Pensamento sintético",
     "location": {
       "country": "Brasil",
       "state": "RS",

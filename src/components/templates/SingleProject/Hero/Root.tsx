@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { Image, ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ArrowUpRightIcon } from '@/components/atoms/Icon/icons';
@@ -6,7 +6,7 @@ import { ImageProps } from '@/components/atoms/Image';
 import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
 import { Action } from '@/components/molecules';
-import { ActionProps } from '@/components/molecules/Action';
+import { ActionLinkProps } from '@/components/molecules/Action/Link';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn, renderComp } from '@/utils';
 
@@ -19,9 +19,9 @@ type SingleProjectHeroTemplateOwnProps = {
       src: ImageProps['src'];
       alt: ImageProps['alt'];
     };
-    action?: {
-      label: ActionProps['children'];
-      href: ActionProps['href'];
+    action: {
+      label: ReactNode;
+      href: ActionLinkProps['href'];
     };
   };
 };
@@ -75,14 +75,15 @@ const SingleProjectHeroTemplate = (
               <Action
                 className='aspect-square rounded-full ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]'
                 disabled={!data.action?.href}
-                href={data.action?.href}
+                as='link'
+                href={data.action.href}
               >
-                {data.action?.label}&nbsp;
+                {data.action.label}&nbsp;
                 <ArrowUpRightIcon className='size-[1.25em] shrink-0' />
               </Action>
             </div>
           </ScrollAnimate>,
-          [data.action?.label]
+          [data.action.label]
         )}
 
         <div className='relative aspect-video w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-6'>

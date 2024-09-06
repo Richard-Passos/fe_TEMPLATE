@@ -66,7 +66,7 @@ const generateMetadata = async ({
   return {
     title: {
       default: `${t('name.first')} ${t('name.last')}`,
-      template: `%s - ${t('name.first')} ${t('name.last')}`
+      template: `%s — ${t('name.first')} ${t('name.last')}`
     },
     description: t('description'),
     icons: {

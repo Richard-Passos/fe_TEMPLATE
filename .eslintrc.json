@@ -9,6 +9,26 @@
   "rules": {
     "react/jsx-sort-props": "warn",
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          "@mantine/hooks",
+          "usehooks-ts",
+          "next/link",
+          {
+            "name": "next/navigation",
+            "importNames": [
+              "redirect",
+              "permanentRedirect",
+              "useRouter",
+              "usePathname"
+            ]
+          }
+        ],
+        "patterns": ["lodash*"]
+      }
+    ]
   }
 }

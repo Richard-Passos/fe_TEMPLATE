@@ -62,7 +62,7 @@ const SelectAtom = (
             comboboxProps?.classNames?.dropdown
           ),
           option: cn(
-            'hover:bg-gray-0 dark:hover:bg-dark-7',
+            'hover:bg-gray-0 dark:hover:bg-dark-7 data-[combobox-selected]:text-primary-contrast data-[combobox-selected]:!bg-primary-filled',
             //@ts-ignore
             comboboxProps?.classNames?.option
           )

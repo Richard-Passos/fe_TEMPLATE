@@ -1,13 +1,9 @@
 'use client';
 
-import { useScroll } from 'framer-motion';
-import { RefObject, useCallback, useEffect, useRef } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { RefObject, useLayoutEffect } from 'react';
 
-import {
-  useColorScheme,
-  useComputedColorScheme,
-  useUpdateEffect
-} from '@/hooks';
+import { useThemeContext } from '@/hooks/contexts';
 import { Theme } from '@/types';
 
 const useSetTheme = (
@@ -15,39 +11,22 @@ const useSetTheme = (
   theme: Theme,
   force?: boolean
 ) => {
-  const { setColorScheme } = useColorScheme(),
-    activeTheme = useComputedColorScheme();
+  const { setTheme } = useThemeContext();
 
-  const lastTheme = useRef<Theme>(activeTheme);
-
-  /* const { scrollYProgress: y } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 0.10001', '0 0.1']
-  }); */
+    offset: ['0 0.1', '1 0.11']
+  });
 
-  const handleSetTheme = useCallback(
-    (theme: Theme, last: Theme) => {
-      lastTheme.current = last;
+  useMotionValueEvent(scrollYProgress, 'change', (value) => {
+    if ((value > 0 && value < 0.1) || (value < 1 && value > 0.9)) {
+      setTheme(theme);
+    }
+  });
 
-      setColorScheme(theme);
-    },
-    [setColorScheme]
-  );
-
-  /* useUpdateEffect(() => {
-    const unsubscribe = y.on('change', (y) => {
-      if (y === 0) handleSetTheme(lastTheme.current, theme);
-      else if (y === 1) handleSetTheme(theme, activeTheme);
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, [y, handleSetTheme, theme, activeTheme]); */
-
-  useEffect(() => {
-    if (force) handleSetTheme(theme, activeTheme);
-  }, [force]);
+  useLayoutEffect(() => {
+    if (force) setTheme(theme);
+  }, [force, setTheme, theme]);
 };
 
 export default useSetTheme;

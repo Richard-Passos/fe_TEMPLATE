@@ -4,7 +4,7 @@ import { OptionalPortal, OptionalPortalProps } from '@mantine/core';
 import { Slot } from '@radix-ui/react-slot';
 import { forwardRef } from 'react';
 
-import { useComputedColorScheme } from '@/hooks';
+import { useThemeContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
 
 type PortalAtomOwnProps = {
@@ -18,7 +18,7 @@ const PortalAtom = (
   { withinPortal = true, children, ...props }: PortalAtomProps,
   ref: PortalAtomProps['ref']
 ) => {
-  const theme = useComputedColorScheme();
+  const { theme } = useThemeContext();
 
   return (
     <OptionalPortal

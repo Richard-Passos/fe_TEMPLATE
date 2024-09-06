@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
-import { useComputedColorScheme } from '@/hooks';
+import { useThemeContext } from '@/hooks/contexts';
 
 type HeaderThemeOrganismOwnProps = {};
 
@@ -14,7 +14,7 @@ const HeaderThemeOrganism = (
   { className, ...props }: HeaderThemeOrganismProps,
   ref: HeaderThemeOrganismProps['ref']
 ) => {
-  const theme = useComputedColorScheme();
+  const { theme } = useThemeContext();
 
   return (
     <Slot

@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
-    "@mantine/core": "^7.11.2",
-    "@mantine/hooks": "7.11.2",
+    "@mantine/core": "^7.12.2",
+    "@mantine/hooks": "^7.12.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.6",
     "@splidejs/react-splide": "^0.7.12",
@@ -30,7 +30,6 @@
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
-    "resend": "^4.0.0",
     "tailwind-merge": "^2.4.0",
     "usehooks-ts": "^3.1.0",
     "zod": "^3.23.8"
@@ -61,5 +60,5 @@
     "tailwindcss-3d": "^1.0.7",
     "typescript": "^5.5.4"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.4.1"
 }

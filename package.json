@@ -17,6 +17,7 @@
     "@splidejs/react-splide": "^0.7.12",
     "@studio-freight/react-lenis": "^0.0.47",
     "@vercel/analytics": "^1.3.1",
+    "@vercel/speed-insights": "^1.0.12",
     "detect-it": "^4.0.1",
     "framer-motion": "^11.3.18",
     "lodash": "^4.17.21",

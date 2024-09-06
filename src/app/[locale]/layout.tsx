@@ -1,5 +1,6 @@
 import { ColorSchemeScript } from '@mantine/core';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import {
   getMessages,
@@ -53,6 +54,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             <Toaster />
 
             <Analytics />
+            <SpeedInsights />
           </SmoothScroll>
         </Providers>
       </body>

@@ -5,27 +5,39 @@ import { forwardRef } from 'react';
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useFormContext } from '@/hooks/contexts';
 
-type FormResetMoleculeOwnProps = {};
+type FormResetMoleculeOwnProps = {
+  shouldHandleLoading?: boolean;
+};
 
 type FormResetMoleculeProps = FormResetMoleculeOwnProps &
   Omit<SlotProps, keyof FormResetMoleculeOwnProps>;
 
 const FormResetMolecule = (
-  props: FormResetMoleculeProps,
+  { shouldHandleLoading = true, ...props }: FormResetMoleculeProps,
   ref: FormResetMoleculeProps['ref']
 ) => {
+  const {
+    reset,
+    formState: { isSubmitting }
+  } = useFormContext();
+
   props = {
     ...props,
-    type: 'reset'
+    type: 'reset',
+    isLoading: shouldHandleLoading && isSubmitting
   } as typeof props;
-
-  const { reset } = useFormContext();
 
   return (
     <Slot
-      onClick={() => reset()}
       ref={ref}
       {...props}
+      onClick={(event) => {
+        event.preventDefault();
+
+        reset();
+
+        props.onClick?.(event);
+      }}
     />
   );
 };

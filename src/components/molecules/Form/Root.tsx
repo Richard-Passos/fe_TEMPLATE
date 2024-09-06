@@ -19,7 +19,10 @@ const FormMolecule = forwardRef(
     { action, onSubmit, ...props }: FormMoleculeProps,
     ref: FormMoleculeProps['ref']
   ) => {
-    const { handleSubmit } = useFormContext();
+    const {
+      handleSubmit,
+      formState: { isSubmitting }
+    } = useFormContext();
 
     const onSend = () => {
       if (action) {
@@ -38,6 +41,7 @@ const FormMolecule = forwardRef(
 
     return (
       <form
+        data-loading={isSubmitting}
         noValidate
         ref={ref}
         {...onSend()}

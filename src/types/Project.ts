@@ -1,7 +1,7 @@
 type Project = {
   slug: string;
   isSelected?: boolean;
-  href?: string;
+  href: string;
   title: string;
   roles: { [key: string]: string };
   year?: number;

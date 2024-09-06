@@ -4,7 +4,7 @@ import {
   ComponentPropsWithRef,
   forwardRef,
   useCallback,
-  useEffect,
+  useLayoutEffect,
   useRef,
   useState
 } from 'react';
@@ -39,13 +39,13 @@ const LinesAtom = (
       setTop(0);
     }, [setTop]);
 
-  useEventListener('resize', handleSetTop);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleSetTop();
 
     return resetTop;
   }, [handleSetTop, resetTop]);
+
+  useEventListener('resize', handleSetTop);
 
   return (
     <div

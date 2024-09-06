@@ -1,6 +1,6 @@
 'use client';
 
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import { RefObject, useCallback, useLayoutEffect, useState } from 'react';
 
 import useEventListener from './useEventListener';
 
@@ -24,11 +24,11 @@ const useChildrenCount = (
     setCount(Math.max(num % 2 !== 0 ? num : num - 1, 1));
   }, [parentRef, childrenRef, times, setCount]);
 
-  useEventListener('resize', handleSetCount);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleSetCount();
   }, [handleSetCount]);
+
+  useEventListener('resize', handleSetCount);
 
   return count === Infinity ? 1 : count;
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 
 import useEventListener from './useEventListener';
 
@@ -14,11 +14,11 @@ const useWindowSize = () => {
     });
   }, [setWindowSize]);
 
-  useEventListener('resize', handleSetWindowSize);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleSetWindowSize();
   }, [handleSetWindowSize]);
+
+  useEventListener('resize', handleSetWindowSize);
 
   return windowSize;
 };

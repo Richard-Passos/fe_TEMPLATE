@@ -1,5 +1,5 @@
-import Link from './Root';
-import { ActionLinkMoleculeProps as LinkProps } from './Root';
+import ActionLink from './Root';
+import { ActionLinkMoleculeProps as ActionLinkProps } from './Root';
 
-export default Link;
-export type { LinkProps };
+export default ActionLink;
+export type { ActionLinkProps };

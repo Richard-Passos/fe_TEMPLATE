@@ -12,8 +12,8 @@ import { PropsWithChildren } from 'react';
 import { Height, SmoothScroll } from '@/components/atoms';
 import { Footer, Header, Providers, Toaster } from '@/components/organisms';
 import { locales } from '@/constants';
-import '@/globals.css';
-import { defaultColorScheme } from '@/theme';
+import '@/styles/globals.css';
+import { defaultColorScheme } from '@/styles/theme';
 import { baseUrl, values } from '@/utils';
 
 type LayoutOwnProps = PropsWithChildren<{}>;

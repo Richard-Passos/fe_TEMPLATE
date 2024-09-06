@@ -1,6 +1,6 @@
 import { MantineProvider, MantineProviderProps } from '@mantine/core';
 
-import theme, { defaultColorScheme } from '@/theme';
+import theme, { defaultColorScheme } from '@/styles/theme';
 
 type UiProviderOrganismOwnProps = {};
 

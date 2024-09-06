@@ -70,29 +70,19 @@ const generateMetadata = async ({
 
   return {
     title: {
-      default: `${t('name.first')} ${t('name.last')}`,
+      default: t('title', {
+        name: `${t('name.first')} ${t('name.last')}`
+      }),
       template: `%s — ${t('name.first')} ${t('name.last')}`
     },
-    description: t('description'),
-    icons: {
-      icon: [
-        { url: t('logo.favicon.light') },
-        { url: t('logo.favicon.dark'), media: '(prefers-color-scheme: dark)' }
-      ],
-      apple: t('logo.favicon.apple'),
-      other: [
-        {
-          rel: 'mask-icon',
-          url: t('logo.favicon.maskImage')
-        }
-      ]
-    },
-    manifest: t('manifest'),
-    keywords: values(messages.personal.keywords),
+    description: t('description', { country: t('location.country') }),
+    keywords: t('keywords'),
     authors: values(messages.personal.authors),
     openGraph: {
-      title: `${t('name.first')} ${t('name.last')}`,
-      description: t('description'),
+      title: t('title', {
+        name: `${t('name.first')} ${t('name.last')}`
+      }),
+      description: t('description', { country: t('location.country') }),
       url: baseUrl,
       siteName: `${t('name.first')} ${t('name.last')}`,
       locale: locale,

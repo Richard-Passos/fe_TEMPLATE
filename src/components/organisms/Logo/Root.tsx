@@ -1,49 +1,43 @@
-import { useTranslations } from 'next-intl';
 import { forwardRef } from 'react';
 
 import { Icon } from '@/components/atoms';
-import Action, { ActionProps } from '@/components/molecules/Action';
+import ActionLink, {
+  ActionLinkProps
+} from '@/components/molecules/Action/Link';
 import { cn } from '@/utils';
 
 type LogoOrganismOwnProps = {
   variant?: 'primary' | 'secondary';
-};
+} & Partial<Pick<ActionLinkProps, 'href'>>;
 
-type LogoOrganismProps = LogoOrganismOwnProps & ActionProps;
+type LogoOrganismProps = LogoOrganismOwnProps &
+  Omit<ActionLinkProps, keyof LogoOrganismOwnProps>;
 
 const LogoOrganism = (
-  {
-    variant = 'primary',
-    className,
-    magneticProps,
-    ...props
-  }: LogoOrganismProps,
+  { variant = 'primary', className, style, ...props }: LogoOrganismProps,
   ref: LogoOrganismProps['ref']
 ) => {
-  const t = useTranslations('personal.logo');
-
   return (
-    <Action
-      className={cn(
-        'border-transparent ![--button-bg:transparent] ![--button-padding-x:theme(spacing.xs)]',
-        className
-      )}
-      as='link'
+    <ActionLink
       href='/'
+      isIconOnly
       ref={ref}
       size='md'
-      variant='default'
-      magneticProps={{
-        limit: { x: 0, y: 0 },
-        ...magneticProps
+      className={cn('aspect-auto', className)}
+      style={{
+        '--button-bg': 'transparent',
+        '--button-bd': 'transparent',
+        '--button-padding-x': 'var(--mantine-spacing-xs)',
+        ...style
       }}
+      variant='default'
       {...props}
     >
       <Icon
         className='h-2/3'
-        src={t(variant)}
+        src={`/icons/logo-${variant}.svg`}
       />
-    </Action>
+    </ActionLink>
   );
 };
 

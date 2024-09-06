@@ -5,6 +5,7 @@ import useFormContext from './useForm';
 import useHeightContext from './useHeight';
 import useMagneticContext from './useMagnetic';
 import useSmoothScrollContext from './useSmoothScroll';
+import useThemeContext from './useTheme';
 
 const hooksContexts = {
   useBoolean: useBooleanContext,
@@ -13,7 +14,8 @@ const hooksContexts = {
   useForm: useFormContext,
   useHeight: useHeightContext,
   useMagnetic: useMagneticContext,
-  useSmoothScroll: useSmoothScrollContext
+  useSmoothScroll: useSmoothScrollContext,
+  useTheme: useThemeContext
 };
 
 export default hooksContexts;
@@ -24,5 +26,6 @@ export {
   useFormContext,
   useHeightContext,
   useMagneticContext,
-  useSmoothScrollContext
+  useSmoothScrollContext,
+  useThemeContext
 };

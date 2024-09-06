@@ -18,7 +18,7 @@ const CLASS_NAMES = {
   },
   variant: {
     default:
-      '[&_textarea]:![--input-bd:theme(colors.border)] [&_textarea]:[--input-bg:theme(colors.white)] dark:[&_textarea]:[--input-bg:theme(colors.dark.6)]',
+      '[&_textarea]:[--input-bd:theme(colors.border)] [&_textarea:focus]:[--input-bd:--input-bd-focus] [&_textarea]:[--input-bg:theme(colors.white)] dark:[&_textarea]:[--input-bg:theme(colors.dark.6)]',
     filled:
       '[&_textarea]:[--input-bg:theme(colors.gray.1)] dark:[&_textarea]:[--input-bg:theme(colors.dark.5)]',
     unstyled: ''

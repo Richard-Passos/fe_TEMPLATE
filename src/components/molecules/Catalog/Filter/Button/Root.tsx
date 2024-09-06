@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import { forwardRef } from 'react';
 
-import Button, { ButtonProps } from '@/components/atoms/Button';
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useSetSearchParams } from '@/hooks';
 import { normId } from '@/utils';
 
@@ -12,7 +12,7 @@ type CatalogButtonFilterMoleculeOwnProps = {
 };
 
 type CatalogButtonFilterMoleculeProps = CatalogButtonFilterMoleculeOwnProps &
-  Omit<ButtonProps, keyof CatalogButtonFilterMoleculeOwnProps>;
+  Omit<SlotProps, keyof CatalogButtonFilterMoleculeOwnProps>;
 
 const CatalogButtonFilterMolecule = (
   { query, className, ...props }: CatalogButtonFilterMoleculeProps,
@@ -26,7 +26,7 @@ const CatalogButtonFilterMolecule = (
   const isActive = searchParams.get(name) === value;
 
   return (
-    <Button
+    <Slot
       data-state={isActive ? 'active' : 'inactive'}
       ref={ref}
       {...props}

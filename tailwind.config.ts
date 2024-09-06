@@ -36,6 +36,7 @@ const config: Config = {
       },
       primary: {
         contrast: 'var(--mantine-primary-color-contrast)',
+        text: 'var(--mantine-primary-color-text)',
         filled: {
           DEFAULT: 'var(--mantine-primary-color-filled)',
           hover: 'var(--mantine-primary-color-filled-hover)'
@@ -43,7 +44,11 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-primary-color-light)',
           hover: 'var(--mantine-primary-color-light-hover)',
-          color: 'var(--mantine-primary-color-color)'
+          color: 'var(--mantine-primary-color-light-color)'
+        },
+        outline: {
+          DEFAULT: 'var(--mantine-primary-color-light)',
+          hover: 'var(--mantine-primary-color-light-hover)'
         },
         0: 'var(--mantine-primary-color-0)',
         1: 'var(--mantine-primary-color-1)',
@@ -69,7 +74,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-dark-light)',
           hover: 'var(--mantine-color-dark-light-hover)',
-          color: 'var(--mantine-color-dark-color)'
+          color: 'var(--mantine-color-dark-light-color)'
         },
         0: 'var(--mantine-color-dark-0)',
         1: 'var(--mantine-color-dark-1)',
@@ -95,7 +100,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-gray-light)',
           hover: 'var(--mantine-color-gray-light-hover)',
-          color: 'var(--mantine-color-gray-color)'
+          color: 'var(--mantine-color-gray-light-color)'
         },
         0: 'var(--mantine-color-gray-0)',
         1: 'var(--mantine-color-gray-1)',
@@ -121,7 +126,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-red-light)',
           hover: 'var(--mantine-color-red-light-hover)',
-          color: 'var(--mantine-color-red-color)'
+          color: 'var(--mantine-color-red-light-color)'
         },
         0: 'var(--mantine-color-red-0)',
         1: 'var(--mantine-color-red-1)',
@@ -147,7 +152,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-pink-light)',
           hover: 'var(--mantine-color-pink-light-hover)',
-          color: 'var(--mantine-color-pink-color)'
+          color: 'var(--mantine-color-pink-light-color)'
         },
         0: 'var(--mantine-color-pink-0)',
         1: 'var(--mantine-color-pink-1)',
@@ -173,7 +178,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-grape-light)',
           hover: 'var(--mantine-color-grape-light-hover)',
-          color: 'var(--mantine-color-grape-color)'
+          color: 'var(--mantine-color-grape-light-color)'
         },
         0: 'var(--mantine-color-grape-0)',
         1: 'var(--mantine-color-grape-1)',
@@ -199,7 +204,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-violet-light)',
           hover: 'var(--mantine-color-violet-light-hover)',
-          color: 'var(--mantine-color-violet-color)'
+          color: 'var(--mantine-color-violet-light-color)'
         },
         0: 'var(--mantine-color-violet-0)',
         1: 'var(--mantine-color-violet-1)',
@@ -225,7 +230,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-indigo-light)',
           hover: 'var(--mantine-color-indigo-light-hover)',
-          color: 'var(--mantine-color-indigo-color)'
+          color: 'var(--mantine-color-indigo-light-color)'
         },
         0: 'var(--mantine-color-indigo-0)',
         1: 'var(--mantine-color-indigo-1)',
@@ -251,7 +256,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-blue-light)',
           hover: 'var(--mantine-color-blue-light-hover)',
-          color: 'var(--mantine-color-blue-color)'
+          color: 'var(--mantine-color-blue-light-color)'
         },
         0: 'var(--mantine-color-blue-0)',
         1: 'var(--mantine-color-blue-1)',
@@ -277,7 +282,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-cyan-light)',
           hover: 'var(--mantine-color-cyan-light-hover)',
-          color: 'var(--mantine-color-cyan-color)'
+          color: 'var(--mantine-color-cyan-light-color)'
         },
         0: 'var(--mantine-color-cyan-0)',
         1: 'var(--mantine-color-cyan-1)',
@@ -303,7 +308,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-teal-light)',
           hover: 'var(--mantine-color-teal-light-hover)',
-          color: 'var(--mantine-color-teal-color)'
+          color: 'var(--mantine-color-teal-light-color)'
         },
         0: 'var(--mantine-color-teal-0)',
         1: 'var(--mantine-color-teal-1)',
@@ -329,7 +334,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-green-light)',
           hover: 'var(--mantine-color-green-light-hover)',
-          color: 'var(--mantine-color-green-color)'
+          color: 'var(--mantine-color-green-light-color)'
         },
         0: 'var(--mantine-color-green-0)',
         1: 'var(--mantine-color-green-1)',
@@ -355,7 +360,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-lime-light)',
           hover: 'var(--mantine-color-lime-light-hover)',
-          color: 'var(--mantine-color-lime-color)'
+          color: 'var(--mantine-color-lime-light-color)'
         },
         0: 'var(--mantine-color-lime-0)',
         1: 'var(--mantine-color-lime-1)',
@@ -381,7 +386,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-yellow-light)',
           hover: 'var(--mantine-color-yellow-light-hover)',
-          color: 'var(--mantine-color-yellow-color)'
+          color: 'var(--mantine-color-yellow-light-color)'
         },
         0: 'var(--mantine-color-yellow-0)',
         1: 'var(--mantine-color-yellow-1)',
@@ -407,7 +412,7 @@ const config: Config = {
         light: {
           DEFAULT: 'var(--mantine-color-orange-light)',
           hover: 'var(--mantine-color-orange-light-hover)',
-          color: 'var(--mantine-color-orange-color)'
+          color: 'var(--mantine-color-orange-light-color)'
         },
         0: 'var(--mantine-color-orange-0)',
         1: 'var(--mantine-color-orange-1)',
@@ -467,7 +472,7 @@ const config: Config = {
         DEFAULT: '2px'
       },
       outlineColor: {
-        DEFAULT: 'inherit'
+        DEFAULT: 'var(--mantine-primary-color-filled)'
       },
       outlineOffset: {
         DEFAULT: '2px'

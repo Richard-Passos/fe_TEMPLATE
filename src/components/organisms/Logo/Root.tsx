@@ -9,11 +9,15 @@ type LogoOrganismOwnProps = {
   variant?: 'primary' | 'secondary';
 };
 
-type LogoOrganismProps = LogoOrganismOwnProps &
-  Omit<ActionProps, keyof LogoOrganismOwnProps>;
+type LogoOrganismProps = LogoOrganismOwnProps & ActionProps;
 
 const LogoOrganism = (
-  { variant = 'primary', className, ...props }: LogoOrganismProps,
+  {
+    variant = 'primary',
+    className,
+    magneticProps,
+    ...props
+  }: LogoOrganismProps,
   ref: LogoOrganismProps['ref']
 ) => {
   const t = useTranslations('personal.logo');
@@ -24,11 +28,15 @@ const LogoOrganism = (
         'border-transparent ![--button-bg:transparent] ![--button-padding-x:theme(spacing.xs)]',
         className
       )}
+      as='link'
       href='/'
-      limit={{ x: 0, y: 0 }}
       ref={ref}
       size='md'
       variant='default'
+      magneticProps={{
+        limit: { x: 0, y: 0 },
+        ...magneticProps
+      }}
       {...props}
     >
       <Icon

@@ -14,7 +14,7 @@ const CLASS_NAMES = {
   },
   variant: {
     default:
-      '[&_input]:[--input-bg:theme(colors.white)] dark:[&_input]:[--input-bg:theme(colors.dark.6)]',
+      '[&_input]:![--input-bd:theme(colors.border)] [&_input]:[--input-bg:theme(colors.white)] dark:[&_input]:[--input-bg:theme(colors.dark.6)]',
     filled:
       '[&_input]:[--input-bg:theme(colors.gray.1)] dark:[&_input]:[--input-bg:theme(colors.dark.5)]',
     unstyled: ''

@@ -101,11 +101,11 @@ const HeaderMenuOrganism = (
           <div className='flex flex-wrap items-center gap-xs'>
             {socials.map((data) => (
               <Action
+                as='link'
                 aria-label={data.label}
                 href={data.href}
                 isIconOnly
                 key={data.href}
-                size='input-sm'
                 variant='default'
               >
                 <Icon

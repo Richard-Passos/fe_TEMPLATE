@@ -5,6 +5,7 @@ import Heros from './Heros';
 import Icons from './Icons';
 import Logo from './Logo';
 import Providers from './Providers';
+import ScrollIndicator from './ScrollIndicator';
 import Section from './Section';
 import Toaster from './Toaster';
 
@@ -16,6 +17,7 @@ const Organisms = {
   Icons,
   Logo,
   Providers,
+  ScrollIndicator,
   Section,
   Toaster
 };
@@ -29,6 +31,7 @@ export {
   Icons,
   Logo,
   Providers,
+  ScrollIndicator,
   Section,
   Toaster
 };

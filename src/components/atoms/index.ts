@@ -17,6 +17,7 @@ import Marquee from './Marquee';
 import Portal from './Portal';
 import Progress from './Progress';
 import ScrollAnimate from './ScrollAnimate';
+import ScrollTo from './ScrollTo';
 import Select from './Select';
 import Slot from './Slot';
 import SmoothScroll from './SmoothScroll';
@@ -45,6 +46,7 @@ const Atoms = {
   Portal,
   Progress,
   ScrollAnimate,
+  ScrollTo,
   Select,
   Slot,
   SmoothScroll,
@@ -75,6 +77,7 @@ export {
   Portal,
   Progress,
   ScrollAnimate,
+  ScrollTo,
   Select,
   Slot,
   SmoothScroll,

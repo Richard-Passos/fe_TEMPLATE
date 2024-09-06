@@ -1,4 +1,3 @@
-import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
 import { Button } from '@/components/atoms';
@@ -6,35 +5,52 @@ import { ButtonProps } from '@/components/atoms/Button';
 import { MagneticRoot, MagneticRootProps } from '@/components/atoms/Magnetic';
 import { cn } from '@/utils';
 
-import Link, { LinkProps } from './Link';
+import ActionLink, { ActionLinkProps } from './Link';
 
-type ActionMoleculeOwnProps = Partial<
-  Pick<MagneticRootProps, 'limit' | 'smoothConfig'>
-> & {
-  href?: string;
+type ActionMoleculeOwnProps = {
   ref?: any;
+  magneticProps?: Partial<MagneticRootProps>;
 };
 
 type ActionMoleculeProps = ActionMoleculeOwnProps &
-  Omit<ButtonProps & LinkProps, keyof ActionMoleculeOwnProps>;
+  (
+    | ({
+        as: 'link';
+      } & Omit<ActionLinkProps, 'ref' | keyof ActionMoleculeOwnProps>)
+    | ({
+        as?: 'button';
+      } & Omit<ButtonProps, 'ref' | keyof ActionMoleculeOwnProps>)
+  );
 
 const ActionMolecule = (
   {
-    href,
     disabled,
-    limit = disabled ? { x: 0, y: 0 } : { x: 0.35, y: 0.35 },
-    smoothConfig,
+    isLoading,
     className,
     children,
+    magneticProps,
     ...props
   }: ActionMoleculeProps,
   ref: ActionMoleculeProps['ref']
 ) => {
-  const Content = (
+  magneticProps = {
+    ...magneticProps,
+    limit:
+      (disabled ?? isLoading)
+        ? { x: 0, y: 0 }
+        : { x: 0.35, y: 0.35, ...magneticProps?.limit }
+  };
+
+  const content = (
     <>
       <MagneticRoot
-        limit={{ x: limit.x * 0.8, y: limit.y * 0.8 }}
-        smoothConfig={smoothConfig}
+        limit={
+          magneticProps.limit && {
+            x: magneticProps.limit.x * 0.8,
+            y: magneticProps.limit.y * 0.8
+          }
+        }
+        smoothConfig={magneticProps.smoothConfig}
       >
         <span className='relative z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit px-[--button-padding-x]'>
           {children}
@@ -45,47 +61,41 @@ const ActionMolecule = (
     </>
   );
 
-  className = cn(
-    'group/action relative hover:bg-[--button-bg] px-0 *:*:w-full hover:z-10',
-    className
-  );
+  const defaultProps = {
+    children: content,
+    className: cn(
+      'group/action relative px-0 *:*:w-full hover:z-10 hover:bg-[--button-bg]',
+      className
+    ),
+    disabled,
+    isLoading,
+    ref
+  };
 
-  if (href)
+  if (props.as === 'link') {
+    const { as, ...rest } = props;
+
     return (
-      <MagneticRoot
-        limit={limit}
-        smoothConfig={smoothConfig}
-      >
-        <Link
-          className={className}
-          disabled={disabled}
-          href={href}
-          ref={ref}
-          {...(props as Omit<LinkProps, keyof ActionMoleculeOwnProps>)}
-        >
-          {Content}
-        </Link>
+      <MagneticRoot {...magneticProps}>
+        <ActionLink
+          {...defaultProps}
+          {...rest}
+        />
       </MagneticRoot>
     );
+  }
+
+  const { as, ...rest } = props;
 
   return (
-    <MagneticRoot
-      limit={limit}
-      smoothConfig={smoothConfig}
-    >
+    <MagneticRoot {...magneticProps}>
       <Button
-        className={className}
-        disabled={disabled}
-        ref={ref}
-        {...(props as Omit<ButtonProps, keyof ActionMoleculeOwnProps>)}
-      >
-        {Content}
-      </Button>
+        {...defaultProps}
+        {...rest}
+      />
     </MagneticRoot>
   );
 };
 
-export default createPolymorphicComponent<'button', ActionMoleculeProps>(
-  forwardRef(ActionMolecule)
-);
+export default forwardRef(ActionMolecule);
 export type { ActionMoleculeProps };

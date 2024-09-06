@@ -43,6 +43,7 @@ const HeaderMenuOrganism = (
 
   return (
     <Drawer.Root
+      trapFocus={false}
       position='right'
       ref={ref}
       {...props}

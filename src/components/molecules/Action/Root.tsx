@@ -64,7 +64,7 @@ const ActionMolecule = (
   const defaultProps = {
     children: content,
     className: cn(
-      'group/action relative px-0 *:*:w-full hover:z-10 hover:bg-[--button-bg]',
+      'group/action relative px-0 *:*:grow hover:z-10 hover:bg-[--button-bg]',
       className
     ),
     disabled,

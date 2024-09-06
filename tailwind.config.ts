@@ -6,7 +6,7 @@ const config: Config = {
     './src/animations/active/.{js,ts}',
     './src/app/**/*.{jsx,tsx}',
     './src/components/**/*.{jsx,tsx}',
-    './src/theme.{js,ts}',
+    './src/styles/theme.{js,ts}',
     './src/rich.{jsx,tsx}'
   ],
   darkMode: [],

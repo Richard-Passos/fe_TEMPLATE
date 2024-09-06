@@ -7,12 +7,10 @@ import UnstyledLink, {
   UnstyledLinkProps
 } from '@/components/atoms/Link/Unstyled';
 
-type ActionLinkMoleculeOwnProps = {
-  ref?: UnstyledLinkProps['ref'] & ButtonProps['ref'];
-};
+type ActionLinkMoleculeOwnProps = ButtonProps;
 
 type ActionLinkMoleculeProps = ActionLinkMoleculeOwnProps &
-  Omit<ButtonProps & UnstyledLinkProps, keyof ActionLinkMoleculeOwnProps>;
+  Omit<UnstyledLinkProps, keyof Omit<ActionLinkMoleculeOwnProps, 'ref'>>;
 
 const ActionLinkMolecule = (
   props: ActionLinkMoleculeProps,

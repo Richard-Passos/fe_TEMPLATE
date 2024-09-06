@@ -4,6 +4,8 @@ import { forwardRef } from 'react';
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
+const PRIMARY_VARIANTS = ['filled'];
+
 type ButtonAtomOwnProps = {
   isIconOnly?: boolean;
   isLoading?: boolean;
@@ -26,7 +28,7 @@ const ButtonAtom = (
   }: ButtonAtomProps,
   ref: ButtonAtomProps['ref']
 ) => {
-  const isPrimary = color === 'primary' && variant !== 'default';
+  const isPrimary = color === 'primary' && PRIMARY_VARIANTS.includes(variant);
 
   return (
     <Button

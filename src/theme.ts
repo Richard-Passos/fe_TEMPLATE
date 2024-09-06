@@ -35,16 +35,16 @@ const themeOverride = createTheme({
       '#4e5760'
     ],
     red: [
-      '#ffeaec',
-      '#fdd4d6',
-      '#f4a7ac',
-      '#ec777e',
-      '#e64f57',
-      '#e3353f',
-      '#e22732',
-      '#c91a25',
-      '#b31220',
-      '#9e0419'
+      '#ffe9f0',
+      '#fdd1dc',
+      '#f9a1b7',
+      '#f66e8e',
+      '#f3446d',
+      '#f22b58',
+      '#f21e4d',
+      '#d8123f',
+      '#c10837',
+      '#a9002e'
     ],
     pink: [
       '#fff0f6',

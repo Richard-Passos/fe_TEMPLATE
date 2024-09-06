@@ -11,7 +11,7 @@ const themeOverride = createTheme({
   colors: {
     primary: ['', '', '', '', '', '', '', '', '', ''],
     dark: [
-      'hsl(0 0% 70%)',
+      'hsl(0 0% 80%)',
       'hsl(0 0% 60%)',
       'hsl(0 0% 40%)',
       'hsl(0 0% 30%)',

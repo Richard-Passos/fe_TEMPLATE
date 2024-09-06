@@ -33,13 +33,6 @@ const ButtonAtom = (
   return (
     <Button
       aria-disabled={disabled}
-      ref={ref}
-      style={{
-        ...(isPrimary && {
-          '--button-color': 'var(--mantine-primary-color-contrast)'
-        }),
-        ...style
-      }}
       className={cn(
         'aria-disabled:bg-gray-1 aria-disabled:text-gray-5 dark:aria-disabled:bg-dark-6 dark:aria-disabled:text-dark-3',
         isIconOnly && 'aspect-square [--button-padding-x:0px]',
@@ -48,6 +41,13 @@ const ButtonAtom = (
       color={color}
       disabled={disabled}
       loading={isLoading}
+      ref={ref}
+      style={{
+        ...(isPrimary && {
+          '--button-color': 'var(--mantine-primary-color-contrast)'
+        }),
+        ...style
+      }}
       variant={variant}
       {...props}
     />

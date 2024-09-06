@@ -76,15 +76,15 @@ const FooterOrganism = (
           </Title>
 
           <div className='mt-md flex flex-wrap items-center gap-xs'>
-            <Action href='contact'>{t('cta.action.label')}</Action>
+            <Action>{t('cta.action.label')}</Action>
 
             {socials.map((data) => (
               <Action
+                as='link'
                 aria-label={data.label}
                 href={data.href}
                 isIconOnly
                 key={data.href}
-                size='input-sm'
                 variant='default'
               >
                 <Icon
@@ -99,9 +99,7 @@ const FooterOrganism = (
         <div className='mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse'>
           <div className='mt-auto grow overflow-hidden'>
             <Logo
-              aria-hidden
               className='h-auto w-full ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] [&_svg]:h-full'
-              tabIndex={-1}
               variant='secondary'
             />
           </div>

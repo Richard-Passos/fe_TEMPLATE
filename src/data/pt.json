@@ -157,7 +157,7 @@
           "description": "",
           "subtitle": "Eu poderia te ajudar com...",
           "image": {
-            "src": "/images/services.jpeg",
+            "src": "/images/services.webp",
             "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados."
           },
           "action": {
@@ -211,19 +211,19 @@
           "items": {
             "0": {
               "image": {
-                "src": "/images/about-01.jpeg",
+                "src": "/images/about-01.webp",
                 "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, está contra uma parede de madeira, vestindo uma camiseta clara. Richard Passos está com os braços cruzados, mostrando um relógio e um colar."
               }
             },
             "1": {
               "image": {
-                "src": "/images/about-02.jpeg",
+                "src": "/images/about-02.webp",
                 "alt": "Richard Passos, um desenvolvedor full stack, está contra um fundo neutro, vestindo uma jaqueta de couro preta sobre uma camisa branca, com a mão esquerda no bolso da jaqueta."
               }
             },
             "2": {
               "image": {
-                "src": "/images/about-03.jpeg",
+                "src": "/images/about-03.webp",
                 "alt": "Richard Passos, um desenvolvedor full stack vestindo um moletom cinza claro com 'Brooklyn' e outros textos impressos, está contra uma parede de madeira, olhando para a esquerda."
               }
             }
@@ -337,7 +337,7 @@
           "description": "",
           "subtitle": "Eu poderia te ajudar com...",
           "image": {
-            "src": "/images/services.jpeg",
+            "src": "/images/services.webp",
             "alt": "Richard Passos, um desenvolvedor full stack com cabelo curto, vestindo uma jaqueta de couro preta e camisa branca, está contra um fundo neutro, com os braços cruzados."
           },
           "action": {
@@ -463,7 +463,6 @@
     "email": "hi.richardp@gmail.com",
     "description": "Richard Passos é um desenvolvedor full stack — que se preocupa em construir produtos sólidos e escaláveis com uma ótima experiência de usuário.",
     "availability": "Disponível para trabalhar",
-    "manifest": "/manifest/pt.json",
     "authors": {
       "richardPassos": {
         "name": "Richard Passos",
@@ -495,12 +494,13 @@
       "primary": "/icons/logo-a.svg",
       "secondary": "/icons/logo-b.svg",
       "favicon": {
-        "light": "/icons/favicon.ico",
-        "dark": "/icons/favicon.ico",
-        "apple": "/icons/apple-touch-icon.png",
-        "maskImage": "/icons/safari-pinned-tab.svg"
+        "light": "/favicons/favicon.ico",
+        "dark": "/favicons/favicon-dark.ico",
+        "apple": "/favicons/apple-touch-icon.png",
+        "maskImage": "/favicons/safari-pinned-tab.svg"
       }
     },
+    "manifest": "/favicons/manifest.json",
     "location": {
       "country": "Brasil",
       "state": "RS",
@@ -689,7 +689,7 @@
       "year": 2024,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
       "thumbnail": {
-        "src": "/images/project.jpeg",
+        "src": "/images/project.webp",
         "alt": ""
       },
       "gif": {
@@ -698,23 +698,23 @@
       },
       "images": {
         "0": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         }
       }
@@ -727,7 +727,7 @@
       "year": 2024,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
       "thumbnail": {
-        "src": "/images/project.jpeg",
+        "src": "/images/project.webp",
         "alt": ""
       },
       "gif": {
@@ -736,23 +736,23 @@
       },
       "images": {
         "0": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         }
       }
@@ -765,7 +765,7 @@
       "year": 2024,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
       "thumbnail": {
-        "src": "/images/project.jpeg",
+        "src": "/images/project.webp",
         "alt": ""
       },
       "gif": {
@@ -774,23 +774,23 @@
       },
       "images": {
         "0": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         }
       }
@@ -803,7 +803,7 @@
       "year": 2024,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
       "thumbnail": {
-        "src": "/images/project.jpeg",
+        "src": "/images/project.webp",
         "alt": ""
       },
       "gif": {
@@ -812,23 +812,23 @@
       },
       "images": {
         "0": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         }
       }
@@ -841,7 +841,7 @@
       "year": 2024,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
       "thumbnail": {
-        "src": "/images/project.jpeg",
+        "src": "/images/project.webp",
         "alt": ""
       },
       "gif": {
@@ -850,23 +850,23 @@
       },
       "images": {
         "0": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.jpeg",
+          "src": "/images/project.webp",
           "alt": ""
         }
       }

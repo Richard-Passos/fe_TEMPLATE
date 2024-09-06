@@ -8,6 +8,7 @@ import { setRefs } from '@/utils';
 
 type FormControlMoleculeOwnProps = {
   name: string;
+  onChange?: (event: { target: any }) => Promise<void | boolean> | void;
 };
 
 type FormControlMoleculeProps = FormControlMoleculeOwnProps &
@@ -40,9 +41,13 @@ const FormControlMolecule = (
         const isEvent = (value: unknown): value is FormEvent<HTMLElement> =>
           !!(value && typeof value === 'object' && 'target' in value);
 
-        const event = isEvent(value) ? value : { target: { name, value } };
+        const event = {
+          target: isEvent(value) ? value.target : { name, value }
+        };
 
         onChange(event);
+
+        props.onChange?.(event);
       }}
     />
   );

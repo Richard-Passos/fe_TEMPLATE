@@ -1,7 +1,6 @@
-import { createPolymorphicComponent } from '@mantine/core';
 import { forwardRef } from 'react';
 
-import Button, { ButtonProps } from '@/components/atoms/Button';
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { cn } from '@/utils';
 
 const ACTIONS = {
@@ -14,14 +13,14 @@ type CarouselActionMoleculeOwnProps = {
 };
 
 type CarouselActionMoleculeProps = CarouselActionMoleculeOwnProps &
-  Omit<ButtonProps, keyof CarouselActionMoleculeOwnProps>;
+  Omit<SlotProps, keyof CarouselActionMoleculeOwnProps>;
 
 const CarouselActionMolecule = (
   { action, className, ...props }: CarouselActionMoleculeProps,
   ref: CarouselActionMoleculeProps['ref']
 ) => {
   return (
-    <Button
+    <Slot
       className={cn('splide__arrow', ACTIONS[action], className)}
       ref={ref}
       {...props}
@@ -29,8 +28,5 @@ const CarouselActionMolecule = (
   );
 };
 
-export default createPolymorphicComponent<
-  'button',
-  CarouselActionMoleculeProps
->(forwardRef(CarouselActionMolecule));
+export default forwardRef(CarouselActionMolecule);
 export type { CarouselActionMoleculeProps };

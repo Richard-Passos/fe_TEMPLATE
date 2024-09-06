@@ -2,15 +2,14 @@
 
 import { forwardRef } from 'react';
 
-import { Button } from '@/components/atoms';
-import { ButtonProps } from '@/components/atoms/Button';
+import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useSetSearchParams } from '@/hooks';
 import { useCatalogContext } from '@/hooks/contexts';
 
 type CatalogLoadMoreMoleculeOwnProps = {};
 
 type CatalogLoadMoreMoleculeProps = CatalogLoadMoreMoleculeOwnProps &
-  Omit<ButtonProps, keyof CatalogLoadMoreMoleculeOwnProps>;
+  Omit<SlotProps, keyof CatalogLoadMoreMoleculeOwnProps>;
 
 const CatalogLoadMoreMolecule = <T,>(
   props: CatalogLoadMoreMoleculeProps,
@@ -22,7 +21,7 @@ const CatalogLoadMoreMolecule = <T,>(
   if (isLastPage) return null;
 
   return (
-    <Button
+    <Slot
       ref={ref}
       {...props}
       onClick={async (ev) => {

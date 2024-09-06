@@ -64,7 +64,7 @@ const FooterOrganism = (
             component='h3'
             order={6}
           >
-            {t('cta.subtitle')}
+            {t.rich('cta.subtitle')}
           </Title>
 
           <Title

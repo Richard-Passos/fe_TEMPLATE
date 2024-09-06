@@ -441,7 +441,7 @@
   },
   "footer": {
     "cta": {
-      "title": "Let’s turn some heads",
+      "title": "Let’s turn some heads<em>!</em>",
       "subtitle": "Is your great ideas ready?",
       "action": {
         "label": "Get in touch"

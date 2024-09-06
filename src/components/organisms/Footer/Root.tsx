@@ -97,12 +97,10 @@ const FooterOrganism = (
         </section>
 
         <div className='mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse'>
-          <div className='mt-auto grow overflow-hidden'>
-            <Logo
-              className='h-auto w-full ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] [&_svg]:h-full'
-              variant='secondary'
-            />
-          </div>
+          <Logo
+            className='mt-auto h-auto w-full grow ![--button-bg:transparent] ![--button-hover:transparent] ![--button-padding-x:0px] [&_svg]:h-full'
+            variant='secondary'
+          />
 
           <section>
             <Title

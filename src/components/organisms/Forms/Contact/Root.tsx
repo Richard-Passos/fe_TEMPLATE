@@ -75,7 +75,7 @@ const ContactFormOrganism = (
   return (
     <Form.Root
       action={async (values) => {
-        toast.promise(sendEmail(values), messages);
+        await toast.promise(sendEmail(values), messages);
       }}
       className={cn('grid sm:grid-cols-12', className)}
       defaultValues={defaultValues}
@@ -134,7 +134,7 @@ const ContactFormOrganism = (
         />
       </Form.Control>
 
-      <Form.Control name='service'>
+      <Form.Watch name='service'>
         <Select
           className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
           data={fields.service.data}
@@ -147,8 +147,9 @@ const ContactFormOrganism = (
           placeholder={fields.service.placeholder}
           size='md'
           variant='filled'
+          clearable
         />
-      </Form.Control>
+      </Form.Watch>
 
       <Form.Control name='message'>
         <Textarea
@@ -168,7 +169,9 @@ const ContactFormOrganism = (
             <Form.Submit>
               <Action
                 className='md:size-full'
-                limit={{ x: 0.2, y: 0.2 }}
+                magneticProps={{
+                  limit: { x: 0.2, y: 0.2 }
+                }}
               >
                 <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
 

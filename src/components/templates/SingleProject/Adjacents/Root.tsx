@@ -2,7 +2,7 @@ import { ReactNode, forwardRef } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/atoms/Icon/icons';
 import { Action } from '@/components/molecules';
-import { ActionProps } from '@/components/molecules/Action';
+import { ActionLinkProps } from '@/components/molecules/Action/Link';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
 
@@ -11,12 +11,12 @@ type SingleProjectAdjacentsTemplateOwnProps = {
     prev: {
       label: ReactNode;
       name: ReactNode;
-      href?: ActionProps['href'];
+      href: ActionLinkProps['href'];
     };
     next: {
       label: ReactNode;
       name: ReactNode;
-      href?: ActionProps['href'];
+      href: ActionLinkProps['href'];
     };
   };
 };
@@ -39,6 +39,7 @@ const SingleProjectAdjacentsTemplate = (
         <Action
           className='h-fit'
           disabled={!data.prev.href}
+          as='link'
           href={data.prev.href}
           variant='light'
         >
@@ -56,6 +57,7 @@ const SingleProjectAdjacentsTemplate = (
         </Action>
 
         <Action
+          as='link'
           className='h-fit'
           disabled={!data.next.href}
           href={data.next.href}

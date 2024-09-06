@@ -17,7 +17,7 @@ type FormProviderProps = FormProviderOwnProps;
 const FormProvider = ({
   defaultValues,
   schema,
-  shouldReset,
+  shouldReset = true,
   ...props
 }: FormProviderProps) => {
   const form = useForm({

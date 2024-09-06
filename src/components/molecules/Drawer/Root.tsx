@@ -8,7 +8,7 @@ import { Portal } from '@/components/atoms';
 import { PortalProps } from '@/components/atoms/Portal';
 import { useUpdateEffect } from '@/hooks';
 import { useBooleanContext } from '@/hooks/contexts';
-import { usePathname } from '@/navigation';
+import { usePathname } from '@/i18n/routing';
 import { PolymorphicRef } from '@/types';
 
 type DrawerMoleculeOwnProps = Partial<

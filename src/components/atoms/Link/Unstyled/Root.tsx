@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Link } from '@/navigation';
+import { Link } from '@/i18n/routing';
 import { isExternalUrl } from '@/utils';
 
 type UnstyledLinkAtomOwnProps = {

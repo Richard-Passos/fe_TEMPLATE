@@ -7,7 +7,7 @@ import { Select } from '@/components/atoms';
 import { GlobeIcon } from '@/components/atoms/Icon/icons';
 import { GlobeIconProps } from '@/components/atoms/Icon/icons/Globe';
 import { SelectProps } from '@/components/atoms/Select';
-import { usePathname, useRouter } from '@/navigation';
+import { usePathname, useRouter } from '@/i18n/routing';
 import { cn, isLocale } from '@/utils';
 
 type LocaleSelectMoleculeOwnProps = {

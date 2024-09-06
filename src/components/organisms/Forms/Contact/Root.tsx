@@ -69,7 +69,7 @@ const ContactFormOrganism = (
         .string()
         .trim()
         .min(2, fields.message.errors.min)
-        .max(300, fields.message.errors.max)
+        .max(3000, fields.message.errors.max)
     });
 
   return (

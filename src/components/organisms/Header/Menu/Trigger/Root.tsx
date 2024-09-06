@@ -30,13 +30,10 @@ const HeaderMenuTriggerOrganism = (
         config={ANIMATION_CONFIG}
         smoothConfig={smoothConfig}
       >
-        <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max flex items-center justify-center rounded-full p-0.5 scale-[--scale] [--side:theme(spacing.lg)] has-[:focus-visible]:outline has-[:focus-visible]:!outline-primary-contrast has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]'>
+        <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max scale-[--scale] [--side:theme(spacing.md)] has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]'>
           <DrawerTrigger>
             <Action
-              className={cn(
-                'h-[3.75rem] rounded-inherit sm:h-[4.5rem]',
-                className
-              )}
+              className={cn('h-16 rounded-full sm:h-20', className)}
               isIconOnly
               ref={ref}
               variant='default'

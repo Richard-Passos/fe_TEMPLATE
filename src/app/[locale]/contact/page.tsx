@@ -74,9 +74,8 @@ const ContactPage = ({ params: { locale } }: ContactPageProps) => {
               service: {
                 label: t('blocks.contactForm.fields.service.label'),
                 placeholder: t('blocks.contactForm.fields.service.placeholder'),
-                defaultValue: t(
-                  'blocks.contactForm.fields.service.defaultValue'
-                ),
+                defaultValue:
+                  t('blocks.contactForm.fields.service.defaultValue') || null,
                 data: keys(messages.services).map((key) => ({
                   value: key,
                   label: gt(`services.${key}.title`)

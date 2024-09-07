@@ -27,18 +27,18 @@ const HeaderMenuOrganism = (
   ref: HeaderMenuOrganismProps['ref']
 ) => {
   const t = useTranslations('header.menu'),
-    pt = useTranslations('personal'),
+    globaltT = useTranslations(),
     messages = useMessages() as unknown as IntlMessages;
 
-  const items = keys(messages.header.menu.nav).map((key) => ({
-    href: t(`nav.${key}.href`),
-    label: t(`nav.${key}.label`)
+  const navItems = keys(messages.nav).map((key) => ({
+    href: globaltT(`nav.${key}.href`),
+    label: globaltT(`nav.${key}.label`)
   }));
 
   const socials = keys(messages.personal.socials).map((key) => ({
-    label: pt(`socials.${key}.label`),
-    href: pt(`socials.${key}.href`),
-    icon: pt(`socials.${key}.icon`)
+    label: globaltT(`personal.socials.${key}.label`),
+    href: globaltT(`personal.socials.${key}.href`),
+    icon: globaltT(`personal.socials.${key}.icon`)
   }));
 
   return (
@@ -83,7 +83,7 @@ const HeaderMenuOrganism = (
         <HeaderNav
           className='flex-col items-start'
           data-autofocus
-          items={items}
+          items={navItems}
           linkProps={{
             orientation: 'vertical',
             indicatorProps: {

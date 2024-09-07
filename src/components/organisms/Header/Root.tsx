@@ -20,11 +20,12 @@ const HeaderOrganism = (
   ref: HeaderOrganismProps['ref']
 ) => {
   const t = useTranslations('header'),
+    globaltT = useTranslations(),
     messages = useMessages() as unknown as IntlMessages;
 
-  const items = keys(messages.header.nav).map((key) => ({
-    href: t(`nav.${key}.href`),
-    label: t(`nav.${key}.label`)
+  const navItem = keys(messages.nav).map((key) => ({
+    href: globaltT(`nav.${key}.href`),
+    label: globaltT(`nav.${key}.label`)
   }));
 
   return (
@@ -40,7 +41,7 @@ const HeaderOrganism = (
         <Logo className='-ml-[--button-padding-x]' />
 
         <div className='flex items-center gap-xs max-md:hidden'>
-          <Nav items={items} />
+          <Nav items={navItem} />
 
           <LocaleSelect
             aria-label={t('locale.label')}

@@ -398,44 +398,8 @@
       "close": {
         "label": "Fechar menu"
       },
-      "nav": {
-        "home": {
-          "href": "/",
-          "label": "Início"
-        },
-        "work": {
-          "href": "/work",
-          "label": "Trabalho"
-        },
-        "about": {
-          "href": "/about",
-          "label": "Sobre"
-        },
-        "contact": {
-          "href": "/contact",
-          "label": "Contato"
-        }
-      },
       "locale": {
         "label": "Sua localidade"
-      }
-    },
-    "nav": {
-      "home": {
-        "href": "/",
-        "label": "Início"
-      },
-      "work": {
-        "href": "/work",
-        "label": "Trabalho"
-      },
-      "about": {
-        "href": "/about",
-        "label": "Sobre"
-      },
-      "contact": {
-        "href": "/contact",
-        "label": "Contato"
       }
     },
     "locale": {
@@ -496,6 +460,24 @@
     "buyCoffee": {
       "icon": "/icons/mug.svg",
       "href": "https://www.buymeacoffee.com/richardp.dev"
+    }
+  },
+  "nav": {
+    "home": {
+      "href": "/",
+      "label": "Início"
+    },
+    "work": {
+      "href": "/work",
+      "label": "Trabalho"
+    },
+    "about": {
+      "href": "/about",
+      "label": "Sobre"
+    },
+    "contact": {
+      "href": "/contact",
+      "label": "Contato"
     }
   },
   "services": {

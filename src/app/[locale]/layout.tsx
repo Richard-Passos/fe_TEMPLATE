@@ -87,6 +87,9 @@ const generateMetadata = async ({
       siteName: `${t('name.first')} ${t('name.last')}`,
       locale: locale,
       type: 'website'
+    },
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION
     }
   };
 };

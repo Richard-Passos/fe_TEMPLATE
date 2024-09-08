@@ -27,7 +27,7 @@ const CtaTextBlockOrganism = (
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn('min-h-screen 2xl:min-h-bounds', className)}
+      className={cn('min-h-screen 2xl:!min-h-bounds', className)}
       ref={ref}
       {...props}
     >

@@ -3,12 +3,7 @@
 import { Slot } from '@radix-ui/react-slot';
 import { deviceType } from 'detect-it';
 import { motion } from 'framer-motion';
-import {
-  ComponentPropsWithRef,
-  forwardRef,
-  useLayoutEffect,
-  useRef
-} from 'react';
+import { ComponentPropsWithRef, forwardRef, useEffect, useRef } from 'react';
 
 import { useEventListener, useSmooth } from '@/hooks';
 import { useMagneticContext } from '@/hooks/contexts';
@@ -67,7 +62,7 @@ const MagneticAtom = (
       position.y.set(pos.y);
     };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     element.current = container.current ?? innerRef.current;
   }, [container]);
 

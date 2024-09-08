@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useCallback, useLayoutEffect, useRef } from 'react';
+import { forwardRef, useCallback, useEffect, useRef } from 'react';
 
 import Slot, { SlotProps } from '@/components/atoms/Slot';
 import { useEventListener } from '@/hooks';
@@ -36,7 +36,7 @@ const HeightSetAtom = (
       setHeight({ [name]: 0 });
     }, [name, setHeight]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     handleSetHeight();
 
     return () => {

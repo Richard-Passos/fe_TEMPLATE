@@ -78,6 +78,7 @@ const generateMetadata = async ({
     description: t('description', { country: t('location.country') }),
     keywords: t('keywords'),
     authors: values(messages.personal.authors),
+    metadataBase: new URL(baseUrl),
     openGraph: {
       title: t('title', {
         name: `${t('name.first')} ${t('name.last')}`

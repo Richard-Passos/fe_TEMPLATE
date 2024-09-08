@@ -30,33 +30,42 @@ const TableProjectCardOrganism = (
       >
         <CardRoot
           className={cn(
-            'flex-row items-center justify-center gap-xs px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
+            'flex-row items-start gap-xs px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
 
             'group-hover/list:scale-x-90 group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100',
 
             'group-hover/list:[>:not(:hover)_&]:opacity-50'
           )}
         >
-          <Text className='relative z-20 mb-auto inline-flex text-sm font-semibold text-dimmed translate-y-0.5'>
-            {`${data.index + 1}`.padStart(2, '0')}/
+          <Text className='relative shrink-0 text-sm font-semibold text-dimmed translate-y-0.5'>
+            <span
+              aria-hidden
+              className='opacity-0'
+            >
+              00/
+            </span>
+
+            <span className='absolute right-0'>
+              {`${data.index + 1}`.padStart(2, '0')}/
+            </span>
           </Text>
 
-          <div className='relative z-20 flex w-full flex-wrap items-start gap-x-sm gap-y-4 sm:items-center'>
+          <div className='flex grow items-center gap-x-sm gap-y-xs'>
             <Title
-              className='basis-full sm:basis-1/2'
+              className='mb-auto shrink-0 basis-full overflow-hidden text-ellipsis text-nowrap sm:basis-1/2'
               order={4}
             >
               {data.title}
             </Title>
 
-            <Text className='grow basis-2/3 overflow-hidden text-ellipsis text-sm font-medium lowercase sm:basis-0 sm:text-end'>
+            <Text className='line-clamp-2 grow break-words text-sm font-medium lowercase sm:text-end'>
               {values(data.roles)
                 .toSorted((a, b) => a.localeCompare(b))
                 .join(' & ')}
             </Text>
 
             {renderComp(
-              <Text className='grow basis-0 text-end text-sm font-semibold sm:text-end'>
+              <Text className='shrink-0 basis-1/3 text-end text-sm font-medium sm:basis-1/12'>
                 {data.year}
               </Text>,
               [data.year]

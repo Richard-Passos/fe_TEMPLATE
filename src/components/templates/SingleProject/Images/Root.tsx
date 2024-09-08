@@ -62,7 +62,7 @@ const SingleProjectImagesTemplate = (
         >
           {data.items.map((data) => (
             <div
-              className='relative aspect-[1/1.1] w-full overflow-hidden rounded-xl bg-gray-1 dark:bg-dark-6'
+              className='relative aspect-[1/1.1] w-full overflow-hidden rounded-xl border bg-gray-1 dark:bg-dark-6'
               key={data.id}
             >
               <ScrollAnimate config={imageYScrollAnim}>

@@ -71,6 +71,7 @@ const SingleProjectImagesTemplate = (
                     alt={data.alt}
                     className='object-cover'
                     fill
+                    sizes='100vw, (min-width: 1536px) 50vw'
                     src={data.src}
                   />
                 </div>

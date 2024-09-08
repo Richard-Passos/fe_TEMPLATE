@@ -46,6 +46,8 @@ const ServicesBlockImageOrganism = (
             <Image
               alt={data.image.alt}
               fill
+              quality={100}
+              sizes='33vw'
               src={data.image.src}
               {...imageProps}
               className={cn('object-cover', imageProps?.className)}

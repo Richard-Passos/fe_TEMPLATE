@@ -48,6 +48,7 @@ const GridProjectCardOrganism = (
                 alt={data.thumbnail.alt}
                 className='object-cover'
                 fill
+                sizes='100vw, (min-width: 640px) 50vw, (min-width: 1280px) 33vw'
                 src={data.thumbnail.src}
               />
             </div>

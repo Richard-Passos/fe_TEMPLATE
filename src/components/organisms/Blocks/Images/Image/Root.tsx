@@ -37,6 +37,8 @@ const ImagesBlockImageOrganism = (
               alt={data.image.alt}
               className='object-cover'
               fill
+              quality={100}
+              sizes='100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw'
               src={data.image.src}
             />
           </div>

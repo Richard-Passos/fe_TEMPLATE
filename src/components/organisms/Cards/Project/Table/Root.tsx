@@ -77,6 +77,7 @@ const TableProjectCardOrganism = (
                 alt={data.thumbnail.alt}
                 className='object-cover'
                 fill
+                sizes='100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw'
                 src={data.thumbnail.src}
               />
             </div>

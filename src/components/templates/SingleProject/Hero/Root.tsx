@@ -92,6 +92,8 @@ const SingleProjectHeroTemplate = (
             className='object-cover'
             fill
             priority
+            quality={100}
+            sizes='100vw'
             src={data.image.src}
           />
         </div>

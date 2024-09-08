@@ -578,7 +578,7 @@
       },
       "TypeScript": {
         "title": "TypeScript",
-        "icon": "/icons/javascript.svg"
+        "icon": "/icons/typescript.svg"
       },
       "jest": {
         "title": "Jest",

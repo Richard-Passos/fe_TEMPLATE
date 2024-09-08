@@ -44,16 +44,6 @@ const SingleProjectPage = async ({
   const prevProject = prevData.ok ? prevData.data : undefined,
     nextProject = nextData.ok ? nextData.data : undefined;
 
-  const heroImage = project.gif
-    ? {
-        src: project.gif.src,
-        alt: project.gif.alt
-      }
-    : {
-        src: project.thumbnail.src,
-        alt: project.thumbnail.alt
-      };
-
   return (
     <SingleProjectTemplate
       blocks={{
@@ -101,8 +91,8 @@ const SingleProjectPage = async ({
             year: project.year
           }),
           image: {
-            src: heroImage.src,
-            alt: heroImage.alt
+            src: project.banner.src,
+            alt: project.banner.alt
           },
           action: {
             label: t('hero.action.label'),

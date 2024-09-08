@@ -74,7 +74,7 @@ const SingleProjectHeroTemplate = (
             <div className='absolute left-0 top-0 z-10 -translate-y-1/2 translate-x-1/2'>
               <Action
                 as='link'
-                className='aspect-square rounded-full ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]'
+                className='aspect-square rounded-full shadow ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]'
                 disabled={!data.action?.href}
                 href={data.action.href}
               >

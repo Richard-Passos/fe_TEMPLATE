@@ -15,7 +15,7 @@ const MagneticContainerAtom = (
   props: MagneticContainerAtomProps,
   ref: MagneticContainerAtomProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLElement>(null);
 
   return (
     <MagneticProvider container={innerRef}>

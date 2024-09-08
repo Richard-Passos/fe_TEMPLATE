@@ -17,7 +17,7 @@ const SkillCardHoverOrganism = (
   { delay, ...props }: SkillCardHoverOrganismProps,
   ref: SkillCardHoverOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLElement>(null);
 
   const isHover = useHoverDelay(innerRef, delay);
 

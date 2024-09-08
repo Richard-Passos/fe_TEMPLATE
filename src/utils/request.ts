@@ -2,10 +2,9 @@ import baseUrl from './baseUrl';
 
 const request = async <TResponse>(
   url: string,
-  config?: RequestInit,
-  base?: string
+  config?: RequestInit
 ): Promise<TResponse> => {
-  url = `${base ?? baseUrl}${url}`;
+  url = url.startsWith('/') ? `${baseUrl}${url}` : url;
 
   const response = await fetch(url, { cache: 'no-store', ...config });
 

@@ -644,8 +644,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -682,8 +682,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -720,8 +720,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -758,8 +758,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -787,38 +787,38 @@
     },
     "project-04": {
       "isSelected": true,
-      "href": "#",
-      "title": "Projeto-04",
+      "href": "https://richardp.vercel.app/pt",
+      "title": "Richard Portfólio",
       "roles": { "design": "Design", "development": "Desenvolvimento" },
       "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "description": "A falta de um portfólio limita oportunidades; eu projetei e construí um portfólio pessoal para exibir habilidades, projetos e experiência, oferecendo uma plataforma profissional para atrair potenciais clientes e empregadores.",
       "thumbnail": {
-        "src": "/images/project.webp",
+        "src": "/images/portfolio-pt-thumbnail.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/portfolio-pt-banner.webp",
         "alt": ""
       },
       "images": {
         "0": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-pt-00.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-pt-01.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-pt-02.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-pt-03.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-pt-04.webp",
           "alt": ""
         }
       }

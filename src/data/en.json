@@ -641,8 +641,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -679,8 +679,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -717,8 +717,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -755,8 +755,8 @@
         "src": "/images/project.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/project.webp",
         "alt": ""
       },
       "images": {
@@ -784,38 +784,38 @@
     },
     "project-04": {
       "isSelected": true,
-      "href": "#",
-      "title": "Project-04",
+      "href": "https://richardp.vercel.app/en",
+      "title": "Richard Portfolio",
       "roles": { "design": "Design", "development": "Development" },
       "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
+      "description": "A missing portfolio limits opportunities; I designed and built a personal portfolio to showcase skills, projects, and experience, offering a professional platform to attract potential clients and employers.",
       "thumbnail": {
-        "src": "/images/project.webp",
+        "src": "/images/portfolio-en-thumbnail.webp",
         "alt": ""
       },
-      "gif": {
-        "src": "/images/alpaca.webp",
+      "banner": {
+        "src": "/images/portfolio-en-banner.webp",
         "alt": ""
       },
       "images": {
         "0": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-en-00.webp",
           "alt": ""
         },
         "1": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-en-01.webp",
           "alt": ""
         },
         "2": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-en-02.webp",
           "alt": ""
         },
         "3": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-en-03.webp",
           "alt": ""
         },
         "4": {
-          "src": "/images/project.webp",
+          "src": "/images/portfolio-en-04.webp",
           "alt": ""
         }
       }

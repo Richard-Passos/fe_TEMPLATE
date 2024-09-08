@@ -10,7 +10,7 @@ type Project = {
     src: string;
     alt: string;
   };
-  gif?: {
+  banner: {
     src: string;
     alt: string;
   };

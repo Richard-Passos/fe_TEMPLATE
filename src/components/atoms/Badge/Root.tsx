@@ -31,15 +31,15 @@ const BadgeAtom = (
         'normal-case [--badge-fz-md:calc(.75rem*var(--mantine-scale))] [--badge-height-md:calc(1.5rem*var(--mantine-scale))]',
         className
       )}
-      variant={variant}
       color={color}
+      ref={ref}
       style={{
         ...(isPrimary && {
           '--badge-color': 'var(--mantine-primary-color-contrast)'
         }),
         ...style
       }}
-      ref={ref}
+      variant={variant}
       {...props}
     />
   );

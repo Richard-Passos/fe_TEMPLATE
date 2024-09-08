@@ -31,7 +31,7 @@ const HeightSetAtom = (
       const height = element.offsetHeight;
 
       setHeight({ [name]: height });
-    }, [name, setHeight]),
+    }, [name, isDocument, setHeight]),
     resetHeight = useCallback(() => {
       setHeight({ [name]: 0 });
     }, [name, setHeight]);

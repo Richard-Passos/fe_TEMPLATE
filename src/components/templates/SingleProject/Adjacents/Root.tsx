@@ -37,9 +37,9 @@ const SingleProjectAdjacentsTemplate = (
     >
       <div className='flex w-9/10 max-w-screen-xl flex-wrap justify-between gap-xs border border-x-0 border-b-0 p-md'>
         <Action
+          as='link'
           className='h-fit'
           disabled={!data.prev.href}
-          as='link'
           href={data.prev.href}
           variant='light'
         >

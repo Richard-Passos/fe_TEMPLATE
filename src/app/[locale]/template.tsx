@@ -9,8 +9,8 @@ type TemplateProps = TemplateOwnProps;
 const Template = ({ children }: TemplateProps) => {
   return (
     <Height.Set
-      name='document'
       isDocument
+      name='document'
     >
       {children}
     </Height.Set>

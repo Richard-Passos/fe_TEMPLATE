@@ -73,9 +73,9 @@ const SingleProjectHeroTemplate = (
           <ScrollAnimate config={{ prop: 'y', propPoints: ['0%', '-100%'] }}>
             <div className='absolute left-0 top-0 z-10 -translate-y-1/2 translate-x-1/2'>
               <Action
+                as='link'
                 className='aspect-square rounded-full ![--button-height:calc(var(--size)*var(--mantine-scale))] [--size:8rem] sm:text-xl sm:[--size:12rem]'
                 disabled={!data.action?.href}
-                as='link'
                 href={data.action.href}
               >
                 {data.action.label}&nbsp;

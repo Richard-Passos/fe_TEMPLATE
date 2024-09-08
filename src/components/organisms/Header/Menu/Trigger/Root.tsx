@@ -35,12 +35,12 @@ const HeaderMenuTriggerOrganism = (
             <Action
               className={cn('h-16 rounded-full sm:h-20', className)}
               isIconOnly
-              ref={ref}
-              variant='default'
               magneticProps={{
                 ...magneticProps,
                 limit: { x: 0.5, y: 0.5, ...magneticProps?.limit }
               }}
+              ref={ref}
+              variant='default'
               {...props}
             >
               <MenuIcon className='size-[40%] group-data-open/action:hidden' />

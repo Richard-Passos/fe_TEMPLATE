@@ -43,9 +43,9 @@ const HeaderMenuOrganism = (
 
   return (
     <Drawer.Root
-      trapFocus={false}
       position='right'
       ref={ref}
+      trapFocus={false}
       {...props}
       trigger={
         <>
@@ -102,8 +102,8 @@ const HeaderMenuOrganism = (
           <div className='flex flex-wrap items-center gap-xs'>
             {socials.map((data) => (
               <Action
-                as='link'
                 aria-label={data.label}
+                as='link'
                 href={data.href}
                 isIconOnly
                 key={data.href}

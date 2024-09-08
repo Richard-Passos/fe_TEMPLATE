@@ -80,8 +80,8 @@ const FooterOrganism = (
 
             {socials.map((data) => (
               <Action
-                as='link'
                 aria-label={data.label}
+                as='link'
                 href={data.href}
                 isIconOnly
                 key={data.href}
@@ -99,11 +99,11 @@ const FooterOrganism = (
         <div className='mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse'>
           <Logo
             className='mt-auto h-auto w-full [&_svg]:size-full'
-            variant='secondary'
             style={{
               '--button-hover': 'transparent',
               '--button-padding-x': '0px'
             }}
+            variant='secondary'
           />
 
           <section>

@@ -137,6 +137,7 @@ const ContactFormOrganism = (
       <Form.Watch name='service'>
         <Select
           className='relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6'
+          clearable
           data={fields.service.data}
           label={
             <>
@@ -147,7 +148,6 @@ const ContactFormOrganism = (
           placeholder={fields.service.placeholder}
           size='md'
           variant='filled'
-          clearable
         />
       </Form.Watch>
 

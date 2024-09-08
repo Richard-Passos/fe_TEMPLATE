@@ -31,8 +31,8 @@ const ToasterOrganism = (
 
   return (
     <div
-      ref={ref}
       data-theme={theme}
+      ref={ref}
       {...props}
     >
       <Toaster

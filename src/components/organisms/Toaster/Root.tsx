@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import { Toaster, ToasterProps } from 'react-hot-toast';
 
-import { useComputedColorScheme } from '@/hooks';
+import { useThemeContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
@@ -27,7 +27,7 @@ const ToasterOrganism = (
   }: ToasterOrganismProps,
   ref: ToasterOrganismProps['ref']
 ) => {
-  const theme = useComputedColorScheme();
+  const { theme } = useThemeContext();
 
   return (
     <div

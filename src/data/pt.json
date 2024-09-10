@@ -633,159 +633,7 @@
     }
   },
   "projects": {
-    "project-00": {
-      "isSelected": true,
-      "href": "#",
-      "title": "Projeto-00",
-      "roles": { "design": "Design" },
-      "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
-      "thumbnail": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "banner": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "images": {
-        "0": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "1": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "2": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "3": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "4": {
-          "src": "/images/project.webp",
-          "alt": ""
-        }
-      }
-    },
-    "project-01": {
-      "isSelected": true,
-      "href": "",
-      "title": "Projeto-01",
-      "roles": { "development": "Desenvolvimento" },
-      "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
-      "thumbnail": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "banner": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "images": {
-        "0": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "1": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "2": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "3": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "4": {
-          "src": "/images/project.webp",
-          "alt": ""
-        }
-      }
-    },
-    "project-02": {
-      "isSelected": true,
-      "href": "#",
-      "title": "Projeto-02",
-      "roles": { "design": "Design", "development": "Desenvolvimento" },
-      "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
-      "thumbnail": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "banner": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "images": {
-        "0": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "1": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "2": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "3": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "4": {
-          "src": "/images/project.webp",
-          "alt": ""
-        }
-      }
-    },
-    "project-03": {
-      "isSelected": true,
-      "href": "#",
-      "title": "Projeto-03",
-      "roles": { "design": "Design", "development": "Desenvolvimento" },
-      "year": 2024,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio iusto, ad incidunt minima at dicta facilis eius impedit illum quidem, dignissimos velit aliquid optio omnis tenetur aut id dolores.",
-      "thumbnail": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "banner": {
-        "src": "/images/project.webp",
-        "alt": ""
-      },
-      "images": {
-        "0": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "1": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "2": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "3": {
-          "src": "/images/project.webp",
-          "alt": ""
-        },
-        "4": {
-          "src": "/images/project.webp",
-          "alt": ""
-        }
-      }
-    },
-    "project-04": {
+    "richard-portfolio": {
       "isSelected": true,
       "href": "https://richardp.vercel.app/pt",
       "title": "Richard Portfólio",
@@ -819,6 +667,92 @@
         },
         "4": {
           "src": "/images/portfolio-pt-04.webp",
+          "alt": ""
+        }
+      }
+    },
+    "loja-figma": {
+      "isSelected": true,
+      "href": "https://festore.vercel.app/pt",
+      "title": "Loja Figma",
+      "roles": { "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "A visibilidade limitada de produtos prejudica vendas; eu criei uma coleção vibrante da Figma, aumentando o engajamento e apoiando esforços de reflorestamento com cada compra.",
+      "thumbnail": {
+        "src": "/images/store-pt-thumbnail.webp",
+        "alt": ""
+      },
+      "banner": {
+        "src": "/images/store-pt-banner.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/store-pt-00.webp",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/store-pt-01.webp",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/store-pt-02.webp",
+          "alt": ""
+        },
+        "3": {
+          "src": "/images/store-pt-03.webp",
+          "alt": ""
+        }
+      }
+    },
+    "nextflix": {
+      "isSelected": true,
+      "href": "https://nextflix-coral-seven.vercel.app",
+      "title": "NextFlix",
+      "roles": { "design": "Design", "development": "Desenvolvimento" },
+      "year": 2023,
+      "description": "Um site de mídia desorganizado frustra os usuários; eu criei um site de listagem de filmes/séries com a API TMDB. Resolvi problemas de organização usando carrosséis, paginação, Redux para estado e troca de tema para personalização.",
+      "thumbnail": {
+        "src": "/images/nextflix-en-thumbnail.webp",
+        "alt": ""
+      },
+      "banner": {
+        "src": "/images/nextflix-en-banner.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/nextflix-en-00.webp",
+          "alt": ""
+        },
+        "1": {
+          "src": "/images/nextflix-en-01.webp",
+          "alt": ""
+        },
+        "2": {
+          "src": "/images/nextflix-en-02.webp",
+          "alt": ""
+        }
+      }
+    },
+    "todo-list": {
+      "isSelected": true,
+      "href": "https://fe-todo-list-next.vercel.app",
+      "title": "Todo List",
+      "roles": { "development": "Desenvolvimento" },
+      "year": 2024,
+      "description": "Gerenciar tarefas diárias pode ser caótico; eu criei um site com drag and drop e opções de temas para organizar melhor e aumentar a produtividade.",
+      "thumbnail": {
+        "src": "/images/todo-en-thumbnail.webp",
+        "alt": ""
+      },
+      "banner": {
+        "src": "/images/todo-en-banner.webp",
+        "alt": ""
+      },
+      "images": {
+        "0": {
+          "src": "/images/todo-en-00.webp",
           "alt": ""
         }
       }

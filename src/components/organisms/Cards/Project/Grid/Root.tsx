@@ -20,7 +20,7 @@ const GridProjectCardOrganism = (
   return (
     <Link
       className={cn(
-        'group/item block aspect-[1/1.1] w-full text-current',
+        'group/item block aspect-square w-full text-current',
         className
       )}
       ref={ref}

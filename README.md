@@ -29,11 +29,13 @@ Explore website's functionalities:
 
 Cutting-edge technologies to ensure an great experience:
 
-- `Next.js`
-- `Next-intl`
-- `Jest`
-- `TailwindCSS`
-- `Typescript`
+- `next.js`
+- `next-intl`
+- `typescript`
+- `tailwindCSS`
+- `framer-motion`
+- `react-hook-form`
+- `...`
 
 <br>
 

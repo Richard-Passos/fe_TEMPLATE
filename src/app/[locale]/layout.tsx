@@ -2,23 +2,21 @@ import { ColorSchemeScript } from '@mantine/core';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale
-} from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
+import { personalApi } from '@/api';
 import { Height, SmoothScroll } from '@/components/atoms';
 import { Footer, Header, Providers, Toaster } from '@/components/organisms';
 import { locales } from '@/constants';
 import '@/styles/globals.css';
 import { defaultColorScheme } from '@/styles/theme';
-import { baseUrl, values } from '@/utils';
+import { Locale } from '@/types';
+import { baseUrl } from '@/utils';
 
 type LayoutOwnProps = PropsWithChildren<{}>;
 
-type LayoutParams = { params: { locale: string } };
+type LayoutParams = { params: { locale: Locale['value'] } };
 
 type LayoutProps = LayoutOwnProps & LayoutParams;
 
@@ -37,7 +35,10 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <SmoothScroll>
-            <Height.Set name='header'>
+            <Height.Set
+              hasAsyncChildren
+              name='header'
+            >
               <Header />
             </Height.Set>
 
@@ -47,7 +48,10 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
               </main>
             </Height.Get>
 
-            <Height.Get name='document'>
+            <Height.Get
+              hasAsyncChildren
+              name='document'
+            >
               <Footer />
             </Height.Get>
 
@@ -65,27 +69,26 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 const generateMetadata = async ({
   params: { locale }
 }: LayoutParams): Promise<Metadata> => {
-  const t = await getTranslations({ locale, namespace: 'personal' }),
-    messages = (await getMessages()) as unknown as IntlMessages;
+  const res = await personalApi.get({ locale });
+
+  if (!res.ok) return {};
+
+  const personal = res.data;
 
   return {
     title: {
-      default: t('title', {
-        name: `${t('name.first')} ${t('name.last')}`
-      }),
-      template: `%s — ${t('name.first')} ${t('name.last')}`
+      default: personal.title,
+      template: `%s — ${personal.name.first} ${personal.name.last}`
     },
-    description: t('description', { country: t('location.country') }),
-    keywords: t('keywords'),
-    authors: values(messages.personal.authors),
+    description: personal.description,
+    keywords: personal.description,
+    authors: personal.authors,
     metadataBase: new URL(baseUrl),
     openGraph: {
-      title: t('title', {
-        name: `${t('name.first')} ${t('name.last')}`
-      }),
-      description: t('description', { country: t('location.country') }),
+      title: personal.title,
+      description: personal.description,
       url: baseUrl,
-      siteName: `${t('name.first')} ${t('name.last')}`,
+      siteName: `${personal.name.first} ${personal.name.last}`,
       locale: locale,
       type: 'website'
     }

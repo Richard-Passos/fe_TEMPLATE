@@ -1,11 +1,11 @@
-import { useMessages, useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { forwardRef } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
+import { footerApi, personalApi } from '@/api';
 import {
   Icon,
   Lines,
-  Link,
   LocalTime,
   ScrollAnimate,
   Text,
@@ -14,30 +14,31 @@ import {
 import { Action } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { Namespace } from '@/types';
-import { cn, keys } from '@/utils';
+import { Locale } from '@/types';
+import { cn, serialize } from '@/utils';
 
 type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 
 type FooterOrganismProps = FooterOrganismOwnProps &
   Omit<SectionProps, keyof FooterOrganismOwnProps>;
 
-const FooterOrganism = (
+const FooterOrganism = async (
   { className, transitionProps, ...props }: FooterOrganismProps,
   ref: FooterOrganismProps['ref']
 ) => {
-  const namespace: Namespace = 'footer';
+  const locale = (await getLocale()) as Locale['value'];
 
-  const t = useTranslations(namespace),
-    pt = useTranslations('personal');
+  const [footerRes, personalRes] = await Promise.all([
+    footerApi.get({ locale }),
+    personalApi.get({ locale })
+  ]);
 
-  const messages = useMessages() as unknown as IntlMessages;
+  if (!footerRes.ok) return null;
 
-  const socials = keys(messages.personal.socials).map((key) => ({
-    label: pt(`socials.${key}.label`),
-    href: pt(`socials.${key}.href`),
-    icon: pt(`socials.${key}.icon`)
-  }));
+  const footer = footerRes.data,
+    personal = personalRes.ok ? personalRes.data : undefined;
+
+  const socials = personal?.socials;
 
   return (
     <Section
@@ -64,7 +65,7 @@ const FooterOrganism = (
             component='h3'
             order={6}
           >
-            {t.rich('cta.subtitle')}
+            {serialize(footer.cta.subtitle)}
           </Title>
 
           <Title
@@ -72,13 +73,13 @@ const FooterOrganism = (
             component='h2'
             order={3}
           >
-            {t.rich('cta.title')}
+            {serialize(footer.cta.title)}
           </Title>
 
           <div className='mt-md flex flex-wrap items-center gap-xs'>
-            <Action>{t('cta.action.label')}</Action>
+            <Action>{footer.cta.action.label}</Action>
 
-            {socials.map((data) => (
+            {socials?.map((data) => (
               <Action
                 aria-label={data.label}
                 as='link'
@@ -112,46 +113,30 @@ const FooterOrganism = (
               component='p'
               order={6}
             >
-              {pt('location.country')}
+              {personal?.location.country}
               &nbsp;
-              {t('locationSeparator')}
+              {footer.locationSeparator}
               &nbsp;
-              {pt('location.state')}
+              {personal?.location.state}
               &nbsp;
-              {t('locationSeparator')}
+              {footer.locationSeparator}
               &nbsp;
               <LocalTime />
             </Title>
 
-            <Text className='max-w-sm'>{t('description')}</Text>
+            <section className='flex max-w-sm flex-col gap-xs'>
+              {serialize(footer.description)}
+            </section>
           </section>
         </div>
 
         <section className='flex justify-center py-sm max-sm:flex-col sm:justify-between'>
           <Text className='text-sm font-medium max-sm:text-center'>
-            {t.rich('copyright', {
-              legal: (chunks) => (
-                <Link
-                  className='text-[1em] font-semibold text-current'
-                  href='/legal'
-                >
-                  {chunks}
-                </Link>
-              )
-            })}
+            {serialize(footer.copyright)}
           </Text>
 
           <Text className='text-center text-sm font-medium sm:text-end'>
-            {t.rich('madeBy', {
-              creator: (chunks) => (
-                <Link
-                  className='text-[1em] font-semibold text-current'
-                  href='https://github.com/Richard-Passos'
-                >
-                  {chunks}
-                </Link>
-              )
-            })}
+            {serialize(footer.madeBy)}
           </Text>
         </section>
       </div>

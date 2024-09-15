@@ -3,7 +3,7 @@ type Project = {
   isSelected?: boolean;
   href: string;
   title: string;
-  roles: { [key: string]: string };
+  roles: string[];
   year?: number;
   description: string;
   thumbnail: {
@@ -15,11 +15,10 @@ type Project = {
     alt: string;
   };
   images?: {
-    [key: string]: {
-      src: string;
-      alt: string;
-    };
-  };
+    id: string;
+    src: string;
+    alt: string;
+  }[];
 };
 
 export default Project;

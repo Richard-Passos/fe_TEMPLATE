@@ -1,5 +1,6 @@
 import Badge from './Badge';
 import Bg from './Bg';
+import Blockquote from './Blockquote';
 import Box from './Box';
 import Button from './Button';
 import Divider from './Divider';
@@ -29,6 +30,7 @@ import Title from './Title';
 const Atoms = {
   Badge,
   Bg,
+  Blockquote,
   Box,
   Button,
   Divider,
@@ -60,6 +62,7 @@ export default Atoms;
 export {
   Badge,
   Bg,
+  Blockquote,
   Box,
   Button,
   Divider,

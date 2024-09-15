@@ -3,7 +3,7 @@ import { Blockquote, BlockquoteProps } from '@mantine/core';
 import { PolymorphicRef } from '@/types';
 
 type BlockquoteAtomOwnProps = {
-  ref?: PolymorphicRef<'div'>;
+  ref?: PolymorphicRef<'q'>;
 };
 
 type BlockquoteAtomProps = BlockquoteAtomOwnProps &

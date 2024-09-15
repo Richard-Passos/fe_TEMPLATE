@@ -1,4 +1,4 @@
-import HeaderNav from './Root';
+import HeaderNav, { HeaderNavOrganismProps as HeaderNavProps } from './Root';
 
 export default HeaderNav;
-export { HeaderNav };
+export type { HeaderNavProps };

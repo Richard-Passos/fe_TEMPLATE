@@ -15,13 +15,18 @@ const ANIMATION_CONFIG: ScrollAnimateConfigOptions = {
   propPoints: [0, 0, 1]
 };
 
-type HeaderMenuTriggerOrganismOwnProps = {};
+type HeaderMenuTriggerOrganismOwnProps = {
+  label: {
+    open: string;
+    close: string;
+  };
+};
 
 type HeaderMenuTriggerOrganismProps = HeaderMenuTriggerOrganismOwnProps &
   ActionProps;
 
 const HeaderMenuTriggerOrganism = (
-  { className, magneticProps, ...props }: HeaderMenuTriggerOrganismProps,
+  { label, className, magneticProps, ...props }: HeaderMenuTriggerOrganismProps,
   ref: HeaderMenuTriggerOrganismProps['ref']
 ) => {
   return (
@@ -46,6 +51,10 @@ const HeaderMenuTriggerOrganism = (
               <MenuIcon className='size-[40%] group-data-open/action:hidden' />
 
               <TimesIcon className='absolute size-[40%] group-data-closed/action:hidden' />
+
+              <span className='sr-only data-open:hidden'>{label.open}</span>
+
+              <span className='sr-only data-closed:hidden'>{label.close}</span>
             </Action>
           </DrawerTrigger>
         </div>

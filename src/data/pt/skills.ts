@@ -60,37 +60,37 @@ const skills = async (): Promise<{
     soft: [
       {
         slug: 'problemSolving',
-        title: 'Problem-solving',
+        title: 'Resolução de Problemas',
         icon: '/icons/puzzle.svg'
       },
       {
         slug: 'detailOriented',
-        title: 'Detail-oriented',
+        title: 'Atenção aos Detalhes',
         icon: '/icons/eye.svg'
       },
       {
         slug: 'communication6',
-        title: 'Communication',
+        title: 'Comunicação',
         icon: '/icons/chat.svg'
       },
       {
         slug: 'adaptability',
-        title: 'Adaptability',
+        title: 'Adaptabilslugade',
         icon: '/icons/adjustments.svg'
       },
       {
         slug: 'timeManagement',
-        title: 'Time management',
+        title: 'Gestão do Tempo',
         icon: '/icons/calendar.svg'
       },
       {
         slug: 'criticalThinking',
-        title: 'Critical thinking',
+        title: 'Pensamento Crítico',
         icon: '/icons/compass.svg'
       },
       {
         slug: 'syntheticThinking',
-        title: 'Synthetic thinking',
+        title: 'Pensamento Sintético',
         icon: '/icons/share.svg'
       }
     ]

@@ -9,60 +9,60 @@ const values = async (): Promise<{
       {
         slug: 'learning',
         icon: '/icons/graduation-cap.svg',
-        title: 'Learning',
+        title: 'Aprendizado',
         description:
-          'Embracing a lifelong learning approach to stay updated with new technologies, frameworks, and best practices.'
+          'Adoto uma abordagem de aprendizado contínuo para me manter atualizado com novas tecnologias, frameworks e melhores práticas.'
       },
       {
         slug: 'resilience',
         icon: '/icons/rocket.svg',
-        title: 'Resilience',
+        title: 'Resiliência',
         description:
-          'Ability to overcome challenges and setbacks while maintaining focus and motivation to achieve high-quality results.'
+          'Habilidade de superar desafios e contratempos mantendo o foco e a motivação para alcançar resultados de alta qualidade.'
       },
       {
         slug: 'qualityOriented',
         icon: '/icons/check-badge.svg',
-        title: 'Quality-Oriented',
+        title: 'Orientado à Qualidade',
         description:
-          'Committed to high standards in all aspects of development to ensure the delivery of exceptional solutions.'
+          'Comprometido com altos padrões em todos os aspectos do desenvolvimento para garantir a entrega de soluções excepcionais.'
       },
       {
         slug: 'customerOriented',
         icon: '/icons/smile.svg',
-        title: 'Customer-Oriented',
+        title: 'Orientado ao Cliente',
         description:
-          'Focusing on the end-user’s needs and expectations to create software that meets or exceeds their requirements.'
+          'Foco nas necessidades e expectativas do usuário final para criar software que atenda ou supere seus requisitos.'
       }
     ],
     personal: [
       {
         slug: 'integrity',
         icon: '/icons/shield.svg',
-        title: 'Integrity',
+        title: 'Integridade',
         description:
-          'I stay true to my values, acting with honesty and transparency. This helps me build strong, genuine relationships.'
+          'Mantenho-me fiel aos meus valores, agindo com honestidade e transparência. Isso ajuda a construir relacionamentos fortes e genuínos.'
       },
       {
         slug: 'curiosity',
         icon: '/icons/globe.svg',
-        title: 'Curiosity',
+        title: 'Curiosidade',
         description:
-          'My curiosity drives me to explore new slugeas and learn from challenges. I see each opportunity as a chance for growth and discovery.'
+          'Minha curiosidade me impulsiona a explorar novas ideias e aprender com desafios. Cada oportunidade é uma chance para descoberta e crescimento.'
       },
       {
         slug: 'respect',
         icon: '/icons/puzzle.svg',
-        title: 'Respect',
+        title: 'Respeito',
         description:
-          'I value the people around me and their unique perspectives. I am open to listening and learning, recognizing the importance of each voice.'
+          'Valorizo as pessoas ao meu redor e suas perspectivas únicas. Estou aberto a ouvir e aprender, reconhecendo a importância de cada voz.'
       },
       {
         slug: 'gratitude',
         icon: '/icons/smile.svg',
-        title: 'Gratitude',
+        title: 'Gratidão',
         description:
-          'I maintain a mindset of gratitude, appreciating the small things in life. Gratitude helps me stay motivated and fulfilled.'
+          'Mantenho uma mentalidade de gratidão, apreciando as pequenas coisas da vida. A gratidão me ajuda a permanecer motivado e realizado.'
       }
     ]
   };

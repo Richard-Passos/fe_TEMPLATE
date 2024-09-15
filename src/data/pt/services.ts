@@ -6,19 +6,19 @@ const services = async (): Promise<Service[]> => {
       slug: 'frontend',
       title: 'Front End',
       description:
-        'I build user interfaces with meticulous attention to detail, focusing on smooth interactions and engaging micro animations to enhance user experience.'
+        'Desenvolvo interfaces de usuário com atenção meticulosa aos detalhes, focando em interações suaves e micro animações envolventes para melhorar a experiência do usuário.'
     },
     {
       slug: 'backend',
       title: 'Back End',
       description:
-        'I build reliable back-end systems that drive your platform’s functionality, emphasizing efficient data management and scalable solutions to support your growth.'
+        'Construo sistemas back-end confiáveis que impulsionam a funcionalslugade da sua plataforma, enfatizando a gestão eficiente de dados e soluções escaláveis para apoiar seu crescimento.'
     },
     {
       slug: 'fullstack',
       title: 'Full Stack',
       description:
-        'I integrate end-to-end solutions using cutting-edge front and back end technologies, delivering results that enhance user experience, scalability, and overall performance.'
+        'Integro soluções de ponta a ponta usando tecnologias front e back end, entregando resultados que aprimoram a experiência do usuário, escalabilidade e desempenho geral.'
     }
   ];
 };

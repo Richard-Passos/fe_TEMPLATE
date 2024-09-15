@@ -1,9 +1,153 @@
 import { Project } from '@/types';
 
-import locale from './locale';
-
 const projects = async (): Promise<Project[]> => {
-  return [];
+  return [
+    {
+      slug: 'richard-portfolio',
+      isSelected: true,
+      href: 'https://richardp.vercel.app/pt',
+      title: 'Richard Portfólio',
+      roles: ['Design', 'Desenvolvimento'],
+      year: 2024,
+      description:
+        'A falta de um portfólio limita oportunidades; eu projetei e construí um portfólio pessoal para exibir habilidades, projetos e experiência, oferecendo uma plataforma profissional para atrair potenciais clientes e empregadores.',
+      thumbnail: {
+        src: '/images/portfolio-pt-thumbnail.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/portfolio-pt-banner.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/portfolio-pt-00.webp',
+          alt: ''
+        },
+        {
+          id: 'image-01',
+          src: '/images/portfolio-pt-01.webp',
+          alt: ''
+        },
+        {
+          id: 'image-02',
+          src: '/images/portfolio-pt-02.webp',
+          alt: ''
+        },
+        {
+          id: 'image-03',
+          src: '/images/portfolio-pt-03.webp',
+          alt: ''
+        },
+        {
+          id: 'image-04',
+          src: '/images/portfolio-pt-04.webp',
+          alt: ''
+        }
+      ]
+    },
+    {
+      slug: 'loja-figma',
+      isSelected: true,
+      href: 'https://festore.vercel.app/pt',
+      title: 'Loja Figma',
+      roles: ['Desenvolvimento'],
+      year: 2024,
+      description:
+        'A visibilidade limitada de produtos prejudica vendas; eu criei uma coleção vibrante da Figma, aumentando o engajamento e apoiando esforços de reflorestamento com cada compra.',
+      thumbnail: {
+        src: '/images/store-pt-thumbnail.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/store-pt-banner.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/store-pt-00.webp',
+          alt: ''
+        },
+        {
+          id: 'image-01',
+          src: '/images/store-pt-01.webp',
+          alt: ''
+        },
+        {
+          id: 'image-02',
+          src: '/images/store-pt-02.webp',
+          alt: ''
+        },
+        {
+          id: 'image-03',
+          src: '/images/store-pt-03.webp',
+          alt: ''
+        }
+      ]
+    },
+    {
+      slug: 'nextflix',
+      isSelected: true,
+      href: 'https://nextflix-coral-seven.vercel.app',
+      title: 'NextFlix',
+      roles: ['Design', 'Desenvolvimento'],
+      year: 2023,
+      description:
+        'Um site de mídia desorganizado frustra os usuários; eu criei um site de listagem de filmes/séries com a API TMDB. Resolvi problemas de organização usando carrosséis, paginação, Redux para estado e troca de tema para personalização.',
+      thumbnail: {
+        src: '/images/nextflix-en-thumbnail.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/nextflix-en-banner.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/nextflix-en-00.webp',
+          alt: ''
+        },
+        {
+          id: 'image-01',
+          src: '/images/nextflix-en-01.webp',
+          alt: ''
+        },
+        {
+          id: 'image-02',
+          src: '/images/nextflix-en-02.webp',
+          alt: ''
+        }
+      ]
+    },
+    {
+      slug: 'todo-list',
+      isSelected: true,
+      href: 'https://fe-todo-list-next.vercel.app',
+      title: 'Todo List',
+      roles: ['Desenvolvimento'],
+      year: 2024,
+      description:
+        'Gerenciar tarefas diárias pode ser caótico; eu criei um site com drag and drop e opções de temas para organizar melhor e aumentar a produtividade.',
+      thumbnail: {
+        src: '/images/todo-en-thumbnail.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/todo-en-banner.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/todo-en-00.webp',
+          alt: ''
+        }
+      ]
+    }
+  ];
 };
 
 export default projects;

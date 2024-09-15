@@ -4,22 +4,22 @@ const statistics = async (): Promise<Statistic[]> => {
   return [
     {
       slug: 'projectsCompleted',
-      title: 'Projects \ncompleted',
+      title: 'Projetos \ncompletados',
       value: '10ᐩ'
     },
     {
       slug: 'yearExperience',
-      title: 'Years of \nexperience',
+      title: 'Anos de \nexperiência',
       value: '1ᐩ'
     },
     {
       slug: 'greatProjects',
-      title: 'Great \nprojects',
+      title: 'Ótimos \nprojetos',
       value: '100%'
     },
     {
       slug: 'ontimeDeliveries',
-      title: 'On-time \ndeliveries',
+      title: 'Entregas \npontuais',
       value: '100%'
     }
   ];

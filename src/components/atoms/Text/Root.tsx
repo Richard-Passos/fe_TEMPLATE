@@ -1,13 +1,10 @@
 import { Text, TextProps } from '@mantine/core';
-import { PropsWithChildren } from 'react';
+import { ComponentPropsWithRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
+type TextAtomOwnProps = TextProps;
 
-type TextAtomOwnProps = PropsWithChildren<{
-  ref?: PolymorphicRef<'p'>;
-}>;
-
-type TextAtomProps = TextAtomOwnProps & Omit<TextProps, keyof TextAtomOwnProps>;
+type TextAtomProps = TextAtomOwnProps &
+  Omit<ComponentPropsWithRef<'p'>, keyof TextAtomOwnProps>;
 
 const TextAtom = Text;
 

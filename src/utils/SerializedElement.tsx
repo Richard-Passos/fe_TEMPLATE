@@ -19,8 +19,14 @@ import {
   Text,
   Title
 } from '@/components/atoms';
-import { TitleOrder } from '@/components/atoms/Title';
+import { BlockquoteProps } from '@/components/atoms/Blockquote';
+import { IconProps } from '@/components/atoms/Icon';
+import { ImageProps } from '@/components/atoms/Image';
+import { LinkProps } from '@/components/atoms/Link';
+import { TextProps } from '@/components/atoms/Text';
+import { TitleOrder, TitleProps } from '@/components/atoms/Title';
 import { List } from '@/components/molecules';
+import { ListItemProps, ListRootProps } from '@/components/molecules/List';
 
 import cn from './cn';
 import exhaustiveMatchingGuard from './exhaustiveMatchingGuard';
@@ -39,17 +45,17 @@ type ElementNode =
   | { type: 'icon'; src: string; animation?: keyof typeof scrollAnimations };
 
 type ElementProps = {
-  heading?: Partial<ComponentPropsWithoutRef<typeof Title>>;
-  paragraph?: Partial<ComponentPropsWithoutRef<typeof Text>>;
+  heading?: Partial<TitleProps>;
+  paragraph?: Partial<TextProps>;
   alignText?: Partial<ComponentPropsWithoutRef<'span'>>;
-  quote?: Partial<ComponentPropsWithoutRef<typeof Blockquote>>;
-  ul?: Partial<ComponentPropsWithoutRef<typeof List.Root>>;
-  ol?: Partial<ComponentPropsWithoutRef<typeof List.Root>>;
-  li?: Partial<ComponentPropsWithoutRef<typeof List.Item>>;
-  link?: Partial<ComponentPropsWithoutRef<typeof Link>>;
-  image?: Partial<ComponentPropsWithoutRef<typeof Image>>;
+  quote?: Partial<BlockquoteProps>;
+  ul?: Partial<ListRootProps>;
+  ol?: Partial<ListRootProps>;
+  li?: Partial<ListItemProps>;
+  link?: Partial<LinkProps>;
+  image?: Partial<ImageProps>;
   icon?: Partial<
-    ComponentPropsWithoutRef<typeof Icon> & {
+    IconProps & {
       wrapperProps?: ComponentPropsWithoutRef<'div'>;
     }
   >;

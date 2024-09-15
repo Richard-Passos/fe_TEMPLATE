@@ -10,7 +10,7 @@ const request = async <TResponse>(
 
   return (await response.json()) as TResponse; */
 
-  return { ok: false };
+  return { ok: false } as TResponse;
 };
 
 export default request;

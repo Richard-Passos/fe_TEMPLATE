@@ -1,13 +1,15 @@
-import { useMessages, useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
+import { headerApi, pagesApi } from '@/api';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
 import { locales } from '@/constants';
-import { cn, keys } from '@/utils';
+import { Locale } from '@/types';
+import { cn } from '@/utils';
 
 import HeaderMenu from './Menu';
-import Nav from './Nav';
+import HeaderNav, { HeaderNavProps } from './Nav';
 import HeaderTheme from './Theme';
 
 type HeaderOrganismOwnProps = {};
@@ -15,18 +17,27 @@ type HeaderOrganismOwnProps = {};
 type HeaderOrganismProps = HeaderOrganismOwnProps &
   Omit<ComponentPropsWithRef<'header'>, keyof HeaderOrganismOwnProps>;
 
-const HeaderOrganism = (
+const HeaderOrganism = async (
   { className, ...props }: HeaderOrganismProps,
   ref: HeaderOrganismProps['ref']
 ) => {
-  const t = useTranslations('header'),
-    globaltT = useTranslations(),
-    messages = useMessages() as unknown as IntlMessages;
+  const locale = (await getLocale()) as Locale['value'];
 
-  const navItem = keys(messages.nav).map((key) => ({
-    href: globaltT(`nav.${key}.href`),
-    label: globaltT(`nav.${key}.label`)
-  }));
+  const [headerRes, pagesRes] = await Promise.all([
+    headerApi.get({ locale }),
+    pagesApi.get({ locale, isSelected: true })
+  ]);
+
+  if (!headerRes.ok) return null;
+
+  const header = headerRes.data;
+
+  const navItem: HeaderNavProps['items'] = pagesRes.ok
+    ? pagesRes.data.map((p) => ({
+        href: p.path,
+        label: p.label
+      }))
+    : [];
 
   return (
     <HeaderTheme>
@@ -41,10 +52,10 @@ const HeaderOrganism = (
         <Logo className='-ml-[--button-padding-x]' />
 
         <div className='flex items-center gap-xs max-md:hidden'>
-          <Nav items={navItem} />
+          <HeaderNav items={navItem} />
 
           <LocaleSelect
-            aria-label={t('locale.label')}
+            aria-label={header.locale.label}
             data={locales}
           />
         </div>

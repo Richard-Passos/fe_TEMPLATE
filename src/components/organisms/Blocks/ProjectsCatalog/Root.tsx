@@ -1,14 +1,13 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
-import { Text } from '@/components/atoms';
-import { TextProps } from '@/components/atoms/Text';
 import { Card, Catalog } from '@/components/molecules';
 import {
   CatalogEmptyProps,
   CatalogRootProps
 } from '@/components/molecules/Catalog';
 import { Project } from '@/types';
-import { cn, renderComp } from '@/utils';
+import { cn, renderComp, serialize } from '@/utils';
+import { Node } from '@/utils/serialize';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 import ProjectsCatalogGridBlock, {
@@ -20,12 +19,11 @@ import ProjectsCatalogTableBlock, {
 
 type ProjectsCatalogBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
-    description?: ReactNode;
-    empty: ReactNode;
+    empty: Node[];
     items: Project[];
   };
   catalogProps?: Partial<CatalogRootProps>;
-  descriptionProps?: Partial<TextProps>;
+  descriptionProps?: Partial<any>;
   emptyProps?: Partial<CatalogEmptyProps>;
   tableProps?: Partial<ProjectsCatalogTableBlockProps>;
   gridProps?: Partial<ProjectsCatalogGridBlockProps>;
@@ -62,23 +60,24 @@ const ProjectsCatalogBlockOrganism = (
           catalogProps?.className
         )}
       >
-        {renderComp(
-          <Text
-            className='w-full max-w-48 text-dimmed md:max-w-36'
-            {...descriptionProps}
-          >
-            {data.description}
-          </Text>,
-          [data.description]
-        )}
+        <section className='w-full max-w-48 md:max-w-36'>
+          {renderComp(
+            serialize(data.description ?? [], {
+              paragraph: {
+                className: 'text-dimmed *:text-text'
+              }
+            }),
+            [!!data.description?.length]
+          )}
+        </section>
 
         <div className='flex max-w-screen-md grow flex-col items-center'>
           <Catalog.Empty
             {...emptyProps}
-            className='flex w-full'
+            className={cn('flex w-full', emptyProps?.className)}
           >
-            <Card.Root className='min-h-52 items-center justify-center'>
-              <Text className='max-w-md text-center'>{data.empty}</Text>
+            <Card.Root className='min-h-52 items-center justify-center text-center'>
+              {serialize(data.empty)}
             </Card.Root>
           </Catalog.Empty>
 

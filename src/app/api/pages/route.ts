@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { Locale, Project } from '@/types';
-import { getTranslations, isType, normId, values } from '@/utils';
+import { Locale, Page } from '@/types';
+import { getTranslations, isType } from '@/utils';
 
 type SearchParams = {
   page: number;
   perPage: number;
-  role: string;
   isSelected: 'false' | 'true';
   locale: Locale['value'];
 };
@@ -15,17 +14,16 @@ type SearchParams = {
 const DEFAULT_PARAMS: SearchParams = {
   page: 1,
   perPage: 5,
-  role: '',
   isSelected: 'false',
   locale: defaultLocale.value
 };
 
-type ProjectsResponse =
+type PagesResponse =
   | { ok: false; status: 500; message: string }
   | {
       ok: true;
       status: 200;
-      data: Project[];
+      data: Page[];
       meta: {
         page: number;
         totalPages: number;
@@ -35,14 +33,13 @@ type ProjectsResponse =
 
 const GET = async (
   request: NextRequest
-): Promise<ReturnType<typeof NextResponse.json<ProjectsResponse>>> => {
+): Promise<ReturnType<typeof NextResponse.json<PagesResponse>>> => {
   try {
     const { searchParams } = request.nextUrl;
 
     const params: { [K in keyof SearchParams]: string | null } = {
       page: searchParams.get('page'),
       perPage: searchParams.get('per-page'),
-      role: searchParams.get('role'),
       isSelected: searchParams.get('is-selected'),
       locale: searchParams.get('locale')
     };
@@ -53,9 +50,6 @@ const GET = async (
       perPage = isType<SearchParams['perPage']>(params.perPage)
         ? parseInt(params.perPage)
         : DEFAULT_PARAMS.perPage,
-      role = isType<SearchParams['role']>(params.role)
-        ? params.role
-        : DEFAULT_PARAMS.role,
       isSelected = isType<SearchParams['isSelected']>(params.isSelected)
         ? params.isSelected
         : DEFAULT_PARAMS.isSelected,
@@ -65,19 +59,10 @@ const GET = async (
 
     const t = getTranslations(locale);
 
-    const projects = await t.projects();
-
-    let results = projects;
+    let results = await t.pages();
 
     if (isSelected === 'true')
       results = results.filter((data) => data.isSelected);
-
-    if (role)
-      results = results.filter((data) => {
-        const roles = values(data.roles);
-
-        return roles.some((r) => normId(r) === role);
-      });
 
     const totalResults = results.length;
 
@@ -103,4 +88,4 @@ const GET = async (
 };
 
 export { GET };
-export type { ProjectsResponse };
+export type { PagesResponse };

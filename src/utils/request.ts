@@ -6,11 +6,9 @@ const request = async <TResponse>(
 ): Promise<TResponse> => {
   url = url.startsWith('/') ? `${baseUrl}${url}` : url;
 
-  /* const response = await fetch(url, { cache: 'no-store', ...config });
+  const response = await fetch(url, { cache: 'no-store', ...config });
 
-  return (await response.json()) as TResponse; */
-
-  return { ok: false } as TResponse;
+  return (await response.json()) as TResponse;
 };
 
 export default request;

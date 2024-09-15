@@ -1,6 +1,7 @@
-import { useMessages, useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { forwardRef } from 'react';
 
+import { headerApi, pagesApi, personalApi } from '@/api';
 import { Icon } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import {
@@ -9,9 +10,10 @@ import {
   DrawerTriggerProps
 } from '@/components/molecules/Drawer';
 import { locales } from '@/constants';
-import { cn, keys } from '@/utils';
+import { Locale } from '@/types';
+import { cn, renderComp } from '@/utils';
 
-import HeaderNav from '../Nav';
+import HeaderNav, { HeaderNavProps } from '../Nav';
 import HeaderMenuTrigger from './Trigger';
 
 type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
@@ -22,24 +24,31 @@ type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
 type HeaderMenuOrganismProps = HeaderMenuOrganismOwnProps &
   Omit<DrawerRootProps, keyof HeaderMenuOrganismOwnProps>;
 
-const HeaderMenuOrganism = (
+const HeaderMenuOrganism = async (
   { className, triggerProps, contentProps, ...props }: HeaderMenuOrganismProps,
   ref: HeaderMenuOrganismProps['ref']
 ) => {
-  const t = useTranslations('header.menu'),
-    globaltT = useTranslations(),
-    messages = useMessages() as unknown as IntlMessages;
+  const locale = (await getLocale()) as Locale['value'];
 
-  const navItems = keys(messages.nav).map((key) => ({
-    href: globaltT(`nav.${key}.href`),
-    label: globaltT(`nav.${key}.label`)
-  }));
+  const [headerRes, pagesRes, personalRes] = await Promise.all([
+    headerApi.get({ locale }),
+    pagesApi.get({ locale, isSelected: true }),
+    personalApi.get({ locale })
+  ]);
 
-  const socials = keys(messages.personal.socials).map((key) => ({
-    label: globaltT(`personal.socials.${key}.label`),
-    href: globaltT(`personal.socials.${key}.href`),
-    icon: globaltT(`personal.socials.${key}.icon`)
-  }));
+  if (!headerRes.ok) return null;
+
+  const header = headerRes.data,
+    personal = personalRes.ok ? personalRes.data : undefined;
+
+  const navItems: HeaderNavProps['items'] = pagesRes.ok
+    ? pagesRes.data.map((p) => ({
+        href: p.path,
+        label: p.label
+      }))
+    : [];
+
+  const socials = personal?.socials;
 
   return (
     <Drawer.Root
@@ -50,15 +59,20 @@ const HeaderMenuOrganism = (
       trigger={
         <>
           <HeaderMenuTrigger.Mobile className='md:hidden'>
-            {t('label')}
+            {header.menu.label}
           </HeaderMenuTrigger.Mobile>
 
-          <HeaderMenuTrigger.Root aria-label={t('open.label')} />
+          <HeaderMenuTrigger.Root
+            label={{
+              open: header.menu.open.label,
+              close: header.menu.close.label
+            }}
+          />
         </>
       }
     >
       <Drawer.Content
-        title={t('title')}
+        title={header.menu.title}
         {...contentProps}
         bodyProps={{
           ...contentProps?.bodyProps,
@@ -94,28 +108,31 @@ const HeaderMenuOrganism = (
 
         <div className='mt-auto flex flex-wrap gap-md px-md'>
           <LocaleSelect
-            aria-label={t('locale.label')}
+            aria-label={header.locale.label}
             className='mt-1'
             data={locales}
           />
 
-          <div className='flex flex-wrap items-center gap-xs'>
-            {socials.map((data) => (
-              <Action
-                aria-label={data.label}
-                as='link'
-                href={data.href}
-                isIconOnly
-                key={data.href}
-                variant='default'
-              >
-                <Icon
-                  className='absolute size-2/3'
-                  src={data.icon}
-                />
-              </Action>
-            ))}
-          </div>
+          {renderComp(
+            <div className='flex flex-wrap items-center gap-xs'>
+              {socials?.map((data) => (
+                <Action
+                  aria-label={data.label}
+                  as='link'
+                  href={data.href}
+                  isIconOnly
+                  key={data.href}
+                  variant='default'
+                >
+                  <Icon
+                    className='absolute size-2/3'
+                    src={data.icon}
+                  />
+                </Action>
+              ))}
+            </div>,
+            [socials]
+          )}
         </div>
       </Drawer.Content>
     </Drawer.Root>

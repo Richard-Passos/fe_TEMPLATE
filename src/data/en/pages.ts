@@ -66,7 +66,7 @@ const pages = async (): Promise<Page[]> => {
               ]
             }
           ],
-          description: '', // //t('pages.work.hero.description'),
+          description: '',
           left: [
             {
               type: 'icon',
@@ -143,7 +143,7 @@ const pages = async (): Promise<Page[]> => {
                   }
                 ]
               }
-            ], // //t('pages.work.blocks.selectedProjects.empty'),
+            ],
             items: projects
           }
         },
@@ -551,7 +551,7 @@ const pages = async (): Promise<Page[]> => {
               ]
             }
           ],
-          description: '', // //t('pages.work.hero.description'),
+          description: '',
           left: [
             {
               type: 'icon',
@@ -578,8 +578,8 @@ const pages = async (): Promise<Page[]> => {
           id: 'selectedProjects',
           data: {
             title: [],
-            description: [], // //t('pages.work.blocks.selectedProjects.description'),
-            empty: [], // //t('pages.work.blocks.selectedProjects.empty'),
+            description: [],
+            empty: [],
             items: projects
           }
         }

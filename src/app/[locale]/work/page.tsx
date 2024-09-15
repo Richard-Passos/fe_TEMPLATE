@@ -5,14 +5,14 @@ import {
   unstable_setRequestLocale
 } from 'next-intl/server';
 
-import { ProjectsResponse } from '@/app/api/projects/route';
+import { projectsApi } from '@/api';
 import { Icon, Link } from '@/components/atoms';
 import { ProjectsCatalogBlockProps } from '@/components/organisms/Blocks/ProjectsCatalog';
 import { ValuesBlockProps } from '@/components/organisms/Blocks/Values';
 import { PrimaryHeroExtraIconProps } from '@/components/organisms/Heros/Primary/Extra/Icon';
 import PrimaryHeroTitleRich from '@/components/organisms/Heros/Primary/Title/Rich';
 import { PageTemplate } from '@/components/templates';
-import { keys, request } from '@/utils';
+import { keys } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -25,17 +25,17 @@ type WorkPageProps = WorkPageOwnProps & WorkPageParams;
 const WorkPage = async ({ params: { locale } }: WorkPageProps) => {
   unstable_setRequestLocale(locale);
 
-  const [t, globalT, m, data] = await Promise.all([
+  const [t, globalT, m, res] = await Promise.all([
     getTranslations('pages.work'),
     getTranslations(),
     getMessages(),
-    request<ProjectsResponse>(`/api/projects?locale=${locale}&is-selected=true`)
+    projectsApi.get({ locale, isSelected: true })
   ]);
 
   const messages = m as unknown as IntlMessages;
 
-  const projects: ProjectsCatalogBlockProps['data']['items'] = data.ok
-    ? data.data
+  const projects: ProjectsCatalogBlockProps['data']['items'] = res.ok
+    ? res.data
     : [];
 
   return (

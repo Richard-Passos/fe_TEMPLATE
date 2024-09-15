@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { ScrollAnimate, Text, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
@@ -43,7 +43,7 @@ const ANIMATION_CONFIG = {
 
 type ButBlockOrganismOwnProps = {
   data: {
-    title: ReactNode;
+    title: string;
     description: TextScrollAnimateProps['text'];
   };
   titleProps?: Partial<TextProps>;

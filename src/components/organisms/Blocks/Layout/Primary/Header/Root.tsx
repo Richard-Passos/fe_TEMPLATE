@@ -1,15 +1,13 @@
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { Text, Title } from '@/components/atoms';
-import { TextProps } from '@/components/atoms/Text';
+import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
-import { cn, renderComp } from '@/utils';
+import { cn, renderComp, serialize } from '@/utils';
 
 type PrimaryLayoutBlockHeaderOrganismOwnProps = {
-  title: { id: string; text: ReactNode }[];
-  description?: TextProps['children'];
+  title: Parameters<typeof serialize>['0'];
+  description?: Parameters<typeof serialize>['0'];
   titleProps?: Partial<TitleProps>;
-  descriptionProps?: Partial<TextProps>;
 };
 
 type PrimaryLayoutBlockHeaderOrganismProps =
@@ -23,9 +21,8 @@ const PrimaryLayoutBlockHeaderOrganism = (
   {
     className,
     title,
-    description,
+    description = [],
     titleProps,
-    descriptionProps,
     ...props
   }: PrimaryLayoutBlockHeaderOrganismProps,
   ref: PrimaryLayoutBlockHeaderOrganismProps['ref']
@@ -43,32 +40,23 @@ const PrimaryLayoutBlockHeaderOrganism = (
         order={2}
         {...titleProps}
         className={cn(
-          'shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase',
+          'shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]',
           titleProps?.className
         )}
       >
-        {title.map((t) => (
-          <span
-            className='block odd:-ml-[min(10vw,theme(spacing.20))]'
-            key={t.id}
-          >
-            {t.text}
-          </span>
-        ))}
+        {serialize(title)}
       </Title>
 
-      {renderComp(
-        <Text
-          {...descriptionProps}
-          className={cn(
-            'max-w-md text-sm text-dimmed -translate-y-3.5',
-            descriptionProps?.className
-          )}
-        >
-          {description}
-        </Text>,
-        [description]
-      )}
+      <section className='max-w-md -translate-y-3.5'>
+        {renderComp(
+          serialize(description, {
+            paragraph: {
+              className: 'text-sm text-dimmed *:text-text'
+            }
+          }),
+          [!!description.length]
+        )}
+      </section>
     </header>
   );
 };

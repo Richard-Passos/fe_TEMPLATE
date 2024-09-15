@@ -1,10 +1,6 @@
-import PrimaryHeroIcon from './Icon';
-import PrimaryHeroText from './Text';
-
-const PrimaryHeroExtra = {
-  Icon: PrimaryHeroIcon,
-  Text: PrimaryHeroText
-};
+import PrimaryHeroExtra, {
+  PrimaryHeroExtraOrganismProps as PrimaryHeroExtraProps
+} from './Root';
 
 export default PrimaryHeroExtra;
-export { PrimaryHeroIcon, PrimaryHeroText };
+export type { PrimaryHeroExtraProps };

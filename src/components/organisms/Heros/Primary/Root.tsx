@@ -3,9 +3,10 @@ import { ReactNode, forwardRef } from 'react';
 import { Lines, Text } from '@/components/atoms';
 import { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { cn, serialize } from '@/utils';
+import { cn } from '@/utils';
 
 import ScrollIndicator from '../../ScrollIndicator';
+import PrimaryHeroExtra, { PrimaryHeroExtraProps } from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
 import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
 
@@ -13,8 +14,8 @@ type PrimaryHeroOrganismOwnProps = {
   data: {
     title: PrimaryHeroTitleProps['children'];
     description: ReactNode;
-    left: Parameters<typeof serialize>['0'];
-    right: Parameters<typeof serialize>['0'];
+    left: PrimaryHeroExtraProps['children'];
+    right: PrimaryHeroExtraProps['children'];
   };
   scrollToProps?: Partial<ScrollToProps>;
 };
@@ -55,25 +56,11 @@ const PrimaryHeroOrganism = (
 
               <div className='mt-sm grid w-full grid-cols-3 gap-sm'>
                 <div>
-                  {serialize(data.left, {
-                    paragraph: {
-                      className: 'text-sm font-semibold'
-                    },
-                    icon: {
-                      wrapperProps: { className: 'size-6' }
-                    }
-                  })}
+                  <PrimaryHeroExtra>{data.left}</PrimaryHeroExtra>
                 </div>
 
                 <div className='col-end-4 justify-self-end text-end lg:order-last'>
-                  {serialize(data.right, {
-                    paragraph: {
-                      className: 'text-sm font-semibold'
-                    },
-                    icon: {
-                      wrapperProps: { className: 'size-6' }
-                    }
-                  })}
+                  <PrimaryHeroExtra>{data.right}</PrimaryHeroExtra>
                 </div>
 
                 <Text className='col-span-full max-w-md justify-self-center text-center font-medium lg:sr-only'>

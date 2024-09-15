@@ -5,12 +5,13 @@ import UnstyledLink from '@/components/atoms/Link/Unstyled';
 import { CardRoot, CardRootProps } from '@/components/molecules/Card';
 import { urlRegex } from '@/constants/regexs';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type LinkCardOrganismOwnProps = {
   data: {
     href: string;
     icon: string;
-    title: string;
+    title: Node[];
   };
 };
 
@@ -42,7 +43,7 @@ const LinkCardOrganism = (
           className='mt-sm text-center text-sm'
           order={4}
         >
-          {data.title}
+          {serialize(data.title)}
         </Title>
 
         <Text className='text-center text-sm text-dimmed'>

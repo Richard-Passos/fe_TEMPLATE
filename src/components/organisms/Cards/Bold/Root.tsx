@@ -3,11 +3,12 @@ import { forwardRef } from 'react';
 import { Icon, Title } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type BoldCardOrganismOwnProps = {
   data: {
     icon: string;
-    description: string;
+    description: Node[];
   };
 };
 
@@ -33,7 +34,7 @@ const BoldCardOrganism = (
         component='p'
         order={4}
       >
-        {data.description}
+        {serialize(data.description)}
       </Title>
     </Card.Root>
   );

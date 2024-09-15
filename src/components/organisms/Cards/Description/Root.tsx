@@ -1,13 +1,14 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
-import { Badge, Text } from '@/components/atoms';
+import { Badge } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type DescriptionCardOrganismOwnProps = {
   data: {
-    title: ReactNode;
-    description: ReactNode;
+    title: string;
+    description: Node[];
   };
 };
 
@@ -33,7 +34,13 @@ const DescriptionCardOrganism = (
         {data.title}
       </Badge>
 
-      <Text className='mt-lg text-dimmed'>{data.description}</Text>
+      <section className='mt-lg'>
+        {serialize(data.description, {
+          paragraph: {
+            className: 'text-dimmed *:text-text'
+          }
+        })}
+      </section>
     </Card.Root>
   );
 };

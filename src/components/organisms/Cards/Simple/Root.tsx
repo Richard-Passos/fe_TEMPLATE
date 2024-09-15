@@ -1,13 +1,14 @@
 import { forwardRef } from 'react';
 
-import { Icon, Text } from '@/components/atoms';
+import { Icon } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type SimpleCardOrganismOwnProps = {
   data: {
     icon: string;
-    description: string;
+    description: Node[];
   };
 };
 
@@ -28,9 +29,13 @@ const SimpleCardOrganism = (
         <Icon src={data.icon} />
       </div>
 
-      <Text className='mt-xs font-medium leading-tight'>
-        {data.description}
-      </Text>
+      <section className='mt-xs'>
+        {serialize(data.description, {
+          paragraph: {
+            className: 'font-medium leading-tight'
+          }
+        })}
+      </section>
     </Card.Root>
   );
 };

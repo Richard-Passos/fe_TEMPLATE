@@ -3,11 +3,12 @@ import { forwardRef } from 'react';
 import { Badge, Icon, Marquee, Title } from '@/components/atoms';
 import Card, { CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type MarqueeCardOrganismOwnProps = {
   data: {
     icon: string;
-    title: string;
+    title: Node[];
     items: string[];
   };
 };
@@ -35,7 +36,7 @@ const MarqueeCardOrganism = (
           component='h4'
           order={5}
         >
-          {data.title}
+          {serialize(data.title)}
         </Title>
 
         <Marquee

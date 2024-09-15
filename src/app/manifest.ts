@@ -15,23 +15,22 @@ const manifest = async (): Promise<MetadataRoute.Manifest> => {
     }),
     short_name: `${t('name.first')} ${t('name.last')}`,
     description: t('description', { country: t('location.country') }),
-    start_url: '/',
     display: 'standalone',
-    background_color: '#f4f5f6',
-    theme_color: '#f4f5f6',
+    background_color: '#fafafa',
+    theme_color: '#fafafa',
     icons: [
       {
-        src: '/favicon.ico',
+        src: './favicon.ico',
         sizes: 'any',
         type: 'image/x-icon'
       },
       {
-        src: '/android-chrome-192x192.png',
+        src: './android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png'
       },
       {
-        src: '/android-chrome-512x512.png',
+        src: './android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png'
       }

@@ -3,6 +3,10 @@
 import { FieldValues } from 'react-hook-form';
 
 const sendEmail = async (values: FieldValues) => {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+  return;
+
   const formData = new FormData();
 
   formData.append('name', values.name);

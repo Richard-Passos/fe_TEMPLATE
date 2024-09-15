@@ -1,12 +1,11 @@
-import { ComponentType, ReactNode, forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { Lines, Text } from '@/components/atoms';
+import { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Section, { SectionProps } from '@/components/organisms/Section';
-import { TypeVariants } from '@/types';
-import { cn } from '@/utils';
+import { cn, serialize } from '@/utils';
 
 import ScrollIndicator from '../../ScrollIndicator';
-import PrimaryHeroExtra from './Extra';
 import PrimaryHeroScrollAnimate from './ScrollAnimate';
 import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
 
@@ -14,37 +13,39 @@ type PrimaryHeroOrganismOwnProps = {
   data: {
     title: PrimaryHeroTitleProps['children'];
     description: ReactNode;
-    left: TypeVariants<typeof PrimaryHeroExtra>;
-    right: TypeVariants<typeof PrimaryHeroExtra>;
+    left: Parameters<typeof serialize>['0'];
+    right: Parameters<typeof serialize>['0'];
   };
+  scrollToProps?: Partial<ScrollToProps>;
 };
 
 type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
   Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
 
 const PrimaryHeroOrganism = (
-  { data, className, ...props }: PrimaryHeroOrganismProps,
+  {
+    data,
+    className,
+    bgProps,
+    scrollToProps,
+    ...props
+  }: PrimaryHeroOrganismProps,
   ref: PrimaryHeroOrganismProps['ref']
 ) => {
-  const { type: leftType, ...leftProps } = data.left,
-    { type: rightType, ...rightProps } = data.right;
-
-  const Left = PrimaryHeroExtra[leftType] as ComponentType<any>,
-    Right = PrimaryHeroExtra[rightType] as ComponentType<any>;
-
   return (
     <Section
       bgProps={{
-        className: '*:hidden'
+        ...bgProps,
+        className: cn('*:hidden', bgProps?.className)
       }}
-      forceTheme
-      hasTransition={false}
-      ref={ref}
-      {...props}
       className={cn(
         'min-h-svh p-[--inset] pt-[--header-height] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
         className
       )}
+      forceTheme
+      hasTransition={false}
+      ref={ref}
+      {...props}
     >
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
         <PrimaryHeroScrollAnimate>
@@ -54,11 +55,25 @@ const PrimaryHeroOrganism = (
 
               <div className='mt-sm grid w-full grid-cols-3 gap-sm'>
                 <div>
-                  <Left {...leftProps} />
+                  {serialize(data.left, {
+                    paragraph: {
+                      className: 'text-sm font-semibold'
+                    },
+                    icon: {
+                      wrapperProps: { className: 'size-6' }
+                    }
+                  })}
                 </div>
 
                 <div className='col-end-4 justify-self-end text-end lg:order-last'>
-                  <Right {...rightProps} />
+                  {serialize(data.right, {
+                    paragraph: {
+                      className: 'text-sm font-semibold'
+                    },
+                    icon: {
+                      wrapperProps: { className: 'size-6' }
+                    }
+                  })}
                 </div>
 
                 <Text className='col-span-full max-w-md justify-self-center text-center font-medium lg:sr-only'>
@@ -74,7 +89,13 @@ const PrimaryHeroOrganism = (
         <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
-      <ScrollIndicator className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden' />
+      <ScrollIndicator
+        {...scrollToProps}
+        className={cn(
+          'absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden',
+          scrollToProps?.className
+        )}
+      />
     </Section>
   );
 };

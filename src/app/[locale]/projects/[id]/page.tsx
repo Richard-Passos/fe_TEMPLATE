@@ -2,10 +2,9 @@ import { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { SingleProjectResponse } from '@/app/api/projects/[id]/route';
-import { ProjectsResponse } from '@/app/api/projects/route';
+import { projectsApi } from '@/api';
 import { SingleProjectTemplate } from '@/components/templates';
-import { baseUrl, entries, request, values } from '@/utils';
+import { baseUrl, entries, values } from '@/utils';
 
 import { LayoutParams } from '../../layout';
 
@@ -25,24 +24,20 @@ const SingleProjectPage = async ({
 
   const [t, data] = await Promise.all([
     getTranslations('pages.singleProject'),
-    request<SingleProjectResponse>(`/api/projects/${id}?locale=${locale}`)
+    projectsApi.getOne({ id, locale })
   ]);
 
   if (!data.ok) return;
 
   const project = data.data;
 
-  const [prevData, nextData] = await Promise.all([
-    request<SingleProjectResponse>(
-      `/api/projects/${data.meta.adjacentIds.prev}?locale=${locale}`
-    ),
-    request<SingleProjectResponse>(
-      `/api/projects/${data.meta.adjacentIds.next}?locale=${locale}`
-    )
+  const [prevRes, nextRes] = await Promise.all([
+    projectsApi.getOne({ id: data.meta.adjacentIds.prev ?? '', locale }),
+    projectsApi.getOne({ id: data.meta.adjacentIds.next ?? '', locale })
   ]);
 
-  const prevProject = prevData.ok ? prevData.data : undefined,
-    nextProject = nextData.ok ? nextData.data : undefined;
+  const prevProject = prevRes.ok ? prevRes.data : undefined,
+    nextProject = nextRes.ok ? nextRes.data : undefined;
 
   return (
     <SingleProjectTemplate
@@ -107,13 +102,11 @@ const SingleProjectPage = async ({
 const generateMetadata = async ({
   params: { locale, id }
 }: SingleProjectPageParams): Promise<Metadata> => {
-  const data = await request<SingleProjectResponse>(
-    `/api/projects/${id}?locale=${locale}`
-  );
+  const res = await projectsApi.getOne({ id, locale });
 
-  if (!data.ok) return notFound();
+  if (!res.ok) return notFound();
 
-  const project = data.data;
+  const project = res.data;
 
   return {
     title: project.title,
@@ -133,13 +126,9 @@ const generateMetadata = async ({
 const generateStaticParams = async ({
   params: { locale }
 }: SingleProjectPageParams) => {
-  const data = await request<ProjectsResponse>(
-    `/api/projects?locale=${locale}&is-selected=true`
-  );
+  const res = await projectsApi.get({ locale, isSelected: true });
 
-  if (!data.ok) return [];
-
-  const projects = data.data;
+  const projects = res.ok ? res.data : [];
 
   return projects.map(({ slug }) => ({ id: slug }));
 };

@@ -9,7 +9,6 @@ type Page = {
   slug: string;
   isSelected?: boolean;
   label: string;
-  path: string;
   hero: TypeVariants<typeof Heros>;
   blocks: TypeVariants<typeof Blocks>[];
   metadata: Metadata;

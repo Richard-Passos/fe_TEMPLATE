@@ -5,7 +5,7 @@ const normId = (str: string) => {
 
   str = str[0] + str.slice(1).replace(/([A-Z])/g, '-$1');
 
-  str.replace(/[ _-]+/g, '-').toLowerCase();
+  str = str.replace(/[ _-]+/g, '-').toLowerCase();
 
   return str;
 };

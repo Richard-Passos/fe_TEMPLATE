@@ -7,7 +7,7 @@ const normKey = (str: string) => {
 
   str = str[0] + str.slice(1).replace(/([A-Z])/g, '-$1');
 
-  str
+  str = str
     .split(/[ _-]+/)
     .map((w, i) => (i === 0 ? w.toLowerCase() : capitalize(w)))
     .join('');

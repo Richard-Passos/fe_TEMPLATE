@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { Locale, Page } from '@/types';
+import { ErrorPage, Locale, Page, SingleProjectPage } from '@/types';
 import { getTranslations, isType, normId } from '@/utils';
 
 type Params = {
@@ -16,13 +16,13 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type SinglePageResponse =
+type SinglePageResponse<T extends Page | ErrorPage | SingleProjectPage> =
   | { ok: false; status: 404; message: string }
   | { ok: false; status: 500; message: string }
   | {
       ok: true;
       status: 200;
-      data: Page;
+      data: T;
       meta: {
         adjacentIds: {
           prev?: string;
@@ -31,10 +31,10 @@ type SinglePageResponse =
       };
     };
 
-const GET = async (
+const GET = async <T extends Page | ErrorPage | SingleProjectPage>(
   request: NextRequest,
   { params: { slug } }: { params: Params }
-): Promise<ReturnType<typeof NextResponse.json<SinglePageResponse>>> => {
+): Promise<ReturnType<typeof NextResponse.json<SinglePageResponse<T>>>> => {
   try {
     const { searchParams } = request.nextUrl;
 
@@ -64,7 +64,7 @@ const GET = async (
     const prevId = pages.at(dataIndex > 0 ? dataIndex - 1 : -1)?.slug,
       nextId = pages.at(dataIndex < pages.length - 1 ? dataIndex + 1 : 0)?.slug;
 
-    const data = pages[dataIndex]!,
+    const data = pages[dataIndex] as T,
       adjacentIds = {
         prev: prevId,
         next: nextId

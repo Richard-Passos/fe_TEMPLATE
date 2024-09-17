@@ -2,7 +2,6 @@ import { getLocale } from 'next-intl/server';
 import { forwardRef } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
-import { footerApi, personalApi } from '@/api';
 import {
   Icon,
   Lines,
@@ -16,6 +15,7 @@ import Logo from '@/components/organisms/Logo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { Locale } from '@/types';
 import { cn, serialize } from '@/utils';
+import { footerApi, personalApi } from '@/utils/actions';
 
 type FooterOrganismOwnProps = Pick<Partial<SectionProps>, 'theme'>;
 

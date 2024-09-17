@@ -16,15 +16,13 @@ import {
   Image,
   Link,
   ScrollAnimate,
-  Text,
-  Title
+  Text
 } from '@/components/atoms';
 import { BlockquoteProps } from '@/components/atoms/Blockquote';
 import { IconProps } from '@/components/atoms/Icon';
 import { ImageProps } from '@/components/atoms/Image';
 import { LinkProps } from '@/components/atoms/Link';
 import { TextProps } from '@/components/atoms/Text';
-import { TitleOrder, TitleProps } from '@/components/atoms/Title';
 import { List } from '@/components/molecules';
 import { ListItemProps, ListRootProps } from '@/components/molecules/List';
 
@@ -33,7 +31,6 @@ import exhaustiveMatchingGuard from './exhaustiveMatchingGuard';
 import { Node } from './serialize';
 
 type ElementNode =
-  | { type: 'heading'; level: TitleOrder; children: Node[] }
   | { type: 'paragraph'; children: Node[] }
   | { type: 'alignText'; align: CSSProperties['textAlign']; children: Node[] }
   | { type: 'quote'; cite?: string; children: Node[] }
@@ -45,7 +42,6 @@ type ElementNode =
   | { type: 'icon'; src: string; animation?: keyof typeof scrollAnimations };
 
 type ElementProps = {
-  heading?: Partial<TitleProps>;
   paragraph?: Partial<TextProps>;
   alignText?: Partial<ComponentPropsWithoutRef<'span'>>;
   quote?: Partial<BlockquoteProps>;
@@ -73,15 +69,6 @@ const SerializedElement = memo(
   }) => {
     const renderElement = useCallback(() => {
       switch (node.type) {
-        case 'heading':
-          return (
-            <Title
-              order={node.level}
-              {...props?.heading}
-            >
-              {children}
-            </Title>
-          );
         case 'paragraph':
           return <Text {...props?.paragraph}>{children}</Text>;
         case 'alignText':

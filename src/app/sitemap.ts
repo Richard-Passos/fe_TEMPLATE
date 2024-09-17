@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { getMessages } from 'next-intl/server';
 
+import { baseUrl } from '@/constants';
 import { defaultLocale } from '@/constants/locales';
-import { baseUrl, values } from '@/utils';
+import { values } from '@/utils';
 
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const messages = (await getMessages({

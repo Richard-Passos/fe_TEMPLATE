@@ -1201,6 +1201,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
       }
     },
     {
+      type: 'single-project',
       slug: 'single-project',
       hero: {
         theme: 'dark',
@@ -1243,8 +1244,9 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
         }
       },
       metadata: {}
-    } as SingleProjectPage,
+    },
     {
+      type: 'error',
       slug: 'error',
       hero: {
         theme: 'dark',
@@ -1289,8 +1291,9 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
       },
       blocks: [],
       metadata: {}
-    } as ErrorPage,
+    },
     {
+      type: 'error',
       slug: 'not-found',
       hero: {
         theme: 'dark',
@@ -1332,7 +1335,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
         description:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
       }
-    } as ErrorPage
+    }
   ];
 };
 

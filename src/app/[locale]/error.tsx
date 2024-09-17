@@ -15,12 +15,12 @@ type ErrorPageProps = {
 };
 
 const ErrorPage = ({ error, reset }: ErrorPageProps) => {
-  useEffect(() => {
-    console.error(error);
-    console.error(reset);
-  }, [error, reset]);
   const locale = useLocale() as Locale['value'],
     [page, setPage] = useState<TErrorPage>();
+
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
   useEffect(() => {
     const getPage = async () => {

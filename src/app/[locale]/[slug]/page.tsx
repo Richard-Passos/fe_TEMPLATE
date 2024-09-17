@@ -21,12 +21,10 @@ const Page = async ({ params: { slug, locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
 
   slug = normId(slug);
-  console.log('-  slug   -', slug);
 
   if (values(defaultPages).includes(slug)) return notFound();
 
   const res = await pagesApi.getOne({ slug, locale });
-  console.log('-  res   -', res);
 
   if (!res.ok) return notFound();
 

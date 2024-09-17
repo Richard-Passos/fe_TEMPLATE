@@ -6,6 +6,7 @@ import Heros from '@/components/organisms/Heros';
 import TypeVariants from './TypeVariants';
 
 type Page = {
+  type?: 'page';
   slug: string;
   isSelected?: boolean;
   label: string;

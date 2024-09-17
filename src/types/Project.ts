@@ -4,7 +4,7 @@ type Project = {
   href: string;
   title: string;
   roles: string[];
-  year?: number;
+  year?: number | string;
   description: string;
   thumbnail: {
     src: string;

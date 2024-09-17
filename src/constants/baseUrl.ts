@@ -1,8 +1,3 @@
-import environment from './environment';
-
-const baseUrl =
-  environment === 'production'
-    ? `${process.env.PRODUCTION_PROTOCOL}://${process.env.VERCEL_URL}`
-    : (process.env.DEVELOPMENT_URL ?? '');
+const baseUrl = process.env.URL ?? '';
 
 export default baseUrl;

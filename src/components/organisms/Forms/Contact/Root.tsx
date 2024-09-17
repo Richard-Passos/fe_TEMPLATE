@@ -5,12 +5,12 @@ import { z } from 'zod';
 import { Link, Select, TextInput, Textarea, Title } from '@/components/atoms';
 import { PaperPlaneIcon } from '@/components/atoms/Icon/icons';
 import { SelectProps } from '@/components/atoms/Select';
-import { TitleProps } from '@/components/atoms/Title';
 import { Action, Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { Field } from '@/types';
 import { cn } from '@/utils';
 import { sendEmail } from '@/utils/actions';
+import serialize, { Node } from '@/utils/serialize';
 
 type ContactFormOrganismOwnProps = {
   optionalLabel: ReactNode;
@@ -21,18 +21,18 @@ type ContactFormOrganismOwnProps = {
     service: Field & Pick<SelectProps, 'data'>;
     message: Field<['min', 'max']>;
     submit: {
-      label: string;
+      label: Node[];
     };
   };
   to: {
-    label: TitleProps['children'];
+    label: Node[];
     email: string;
     subject: string;
   };
   messages: {
-    loading: string;
-    success: string;
-    error: string;
+    loading: Node[];
+    success: Node[];
+    error: Node[];
   };
 };
 
@@ -75,7 +75,11 @@ const ContactFormOrganism = (
   return (
     <Form.Root
       action={async (values) => {
-        await toast.promise(sendEmail(values), messages);
+        await toast.promise(sendEmail(values), {
+          error: `${serialize(messages.error)}`,
+          loading: `${serialize(messages.loading)}`,
+          success: `${serialize(messages.success)}`
+        });
       }}
       className={cn('grid sm:grid-cols-12', className)}
       defaultValues={defaultValues}
@@ -88,7 +92,7 @@ const ContactFormOrganism = (
           component='h3'
           order={6}
         >
-          {to.label}:&nbsp;
+          {serialize(to.label)}&nbsp;
           <Link
             className='text-[1em]'
             href={`mailto:${to.email}?subject=${to.subject}`}
@@ -175,7 +179,9 @@ const ContactFormOrganism = (
               >
                 <PaperPlaneIcon className='absolute aspect-square h-2/3 max-md:hidden' />
 
-                <span className='md:sr-only'>{fields.submit.label}</span>
+                <span className='md:sr-only'>
+                  {serialize(fields.submit.label)}
+                </span>
               </Action>
             </Form.Submit>
           </div>

@@ -4,7 +4,7 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 import { headerApi, pagesApi } from '@/api';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
-import { locales } from '@/constants';
+import { defaultPages, locales } from '@/constants';
 import { Locale } from '@/types';
 import { cn } from '@/utils';
 
@@ -34,7 +34,7 @@ const HeaderOrganism = async (
 
   const navItem: HeaderNavProps['items'] = pagesRes.ok
     ? pagesRes.data.map((p) => ({
-        href: p.path,
+        href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
         label: p.label
       }))
     : [];

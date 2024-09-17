@@ -9,7 +9,7 @@ import ListPageBlock from './ListPage';
 import ProjectsCatalogBlock from './ProjectsCatalog';
 import ServicesBlock from './Services';
 import SkillsBlock from './Skills';
-import StatsBlock from './Stats';
+import StatisticsBlock from './Statistics';
 import TextBlock from './Text';
 import ValuesBlock from './Values';
 
@@ -25,7 +25,7 @@ const Blocks = {
   ProjectsCatalog: ProjectsCatalogBlock,
   Services: ServicesBlock,
   Skills: SkillsBlock,
-  Stats: StatsBlock,
+  Statistics: StatisticsBlock,
   Text: TextBlock,
   Values: ValuesBlock
 };
@@ -43,7 +43,7 @@ export {
   ProjectsCatalogBlock,
   ServicesBlock,
   SkillsBlock,
-  StatsBlock,
+  StatisticsBlock,
   TextBlock,
   ValuesBlock
 };

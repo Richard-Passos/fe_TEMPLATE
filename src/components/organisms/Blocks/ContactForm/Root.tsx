@@ -4,11 +4,11 @@ import { forwardRef } from 'react';
 
 import { yFullScrollAnim } from '@/animations/scroll';
 import { Lines, ScrollAnimate, Title } from '@/components/atoms';
-import { TitleProps } from '@/components/atoms/Title';
 import ContactForm, {
   ContactFormProps
 } from '@/components/organisms/Forms/Contact';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 import CleanLayoutBlock, { CleanLayoutBlockProps } from '../Layout/Clean';
 
@@ -17,7 +17,7 @@ type ContactFormBlockOrganismOwnProps = {
     ContactFormProps,
     'fields' | 'to' | 'optionalLabel' | 'messages'
   > & {
-    title: TitleProps['children'];
+    title: Node[];
   };
 };
 
@@ -50,7 +50,7 @@ const ContactFormBlockOrganism = (
           className='max-w-md'
           order={3}
         >
-          {data.title}
+          {serialize(data.title)}
         </Title>
 
         <ContactForm

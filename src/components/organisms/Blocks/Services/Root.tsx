@@ -1,12 +1,11 @@
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { Title } from '@/components/atoms';
-import { TitleProps } from '@/components/atoms/Title';
 import { Action } from '@/components/molecules';
-import { ActionProps } from '@/components/molecules/Action';
 import { ServiceCard } from '@/components/organisms/Cards';
 import { ServiceCardProps } from '@/components/organisms/Cards/Service';
-import { cn, renderComp } from '@/utils';
+import { renderComp } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 import ServicesBlockImage from './Image';
@@ -15,32 +14,19 @@ import { ServicesBlockImageOrganismProps } from './Image/Root';
 type ServicesBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] &
     ServicesBlockImageOrganismProps['data'] & {
-      subtitle?: ReactNode;
+      subtitle?: Node[];
       items: ServiceCardProps['data'][];
-      action: {
-        label?: ReactNode;
+      action?: {
+        label: Node[];
       };
     };
-  wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
-  subtitleProps?: Partial<TitleProps>;
-  imageProps?: Partial<ServicesBlockImageOrganismProps>;
-  listProps?: Partial<ComponentPropsWithRef<'ul'>>;
-  actionProps?: Partial<ActionProps>;
 };
 
 type ServicesBlockOrganismProps = ServicesBlockOrganismOwnProps &
   Omit<PrimaryLayoutBlockProps, keyof ServicesBlockOrganismOwnProps>;
 
 const ServicesBlockOrganism = (
-  {
-    data,
-    wrapperProps,
-    subtitleProps,
-    imageProps,
-    listProps,
-    actionProps,
-    ...props
-  }: ServicesBlockOrganismProps,
+  { data, ...props }: ServicesBlockOrganismProps,
   ref: ServicesBlockOrganismProps['ref']
 ) => {
   return (
@@ -52,24 +38,14 @@ const ServicesBlockOrganism = (
       ref={ref}
       {...props}
     >
-      <section
-        {...wrapperProps}
-        className={cn(
-          'flex w-9/10 max-w-screen-lg flex-col items-center',
-          wrapperProps?.className
-        )}
-      >
+      <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
         {renderComp(
           <Title
             component='h3'
             order={6}
-            {...subtitleProps}
-            className={cn(
-              'mb-md mr-auto uppercase text-dimmed',
-              subtitleProps?.className
-            )}
+            className='mb-md mr-auto uppercase text-dimmed *:text-text'
           >
-            {data.subtitle}
+            {serialize(data.subtitle)}
           </Title>,
           [data.subtitle]
         )}
@@ -79,19 +55,12 @@ const ServicesBlockOrganism = (
             data={{
               image: data.image
             }}
-            {...imageProps}
-            className={cn('grow basis-72 max-md:hidden', imageProps?.className)}
+            className='grow basis-72 max-md:hidden'
           />
 
-          <ul
-            {...listProps}
-            className={cn(
-              'm-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col gap-xs p-0 sm:py-xl',
-              listProps?.className
-            )}
-          >
+          <ul className='m-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col gap-xs p-0 sm:py-xl'>
             {data.items.map((data) => (
-              <li key={data.id}>
+              <li key={data.slug}>
                 <ServiceCard data={data} />
               </li>
             ))}
@@ -104,12 +73,11 @@ const ServicesBlockOrganism = (
             href='/contact'
             size='md'
             variant='default'
-            {...actionProps}
-            className={cn('mt-xl', actionProps?.className)}
+            className='mt-xl'
           >
-            {data.action.label}
+            {serialize(data.action?.label)}
           </Action>,
-          [data.action.label]
+          [data.action]
         )}
       </section>
     </PrimaryLayoutBlock>

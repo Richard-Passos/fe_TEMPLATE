@@ -63,7 +63,7 @@ const ValuesBlockOrganism = (
           {data.items.map((data, i) => (
             <BentoGrid.Item
               index={i}
-              key={data.id}
+              key={data.slug}
             >
               <ValueCard data={data} />
             </BentoGrid.Item>

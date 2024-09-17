@@ -34,7 +34,7 @@ const SkillsBlockOrganism = (
           {data.items.map((data) => (
             <li
               className='w-full max-w-40'
-              key={data.id}
+              key={data.slug}
             >
               <SkillCard
                 className='w-full'

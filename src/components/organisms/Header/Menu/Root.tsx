@@ -9,7 +9,7 @@ import {
   DrawerRootProps,
   DrawerTriggerProps
 } from '@/components/molecules/Drawer';
-import { locales } from '@/constants';
+import { defaultPages, locales } from '@/constants';
 import { Locale } from '@/types';
 import { cn, renderComp } from '@/utils';
 
@@ -43,7 +43,7 @@ const HeaderMenuOrganism = async (
 
   const navItems: HeaderNavProps['items'] = pagesRes.ok
     ? pagesRes.data.map((p) => ({
-        href: p.path,
+        href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
         label: p.label
       }))
     : [];

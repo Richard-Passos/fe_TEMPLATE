@@ -1,15 +1,16 @@
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { lineLeftScrollAnim } from '@/animations/scroll';
 import { Title } from '@/components/atoms';
 import ScrollAnimate from '@/components/atoms/ScrollAnimate';
 import { TitleProps } from '@/components/atoms/Title';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type AboutBlockTextOrganismOwnProps = {
   data: {
-    title: TitleProps['children'];
-    description: ReactNode;
+    title: Node[];
+    description: Node[];
   };
   titleProps?: Partial<TitleProps>;
   wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
@@ -33,7 +34,7 @@ const AboutBlockTextOrganism = (
         {...titleProps}
         className={cn('max-w-lg', titleProps?.className)}
       >
-        {data.title}
+        {serialize(data.title)}
       </Title>
 
       <div
@@ -52,7 +53,13 @@ const AboutBlockTextOrganism = (
           </ScrollAnimate>
         </span>
 
-        <section className='flex flex-col gap-md'>{data.description}</section>
+        <section className='flex max-w-md flex-col gap-md'>
+          {serialize(data.description, {
+            paragraph: {
+              className: 'text-sm leading-relaxed text-dimmed *:text-text'
+            }
+          })}
+        </section>
       </div>
     </section>
   );

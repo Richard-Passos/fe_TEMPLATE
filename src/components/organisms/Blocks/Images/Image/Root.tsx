@@ -7,9 +7,7 @@ import { CardRoot, CardRootProps } from '@/components/molecules/Card';
 import { cn } from '@/utils';
 
 type ImagesBlockImageOrganismOwnProps = {
-  data: {
-    image: Pick<ImageProps, 'src' | 'alt'>;
-  };
+  data: Pick<ImageProps, 'src' | 'alt'>;
 };
 
 type ImagesBlockImageOrganismProps = ImagesBlockImageOrganismOwnProps &
@@ -34,12 +32,12 @@ const ImagesBlockImageOrganism = (
         <ScrollAnimate config={imageYScrollAnim}>
           <div className='absolute h-[115%] w-full'>
             <Image
-              alt={data.image.alt}
+              alt={data.alt}
               className='object-cover'
               fill
               quality={100}
               sizes='100vw, (min-width: 640px) 50vw, (min-width: 768px) 33vw'
-              src={data.image.src}
+              src={data.src}
             />
           </div>
         </ScrollAnimate>

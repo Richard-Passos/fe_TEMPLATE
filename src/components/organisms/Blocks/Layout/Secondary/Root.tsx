@@ -5,10 +5,11 @@ import { lineLeftScrollAnim } from '@/animations/scroll';
 import { ScrollAnimate, Title } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 type SecondaryLayoutBlockOrganismOwnProps = {
   data: {
-    title: ReactNode;
+    title: Node[];
   };
   subChildren?: ReactNode;
   headerProps?: Partial<ComponentPropsWithRef<'header'>>;
@@ -54,7 +55,7 @@ const SecondaryLayoutBlockOrganism = (
             component='h2'
             order={4}
           >
-            {data.title}
+            {serialize(data.title)}
           </Title>
         </div>
 

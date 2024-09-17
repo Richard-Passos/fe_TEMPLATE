@@ -4,7 +4,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { ComponentPropsWithRef, forwardRef, useState } from 'react';
 
 import { useUpdateEffect } from '@/hooks';
-import { cn } from '@/utils';
+import { cn, normId } from '@/utils';
 
 import HeaderNavLink, { HeaderNavLinkProps } from './Link';
 
@@ -22,7 +22,9 @@ const HeaderNavOrganism = (
 ) => {
   const selectedLayoutSegment = useSelectedLayoutSegment();
 
-  const segment = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/';
+  const segment = selectedLayoutSegment
+    ? `/${normId(selectedLayoutSegment)}`
+    : '/';
 
   const [active, setActive] = useState(segment);
 

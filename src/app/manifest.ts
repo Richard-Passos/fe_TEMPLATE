@@ -1,20 +1,17 @@
 import type { MetadataRoute } from 'next';
-import { getTranslations } from 'next-intl/server';
 
 import { defaultLocale } from '@/constants/locales';
+import { personalApi } from '@/utils/actions';
 
 const manifest = async (): Promise<MetadataRoute.Manifest> => {
-  const t = await getTranslations({
-    locale: defaultLocale.value,
-    namespace: 'personal'
-  });
+  const res = await personalApi.get({ locale: defaultLocale.value });
+
+  const personal = res.ok ? res.data : undefined;
 
   return {
-    name: t('title', {
-      name: `${t('name.first')} ${t('name.last')}`
-    }),
-    short_name: `${t('name.first')} ${t('name.last')}`,
-    description: t('description', { country: t('location.country') }),
+    name: personal?.title,
+    short_name: `${personal?.name.first} ${personal?.name.last}`,
+    description: personal?.description,
     display: 'standalone',
     background_color: '#fafafa',
     theme_color: '#fafafa',

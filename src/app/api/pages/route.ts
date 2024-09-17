@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { Locale, Page } from '@/types';
+import { ErrorPage, Locale, Page, SingleProjectPage } from '@/types';
 import { getTranslations, isType } from '@/utils';
 
 type SearchParams = {
@@ -23,7 +23,7 @@ type PagesResponse =
   | {
       ok: true;
       status: 200;
-      data: Page[];
+      data: (Page | ErrorPage | SingleProjectPage)[];
       meta: {
         page: number;
         totalPages: number;
@@ -61,8 +61,7 @@ const GET = async (
 
     let results = await t.pages();
 
-    if (isSelected === 'true')
-      results = results.filter((data) => data.isSelected);
+    if (isSelected === 'true') results = results.filter((d) => d.isSelected);
 
     const totalResults = results.length;
 

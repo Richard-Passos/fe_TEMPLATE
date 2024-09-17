@@ -76,9 +76,9 @@ const ContactFormOrganism = (
     <Form.Root
       action={async (values) => {
         await toast.promise(sendEmail(values), {
-          error: `${serialize(messages.error)}`,
-          loading: `${serialize(messages.loading)}`,
-          success: `${serialize(messages.success)}`
+          error: <div>{serialize(messages.error)}</div>,
+          loading: <div>{serialize(messages.loading)}</div>,
+          success: <div>{serialize(messages.success)}</div>
         });
       }}
       className={cn('grid sm:grid-cols-12', className)}

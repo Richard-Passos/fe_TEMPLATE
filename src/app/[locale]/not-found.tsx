@@ -1,47 +1,46 @@
 import { Metadata } from 'next';
-import {
-  getLocale,
-  getTranslations,
-  unstable_setRequestLocale
-} from 'next-intl/server';
+import { getLocale, unstable_setRequestLocale } from 'next-intl/server';
 
+import { pagesApi } from '@/api';
 import { ErrorTemplate } from '@/components/templates';
+import { defaultPages } from '@/constants';
+import { ErrorPage, Locale } from '@/types';
 
 const NotFoundPage = async () => {
-  const locale = await getLocale();
+  const locale = (await getLocale()) as Locale['value'];
 
   unstable_setRequestLocale(locale);
 
-  const t = await getTranslations('pages.notFound');
+  const res = await pagesApi.getOne<ErrorPage>({
+    slug: defaultPages.notFound,
+    locale
+  });
+
+  if (!res.ok) return null;
+
+  const page = res.data;
 
   return (
     <ErrorTemplate
-      hero={{
-        theme: 'dark',
-        data: {
-          title: t.rich('hero.title')
-        }
-      }}
+      blocks={page.blocks}
+      hero={page.hero}
     />
   );
 };
 
 const generateMetadata = async (): Promise<Metadata> => {
-  const locale = await getLocale();
+  const locale = (await getLocale()) as Locale['value'];
 
-  const t = await getTranslations({
-    locale,
-    namespace: 'pages.notFound.metadata'
+  const res = await pagesApi.getOne<ErrorPage>({
+    slug: defaultPages.notFound,
+    locale
   });
 
-  return {
-    title: t('title'),
-    description: t('description'),
-    openGraph: {
-      title: t('title'),
-      description: t('description')
-    }
-  };
+  if (!res.ok) return {};
+
+  const { metadata } = res.data;
+
+  return metadata;
 };
 
 export default NotFoundPage;

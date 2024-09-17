@@ -151,7 +151,7 @@ const projects = async (): Promise<Project[]> => {
       slug: 'em-progresso',
       isSelected: true,
       href: '',
-      title: 'En Progresso',
+      title: 'Em Progresso',
       roles: ['Desenvolvimento'],
       year: '...',
       description:

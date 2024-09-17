@@ -1,3 +1,5 @@
+import { ContactFormBlockProps } from '@/components/organisms/Blocks/ContactForm';
+import { DeepPartial, ErrorPage, Page, SingleProjectPage } from '@/types';
 import {
   personalApi,
   projectsApi,
@@ -5,13 +7,13 @@ import {
   skillsApi,
   statisticsApi,
   valuesApi
-} from '@/api';
-import { ContactFormBlockProps } from '@/components/organisms/Blocks/ContactForm';
-import { ErrorPage, Page, SingleProjectPage } from '@/types';
+} from '@/utils/actions';
 
 import locale from './locale';
 
-const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
+const pages = async (): Promise<
+  (Page | ErrorPage | DeepPartial<SingleProjectPage>)[]
+> => {
   const [
     projectsRes,
     personalRes,
@@ -356,7 +358,6 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
                 ]
               }
             ],
-            description: [],
             templates: {
               base: [
                 'item-0',
@@ -397,7 +398,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
                           bold: true
                         },
                         {
-                          text: ' I’m Richard an awesome full stack developer from Brazil. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games.'
+                          text: ` I’m Richard an awesome full stack developer from ${personal?.location.country}. When I’m not coding, you can catch me in the gaming world — I’m a huge fan, especially when it comes to rogue-like games.`
                         }
                       ]
                     }
@@ -414,10 +415,10 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
                       text: 'Based in'
                     },
                     {
-                      text: ` ${personal?.location.country ?? ''}`
+                      text: ` ${personal?.location.country}`
                     },
                     {
-                      text: `, ${personal?.location.gmt ?? ''}`
+                      text: `, ${personal?.location.gmt}`
                     }
                   ]
                 }
@@ -484,8 +485,8 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
                 id: 'buyCoffee',
                 type: 'Link',
                 data: {
-                  icon: personal?.buyCoffee.icon ?? '',
-                  href: personal?.buyCoffee.href ?? '',
+                  icon: `${personal?.buyCoffee.icon}`,
+                  href: `${personal?.buyCoffee.href}`,
                   title: [
                     {
                       text: 'Buy me a coffee'
@@ -612,7 +613,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: personal?.availability ?? ''
+                  text: `${personal?.availability}`
                 }
               ]
             }
@@ -807,11 +808,14 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
                     text: 'After head turning projects and a captivating personality just'
                   },
                   {
+                    text: ' '
+                  },
+                  {
                     type: 'link',
                     url: '/about',
                     children: [
                       {
-                        text: ' one click away'
+                        text: 'one click away'
                       }
                     ]
                   },
@@ -873,14 +877,14 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
             items: workValues,
             icons: {
               left: {
-                src: '/icons/smile.svg',
+                src: '/icons/globe.svg',
                 animation: 'rotateRight',
-                y: 'top'
+                y: 'bottom'
               },
               right: {
-                src: '/icons/globe.svg',
+                src: '/icons/smile.svg',
                 animation: 'rotateLeft',
-                y: 'bottom'
+                y: 'top'
               }
             }
           }
@@ -940,7 +944,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
               },
               {
                 src: '/images/about-02.webp',
-                alt: 'Richard Passos, a full-stack developer wearing a light gray hoodie with ’Brooklyn’ and other text printed on it stands against a wooden wall, looking to the left.'
+                alt: 'Richard Passos, a full-stack developer wearing a light gray hoodie with "Brooklyn" and other text printed on it stands against a wooden wall, looking to the left.'
               }
             ]
           }
@@ -1046,12 +1050,12 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
               left: {
                 src: '/icons/smile.svg',
                 animation: 'rotateRight',
-                y: 'top'
+                y: 'bottom'
               },
               right: {
                 src: '/icons/globe.svg',
                 animation: 'rotateLeft',
-                y: 'bottom'
+                y: 'top'
               }
             }
           }
@@ -1206,16 +1210,8 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
       hero: {
         theme: 'dark',
         data: {
-          title: '',
-          description: '',
-          subtitle: '',
           action: {
-            href: '',
-            label: ''
-          },
-          image: {
-            src: '',
-            alt: ''
+            label: 'Live site'
           }
         }
       },
@@ -1240,10 +1236,61 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
           }
         },
         Adjacents: {
-          theme: 'dark'
+          theme: 'dark',
+          data: {
+            prev: {
+              label: 'Prev project'
+            },
+            next: {
+              label: 'Next project'
+            }
+          }
+        }
+      }
+    },
+    {
+      type: 'error',
+      slug: 'not-found',
+      hero: {
+        theme: 'dark',
+        data: {
+          title: [
+            {
+              text: 'Not found'
+            },
+            {
+              text: '!',
+              emphasize: true
+            }
+          ],
+          description: [
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  text: 'Sorry, page not found!'
+                }
+              ]
+            }
+          ],
+          actions: {
+            primary: {
+              label: [
+                {
+                  text: 'Back home'
+                }
+              ],
+              href: '/'
+            }
+          }
         }
       },
-      metadata: {}
+      blocks: [],
+      metadata: {
+        title: 'Not Found',
+        description:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+      }
     },
     {
       type: 'error',
@@ -1281,7 +1328,7 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
             secondary: {
               label: [
                 {
-                  text: 'Go home'
+                  text: 'Back home'
                 }
               ],
               href: '/'
@@ -1291,50 +1338,6 @@ const pages = async (): Promise<(Page | ErrorPage | SingleProjectPage)[]> => {
       },
       blocks: [],
       metadata: {}
-    },
-    {
-      type: 'error',
-      slug: 'not-found',
-      hero: {
-        theme: 'dark',
-        data: {
-          title: [
-            {
-              text: 'Not found'
-            },
-            {
-              text: '!',
-              emphasize: true
-            }
-          ],
-          description: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  text: 'Sorry, page not found!'
-                }
-              ]
-            }
-          ],
-          actions: {
-            primary: {
-              label: [
-                {
-                  text: 'Go home'
-                }
-              ],
-              href: '/'
-            }
-          }
-        }
-      },
-      blocks: [],
-      metadata: {
-        title: 'Not Found',
-        description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
-      }
     }
   ];
 };

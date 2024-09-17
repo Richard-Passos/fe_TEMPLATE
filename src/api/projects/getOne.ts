@@ -4,7 +4,7 @@ import { request } from '@/utils';
 import { SingleProjectResponse } from '../../app/api/projects/[slug]/route';
 
 type Params = {
-  id: string;
+  slug: string;
   locale: Locale['value'];
 };
 
@@ -13,7 +13,7 @@ const projectsApiGetOne = async (
   config?: Parameters<typeof request>['1']
 ) =>
   await request<SingleProjectResponse>(
-    `/api/projects/${params.id}?locale=${params.locale}`,
+    `/api/projects/${params.slug}?locale=${params.locale}`,
     config
   );
 

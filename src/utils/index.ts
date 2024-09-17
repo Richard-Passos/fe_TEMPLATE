@@ -1,6 +1,5 @@
 import SerializedElement from './SerializedElement';
 import SerializedText from './SerializedText';
-import baseUrl from './baseUrl';
 import capitalize from './capitalize';
 import cn from './cn';
 import entries from './entries';
@@ -25,7 +24,6 @@ import transformTemplate from './transformTemplate';
 import values from './values';
 
 const utils = {
-  baseUrl,
   capitalize,
   cn,
   entries,
@@ -54,7 +52,6 @@ const utils = {
 
 export default utils;
 export {
-  baseUrl,
   capitalize,
   cn,
   entries,

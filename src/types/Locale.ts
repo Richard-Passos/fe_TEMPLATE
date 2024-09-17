@@ -1,5 +1,5 @@
-import { locales } from '@/constants'
+import { locales } from '@/constants';
 
-type Locale = (typeof locales)[number]
+type Locale = (typeof locales)[number];
 
-export default Locale
+export default Locale;

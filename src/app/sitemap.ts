@@ -1,21 +1,20 @@
 import { MetadataRoute } from 'next';
-import { getMessages } from 'next-intl/server';
 
-import { baseUrl } from '@/constants';
+import { baseUrl, defaultPages } from '@/constants';
 import { defaultLocale } from '@/constants/locales';
-import { values } from '@/utils';
+import { pagesApi } from '@/utils/actions';
 
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  const messages = (await getMessages({
-    locale: defaultLocale.value
-  })) as unknown as IntlMessages;
+  const res = await pagesApi.get({ locale: defaultLocale.value });
 
-  const paths = values(messages.nav);
+  if (!res.ok) return [];
 
-  return paths.map((p) => ({
-    url: `${baseUrl}${p.href}`,
+  const paths = res.data.map((p) => ({
+    url: `${baseUrl}/${p.slug === defaultPages.home ? '' : p.slug}`,
     lastModified: new Date()
   }));
+
+  return paths;
 };
 
 export default sitemap;

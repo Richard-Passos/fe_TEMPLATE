@@ -4,6 +4,7 @@ import { Lines, Text } from '@/components/atoms';
 import { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 import ScrollIndicator from '../../ScrollIndicator';
 import PrimaryHeroExtra, { PrimaryHeroExtraProps } from './Extra';
@@ -13,7 +14,7 @@ import PrimaryHeroTitle, { PrimaryHeroTitleProps } from './Title';
 type PrimaryHeroOrganismOwnProps = {
   data: {
     title: PrimaryHeroTitleProps['children'];
-    description: ReactNode;
+    description: Node[];
     left: PrimaryHeroExtraProps['children'];
     right: PrimaryHeroExtraProps['children'];
   };
@@ -63,9 +64,13 @@ const PrimaryHeroOrganism = (
                   <PrimaryHeroExtra>{data.right}</PrimaryHeroExtra>
                 </div>
 
-                <Text className='col-span-full max-w-md justify-self-center text-center font-medium lg:sr-only'>
-                  {data.description}
-                </Text>
+                <section className='col-span-full max-w-md justify-self-center text-center lg:sr-only'>
+                  {serialize(data.description, {
+                    paragraph: {
+                      className: 'font-medium'
+                    }
+                  })}
+                </section>
               </div>
             </div>
 

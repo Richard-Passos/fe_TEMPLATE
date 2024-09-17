@@ -4,8 +4,6 @@ import { ComponentPropsWithoutRef } from 'react';
 import Blocks from '@/components/templates/SingleProject/Blocks';
 import { SingleProjectHeroProps } from '@/components/templates/SingleProject/Hero';
 
-import DeepPartial from './DeepPartial';
-
 type SingleProjectPage = {
   type: 'single-project';
   slug: string;
@@ -13,9 +11,7 @@ type SingleProjectPage = {
   label?: never;
   hero: SingleProjectHeroProps;
   blocks: {
-    [K in keyof typeof Blocks]: DeepPartial<
-      ComponentPropsWithoutRef<(typeof Blocks)[K]>
-    >;
+    [K in keyof typeof Blocks]: ComponentPropsWithoutRef<(typeof Blocks)[K]>;
   };
   metadata: Metadata;
 };

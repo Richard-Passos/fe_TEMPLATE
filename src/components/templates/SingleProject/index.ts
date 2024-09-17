@@ -1,4 +1,4 @@
-import SingleProjectTemplate from './Root';
+import SingleProjectTemplate, { SingleProjectTemplateProps } from './Root';
 
 export default SingleProjectTemplate;
-export { SingleProjectTemplate };
+export type { SingleProjectTemplateProps };

@@ -1,3 +1,4 @@
+import ErrorPage from './ErrorPage';
 import ExtractPrefix from './ExtractPrefix';
 import ExtractSuffix from './ExtractSuffix';
 import Field from './Field';
@@ -11,6 +12,7 @@ import PolymorphicRef from './PolymorphicRef';
 import Prettify from './Prettify';
 import Project from './Project';
 import Service from './Service';
+import SingleProjectPage from './SingleProjectPage';
 import Skill from './Skill';
 import Statistic from './Statistic';
 import Theme from './Theme';
@@ -18,6 +20,7 @@ import TypeVariants from './TypeVariants';
 import Value from './Value';
 
 export type {
+  ErrorPage,
   ExtractPrefix,
   ExtractSuffix,
   Field,
@@ -31,6 +34,7 @@ export type {
   Prettify,
   Project,
   Service,
+  SingleProjectPage,
   Skill,
   Statistic,
   Theme,

@@ -8,8 +8,8 @@ import SerializedText, { TextNode } from './SerializedText';
 
 type Node = TextNode | ElementNode;
 
-const serialize = (nodes: Node[], props?: ElementProps): ReactNode[] =>
-  nodes.map((node) => {
+const serialize = (nodes?: Node[], props?: ElementProps): ReactNode =>
+  nodes?.map((node) => {
     if (!node) return null;
 
     const id = crypto.randomUUID();

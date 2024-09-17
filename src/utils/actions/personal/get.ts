@@ -1,3 +1,5 @@
+'use server';
+
 import { PersonalResponse } from '@/app/api/personal/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';

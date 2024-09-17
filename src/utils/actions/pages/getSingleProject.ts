@@ -1,7 +1,8 @@
+'use server';
+
+import { SingleProjectPageResponse } from '@/app/api/pages/single-project/[slug]/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';
-
-import { SingleProjectPageResponse } from '../../app/api/pages/single-project/[slug]/route';
 
 type Params = {
   slug: string;

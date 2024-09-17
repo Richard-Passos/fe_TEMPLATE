@@ -1,7 +1,8 @@
+'use server';
+
+import { SkillsResponse } from '@/app/api/skills/[slug]/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';
-
-import { SkillsResponse } from '../../app/api/skills/[slug]/route';
 
 type Params = {
   slug: string;

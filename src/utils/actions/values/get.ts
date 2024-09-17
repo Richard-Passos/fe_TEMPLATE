@@ -1,7 +1,8 @@
+'use server';
+
+import { ValuesResponse } from '@/app/api/values/[slug]/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';
-
-import { ValuesResponse } from '../../app/api/values/[slug]/route';
 
 type Params = {
   id: string;

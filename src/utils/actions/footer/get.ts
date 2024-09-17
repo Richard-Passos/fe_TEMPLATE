@@ -1,3 +1,5 @@
+'use server';
+
 import { FooterResponse } from '@/app/api/footer/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';

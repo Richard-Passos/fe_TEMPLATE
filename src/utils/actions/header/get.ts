@@ -1,3 +1,5 @@
+'use server';
+
 import { HeaderResponse } from '@/app/api/header/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';

@@ -1,7 +1,8 @@
+'use server';
+
+import { StatisticsResponse } from '@/app/api/statistics/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';
-
-import { StatisticsResponse } from '../../app/api/statistics/route';
 
 type Params = {
   locale: Locale['value'];

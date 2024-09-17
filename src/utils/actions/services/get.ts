@@ -1,7 +1,8 @@
+'use server';
+
+import { ServicesResponse } from '@/app/api/services/route';
 import { Locale } from '@/types';
 import { request } from '@/utils';
-
-import { ServicesResponse } from '../../app/api/services/route';
 
 type Params = {
   locale: Locale['value'];

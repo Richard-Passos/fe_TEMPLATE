@@ -1,12 +1,11 @@
-import { ComponentPropsWithRef, ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { ScrollAnimate, Title } from '@/components/atoms';
 import { ScrollAnimateConfigOptions } from '@/components/atoms/ScrollAnimate';
-import { TitleProps } from '@/components/atoms/Title';
-import { ActionProps } from '@/components/molecules/Action';
-import { StatsCard } from '@/components/organisms/Cards';
-import { StatsCardProps } from '@/components/organisms/Cards/Stats';
-import { cn, renderComp } from '@/utils';
+import { StatisticCard } from '@/components/organisms/Cards';
+import { StatisticCardProps } from '@/components/organisms/Cards/Statistic';
+import { renderComp } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 import PrimaryLayoutBlock, { PrimaryLayoutBlockProps } from '../Layout/Primary';
 
@@ -28,32 +27,19 @@ const SCROLL_OFFSET = ['0 1', '0 .55'],
     } as ScrollAnimateConfigOptions
   };
 
-type StatsBlockOrganismOwnProps = {
+type StatisticsBlockOrganismOwnProps = {
   data: PrimaryLayoutBlockProps['data'] & {
-    subtitle?: ReactNode;
-    items: StatsCardProps['data'][];
+    subtitle?: Node[];
+    items: StatisticCardProps['data'][];
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'section'>>;
-  subtitleProps?: Partial<TitleProps>;
-  imageProps?: Partial<any>;
-  listProps?: Partial<any>;
-  actionProps?: Partial<ActionProps>;
 };
 
-type StatsBlockOrganismProps = StatsBlockOrganismOwnProps &
-  Omit<PrimaryLayoutBlockProps, keyof StatsBlockOrganismOwnProps>;
+type StatisticsBlockOrganismProps = StatisticsBlockOrganismOwnProps &
+  Omit<PrimaryLayoutBlockProps, keyof StatisticsBlockOrganismOwnProps>;
 
-const StatsBlockOrganism = (
-  {
-    data,
-    wrapperProps,
-    subtitleProps,
-    imageProps,
-    listProps,
-    actionProps,
-    ...props
-  }: StatsBlockOrganismProps,
-  ref: StatsBlockOrganismProps['ref']
+const StatisticsBlockOrganism = (
+  { data, ...props }: StatisticsBlockOrganismProps,
+  ref: StatisticsBlockOrganismProps['ref']
 ) => {
   return (
     <PrimaryLayoutBlock
@@ -65,24 +51,14 @@ const StatsBlockOrganism = (
       {...props}
     >
       <div className='flex w-full flex-col items-center overflow-x-clip'>
-        <section
-          {...wrapperProps}
-          className={cn(
-            'flex w-9/10 max-w-screen-lg flex-col items-center',
-            wrapperProps?.className
-          )}
-        >
+        <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
           {renderComp(
             <Title
               component='h3'
               order={6}
-              {...subtitleProps}
-              className={cn(
-                'mb-md mr-auto uppercase text-dimmed',
-                subtitleProps?.className
-              )}
+              className='mb-md mr-auto uppercase text-dimmed *:text-text'
             >
-              {data.subtitle}
+              {serialize(data.subtitle)}
             </Title>,
             [data.subtitle]
           )}
@@ -91,11 +67,11 @@ const StatsBlockOrganism = (
             {data.items.map((data) => (
               <ScrollAnimate
                 config={ANIMATION_CONFIG.opacity}
-                key={data.id}
+                key={data.slug}
               >
                 <ScrollAnimate config={ANIMATION_CONFIG.x}>
                   <li className='h-fit translate-x-[--x] even:-translate-x-[--x] md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl'>
-                    <StatsCard data={data} />
+                    <StatisticCard data={data} />
                   </li>
                 </ScrollAnimate>
               </ScrollAnimate>
@@ -107,5 +83,5 @@ const StatsBlockOrganism = (
   );
 };
 
-export default forwardRef(StatsBlockOrganism);
-export type { StatsBlockOrganismProps };
+export default forwardRef(StatisticsBlockOrganism);
+export type { StatisticsBlockOrganismProps };

@@ -3,24 +3,27 @@ import { forwardRef } from 'react';
 import { Title } from '@/components/atoms';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
+import { Statistic } from '@/types';
 import { cn } from '@/utils';
 
-type StatsCardOrganismOwnProps = {
-  data: {
-    id: string;
-    title: TitleProps['children'];
-    value: TitleProps['children'];
-  };
+type StatisticCardOrganismOwnProps = {
+  data: Statistic;
   valueProps?: Partial<TitleProps>;
   titleProps?: Partial<TitleProps>;
 };
 
-type StatsCardOrganismProps = StatsCardOrganismOwnProps &
-  Omit<CardRootProps, keyof StatsCardOrganismOwnProps>;
+type StatisticCardOrganismProps = StatisticCardOrganismOwnProps &
+  Omit<CardRootProps, keyof StatisticCardOrganismOwnProps>;
 
-const StatsCardOrganism = (
-  { className, data, valueProps, titleProps, ...props }: StatsCardOrganismProps,
-  ref: StatsCardOrganismProps['ref']
+const StatisticCardOrganism = (
+  {
+    className,
+    data,
+    valueProps,
+    titleProps,
+    ...props
+  }: StatisticCardOrganismProps,
+  ref: StatisticCardOrganismProps['ref']
 ) => {
   return (
     <Card.Root
@@ -55,5 +58,5 @@ const StatsCardOrganism = (
   );
 };
 
-export default forwardRef(StatsCardOrganism);
-export type { StatsCardOrganismProps };
+export default forwardRef(StatisticCardOrganism);
+export type { StatisticCardOrganismProps };

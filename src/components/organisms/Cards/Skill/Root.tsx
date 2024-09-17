@@ -4,6 +4,7 @@ import { Icon, Title } from '@/components/atoms';
 import { IconProps } from '@/components/atoms/Icon';
 import { TitleProps } from '@/components/atoms/Title';
 import Card from '@/components/molecules/Card';
+import { Skill } from '@/types';
 import { cn } from '@/utils';
 
 import SkillCardHover from './Hover';
@@ -11,11 +12,7 @@ import SkillCardHover from './Hover';
 const DELAY = 500;
 
 type SkillCardOrganismOwnProps = {
-  data: {
-    id: string;
-    title: TitleProps['children'];
-    icon: IconProps['src'];
-  };
+  data: Skill;
   iconProps?: Partial<IconProps>;
   titleProps?: Partial<TitleProps>;
 };

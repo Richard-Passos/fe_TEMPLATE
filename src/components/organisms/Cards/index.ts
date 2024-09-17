@@ -6,7 +6,7 @@ import ProjectCard from './Project';
 import ServiceCard from './Service';
 import SimpleCard from './Simple';
 import SkillCard from './Skill';
-import StatsCard from './Stats';
+import StatisticCard from './Statistic';
 import TextCard from './Text';
 import TimeCard from './Time';
 import ValueCard from './Value';
@@ -20,7 +20,7 @@ const Cards = {
   Service: ServiceCard,
   Simple: SimpleCard,
   Skill: SkillCard,
-  Stats: StatsCard,
+  Statistic: StatisticCard,
   Text: TextCard,
   Time: TimeCard,
   Value: ValueCard
@@ -36,7 +36,7 @@ export {
   ServiceCard,
   SimpleCard,
   SkillCard,
-  StatsCard,
+  StatisticCard,
   TextCard,
   TimeCard,
   ValueCard

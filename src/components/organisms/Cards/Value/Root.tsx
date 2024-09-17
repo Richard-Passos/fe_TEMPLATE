@@ -5,15 +5,11 @@ import { IconProps } from '@/components/atoms/Icon';
 import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
+import { Value } from '@/types';
 import { cn } from '@/utils';
 
 type ValueCardOrganismOwnProps = {
-  data: {
-    id: string;
-    icon: IconProps['src'];
-    title: TitleProps['children'];
-    description: TextProps['children'];
-  };
+  data: Value;
   iconProps?: Partial<IconProps>;
   titleProps?: Partial<TitleProps>;
   descriptionProps?: Partial<TextProps>;

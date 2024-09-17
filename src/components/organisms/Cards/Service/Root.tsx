@@ -5,14 +5,11 @@ import { DividerProps } from '@/components/atoms/Divider';
 import { TextProps } from '@/components/atoms/Text';
 import { TitleProps } from '@/components/atoms/Title';
 import Card, { CardRootProps } from '@/components/molecules/Card';
+import { Service } from '@/types';
 import { cn } from '@/utils';
 
 type ServiceCardOrganismOwnProps = {
-  data: {
-    id: string;
-    title: TitleProps['children'];
-    description: TextProps['children'];
-  };
+  data: Service;
   indexProps?: Partial<TextProps>;
   dividerProps?: Partial<DividerProps>;
   titleProps?: Partial<TitleProps>;
@@ -48,7 +45,7 @@ const ServiceCardOrganism = (
           indexProps?.className
         )}
       >
-        {data.id}
+        {data.slug}
       </Text>
 
       <Divider

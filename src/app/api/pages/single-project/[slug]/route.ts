@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { defaultPages } from '@/constants';
+import { baseUrl, defaultPages } from '@/constants';
 import { defaultLocale } from '@/constants/locales';
-import { Locale, SingleProjectPage } from '@/types';
-import { baseUrl, getTranslations, isType, normId } from '@/utils';
+import { DeepPartial, Locale, SingleProjectPage } from '@/types';
+import { getTranslations, isType, normId } from '@/utils';
 
 type Params = {
   slug: string;
@@ -65,7 +65,7 @@ const GET = async (
     const pages = await t.pages();
 
     const page = pages.find((d) => d.slug === defaultPages.singleProject) as
-      | SingleProjectPage
+      | DeepPartial<SingleProjectPage>
       | undefined;
 
     if (!page)
@@ -88,17 +88,18 @@ const GET = async (
         next: nextId
       };
 
-    const data: SingleProjectPage = {
-      ...page,
+    const defaultPage: SingleProjectPage = {
+      type: 'single-project',
+      slug: '',
       hero: {
-        ...page.hero,
+        theme: 'light',
         data: {
           title: project.title,
           description: project.description,
           subtitle: `${project.roles.join(' & ')} — ${project.year}`,
           action: {
             href: project.href,
-            label: page.hero.data.action.label
+            label: ''
           },
           image: {
             src: project.banner.src,
@@ -108,25 +109,22 @@ const GET = async (
       },
       blocks: {
         Images: {
-          ...page.blocks.Images,
+          theme: 'light',
           data: {
-            ...page.blocks.Images?.data,
             items: project.images ?? []
           }
         },
         Adjacents: {
-          ...page.blocks.Adjacents,
+          theme: 'light',
           data: {
             prev: {
+              href: `/${defaultPages.projects}/${prevProject?.slug}`,
               label: '',
-              ...page.blocks.Adjacents?.data?.prev,
-              href: prevProject?.href ?? '',
               name: prevProject?.title
             },
             next: {
+              href: `/${defaultPages.projects}/${nextProject?.slug}`,
               label: '',
-              ...page.blocks.Adjacents?.data?.next,
-              href: nextProject?.href ?? '',
               name: nextProject?.title
             }
           }
@@ -146,6 +144,56 @@ const GET = async (
             ...(project.images?.map((d) => d.src) ?? [])
           ]
         }
+      }
+    };
+
+    const data: SingleProjectPage = {
+      ...defaultPage,
+      ...page,
+      hero: {
+        ...defaultPage.hero,
+        ...page.hero,
+        data: {
+          ...defaultPage.hero.data,
+          ...page.hero?.data,
+          action: {
+            ...defaultPage.hero.data.action,
+            ...page.hero?.data?.action
+          },
+          image: {
+            ...defaultPage.hero.data.image,
+            ...page.hero?.data?.image
+          }
+        }
+      },
+      blocks: {
+        Images: {
+          ...defaultPage.blocks.Images,
+          ...page.blocks?.Images,
+          data: {
+            ...defaultPage.blocks.Images?.data,
+            ...page.blocks?.Images?.data,
+            items: defaultPage.blocks.Images.data.items
+          }
+        },
+        Adjacents: {
+          ...defaultPage.blocks.Adjacents,
+          ...page.blocks?.Adjacents,
+          data: {
+            prev: {
+              ...defaultPage.blocks.Adjacents?.data?.prev,
+              ...page.blocks?.Adjacents?.data?.prev
+            },
+            next: {
+              ...defaultPage.blocks.Adjacents?.data?.next,
+              ...page.blocks?.Adjacents?.data?.next
+            }
+          }
+        }
+      },
+      metadata: {
+        ...defaultPage.metadata,
+        ...page.metadata
       }
     };
 

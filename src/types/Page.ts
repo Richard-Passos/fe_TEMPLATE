@@ -11,7 +11,7 @@ type Page = {
   isSelected?: boolean;
   label: string;
   hero: TypeVariants<typeof Heros>;
-  blocks: TypeVariants<typeof Blocks>[];
+  blocks?: TypeVariants<typeof Blocks>[];
   metadata: Metadata;
 };
 

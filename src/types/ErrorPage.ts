@@ -11,7 +11,7 @@ type ErrorPage = {
   isSelected?: never;
   label?: never;
   hero: SecondaryHeroProps;
-  blocks: TypeVariants<typeof Blocks>[];
+  blocks?: TypeVariants<typeof Blocks>[];
   metadata: Metadata;
 };
 

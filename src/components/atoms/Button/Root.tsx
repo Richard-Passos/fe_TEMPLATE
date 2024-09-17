@@ -1,7 +1,6 @@
 import { Button, ButtonProps, createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
 const PRIMARY_VARIANTS = ['filled'];
@@ -9,11 +8,13 @@ const PRIMARY_VARIANTS = ['filled'];
 type ButtonAtomOwnProps = {
   isIconOnly?: boolean;
   isLoading?: boolean;
-  ref?: PolymorphicRef<'button'>;
 };
 
 type ButtonAtomProps = ButtonAtomOwnProps &
-  Omit<ButtonProps, 'loading' | keyof ButtonAtomOwnProps>;
+  Omit<
+    ButtonProps & Omit<ComponentPropsWithRef<'button'>, keyof ButtonProps>,
+    'loading' | keyof ButtonAtomOwnProps
+  >;
 
 const ButtonAtom = (
   {

@@ -1,7 +1,6 @@
 import { getLocale } from 'next-intl/server';
 import { forwardRef } from 'react';
 
-import { headerApi, pagesApi, personalApi } from '@/api';
 import { Icon } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import {
@@ -12,6 +11,7 @@ import {
 import { defaultPages, locales } from '@/constants';
 import { Locale } from '@/types';
 import { cn, renderComp } from '@/utils';
+import { headerApi, pagesApi, personalApi } from '@/utils/actions';
 
 import HeaderNav, { HeaderNavProps } from '../Nav';
 import HeaderMenuTrigger from './Trigger';
@@ -44,7 +44,7 @@ const HeaderMenuOrganism = async (
   const navItems: HeaderNavProps['items'] = pagesRes.ok
     ? pagesRes.data.map((p) => ({
         href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
-        label: p.label
+        label: `${p.label}`
       }))
     : [];
 

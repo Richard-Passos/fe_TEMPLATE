@@ -1,12 +1,12 @@
 import { getLocale } from 'next-intl/server';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { headerApi, pagesApi } from '@/api';
 import LocaleSelect from '@/components/molecules/LocaleSelect';
 import Logo from '@/components/organisms/Logo';
 import { defaultPages, locales } from '@/constants';
 import { Locale } from '@/types';
 import { cn } from '@/utils';
+import { headerApi, pagesApi } from '@/utils/actions';
 
 import HeaderMenu from './Menu';
 import HeaderNav, { HeaderNavProps } from './Nav';
@@ -35,7 +35,7 @@ const HeaderOrganism = async (
   const navItem: HeaderNavProps['items'] = pagesRes.ok
     ? pagesRes.data.map((p) => ({
         href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
-        label: p.label
+        label: `${p.label}`
       }))
     : [];
 

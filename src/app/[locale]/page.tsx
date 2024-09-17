@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { pagesApi } from '@/api';
 import { PageTemplate } from '@/components/templates';
+import { defaultPages } from '@/constants';
 
 import { LayoutParams } from './layout';
 
@@ -15,7 +16,7 @@ type HomePageProps = HomePageOwnProps & HomePageParams;
 const HomePage = async ({ params: { locale } }: HomePageProps) => {
   unstable_setRequestLocale(locale);
 
-  const res = await pagesApi.getOne({ slug: 'home', locale });
+  const res = await pagesApi.getOne({ slug: defaultPages.home, locale });
 
   if (!res.ok) return notFound();
 
@@ -28,7 +29,6 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
     />
   );
 };
-
 
 export default HomePage;
 export type { HomePageProps, HomePageParams };

@@ -1,4 +1,4 @@
-import baseUrl from './baseUrl';
+import { baseUrl } from '@/constants';
 
 const request = async <TResponse>(
   url: string,

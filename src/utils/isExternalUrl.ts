@@ -1,5 +1,5 @@
+import { baseUrl } from '@/constants';
 import { urlRegex } from '@/constants/regexs';
-import baseUrl from '@/utils/baseUrl';
 
 const isExternalUrl = (url: string) =>
   url.indexOf(':') > -1 &&

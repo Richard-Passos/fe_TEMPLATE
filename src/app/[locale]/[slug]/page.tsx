@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 
 import { pagesApi } from '@/api';
 import { PageTemplate } from '@/components/templates';
+import { defaultPages } from '@/constants';
+import { normId, values } from '@/utils';
 
 import { LayoutParams } from '../layout';
 
@@ -17,6 +19,10 @@ type PageProps = PageOwnProps & PageParams;
 
 const Page = async ({ params: { slug, locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
+
+  slug = normId(slug);
+
+  if (values(defaultPages).includes(slug)) return notFound();
 
   const res = await pagesApi.getOne({ slug, locale });
 

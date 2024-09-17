@@ -41,9 +41,9 @@ const ServicesBlockOrganism = (
       <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
         {renderComp(
           <Title
+            className='mb-md mr-auto uppercase text-dimmed *:text-text'
             component='h3'
             order={6}
-            className='mb-md mr-auto uppercase text-dimmed *:text-text'
           >
             {serialize(data.subtitle)}
           </Title>,
@@ -52,10 +52,10 @@ const ServicesBlockOrganism = (
 
         <div className='flex w-full items-start justify-end gap-md md:gap-xl'>
           <ServicesBlockImage
+            className='grow basis-72 max-md:hidden'
             data={{
               image: data.image
             }}
-            className='grow basis-72 max-md:hidden'
           />
 
           <ul className='m-0 flex max-w-lg grow basis-[theme(maxWidth.sm)] list-none flex-col gap-xs p-0 sm:py-xl'>
@@ -70,10 +70,10 @@ const ServicesBlockOrganism = (
         {renderComp(
           <Action
             as='link'
+            className='mt-xl'
             href='/contact'
             size='md'
             variant='default'
-            className='mt-xl'
           >
             {serialize(data.action?.label)}
           </Action>,

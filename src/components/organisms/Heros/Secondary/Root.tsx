@@ -62,9 +62,9 @@ const SecondaryHeroOrganism = (
             {renderComp(
               <Action
                 as={data.actions?.secondary?.href ? 'link' : 'button'}
-                variant='default'
                 href={data.actions?.secondary?.href ?? ''}
                 onClick={data.actions?.secondary?.onClick}
+                variant='default'
               >
                 {serialize(data.actions?.secondary?.label)}
               </Action>,

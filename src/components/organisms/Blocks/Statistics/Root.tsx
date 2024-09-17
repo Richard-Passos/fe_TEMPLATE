@@ -54,9 +54,9 @@ const StatisticsBlockOrganism = (
         <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
           {renderComp(
             <Title
+              className='mb-md mr-auto uppercase text-dimmed *:text-text'
               component='h3'
               order={6}
-              className='mb-md mr-auto uppercase text-dimmed *:text-text'
             >
               {serialize(data.subtitle)}
             </Title>,

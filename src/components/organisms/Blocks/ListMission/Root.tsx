@@ -32,9 +32,9 @@ const ListMissionBlockOrganism = (
           return (
             <ListHorizontalScroll.Item
               baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
+              className='py-xl font-semibold uppercase [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
               key={item.id}
               order={1}
-              className='py-xl font-semibold uppercase [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
             >
               <span>{text}</span>
 

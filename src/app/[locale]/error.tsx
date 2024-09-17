@@ -4,10 +4,10 @@ import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { pagesApi } from '@/api';
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
-import { type ErrorPage, Locale } from '@/types';
+import { Locale, ErrorPage as TErrorPage } from '@/types';
+import { pagesApi } from '@/utils/actions';
 
 type ErrorPageProps = {
   error: Error & { digest?: string };
@@ -20,11 +20,11 @@ const ErrorPage = ({ error, reset }: ErrorPageProps) => {
     console.error(reset);
   }, [error, reset]);
   const locale = useLocale() as Locale['value'],
-    [page, setPage] = useState<ErrorPage>();
+    [page, setPage] = useState<TErrorPage>();
 
   useEffect(() => {
     const getPage = async () => {
-      const res = await pagesApi.getOne<ErrorPage>({
+      const res = await pagesApi.getOne<TErrorPage>({
         slug: defaultPages.error,
         locale
       });
@@ -52,7 +52,7 @@ const ErrorPage = ({ error, reset }: ErrorPageProps) => {
     };
 
     getPage();
-  }, [reset]);
+  }, [reset, locale]);
 
   if (!page) return null;
 

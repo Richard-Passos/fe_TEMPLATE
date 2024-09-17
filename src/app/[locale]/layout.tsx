@@ -5,14 +5,13 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
-import { personalApi } from '@/api';
 import { Height, SmoothScroll } from '@/components/atoms';
 import { Footer, Header, Providers, Toaster } from '@/components/organisms';
-import { locales } from '@/constants';
+import { baseUrl, locales } from '@/constants';
 import '@/styles/globals.css';
 import { defaultColorScheme } from '@/styles/theme';
 import { Locale } from '@/types';
-import { baseUrl } from '@/utils';
+import { personalApi } from '@/utils/actions';
 
 type LayoutOwnProps = PropsWithChildren<{}>;
 

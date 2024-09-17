@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { pagesApi } from '@/api';
 import { PageTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
 import { normId, values } from '@/utils';
+import { pagesApi } from '@/utils/actions';
 
 import { LayoutParams } from '../layout';
 
@@ -21,10 +21,12 @@ const Page = async ({ params: { slug, locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
 
   slug = normId(slug);
+  console.log('-  slug   -', slug);
 
   if (values(defaultPages).includes(slug)) return notFound();
 
   const res = await pagesApi.getOne({ slug, locale });
+  console.log('-  res   -', res);
 
   if (!res.ok) return notFound();
 

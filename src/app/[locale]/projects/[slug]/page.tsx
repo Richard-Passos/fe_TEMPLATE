@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { pagesApi, projectsApi } from '@/api';
 import { SingleProjectTemplate } from '@/components/templates';
 import { entries, normId } from '@/utils';
+import { pagesApi, projectsApi } from '@/utils/actions';
 
 import { LayoutParams } from '../../layout';
 

@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { getLocale, unstable_setRequestLocale } from 'next-intl/server';
 
-import { pagesApi } from '@/api';
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
 import { ErrorPage, Locale } from '@/types';
+import { pagesApi } from '@/utils/actions';
 
 const NotFoundPage = async () => {
   const locale = (await getLocale()) as Locale['value'];

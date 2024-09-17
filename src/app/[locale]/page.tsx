@@ -1,9 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { pagesApi } from '@/api';
 import { PageTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
+import { pagesApi } from '@/utils/actions';
 
 import { LayoutParams } from './layout';
 

@@ -1,7 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { ErrorPage, Locale, Page, SingleProjectPage } from '@/types';
+import {
+  DeepPartial,
+  ErrorPage,
+  Locale,
+  Page,
+  SingleProjectPage
+} from '@/types';
 import { getTranslations, isType } from '@/utils';
 
 type SearchParams = {
@@ -23,7 +29,7 @@ type PagesResponse =
   | {
       ok: true;
       status: 200;
-      data: (Page | ErrorPage | SingleProjectPage)[];
+      data: (Page | ErrorPage | DeepPartial<SingleProjectPage>)[];
       meta: {
         page: number;
         totalPages: number;

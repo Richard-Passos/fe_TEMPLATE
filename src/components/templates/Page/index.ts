@@ -1,4 +1,4 @@
-import PageTemplate from './Root';
+import PageTemplate, { PageTemplateProps } from './Root';
 
 export default PageTemplate;
-export { PageTemplate };
+export type { PageTemplateProps };

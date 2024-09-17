@@ -1,4 +1,4 @@
-import ErrorTemplate from './Root';
+import ErrorTemplate, { ErrorTemplateProps } from './Root';
 
 export default ErrorTemplate;
-export { ErrorTemplate };
+export type { ErrorTemplateProps };

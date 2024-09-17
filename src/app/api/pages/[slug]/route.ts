@@ -52,7 +52,7 @@ const GET = async <T extends Page | ErrorPage | SingleProjectPage>(
 
     const pages = await t.pages();
 
-    let dataIndex = pages.findIndex((p) => normId(p.slug) === slug);
+    let dataIndex = pages.findIndex((p) => normId(p.slug ?? '') === slug);
 
     if (dataIndex === -1)
       return NextResponse.json({

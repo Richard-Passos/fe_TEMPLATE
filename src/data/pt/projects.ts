@@ -146,6 +146,31 @@ const projects = async (): Promise<Project[]> => {
           alt: ''
         }
       ]
+    },
+    {
+      slug: 'em-progresso',
+      isSelected: true,
+      href: '',
+      title: 'En Progresso',
+      roles: ['Desenvolvimento'],
+      year: '...',
+      description:
+        'Desenvolvendo um projeto empolgante, refinando ideias e implementando novas funcionalidades. Fique atento para atualizações!',
+      thumbnail: {
+        src: '/images/in-progress.webp',
+        alt: ''
+      },
+      banner: {
+        src: '/images/in-progress.webp',
+        alt: ''
+      },
+      images: [
+        {
+          id: 'image-00',
+          src: '/images/in-progress.webp',
+          alt: ''
+        }
+      ]
     }
   ];
 };

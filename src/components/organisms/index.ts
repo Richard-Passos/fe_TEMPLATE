@@ -1,5 +1,8 @@
 import Blocks from './Blocks';
+import Cards from './Cards';
+import CookiesConsent from './CookiesConsent';
 import Footer from './Footer';
+import Forms from './Forms';
 import Header from './Header';
 import Heros from './Heros';
 import Icons from './Icons';
@@ -11,7 +14,10 @@ import Toaster from './Toaster';
 
 const Organisms = {
   Blocks,
+  Cards,
+  CookiesConsent,
   Footer,
+  Forms,
   Header,
   Heros,
   Icons,
@@ -25,7 +31,10 @@ const Organisms = {
 export default Organisms;
 export {
   Blocks,
+  Cards,
+  CookiesConsent,
   Footer,
+  Forms,
   Header,
   Heros,
   Icons,

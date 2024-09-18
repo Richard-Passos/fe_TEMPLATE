@@ -43,7 +43,10 @@ const ToasterOrganism = (
         reverseOrder={reverseOrder}
         toastOptions={{
           ...toastOptions,
-          className: cn('!bg-body !text-text', toastOptions?.className)
+          className: cn(
+            '!bg-body !text-text !rounded !shadow',
+            toastOptions?.className
+          )
         }}
       >
         {children}

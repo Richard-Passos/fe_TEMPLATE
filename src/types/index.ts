@@ -1,3 +1,4 @@
+import CookiesConsent from './CookiesConsent';
 import DeepPartial from './DeepPartial';
 import ErrorPage from './ErrorPage';
 import Field from './Field';
@@ -17,6 +18,7 @@ import TypeVariants from './TypeVariants';
 import Value from './Value';
 
 export type {
+  CookiesConsent,
   DeepPartial,
   ErrorPage,
   Field,

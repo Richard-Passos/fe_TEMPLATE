@@ -1,3 +1,4 @@
+import cookiesConsent from './cookiesConsent';
 import footer from './footer';
 import header from './header';
 import pages from './pages';
@@ -9,6 +10,7 @@ import statistics from './statistics';
 import values from './values';
 
 const pt = {
+  cookiesConsent,
   footer,
   header,
   pages,
@@ -22,6 +24,7 @@ const pt = {
 
 export default pt;
 export {
+  cookiesConsent,
   footer,
   header,
   pages,

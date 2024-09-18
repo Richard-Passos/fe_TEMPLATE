@@ -5267,6 +5267,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-cookie@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "js-cookie@npm:2.2.1"
+  checksum: 10c0/ee67fc0f8495d0800b851910b5eb5bf49d3033adff6493d55b5c097ca6da46f7fe666b10e2ecb13cfcaf5b88d71c205ce00a7e646de791689bfd053bbb36a376
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -6325,6 +6332,7 @@ __metadata:
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.5"
     react: "npm:^18.3.1"
+    react-cookie-consent: "npm:^9.0.0"
     react-dom: "npm:^18.3.1"
     react-fast-marquee: "npm:^1.6.5"
     react-hook-form: "npm:^7.53.0"
@@ -6642,6 +6650,17 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"react-cookie-consent@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "react-cookie-consent@npm:9.0.0"
+  dependencies:
+    js-cookie: "npm:^2.2.1"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/8cf336c2b43c2ad6524e28076613bfe11bcf22b9f1837c47e180af0aa1710c823f5b1c878e2708fd69e8546e5eab816ba3095e44541909a4fbe2a14bf9edb4ae
   languageName: node
   linkType: hard
 

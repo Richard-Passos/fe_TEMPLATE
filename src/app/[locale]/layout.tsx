@@ -6,7 +6,13 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
 import { Height, SmoothScroll } from '@/components/atoms';
-import { Footer, Header, Providers, Toaster } from '@/components/organisms';
+import {
+  CookiesConsent,
+  Footer,
+  Header,
+  Providers,
+  Toaster
+} from '@/components/organisms';
 import { baseUrl, locales } from '@/constants';
 import '@/styles/globals.css';
 import { defaultColorScheme } from '@/styles/theme';
@@ -47,6 +53,8 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             <Height.Get name='document'>
               <Footer />
             </Height.Get>
+
+            <CookiesConsent />
 
             <Toaster />
 

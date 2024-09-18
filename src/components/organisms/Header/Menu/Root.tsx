@@ -1,4 +1,3 @@
-import { getLocale } from 'next-intl/server';
 import { forwardRef } from 'react';
 
 import { Icon } from '@/components/atoms';
@@ -9,9 +8,8 @@ import {
   DrawerTriggerProps
 } from '@/components/molecules/Drawer';
 import { defaultPages, locales } from '@/constants';
-import { Locale } from '@/types';
 import { cn, renderComp } from '@/utils';
-import { headerApi, pagesApi, personalApi } from '@/utils/actions';
+import { getLocale, headerApi, pagesApi, personalApi } from '@/utils/actions';
 
 import HeaderNav, { HeaderNavProps } from '../Nav';
 import HeaderMenuTrigger from './Trigger';
@@ -28,7 +26,7 @@ const HeaderMenuOrganism = async (
   { className, triggerProps, contentProps, ...props }: HeaderMenuOrganismProps,
   ref: HeaderMenuOrganismProps['ref']
 ) => {
-  const locale = (await getLocale()) as Locale['value'];
+  const locale = await getLocale();
 
   const [headerRes, pagesRes, personalRes] = await Promise.all([
     headerApi.get({ locale }),

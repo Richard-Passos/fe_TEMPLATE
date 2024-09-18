@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
-import { getLocale, unstable_setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { ErrorTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
-import { ErrorPage, Locale } from '@/types';
-import { pagesApi } from '@/utils/actions';
+import { ErrorPage } from '@/types';
+import { getLocale, pagesApi } from '@/utils/actions';
 
 const NotFoundPage = async () => {
-  const locale = (await getLocale()) as Locale['value'];
+  const locale = await getLocale();
 
   unstable_setRequestLocale(locale);
 
@@ -29,7 +29,7 @@ const NotFoundPage = async () => {
 };
 
 const generateMetadata = async (): Promise<Metadata> => {
-  const locale = (await getLocale()) as Locale['value'];
+  const locale = await getLocale();
 
   const res = await pagesApi.getOne<ErrorPage>({
     slug: defaultPages.notFound,

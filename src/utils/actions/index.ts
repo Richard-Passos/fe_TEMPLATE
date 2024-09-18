@@ -1,4 +1,6 @@
+import cookiesConsentApi from './cookiesConsent';
 import footerApi from './footer';
+import getLocale from './getLocale';
 import headerApi from './header';
 import pagesApi from './pages';
 import personalApi from './personal';
@@ -10,6 +12,7 @@ import statisticsApi from './statistics';
 import valuesApi from './values';
 
 const actions = {
+  cookiesConsentApi,
   footerApi,
   headerApi,
   pagesApi,
@@ -19,11 +22,13 @@ const actions = {
   skillsApi,
   statisticsApi,
   valuesApi,
+  getLocale,
   sendEmail
 };
 
 export default actions;
 export {
+  cookiesConsentApi,
   footerApi,
   headerApi,
   pagesApi,
@@ -33,5 +38,6 @@ export {
   skillsApi,
   statisticsApi,
   valuesApi,
+  getLocale,
   sendEmail
 };

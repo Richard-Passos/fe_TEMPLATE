@@ -23,13 +23,6 @@ const cookiesConsent = async (): Promise<CookiesConsent> => {
       }
     ],
     actions: {
-      decline: {
-        label: [
-          {
-            text: 'Discordo'
-          }
-        ]
-      },
       accpet: {
         label: [
           {

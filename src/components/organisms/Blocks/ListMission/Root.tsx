@@ -32,7 +32,17 @@ const ListMissionBlockOrganism = (
           return (
             <ListHorizontalScroll.Item
               baseVelocity={(1.5 + 0.25 * i) * (i % 2 === 0 ? 1 : -1)}
-              className='py-xl font-semibold uppercase [--gap:theme(spacing.sm)] *:*:[--rotate:calc(var(--x)*(360deg/12.5))] odd:-rotate-1 even:rotate-1'
+              className={`
+                py-xl font-semibold uppercase
+
+                [--gap:theme(spacing.sm)]
+
+                *:*:[--rotate:calc(var(--x)*(360deg/12.5))]
+
+                even:rotate-1
+
+                odd:-rotate-1
+              `}
               key={item.id}
               order={1}
             >
@@ -40,13 +50,29 @@ const ListMissionBlockOrganism = (
 
               <div className='size-[1em] rotate-[--rotate]'>{separator}</div>
 
-              <span className='opacity-30 dark:opacity-10'>{text}</span>
+              <span className={`
+                opacity-30
 
-              <div className='size-[1em] opacity-30 rotate-[--rotate] dark:opacity-10 max-sm:hidden'>
+                dark:opacity-10
+              `}>{text}</span>
+
+              <div className={`
+                size-[1em] opacity-30 rotate-[--rotate]
+
+                dark:opacity-10
+
+                max-sm:hidden
+              `}>
                 {separator}
               </div>
 
-              <span className='opacity-30 dark:opacity-10 max-sm:hidden'>
+              <span className={`
+                opacity-30
+
+                dark:opacity-10
+
+                max-sm:hidden
+              `}>
                 {text}
               </span>
 

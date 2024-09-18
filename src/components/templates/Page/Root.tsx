@@ -30,7 +30,11 @@ const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
         const Component = (
           <Block
             className={cn(
-              'last:pb-[--section-spacing-lg] has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]',
+              `
+                has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]
+
+                last:pb-[--section-spacing-lg]
+              `,
               className
             )}
             hasTransition={!isSameTheme}

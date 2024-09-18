@@ -1,11 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:react/recommended", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:readable-tailwind/warning",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "plugins": ["react"],
+  "plugins": ["react", "readable-tailwind"],
   "rules": {
     "react/jsx-sort-props": "warn",
     "react/prop-types": "off",

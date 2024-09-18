@@ -29,10 +29,20 @@ const LinkCardOrganism = (
       {...props}
     >
       <UnstyledLink
-        className='-m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center justify-center rounded-inherit border p-[--card-padding] font-normal text-current no-underline hover:bg-gray-0 dark:hover:bg-dark-6'
+        className={`
+          -m-[(var(--card-padding)_+_1px)] flex min-h-52 flex-col items-center
+          justify-center rounded-inherit border p-[--card-padding] font-normal
+          text-current no-underline
+
+          dark:hover:bg-dark-6
+
+          hover:bg-gray-0
+        `}
         href={data.href}
       >
-        <div className='flex size-10 items-center justify-center rounded-sm border'>
+        <div className={`
+          flex size-10 items-center justify-center rounded-sm border
+        `}>
           <Icon
             className='size-2/3'
             src={data.icon}

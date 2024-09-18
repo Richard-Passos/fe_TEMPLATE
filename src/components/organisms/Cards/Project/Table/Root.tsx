@@ -21,7 +21,12 @@ const TableProjectCardOrganism = (
     <Magnetic.Container>
       <Link
         className={cn(
-          'group/item relative flex items-center justify-center font-normal text-current focus-visible:outline-0',
+          `
+            group/item relative flex items-center justify-center font-normal
+            text-current
+
+            focus-visible:outline-0
+          `,
           className
         )}
         ref={ref}
@@ -30,14 +35,26 @@ const TableProjectCardOrganism = (
       >
         <CardRoot
           className={cn(
-            'flex-row items-start gap-xs px-[7.5%] py-xl transition-[scale,opacity] duration-300 ease-backOut group-focus-visible/item:outline',
+            `
+              flex-row items-start gap-xs px-[7.5%] py-xl
+              transition-[scale,opacity] duration-300 ease-backOut
 
-            'group-hover/list:scale-x-90 group-hover/list:[>:has(+:hover)_&]:scale-x-95 group-hover/list:[>:hover+*_&]:scale-x-95 group-hover/list:[>:hover_&]:scale-100',
+              group-focus-visible/item:outline
+            `,
+
+            `
+              group-hover/list:scale-x-90
+              group-hover/list:[>:has(+:hover)_&]:scale-x-95
+              group-hover/list:[>:hover+*_&]:scale-x-95
+              group-hover/list:[>:hover_&]:scale-100
+            `,
 
             'group-hover/list:[>:not(:hover)_&]:opacity-50'
           )}
         >
-          <Text className='relative shrink-0 text-sm font-semibold text-dimmed translate-y-0.5'>
+          <Text className={`
+            relative shrink-0 text-sm font-semibold text-dimmed translate-y-0.5
+          `}>
             <span
               aria-hidden
               className='opacity-0'
@@ -52,20 +69,33 @@ const TableProjectCardOrganism = (
 
           <div className='flex grow items-center gap-x-sm gap-y-xs'>
             <Title
-              className='mb-auto shrink-0 basis-full overflow-hidden text-ellipsis text-nowrap sm:basis-1/2'
+              className={`
+                mb-auto shrink-0 basis-full overflow-hidden text-ellipsis
+                text-nowrap
+
+                sm:basis-1/2
+              `}
               order={4}
             >
               {data.title}
             </Title>
 
-            <Text className='line-clamp-2 grow break-words text-sm font-medium lowercase sm:text-end'>
+            <Text className={`
+              line-clamp-2 grow break-words text-sm font-medium lowercase
+
+              sm:text-end
+            `}>
               {values(data.roles)
                 .toSorted((a, b) => a.localeCompare(b))
                 .join(' & ')}
             </Text>
 
             {renderComp(
-              <Text className='shrink-0 basis-1/3 text-end text-sm font-medium sm:basis-1/12'>
+              <Text className={`
+                shrink-0 basis-1/3 text-end text-sm font-medium
+
+                sm:basis-1/12
+              `}>
                 {data.year}
               </Text>,
               [data.year]
@@ -81,7 +111,14 @@ const TableProjectCardOrganism = (
           }}
         >
           <div className='pointer-events-none absolute z-10'>
-            <div className='relative aspect-square w-72 overflow-hidden rounded-lg bg-gray-1 opacity-0 transition-opacity group-hover/item:opacity-100 dark:bg-dark-6'>
+            <div className={`
+              relative aspect-square w-72 overflow-hidden rounded-lg bg-gray-1
+              opacity-0 transition-opacity
+
+              dark:bg-dark-6
+
+              group-hover/item:opacity-100
+            `}>
               <Image
                 alt={data.thumbnail.alt}
                 className='object-cover'

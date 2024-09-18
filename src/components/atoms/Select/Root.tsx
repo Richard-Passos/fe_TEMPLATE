@@ -46,7 +46,12 @@ const SelectAtom = (
     <Select
       aria-disabled={disabled}
       className={cn(
-        'aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6 dark:aria-disabled:[&_input]:bg-dark-6 dark:aria-disabled:[&_input]:text-dark-2',
+        `
+          aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6
+
+          dark:aria-disabled:[&_input]:bg-dark-6
+          dark:aria-disabled:[&_input]:text-dark-2
+        `,
         CLASS_NAMES.size[size],
         CLASS_NAMES.variant[variant],
         className
@@ -57,12 +62,25 @@ const SelectAtom = (
         classNames: {
           ...comboboxProps?.classNames,
           dropdown: cn(
-            'bg-white dark:bg-dark-6 [--popover-border-color:theme(colors.border)]',
+            `
+              bg-white
+
+              [--popover-border-color:theme(colors.border)]
+
+              dark:bg-dark-6
+            `,
             //@ts-ignore
             comboboxProps?.classNames?.dropdown
           ),
           option: cn(
-            'hover:bg-gray-0 dark:hover:bg-dark-7 data-[combobox-selected]:text-primary-contrast data-[combobox-selected]:!bg-primary-filled',
+            `
+              dark:hover:bg-dark-7
+
+              data-[combobox-selected]:!bg-primary-filled
+              data-[combobox-selected]:text-primary-contrast
+
+              hover:bg-gray-0
+            `,
             //@ts-ignore
             comboboxProps?.classNames?.option
           )

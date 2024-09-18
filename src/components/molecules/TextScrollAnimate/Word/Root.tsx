@@ -43,11 +43,19 @@ const TextScrollAnimateWordMolecule = (
       }
       {...props}
     >
-      <span className='absolute inset-0 [clip-path:inset(0_var(--x)_0_0)]'>
+      <span className={`
+        absolute inset-0
+
+        [clip-path:inset(0_var(--x)_0_0)]
+      `}>
         {children}
       </span>
 
-      <span className='pointer-events-none select-none opacity-10 dark:opacity-[.05]'>
+      <span className={`
+        pointer-events-none select-none opacity-10
+
+        dark:opacity-[.05]
+      `}>
         {children}
       </span>
     </motion.span>

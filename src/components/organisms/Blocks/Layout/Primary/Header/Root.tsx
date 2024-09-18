@@ -30,7 +30,13 @@ const PrimaryLayoutBlockHeaderOrganism = (
   return (
     <header
       className={cn(
-        'flex w-9/10 gap-[--section-spacing-md] max-md:flex-col md:items-end',
+        `
+          flex w-9/10 gap-[--section-spacing-md]
+
+          max-md:flex-col
+
+          md:items-end
+        `,
         className
       )}
       ref={ref}
@@ -40,7 +46,11 @@ const PrimaryLayoutBlockHeaderOrganism = (
         order={2}
         {...titleProps}
         className={cn(
-          'shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]',
+          `
+            shrink-0 break-words pl-[min(10vw,theme(spacing.20))] uppercase
+
+            data-[align=left]:*:-ml-[min(10vw,theme(spacing.20))]
+          `,
           titleProps?.className
         )}
       >

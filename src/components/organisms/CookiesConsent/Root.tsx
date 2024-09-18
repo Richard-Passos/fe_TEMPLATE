@@ -29,7 +29,10 @@ const CookiesConsentOrganism = async (
     <Portal>
       <div
         className={cn(
-          'pointer-events-none fixed bottom-0 right-0 z-max flex w-full justify-end p-sm',
+          `
+            pointer-events-none fixed bottom-0 right-0 z-max flex w-full
+            justify-end p-sm
+          `,
           className
         )}
         ref={ref}
@@ -43,11 +46,24 @@ const CookiesConsentOrganism = async (
           enableDeclineButton={!!data.actions.decline}
           {...bannerProps}
           buttonWrapperClasses={cn(
-            'max-sm:flex-col flex gap-xs sm:items-center',
+            `
+              flex gap-xs
+
+              max-sm:flex-col
+
+              sm:items-center
+            `,
             bannerProps?.buttonWrapperClasses
           )}
           containerClasses={cn(
-            'pointer-events-auto max-sm:flex-col flex gap-sm rounded border bg-body px-md py-xs shadow sm:items-center',
+            `
+              pointer-events-auto flex gap-sm rounded border bg-body px-md py-xs
+              shadow
+
+              max-sm:flex-col
+
+              sm:items-center
+            `,
             bannerProps?.containerClasses
           )}
           contentClasses={cn('max-w-sm', bannerProps?.contentClasses)}

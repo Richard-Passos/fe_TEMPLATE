@@ -31,11 +31,18 @@ const SingleProjectAdjacentsTemplate = (
 ) => {
   return (
     <Section
-      className={cn('min-h-fit 2xl:min-h-fit', className)}
+      className={cn(`
+        min-h-fit
+
+        2xl:min-h-fit
+      `, className)}
       ref={ref}
       {...props}
     >
-      <div className='flex w-9/10 max-w-screen-xl flex-wrap justify-between gap-xs border border-x-0 border-b-0 p-md'>
+      <div className={`
+        flex w-9/10 max-w-screen-xl flex-wrap justify-between gap-xs border
+        border-x-0 border-b-0 p-md
+      `}>
         <Action
           as='link'
           className='h-fit'
@@ -53,7 +60,10 @@ const SingleProjectAdjacentsTemplate = (
             <ArrowLeftIcon className='mb-auto size-[1.25em]' />
 
             <div className='flex flex-col items-start gap-0.5'>
-              <span className='max-w-24 overflow-hidden text-ellipsis text-xs font-normal tracking-wide opacity-50'>
+              <span className={`
+                max-w-24 overflow-hidden text-ellipsis text-xs font-normal
+                tracking-wide opacity-50
+              `}>
                 {data.prev.name}
               </span>
 
@@ -77,7 +87,10 @@ const SingleProjectAdjacentsTemplate = (
         >
           <div className='flex justify-end gap-2 py-sm'>
             <div className='flex flex-col items-end gap-0.5'>
-              <span className='max-w-24 overflow-hidden text-ellipsis text-xs font-normal tracking-wide opacity-50'>
+              <span className={`
+                max-w-24 overflow-hidden text-ellipsis text-xs font-normal
+                tracking-wide opacity-50
+              `}>
                 {data.next.name}
               </span>
 

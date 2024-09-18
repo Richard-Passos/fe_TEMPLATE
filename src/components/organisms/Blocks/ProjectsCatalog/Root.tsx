@@ -56,11 +56,21 @@ const ProjectsCatalogBlockOrganism = (
         items={data.items}
         {...catalogProps}
         className={cn(
-          'flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end',
+          `
+            flex w-9/10 max-w-screen-xl gap-md
+
+            max-md:flex-col
+
+            md:justify-end
+          `,
           catalogProps?.className
         )}
       >
-        <section className='w-full max-w-48 md:max-w-36'>
+        <section className={`
+          w-full max-w-48
+
+          md:max-w-36
+        `}>
           {renderComp(
             serialize(data.description ?? [], {
               paragraph: {
@@ -76,7 +86,9 @@ const ProjectsCatalogBlockOrganism = (
             {...emptyProps}
             className={cn('flex w-full', emptyProps?.className)}
           >
-            <Card.Root className='min-h-52 items-center justify-center text-center'>
+            <Card.Root className={`
+              min-h-52 items-center justify-center text-center
+            `}>
               {serialize(data.empty)}
             </Card.Root>
           </Catalog.Empty>
@@ -84,14 +96,22 @@ const ProjectsCatalogBlockOrganism = (
           <ProjectsCatalogTableBlock
             {...tableProps}
             className={cn(
-              'relative z-20 w-full max-sm:hidden',
+              `
+                relative z-20 w-full
+
+                max-sm:hidden
+              `,
               tableProps?.className
             )}
           />
 
           <ProjectsCatalogGridBlock
             {...gridProps}
-            className={cn('ml-auto w-full sm:hidden', gridProps?.className)}
+            className={cn(`
+              ml-auto w-full
+
+              sm:hidden
+            `, gridProps?.className)}
           />
         </div>
       </Catalog.Root>

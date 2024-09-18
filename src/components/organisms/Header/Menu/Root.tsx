@@ -75,19 +75,27 @@ const HeaderMenuOrganism = async (
         bodyProps={{
           ...contentProps?.bodyProps,
           className: cn(
-            'p-0 grow flex flex-col gap-xl pt-xl',
+            'flex grow flex-col gap-xl p-0 pt-xl',
             contentProps?.bodyProps?.className
           )
         }}
         className={cn(
-          'flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]',
+          `
+            flex flex-col p-[--p] pt-[calc(var(--p)*1.5)]
+
+            [--drawer-size:560px]
+
+            [--p:theme(spacing.xl)]
+
+            sm:[--p:theme(spacing.2xl)]
+          `,
           contentProps?.className
         )}
         hasCloseButton={false}
         headerProps={{
           ...contentProps?.headerProps,
           className: cn(
-            'border relative border-x-0 border-t-0 py-0',
+            'relative border border-x-0 border-t-0 py-0',
             contentProps?.headerProps?.className
           )
         }}

@@ -28,7 +28,11 @@ const LocaleSelectMolecule = (
   return (
     <Select
       allowDeselect={false}
-      className={cn('max-w-40 [&_input]:text-ellipsis', className)}
+      className={cn(`
+        max-w-40
+
+        [&_input]:text-ellipsis
+      `, className)}
       defaultValue={locale}
       leftSection={
         <GlobeIcon

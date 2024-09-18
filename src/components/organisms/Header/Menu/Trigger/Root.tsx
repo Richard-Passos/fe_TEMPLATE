@@ -35,10 +35,24 @@ const HeaderMenuTriggerOrganism = (
         config={ANIMATION_CONFIG}
         smoothConfig={smoothConfig}
       >
-        <div className='fixed right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))] top-[--side] z-max scale-[--scale] [--side:theme(spacing.md)] has-[[data-state="open"]]:scale-100 sm:[--side:theme(spacing.xl)]'>
+        <div className={`
+          fixed
+          right-[calc(var(--side)+var(--removed-body-scroll-bar-size,0px))]
+          top-[--side] z-max scale-[--scale]
+
+          [--side:theme(spacing.md)]
+
+          has-[[data-state="open"]]:scale-100
+
+          sm:[--side:theme(spacing.xl)]
+        `}>
           <DrawerTrigger>
             <Action
-              className={cn('h-16 rounded-full sm:h-20', className)}
+              className={cn(`
+                h-16 rounded-full
+
+                sm:h-20
+              `, className)}
               isIconOnly
               magneticProps={{
                 ...magneticProps,
@@ -48,13 +62,29 @@ const HeaderMenuTriggerOrganism = (
               variant='default'
               {...props}
             >
-              <MenuIcon className='size-[40%] group-data-open/action:hidden' />
+              <MenuIcon className={`
+                size-[40%]
 
-              <TimesIcon className='absolute size-[40%] group-data-closed/action:hidden' />
+                group-data-open/action:hidden
+              `} />
 
-              <span className='sr-only data-open:hidden'>{label.open}</span>
+              <TimesIcon className={`
+                absolute size-[40%]
 
-              <span className='sr-only data-closed:hidden'>{label.close}</span>
+                group-data-closed/action:hidden
+              `} />
+
+              <span className={`
+                sr-only
+
+                data-open:hidden
+              `}>{label.open}</span>
+
+              <span className={`
+                sr-only
+
+                data-closed:hidden
+              `}>{label.close}</span>
             </Action>
           </DrawerTrigger>
         </div>

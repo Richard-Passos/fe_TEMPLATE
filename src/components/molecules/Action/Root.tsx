@@ -52,19 +52,36 @@ const ActionMolecule = (
         }
         smoothConfig={magneticProps.smoothConfig}
       >
-        <span className='relative z-10 flex size-full items-center justify-center gap-[inherit] rounded-inherit px-[--button-padding-x]'>
+        <span className={`
+          relative z-10 flex size-full items-center justify-center gap-[inherit]
+          rounded-inherit px-[--button-padding-x]
+        `}>
           {children}
         </span>
       </MagneticRoot>
 
-      <span className='absolute inset-0 bg-[--button-hover] transition-[clip-path] duration-300 [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)] group-hover/action:[clip-path:inset(0_round_0)] group-aria-disabled/action:hidden' />
+      <span className={`
+        absolute inset-0 bg-[--button-hover] transition-[clip-path] duration-300
+
+        [clip-path:inset(100%_0_0_0_round_50%_50%_0_0)]
+
+        group-aria-disabled/action:hidden
+
+        group-hover/action:[clip-path:inset(0_round_0)]
+      `} />
     </>
   );
 
   const defaultProps = {
     children: content,
     className: cn(
-      'group/action relative px-0 *:*:grow hover:z-10 hover:bg-[--button-bg]',
+      `
+        group/action relative px-0
+
+        *:*:grow
+
+        hover:z-10 hover:bg-[--button-bg]
+      `,
       className
     ),
     disabled,

@@ -30,14 +30,20 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
   return (
     <html
-      className='overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden'
+      className={`
+        overflow-x-clip
+
+        has-[body[data-scroll-locked]]:overflow-y-hidden
+      `}
       lang={locale}
     >
       <head>
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
+      <body className={`
+        relative flex min-h-svh flex-col items-center overflow-x-clip
+      `}>
         <Providers>
           <SmoothScroll>
             <Height.Set name='header'>
@@ -45,7 +51,13 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             </Height.Set>
 
             <Height.Get name={['header', 'document']}>
-              <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+              <main className={`
+                relative flex w-full max-w-bounds flex-col items-center
+
+                2xl:min-h-bounds
+
+                max-2xl:grow
+              `}>
                 {children}
               </main>
             </Height.Get>

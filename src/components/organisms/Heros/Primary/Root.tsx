@@ -41,7 +41,15 @@ const PrimaryHeroOrganism = (
         className: cn('*:hidden', bgProps?.className)
       }}
       className={cn(
-        'min-h-svh p-[--inset] pt-[--header-height] [--inset:calc(var(--w)*.025)] [--w:100vw] 2xl:[--w:--max-w]',
+        `
+          min-h-svh p-[--inset] pt-[--header-height]
+
+          [--inset:calc(var(--w)*.025)]
+
+          [--w:100vw]
+
+          2xl:[--w:--max-w]
+        `,
         className
       )}
       forceTheme
@@ -51,8 +59,15 @@ const PrimaryHeroOrganism = (
     >
       <div className='relative flex w-full grow overflow-hidden rounded-lg'>
         <PrimaryHeroScrollAnimate>
-          <div className='relative flex w-full flex-col items-center justify-center'>
-            <div className='flex w-full max-w-screen-xl grow flex-col items-center justify-center p-[calc(var(--inset)*1.5)] sm:opacity-[--opacity] sm:scale-[--scale]'>
+          <div className={`
+            relative flex w-full flex-col items-center justify-center
+          `}>
+            <div className={`
+              flex w-full max-w-screen-xl grow flex-col items-center
+              justify-center p-[calc(var(--inset)*1.5)]
+
+              sm:opacity-[--opacity] sm:scale-[--scale]
+            `}>
               <PrimaryHeroTitle>{data.title}</PrimaryHeroTitle>
 
               <div className='mt-sm grid w-full grid-cols-3 gap-sm'>
@@ -60,11 +75,19 @@ const PrimaryHeroOrganism = (
                   <PrimaryHeroExtra>{data.left}</PrimaryHeroExtra>
                 </div>
 
-                <div className='col-end-4 justify-self-end text-end lg:order-last'>
+                <div className={`
+                  col-end-4 justify-self-end text-end
+
+                  lg:order-last
+                `}>
                   <PrimaryHeroExtra>{data.right}</PrimaryHeroExtra>
                 </div>
 
-                <section className='col-span-full max-w-md justify-self-center text-center lg:sr-only'>
+                <section className={`
+                  col-span-full max-w-md justify-self-center text-center
+
+                  lg:sr-only
+                `}>
                   {serialize(data.description, {
                     paragraph: {
                       className: 'font-medium'
@@ -74,17 +97,28 @@ const PrimaryHeroOrganism = (
               </div>
             </div>
 
-            <Lines className='top-auto -z-10 !text-border opacity-60 [background-size:83.333px_66.666px]' />
+            <Lines className={`
+              top-auto -z-10 !text-border opacity-60
+
+              [background-size:83.333px_66.666px]
+            `} />
           </div>
         </PrimaryHeroScrollAnimate>
 
-        <span className='pointer-events-none absolute inset-0 rounded-inherit border opacity-60' />
+        <span className={`
+          pointer-events-none absolute inset-0 rounded-inherit border opacity-60
+        `} />
       </div>
 
       <ScrollIndicator
         {...scrollToProps}
         className={cn(
-          'absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden',
+          `
+            absolute bottom-[calc(var(--inset)*1.5)]
+            right-[calc(var(--inset)*1.5)]
+
+            max-sm:hidden
+          `,
           scrollToProps?.className
         )}
       />

@@ -33,13 +33,27 @@ const AboutBlockOrganism = (
       <section
         {...wrapperProps}
         className={cn(
-          'flex w-9/10 max-w-screen-lg gap-md md:gap-2xl',
+          `
+            flex w-9/10 max-w-screen-lg gap-md
+
+            md:gap-2xl
+          `,
           wrapperProps?.className
         )}
       >
-        <div className='relative grow basis-48 overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden'>
+        <div className={`
+          relative grow basis-48 overflow-hidden bg-white
+
+          dark:bg-dark-8
+
+          max-sm:hidden
+        `}>
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className='h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]' />
+            <Lines className={`
+              h-screen !text-border opacity-60 translate-y-0
+
+              [background-size:83.333px_66.666px]
+            `} />
           </ScrollAnimate>
 
           <span className='absolute inset-0 rounded-inherit border opacity-60' />

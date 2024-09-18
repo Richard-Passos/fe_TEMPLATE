@@ -57,6 +57,7 @@
     "eslint": "8.56.0",
     "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-readable-tailwind": "^1.8.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.39",

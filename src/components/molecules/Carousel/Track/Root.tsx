@@ -21,7 +21,11 @@ const CarouselTrackMolecule = (
   return (
     <SplideTrack
       className={cn(
-        'w-full cursor-grab !overflow-x-clip !overflow-y-visible active:cursor-grabbing',
+        `
+          w-full cursor-grab !overflow-x-clip !overflow-y-visible
+
+          active:cursor-grabbing
+        `,
         className
       )}
       ref={ref}

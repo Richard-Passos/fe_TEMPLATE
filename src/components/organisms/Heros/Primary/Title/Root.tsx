@@ -18,7 +18,11 @@ const PrimaryHeroTitleOrganism = (
   return (
     <Title
       className={cn(
-        'w-full break-words uppercase tracking-tighter lg:leading-none',
+        `
+          w-full break-words uppercase tracking-tighter
+
+          lg:leading-none
+        `,
         className
       )}
       order={1}

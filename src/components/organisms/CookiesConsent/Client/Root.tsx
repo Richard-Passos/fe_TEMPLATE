@@ -4,9 +4,11 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 import CookieConsent from 'react-cookie-consent';
 
 import { Button } from '@/components/atoms';
-import { useThemeContext } from '@/hooks/contexts';
+import { ButtonProps } from '@/components/atoms/Button';
 
-type CookiesConsentClientOrganismOwnProps = {};
+type CookiesConsentClientOrganismOwnProps = {
+  customDeclineButtonProps?: Partial<ButtonProps>;
+};
 
 type CookiesConsentClientOrganismProps = CookiesConsentClientOrganismOwnProps &
   Omit<
@@ -18,8 +20,6 @@ const CookiesConsentClientOrganism = (
   props: CookiesConsentClientOrganismProps,
   ref: CookiesConsentClientOrganismProps['ref']
 ) => {
-  const { theme } = useThemeContext();
-
   return (
     <CookieConsent
       ButtonComponent={(props: any) => (
@@ -28,10 +28,6 @@ const CookiesConsentClientOrganism = (
           {...props}
         />
       )}
-      customContainerAttributes={{
-        'data-theme': theme
-      }}
-      debug
       disableStyles
       ref={ref}
       {...props}

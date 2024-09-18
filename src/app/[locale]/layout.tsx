@@ -34,10 +34,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <SmoothScroll>
-            <Height.Set
-              hasAsyncChildren
-              name='header'
-            >
+            <Height.Set name='header'>
               <Header />
             </Height.Set>
 
@@ -47,10 +44,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
               </main>
             </Height.Get>
 
-            <Height.Get
-              hasAsyncChildren
-              name='document'
-            >
+            <Height.Get name='document'>
               <Footer />
             </Height.Get>
 

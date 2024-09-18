@@ -33,7 +33,7 @@ const PrimaryHeroTitleOrganism = (
         },
         alignText: {
           className: cn(
-            'flex w-full flex-wrap justify-center gap-x-[.2em]',
+            'flex w-full flex-wrap justify-center gap-x-[.2em] !text-center',
             'lg:data-[align=left]:justify-start',
             'lg:data-[align=center]:justify-evenly',
             'lg:data-[align=right]:justify-end'

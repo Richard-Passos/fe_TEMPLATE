@@ -1,18 +1,18 @@
 'use client';
 
-import { forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import { Toaster, ToasterProps } from 'react-hot-toast';
 
 import { useThemeContext } from '@/hooks/contexts';
 import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
-type ToasterOrganismOwnProps = {
+type ToasterOrganismOwnProps = ToasterProps & {
   ref?: PolymorphicRef<'div'>;
 };
 
 type ToasterOrganismProps = ToasterOrganismOwnProps &
-  Omit<ToasterProps, keyof ToasterOrganismOwnProps>;
+  Omit<ComponentPropsWithRef<'div'>, keyof ToasterOrganismOwnProps>;
 
 const ToasterOrganism = (
   {

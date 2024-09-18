@@ -133,15 +133,15 @@ const SerializedElement = memo(
           const { wrapperProps, ...iconProps } = props?.icon ?? {};
 
           const content = (
-            <div
+            <span
               {...wrapperProps}
-              className={cn('size-[1em]', wrapperProps?.className)}
+              className={cn('inline-block size-[1em]', wrapperProps?.className)}
             >
               <Icon
                 src={escapeHTML(node.src)}
                 {...iconProps}
               />
-            </div>
+            </span>
           );
 
           if (!node.animation) return content;

@@ -1,10 +1,7 @@
+'use client';
+
 import { Slot } from '@radix-ui/react-slot';
-import {
-  ComponentPropsWithRef,
-  Suspense,
-  SuspenseProps,
-  forwardRef
-} from 'react';
+import React, { ComponentPropsWithRef } from 'react';
 
 type SlotAtomAsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
@@ -13,37 +10,13 @@ type SlotAtomAsChildProps<DefaultElementProps> =
     >);
 
 type SlotAtomOwnProps = {
-  hasAsyncChildren?: boolean;
-  suspenseProps?: Partial<SuspenseProps>;
+  [key: string]: any;
 };
 
 type SlotAtomProps = SlotAtomOwnProps &
   Omit<ComponentPropsWithRef<typeof Slot>, keyof SlotAtomOwnProps>;
 
-const SlotAtom = (
-  { hasAsyncChildren, children, suspenseProps, ...props }: SlotAtomProps,
-  ref: SlotAtomProps['ref']
-) => {
-  if (hasAsyncChildren) {
-    return (
-      <Slot
-        ref={ref}
-        {...props}
-      >
-        <Suspense {...suspenseProps}>{children}</Suspense>
-      </Slot>
-    );
-  }
+const SlotAtom = Slot;
 
-  return (
-    <Slot
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </Slot>
-  );
-};
-
-export default forwardRef(SlotAtom);
+export default SlotAtom;
 export type { SlotAtomProps, SlotAtomAsChildProps };

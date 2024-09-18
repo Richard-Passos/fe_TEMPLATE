@@ -1,17 +1,20 @@
-import { forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { serialize } from '@/utils';
+import { Portal } from '@/components/atoms';
+import { cn, serialize } from '@/utils';
 import { cookiesConsentApi, getLocale } from '@/utils/actions';
 
 import CookiesConsentClient, { CookiesConsentClientProps } from './Client';
 
-type CookiesConsentOrganismOwnProps = {};
+type CookiesConsentOrganismOwnProps = {
+  bannerProps?: Partial<CookiesConsentClientProps>;
+};
 
 type CookiesConsentOrganismProps = CookiesConsentOrganismOwnProps &
-  Omit<CookiesConsentClientProps, keyof CookiesConsentOrganismOwnProps>;
+  Omit<ComponentPropsWithRef<'div'>, keyof CookiesConsentOrganismOwnProps>;
 
 const CookiesConsentOrganism = async (
-  props: CookiesConsentOrganismProps,
+  { className, bannerProps, ...props }: CookiesConsentOrganismProps,
   ref: CookiesConsentOrganismProps['ref']
 ) => {
   const locale = await getLocale();
@@ -23,20 +26,41 @@ const CookiesConsentOrganism = async (
   const { data } = res;
 
   return (
-    <CookiesConsentClient
-      acceptOnScroll
-      buttonText={serialize(data.actions.accpet.label)}
-      buttonWrapperClasses='ml-auto flex gap-xs items-center'
-      containerClasses='bg-body border w-full max-w-md fixed gap-sm flex items-center px-md py-xs right-sm !bottom-sm z-max rounded shadow-[0_3px_10px_rgba(0,0,0,0.1),0_3px_3px_rgba(0,0,0,0.05)]'
-      contentClasses='text-sm'
-      customDeclineButtonProps={{ variant: 'subtle', color: 'red' }}
-      declineButtonText={serialize(data.actions.decline?.label)}
-      enableDeclineButton={!!data.actions.decline}
-      ref={ref}
-      {...props}
-    >
-      {serialize(data.text)}
-    </CookiesConsentClient>
+    <Portal>
+      <div
+        className={cn(
+          'pointer-events-none fixed bottom-0 right-0 z-max flex w-full justify-end p-sm',
+          className
+        )}
+        ref={ref}
+        {...props}
+      >
+        <CookiesConsentClient
+          acceptOnScroll
+          acceptOnScrollPercentage={10}
+          buttonText={serialize(data.actions.accpet.label)}
+          declineButtonText={serialize(data.actions.decline?.label)}
+          enableDeclineButton={!!data.actions.decline}
+          {...bannerProps}
+          buttonWrapperClasses={cn(
+            'max-sm:flex-col flex gap-xs sm:items-center',
+            bannerProps?.buttonWrapperClasses
+          )}
+          containerClasses={cn(
+            'pointer-events-auto max-sm:flex-col flex gap-sm rounded border bg-body px-md py-xs shadow sm:items-center',
+            bannerProps?.containerClasses
+          )}
+          contentClasses={cn('max-w-sm', bannerProps?.contentClasses)}
+          customDeclineButtonProps={{
+            variant: 'light',
+            color: 'red',
+            ...bannerProps?.customDeclineButtonProps
+          }}
+        >
+          {serialize(data.text)}
+        </CookiesConsentClient>
+      </div>
+    </Portal>
   );
 };
 

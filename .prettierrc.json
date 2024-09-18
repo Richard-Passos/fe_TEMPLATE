@@ -19,9 +19,9 @@
   "tailwindAttributes": [
     ".*nimations",
     ".*lass",
+    ".*lasses",
     ".*lassName",
-    ".*lassNames",
-    ".*rops"
+    ".*lassNames"
   ],
   "tailwindFunctions": ["cnv"],
   "trailingComma": "none",

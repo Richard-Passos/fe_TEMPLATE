@@ -47,19 +47,25 @@ const GET = async (
       locale: searchParams.get('locale')
     };
 
-    const page = isType<SearchParams['page']>(params.page)
+    const page = isType<SearchParams['page']>(!!params.page, params.page)
         ? parseInt(params.page)
         : DEFAULT_PARAMS.page,
-      perPage = isType<SearchParams['perPage']>(params.perPage)
+      perPage = isType<SearchParams['perPage']>(
+        !!params.perPage,
+        params.perPage
+      )
         ? parseInt(params.perPage)
         : DEFAULT_PARAMS.perPage,
-      role = isType<SearchParams['role']>(params.role)
+      role = isType<SearchParams['role']>(!!params.role, params.role)
         ? params.role
         : DEFAULT_PARAMS.role,
-      isSelected = isType<SearchParams['isSelected']>(params.isSelected)
+      isSelected = isType<SearchParams['isSelected']>(
+        !!params.isSelected,
+        params.isSelected
+      )
         ? params.isSelected
         : DEFAULT_PARAMS.isSelected,
-      locale = isType<SearchParams['locale']>(params.locale)
+      locale = isType<SearchParams['locale']>(!!params.locale, params.locale)
         ? params.locale
         : DEFAULT_PARAMS.locale;
 

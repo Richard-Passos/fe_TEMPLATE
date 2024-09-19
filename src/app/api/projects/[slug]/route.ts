@@ -44,7 +44,10 @@ const GET = async (
 
     slug = normId(slug);
 
-    const locale = isType<SearchParams['locale']>(params.locale)
+    const locale = isType<SearchParams['locale']>(
+      !!params.locale,
+      params.locale
+    )
       ? params.locale
       : DEFAULT_PARAMS.locale;
 

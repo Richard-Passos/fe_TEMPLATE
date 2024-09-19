@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { PageTemplate } from '@/components/templates';
+import { LegalTemplate, PageTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
+import { LegalPage, Pages, Page as TPage } from '@/types';
 import { normId, values } from '@/utils';
 import { pagesApi } from '@/utils/actions';
 
@@ -17,18 +18,29 @@ type PageParams = {
 
 type PageProps = PageOwnProps & PageParams;
 
+const isValidPage = (slug: string, page: Pages): page is TPage | LegalPage => {
+  if (values(defaultPages).includes(slug)) return false;
+
+  if (!!page.type && page.type !== 'page' && page.type !== 'legal')
+    return false;
+
+  return true;
+};
+
 const Page = async ({ params: { slug, locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
 
   slug = normId(slug);
-
-  if (values(defaultPages).includes(slug)) return notFound();
 
   const res = await pagesApi.getOne({ slug, locale });
 
   if (!res.ok) return notFound();
 
   const page = res.data;
+
+  if (!isValidPage(slug, page)) return notFound();
+
+  if (page.type === 'legal') return <LegalTemplate blocks={page.blocks} />;
 
   return (
     <PageTemplate
@@ -41,13 +53,17 @@ const Page = async ({ params: { slug, locale } }: PageProps) => {
 const generateMetadata = async ({
   params: { slug, locale }
 }: PageParams): Promise<Metadata> => {
+  slug = normId(slug);
+
   const res = await pagesApi.getOne({ slug, locale });
 
   if (!res.ok) return notFound();
 
-  const { metadata } = res.data;
+  const page = res.data;
 
-  return metadata;
+  if (!isValidPage(slug, page)) return notFound();
+
+  return page.metadata;
 };
 
 const generateStaticParams = async ({ params: { locale } }: LayoutParams) => {

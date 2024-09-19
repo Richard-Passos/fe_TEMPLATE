@@ -16,37 +16,45 @@ import {
   Image,
   Link,
   ScrollAnimate,
-  Text
+  Text,
+  Title
 } from '@/components/atoms';
 import { BlockquoteProps } from '@/components/atoms/Blockquote';
 import { IconProps } from '@/components/atoms/Icon';
 import { ImageProps } from '@/components/atoms/Image';
 import { LinkProps } from '@/components/atoms/Link';
 import { TextProps } from '@/components/atoms/Text';
+import { TitleOrder, TitleProps } from '@/components/atoms/Title';
 import { List } from '@/components/molecules';
-import { ListItemProps, ListRootProps } from '@/components/molecules/List';
+import {
+  ListItemProps,
+  ListRootProps,
+  ListRootType
+} from '@/components/molecules/List';
 
 import cn from './cn';
 import exhaustiveMatchingGuard from './exhaustiveMatchingGuard';
 import { Node } from './serialize';
 
 type ElementNode =
+  | { type: 'heading'; order: TitleOrder; children: Node[] }
   | { type: 'paragraph'; children: Node[] }
+  | { type: 'small'; children: Node[] }
   | { type: 'alignText'; align: CSSProperties['textAlign']; children: Node[] }
   | { type: 'quote'; cite?: string; children: Node[] }
-  | { type: 'ul'; children: Node[] }
-  | { type: 'ol'; children: Node[] }
+  | { type: 'list'; listType: ListRootType; children: Node[] }
   | { type: 'li'; children: Node[] }
   | { type: 'link'; url: string; children: Node[] }
   | { type: 'image'; src: string; alt: string }
   | { type: 'icon'; src: string; animation?: keyof typeof scrollAnimations };
 
 type ElementProps = {
+  heading?: Partial<TitleProps>;
   paragraph?: Partial<TextProps>;
+  small?: Partial<TextProps>;
   alignText?: Partial<ComponentPropsWithoutRef<'span'>>;
   quote?: Partial<BlockquoteProps>;
-  ul?: Partial<ListRootProps>;
-  ol?: Partial<ListRootProps>;
+  list?: Partial<ListRootProps>;
   li?: Partial<ListItemProps>;
   link?: Partial<LinkProps>;
   image?: Partial<ImageProps>;
@@ -69,8 +77,30 @@ const SerializedElement = memo(
   }) => {
     const renderElement = useCallback(() => {
       switch (node.type) {
+        case 'heading':
+          return (
+            <Title
+              order={node.order}
+              {...props?.heading}
+            >
+              {children}
+            </Title>
+          );
         case 'paragraph':
           return <Text {...props?.paragraph}>{children}</Text>;
+        case 'small':
+          return (
+            <Text
+              component='small'
+              {...props?.small}
+              className={cn(
+                `text-xs text-dimmed *:text-text`,
+                props?.small?.className
+              )}
+            >
+              {children}
+            </Text>
+          );
         case 'alignText':
           return (
             <span
@@ -91,20 +121,12 @@ const SerializedElement = memo(
               {children}
             </Blockquote>
           );
-        case 'ul':
+        case 'list':
           return (
             <List.Root
-              type='unordered'
-              {...props?.ul}
-            >
-              {children}
-            </List.Root>
-          );
-        case 'ol':
-          return (
-            <List.Root
-              type='ordered'
-              {...props?.ol}
+              type={node.listType}
+              {...props?.list}
+              className={cn('p-2 pr-0', props?.list?.className)}
             >
               {children}
             </List.Root>

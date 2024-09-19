@@ -1,3 +1,3 @@
-const isType = <T>(value?: unknown): value is T => !!value;
+const isType = <T>(bool?: boolean, value?: unknown): value is T => !!bool;
 
 export default isType;

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import { ErrorPage, Locale, Page, SingleProjectPage } from '@/types';
+import { Locale, Pages } from '@/types';
 import { getTranslations, isType, normId } from '@/utils';
 
 type Params = {
@@ -16,7 +16,7 @@ const DEFAULT_PARAMS: SearchParams = {
   locale: defaultLocale.value
 };
 
-type SinglePageResponse<T extends Page | ErrorPage | SingleProjectPage> =
+type SinglePageResponse<T extends Pages> =
   | { ok: false; status: 404; message: string }
   | { ok: false; status: 500; message: string }
   | {
@@ -31,7 +31,7 @@ type SinglePageResponse<T extends Page | ErrorPage | SingleProjectPage> =
       };
     };
 
-const GET = async <T extends Page | ErrorPage | SingleProjectPage>(
+const GET = async <T extends Pages>(
   request: NextRequest,
   { params: { slug } }: { params: Params }
 ): Promise<ReturnType<typeof NextResponse.json<SinglePageResponse<T>>>> => {
@@ -44,7 +44,10 @@ const GET = async <T extends Page | ErrorPage | SingleProjectPage>(
 
     slug = normId(slug);
 
-    const locale = isType<SearchParams['locale']>(params.locale)
+    const locale = isType<SearchParams['locale']>(
+      !!params.locale,
+      params.locale
+    )
       ? params.locale
       : DEFAULT_PARAMS.locale;
 

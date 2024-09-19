@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { defaultLocale } from '@/constants/locales';
-import {
-  DeepPartial,
-  ErrorPage,
-  Locale,
-  Page,
-  SingleProjectPage
-} from '@/types';
+import { Locale, Pages } from '@/types';
 import { getTranslations, isType } from '@/utils';
 
 type SearchParams = {
@@ -29,7 +23,7 @@ type PagesResponse =
   | {
       ok: true;
       status: 200;
-      data: (Page | ErrorPage | DeepPartial<SingleProjectPage>)[];
+      data: Pages[];
       meta: {
         page: number;
         totalPages: number;
@@ -50,16 +44,22 @@ const GET = async (
       locale: searchParams.get('locale')
     };
 
-    const page = isType<SearchParams['page']>(params.page)
+    const page = isType<SearchParams['page']>(!!params.page, params.page)
         ? parseInt(params.page)
         : DEFAULT_PARAMS.page,
-      perPage = isType<SearchParams['perPage']>(params.perPage)
+      perPage = isType<SearchParams['perPage']>(
+        !!params.perPage,
+        params.perPage
+      )
         ? parseInt(params.perPage)
         : DEFAULT_PARAMS.perPage,
-      isSelected = isType<SearchParams['isSelected']>(params.isSelected)
+      isSelected = isType<SearchParams['isSelected']>(
+        !!params.isSelected,
+        params.isSelected
+      )
         ? params.isSelected
         : DEFAULT_PARAMS.isSelected,
-      locale = isType<SearchParams['locale']>(params.locale)
+      locale = isType<SearchParams['locale']>(!!params.locale, params.locale)
         ? params.locale
         : DEFAULT_PARAMS.locale;
 

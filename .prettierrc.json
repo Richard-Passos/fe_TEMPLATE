@@ -17,11 +17,9 @@
   "singleQuote": true,
   "tabWidth": 2,
   "tailwindAttributes": [
-    ".*nimations",
-    ".*lass",
-    ".*lasses",
-    ".*lassName",
-    ".*lassNames"
+    "\\w*[Aa]nimation(s)?",
+    "\\w*[Cc]lass(es)?",
+    "\\w*[Cc]lassName(s)?"
   ],
   "tailwindFunctions": ["cnv"],
   "trailingComma": "none",

@@ -7,7 +7,7 @@ const config: Config = {
     './src/app/**/*.{jsx,tsx}',
     './src/components/**/*.{jsx,tsx}',
     './src/styles/theme.{js,ts}',
-    './src/rich.{jsx,tsx}'
+    './src/utils/*.{jsx,tsx}'
   ],
   darkMode: [],
   corePlugins: {

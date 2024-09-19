@@ -1,5 +1,8 @@
 import ListItem, { ListItemProps } from './Item';
-import ListRoot, { ListMoleculeProps as ListRootProps } from './Root';
+import ListRoot, {
+  ListMoleculeProps as ListRootProps,
+  ListMoleculeType as ListRootType
+} from './Root';
 
 const List = {
   Root: ListRoot,
@@ -8,4 +11,4 @@ const List = {
 
 export default List;
 export { ListRoot, ListItem };
-export type { ListRootProps, ListItemProps };
+export type { ListRootProps, ListItemProps, ListRootType };

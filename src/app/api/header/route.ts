@@ -30,7 +30,10 @@ const GET = async (
       locale: searchParams.get('locale')
     };
 
-    const locale = isType<SearchParams['locale']>(params.locale)
+    const locale = isType<SearchParams['locale']>(
+      !!params.locale,
+      params.locale
+    )
       ? params.locale
       : DEFAULT_PARAMS.locale;
 

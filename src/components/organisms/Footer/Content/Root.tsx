@@ -2,6 +2,7 @@ import { yFullScrollAnim } from '@/animations/scroll';
 import {
   Icon,
   Lines,
+  Link,
   LocalTime,
   ScrollAnimate,
   Text,
@@ -10,14 +11,15 @@ import {
 import { Action } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
 import { serialize } from '@/utils';
-import { footerApi, getLocale, personalApi } from '@/utils/actions';
+import { footerApi, getLocale, pagesApi, personalApi } from '@/utils/actions';
 
 const FooterContentOrganism = async () => {
   const locale = await getLocale();
 
-  const [footerRes, personalRes] = await Promise.all([
+  const [footerRes, personalRes, legalPagesRes] = await Promise.all([
     footerApi.get({ locale }),
-    personalApi.get({ locale })
+    personalApi.get({ locale }),
+    pagesApi.get({ locale, type: 'legal' })
   ]);
 
   if (!footerRes.ok) return null;
@@ -26,6 +28,8 @@ const FooterContentOrganism = async () => {
     personal = personalRes.ok ? personalRes.data : undefined;
 
   const socials = personal?.socials;
+
+  const legalPages = legalPagesRes.ok ? legalPagesRes.data : [];
 
   return (
     <>
@@ -40,11 +44,7 @@ const FooterContentOrganism = async () => {
           </Title>
 
           <Title
-            className={`
-              max-w-xs break-words uppercase leading-none
-
-              sm:max-w-sm
-            `}
+            className={`max-w-xs break-words uppercase leading-none sm:max-w-sm`}
             component='h2'
             order={3}
           >
@@ -72,19 +72,11 @@ const FooterContentOrganism = async () => {
           </div>
         </section>
 
-        <div className={`
-          mt-auto flex gap-lg
-
-          max-lg:gap-x-sm
-
-          max-md:flex-col-reverse
-        `}>
+        <div
+          className={`mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse`}
+        >
           <Logo
-            className={`
-              mt-auto h-auto w-full
-
-              [&_svg]:size-full
-            `}
+            className={`mt-auto h-auto w-full [&_svg]:size-full`}
             style={{
               '--button-hover': 'transparent',
               '--button-padding-x': '0px'
@@ -94,7 +86,6 @@ const FooterContentOrganism = async () => {
 
           <section>
             <Title
-              className='mt-auto w-fit py-sm'
               component='p'
               order={6}
             >
@@ -109,47 +100,56 @@ const FooterContentOrganism = async () => {
               <LocalTime />
             </Title>
 
-            <section className='flex max-w-sm flex-col gap-xs'>
+            <section className='mt-sm flex max-w-sm flex-col gap-xs'>
               {serialize(footer.description)}
             </section>
+
+            <Text
+              className='mt-md block max-w-sm text-xs text-dimmed'
+              component='small'
+            >
+              {legalPages.map((d) => (
+                <>
+                  <Link
+                    className='text-[1em] text-inherit'
+                    href={`/${d.slug}`}
+                    key={d.slug}
+                  >
+                    {d.label}
+                  </Link>
+                  .{' '}
+                </>
+              ))}
+            </Text>
           </section>
         </div>
 
-        <section className={`
-          flex justify-center py-sm
-
-          max-sm:flex-col
-
-          sm:justify-between
-        `}>
-          <Text className={`
-            text-sm font-medium
-
-            max-sm:text-center
-          `}>
+        <section
+          className={`flex justify-center py-sm max-sm:flex-col sm:justify-between`}
+        >
+          <Text
+            className={`max-w-xs text-xs max-sm:text-center`}
+            component='small'
+          >
             {serialize(footer.copyright)}
           </Text>
 
-          <Text className={`
-            text-center text-sm font-medium
-
-            sm:text-end
-          `}>
+          <Text
+            className={`max-w-xs text-center text-xs sm:text-end`}
+            component='small'
+          >
             {serialize(footer.madeBy)}
           </Text>
         </section>
       </div>
 
-      <div className={`
-        absolute inset-[15%] flex items-center justify-center overflow-hidden
-        rounded-lg
-      `}>
+      <div
+        className={`absolute inset-[15%] flex items-center justify-center overflow-hidden rounded-lg`}
+      >
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className={`
-            top-auto h-screen !text-border opacity-60 translate-y-0
-
-            [background-size:83.333px_66.666px]
-          `} />
+          <Lines
+            className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+          />
         </ScrollAnimate>
 
         <span className='absolute inset-0 rounded-inherit border opacity-60' />

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { Icon } from '@/components/atoms';
+import { Icon, Link, Text } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
 import {
   DrawerContentProps,
@@ -28,23 +28,27 @@ const HeaderMenuOrganism = async (
 ) => {
   const locale = await getLocale();
 
-  const [headerRes, pagesRes, personalRes] = await Promise.all([
-    headerApi.get({ locale }),
-    pagesApi.get({ locale, isSelected: true }),
-    personalApi.get({ locale })
-  ]);
+  const [headerRes, selectedPagesRes, legalPagesRes, personalRes] =
+    await Promise.all([
+      headerApi.get({ locale }),
+      pagesApi.get({ locale, isSelected: true }),
+      pagesApi.get({ locale, type: 'legal' }),
+      personalApi.get({ locale })
+    ]);
 
   if (!headerRes.ok) return null;
 
   const header = headerRes.data,
     personal = personalRes.ok ? personalRes.data : undefined;
 
-  const navItems: HeaderNavProps['items'] = pagesRes.ok
-    ? pagesRes.data.map((p) => ({
+  const navItems: HeaderNavProps['items'] = selectedPagesRes.ok
+    ? selectedPagesRes.data.map((p) => ({
         href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
         label: `${p.label}`
       }))
     : [];
+
+  const legalPages = legalPagesRes.ok ? legalPagesRes.data : [];
 
   const socials = personal?.socials;
 
@@ -75,20 +79,12 @@ const HeaderMenuOrganism = async (
         bodyProps={{
           ...contentProps?.bodyProps,
           className: cn(
-            'flex grow flex-col gap-xl p-0 pt-xl',
+            'flex grow flex-col p-0 pt-xl',
             contentProps?.bodyProps?.className
           )
         }}
         className={cn(
-          `
-            flex flex-col p-[--p] pt-[calc(var(--p)*1.5)]
-
-            [--drawer-size:560px]
-
-            [--p:theme(spacing.xl)]
-
-            sm:[--p:theme(spacing.2xl)]
-          `,
+          `flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]`,
           contentProps?.className
         )}
         hasCloseButton={false}
@@ -101,7 +97,7 @@ const HeaderMenuOrganism = async (
         }}
       >
         <HeaderNav
-          className='flex-col items-start'
+          className='mb-xl flex-col items-start'
           data-autofocus
           items={navItems}
           linkProps={{
@@ -140,6 +136,27 @@ const HeaderMenuOrganism = async (
             [socials]
           )}
         </div>
+
+        {renderComp(
+          <Text
+            className='mt-md block px-md text-xs text-dimmed'
+            component='small'
+          >
+            {legalPages.map((d, i, arr) => (
+              <>
+                <Link
+                  className='text-[1em] text-inherit'
+                  href={`/${d.slug}`}
+                  key={d.slug}
+                >
+                  {d.label}
+                </Link>
+                .{i < arr.length - 1 ? ' ' : null}
+              </>
+            ))}
+          </Text>,
+          [!!legalPages.length]
+        )}
       </Drawer.Content>
     </Drawer.Root>
   );

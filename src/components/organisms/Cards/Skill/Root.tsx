@@ -31,20 +31,15 @@ const SkillCardOrganism = (
         ref={ref}
         {...props}
       >
-        <div className={`
-          relative size-full transition-transform duration-500 ease-backOut
-          transform-style-3d
-
-          group-data-[active=true]/card:rotate-y-180
-        `}>
-          <Card.Root className={`
-            absolute items-center justify-center backface-hidden
-          `}>
-            <div className={`
-              flex size-1/2 items-center justify-center rounded bg-gray-1
-
-              dark:bg-dark-6
-            `}>
+        <div
+          className={`relative size-full transition-transform duration-500 ease-backOut transform-style-3d group-data-[active=true]/card:rotate-y-180`}
+        >
+          <Card.Root
+            className={`absolute items-center justify-center backface-hidden`}
+          >
+            <div
+              className={`flex size-1/2 items-center justify-center rounded bg-gray-1 dark:bg-dark-6`}
+            >
               <Icon
                 className='size-1/2'
                 src={data.icon}
@@ -52,9 +47,9 @@ const SkillCardOrganism = (
             </div>
           </Card.Root>
 
-          <Card.Root className={`
-            absolute items-center justify-center rotate-y-180 backface-hidden
-          `}>
+          <Card.Root
+            className={`absolute items-center justify-center rotate-y-180 backface-hidden`}
+          >
             <Title
               className='w-full break-words text-center'
               component='h4'

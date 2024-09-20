@@ -30,9 +30,9 @@ const MarqueeCardOrganism = (
         <Icon src={data.icon} />
       </div>
 
-      <Card.Section className={`
-        my-auto flex flex-col items-center justify-center gap-sm
-      `}>
+      <Card.Section
+        className={`my-auto flex flex-col items-center justify-center gap-sm`}
+      >
         <Title
           className='text-center'
           component='h4'

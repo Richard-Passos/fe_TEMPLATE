@@ -29,10 +29,7 @@ const CookiesConsentOrganism = async (
     <Portal>
       <div
         className={cn(
-          `
-            pointer-events-none fixed bottom-0 right-0 z-max flex w-full
-            justify-end p-sm
-          `,
+          `pointer-events-none fixed bottom-0 right-0 z-max flex w-full justify-end p-sm`,
           className
         )}
         ref={ref}

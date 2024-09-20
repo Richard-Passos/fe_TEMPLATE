@@ -18,11 +18,7 @@ const DividerAtom = (
   return (
     <Divider
       className={cn(
-        `
-          [--divider-color:theme(colors.border)]
-
-          dark:[--divider-color:theme(colors.border)]
-        `,
+        `[--divider-color:theme(colors.border)] dark:[--divider-color:theme(colors.border)]`,
         className
       )}
       ref={ref}

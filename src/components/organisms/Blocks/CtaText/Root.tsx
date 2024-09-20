@@ -27,22 +27,13 @@ const CtaTextBlockOrganism = (
 ) => {
   return (
     <CleanLayoutBlock
-      className={cn(`
-        min-h-screen
-
-        2xl:!min-h-bounds
-      `, className)}
+      className={cn(`min-h-screen 2xl:!min-h-bounds`, className)}
       ref={ref}
       {...props}
     >
-      <Text className={`
-        relative z-10 w-9/10 max-w-screen-lg text-center text-2xl font-semibold
-        !leading-tight
-
-        lg:text-[3.25rem]
-
-        sm:text-4xl
-      `}>
+      <Text
+        className={`relative z-10 w-9/10 max-w-screen-lg text-center text-2xl font-semibold !leading-tight sm:text-4xl lg:text-[3.25rem]`}
+      >
         <TextScrollAnimate text={data.description} />
       </Text>
 

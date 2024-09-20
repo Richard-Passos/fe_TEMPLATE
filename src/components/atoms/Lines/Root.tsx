@@ -50,15 +50,7 @@ const LinesAtom = (
   return (
     <div
       className={cn(
-        `
-          pointer-events-none absolute inset-x-0 top-0 h-[--document-height]
-          bg-[linear-gradient(currentColor_.8px,transparent_.8px),linear-gradient(to_right,currentColor_.8px,transparent_.8px)]
-          bg-center text-gray-1 translate-y-[--document-top]
-
-          [background-size:250px_200px]
-
-          dark:text-dark-5
-        `,
+        `pointer-events-none absolute inset-x-0 top-0 h-[--document-height] bg-[linear-gradient(currentColor_.8px,transparent_.8px),linear-gradient(to_right,currentColor_.8px,transparent_.8px)] bg-center text-gray-1 translate-y-[--document-top] [background-size:250px_200px] dark:text-dark-5`,
         className
       )}
       ref={setRefs(ref, innerRef)}

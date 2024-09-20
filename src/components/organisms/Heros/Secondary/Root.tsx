@@ -34,11 +34,7 @@ const SecondaryHeroOrganism = (
   return (
     <Section
       className={cn(
-        `
-          min-h-fit pt-[calc(var(--header-height)+var(--section-spacing-md))]
-
-          2xl:min-h-fit
-        `,
+        `min-h-fit pt-[calc(var(--header-height)+var(--section-spacing-md))] 2xl:min-h-fit`,
         className
       )}
       forceTheme
@@ -46,19 +42,11 @@ const SecondaryHeroOrganism = (
       ref={ref}
       {...props}
     >
-      <div className={`
-        relative w-9/10 max-w-screen-lg pb-[calc(theme(spacing.2xl)*1.5)] pt-2xl
-      `}>
+      <div
+        className={`relative w-9/10 max-w-screen-lg pb-[calc(theme(spacing.2xl)*1.5)] pt-2xl`}
+      >
         <Title
-          className={`
-            relative z-10 max-w-md break-words uppercase
-
-            lg:max-w-xl
-
-            md:max-w-lg
-
-            xl:max-w-[75%]
-          `}
+          className={`relative z-10 max-w-md break-words uppercase md:max-w-lg lg:max-w-xl xl:max-w-[75%]`}
           order={1}
         >
           {serialize(data.title)}
@@ -99,18 +87,13 @@ const SecondaryHeroOrganism = (
           [data.actions?.primary ?? data.actions?.secondary]
         )}
 
-        <div className={`
-          absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center
-          justify-center overflow-hidden rounded-lg bg-white
-
-          dark:bg-dark-8
-        `}>
+        <div
+          className={`absolute inset-y-0 right-0 flex w-2/3 max-w-md items-center justify-center overflow-hidden rounded-lg bg-white dark:bg-dark-8`}
+        >
           <ScrollAnimate config={yFullScrollAnim}>
-            <Lines className={`
-              top-auto h-screen !text-border opacity-60 translate-y-0
-
-              [background-size:83.333px_66.666px]
-            `} />
+            <Lines
+              className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+            />
           </ScrollAnimate>
 
           <span className='absolute inset-0 rounded-inherit border opacity-60' />

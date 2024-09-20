@@ -54,11 +54,7 @@ const StatisticsBlockOrganism = (
         <section className='flex w-9/10 max-w-screen-lg flex-col items-center'>
           {renderComp(
             <Title
-              className={`
-                mb-md mr-auto uppercase text-dimmed
-
-                *:text-text
-              `}
+              className={`mb-md mr-auto uppercase text-dimmed *:text-text`}
               component='h3'
               order={6}
             >
@@ -67,24 +63,16 @@ const StatisticsBlockOrganism = (
             [data.subtitle]
           )}
 
-          <ul className={`
-            m-0 grid w-full list-none gap-sm p-0
-
-            sm:grid-cols-2
-          `}>
+          <ul className={`m-0 grid w-full list-none gap-sm p-0 sm:grid-cols-2`}>
             {data.items.map((data) => (
               <ScrollAnimate
                 config={ANIMATION_CONFIG.opacity}
                 key={data.slug}
               >
                 <ScrollAnimate config={ANIMATION_CONFIG.x}>
-                  <li className={`
-                    h-fit translate-x-[--x]
-
-                    even:-translate-x-[--x]
-
-                    md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl
-                  `}>
+                  <li
+                    className={`h-fit translate-x-[--x] even:-translate-x-[--x] md:even:mt-2xl md:[&:not(:last-child)]:even:-mb-2xl`}
+                  >
                     <StatisticCard data={data} />
                   </li>
                 </ScrollAnimate>

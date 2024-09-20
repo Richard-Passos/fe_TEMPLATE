@@ -28,13 +28,7 @@ const ServicesBlockImageOrganism = (
   return (
     <div
       className={cn(
-        `
-          aspect-[1/1.15] rounded-[--radius] border p-[--p]
-
-          [--p:theme(spacing.xs)]
-
-          [--radius:theme(borderRadius.xl)]
-        `,
+        `aspect-[1/1.15] rounded-[--radius] border p-[--p] [--p:theme(spacing.xs)] [--radius:theme(borderRadius.xl)]`,
         className
       )}
       ref={ref}
@@ -43,12 +37,7 @@ const ServicesBlockImageOrganism = (
       <div
         {...wrapperProps}
         className={cn(
-          `
-            relative size-full overflow-hidden
-            rounded-[calc(var(--radius)-var(--p))] bg-gray-1
-
-            dark:bg-dark-6
-          `,
+          `relative size-full overflow-hidden rounded-[calc(var(--radius)-var(--p))] bg-gray-1 dark:bg-dark-6`,
           wrapperProps?.className
         )}
       >

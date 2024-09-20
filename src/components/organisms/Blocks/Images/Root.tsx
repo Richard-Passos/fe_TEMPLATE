@@ -48,28 +48,14 @@ const ImagesBlockOrganism = (
       <ScrollAnimate config={ANIMATION_CONFIG.rotate}>
         <CleanLayoutBlock
           className={cn(
-            `
-              w-9/10 max-w-screen-lg gap-[--gap] pt-0
-
-              [--gap:theme(spacing.xs)]
-
-              md:[--x:calc(var(--smooth-x)*(var(--gap)+35%))]
-
-              sm:flex-row sm:items-start
-            `,
+            `w-9/10 max-w-screen-lg gap-[--gap] pt-0 [--gap:theme(spacing.xs)] sm:flex-row sm:items-start md:[--x:calc(var(--smooth-x)*(var(--gap)+35%))]`,
             className
           )}
           ref={ref}
           {...props}
         >
           <ImagesBlockImage
-            className={`
-              mt-[7.5%]
-
-              max-sm:hidden
-
-              md:translate-x-[--x] md:-rotate-[--rotate]
-            `}
+            className={`mt-[7.5%] max-sm:hidden md:translate-x-[--x] md:-rotate-[--rotate]`}
             data={data.items[0]}
           />
 
@@ -79,13 +65,7 @@ const ImagesBlockOrganism = (
           />
 
           <ImagesBlockImage
-            className={`
-              mt-[7.5%]
-
-              max-md:hidden
-
-              md:-translate-x-[--x] md:rotate-[--rotate]
-            `}
+            className={`mt-[7.5%] max-md:hidden md:-translate-x-[--x] md:rotate-[--rotate]`}
             data={data.items[2]}
           />
         </CleanLayoutBlock>

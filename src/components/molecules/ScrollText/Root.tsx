@@ -51,11 +51,7 @@ const ScrollTextMolecule = (
         <span className='flex w-full justify-center whitespace-nowrap'>
           {Array.from(Array(childrenCount / 2).keys()).map((n) => (
             <em
-              className={`
-                opacity-20
-
-                dark:opacity-5
-              `}
+              className={`opacity-20 dark:opacity-5`}
               key={`First ${n}`}
             >
               {text}&nbsp;
@@ -66,11 +62,7 @@ const ScrollTextMolecule = (
 
           {Array.from(Array(childrenCount / 2).keys()).map((n) => (
             <em
-              className={`
-                opacity-20
-
-                dark:opacity-5
-              `}
+              className={`opacity-20 dark:opacity-5`}
               key={`Second ${n}`}
             >
               &nbsp;{text}

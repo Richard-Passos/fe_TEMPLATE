@@ -3511,16 +3511,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-readable-tailwind@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "eslint-plugin-readable-tailwind@npm:1.8.0"
-  peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-    tailwindcss: ">=3.3.0"
-  checksum: 10c0/4d3db4cfda6b9d06a5aaafe3020572fcd5df3cc52b07010da66054a54f2b0a9998fb2ad6b868d236e557616aa798a1dfde17ad6d96b8debfc25d643ce7bc5353
-  languageName: node
-  linkType: hard
-
 "eslint-scope@npm:^7.2.2":
   version: 7.2.2
   resolution: "eslint-scope@npm:7.2.2"
@@ -6330,7 +6320,6 @@ __metadata:
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:^14.2.5"
     eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-readable-tailwind: "npm:^1.8.0"
     framer-motion: "npm:^11.3.18"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"

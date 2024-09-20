@@ -66,14 +66,7 @@ const ButBlockOrganism = (
   return (
     <CleanLayoutBlock
       className={cn(
-        `
-          grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 items-stretch
-          justify-stretch justify-items-center
-
-          [--h:100vh]
-
-          2xl:[--h:--max-h]
-        `,
+        `grid !min-h-[calc(var(--h)*1.5)] grid-rows-3 items-stretch justify-stretch justify-items-center [--h:100vh] 2xl:[--h:--max-h]`,
         className
       )}
       ref={ref}
@@ -82,19 +75,13 @@ const ButBlockOrganism = (
       <ScrollAnimate config={ANIMATION_CONFIG.x}>
         <ScrollAnimate config={ANIMATION_CONFIG.clipPath}>
           <ScrollAnimate config={ANIMATION_CONFIG.y}>
-            <div className={`
-              row-span-2 flex items-center justify-center py-md
-              translate-y-[--y]
-
-              [clip-path:inset(0_-100%_0_0)]
-            `}>
+            <div
+              className={`row-span-2 flex items-center justify-center py-md translate-y-[--y] [clip-path:inset(0_-100%_0_0)]`}
+            >
               <Text
                 {...titleProps}
                 className={cn(
-                  `
-                    relative text-[clamp(8rem,44vw,32rem)]/none font-bold
-                    uppercase tracking-tighter translate-x-[--x]
-                  `,
+                  `relative text-[clamp(8rem,44vw,32rem)]/none font-bold uppercase tracking-tighter translate-x-[--x]`,
                   titleProps?.className
                 )}
               >
@@ -102,11 +89,7 @@ const ButBlockOrganism = (
 
                 <span
                   aria-hidden
-                  className={`
-                    pointer-events-none absolute left-0 select-none
-
-                    [clip-path:--clip-path]
-                  `}
+                  className={`pointer-events-none absolute left-0 select-none [clip-path:--clip-path]`}
                 >
                   {data.title}
                 </span>

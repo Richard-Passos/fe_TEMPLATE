@@ -48,13 +48,7 @@ const ListPageBlockOrganism = (
             key={item.id}
             {...listItemProps}
             className={cn(
-              `
-                text-2xl uppercase
-
-                [--gap:theme(spacing.sm)]
-
-                sm:text-3xl
-              `,
+              `text-2xl uppercase [--gap:theme(spacing.sm)] sm:text-3xl`,
               listItemProps?.className
             )}
           >
@@ -62,29 +56,13 @@ const ListPageBlockOrganism = (
 
             <span>{item.separator}</span>
 
-            <span className={`
-              opacity-30
+            <span className={`opacity-30 dark:opacity-10`}>{item.text}</span>
 
-              dark:opacity-10
-            `}>{item.text}</span>
-
-            <span className={`
-              opacity-30
-
-              dark:opacity-10
-
-              max-sm:hidden
-            `}>
+            <span className={`opacity-30 dark:opacity-10 max-sm:hidden`}>
               {item.separator}
             </span>
 
-            <span className={`
-              opacity-30
-
-              dark:opacity-10
-
-              max-sm:hidden
-            `}>
+            <span className={`opacity-30 dark:opacity-10 max-sm:hidden`}>
               {item.text}
             </span>
 

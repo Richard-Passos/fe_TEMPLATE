@@ -36,23 +36,12 @@ const SecondaryLayoutBlockOrganism = (
       <header
         {...headerProps}
         className={cn(
-          `
-            mb-[--section-spacing-sm] flex w-9/10 max-w-screen-xl
-            justify-between gap-md
-
-            max-sm:flex-col
-
-            sm:items-end
-          `,
+          `mb-[--section-spacing-sm] flex w-9/10 max-w-screen-xl justify-between gap-md max-sm:flex-col sm:items-end`,
           headerProps?.className
         )}
       >
         <div className='flex items-center gap-xs'>
-          <span className={`
-            relative h-2 w-6
-
-            sm:w-12
-          `}>
+          <span className={`relative h-2 w-6 sm:w-12`}>
             <ScrollAnimate
               config={lineLeftScrollAnim}
               layout

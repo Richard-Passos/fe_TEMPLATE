@@ -40,21 +40,11 @@ const SingleProjectImagesTemplate = (
       <div
         {...wrapperProps}
         className={cn(
-          `
-            flex w-9/10 max-w-screen-xl gap-md
-
-            max-md:flex-col
-
-            md:justify-end
-          `,
+          `flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end`,
           wrapperProps?.className
         )}
       >
-        <section className={`
-          w-full max-w-48
-
-          md:max-w-36
-        `}>
+        <section className={`w-full max-w-48 md:max-w-36`}>
           {serialize(data.description ?? [], {
             paragraph: {
               className: 'text-dimmed *:text-text'
@@ -71,12 +61,7 @@ const SingleProjectImagesTemplate = (
         >
           {data.items.map((data) => (
             <div
-              className={`
-                relative aspect-square w-full overflow-hidden rounded-xl border
-                bg-gray-1
-
-                dark:bg-dark-6
-              `}
+              className={`relative aspect-square w-full overflow-hidden rounded-xl border bg-gray-1 dark:bg-dark-6`}
               key={data.id}
             >
               <ScrollAnimate config={imageYScrollAnim}>

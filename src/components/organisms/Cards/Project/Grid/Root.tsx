@@ -28,16 +28,12 @@ const GridProjectCardOrganism = (
       {...props}
     >
       <div className='relative flex size-full flex-col'>
-        <div className={`
-          grid grid-rows-[0fr] transition-[grid-template-rows] duration-300
-
-          group-hover/item:grid-rows-[1fr]
-        `}>
-          <div className={`
-            overflow-hidden transition-transform duration-300 translate-y-2
-
-            group-hover/item:translate-y-0
-          `}>
+        <div
+          className={`grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]`}
+        >
+          <div
+            className={`overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0`}
+          >
             <div className='px-md pb-1'>
               <Title
                 component='h4'
@@ -49,11 +45,9 @@ const GridProjectCardOrganism = (
           </div>
         </div>
 
-        <div className={`
-          relative grow overflow-hidden rounded-xl bg-gray-1
-
-          dark:bg-6
-        `}>
+        <div
+          className={`dark:bg-6 relative grow overflow-hidden rounded-xl bg-gray-1`}
+        >
           <ScrollAnimate config={imageYScrollAnim}>
             <div className='absolute h-[115%] w-full'>
               <Image
@@ -67,17 +61,12 @@ const GridProjectCardOrganism = (
           </ScrollAnimate>
         </div>
 
-        <div className={`
-          grid origin-bottom grid-rows-[0fr] transition-[grid-template-rows]
-          duration-300
-
-          group-hover/item:grid-rows-[1fr]
-        `}>
-          <div className={`
-            overflow-hidden transition-transform duration-300 translate-y-2
-
-            group-hover/item:translate-y-0
-          `}>
+        <div
+          className={`grid origin-bottom grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-hover/item:grid-rows-[1fr]`}
+        >
+          <div
+            className={`overflow-hidden transition-transform duration-300 translate-y-2 group-hover/item:translate-y-0`}
+          >
             <div className='flex gap-lg px-md pt-1'>
               <Text className='col-span-3 text-sm font-medium'>
                 {values(data.roles)

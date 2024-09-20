@@ -81,24 +81,15 @@ const ContactFormOrganism = (
           success: <div>{serialize(messages.success)}</div>
         });
       }}
-      className={cn(`
-        grid
-
-        sm:grid-cols-12
-      `, className)}
+      className={cn(`grid sm:grid-cols-12`, className)}
       defaultValues={defaultValues}
       ref={ref}
       schema={schema}
       {...props}
     >
-      <div className={`
-        relative right-px top-px -mr-px -mt-px flex h-fit items-center border
-        bg-white p-xs
-
-        dark:bg-dark-8
-
-        sm:col-span-full
-      `}>
+      <div
+        className={`relative right-px top-px -mr-px -mt-px flex h-fit items-center border bg-white p-xs dark:bg-dark-8 sm:col-span-full`}
+      >
         <Title
           component='h3'
           order={6}
@@ -115,13 +106,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='name'>
         <TextInput
-          className={`
-            relative right-px top-px -mr-px -mt-px border bg-white p-xs
-
-            dark:bg-dark-8
-
-            sm:col-span-6
-          `}
+          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
           label={fields.name.label}
           placeholder={fields.name.placeholder}
           size='md'
@@ -131,13 +116,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='email'>
         <TextInput
-          className={`
-            relative right-px top-px -mr-px -mt-px border bg-white p-xs
-
-            dark:bg-dark-8
-
-            sm:col-span-6
-          `}
+          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
           label={fields.email.label}
           placeholder={fields.email.placeholder}
           size='md'
@@ -148,13 +127,7 @@ const ContactFormOrganism = (
 
       <Form.Control name='subject'>
         <TextInput
-          className={`
-            relative right-px top-px -mr-px -mt-px border bg-white p-xs
-
-            dark:bg-dark-8
-
-            sm:col-span-6
-          `}
+          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
           label={
             <>
               {fields.subject.label}&nbsp;
@@ -169,13 +142,7 @@ const ContactFormOrganism = (
 
       <Form.Watch name='service'>
         <Select
-          className={`
-            relative right-px top-px -mr-px -mt-px border bg-white p-xs
-
-            dark:bg-dark-8
-
-            sm:col-span-6
-          `}
+          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-6`}
           clearable
           data={fields.service.data}
           label={
@@ -193,15 +160,7 @@ const ContactFormOrganism = (
       <Form.Control name='message'>
         <Textarea
           autosize
-          className={`
-            relative right-px top-px -mr-px -mt-px border bg-white p-xs
-
-            dark:bg-dark-8
-
-            md:col-span-9
-
-            sm:col-span-full
-          `}
+          className={`relative right-px top-px -mr-px -mt-px border bg-white p-xs dark:bg-dark-8 sm:col-span-full md:col-span-9`}
           label={fields.message.label}
           minRows={3}
           placeholder={fields.message.placeholder}
@@ -210,21 +169,11 @@ const ContactFormOrganism = (
         />
       </Form.Control>
 
-      <div className={`
-        size-full pb-sm pr-sm
-
-        md:col-span-3
-
-        sm:col-span-4
-      `}>
+      <div className={`size-full pb-sm pr-sm sm:col-span-4 md:col-span-3`}>
         <div className='sticky top-0 w-full'>
-          <div className={`
-            relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs
-
-            dark:bg-dark-8
-
-            md:aspect-[1.3/1] md:w-full
-          `}>
+          <div
+            className={`relative right-px top-px -mr-px -mt-px w-fit border bg-white p-xs dark:bg-dark-8 md:aspect-[1.3/1] md:w-full`}
+          >
             <Form.Submit>
               <Action
                 className='md:size-full'
@@ -232,11 +181,9 @@ const ContactFormOrganism = (
                   limit: { x: 0.2, y: 0.2 }
                 }}
               >
-                <PaperPlaneIcon className={`
-                  absolute aspect-square h-2/3
-
-                  max-md:hidden
-                `} />
+                <PaperPlaneIcon
+                  className={`absolute aspect-square h-2/3 max-md:hidden`}
+                />
 
                 <span className='md:sr-only'>
                   {serialize(fields.submit.label)}

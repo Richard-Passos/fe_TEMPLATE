@@ -48,10 +48,7 @@ const StatisticCardOrganism = (
         order={5}
         {...titleProps}
         className={cn(
-          `
-            ml-auto whitespace-pre-line text-end font-semibold leading-none
-            text-dimmed
-          `,
+          `ml-auto whitespace-pre-line text-end font-semibold leading-none text-dimmed`,
           titleProps?.className
         )}
       >

@@ -35,11 +35,9 @@ const ValueCardOrganism = (
       ref={ref}
       {...props}
     >
-      <div className={`
-        flex size-12 items-center justify-center rounded-sm bg-gray-1
-
-        dark:bg-dark-6
-      `}>
+      <div
+        className={`flex size-12 items-center justify-center rounded-sm bg-gray-1 dark:bg-dark-6`}
+      >
         <Icon
           src={data.icon}
           {...iconProps}

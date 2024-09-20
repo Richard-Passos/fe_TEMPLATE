@@ -83,10 +83,7 @@ const SectionTransitionOrganism = (
             <Bg
               {...bgProps}
               className={cn(
-                `
-                  pointer-events-auto -inset-x-[25%] z-0 aspect-[1/.25]
-                  size-auto
-                `,
+                `pointer-events-auto -inset-x-[25%] z-0 aspect-[1/.25] size-auto`,
                 reverse ? 'bottom-0 top-auto' : 'bottom-auto top-0',
                 bgProps?.className
               )}

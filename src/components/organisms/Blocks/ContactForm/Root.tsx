@@ -31,42 +31,25 @@ const ContactFormBlockOrganism = (
   return (
     <CleanLayoutBlock
       className={cn(
-        `
-          w-9/10 max-w-screen-xl gap-md
-
-          md:gap-xl
-
-          sm:flex-row sm:items-stretch
-        `,
+        `w-9/10 max-w-screen-xl gap-md sm:flex-row sm:items-stretch md:gap-xl`,
         className
       )}
       ref={ref}
       {...props}
     >
-      <div className={`
-        relative flex grow basis-48 items-center justify-center overflow-hidden
-        bg-white
-
-        dark:bg-dark-8
-
-        max-sm:hidden
-      `}>
+      <div
+        className={`relative flex grow basis-48 items-center justify-center overflow-hidden bg-white dark:bg-dark-8 max-sm:hidden`}
+      >
         <ScrollAnimate config={yFullScrollAnim}>
-          <Lines className={`
-            top-auto h-screen !text-border opacity-60 translate-y-0
-
-            [background-size:83.333px_66.666px]
-          `} />
+          <Lines
+            className={`top-auto h-screen !text-border opacity-60 translate-y-0 [background-size:83.333px_66.666px]`}
+          />
         </ScrollAnimate>
 
         <span className='absolute inset-0 rounded-inherit border opacity-60' />
       </div>
 
-      <div className={`
-        w-full max-w-screen-md grow
-
-        sm:py-xl
-      `}>
+      <div className={`w-full max-w-screen-md grow sm:py-xl`}>
         <Title
           className='max-w-md'
           order={3}

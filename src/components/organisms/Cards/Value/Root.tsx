@@ -36,7 +36,7 @@ const ValueCardOrganism = (
       {...props}
     >
       <div
-        className={`flex size-12 items-center justify-center rounded-sm bg-gray-1 dark:bg-dark-6`}
+        className={`flex size-12 items-center justify-center rounded-sm bg-gray-0 dark:bg-dark-6`}
       >
         <Icon
           src={data.icon}

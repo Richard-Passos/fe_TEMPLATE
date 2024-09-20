@@ -16,7 +16,7 @@ const CLASS_NAMES = {
     default:
       '[&_input]:[--input-bd:theme(colors.border)] [&_input:focus]:[--input-bd:--input-bd-focus] [&_input]:[--input-bg:theme(colors.white)] dark:[&_input]:[--input-bg:theme(colors.dark.6)]',
     filled:
-      '[&_input]:[--input-bg:theme(colors.gray.1)] dark:[&_input]:[--input-bg:theme(colors.dark.5)]',
+      '[&_input]:[--input-bg:theme(colors.gray.0)] dark:[&_input]:[--input-bg:theme(colors.dark.5)]',
     unstyled: ''
   }
 };

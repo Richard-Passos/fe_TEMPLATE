@@ -1,69 +1,33 @@
-'use client';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { createPolymorphicComponent } from '@mantine/core';
-import { forwardRef, useRef } from 'react';
+import Slot, { AsChildProps } from '@/components/atoms/Slot';
+import { cn } from '@/utils';
 
-import { Bg, Box, Lines } from '@/components/atoms';
-import { BgProps } from '@/components/atoms/Bg';
-import { BoxProps } from '@/components/atoms/Box';
-import { cn, setRefs } from '@/utils';
-
-import Transition, { TransitionProps } from './Transition';
-import useSetTheme from './useSetTheme';
-
-type SectionOrganismOwnProps = {
-  theme: Parameters<typeof useSetTheme>['1'];
-  forceTheme?: Parameters<typeof useSetTheme>['2'];
-  bgProps?: Partial<BgProps>;
-  hasTransition?: boolean;
-  transitionProps?: Partial<TransitionProps>;
-};
+type SectionOrganismOwnProps = {};
 
 type SectionOrganismProps = SectionOrganismOwnProps &
-  Omit<BoxProps, keyof SectionOrganismOwnProps>;
+  Omit<
+    AsChildProps<ComponentPropsWithRef<'section'>>,
+    keyof SectionOrganismOwnProps
+  >;
 
 const SectionOrganism = (
-  {
-    hasTransition = true,
-    className,
-    theme,
-    children,
-    forceTheme,
-    bgProps,
-    transitionProps,
-    ...props
-  }: SectionOrganismProps,
+  { asChild, className, ...props }: SectionOrganismProps,
   ref: SectionOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null);
-
-  useSetTheme(innerRef, theme, forceTheme);
+  const Tag = asChild ? Slot : 'section';
 
   return (
-    <Box
+    <Tag
       className={cn(
         `relative flex min-h-screen w-full flex-col items-center py-[--section-spacing-md] [--section-spacing-lg:calc(theme(spacing.2xl)*2)] [--section-spacing-md:calc(theme(spacing.xl)+theme(spacing.sm))] [--section-spacing-sm:calc(theme(spacing.lg)+theme(spacing.sm))] 2xl:min-h-bounds`,
-        hasTransition && 'pt-[--section-spacing-lg]',
         className
       )}
-      component='section'
-      data-has-transition={hasTransition}
-      data-theme={theme}
-      ref={setRefs(ref, innerRef)}
+      ref={ref}
       {...props}
-    >
-      {children}
-
-      {hasTransition && <Transition {...transitionProps} />}
-
-      <Bg {...bgProps}>
-        <Lines />
-      </Bg>
-    </Box>
+    />
   );
 };
 
-export default createPolymorphicComponent<'section', SectionOrganismProps>(
-  forwardRef(SectionOrganism)
-);
+export default forwardRef(SectionOrganism);
 export type { SectionOrganismProps };

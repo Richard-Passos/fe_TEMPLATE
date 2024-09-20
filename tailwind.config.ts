@@ -3,7 +3,6 @@ import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
-    './src/animations/active/.{js,ts}',
     './src/app/**/*.{jsx,tsx}',
     './src/components/**/*.{jsx,tsx}',
     './src/styles/theme.{js,ts}',

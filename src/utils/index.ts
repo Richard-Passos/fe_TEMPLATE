@@ -6,8 +6,6 @@ import entries from './entries';
 import exhaustiveMatchingGuard from './exhaustiveMatchingGuard';
 import getTranslations from './getTranslations';
 import isExternalUrl from './isExternalUrl';
-import isFunction from './isFunction';
-import isLocale from './isLocale';
 import isType from './isType';
 import keys from './keys';
 import normCompName from './normCompName';
@@ -20,7 +18,6 @@ import serialize from './serialize';
 import setOrRemove from './setOrRemove';
 import setRefs from './setRefs';
 import times from './times';
-import transformTemplate from './transformTemplate';
 import values from './values';
 
 const utils = {
@@ -31,8 +28,6 @@ const utils = {
   getTranslations,
   keys,
   isExternalUrl,
-  isFunction,
-  isLocale,
   isType,
   normCompName,
   normId,
@@ -46,7 +41,6 @@ const utils = {
   setOrRemove,
   setRefs,
   times,
-  transformTemplate,
   values
 };
 
@@ -59,8 +53,6 @@ export {
   getTranslations,
   keys,
   isExternalUrl,
-  isFunction,
-  isLocale,
   isType,
   normCompName,
   normId,
@@ -74,6 +66,5 @@ export {
   setOrRemove,
   setRefs,
   times,
-  transformTemplate,
   values
 };

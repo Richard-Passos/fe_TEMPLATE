@@ -10,7 +10,9 @@ type TextNode = {
   strikethrough?: boolean;
 };
 
-const SerializedText = memo(({ node }: { node: TextNode }) => {
+type SerializedTextProps = { node: TextNode };
+
+const SerializedText = ({ node }: SerializedTextProps) => {
   if (node.text === '') return <br />;
 
   let text: ReactNode = node.text;
@@ -23,8 +25,7 @@ const SerializedText = memo(({ node }: { node: TextNode }) => {
   if (node.strikethrough) text = <s>{text}</s>;
 
   return text;
-});
-SerializedText.displayName = 'SerializedText';
+};
 
-export default SerializedText;
-export type { TextNode };
+export default memo(SerializedText);
+export type { SerializedTextProps, TextNode };

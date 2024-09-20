@@ -8,7 +8,7 @@ type SearchParams = {
   page: number;
   perPage: number;
   isSelected: 'false' | 'true';
-  type?: 'page' | 'error' | 'single-project' | 'legal';
+  type?: Pages['type'];
   locale: Locale['value'];
 };
 

@@ -1,17 +1,14 @@
 import { ColorSchemeScript } from '@mantine/core';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
-import { Height, SmoothScroll } from '@/components/atoms';
+import { Height } from '@/components/atoms';
 import {
   CookiesConsent,
   Footer,
   Header,
-  Providers,
-  Toaster
+  Providers
 } from '@/components/organisms';
 import { baseUrl, locales } from '@/constants';
 import '@/styles/globals.css';
@@ -30,41 +27,28 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
   return (
     <html
-      className={`overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden`}
+      className='overflow-x-clip has-[body[data-scroll-locked]]:overflow-y-hidden'
       lang={locale}
     >
       <head>
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body
-        className={`relative flex min-h-svh flex-col items-center overflow-x-clip`}
-      >
+      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
-          <SmoothScroll>
-            <Height.Set name='header'>
-              <Header />
-            </Height.Set>
+          <Height.Set name='header'>
+            <Header />
+          </Height.Set>
 
-            <Height.Get name={['header', 'document']}>
-              <main
-                className={`relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds`}
-              >
-                {children}
-              </main>
-            </Height.Get>
+          <Height.Get name='header'>
+            <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+              {children}
+            </main>
+          </Height.Get>
 
-            <Height.Get name='document'>
-              <Footer />
-            </Height.Get>
+          <Footer />
 
-            <CookiesConsent />
-
-            <Toaster />
-
-            <Analytics />
-            <SpeedInsights />
-          </SmoothScroll>
+          <CookiesConsent />
         </Providers>
       </body>
     </html>

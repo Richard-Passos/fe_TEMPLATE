@@ -7,8 +7,10 @@ import { Select } from '@/components/atoms';
 import { GlobeIcon } from '@/components/atoms/Icon/icons';
 import { GlobeIconProps } from '@/components/atoms/Icon/icons/Globe';
 import { SelectProps } from '@/components/atoms/Select';
+import { locales } from '@/constants';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { cn, isLocale } from '@/utils';
+import { Locale } from '@/types';
+import { cn, isType } from '@/utils';
 
 type LocaleSelectMoleculeOwnProps = {
   leftSectionProps?: Partial<GlobeIconProps>;
@@ -40,7 +42,13 @@ const LocaleSelectMolecule = (
       ref={ref}
       {...props}
       onChange={(locale, options) => {
-        if (!isLocale(locale)) return;
+        if (
+          !isType<Locale['value']>(
+            locales.some((d) => d.value === locale),
+            locale
+          )
+        )
+          return;
 
         router.replace(`${pathname}`, { locale });
 

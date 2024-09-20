@@ -1,44 +1,27 @@
 import { LocaleSelect } from '@/components/molecules';
 import Logo from '@/components/organisms/Logo';
-import { defaultPages, locales } from '@/constants';
-import { getLocale, headerApi, pagesApi } from '@/utils/actions';
-
-import HeaderMenu from '../Menu';
-import HeaderNav, { HeaderNavProps } from '../Nav';
+import { locales } from '@/constants';
+import { getLocale, headerApi } from '@/utils/actions';
 
 const HeaderContentOrganism = async () => {
   const locale = await getLocale();
 
-  const [headerRes, pagesRes] = await Promise.all([
-    headerApi.get({ locale }),
-    pagesApi.get({ locale, isSelected: true })
-  ]);
+  const [headerRes] = await Promise.all([headerApi.get({ locale })]);
 
   if (!headerRes.ok) return null;
 
   const header = headerRes.data;
-
-  const navItem: HeaderNavProps['items'] = pagesRes.ok
-    ? pagesRes.data.map((p) => ({
-        href: `/${p.slug === defaultPages.home ? '' : p.slug}`,
-        label: `${p.label}`
-      }))
-    : [];
 
   return (
     <>
       <Logo className='-ml-[--button-padding-x]' />
 
       <div className={`flex items-center gap-xs max-md:hidden`}>
-        <HeaderNav items={navItem} />
-
         <LocaleSelect
           aria-label={header.locale.label}
           data={locales}
         />
       </div>
-
-      <HeaderMenu />
     </>
   );
 };

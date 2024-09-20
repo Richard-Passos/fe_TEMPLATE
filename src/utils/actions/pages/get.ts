@@ -1,13 +1,13 @@
 'use server';
 
 import { PagesResponse } from '@/app/api/pages/route';
-import { Locale } from '@/types';
+import { Locale, Pages } from '@/types';
 import { request } from '@/utils';
 
 type Params = {
   locale: Locale['value'];
-  type?: 'page' | 'error' | 'single-project' | 'legal';
-  isSelected?: boolean;
+  type?: Pages['type'];
+  isSelected?: Pages['isSelected'];
 };
 
 const pagesApiGet = async (

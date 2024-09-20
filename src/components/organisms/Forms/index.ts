@@ -1,8 +1,4 @@
-import ContactForm from './Contact';
-
-const Forms = {
-  Contact: ContactForm
-};
+const Forms = {};
 
 export default Forms;
-export { ContactForm };
+export {};

@@ -1,4 +1,4 @@
-import isFunction from './isFunction';
+import isType from './isType';
 
 // eslint-disable-next-line no-unused-vars
 type ShouldRemove<T> = (value: T[keyof T]) => boolean;
@@ -8,7 +8,12 @@ const setOrRemove = <T extends object>(
   key: keyof T,
   value: T[keyof T] | ShouldRemove<T>
 ): T => {
-  const shouldRemove = isFunction(value) ? value(obj[key]) : !value;
+  const shouldRemove = isType<ShouldRemove<typeof obj>>(
+    typeof value === 'function',
+    value
+  )
+    ? value(obj[key])
+    : !value;
 
   if (shouldRemove) {
     const { [key]: _, ...rest } = obj;

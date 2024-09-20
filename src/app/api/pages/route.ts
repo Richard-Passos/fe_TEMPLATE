@@ -8,6 +8,7 @@ type SearchParams = {
   page: number;
   perPage: number;
   isSelected: 'false' | 'true';
+  type?: 'page' | 'error' | 'single-project' | 'legal';
   locale: Locale['value'];
 };
 
@@ -15,6 +16,7 @@ const DEFAULT_PARAMS: SearchParams = {
   page: 1,
   perPage: 5,
   isSelected: 'false',
+  type: undefined,
   locale: defaultLocale.value
 };
 
@@ -41,6 +43,7 @@ const GET = async (
       page: searchParams.get('page'),
       perPage: searchParams.get('per-page'),
       isSelected: searchParams.get('is-selected'),
+      type: searchParams.get('type'),
       locale: searchParams.get('locale')
     };
 
@@ -59,6 +62,9 @@ const GET = async (
       )
         ? params.isSelected
         : DEFAULT_PARAMS.isSelected,
+      type = isType<SearchParams['type']>(!!params.type, params.type)
+        ? params.type
+        : DEFAULT_PARAMS.type,
       locale = isType<SearchParams['locale']>(!!params.locale, params.locale)
         ? params.locale
         : DEFAULT_PARAMS.locale;
@@ -68,6 +74,11 @@ const GET = async (
     let results = await t.pages();
 
     if (isSelected === 'true') results = results.filter((d) => d.isSelected);
+
+    if (type)
+      results = results.filter(
+        (d) => d.type === type || (type === 'page' && !d.type)
+      );
 
     const totalResults = results.length;
 

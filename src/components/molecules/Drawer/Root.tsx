@@ -23,7 +23,7 @@ type DrawerMoleculeProps = DrawerMoleculeOwnProps &
 
 const DrawerMolecule = forwardRef(
   (
-    { portalProps, withinPortal, ...props }: DrawerMoleculeProps,
+    { portalProps, withinPortal = true, ...props }: DrawerMoleculeProps,
     ref: DrawerMoleculeProps['ref']
   ) => {
     const { value, setFalse } = useBooleanContext(),
@@ -34,7 +34,10 @@ const DrawerMolecule = forwardRef(
     useUpdateEffect(setFalse, [setFalse, pathname]);
 
     return (
-      <Portal {...portalProps}>
+      <Portal
+        withinPortal={withinPortal}
+        {...portalProps}
+      >
         <DrawerRoot
           data-state={dataState}
           onClose={setFalse}

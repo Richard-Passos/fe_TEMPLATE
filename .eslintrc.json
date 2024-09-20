@@ -9,6 +9,7 @@
   "rules": {
     "react/jsx-sort-props": "warn",
     "react/prop-types": "off",
+    "no-unused-vars": ["warn", { "varsIgnorePattern": "_" }],
     "react/react-in-jsx-scope": "off",
     "no-restricted-imports": [
       "error",

@@ -12,7 +12,7 @@ type SmoothScrollAtomProps = SmoothScrollAtomOwnProps &
   >;
 
 const SmoothScrollAtom = (
-  { className, ...props }: SmoothScrollAtomProps,
+  props: SmoothScrollAtomProps,
   ref: SmoothScrollAtomProps['ref']
 ) => {
   return (

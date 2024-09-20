@@ -15,7 +15,7 @@ type CatalogSelectFilterMoleculeProps = CatalogSelectFilterMoleculeOwnProps &
   Omit<SelectProps, keyof CatalogSelectFilterMoleculeOwnProps>;
 
 const CatalogSelectFilterMolecule = (
-  { query, className, ...props }: CatalogSelectFilterMoleculeProps,
+  { query, ...props }: CatalogSelectFilterMoleculeProps,
   ref: CatalogSelectFilterMoleculeProps['ref']
 ) => {
   const searchParams = useSearchParams(),

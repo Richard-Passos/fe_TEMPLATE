@@ -57,9 +57,7 @@ const pages = async (): Promise<Pages[]> => {
         id: 'hero',
         type: 'Primary',
         theme: 'light',
-        scrollToProps: {
-          target: '#selectedProjects'
-        },
+        scrollTarget: '#selectedProjects',
         data: {
           title: [
             {
@@ -189,7 +187,7 @@ const pages = async (): Promise<Pages[]> => {
                 ]
               }
             ],
-            items: projects.map(({ year, ...d }) => d)
+            items: projects.map(({ year: _, ...d }) => d)
           }
         },
         {
@@ -549,9 +547,7 @@ const pages = async (): Promise<Pages[]> => {
         id: 'hero',
         type: 'Primary',
         theme: 'light',
-        scrollToProps: {
-          target: '#selectedProjects'
-        },
+        scrollTarget: '#selectedProjects',
         data: {
           title: [
             {

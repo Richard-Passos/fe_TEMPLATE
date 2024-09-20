@@ -83,7 +83,7 @@ const ActionMolecule = (
   };
 
   if (props.as === 'link') {
-    const { as, ...rest } = props;
+    const { as: _, ...rest } = props;
 
     return (
       <MagneticRoot {...magneticProps}>
@@ -95,7 +95,7 @@ const ActionMolecule = (
     );
   }
 
-  const { as, ...rest } = props;
+  const { as: _, ...rest } = props;
 
   return (
     <MagneticRoot {...magneticProps}>

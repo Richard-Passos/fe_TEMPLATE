@@ -2,11 +2,7 @@ import { forwardRef } from 'react';
 
 import { Icon, Link, Text } from '@/components/atoms';
 import { Action, Drawer, LocaleSelect } from '@/components/molecules';
-import {
-  DrawerContentProps,
-  DrawerRootProps,
-  DrawerTriggerProps
-} from '@/components/molecules/Drawer';
+import { DrawerRootProps } from '@/components/molecules/Drawer';
 import { defaultPages, locales } from '@/constants';
 import { cn, renderComp } from '@/utils';
 import { getLocale, headerApi, pagesApi, personalApi } from '@/utils/actions';
@@ -14,16 +10,13 @@ import { getLocale, headerApi, pagesApi, personalApi } from '@/utils/actions';
 import HeaderNav, { HeaderNavProps } from '../Nav';
 import HeaderMenuTrigger from './Trigger';
 
-type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>> & {
-  triggerProps?: Partial<DrawerTriggerProps>;
-  contentProps?: Partial<DrawerContentProps>;
-};
+type HeaderMenuOrganismOwnProps = Partial<Pick<DrawerRootProps, 'trigger'>>;
 
 type HeaderMenuOrganismProps = HeaderMenuOrganismOwnProps &
   Omit<DrawerRootProps, keyof HeaderMenuOrganismOwnProps>;
 
 const HeaderMenuOrganism = async (
-  { className, triggerProps, contentProps, ...props }: HeaderMenuOrganismProps,
+  props: HeaderMenuOrganismProps,
   ref: HeaderMenuOrganismProps['ref']
 ) => {
   const locale = await getLocale();
@@ -74,27 +67,17 @@ const HeaderMenuOrganism = async (
       }
     >
       <Drawer.Content
-        title={header.menu.title}
-        {...contentProps}
         bodyProps={{
-          ...contentProps?.bodyProps,
-          className: cn(
-            'flex grow flex-col p-0 pt-xl',
-            contentProps?.bodyProps?.className
-          )
+          className: 'flex grow flex-col p-0 pt-xl'
         }}
         className={cn(
-          `flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]`,
-          contentProps?.className
+          `flex flex-col p-[--p] pt-[calc(var(--p)*1.5)] [--drawer-size:560px] [--p:theme(spacing.xl)] sm:[--p:theme(spacing.2xl)]`
         )}
         hasCloseButton={false}
         headerProps={{
-          ...contentProps?.headerProps,
-          className: cn(
-            'relative border border-x-0 border-t-0 py-0',
-            contentProps?.headerProps?.className
-          )
+          className: 'relative border border-x-0 border-t-0 py-0'
         }}
+        title={header.menu.title}
       >
         <HeaderNav
           className='mb-xl flex-col items-start'

@@ -1,12 +1,10 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { imageYScrollAnim } from '@/animations/scroll';
 import { Image, ScrollAnimate } from '@/components/atoms';
 import { ImageProps } from '@/components/atoms/Image';
-import { TextProps } from '@/components/atoms/Text';
 import { Section } from '@/components/organisms';
 import { SectionProps } from '@/components/organisms/Section';
-import { cn } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
 type SingleProjectImagesTemplateOwnProps = {
@@ -14,22 +12,13 @@ type SingleProjectImagesTemplateOwnProps = {
     description?: Node[];
     items: ({ id: string } & Pick<ImageProps, 'src' | 'alt'>)[];
   };
-  wrapperProps?: Partial<ComponentPropsWithRef<'div'>>;
-  descriptionProps?: Partial<TextProps>;
-  imagesProps?: Partial<ComponentPropsWithRef<'div'>>;
 };
 
 type SingleProjectImagesTemplateProps = SingleProjectImagesTemplateOwnProps &
   Omit<SectionProps, keyof SingleProjectImagesTemplateOwnProps>;
 
 const SingleProjectImagesTemplate = (
-  {
-    data,
-    wrapperProps,
-    descriptionProps,
-    imagesProps,
-    ...props
-  }: SingleProjectImagesTemplateProps,
+  { data, ...props }: SingleProjectImagesTemplateProps,
   ref: SingleProjectImagesTemplateProps['ref']
 ) => {
   return (
@@ -37,14 +26,8 @@ const SingleProjectImagesTemplate = (
       ref={ref}
       {...props}
     >
-      <div
-        {...wrapperProps}
-        className={cn(
-          `flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end`,
-          wrapperProps?.className
-        )}
-      >
-        <section className={`w-full max-w-48 md:max-w-36`}>
+      <div className='flex w-9/10 max-w-screen-xl gap-md max-md:flex-col md:justify-end'>
+        <section className='w-full max-w-48 md:max-w-36'>
           {serialize(data.description ?? [], {
             paragraph: {
               className: 'text-dimmed *:text-text'
@@ -52,16 +35,12 @@ const SingleProjectImagesTemplate = (
           })}
         </section>
 
-        <div
-          {...imagesProps}
-          className={cn(
-            'flex max-w-screen-md grow flex-col items-center gap-xs',
-            imagesProps?.className
-          )}
-        >
+        <div className='flex max-w-screen-md grow flex-col items-center gap-xs'>
           {data.items.map((data) => (
             <div
-              className={`relative aspect-square w-full overflow-hidden rounded-xl border bg-gray-1 dark:bg-dark-6`}
+              className={
+                'relative aspect-square w-full overflow-hidden rounded-xl border bg-gray-1 dark:bg-dark-6'
+              }
               key={data.id}
             >
               <ScrollAnimate config={imageYScrollAnim}>

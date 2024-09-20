@@ -1,6 +1,6 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
-import { Lines, Text } from '@/components/atoms';
+import { Lines } from '@/components/atoms';
 import { ScrollToProps } from '@/components/atoms/ScrollTo';
 import Section, { SectionProps } from '@/components/organisms/Section';
 import { cn } from '@/utils';
@@ -18,7 +18,7 @@ type PrimaryHeroOrganismOwnProps = {
     left: PrimaryHeroExtraProps['children'];
     right: PrimaryHeroExtraProps['children'];
   };
-  scrollToProps?: Partial<ScrollToProps>;
+  scrollTarget?: ScrollToProps['target'];
 };
 
 type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
@@ -29,7 +29,7 @@ const PrimaryHeroOrganism = (
     data,
     className,
     bgProps,
-    scrollToProps,
+    scrollTarget,
     ...props
   }: PrimaryHeroOrganismProps,
   ref: PrimaryHeroOrganismProps['ref']
@@ -94,11 +94,8 @@ const PrimaryHeroOrganism = (
       </div>
 
       <ScrollIndicator
-        {...scrollToProps}
-        className={cn(
-          `absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden`,
-          scrollToProps?.className
-        )}
+        className='absolute bottom-[calc(var(--inset)*1.5)] right-[calc(var(--inset)*1.5)] max-sm:hidden'
+        target={scrollTarget}
       />
     </Section>
   );

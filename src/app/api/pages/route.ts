@@ -39,7 +39,7 @@ const GET = async (
   try {
     const { searchParams } = request.nextUrl;
 
-    const params: { [K in keyof SearchParams]: string | null } = {
+    const params: Record<keyof SearchParams, string | null> = {
       page: searchParams.get('page'),
       perPage: searchParams.get('per-page'),
       isSelected: searchParams.get('is-selected'),

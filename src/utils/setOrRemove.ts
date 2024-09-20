@@ -1,5 +1,6 @@
 import isFunction from './isFunction';
 
+// eslint-disable-next-line no-unused-vars
 type ShouldRemove<T> = (value: T[keyof T]) => boolean;
 
 const setOrRemove = <T extends object>(

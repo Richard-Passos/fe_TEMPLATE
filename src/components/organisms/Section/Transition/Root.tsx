@@ -12,9 +12,7 @@ const HEIGHT = 5, // rem
   INITIAL_RADIUS = '20%',
   FINAL_RADIUS = '50%';
 
-const ANIMATION_CONFIG: {
-  [key in 'y' | 'radius']: ScrollAnimateConfigOptions;
-} = {
+const ANIMATION_CONFIG: Record<'y' | 'radius', ScrollAnimateConfigOptions> = {
   y: {
     scrollConfig: {
       offset: ['0 1', '0 0']

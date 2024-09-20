@@ -11,7 +11,7 @@ type HeaderThemeOrganismProps = HeaderThemeOrganismOwnProps &
   Omit<SlotProps, keyof HeaderThemeOrganismOwnProps>;
 
 const HeaderThemeOrganism = (
-  { className, ...props }: HeaderThemeOrganismProps,
+  props: HeaderThemeOrganismProps,
   ref: HeaderThemeOrganismProps['ref']
 ) => {
   const { theme } = useThemeContext();

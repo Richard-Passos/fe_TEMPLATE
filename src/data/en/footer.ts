@@ -44,6 +44,9 @@ const footer = async (): Promise<Footer> => {
             text: 'Richard'
           }
         ]
+      },
+      {
+        text: '.'
       }
     ],
     copyright: [
@@ -52,12 +55,15 @@ const footer = async (): Promise<Footer> => {
       },
       {
         type: 'link',
-        url: '/legal',
+        url: 'https://github.com/Richard-Passos',
         children: [
           {
-            text: 'legal'
+            text: 'Richard Passos'
           }
         ]
+      },
+      {
+        text: '.'
       }
     ]
   };

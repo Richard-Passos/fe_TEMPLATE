@@ -26,7 +26,7 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
           </section>
         </header>
 
-        <div className='w-full max-w-screen-sm'>
+        <section className={`mt-xl w-full max-w-screen-sm first:*:mt-0`}>
           {serialize(blocks.data, {
             heading: {
               className: 'mt-xl mb-sm data-[order="2"]:!text-2xl'
@@ -41,7 +41,7 @@ const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
               className: '[p+&]:mt-4'
             }
           })}
-        </div>
+        </section>
 
         {renderComp(
           <footer className='mt-xl w-full max-w-screen-sm'>

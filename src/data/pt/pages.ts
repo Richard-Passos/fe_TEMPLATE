@@ -885,7 +885,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Trabalho',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Explore a missão, os serviços, os trabalhos selecionados, as habilidades e os valores de Richard como desenvolvedor full stack dedicado a oferecer soluções excepcionais.'
       }
     },
     {
@@ -1055,7 +1055,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Sobre',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Explore a jornada de um desenvolvedor full stack: minha história, hobbies, missão, valores e personalidade.'
       }
     },
     {
@@ -1192,7 +1192,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Contato',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Entre em contato! Fale comigo através do formulário ou e-mail para discutir suas necessidades de projeto e explorar meus serviços de desenvolvimento full stack.'
       }
     },
     {
@@ -1279,7 +1279,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Não Encontrado',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Ops! A página que você está procurando não existe. Explore meu portfólio para saber mais sobre meu trabalho como desenvolvedor full stack.'
       }
     },
     {
@@ -1823,7 +1823,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Richard Passos Portfolio tomará todas as medidas razoavelmente necessárias para garantir que seus dados sejam tratados de forma segura e de acordo com esta Política de Privacidade, e nenhuma transferência dos seus Dados Pessoais ocorrerá para uma organização ou país, a menos que haja controles adequados em vigor, incluindo a segurança dos seus dados e outras informações pessoais.'
+                text: 'Richard Passos’ Portfolio tomará todas as medidas razoavelmente necessárias para garantir que seus dados sejam tratados de forma segura e de acordo com esta Política de Privacidade, e nenhuma transferência dos seus Dados Pessoais ocorrerá para uma organização ou país, a menos que haja controles adequados em vigor, incluindo a segurança dos seus dados e outras informações pessoais.'
               }
             ]
           },
@@ -2495,7 +2495,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Política de Privacidade',
-        description: ''
+        description:
+          'Explore nossa política de privacidade, que descreve como protegemos seus dados e garantimos seus direitos enquanto você utiliza nossos serviços.'
       }
     },
     {
@@ -3208,7 +3209,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Termos e Condições',
-        description: ''
+        description:
+          'Explore os Termos e Condições para utilizar o portfólio de Richard Passos, garantindo transparência e segurança em sua experiência.'
       }
     },
     {
@@ -3263,7 +3265,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               { text: 'As informações fornecidas por ', bold: false },
-              { text: 'Richard Passos Portfolio', bold: true },
+              { text: 'Richard Passos’ Portfolio', bold: true },
               { text: ' (“Empresa”, “nós”, “nosso”, “nos”) em ', bold: false },
               { text: 'richardp.vercel.app', bold: true },
               {
@@ -3396,7 +3398,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Embora tenhamos feito todo o possível para garantir que as informações contidas neste site foram obtidas a partir de fontes confiáveis, Richard Passos Portfolio não é responsável por quaisquer erros ou omissões ou pelos resultados obtidos com o uso dessas informações. Todas as informações neste site são fornecidas “como estão”, sem garantia de completude, precisão, pontualidade ou dos resultados obtidos com o uso dessas informações, e sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando a garantias de desempenho, comerciabilidade e adequação para um propósito específico.',
+                text: 'Embora tenhamos feito todo o possível para garantir que as informações contidas neste site foram obtidas a partir de fontes confiáveis, Richard Passos’ Portfolio não é responsável por quaisquer erros ou omissões ou pelos resultados obtidos com o uso dessas informações. Todas as informações neste site são fornecidas “como estão”, sem garantia de completude, precisão, pontualidade ou dos resultados obtidos com o uso dessas informações, e sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando a garantias de desempenho, comerciabilidade e adequação para um propósito específico.',
                 bold: false
               }
             ]
@@ -3405,7 +3407,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Em nenhum caso Richard Passos Portfolio, suas parcerias ou corporações relacionadas, ou os parceiros, agentes ou empregados desses serão responsáveis por qualquer decisão tomada ou ação realizada com base nas informações neste Site ou por quaisquer danos consequenciais, especiais ou similares, mesmo que informados da possibilidade desses danos.',
+                text: 'Em nenhum caso Richard Passos’ Portfolio, suas parcerias ou corporações relacionadas, ou os parceiros, agentes ou empregados desses serão responsáveis por qualquer decisão tomada ou ação realizada com base nas informações neste Site ou por quaisquer danos consequenciais, especiais ou similares, mesmo que informados da possibilidade desses danos.',
                 bold: false
               }
             ]
@@ -3423,7 +3425,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Todos os logos e marcas registradas de terceiros referenciados em richardp.vercel.app são marcas e logos de seus respectivos proprietários. Qualquer inclusão de tais marcas ou logos não implica ou constitui qualquer aprovação, endosse ou patrocínio de Richard Passos Portfolio por esses proprietários.',
+                text: 'Todos os logos e marcas registradas de terceiros referenciados em richardp.vercel.app são marcas e logos de seus respectivos proprietários. Qualquer inclusão de tais marcas ou logos não implica ou constitui qualquer aprovação, endosse ou patrocínio de Richard Passos’ Portfolio por esses proprietários.',
                 bold: false
               }
             ]
@@ -3477,7 +3479,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Isenção de Garantia',
-        description: ''
+        description:
+          'Explore nossa isenção de garantia, que delineia os limites de responsabilidade e obrigações ao usar o portfólio de Richard Passos. Transparência para sua tranquilidade.'
       }
     },
     {
@@ -3754,7 +3757,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Política de Cookies',
-        description: ''
+        description:
+          'Descubra como usamos cookies para aprimorar sua experiência no Portfólio de Richard Passos. Aprenda sobre suas opções e nosso compromisso com a privacidade.'
       }
     }
   ];

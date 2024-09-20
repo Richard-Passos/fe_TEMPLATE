@@ -891,7 +891,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Work',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Explore Richard’s mission, services, selected works, skills, and values as a full stack developer dedicated to delivering exceptional solutions.'
       }
     },
     {
@@ -1062,7 +1062,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'About',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Explore the journey of a full stack developer: my background, hobbies, mission, values, and personality.'
       }
     },
     {
@@ -1199,7 +1199,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Contact',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Get in touch! Contact me through the form or email to discuss your project needs and explore my full stack development services.'
       }
     },
     {
@@ -1287,7 +1287,7 @@ const pages = async (): Promise<Pages[]> => {
       metadata: {
         title: 'Not Found',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum mollitia eius? Voluptatem, ipsam quo.'
+          'Oops! The page you’re looking for doesn’t exist. Explore my portfolio to find out more about my work as a full stack developer.'
       }
     },
     {
@@ -1372,13 +1372,13 @@ const pages = async (): Promise<Pages[]> => {
           },
           {
             type: 'paragraph',
-            children: [{ text: 'Welcome to Richard Passos Portfolio.' }]
+            children: [{ text: 'Welcome to Richard Passos’ Portfolio.' }]
           },
           {
             type: 'paragraph',
             children: [
               {
-                text: 'Richard Passos Portfolio ("us", "we", or "our") operates '
+                text: 'Richard Passos’ Portfolio ("us", "we", or "our") operates '
               },
               { text: 'richardp.vercel.app', bold: true },
               { text: ' (hereinafter referred to as "Service").' }
@@ -1419,7 +1419,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'SERVICE means the richardp.vercel.app website operated by Richard Passos Portfolio.'
+                text: 'SERVICE means the richardp.vercel.app website operated by Richard Passos’ Portfolio.'
               }
             ]
           },
@@ -1674,7 +1674,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Richard Passos Portfolio uses the collected data for various purposes:'
+                text: 'Richard Passos’ Portfolio uses the collected data for various purposes:'
               }
             ]
           },
@@ -1822,7 +1822,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Richard Passos Portfolio will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.'
+                text: 'Richard Passos’ Portfolio will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.'
               }
             ]
           },
@@ -2477,7 +2477,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Privacy Policy',
-        description: ''
+        description:
+          'Explore our privacy policy outlining how we protect your data and ensure your rights while you use our services.'
       }
     },
     {
@@ -2520,7 +2521,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               { text: 'Welcome to ' },
-              { text: 'Richard Passos Portfolio', bold: true },
+              { text: 'Richard Passos’ Portfolio', bold: true },
               { text: ' (“Company”, “we”, “our”, “us”)!' }
             ]
           },
@@ -2532,7 +2533,7 @@ const pages = async (): Promise<Pages[]> => {
               },
               { text: 'richardp.vercel.app', bold: true },
               { text: ' (together or individually “Service”) operated by ' },
-              { text: 'Richard Passos Portfolio', bold: true },
+              { text: 'Richard Passos’ Portfolio', bold: true },
               { text: '.' }
             ]
           },
@@ -2601,7 +2602,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Content found on or through this Service are the property of Richard Passos Portfolio or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.'
+                text: 'Content found on or through this Service are the property of Richard Passos’ Portfolio or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.'
               }
             ]
           },
@@ -2783,7 +2784,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Richard Passos Portfolio and its licensors. Service is protected by copyright, trademark, and other laws of and foreign countries. Our trademarks may not be used in connection with any product or service without the prior written consent of Richard Passos Portfolio.'
+                text: 'Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Richard Passos’ Portfolio and its licensors. Service is protected by copyright, trademark, and other laws of and foreign countries. Our trademarks may not be used in connection with any product or service without the prior written consent of Richard Passos’ Portfolio.'
               }
             ]
           },
@@ -2918,7 +2919,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Our Service may contain links to third party web sites or services that are not owned or controlled by Richard Passos Portfolio.'
+                text: 'Our Service may contain links to third party web sites or services that are not owned or controlled by Richard Passos’ Portfolio.'
               }
             ]
           },
@@ -2926,7 +2927,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'Richard Passos Portfolio has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.'
+                text: 'Richard Passos’ Portfolio has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.'
               }
             ]
           },
@@ -3190,7 +3191,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Terms and Conditions',
-        description: ''
+        description:
+          'Explore the Terms and Conditions for using Richard Passos’ portfolio, ensuring transparency and security in your experience.'
       }
     },
     {
@@ -3232,7 +3234,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               { text: 'The information provided by ', bold: false },
-              { text: 'Richard Passos Portfolio', bold: true },
+              { text: 'Richard Passos’ Portfolio', bold: true },
               { text: ' (“Company”, “we”, “our”, “us”) on ', bold: false },
               { text: 'richardp.vercel.app', bold: true },
               {
@@ -3361,7 +3363,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, Richard Passos Portfolio is not responsible for any errors or omissions or for the results obtained from the use of this information. All information in this site is provided “as is”, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.',
+                text: 'While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, Richard Passos’ Portfolio is not responsible for any errors or omissions or for the results obtained from the use of this information. All information in this site is provided “as is”, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.',
                 bold: false
               }
             ]
@@ -3370,7 +3372,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'In no event will Richard Passos Portfolio, its related partnerships or corporations, or the partners, agents or employees thereof be liable to you or anyone else for any decision made or action taken in reliance on the information in this Site or for any consequential, special or similar damages, even if advised of the possibility of such damages.',
+                text: 'In no event will Richard Passos’ Portfolio, its related partnerships or corporations, or the partners, agents or employees thereof be liable to you or anyone else for any decision made or action taken in reliance on the information in this Site or for any consequential, special or similar damages, even if advised of the possibility of such damages.',
                 bold: false
               }
             ]
@@ -3384,7 +3386,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'All logos and trademarks of third parties referenced on richardp.vercel.app are the trademarks and logos of their respective owners. Any inclusion of such trademarks or logos does not imply or constitute any approval, endorsement or sponsorship of Richard Passos Portfolio by such owners.',
+                text: 'All logos and trademarks of third parties referenced on richardp.vercel.app are the trademarks and logos of their respective owners. Any inclusion of such trademarks or logos does not imply or constitute any approval, endorsement or sponsorship of Richard Passos’ Portfolio by such owners.',
                 bold: false
               }
             ]
@@ -3438,7 +3440,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Disclaimer',
-        description: ''
+        description:
+          'Explore our disclaimer outlining the limits of liability and responsibilities in using Richard Passos’ portfolio. Transparency for your peace of mind.'
       }
     },
     {
@@ -3472,7 +3475,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'In this Cookie Policy we will provide you with detailed information on how Richard Passos Portfolio (hereinafter - the “we” or “our”), shall undertake to ensure the security of personal information and the protection of rights of the visitors and users of the websites (hereinafter - the “Visitors”, “You”) while you use our websites including but not limited to richardp.vercel.app (hereinafter - the “Site”) and the content on it.'
+                text: 'In this Cookie Policy we will provide you with detailed information on how Richard Passos’ Portfolio (hereinafter - the “we” or “our”), shall undertake to ensure the security of personal information and the protection of rights of the visitors and users of the websites (hereinafter - the “Visitors”, “You”) while you use our websites including but not limited to richardp.vercel.app (hereinafter - the “Site”) and the content on it.'
               }
             ]
           },
@@ -3713,7 +3716,8 @@ const pages = async (): Promise<Pages[]> => {
       },
       metadata: {
         title: 'Cookies Policy',
-        description: ''
+        description:
+          'Discover how we use cookies to enhance your experience on Richard Passos’ Portfolio. Learn about your choices and our commitment to privacy.'
       }
     }
   ];

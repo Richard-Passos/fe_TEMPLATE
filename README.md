@@ -1,10 +1,10 @@
-<h1 align="center">🗄️ My Portfolio</h1>
+<h1 align="center">🗄️ Pixel Art</h1>
 
 <br>
 
 ## 🚀 Run project
 
-Visit the live [website](https://richardp.vercel.app)
+Visit the live [website](https://fepixelart.app)
 
 <br>
 
@@ -60,4 +60,4 @@ Meet the talented individuals who brought this masterpiece to life:
 
 ## 🎯 Status
 
-Finished
+In progeess

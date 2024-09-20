@@ -29,7 +29,7 @@ const themeOverride = createTheme({
       '#b1b1b1',
       '#97999b',
       '#878a8d',
-      '#7e8389',
+      '#4e5760',
       '#6b7076',
       '#5e646a',
       '#4e5760'

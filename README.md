@@ -4,7 +4,7 @@
 
 ## 🚀 Run project
 
-Visit the live [website](https://fepixelart.app)
+Visit the live [website](https://fepixelart.vercel.app)
 
 <br>
 

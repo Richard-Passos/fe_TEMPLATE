@@ -10,7 +10,7 @@ Visit the live [website](https://richardp.vercel.app)
 
 ## 📝 Description
 
-Welcome to my personal portfolio! This project highlights my journey and skills as a full stack developer.
+A missing portfolio limits opportunities; I designed and built a personal portfolio to showcase skills, projects, and experience, offering a professional platform to attract potential clients and employers.
 
 <br/>
 

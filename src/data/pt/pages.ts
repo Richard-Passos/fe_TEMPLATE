@@ -3511,32 +3511,34 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'In this Cookie Policy we will provide you with detailed information on how Richard Passos Portfolio (hereinafter - the “we” or “our”), shall undertake to ensure the security of personal information and the protection of rights of the visitors and users of the websites (hereinafter - the “Visitors”, “You”) while you use our websites including but not limited to richardp.vercel.app (hereinafter - the “Site”) and the content on it.'
+                text: 'Nesta Política de Cookies, forneceremos informações detalhadas sobre como o Portfólio Richard Passos (doravante - "nós" ou "nosso") se comprometerá a garantir a segurança das informações pessoais e a proteção dos direitos dos visitantes e usuários dos sites (doravante - "Visitantes", "Você") enquanto você utiliza nossos sites, incluindo, mas não se limitando a richardp.vercel.app (doravante - o "Site") e o conteúdo nele.'
               }
             ]
           },
           {
             type: 'heading',
             order: 2,
-            children: [{ text: '1. What is a cookie?' }]
+            children: [{ text: '1. O que é um cookie?' }]
           },
           {
             type: 'paragraph',
             children: [
               {
-                text: 'A cookie is a small file placed onto your device that enables our Site features and functionality. For example, cookies can enable us to identify your device and secure your access to the Site. Cookies also allow the Site to remember information about your browsing on the Site for a while and to recognize you the next time you visit the Site. All this allows us to give you the opportunity to use the Site comfortably and to make the Site even more user-friendly.'
+                text: 'Um cookie é um pequeno arquivo colocado em seu dispositivo que permite os recursos e funcionalidades do nosso Site. Por exemplo, os cookies podem nos permitir identificar seu dispositivo e proteger seu acesso ao Site. Os cookies também permitem que o Site lembre informações sobre sua navegação por um tempo e o reconheça na próxima vez que você visitar o Site. Tudo isso nos permite oferecer a você a oportunidade de usar o Site com conforto e torná-lo ainda mais amigável.'
               }
             ]
           },
           {
             type: 'heading',
             order: 2,
-            children: [{ text: '2. Why do we use cookies?' }]
+            children: [{ text: '2. Por que usamos cookies?' }]
           },
           {
             type: 'paragraph',
             children: [
-              { text: 'We use cookies for the following main purposes:' }
+              {
+                text: 'Usamos cookies para os seguintes principais propósitos:'
+              }
             ]
           },
           {
@@ -3547,7 +3549,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'To ensure efficient and safe functioning of the Site. We use cookies to enable and support our security features, and to help us detect malicious activity on our Site.'
+                    text: 'Para garantir o funcionamento eficiente e seguro do Site. Usamos cookies para habilitar e suportar nossos recursos de segurança e para nos ajudar a detectar atividades maliciosas em nosso Site.'
                   }
                 ]
               },
@@ -3555,7 +3557,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'To understand, improve, and research products, features, and services, including when you access our Site from other websites or devices such as your computer or your mobile device.'
+                    text: 'Para entender, melhorar e pesquisar produtos, recursos e serviços, incluindo quando você acessa nosso Site a partir de outros sites ou dispositivos, como seu computador ou dispositivo móvel.'
                   }
                 ]
               },
@@ -3563,7 +3565,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'To recognize the returning visitors of the Site. Cookies help us show you the right information and personalize your experience. Cookies also help avoiding re-registration or re-filling of the information by you each time you visit the Site.'
+                    text: 'Para reconhecer os visitantes recorrentes do Site. Os cookies nos ajudam a mostrar as informações corretas e personalizar sua experiência. Os cookies também ajudam a evitar o preenchimento repetido de informações a cada vez que você visita o Site.'
                   }
                 ]
               },
@@ -3571,7 +3573,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'To analyze your habits so that the functioning of the Site would be convenient, efficient and would conform to your needs and expectations.'
+                    text: 'Para analisar seus hábitos, de modo que o funcionamento do Site seja conveniente, eficiente e adequado às suas necessidades e expectativas.'
                   }
                 ]
               },
@@ -3579,7 +3581,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'To measure the flows of the information and data being sent to our Site. We use the cookies for accumulation of statistical data about the number of users of the Site and their use of the Site.'
+                    text: 'Para medir os fluxos de informações e dados enviados ao nosso Site. Usamos cookies para acumular dados estatísticos sobre o número de usuários do Site e seu uso.'
                   }
                 ]
               }
@@ -3588,19 +3590,19 @@ const pages = async (): Promise<Pages[]> => {
           {
             type: 'heading',
             order: 2,
-            children: [{ text: '3. What cookies do we use?' }]
+            children: [{ text: '3. Quais cookies usamos?' }]
           },
           {
             type: 'paragraph',
             children: [
               {
-                text: 'Each time you visit our Site, the long-term (persistent) cookies may be created, which stay in your browser after you sign-up and will be read by us when you return to our Site and not deleted after you finish browsing our Site, and the short-term (session) cookies, which expire or are deleted after you finish browsing our Site (i.e. they usually last during the current visit to our Site or browsing session).'
+                text: 'Cada vez que você visita nosso Site, os cookies de longo prazo (persistentes) podem ser criados, que permanecem no seu navegador após o cadastro e serão lidos por nós quando você retornar ao nosso Site, e os cookies de curto prazo (de sessão), que expiram ou são excluídos após você terminar de navegar em nosso Site (ou seja, geralmente duram durante a visita atual ao nosso Site ou sessão de navegação).'
               }
             ]
           },
           {
             type: 'paragraph',
-            children: [{ text: 'Cookies used by the Company:' }]
+            children: [{ text: 'Cookies usados pela Empresa:' }]
           },
           {
             type: 'list',
@@ -3610,7 +3612,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'Strictly required or necessary cookies. These cookies are required for the operation of our Site. They include, for example, cookies that enable storage of information filled by you during the browsing session, enable you to log into secure areas of our Site. Without these cookies operation of the Site would be impossible or its functioning may be severely affected.'
+                    text: 'Cookies estritamente necessários. Esses cookies são essenciais para o funcionamento do nosso Site. Eles incluem, por exemplo, cookies que permitem o armazenamento de informações preenchidas por você durante a sessão de navegação, permitem que você faça login em áreas seguras do nosso Site. Sem esses cookies, o funcionamento do Site seria impossível ou poderia ser gravemente afetado.'
                   }
                 ]
               },
@@ -3618,7 +3620,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'Preferences cookies. These improve the functional performance of our Site and make it easier for you to use. These cookies remember the settings selected by the Visitors (for example, the settings of language or currency). With the use of these cookies, the Visitors may avoid the changes of settings during each visit of the Site. These cookies also remember changes made by you in the Site (for example, in case you leave comment on the Site). These cookies do not track your behavior in other websites.'
+                    text: 'Cookies de preferências. Estes melhoram o desempenho funcional do nosso Site e tornam mais fácil para você usá-lo. Esses cookies lembram as configurações selecionadas pelos Visitantes (por exemplo, as configurações de idioma ou moeda). Com o uso desses cookies, os Visitantes podem evitar alterações de configurações durante cada visita ao Site. Esses cookies também lembram as alterações feitas por você no Site (por exemplo, caso você deixe um comentário no Site). Esses cookies não rastreiam seu comportamento em outros sites.'
                   }
                 ]
               },
@@ -3626,7 +3628,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'Analytics and Statistics. These cookies show us if the Visitor has visited our Site before. The analytic cookies allow us to recognize and count the number of users of our website and see how such users navigate through our Site. We also use cookies to understand, improve, and research products, features, and services. For instance, analytical cookies may show us, which websites are visited more frequently, help us to record dysfunctionalities of the Site, etc.'
+                    text: 'Análise e Estatísticas. Esses cookies nos mostram se o Visitante já visitou nosso Site antes. Os cookies analíticos nos permitem reconhecer e contar o número de usuários do nosso site e ver como esses usuários navegam pelo nosso Site. Também usamos cookies para entender, melhorar e pesquisar produtos, recursos e serviços. Por exemplo, os cookies analíticos podem nos mostrar quais sites são visitados com mais frequência, nos ajudam a registrar disfunções do Site, etc.'
                   }
                 ]
               }
@@ -3634,7 +3636,7 @@ const pages = async (): Promise<Pages[]> => {
           },
           {
             type: 'paragraph',
-            children: [{ text: 'Third-party cookies:' }]
+            children: [{ text: 'Cookies de terceiros:' }]
           },
           {
             type: 'list',
@@ -3644,7 +3646,7 @@ const pages = async (): Promise<Pages[]> => {
                 type: 'li',
                 children: [
                   {
-                    text: 'We use Google Analytics, a web analysis service provided by Google, Inc (hereinafter referred to as “Google”). The information collected by Google Analytics is transmitted to and stored with Google. Google may transmit the information collected by Google Analytics to the third parties as required by the law or when those third parties process the information in the name of Google. We recommend consulting the Google Privacy and Política de Cookies on a separate and regular basis.'
+                    text: 'Usamos o Google Analytics, um serviço de análise da web fornecido pelo Google, Inc (doravante referido como "Google"). As informações coletadas pelo Google Analytics são transmitidas e armazenadas pelo Google. O Google pode transmitir as informações coletadas pelo Google Analytics a terceiros, conforme exigido pela lei ou quando esses terceiros processam as informações em nome do Google. Recomendamos consultar a Política de Privacidade e Cookies do Google separadamente e com regularidade.'
                   }
                 ]
               }
@@ -3653,13 +3655,13 @@ const pages = async (): Promise<Pages[]> => {
           {
             type: 'heading',
             order: 2,
-            children: [{ text: '4. How to refuse or block cookies?' }]
+            children: [{ text: '4. Como recusar ou bloquear cookies?' }]
           },
           {
             type: 'paragraph',
             children: [
               {
-                text: 'Many web browsers are set so that they would automatically accept all cookies.'
+                text: 'Muitos navegadores estão configurados para aceitar automaticamente todos os cookies.'
               }
             ]
           },
@@ -3667,7 +3669,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'You may refuse and make a preference which cookies you allow by choosing it in our Cookie Consent Banner. Also all the cookies will be set if you accept all by clicking “Accept All” on our Cookie Consent Banner.'
+                text: 'Você pode recusar e definir sua preferência sobre quais cookies permitir, escolhendo na nossa Barra de Consentimento de Cookies. Todos os cookies serão definidos se você aceitar todos clicando em "Aceitar Todos" na nossa Barra de Consentimento de Cookies.'
               }
             ]
           },
@@ -3675,7 +3677,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'The Visitors may, at their discretion, manage, block or delete cookies, if the settings of their browser or device enable them to do so. Nevertheless, if you refuse or block the cookies or other similar technologies, some functions of the Site may be inaccessible to you or they may operate not properly.'
+                text: 'Os Visitantes podem, a seu critério, gerenciar, bloquear ou excluir cookies, se as configurações do seu navegador ou dispositivo permitirem. No entanto, se você recusar ou bloquear os cookies ou outras tecnologias semelhantes, algumas funções do Site podem ficar inacessíveis ou podem não funcionar corretamente.'
               }
             ]
           },
@@ -3683,7 +3685,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'We draw your attention that necessary cookies are critical for functioning of our Site, and in case of your objections, some features of the Site may not work or may not work properly.'
+                text: 'Chamamos sua atenção para o fato de que os cookies necessários são essenciais para o funcionamento do nosso Site, e, em caso de objeções, alguns recursos do Site podem não funcionar ou podem não funcionar corretamente.'
               }
             ]
           },
@@ -3691,7 +3693,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'You may require that we delete all the data about you, as collected and processed with the help of the cookies, by contacting to the email address hi.richardp@gmail.com.'
+                text: 'Você pode solicitar que excluamos todos os dados sobre você, conforme coletados e processados com a ajuda dos cookies, entrando em contato pelo e-mail hi.richardp@gmail.com.'
               }
             ]
           },
@@ -3699,7 +3701,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'You can opt out of Google Analytics without affecting how you visit our Site. For more information on opting out of being tracked by Google Analytics across all websites you use, visit this Google page: https://tools.google.com/dlpage/gaoptout.'
+                text: 'Você pode desativar o Google Analytics sem afetar sua navegação em nosso Site. Para mais informações sobre como desativar o rastreamento do Google Analytics em todos os sites que você usa, visite esta página do Google: https://tools.google.com/dlpage/gaoptout.'
               }
             ]
           },
@@ -3707,20 +3709,20 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'You may find more information about how to delete cookies, as well as the other useful information related to the use of the cookies, on the website http://www.allaboutcookies.org/.'
+                text: 'Você pode encontrar mais informações sobre como excluir cookies, bem como outras informações úteis relacionadas ao uso de cookies, no site http://www.allaboutcookies.org/.'
               }
             ]
           },
           {
             type: 'heading',
             order: 2,
-            children: [{ text: '5. Do we update Cookie Policy?' }]
+            children: [{ text: '5. Nós atualizamos a Política de Cookies?' }]
           },
           {
             type: 'paragraph',
             children: [
               {
-                text: 'This Cookie Policy may be updated by us from time to time. We will inform you about the updates, by providing the new version of the Cookie Policy. For this reason, we recommend you periodically visit our Site, where you will always find the latest version of this Cookie Policy.'
+                text: 'Esta Política de Cookies pode ser atualizada por nós periodicamente. Informaremos sobre as atualizações, fornecendo a nova versão da Política de Cookies. Por esse motivo, recomendamos que você visite periodicamente nosso Site, onde sempre encontrará a versão mais recente desta Política de Cookies.'
               }
             ]
           },
@@ -3728,7 +3730,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'paragraph',
             children: [
               {
-                text: 'This Cookie Policy shall be applied from the date of announcement of it on the Site.'
+                text: 'Esta Política de Cookies será aplicada a partir da data de anúncio no Site.'
               }
             ]
           }
@@ -3738,7 +3740,7 @@ const pages = async (): Promise<Pages[]> => {
             type: 'small',
             children: [
               {
-                text: 'This Policy was created with the help of the '
+                text: 'Esta Política foi criada com a ajuda do '
               },
               {
                 type: 'link',

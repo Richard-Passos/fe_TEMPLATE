@@ -4,7 +4,6 @@ import getLocale from './getLocale';
 import headerApi from './header';
 import pagesApi from './pages';
 import personalApi from './personal';
-import sendEmail from './sendEmail';
 
 const actions = {
   cookiesConsentApi,
@@ -12,8 +11,7 @@ const actions = {
   headerApi,
   pagesApi,
   personalApi,
-  getLocale,
-  sendEmail
+  getLocale
 };
 
 export default actions;
@@ -23,6 +21,5 @@ export {
   headerApi,
   pagesApi,
   personalApi,
-  getLocale,
-  sendEmail
+  getLocale
 };

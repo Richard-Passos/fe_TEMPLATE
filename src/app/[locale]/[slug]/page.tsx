@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-import { LegalTemplate, PageTemplate } from '@/components/templates';
+import { PageTemplate } from '@/components/templates';
 import { defaultPages } from '@/constants';
-import { LegalPage, Pages, Page as TPage } from '@/types';
+import { Pages, Page as TPage } from '@/types';
 import { normId, values } from '@/utils';
 import { pagesApi } from '@/utils/actions';
 
@@ -18,11 +18,10 @@ type PageParams = {
 
 type PageProps = PageOwnProps & PageParams;
 
-const isValidPage = (slug: string, page: Pages): page is TPage | LegalPage => {
+const isValidPage = (slug: string, page: Pages): page is TPage => {
   if (values(defaultPages).includes(slug)) return false;
 
-  if (!!page.type && page.type !== 'page' && page.type !== 'legal')
-    return false;
+  if (!!page.type && page.type !== 'page') return false;
 
   return true;
 };
@@ -40,14 +39,7 @@ const Page = async ({ params: { slug, locale } }: PageProps) => {
 
   if (!isValidPage(slug, page)) return notFound();
 
-  if (page.type === 'legal') return <LegalTemplate blocks={page.blocks} />;
-
-  return (
-    <PageTemplate
-      blocks={page.blocks}
-      hero={page.hero}
-    />
-  );
+  return <PageTemplate blocks={page.blocks} />;
 };
 
 const generateMetadata = async ({

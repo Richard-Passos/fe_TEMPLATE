@@ -18,10 +18,9 @@ Unleash your creativity with a pixel-perfect canvas! Draw, design, and create st
 
 Explore website's functionalities:
 
-- **Home:** A glimpse into my work life and a few personal touches that showcase who I am beyond the code.
-- **Work:** Showcases my professional side with details on my skills, values, mission, and projects.
-- **About:** Provides insights into my personal side, including my values and story.
-- **Contact:** A way to get in touch with me for collaborations, networking, or just to say hello! 😊
+- **Home:** A space to unleash your creativity.
+- **Not Found:** A guide to help you find your way.
+- **Error:** When things go off track, but not for long.
 
 <br/>
 
@@ -33,8 +32,6 @@ Cutting-edge technologies to ensure an great experience:
 - `next-intl`
 - `typescript`
 - `tailwindCSS`
-- `framer-motion`
-- `react-hook-form`
 - `...`
 
 <br>

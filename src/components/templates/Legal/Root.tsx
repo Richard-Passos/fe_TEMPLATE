@@ -7,7 +7,11 @@ type LegalTemplateProps = Pick<LegalPage, 'blocks'>;
 
 const LegalTemplate = ({ blocks }: LegalTemplateProps) => {
   return (
-    <Section theme={blocks.theme}>
+    <Section
+      forceTheme
+      hasTransition={false}
+      theme={blocks.theme}
+    >
       <div className='flex w-9/10 max-w-screen-lg flex-col items-end'>
         <header className='mt-2xl w-full'>
           <Title

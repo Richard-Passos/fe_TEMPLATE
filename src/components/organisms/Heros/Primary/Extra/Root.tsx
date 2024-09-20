@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { cn } from '@/utils';
 import { ElementProps } from '@/utils/SerializedElement';
 import serialize, { Node } from '@/utils/serialize';
@@ -28,5 +26,5 @@ const PrimaryHeroExtraOrganism = ({
   });
 };
 
-export default forwardRef(PrimaryHeroExtraOrganism);
+export default PrimaryHeroExtraOrganism;
 export type { PrimaryHeroExtraOrganismProps };

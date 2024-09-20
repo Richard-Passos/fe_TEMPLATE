@@ -10,7 +10,7 @@ Visit the live [website](https://fepixelart.app)
 
 ## 📝 Description
 
-A missing portfolio limits opportunities; I designed and built a personal portfolio to showcase skills, projects, and experience, offering a professional platform to attract potential clients and employers.
+Unleash your creativity with a pixel-perfect canvas! Draw, design, and create stunning pixel art effortlessly.
 
 <br/>
 

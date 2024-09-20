@@ -9,11 +9,7 @@ type SlotAtomAsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
   | ({ asChild: true; children: ReactNode } & SlotProps);
 
-type SlotAtomOwnProps = {
-  [key: string]: any;
-};
-
-type SlotAtomProps = SlotAtomOwnProps & Omit<SlotProps, keyof SlotAtomOwnProps>;
+type SlotAtomProps = SlotProps;
 
 const SlotAtom = Slot;
 

@@ -2501,7 +2501,7 @@ const pages = async (): Promise<Pages[]> => {
     {
       type: 'legal',
       slug: 'terms-and-conditions',
-      label: 'Termos & Condições',
+      label: 'Termos e Condições',
       blocks: {
         theme: 'dark',
         header: {
@@ -3207,7 +3207,7 @@ const pages = async (): Promise<Pages[]> => {
         ]
       },
       metadata: {
-        title: 'Termos & Condições',
+        title: 'Termos e Condições',
         description: ''
       }
     },

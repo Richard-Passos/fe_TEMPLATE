@@ -17,10 +17,7 @@ const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
 
   return (
     <>
-      <Hero
-        data={hero.data}
-        theme={hero.theme}
-      />
+      <Hero {...hero} />
 
       {blocks?.map(({ type, id, className, theme, ...props }) => {
         const Block = Blocks[type] as ComponentType<any>;
@@ -30,11 +27,7 @@ const PageTemplate = ({ hero, blocks }: PageTemplateProps) => {
         const Component = (
           <Block
             className={cn(
-              `
-                has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]
-
-                last:pb-[--section-spacing-lg]
-              `,
+              `last:pb-[--section-spacing-lg] has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]`,
               className
             )}
             hasTransition={!isSameTheme}

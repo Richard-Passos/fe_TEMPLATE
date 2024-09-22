@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { PropsWithChildren } from 'react';
 
-import { Height } from '@/components/atoms';
+import { Height, Theme } from '@/components/atoms';
 import {
   CookiesConsent,
   Footer,
@@ -41,9 +41,11 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
           </Height.Set>
 
           <Height.Get name='header'>
-            <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
-              {children}
-            </main>
+            <Theme>
+              <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+                {children}
+              </main>
+            </Theme>
           </Height.Get>
 
           <Footer />

@@ -9,7 +9,7 @@ const pages = async (): Promise<Pages[]> => {
       blocks: [
         {
           id: 'pixel-art',
-          type: 'PixelArtCanvas',
+          type: 'PixelArt'
         }
       ],
       metadata: {}

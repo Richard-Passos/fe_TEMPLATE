@@ -2,11 +2,13 @@
 
 import { useCallback } from 'react';
 
+import { useComputedColorScheme } from '@/hooks';
 import { useDispatch, useSelector } from '@/store';
 import { setTheme } from '@/store/slices/theme';
 
 const useThemeContext = () => {
   const context = useSelector((data) => data.theme),
+    theme = useComputedColorScheme(),
     dispatch = useDispatch();
 
   if (!context)
@@ -21,6 +23,7 @@ const useThemeContext = () => {
 
   return {
     ...context,
+    theme,
     setTheme: handleSetTheme
   };
 };

@@ -1,18 +1,13 @@
-import {
-  TextInput,
-  TextInputProps,
-  createPolymorphicComponent
-} from '@mantine/core';
-import { forwardRef } from 'react';
+import { TextInput } from '@mantine/core';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
-const CLASS_NAMES = {
+const classNames = {
   size: {
     xs: '',
     sm: '',
-    md: '[&_input]:[--input-size:theme(height.12)]',
+    md: '',
     lg: '',
     xl: ''
   },
@@ -26,13 +21,12 @@ const CLASS_NAMES = {
 };
 
 type TextInputAtomOwnProps = {
-  ref?: PolymorphicRef<'input'>;
-  size?: keyof (typeof CLASS_NAMES)['size'];
-  variant?: keyof (typeof CLASS_NAMES)['variant'];
+  size?: keyof (typeof classNames)['size'];
+  variant?: keyof (typeof classNames)['variant'];
 };
 
 type TextInputAtomProps = TextInputAtomOwnProps &
-  Omit<TextInputProps, keyof TextInputAtomOwnProps>;
+  Omit<ComponentPropsWithRef<typeof TextInput>, keyof TextInputAtomOwnProps>;
 
 const TextInputAtom = (
   {
@@ -50,8 +44,8 @@ const TextInputAtom = (
       aria-disabled={disabled}
       className={cn(
         'aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6 dark:aria-disabled:[&_input]:bg-dark-6 dark:aria-disabled:[&_input]:text-dark-2',
-        CLASS_NAMES.size[size],
-        CLASS_NAMES.variant[variant],
+        classNames.size[size],
+        classNames.variant[variant],
         className
       )}
       disabled={disabled}
@@ -67,7 +61,5 @@ const TextInputAtom = (
   );
 };
 
-export default createPolymorphicComponent<'input', TextInputAtomProps>(
-  forwardRef(TextInputAtom)
-);
+export default forwardRef(TextInputAtom);
 export type { TextInputAtomProps };

@@ -1,18 +1,13 @@
-import {
-  Textarea,
-  TextareaProps,
-  createPolymorphicComponent
-} from '@mantine/core';
-import { forwardRef } from 'react';
+import { Textarea } from '@mantine/core';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
-const CLASS_NAMES = {
+const classNames = {
   size: {
     xs: '',
     sm: '',
-    md: '[&_textarea]:[--input-size:theme(height.24)] [&_textarea]:[--input-padding-y:--input-padding]',
+    md: '',
     lg: '',
     xl: ''
   },
@@ -26,13 +21,12 @@ const CLASS_NAMES = {
 };
 
 type TextareaAtomOwnProps = {
-  ref?: PolymorphicRef<'textarea'>;
-  size?: keyof (typeof CLASS_NAMES)['size'];
-  variant?: keyof (typeof CLASS_NAMES)['variant'];
+  size?: keyof (typeof classNames)['size'];
+  variant?: keyof (typeof classNames)['variant'];
 };
 
 type TextareaAtomProps = TextareaAtomOwnProps &
-  Omit<TextareaProps, keyof TextareaAtomOwnProps>;
+  Omit<ComponentPropsWithRef<typeof Textarea>, keyof TextareaAtomOwnProps>;
 
 const TextareaAtom = (
   {
@@ -50,8 +44,8 @@ const TextareaAtom = (
       aria-disabled={disabled}
       className={cn(
         'aria-disabled:[&_textarea]:bg-gray-1 aria-disabled:[&_textarea]:text-gray-6 dark:aria-disabled:[&_textarea]:bg-dark-6 dark:aria-disabled:[&_textarea]:text-dark-2',
-        CLASS_NAMES.size[size],
-        CLASS_NAMES.variant[variant],
+        classNames.size[size],
+        classNames.variant[variant],
         className
       )}
       disabled={disabled}
@@ -67,7 +61,5 @@ const TextareaAtom = (
   );
 };
 
-export default createPolymorphicComponent<'textarea', TextareaAtomProps>(
-  forwardRef(TextareaAtom)
-);
+export default forwardRef(TextareaAtom);
 export type { TextareaAtomProps };

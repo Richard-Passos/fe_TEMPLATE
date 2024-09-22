@@ -1,14 +1,13 @@
-import { Select, SelectProps, createPolymorphicComponent } from '@mantine/core';
-import { forwardRef } from 'react';
+import { Select } from '@mantine/core';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { PolymorphicRef } from '@/types';
 import { cn } from '@/utils';
 
-const CLASS_NAMES = {
+const classNames = {
   size: {
     xs: '',
     sm: '',
-    md: '[&_input]:[--input-size:theme(height.12)]',
+    md: '',
     lg: '',
     xl: ''
   },
@@ -22,13 +21,12 @@ const CLASS_NAMES = {
 };
 
 type SelectAtomOwnProps = {
-  ref?: PolymorphicRef<'input'>;
-  size?: keyof (typeof CLASS_NAMES)['size'];
-  variant?: keyof (typeof CLASS_NAMES)['variant'];
+  size?: keyof (typeof classNames)['size'];
+  variant?: keyof (typeof classNames)['variant'];
 };
 
 type SelectAtomProps = SelectAtomOwnProps &
-  Omit<SelectProps, keyof SelectAtomOwnProps>;
+  Omit<ComponentPropsWithRef<typeof Select>, keyof SelectAtomOwnProps>;
 
 const SelectAtom = (
   {
@@ -47,8 +45,8 @@ const SelectAtom = (
       aria-disabled={disabled}
       className={cn(
         'aria-disabled:[&_input]:bg-gray-1 aria-disabled:[&_input]:text-gray-6 dark:aria-disabled:[&_input]:bg-dark-6 dark:aria-disabled:[&_input]:text-dark-2',
-        CLASS_NAMES.size[size],
-        CLASS_NAMES.variant[variant],
+        classNames.size[size],
+        classNames.variant[variant],
         className
       )}
       comboboxProps={{
@@ -81,7 +79,5 @@ const SelectAtom = (
   );
 };
 
-export default createPolymorphicComponent<'input', SelectAtomProps>(
-  forwardRef(SelectAtom)
-);
+export default forwardRef(SelectAtom);
 export type { SelectAtomProps };

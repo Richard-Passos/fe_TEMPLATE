@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 
 import { usePathname, useRouter } from '@/i18n/routing';
-import { normId } from '@/utils';
+import { entries, normId } from '@/utils';
 
 const useSetSearchParams = () => {
   const readOnlysearchParams = useSearchParams(),
@@ -12,8 +12,8 @@ const useSetSearchParams = () => {
 
   const searchParams = new URLSearchParams(readOnlysearchParams.toString());
 
-  const setSearchParams = (querys: { key: string; value?: string }[]) => {
-    querys.forEach(({ key, value }) => {
+  const setSearchParams = (querys: Record<string, string | undefined>) => {
+    entries(querys).forEach(([key, value]) => {
       key = normId(key);
 
       if (!value) {

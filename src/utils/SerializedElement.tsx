@@ -9,15 +9,13 @@ import {
   useCallback
 } from 'react';
 
-import { Blockquote, Icon, Image, Link, Text, Title } from '@/components/atoms';
-import { BlockquoteProps } from '@/components/atoms/Blockquote';
-import { IconProps } from '@/components/atoms/Icon';
-import { ImageProps } from '@/components/atoms/Image';
-import { LinkProps } from '@/components/atoms/Link';
-import { TextProps } from '@/components/atoms/Text';
-import { TitleOrder, TitleProps } from '@/components/atoms/Title';
-import { List } from '@/components/molecules';
-import {
+import Blockquote, { BlockquoteProps } from '@/components/atoms/Blockquote';
+import Icon, { IconProps } from '@/components/atoms/Icon';
+import Image, { ImageProps } from '@/components/atoms/Image';
+import Link, { LinkProps } from '@/components/atoms/Link';
+import Text, { TextProps } from '@/components/atoms/Text';
+import Title, { TitleOrder, TitleProps } from '@/components/atoms/Title';
+import List, {
   ListItemProps,
   ListRootProps,
   ListRootType

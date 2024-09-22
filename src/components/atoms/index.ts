@@ -3,6 +3,7 @@ import Bg from './Bg';
 import Blockquote from './Blockquote';
 import Box from './Box';
 import Button from './Button';
+import ColorInput from './ColorInput';
 import Divider from './Divider';
 import Height from './Height';
 import Icon from './Icon';
@@ -11,6 +12,7 @@ import Indicator from './Indicator';
 import Link from './Link';
 import Loader from './Loader';
 import LocalTime from './LocalTime';
+import NumberInput from './NumberInput';
 import Portal from './Portal';
 import Progress from './Progress';
 import Select from './Select';
@@ -26,6 +28,7 @@ const Atoms = {
   Blockquote,
   Box,
   Button,
+  ColorInput,
   Divider,
   Height,
   Icon,
@@ -34,6 +37,7 @@ const Atoms = {
   Link,
   Loader,
   LocalTime,
+  NumberInput,
   Portal,
   Progress,
   Select,
@@ -51,6 +55,7 @@ export {
   Blockquote,
   Box,
   Button,
+  ColorInput,
   Divider,
   Height,
   Icon,
@@ -59,6 +64,7 @@ export {
   Link,
   Loader,
   LocalTime,
+  NumberInput,
   Portal,
   Progress,
   Select,

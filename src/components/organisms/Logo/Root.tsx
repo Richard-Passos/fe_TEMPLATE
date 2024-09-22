@@ -35,7 +35,7 @@ const LogoOrganism = (
     >
       <Icon
         className='h-2/3'
-        src='/icons/logo-${variant}.svg'
+        src={`/icons/logo-${variant}.svg`}
       />
     </ActionLink>
   );

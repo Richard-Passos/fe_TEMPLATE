@@ -20,6 +20,7 @@ import Slot from './Slot';
 import Text from './Text';
 import TextInput from './TextInput';
 import Textarea from './Textarea';
+import Theme from './Theme';
 import Title from './Title';
 
 const Atoms = {
@@ -45,6 +46,7 @@ const Atoms = {
   Text,
   Textarea,
   TextInput,
+  Theme,
   Title
 };
 
@@ -72,5 +74,6 @@ export {
   Text,
   Textarea,
   TextInput,
+  Theme,
   Title
 };

@@ -17,7 +17,7 @@ const FooterOrganism = (
   return (
     <Section
       asChild
-      className={cn('max-w-bounds py-0', className)}
+      className={cn('flex w-9/10 max-w-bounds flex-col py-0', className)}
       ref={ref}
       {...props}
     >

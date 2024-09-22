@@ -13,7 +13,7 @@ const PageTemplate = ({ blocks }: PageTemplateProps) => {
     return (
       <Block
         className={cn(
-          `last:pb-[--section-spacing-lg] has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]`,
+          'last:pb-[--section-spacing-lg] has-[+[data-has-transition="true"]]:pb-[--section-spacing-lg]',
           className
         )}
         id={id}

@@ -20,7 +20,7 @@ const FooterContentOrganism = async () => {
   const socials = personal?.socials;
 
   return (
-    <div className='relative z-10 flex w-9/10 grow flex-col'>
+    <div className=''>
       <section className='mb-xl pt-[--section-spacing-md]'>
         <Title
           className='max-w-xs font-semibold'
@@ -31,7 +31,7 @@ const FooterContentOrganism = async () => {
         </Title>
 
         <Title
-          className={`max-w-xs break-words uppercase leading-none sm:max-w-sm`}
+          className='max-w-xs break-words uppercase leading-none sm:max-w-sm'
           component='h2'
           order={3}
         >
@@ -59,11 +59,9 @@ const FooterContentOrganism = async () => {
         </div>
       </section>
 
-      <div
-        className={`mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse`}
-      >
+      <div className='mt-auto flex gap-lg max-lg:gap-x-sm max-md:flex-col-reverse'>
         <Logo
-          className={`mt-auto h-auto w-full [&_svg]:size-full`}
+          className='mt-auto h-auto w-full [&_svg]:size-full'
           style={{
             '--button-hover': 'transparent',
             '--button-padding-x': '0px'
@@ -93,18 +91,16 @@ const FooterContentOrganism = async () => {
         </section>
       </div>
 
-      <section
-        className={`flex justify-center py-sm max-sm:flex-col sm:justify-between`}
-      >
+      <section className='flex justify-center py-sm max-sm:flex-col sm:justify-between'>
         <Text
-          className={`max-w-xs text-xs max-sm:text-center`}
+          className='max-w-xs text-xs max-sm:text-center'
           component='small'
         >
           {serialize(footer.copyright)}
         </Text>
 
         <Text
-          className={`max-w-xs text-center text-xs sm:text-end`}
+          className='max-w-xs text-center text-xs sm:text-end'
           component='small'
         >
           {serialize(footer.madeBy)}

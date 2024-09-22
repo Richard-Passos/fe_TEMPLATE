@@ -16,7 +16,7 @@ const HeaderContentOrganism = async () => {
     <>
       <Logo className='-ml-[--button-padding-x]' />
 
-      <div className={`flex items-center gap-xs max-md:hidden`}>
+      <div className='flex items-center gap-xs max-md:hidden'>
         <LocaleSelect
           aria-label={header.locale.label}
           data={locales}

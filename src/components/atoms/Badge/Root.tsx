@@ -27,8 +27,8 @@ const BadgeAtom = (
 
   return (
     <Badge
-      className={cn(
-        `normal-case [--badge-fz-md:calc(.75rem*var(--mantine-scale))] [--badge-height-md:calc(1.5rem*var(--mantine-scale))]`,
+       className={cn(
+        'normal-case [--badge-fz-md:calc(.75rem*var(--mantine-scale))] [--badge-height-md:calc(1.5rem*var(--mantine-scale))]',
         className
       )}
       color={color}

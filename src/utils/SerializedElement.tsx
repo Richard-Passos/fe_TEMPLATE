@@ -86,7 +86,7 @@ const SerializedElement = ({
             component='small'
             {...props?.small}
             className={cn(
-              `text-xs text-dimmed *:text-text`,
+              'text-xs text-dimmed *:text-text',
               props?.small?.className
             )}
           >

@@ -6,7 +6,12 @@ const pages = async (): Promise<Pages[]> => {
       slug: 'home',
       isSelected: true,
       label: 'Home',
-      blocks: [],
+      blocks: [
+        {
+          id: 'pixel-art',
+          type: 'PixelArtCanvas',
+        }
+      ],
       metadata: {}
     },
     {

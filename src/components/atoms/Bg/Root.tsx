@@ -19,7 +19,7 @@ const BgAtom = (
     <Box
       bg={color}
       className={cn(
-        `pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white dark:bg-dark-8`,
+        'pointer-events-none absolute inset-y-0 -z-50 w-screen overflow-hidden bg-white dark:bg-dark-8',
         className
       )}
       ref={ref}

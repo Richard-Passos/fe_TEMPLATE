@@ -1,8 +1,8 @@
-import PixelArtCanvasBlock from './PixelArtCanvas';
+import PixelArtBlock from './PixelArt';
 
 const Blocks = {
-  PixelArtCanvas: PixelArtCanvasBlock
+  PixelArt: PixelArtBlock
 };
 
 export default Blocks;
-export { PixelArtCanvasBlock };
+export { PixelArtBlock };

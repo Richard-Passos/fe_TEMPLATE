@@ -1,8 +1,4 @@
-import BooleanContext, {
-  BooleanContextInitialState,
-  disclosureContextDefaultValue
-} from './Root';
+import BooleanContext, { BooleanContextInitialState } from './Root';
 
 export default BooleanContext;
-export { disclosureContextDefaultValue };
 export type { BooleanContextInitialState };

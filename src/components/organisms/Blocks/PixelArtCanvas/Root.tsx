@@ -5,18 +5,28 @@ import { cn } from '@/utils';
 type PixelArtCanvasBlockOrganismOwnProps = {};
 
 type PixelArtCanvasBlockOrganismProps = PixelArtCanvasBlockOrganismOwnProps &
-  Omit<ComponentPropsWithRef<'div'>, keyof PixelArtCanvasBlockOrganismOwnProps>;
+  Omit<
+    ComponentPropsWithRef<'section'>,
+    keyof PixelArtCanvasBlockOrganismOwnProps
+  >;
 
 const PixelArtCanvasBlockOrganism = (
   { className, ...props }: PixelArtCanvasBlockOrganismProps,
   ref: PixelArtCanvasBlockOrganismProps['ref']
 ) => {
   return (
-    <div
+    <section
       className={cn('', className)}
       ref={ref}
       {...props}
-    />
+    >
+      <aside></aside>
+
+      <section className='sif'>
+        <canvas />
+      </section>
+      <div id='pixel-art-resize' />
+    </section>
   );
 };
 

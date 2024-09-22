@@ -1,34 +1,22 @@
 'use client';
 
-import { ComponentPropsWithoutRef, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 import BooleanContext, { BooleanContextInitialState } from '@/contexts/Boolean';
-import { useBoolean, useId } from '@/hooks';
+import { useBoolean } from '@/hooks';
 
-type BooleanProviderOwnProps = {
+type BooleanProviderProps = {
   defaultValue?: Parameters<typeof useBoolean>['0'];
+  children: ReactNode;
 };
-
-type BooleanProviderProps = BooleanProviderOwnProps &
-  Omit<
-    ComponentPropsWithoutRef<typeof BooleanContext.Provider>,
-    keyof BooleanProviderOwnProps | 'value'
-  >;
 
 const BooleanProvider = ({
   defaultValue = false,
   ...props
 }: BooleanProviderProps) => {
-  const boolean = useBoolean(defaultValue),
-    id = useId();
+  const boolean = useBoolean(defaultValue);
 
-  const value: BooleanContextInitialState = useMemo(
-    () => ({
-      id,
-      ...boolean
-    }),
-    [id, boolean]
-  );
+  const value: BooleanContextInitialState = useMemo(() => boolean, [boolean]);
 
   return (
     <BooleanContext.Provider

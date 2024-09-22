@@ -9,6 +9,11 @@ const useThemeContext = () => {
   const context = useSelector((data) => data.theme),
     dispatch = useDispatch();
 
+  if (!context)
+    throw new Error(
+      'useThemeContext must be used within a ThemeContextProvider'
+    );
+
   const handleSetTheme = useCallback(
     (theme: Parameters<typeof setTheme>['0']) => dispatch(setTheme(theme)),
     [dispatch]

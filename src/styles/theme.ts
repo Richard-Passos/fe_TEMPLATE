@@ -9,7 +9,18 @@ const themeOverride = createTheme({
   white: 'hsl(0 0% 98%)',
   black: 'hsl(0 0% 7.5%)',
   colors: {
-    primary: ['', '', '', '', '', '', '', '', '', ''],
+    primary: [
+      '#e7f5ff',
+      '#d0ebff',
+      '#a5d8ff',
+      '#74c0fc',
+      '#4dabf7',
+      '#339af0',
+      '#228be6',
+      '#1c7ed6',
+      '#1971c2',
+      '#1864ab'
+    ],
     dark: [
       'hsl(0 0% 80%)',
       'hsl(0 0% 60%)',
@@ -286,7 +297,7 @@ const themeOverride = createTheme({
 
 const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
 
-const defaultColorScheme = 'light';
+const defaultColorScheme = 'auto';
 
 export default theme;
 export { defaultColorScheme };

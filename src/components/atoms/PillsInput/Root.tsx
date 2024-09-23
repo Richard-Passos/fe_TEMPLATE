@@ -34,7 +34,6 @@ const PillsInputAtom = (
     size = 'sm',
     variant = 'default',
     disabled,
-    comboboxProps,
     labelProps,
     ...props
   }: PillsInputAtomProps,
@@ -49,23 +48,6 @@ const PillsInputAtom = (
         classNames.variant[variant],
         className
       )}
-      comboboxProps={{
-        withinPortal: false,
-        ...comboboxProps,
-        classNames: {
-          ...comboboxProps?.classNames,
-          dropdown: cn(
-            'bg-white [--popover-border-color:theme(colors.border)] dark:bg-dark-6',
-            //@ts-ignore
-            comboboxProps?.classNames?.dropdown
-          ),
-          option: cn(
-            'dark:hover:bg-dark-7 data-[combobox-selected]:!bg-primary-filled data-[combobox-selected]:text-primary-contrast hover:bg-gray-0',
-            //@ts-ignore
-            comboboxProps?.classNames?.option
-          )
-        }
-      }}
       disabled={disabled}
       labelProps={{
         ...labelProps,

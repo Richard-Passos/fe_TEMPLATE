@@ -13,6 +13,8 @@ import Link from './Link';
 import Loader from './Loader';
 import LocalTime from './LocalTime';
 import NumberInput from './NumberInput';
+import Pill from './Pill';
+import PillsInput from './PillsInput';
 import Portal from './Portal';
 import Progress from './Progress';
 import Select from './Select';
@@ -39,6 +41,8 @@ const Atoms = {
   Loader,
   LocalTime,
   NumberInput,
+  Pill,
+  PillsInput,
   Portal,
   Progress,
   Select,
@@ -67,6 +71,8 @@ export {
   Loader,
   LocalTime,
   NumberInput,
+  Pill,
+  PillsInput,
   Portal,
   Progress,
   Select,

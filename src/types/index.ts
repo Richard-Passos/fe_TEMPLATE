@@ -1,3 +1,4 @@
+import Color from './Color';
 import CookiesConsent from './CookiesConsent';
 import DeepPartial from './DeepPartial';
 import ErrorPage from './ErrorPage';
@@ -12,6 +13,7 @@ import Theme from './Theme';
 import TypeVariants from './TypeVariants';
 
 export type {
+  Color,
   CookiesConsent,
   DeepPartial,
   ErrorPage,

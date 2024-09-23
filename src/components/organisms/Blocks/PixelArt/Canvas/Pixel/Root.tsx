@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithRef, forwardRef, useState } from 'react';
 
 import { cn } from '@/utils';
@@ -26,6 +28,8 @@ const PixelArtCanvasPixelBlockOrganism = (
 ) => {
   const [c, setC] = useState<string | undefined>(undefined);
 
+  const activeColor = c ?? undefined;
+
   return (
     <div
       className={cn(
@@ -33,7 +37,7 @@ const PixelArtCanvasPixelBlockOrganism = (
         className
       )}
       onMouseDown={() => {
-        setC((state) => (!!state ? undefined : color));
+        setC((state) => (state ? undefined : color));
       }}
       onMouseOver={() => {
         if (isPainting) setC(color);
@@ -41,7 +45,7 @@ const PixelArtCanvasPixelBlockOrganism = (
       ref={ref}
       style={
         {
-          '--color': !!c ? c : 'transparent',
+          '--color': activeColor,
           ...style
         } as typeof style
       }

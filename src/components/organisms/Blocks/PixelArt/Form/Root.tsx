@@ -1,30 +1,52 @@
 'use client';
 
+import { useToPng } from '@hugocxl/react-to-image';
 import { useSearchParams } from 'next/navigation';
-import { forwardRef } from 'react';
+import { RefObject, forwardRef, useEffect } from 'react';
 import { z } from 'zod';
 
-import { Button, ColorInput, NumberInput } from '@/components/atoms';
+import {
+  Button,
+  ColorInput,
+  NumberInput,
+  PillsInput
+} from '@/components/atoms';
+import { TimesIcon } from '@/components/atoms/Icon/icons';
+import Pill, { PillGroup } from '@/components/atoms/Pill';
 import { Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { useSetSearchParams } from '@/hooks';
-import { cn, isType, times } from '@/utils';
+import { useColorsContext } from '@/hooks/contexts';
+import { cn, isType } from '@/utils';
 
-import { SearchParams, parseSize } from '../Root';
+import { MAX_SIZE, MIN_SIZE, SearchParams, parseSize } from '../Root';
 
 type PixelArtFormBlockOrganismOwnProps = {
   defaults: SearchParams;
+  canvasRef: RefObject<HTMLDivElement>;
 };
 
 type PixelArtFormBlockOrganismProps = PixelArtFormBlockOrganismOwnProps &
   Omit<Partial<FormRootProps>, keyof PixelArtFormBlockOrganismOwnProps>;
 
 const PixelArtFormBlockOrganism = (
-  { defaults, className, ...props }: PixelArtFormBlockOrganismProps,
+  { defaults, canvasRef, className, ...props }: PixelArtFormBlockOrganismProps,
   ref: PixelArtFormBlockOrganismProps['ref']
 ) => {
   const searchParams = useSearchParams(),
-    setSearchParams = useSetSearchParams();
+    setSearchParams = useSetSearchParams(),
+    { colors, addColor, removeColor } = useColorsContext();
+
+  const [_, convert, pngRef] = useToPng<HTMLDivElement>({
+    onSuccess: (data) => {
+      const link = document.createElement('a');
+
+      link.download = 'my-image-name.jpeg';
+      link.href = data;
+
+      link.click();
+    }
+  });
 
   const params: Record<keyof SearchParams, string | null> = {
     size: searchParams.get('size'),
@@ -38,8 +60,16 @@ const PixelArtFormBlockOrganism = (
       ? params.color
       : defaults.color;
 
+  useEffect(() => {
+    addColor(color);
+  }, []);
+
+  useEffect(() => {
+    if (canvasRef.current) pngRef(canvasRef.current);
+  }, [canvasRef, pngRef]);
+
   return (
-    <aside className='relative max-w-xs grow border border-l-0 bg-body p-md py-lg'>
+    <aside className='relative grow border border-l-0 bg-body p-md py-lg sm:max-w-xs'>
       <Form.Root
         className={cn('sticky top-lg flex flex-col gap-xs', className)}
         defaultValues={{
@@ -66,7 +96,7 @@ const PixelArtFormBlockOrganism = (
                 size: parseSize(+formattedValue).toString()
               });
             }}
-            placeholder='2 - 50'
+            placeholder={`${MIN_SIZE} - ${MAX_SIZE}`}
           />
         </Form.Control>
 
@@ -75,27 +105,51 @@ const PixelArtFormBlockOrganism = (
             defaultValue={color}
             label='Color:'
             onChangeEnd={(value) => {
+              addColor(value);
+
               setSearchParams({ color: value });
             }}
-            placeholder='#000'
+            placeholder={defaults.color}
           />
         </Form.Control>
 
-        <section className='flex flex-col gap-0.5'>
-          <label className='text-sm'>Used Colors:</label>
+        <PillsInput label='Used colors:'>
+          <PillGroup>
+            {colors.map((c) => (
+              <Pill
+                className='relative !h-fit p-0'
+                key={c}
+              >
+                <Button
+                  color={c}
+                  isIconOnly
+                  onClick={() => {
+                    setSearchParams({ c });
+                  }}
+                />
 
-          <div className='flex flex-wrap gap-0.5'>
-            {times(5, String).map((id) => (
-              <Button
-                className='aspect-square px-0'
-                data-color={id}
-                key={id}
-              />
+                <Button
+                  className='absolute right-0 top-0 size-1/2 rounded-full -translate-y-1/4 translate-x-1/4'
+                  disabled={c === color}
+                  isIconOnly
+                  onClick={() => {
+                    removeColor(c);
+                  }}
+                  variant='default'
+                >
+                  <TimesIcon className='absolute left-1/2 top-1/2 size-2/3 -translate-x-1/2 -translate-y-1/2' />
+                </Button>
+              </Pill>
             ))}
-          </div>
-        </section>
+          </PillGroup>
+        </PillsInput>
 
-        <Button className='mt-md'>Dowload Pixel Art</Button>
+        <Button
+          className='mt-md'
+          onClick={convert}
+        >
+          Dowload Pixel Art
+        </Button>
       </Form.Root>
     </aside>
   );

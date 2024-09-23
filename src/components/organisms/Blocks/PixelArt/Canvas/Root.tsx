@@ -22,10 +22,9 @@ const PixelArtCanvasBlockOrganism = (
   { defaults, className, style, ...props }: PixelArtCanvasBlockOrganismProps,
   ref: PixelArtCanvasBlockOrganismProps['ref']
 ) => {
-  const searchParams = useSearchParams();
-
   const innerRef = useRef<HTMLDivElement>(null),
-    [state, setState] = useState<'painting' | 'resizing' | 'idle'>('idle');
+    [state, setState] = useState<'painting' | 'resizing' | 'idle'>('idle'),
+    searchParams = useSearchParams();
 
   const params: Record<keyof SearchParams, string | null> = {
     size: searchParams.get('size'),
@@ -40,34 +39,36 @@ const PixelArtCanvasBlockOrganism = (
       : defaults.color;
 
   return (
-    <section
-      className={cn(
-        'grid aspect-square grow grid-cols-[repeat(var(--size),minmax(0,1fr))] grid-rows-[repeat(var(--size),minmax(0,1fr))]',
-        className
-      )}
-      onMouseDown={() => {
-        setState('painting');
-      }}
-      onMouseUp={() => {
-        setState('idle');
-      }}
-      ref={setRefs(ref, innerRef)}
-      style={
-        {
-          '--size': `${size}`,
-          ...style
-        } as typeof style
-      }
-      {...props}
-    >
-      {times(size * size, String).map((id) => (
-        <PixelArtCanvasPixelBlock
-          color={color}
-          isPainting={state === 'painting'}
-          key={id}
-        />
-      ))}
-    </section>
+    <div className='aspect-square grow bg-gray-0 dark:bg-dark-5'>
+      <section
+        className={cn(
+          'grid size-full grid-cols-[repeat(var(--size),minmax(0,1fr))] grid-rows-[repeat(var(--size),minmax(0,1fr))]',
+          className
+        )}
+        onMouseDown={() => {
+          setState('painting');
+        }}
+        onMouseUp={() => {
+          setState('idle');
+        }}
+        ref={setRefs(ref, innerRef)}
+        style={
+          {
+            '--size': `${size}`,
+            ...style
+          } as typeof style
+        }
+        {...props}
+      >
+        {times(size * size, String).map((id) => (
+          <PixelArtCanvasPixelBlock
+            color={color}
+            isPainting={state === 'painting'}
+            key={id}
+          />
+        ))}
+      </section>
+    </div>
   );
 };
 

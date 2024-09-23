@@ -635,6 +635,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hugocxl/react-to-image@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@hugocxl/react-to-image@npm:0.0.9"
+  peerDependencies:
+    html-to-image: ">=1"
+    react: ">=16"
+  checksum: 10c0/53abfba21482a693402eed876f873606938ccc490632c426c90f91a4b01216e871ee5ca417ff0196bf610744d18b7833d27bbfe914e7aa35871fe05af1da18d1
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -4091,6 +4101,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html-to-image@npm:^1.11.11":
+  version: 1.11.11
+  resolution: "html-to-image@npm:1.11.11"
+  checksum: 10c0/0b6349221ad253dfca01d165c589d44341e942faf0273aab28c8b7d86ff2922d3e8e6390f57bf5ddaf6bac9a3b590a8cdaa77d52a363354796dd0e0e05eb35d2
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
@@ -6181,6 +6198,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@hookform/resolvers": "npm:^3.9.0"
+    "@hugocxl/react-to-image": "npm:^0.0.9"
     "@mantine/core": "npm:^7.12.2"
     "@mantine/hooks": "npm:^7.12.2"
     "@radix-ui/react-slot": "npm:^1.1.0"
@@ -6201,6 +6219,7 @@ __metadata:
     eslint: "npm:8.57.0"
     eslint-config-next: "npm:^14.2.13"
     eslint-config-prettier: "npm:^9.1.0"
+    html-to-image: "npm:^1.11.11"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     lodash: "npm:^4.17.21"

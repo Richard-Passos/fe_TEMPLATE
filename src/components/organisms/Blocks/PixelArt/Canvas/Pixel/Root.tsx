@@ -37,7 +37,11 @@ const PixelArtCanvasPixelBlockOrganism = (
         className
       )}
       onMouseDown={() => {
-        setC((state) => (state ? undefined : color));
+        setC((state) => {
+          if (state) return state !== color ? color : undefined;
+
+          return color;
+        });
       }}
       onMouseOver={() => {
         if (isPainting) setC(color);

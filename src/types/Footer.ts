@@ -3,15 +3,16 @@ import { Node } from '@/utils/serialize';
 type Personal = {
   cta: {
     title: Node[];
-    subtitle: Node[];
-    action: {
-      label: string;
-    };
   };
-  locationSeparator: string;
-  description: Node[];
+  location: {
+    title: Node[];
+    description: Node[];
+  };
+  contact: {
+    title: Node[];
+    description: Node[];
+  };
   madeBy: Node[];
-  copyright: Node[];
 };
 
 export default Personal;

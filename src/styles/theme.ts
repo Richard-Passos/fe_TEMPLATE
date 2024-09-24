@@ -22,40 +22,40 @@ const themeOverride = createTheme({
       '#1864ab'
     ],
     dark: [
-      'hsl(0 0% 80%)',
-      'hsl(0 0% 60%)',
-      'hsl(0 0% 40%)',
-      'hsl(0 0% 30%)',
-      'hsl(0 0% 12.5%)',
-      'hsl(0 0% 6.5%)',
-      'hsl(0 0% 6%)',
-      'hsl(0 0% 5%)',
-      'hsl(0 0% 4.5%)',
-      'hsl(0 0% 1.5%)'
+      '#C9C9C9',
+      '#b8b8b8',
+      '#828282',
+      '#696969',
+      '#424242',
+      '#3b3b3b',
+      '#2e2e2e',
+      '#242424',
+      '#1f1f1f',
+      '#141414'
     ],
     gray: [
-      '#f4f5f6',
-      '#e7e7e7',
-      '#cccccc',
-      '#b1b1b1',
-      '#97999b',
-      '#878a8d',
-      '#4e5760',
-      '#6b7076',
-      '#5e646a',
-      '#4e5760'
+      '#f8f9fa',
+      '#f1f3f5',
+      '#e9ecef',
+      '#dee2e6',
+      '#ced4da',
+      '#adb5bd',
+      '#868e96',
+      '#495057',
+      '#343a40',
+      '#212529'
     ],
     red: [
-      '#ffe9f0',
-      '#fdd1dc',
-      '#f9a1b7',
-      '#f66e8e',
-      '#f3446d',
-      '#f22b58',
-      '#f21e4d',
-      '#d8123f',
-      '#c10837',
-      '#a9002e'
+      '#fff5f5',
+      '#ffe3e3',
+      '#ffc9c9',
+      '#ffa8a8',
+      '#ff8787',
+      '#ff6b6b',
+      '#fa5252',
+      '#f03e3e',
+      '#e03131',
+      '#c92a2a'
     ],
     pink: [
       '#fff0f6',
@@ -142,16 +142,16 @@ const themeOverride = createTheme({
       '#087f5b'
     ],
     green: [
-      '#ecfdf4',
-      '#d9fae8',
-      '#adf4ce',
-      '#7ff0b2',
-      '#5bec9a',
-      '#47e98c',
-      '#3ce983',
-      '#30ce70',
-      '#25b763',
-      '#0f9e52'
+      '#ebfbee',
+      '#d3f9d8',
+      '#b2f2bb',
+      '#8ce99a',
+      '#69db7c',
+      '#51cf66',
+      '#40c057',
+      '#37b24d',
+      '#2f9e44',
+      '#2b8a3e'
     ],
     lime: [
       '#f4fce3',
@@ -166,16 +166,16 @@ const themeOverride = createTheme({
       '#5c940d'
     ],
     yellow: [
-      '#fffae1',
-      '#fff4cc',
-      '#ffe89b',
-      '#ffdc64',
-      '#ffd138',
-      '#ffca1c',
-      '#ffc709',
-      '#e3af00',
-      '#ca9c00',
-      '#ae8600'
+      '#fff9db',
+      '#fff3bf',
+      '#ffec99',
+      '#ffe066',
+      '#ffd43b',
+      '#fcc419',
+      '#fab005',
+      '#f59f00',
+      '#f08c00',
+      '#e67700'
     ],
     orange: [
       '#fff4e6',
@@ -192,7 +192,7 @@ const themeOverride = createTheme({
   },
   primaryShade: {
     light: 6,
-    dark: 7
+    dark: 8
   },
   primaryColor: 'primary',
   autoContrast: false,
@@ -206,7 +206,7 @@ const themeOverride = createTheme({
     to: 'cyan',
     deg: 45
   },
-  defaultRadius: 'md',
+  defaultRadius: 'sm',
   activeClassName: 'active:scale-[.98]',
   focusClassName: 'focus-visible:outline',
   headings: {
@@ -215,34 +215,27 @@ const themeOverride = createTheme({
     textWrap: 'wrap',
     sizes: {
       h1: {
-        fontSize:
-          'calc(clamp(3rem, 0.6786rem + 5.8036vw, 6.25rem) * var(--mantine-scale))',
-        lineHeight: '1.1',
-        fontWeight: '800'
-      },
-      h2: {
-        fontSize:
-          'calc(clamp(3.5rem, 1rem + 6.25vw, 7rem) * var(--mantine-scale))',
-        lineHeight: '1'
-      },
-      h3: {
-        fontSize:
-          'calc(clamp(2.25rem, 1.7143rem + 1.3393vw, 3rem) * var(--mantine-scale))',
-        lineHeight: '1.2'
-      },
-      h4: {
-        fontSize:
-          'calc(clamp(2rem, 1.6429rem + 0.8929vw, 2.5rem) * var(--mantine-scale))',
+        fontSize: 'calc(2.125rem * var(--mantine-scale))',
         lineHeight: '1.3'
       },
-      h5: {
-        fontSize:
-          'calc(clamp(1.25rem, 1.0714rem + 0.4464vw, 1.5rem) * var(--mantine-scale))',
+      h2: {
+        fontSize: 'calc(1.625rem * var(--mantine-scale))',
+        lineHeight: '1.35'
+      },
+      h3: {
+        fontSize: 'calc(1.375rem * var(--mantine-scale))',
         lineHeight: '1.4'
       },
+      h4: {
+        fontSize: 'calc(1.125rem * var(--mantine-scale))',
+        lineHeight: '1.45'
+      },
+      h5: {
+        fontSize: 'calc(1rem * var(--mantine-scale))',
+        lineHeight: '1.5'
+      },
       h6: {
-        fontSize:
-          'calc(clamp(0.75rem, 0.6607rem + 0.2232vw, 0.875rem)  * var(--mantine-scale))',
+        fontSize: 'calc(0.875rem * var(--mantine-scale))',
         lineHeight: '1.5'
       }
     }
@@ -269,7 +262,6 @@ const themeOverride = createTheme({
     xl: 'calc(1.5rem * var(--mantine-scale))'
   },
   spacing: {
-    '2xs': 'calc(0.05rem * var(--mantine-scale))',
     xs: 'calc(0.625rem * var(--mantine-scale))',
     sm: 'calc(0.75rem * var(--mantine-scale))',
     md: 'calc(1rem * var(--mantine-scale))',

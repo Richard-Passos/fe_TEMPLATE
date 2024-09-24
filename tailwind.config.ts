@@ -429,7 +429,6 @@ const config: Config = {
       spacing: {
         px: '0.8px',
         '9/10': '90%',
-        '2xs': 'var(--mantine-spacing-2xs)',
         xs: 'var(--mantine-spacing-xs)',
         sm: 'var(--mantine-spacing-sm)',
         md: 'var(--mantine-spacing-md)',

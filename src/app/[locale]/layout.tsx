@@ -37,7 +37,9 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
       <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
         <Providers>
           <Height.Set name='header'>
-            <Header />
+            <Theme>
+              <Header />
+            </Theme>
           </Height.Set>
 
           <Height.Get name='header'>
@@ -48,9 +50,13 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             </Theme>
           </Height.Get>
 
-          <Footer />
+          <Theme>
+            <Footer />
+          </Theme>
 
-          <CookiesConsent />
+          <Theme>
+            <CookiesConsent />
+          </Theme>
         </Providers>
       </body>
     </html>

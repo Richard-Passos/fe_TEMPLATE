@@ -6,7 +6,6 @@ type Personal = {
   email: string;
   title: string;
   description: string;
-  availability: string;
   keywords: string;
   authors: { name: string; url: string }[];
   location: {
@@ -15,10 +14,6 @@ type Personal = {
     gmt: string;
   };
   socials: { id: string; href: string; icon: string; label: string }[];
-  buyCoffee: {
-    icon: string;
-    href: string;
-  };
 };
 
 export default Personal;

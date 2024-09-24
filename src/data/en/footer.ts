@@ -1,6 +1,13 @@
 import { Footer } from '@/types';
+import { personalApi } from '@/utils/actions';
+
+import locale from './locale';
 
 const footer = async (): Promise<Footer> => {
+  const res = await personalApi.get({ locale });
+
+  const personal = res.ok ? res.data : undefined;
+
   return {
     cta: {
       title: [
@@ -17,7 +24,7 @@ const footer = async (): Promise<Footer> => {
       ],
       description: [
         {
-          text: 'Brazil, Rio Grande do Sul'
+          text: `${personal?.location.country}, ${personal?.location.state}`
         }
       ]
     },

@@ -7,12 +7,11 @@ const personal = async (): Promise<Personal> => {
       last: 'Passos'
     },
     email: 'hi.richardp@gmail.com',
-    title: 'Richard Passos an awesome Full Stack Developer',
+    title: 'Canvas de Pixel Art',
     description:
-      'Helping brands achieve digital prominence. Based in Brazil. I bring a passion for cutting-edge technology and crafting high-impact, user-centered solutions.',
-    availability: 'Available to work',
+      'Crie incríveis pixel arts com uma tela interativa! Personalize seu design redimensionando, adicionando cores e baixando sua arte pixelada sem esforço. Libere sua criatividade hoje!',
     keywords:
-      'Richard Passos, Portfolio, Full Stack Developer, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Problem-solving, Detail-oriented, Communication, Adaptability, Time management, Critical thinking, Synthetic thinking',
+      'pixel art, canvas de pixel art, criar pixel art, pixel art online, desenhar pixel art, redimensionar pixel art, cores de pixel art, baixar pixel art, criador de pixel art, editor de pixel art, ferramenta de desenho em pixel',
     authors: [
       {
         name: 'Richard Passos',
@@ -20,8 +19,8 @@ const personal = async (): Promise<Personal> => {
       }
     ],
     location: {
-      country: 'Brazil',
-      state: 'RS',
+      country: 'Brasil',
+      state: 'Rio Grande do Sul',
       gmt: 'GMT-3'
     },
     socials: [
@@ -43,11 +42,7 @@ const personal = async (): Promise<Personal> => {
         icon: '/icons/linkedin.svg',
         label: 'Linkedin'
       }
-    ],
-    buyCoffee: {
-      icon: '/icons/mug.svg',
-      href: 'https://www.buymeacoffee.com/richardp.dev'
-    }
+    ]
   };
 };
 

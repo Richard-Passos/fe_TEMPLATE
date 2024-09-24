@@ -10,7 +10,6 @@ const personal = async (): Promise<Personal> => {
     title: 'Richard Passos um ótimo Desenvolvedor Full Stack',
     description:
       'Ajudando marcas a alcançar o destaque digital. Localizado no Brasil. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.',
-    availability: 'Disponível para trabalhar',
     authors: [
       {
         name: 'Richard Passos',
@@ -21,7 +20,7 @@ const personal = async (): Promise<Personal> => {
       'Richard Passos, Portfólio, Desenvolvedor Full Stack, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Resolução de problemas, Orientado a detalhes, Comunicação, Adaptabilidade, Gestão de tempo, Pensamento crítico, Pensamento sintético',
     location: {
       country: 'Brasil',
-      state: 'RS',
+      state: 'Rio Grande do Sul',
       gmt: 'GMT-3'
     },
     socials: [
@@ -43,11 +42,7 @@ const personal = async (): Promise<Personal> => {
         icon: '/icons/linkedin.svg',
         label: 'Linkedin'
       }
-    ],
-    buyCoffee: {
-      icon: '/icons/mug.svg',
-      href: 'https://www.buymeacoffee.com/richardp.dev'
-    }
+    ]
   };
 };
 

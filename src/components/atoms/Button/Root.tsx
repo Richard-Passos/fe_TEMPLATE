@@ -36,7 +36,8 @@ const ButtonAtom = (
       aria-disabled={disabled}
       className={cn(
         '*:*:relative aria-disabled:bg-gray-1 aria-disabled:text-gray-5 dark:aria-disabled:bg-dark-6 dark:aria-disabled:text-dark-3',
-        isIconOnly && 'aspect-square p-0 [--button-padding-x:0px] *:*:grow',
+        isIconOnly &&
+          'aspect-square p-0 [--button-padding-x:0px] *:*:flex *:*:grow *:*:items-center *:*:justify-center',
         className
       )}
       color={color}

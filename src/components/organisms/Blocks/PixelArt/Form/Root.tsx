@@ -41,7 +41,7 @@ const PixelArtFormBlockOrganism = (
     onSuccess: (data) => {
       const link = document.createElement('a');
 
-      link.download = 'my-image-name.jpeg';
+      link.download = 'pixel-art.png';
       link.href = data;
 
       link.click();
@@ -62,7 +62,7 @@ const PixelArtFormBlockOrganism = (
 
   useEffect(() => {
     addColor(color);
-  }, []);
+  }, [addColor, color]);
 
   useEffect(() => {
     if (canvasRef.current) pngRef(canvasRef.current);
@@ -102,14 +102,10 @@ const PixelArtFormBlockOrganism = (
 
         <Form.Control name='color'>
           <ColorInput
-            defaultValue={color}
             label='Color:'
-            onChangeEnd={(value) => {
-              addColor(value);
-
-              setSearchParams({ color: value });
-            }}
+            onChangeEnd={(value) => setSearchParams({ color: value })}
             placeholder={defaults.color}
+            value={color}
           />
         </Form.Control>
 
@@ -124,7 +120,7 @@ const PixelArtFormBlockOrganism = (
                   color={c}
                   isIconOnly
                   onClick={() => {
-                    setSearchParams({ c });
+                    setSearchParams({ color: c });
                   }}
                 />
 

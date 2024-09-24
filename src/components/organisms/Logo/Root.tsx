@@ -19,7 +19,7 @@ const LogoOrganism = (
 ) => {
   return (
     <ActionLink
-      className={cn('aspect-auto', className)}
+      className={cn('px aspect-auto px-xs', className)}
       href='/'
       isIconOnly
       ref={ref}
@@ -27,7 +27,6 @@ const LogoOrganism = (
       style={{
         '--button-bg': 'transparent',
         '--button-bd': 'transparent',
-        '--button-padding-x': 'var(--mantine-spacing-xs)',
         ...style
       }}
       variant='default'

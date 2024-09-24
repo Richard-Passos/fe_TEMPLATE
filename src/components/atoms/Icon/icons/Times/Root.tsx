@@ -13,7 +13,7 @@ const TimesIconAtom = (
 ) => {
   return (
     <svg
-      className={cn('fill-current', className)}
+      className={cn('size-8 fill-current', className)}
       data-icon='Times'
       ref={ref}
       viewBox='0 0 24 24'

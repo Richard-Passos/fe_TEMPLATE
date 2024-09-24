@@ -5,33 +5,40 @@ const footer = async (): Promise<Footer> => {
     cta: {
       title: [
         {
-          text: 'Let’s turn some heads'
-        },
-        {
-          text: '!',
-          emphasize: true
+          text: 'Please feel free to ge in touch with me'
         }
-      ],
-      subtitle: [
-        {
-          text: 'Is your great ideas ready?'
-        }
-      ],
-      action: {
-        label: 'Get in touch'
-      }
+      ]
     },
-    locationSeparator: '—',
-    description: [
-      {
-        type: 'paragraph',
-        children: [
-          {
-            text: 'The full stack developer — who cares building solid and scalable products with a great user experience.'
-          }
-        ]
-      }
-    ],
+    location: {
+      title: [
+        {
+          text: 'My location'
+        }
+      ],
+      description: [
+        {
+          text: 'Brazil, Rio Grande do Sul'
+        }
+      ]
+    },
+    contact: {
+      title: [
+        {
+          text: 'How Can I Help?'
+        }
+      ],
+      description: [
+        {
+          type: 'link',
+          url: 'mailto:hi.richardp@gmail.com',
+          children: [
+            {
+              text: 'hi.richardp@gmail.com'
+            }
+          ]
+        }
+      ]
+    },
     madeBy: [
       {
         text: 'Made with ❤️ by '
@@ -42,23 +49,6 @@ const footer = async (): Promise<Footer> => {
         children: [
           {
             text: 'Richard'
-          }
-        ]
-      },
-      {
-        text: '.'
-      }
-    ],
-    copyright: [
-      {
-        text: '© 2024 '
-      },
-      {
-        type: 'link',
-        url: 'https://github.com/Richard-Passos',
-        children: [
-          {
-            text: 'Richard Passos'
           }
         ]
       },

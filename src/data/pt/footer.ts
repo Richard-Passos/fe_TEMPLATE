@@ -19,7 +19,7 @@ const footer = async (): Promise<Footer> => {
     location: {
       title: [
         {
-          text: 'Minha localização'
+          text: 'Minha Localização'
         }
       ],
       description: [

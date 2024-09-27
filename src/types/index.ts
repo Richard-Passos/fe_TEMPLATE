@@ -2,6 +2,7 @@ import Color from './Color';
 import CookiesConsent from './CookiesConsent';
 import DeepPartial from './DeepPartial';
 import ErrorPage from './ErrorPage';
+import Field from './Field';
 import Footer from './Footer';
 import Header from './Header';
 import Locale from './Locale';
@@ -17,6 +18,7 @@ export type {
   CookiesConsent,
   DeepPartial,
   ErrorPage,
+  Field,
   Footer,
   Header,
   Locale,

@@ -12,7 +12,7 @@ const footer = async (): Promise<Footer> => {
     cta: {
       title: [
         {
-          text: 'Por favor senta-se live para entrar em contato comigo'
+          text: 'Por favor sinta-se live para entrar em contato comigo'
         }
       ]
     },

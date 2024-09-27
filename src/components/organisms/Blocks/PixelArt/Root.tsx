@@ -48,23 +48,14 @@ const PixelArtBlockOrganism = (
           ref={ref}
           {...props}
         >
-          <Suspense fallback={<>Loading form...</>}>
+          <Suspense>
             <PixelArtFormBlock
               data={data}
               defaults={defaults}
             />
           </Suspense>
 
-          <Suspense fallback={<>Loading canvas...</>}>
-            <PixelArtCanvasBlock defaults={defaults} />
-          </Suspense>
-
-          <div
-            className='m-md cursor-col-resize px-2'
-            id='pixel-art-resize'
-          >
-            <div className='h-full w-1 bg-border' />
-          </div>
+          <PixelArtCanvasBlock defaults={defaults} />
         </Section>
       </RefProvider>
     </ColorsProvider>

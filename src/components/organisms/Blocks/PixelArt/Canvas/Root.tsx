@@ -1,74 +1,81 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { ComponentPropsWithRef, forwardRef, useState } from 'react';
+import {
+  CSSProperties,
+  ComponentPropsWithRef,
+  Suspense,
+  forwardRef,
+  useCallback,
+  useRef,
+  useState
+} from 'react';
 
-import { useRefContext } from '@/hooks/contexts';
-import { cn, isType, setRefs, times } from '@/utils';
+import { useEventListener } from '@/hooks';
+import { cn } from '@/utils';
 
-import { SearchParams, parseSize } from '../Root';
-import PixelArtCanvasPixelBlock from './Pixel';
+import { SearchParams } from '../Root';
+import PixelArtCanvasBoardBlock from './Board';
+
+const BOARD_MIN_WIDTH = 100;
 
 type PixelArtCanvasBlockOrganismOwnProps = {
   defaults: SearchParams;
 };
 
 type PixelArtCanvasBlockOrganismProps = PixelArtCanvasBlockOrganismOwnProps &
-  Omit<
-    ComponentPropsWithRef<'section'>,
-    keyof PixelArtCanvasBlockOrganismOwnProps
-  >;
+  Omit<ComponentPropsWithRef<'div'>, keyof PixelArtCanvasBlockOrganismOwnProps>;
 
 const PixelArtCanvasBlockOrganism = (
-  { defaults, className, style, ...props }: PixelArtCanvasBlockOrganismProps,
+  { defaults, className, ...props }: PixelArtCanvasBlockOrganismProps,
   ref: PixelArtCanvasBlockOrganismProps['ref']
 ) => {
-  const innerRef = useRefContext(),
-    [state, setState] = useState<'painting' | 'resizing' | 'idle'>('idle'),
-    searchParams = useSearchParams();
+  const boardRef = useRef<HTMLDivElement>(null),
+    [isResizing, setIsResizing] = useState(false),
+    [maxWidth, setMaxWidth] = useState<number | undefined>(undefined);
 
-  const params: Record<keyof SearchParams, string | null> = {
-    size: searchParams.get('size'),
-    color: searchParams.get('color')
-  };
+  const handleResizeBoard = useCallback(
+    (x: number) => {
+      if (!boardRef.current || !isResizing) return;
 
-  const size = isType<SearchParams['size']>(!!params.size, params.size)
-      ? parseSize(params.size)
-      : defaults.size,
-    color = isType<SearchParams['color']>(!!params.color, params.color)
-      ? params.color
-      : defaults.color;
+      const offset = boardRef.current.getBoundingClientRect().left;
+
+      setMaxWidth(Math.max(x - offset, BOARD_MIN_WIDTH));
+    },
+    [isResizing, setMaxWidth]
+  );
+
+  useEventListener('mousemove', ({ clientX }) => handleResizeBoard(clientX));
+  useEventListener('mouseup', () => setIsResizing(false));
 
   return (
-    <div className='aspect-square grow bg-gray-0 dark:bg-dark-5'>
-      <section
-        className={cn(
-          'grid size-full grid-cols-[repeat(var(--size),minmax(0,1fr))] grid-rows-[repeat(var(--size),minmax(0,1fr))]',
-          className
-        )}
-        onMouseDown={() => {
-          setState('painting');
-        }}
-        onMouseUp={() => {
-          setState('idle');
-        }}
-        ref={setRefs(ref, innerRef)}
-        style={
-          {
-            '--size': `${size}`,
-            ...style
-          } as typeof style
-        }
-        {...props}
-      >
-        {times(size * size, String).map((id) => (
-          <PixelArtCanvasPixelBlock
-            color={color}
-            isPainting={state === 'painting'}
-            key={id}
-          />
-        ))}
-      </section>
+    <div
+      className={cn('grow', isResizing && 'cursor-w-resize', className)}
+      ref={ref}
+      {...props}
+    >
+      <div className='flex h-fit'>
+        <div
+          className='max-w-[--max-w,100%] grow pr-md'
+          ref={boardRef}
+          style={
+            {
+              '--max-w': maxWidth && `${maxWidth}px`
+            } as CSSProperties
+          }
+        >
+          <Suspense>
+            <PixelArtCanvasBoardBlock defaults={defaults} />
+          </Suspense>
+        </div>
+
+        <div
+          className='m-md ml-0 cursor-w-resize select-none px-2'
+          id='pixel-art-resize'
+          onMouseDown={() => setIsResizing(true)}
+        >
+          <div className='h-full w-1 bg-border' />
+        </div>
+      </div>
     </div>
   );
 };

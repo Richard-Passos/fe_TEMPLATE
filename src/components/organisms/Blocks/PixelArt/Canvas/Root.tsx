@@ -1,8 +1,9 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { ComponentPropsWithRef, forwardRef, useRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef, useState } from 'react';
 
+import { useRefContext } from '@/hooks/contexts';
 import { cn, isType, setRefs, times } from '@/utils';
 
 import { SearchParams, parseSize } from '../Root';
@@ -22,7 +23,7 @@ const PixelArtCanvasBlockOrganism = (
   { defaults, className, style, ...props }: PixelArtCanvasBlockOrganismProps,
   ref: PixelArtCanvasBlockOrganismProps['ref']
 ) => {
-  const innerRef = useRef<HTMLDivElement>(null),
+  const innerRef = useRefContext(),
     [state, setState] = useState<'painting' | 'resizing' | 'idle'>('idle'),
     searchParams = useSearchParams();
 

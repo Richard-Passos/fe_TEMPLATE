@@ -2,7 +2,7 @@
 
 import { useToPng } from '@hugocxl/react-to-image';
 import { useSearchParams } from 'next/navigation';
-import { RefObject, forwardRef, useEffect } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { z } from 'zod';
 
 import {
@@ -16,24 +16,36 @@ import Pill, { PillGroup } from '@/components/atoms/Pill';
 import { Form } from '@/components/molecules';
 import { FormRootProps } from '@/components/molecules/Form';
 import { useSetSearchParams } from '@/hooks';
-import { useColorsContext } from '@/hooks/contexts';
+import { useColorsContext, useRefContext } from '@/hooks/contexts';
+import { Field } from '@/types';
 import { cn, isType } from '@/utils';
+import serialize, { Node } from '@/utils/serialize';
 
 import { MAX_SIZE, MIN_SIZE, SearchParams, parseSize } from '../Root';
 
 type PixelArtFormBlockOrganismOwnProps = {
+  data: {
+    fields: {
+      size: Field;
+      color: Field;
+      usedColors: Field & { removeAction: { label: string } };
+      submit: {
+        label: Node[];
+      };
+    };
+  };
   defaults: SearchParams;
-  canvasRef: RefObject<HTMLDivElement>;
 };
 
 type PixelArtFormBlockOrganismProps = PixelArtFormBlockOrganismOwnProps &
   Omit<Partial<FormRootProps>, keyof PixelArtFormBlockOrganismOwnProps>;
 
 const PixelArtFormBlockOrganism = (
-  { defaults, canvasRef, className, ...props }: PixelArtFormBlockOrganismProps,
+  { data, defaults, className, ...props }: PixelArtFormBlockOrganismProps,
   ref: PixelArtFormBlockOrganismProps['ref']
 ) => {
-  const searchParams = useSearchParams(),
+  const canvasRef = useRefContext(),
+    searchParams = useSearchParams(),
     setSearchParams = useSetSearchParams(),
     { colors, addColor, removeColor } = useColorsContext();
 
@@ -60,6 +72,8 @@ const PixelArtFormBlockOrganism = (
       ? params.color
       : defaults.color;
 
+  const [c, setC] = useState(color);
+
   useEffect(() => {
     addColor(color);
   }, [addColor, color]);
@@ -78,8 +92,8 @@ const PixelArtFormBlockOrganism = (
         }}
         ref={ref}
         schema={z.object({
-          size: z.string().min(1, 'Size Error'),
-          color: z.string().trim().min(2, 'Color error')
+          size: z.string().trim(),
+          color: z.string().trim()
         })}
         {...props}
       >
@@ -87,8 +101,7 @@ const PixelArtFormBlockOrganism = (
           <NumberInput
             allowDecimal={false}
             allowNegative={false}
-            defaultValue={size}
-            label='Size:'
+            label={serialize(data.fields.size.label)}
             max={50}
             min={2}
             onValueChange={({ formattedValue }) => {
@@ -97,19 +110,21 @@ const PixelArtFormBlockOrganism = (
               });
             }}
             placeholder={`${MIN_SIZE} - ${MAX_SIZE}`}
+            value={size}
           />
         </Form.Control>
 
         <Form.Control name='color'>
           <ColorInput
-            label='Color:'
+            label={serialize(data.fields.color.label)}
+            onChange={setC}
             onChangeEnd={(value) => setSearchParams({ color: value })}
             placeholder={defaults.color}
-            value={color}
+            value={c}
           />
         </Form.Control>
 
-        <PillsInput label='Used colors:'>
+        <PillsInput label={serialize(data.fields.usedColors.label)}>
           <PillGroup>
             {colors.map((c) => (
               <Pill
@@ -120,17 +135,17 @@ const PixelArtFormBlockOrganism = (
                   color={c}
                   isIconOnly
                   onClick={() => {
+                    setC(c);
                     setSearchParams({ color: c });
                   }}
                 />
 
                 <Button
+                  aria-label={data.fields.usedColors.removeAction.label}
                   className='absolute right-0 top-0 size-1/2 rounded-full -translate-y-1/4 translate-x-1/4'
                   disabled={c === color}
                   isIconOnly
-                  onClick={() => {
-                    removeColor(c);
-                  }}
+                  onClick={() => removeColor(c)}
                   variant='default'
                 >
                   <TimesIcon className='absolute left-1/2 top-1/2 size-2/3 -translate-x-1/2 -translate-y-1/2' />
@@ -144,7 +159,7 @@ const PixelArtFormBlockOrganism = (
           className='mt-md'
           onClick={convert}
         >
-          Dowload Pixel Art
+          {serialize(data.fields.submit.label)}
         </Button>
       </Form.Root>
     </aside>

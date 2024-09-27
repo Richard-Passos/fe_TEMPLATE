@@ -8,9 +8,7 @@ const useRefContext = () => {
   const context = useContext(RefContext);
 
   if (!context)
-    throw new Error(
-      'useRefContext must be used within a RefContextProvider'
-    );
+    throw new Error('useRefContext must be used within a RefContextProvider');
 
   return context;
 };

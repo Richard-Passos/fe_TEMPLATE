@@ -2,6 +2,7 @@ import useBooleanContext from './useBoolean';
 import useColorsContext from './useColors';
 import useFormContext from './useForm';
 import useHeightContext from './useHeight';
+import useRefContext from './useRef';
 import useThemeContext from './useTheme';
 
 const hooksContexts = {
@@ -9,6 +10,7 @@ const hooksContexts = {
   useColors: useColorsContext,
   useForm: useFormContext,
   useHeight: useHeightContext,
+  useRef: useRefContext,
   useTheme: useThemeContext
 };
 
@@ -18,5 +20,6 @@ export {
   useColorsContext,
   useFormContext,
   useHeightContext,
+  useRefContext,
   useThemeContext
 };

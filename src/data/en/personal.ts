@@ -7,11 +7,11 @@ const personal = async (): Promise<Personal> => {
       last: 'Passos'
     },
     email: 'hi.richardp@gmail.com',
-    title: 'Canvas de Pixel Art',
+    title: 'Pixel Art Canvas',
     description:
-      'Crie incríveis pixel arts com uma tela interativa! Personalize seu design redimensionando, adicionando cores e baixando sua arte pixelada sem esforço. Libere sua criatividade hoje!',
+      'Create amazing pixel art with an interactive canvas! Customize your design by resizing, adding colors, and effortlessly downloading your pixelated artwork. Unleash your creativity today!',
     keywords:
-      'pixel art, canvas de pixel art, criar pixel art, pixel art online, desenhar pixel art, redimensionar pixel art, cores de pixel art, baixar pixel art, criador de pixel art, editor de pixel art, ferramenta de desenho em pixel',
+      'pixel art, pixel art canvas, create pixel art, online pixel art, draw pixel art, resize pixel art, pixel art colors, download pixel art, pixel art creator, pixel art editor, pixel drawing tool',
     authors: [
       {
         name: 'Richard Passos',
@@ -19,7 +19,7 @@ const personal = async (): Promise<Personal> => {
       }
     ],
     location: {
-      country: 'Brasil',
+      country: 'Brazil',
       state: 'Rio Grande do Sul',
       gmt: 'GMT-3'
     },

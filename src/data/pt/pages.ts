@@ -9,7 +9,30 @@ const pages = async (): Promise<Pages[]> => {
       blocks: [
         {
           id: 'pixel-art',
-          type: 'PixelArt'
+          type: 'PixelArt',
+          data: {
+            fields: {
+              size: {
+                label: [{ text: 'Tamanho:' }]
+              },
+              color: {
+                label: [{ text: 'Cor:' }]
+              },
+              usedColors: {
+                label: [{ text: 'Cores usadas:' }],
+                removeAction: {
+                  label: 'Remover cor'
+                }
+              },
+              submit: {
+                label: [
+                  {
+                    text: 'Baixar Pixel Art'
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       metadata: {}

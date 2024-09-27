@@ -7,17 +7,17 @@ const personal = async (): Promise<Personal> => {
       last: 'Passos'
     },
     email: 'hi.richardp@gmail.com',
-    title: 'Richard Passos um ótimo Desenvolvedor Full Stack',
+    title: 'Canvas de Pixel Art',
     description:
-      'Ajudando marcas a alcançar o destaque digital. Localizado no Brasil. Trago uma paixão por tecnologia de ponta e criação de soluções impactantes centradas no usuário.',
+      'Crie incríveis pixel arts com uma tela interativa! Personalize seu design redimensionando, adicionando cores e baixando sua arte pixelada sem esforço. Libere sua criatividade hoje!',
+    keywords:
+      'pixel art, canvas de pixel art, criar pixel art, pixel art online, desenhar pixel art, redimensionar pixel art, cores de pixel art, baixar pixel art, criador de pixel art, editor de pixel art, ferramenta de desenho em pixel',
     authors: [
       {
         name: 'Richard Passos',
         url: 'https://github.com/Richard-Passos'
       }
     ],
-    keywords:
-      'Richard Passos, Portfólio, Desenvolvedor Full Stack, React.js, Node.js, React Native, Next.js, TypeScript, JavaScript, Jest, MongoDB, Git, TailwindCSS, Styled-components, Resolução de problemas, Orientado a detalhes, Comunicação, Adaptabilidade, Gestão de tempo, Pensamento crítico, Pensamento sintético',
     location: {
       country: 'Brasil',
       state: 'Rio Grande do Sul',

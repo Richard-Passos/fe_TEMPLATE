@@ -60,7 +60,7 @@ const FooterContentOrganism = async () => {
         </section>
       </section>
 
-      <section className='flex w-full flex-wrap items-center justify-between border-t bg-body px-[5%] py-md'>
+      <section className='flex w-full flex-wrap items-center justify-between border border-x-0 border-b-0 px-[5%] py-md'>
         <Logo />
 
         <Text
@@ -80,7 +80,7 @@ const FooterContentOrganism = async () => {
               aria-label={d.label}
               as='link'
               className='text-dimmed'
-              color='gray'
+              color='dark'
               href={d.href}
               isIconOnly
               key={d.id}

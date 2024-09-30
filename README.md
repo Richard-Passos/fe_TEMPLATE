@@ -57,4 +57,4 @@ Meet the talented individuals who brought this masterpiece to life:
 
 ## 🎯 Status
 
-In progeess
+Finished

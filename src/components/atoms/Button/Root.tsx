@@ -37,7 +37,7 @@ const ButtonAtom = (
       className={cn(
         '*:*:relative aria-disabled:bg-gray-1 aria-disabled:text-gray-5 dark:aria-disabled:bg-dark-6 dark:aria-disabled:text-dark-3',
         isIconOnly &&
-          'aspect-square p-0 [--button-padding-x:0px] *:*:flex *:*:grow *:*:items-center *:*:justify-center',
+          'aspect-square *:*:flex *:*:grow *:*:items-center *:*:justify-center',
         className
       )}
       color={color}
@@ -47,6 +47,9 @@ const ButtonAtom = (
       style={{
         ...(isPrimary && {
           '--button-color': 'var(--mantine-primary-color-contrast)'
+        }),
+        ...(isIconOnly && {
+          '--button-padding-x': '0px'
         }),
         ...style
       }}

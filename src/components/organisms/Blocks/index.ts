@@ -1,4 +1,8 @@
- const Blocks = {};
+import Abc from './Abc';
+
+const Blocks = {
+  Abc
+};
 
 export default Blocks;
-export {};
+export { Abc };

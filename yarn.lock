@@ -635,16 +635,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hugocxl/react-to-image@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@hugocxl/react-to-image@npm:0.0.9"
-  peerDependencies:
-    html-to-image: ">=1"
-    react: ">=16"
-  checksum: 10c0/53abfba21482a693402eed876f873606938ccc490632c426c90f91a4b01216e871ee5ca417ff0196bf610744d18b7833d27bbfe914e7aa35871fe05af1da18d1
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -1565,13 +1555,6 @@ __metadata:
   dependencies:
     "@babel/types": "npm:^7.20.7"
   checksum: 10c0/7ba7db61a53e28cac955aa99af280d2600f15a8c056619c05b6fc911cbe02c61aa4f2823299221b23ce0cce00b294c0e5f618ec772aa3f247523c2e48cf7b888
-  languageName: node
-  linkType: hard
-
-"@types/escape-html@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@types/escape-html@npm:1.0.4"
-  checksum: 10c0/5cdae9d38e97b1ad61180528ef7ca66bf6be96e875cc560c3e064d6ca75ccf2adaf2fa3b7bdd4f7494013e4357a2fb0bb62f2e59ca53097d5c45c7519d0ce9c3
   languageName: node
   linkType: hard
 
@@ -3254,13 +3237,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"escape-html@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "escape-html@npm:1.0.3"
-  checksum: 10c0/524c739d776b36c3d29fa08a22e03e8824e3b2fd57500e5e44ecf3cc4707c34c60f9ca0781c0e33d191f2991161504c295e98f68c78fe7baa6e57081ec6ac0a3
-  languageName: node
-  linkType: hard
-
 "escape-string-regexp@npm:^1.0.5":
   version: 1.0.5
   resolution: "escape-string-regexp@npm:1.0.5"
@@ -4098,13 +4074,6 @@ __metadata:
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
   checksum: 10c0/208e8a12de1a6569edbb14544f4567e6ce8ecc30b9394fcaa4e7bb1e60c12a7c9a1ed27e31290817157e8626f3a4f29e76c8747030822eb84a6abb15c255f0a0
-  languageName: node
-  linkType: hard
-
-"html-to-image@npm:^1.11.11":
-  version: 1.11.11
-  resolution: "html-to-image@npm:1.11.11"
-  checksum: 10c0/0b6349221ad253dfca01d165c589d44341e942faf0273aab28c8b7d86ff2922d3e8e6390f57bf5ddaf6bac9a3b590a8cdaa77d52a363354796dd0e0e05eb35d2
   languageName: node
   linkType: hard
 
@@ -6198,7 +6167,6 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@hookform/resolvers": "npm:^3.9.0"
-    "@hugocxl/react-to-image": "npm:^0.0.9"
     "@mantine/core": "npm:^7.12.2"
     "@mantine/hooks": "npm:^7.12.2"
     "@radix-ui/react-slot": "npm:^1.1.0"
@@ -6209,17 +6177,14 @@ __metadata:
     "@testing-library/user-event": "npm:^14.5.2"
     "@total-typescript/ts-reset": "npm:^0.6.1"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
-    "@types/escape-html": "npm:^1.0.4"
     "@types/jest": "npm:^29.5.13"
     "@types/lodash": "npm:^4.17.7"
     "@types/react": "npm:^18.3.8"
     "@types/react-dom": "npm:^18.3.0"
     autoprefixer: "npm:^10.4.20"
-    escape-html: "npm:^1.0.3"
     eslint: "npm:8.57.0"
     eslint-config-next: "npm:^14.2.13"
     eslint-config-prettier: "npm:^9.1.0"
-    html-to-image: "npm:^1.11.11"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     lodash: "npm:^4.17.21"

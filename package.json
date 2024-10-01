@@ -10,13 +10,10 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
-    "@hugocxl/react-to-image": "^0.0.9",
     "@mantine/core": "^7.12.2",
     "@mantine/hooks": "^7.12.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.7",
-    "escape-html": "^1.0.3",
-    "html-to-image": "^1.11.11",
     "lodash": "^4.17.21",
     "next": "^14.2.13",
     "next-intl": "^3.19.4",
@@ -42,7 +39,6 @@
     "@testing-library/user-event": "^14.5.2",
     "@total-typescript/ts-reset": "^0.6.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/escape-html": "^1.0.4",
     "@types/jest": "^29.5.13",
     "@types/lodash": "^4.17.7",
     "@types/react": "^18.3.8",
@@ -62,5 +58,5 @@
     "tailwindcss-3d": "^1.0.7",
     "typescript": "^5.6.2"
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.5.0"
 }

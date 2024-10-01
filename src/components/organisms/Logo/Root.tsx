@@ -1,13 +1,21 @@
 import { forwardRef } from 'react';
 
-import { Icon } from '@/components/atoms';
+import {
+  PrimaryLogoIcon,
+  SecondaryLogoIcon
+} from '@/components/atoms/Icon/icons';
 import ActionLink, {
   ActionLinkProps
 } from '@/components/molecules/Action/Link';
 import { cn } from '@/utils';
 
+const VARIANTS = {
+  primary: PrimaryLogoIcon,
+  secondary: SecondaryLogoIcon
+};
+
 type LogoOrganismOwnProps = {
-  variant?: 'primary' | 'secondary';
+  variant?: keyof typeof VARIANTS;
 } & Partial<Pick<ActionLinkProps, 'href'>>;
 
 type LogoOrganismProps = LogoOrganismOwnProps &
@@ -17,6 +25,8 @@ const LogoOrganism = (
   { variant = 'primary', className, style, ...props }: LogoOrganismProps,
   ref: LogoOrganismProps['ref']
 ) => {
+  const Variant = VARIANTS[variant];
+
   return (
     <ActionLink
       className={cn('aspect-auto', className)}
@@ -33,10 +43,7 @@ const LogoOrganism = (
       variant='default'
       {...props}
     >
-      <Icon
-        className='h-2/3'
-        src={`/icons/logo-${variant}.svg`}
-      />
+      <Variant className='h-2/3' />
     </ActionLink>
   );
 };

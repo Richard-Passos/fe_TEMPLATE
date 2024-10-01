@@ -13,7 +13,7 @@ const GlobeIconAtom = (
 ) => {
   return (
     <svg
-      className={cn('size-8 fill-current', className)}
+      className={cn('h-8 fill-current', className)}
       data-icon='Envelope'
       ref={ref}
       viewBox='0 0 24 24'

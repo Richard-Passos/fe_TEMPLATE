@@ -3,13 +3,11 @@
 import { Slot } from '@radix-ui/react-slot';
 import { ComponentPropsWithRef, ReactNode } from 'react';
 
-type SlotProps = ComponentPropsWithRef<typeof Slot>;
+type SlotUtilProps = ComponentPropsWithRef<typeof Slot>;
 
 type SlotUtilAsChildProps<DefaultElementProps> =
   | ({ asChild?: false } & DefaultElementProps)
-  | ({ asChild: true; children: ReactNode } & SlotProps);
-
-type SlotUtilProps = SlotProps;
+  | ({ asChild: true; children: ReactNode } & SlotUtilProps);
 
 const SlotUtil = Slot;
 

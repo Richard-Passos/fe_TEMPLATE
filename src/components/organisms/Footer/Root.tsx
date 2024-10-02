@@ -17,7 +17,10 @@ const FooterOrganism = (
   return (
     <Section
       asChild
-      className={cn('!min-h-fit max-w-bounds p-0', className)}
+      className={cn(
+        'max-w-bound !min-h-fit bg-gray-0 p-0 dark:bg-dark-5',
+        className
+      )}
       ref={ref}
       {...props}
     >

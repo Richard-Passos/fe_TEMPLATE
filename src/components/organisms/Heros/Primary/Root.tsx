@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 
-import { Text, Title } from '@/components/atoms';
+import { Title } from '@/components/atoms';
 import Section, { SectionProps } from '@/components/organisms/Section';
+import { cn, renderComp } from '@/utils';
 import serialize, { Node } from '@/utils/serialize';
 
 type PrimaryHeroOrganismOwnProps = {
@@ -16,24 +17,31 @@ type PrimaryHeroOrganismProps = PrimaryHeroOrganismOwnProps &
   Omit<SectionProps, keyof PrimaryHeroOrganismOwnProps>;
 
 const PrimaryHeroOrganism = (
-  { data, ...props }: PrimaryHeroOrganismProps,
+  { data, className, ...props }: PrimaryHeroOrganismProps,
   ref: PrimaryHeroOrganismProps['ref']
 ) => {
   return (
     <Section
+      className={cn(
+        'pt-[calc(var(--header-height)+var(--section-spacing-md))]',
+        className
+      )}
       ref={ref}
       {...props}
     >
       <Title
-        order={1}
         className='max-w-lg text-center'
+        order={1}
       >
         {serialize(data.title)}
       </Title>
 
-      <Text className='max-w-md text-center'>
-        {serialize(data.description)}
-      </Text>
+      {renderComp(
+        <section className='max-w-md text-center'>
+          {serialize(data.description)}
+        </section>,
+        [data.description]
+      )}
     </Section>
   );
 };

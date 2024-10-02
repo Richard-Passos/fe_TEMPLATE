@@ -4,13 +4,11 @@ const request = async <TResponse>(
   url: string,
   config?: RequestInit
 ): Promise<TResponse> => {
-  return { ok: false } as TResponse;
-
-  /* url = url.startsWith('/') ? `${baseUrl}${url}` : url;
+  url = url.startsWith('/') ? `${baseUrl}${url}` : url;
 
   const response = await fetch(url, { cache: 'no-store', ...config });
 
-  return (await response.json()) as TResponse; */
+  return (await response.json()) as TResponse;
 };
 
 export default request;

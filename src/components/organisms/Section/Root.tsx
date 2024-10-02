@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import Slot, { AsChildProps } from '@/components/atoms/Slot';
+import Slot, { AsChildProps } from '@/components/utils/Slot';
 import { cn } from '@/utils';
 
 type SectionOrganismOwnProps = {};

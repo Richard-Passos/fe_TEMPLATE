@@ -23,7 +23,12 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
 
   const page = res.data;
 
-  return <PageTemplate blocks={page.blocks} />;
+  return (
+    <PageTemplate
+      blocks={page.blocks}
+      hero={page.hero}
+    />
+  );
 };
 
 export default HomePage;

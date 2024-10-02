@@ -6,13 +6,27 @@ const pages = async (): Promise<Pages[]> => {
       slug: 'home',
       isSelected: true,
       label: 'Home',
-      blocks: [
-        {
-          id: 'abc',
-          type: 'Abc',
-          data: {}
+      hero: {
+        id: '',
+        type: 'Primary',
+        data: {
+          title: [
+            {
+              text: 'Página Inicial'
+            }
+          ],
+          description: [
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti aut tempore unde, similique perferendis veritatis quidem inventore temporibus voluptatibus.'
+                }
+              ]
+            }
+          ]
         }
-      ],
+      },
       metadata: {}
     },
     {
@@ -22,11 +36,7 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Not found'
-            },
-            {
-              text: '!',
-              emphasize: true
+              text: '404'
             }
           ],
           description: [
@@ -34,7 +44,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: 'Sorry, page not found!'
+                  text: 'Desculpe, página não encontrada!'
                 }
               ]
             }
@@ -43,7 +53,7 @@ const pages = async (): Promise<Pages[]> => {
             primary: {
               label: [
                 {
-                  text: 'Back home'
+                  text: 'Página Inicial'
                 }
               ],
               href: '/'
@@ -51,11 +61,9 @@ const pages = async (): Promise<Pages[]> => {
           }
         }
       },
-      blocks: [],
       metadata: {
-        title: 'Not Found',
-        description:
-          'Oops! The page you’re looking for doesn’t exist. Explore my portfolio to find out more about my work as a full stack developer.'
+        title: 'Não Encontrado',
+        description: 'Ops! A página que você está procurando não existe.'
       }
     },
     {
@@ -65,11 +73,7 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Something Went Wrong'
-            },
-            {
-              text: '!',
-              emphasize: true
+              text: 'Ops!'
             }
           ],
           description: [
@@ -77,7 +81,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: 'Sorry, something Went Wrong!'
+                  text: 'Desculpe, parece que algo inesperado aconteceu!'
                 }
               ]
             }
@@ -86,14 +90,14 @@ const pages = async (): Promise<Pages[]> => {
             primary: {
               label: [
                 {
-                  text: 'Try again'
+                  text: 'Tentar de novo'
                 }
               ]
             },
             secondary: {
               label: [
                 {
-                  text: 'Back home'
+                  text: 'Página Inicial'
                 }
               ],
               href: '/'
@@ -101,7 +105,6 @@ const pages = async (): Promise<Pages[]> => {
           }
         }
       },
-      blocks: [],
       metadata: {}
     }
   ];

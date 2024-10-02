@@ -7,11 +7,11 @@ const personal = async (): Promise<Personal> => {
       last: 'Passos'
     },
     email: 'hi.richardp@gmail.com',
-    title: 'Canvas de Pixel Art',
+    title: 'Front End Template',
     description:
-      'Crie incríveis pixel arts com uma tela interativa! Personalize seu design redimensionando, adicionando cores e baixando sua arte pixelada sem esforço. Libere sua criatividade hoje!',
+      'Crie seu site facilmente com este template flexível e moderno, ideal para desenvolvedores e empreendedores que buscam uma solução rápida e personalizável. Recursos dinâmicos e otimização para SEO, perfeito para projetos de qualquer nicho.',
     keywords:
-      'pixel art, canvas de pixel art, criar pixel art, pixel art online, desenhar pixel art, redimensionar pixel art, cores de pixel art, baixar pixel art, criador de pixel art, editor de pixel art, ferramenta de desenho em pixel',
+      'template de site, criar websites, template personalizável, design responsivo, template para desenvolvedores, criação de sites, site otimizado para SEO, website flexível, solução para websites, design moderno',
     authors: [
       {
         name: 'Richard Passos',

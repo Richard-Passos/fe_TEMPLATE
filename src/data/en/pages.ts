@@ -6,13 +6,27 @@ const pages = async (): Promise<Pages[]> => {
       slug: 'home',
       isSelected: true,
       label: 'Home',
-      blocks: [
-        {
-          id: 'abc',
-          type: 'Abc',
-          data: {}
+      hero: {
+        id: 'hero',
+        type: 'Primary',
+        data: {
+          title: [
+            {
+              text: 'Home Page'
+            }
+          ],
+          description: [
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti aut tempore unde, similique perferendis veritatis quidem inventore temporibus voluptatibus.'
+                }
+              ]
+            }
+          ]
         }
-      ],
+      },
       metadata: {}
     },
     {
@@ -22,11 +36,7 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Not found'
-            },
-            {
-              text: '!',
-              emphasize: true
+              text: '404!'
             }
           ],
           description: [
@@ -51,11 +61,9 @@ const pages = async (): Promise<Pages[]> => {
           }
         }
       },
-      blocks: [],
       metadata: {
         title: 'Not Found',
-        description:
-          'Oops! The page you’re looking for doesn’t exist. Explore my portfolio to find out more about my work as a full stack developer.'
+        description: 'Oops! The page you’re looking for doesn’t exist.'
       }
     },
     {
@@ -65,11 +73,7 @@ const pages = async (): Promise<Pages[]> => {
         data: {
           title: [
             {
-              text: 'Something Went Wrong'
-            },
-            {
-              text: '!',
-              emphasize: true
+              text: 'Ops!'
             }
           ],
           description: [
@@ -77,7 +81,7 @@ const pages = async (): Promise<Pages[]> => {
               type: 'paragraph',
               children: [
                 {
-                  text: 'Sorry, something Went Wrong!'
+                  text: 'Sorry, seems something Went Wrong!'
                 }
               ]
             }
@@ -101,7 +105,6 @@ const pages = async (): Promise<Pages[]> => {
           }
         }
       },
-      blocks: [],
       metadata: {}
     }
   ];

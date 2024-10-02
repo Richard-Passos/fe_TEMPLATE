@@ -39,7 +39,12 @@ const Page = async ({ params: { slug, locale } }: PageProps) => {
 
   if (!isValidPage(slug, page)) return notFound();
 
-  return <PageTemplate blocks={page.blocks} />;
+  return (
+    <PageTemplate
+      blocks={page.blocks}
+      hero={page.hero}
+    />
+  );
 };
 
 const generateMetadata = async ({

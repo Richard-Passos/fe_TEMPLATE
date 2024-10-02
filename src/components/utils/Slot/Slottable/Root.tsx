@@ -1,12 +1,16 @@
+'use client';
+
 import { Slottable } from '@radix-ui/react-slot';
 import { ComponentPropsWithRef } from 'react';
 
-type SlottableAtomOwnProps = {};
+type SlottableUtilOwnProps = {};
 
-type SlottableAtomProps = SlottableAtomOwnProps &
-  Omit<ComponentPropsWithRef<typeof Slottable>, keyof SlottableAtomOwnProps>;
+type SlottableUtilProps = SlottableUtilOwnProps &
+  Omit<ComponentPropsWithRef<typeof Slottable>, keyof SlottableUtilOwnProps>;
 
-const SlottableAtom = Slottable;
+const SlottableUtil = (props: SlottableUtilProps) => {
+  return <Slottable {...props} />;
+};
 
-export default SlottableAtom;
-export type { SlottableAtomProps };
+export default SlottableUtil;
+export type { SlottableUtilProps };

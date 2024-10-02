@@ -42,6 +42,7 @@ const ErrorPage = ({ error, reset }: ErrorPageProps) => {
             actions: {
               ...page.hero.data.actions,
               primary: {
+                label: [],
                 ...page.hero.data.actions?.primary,
                 onClick: reset
               }

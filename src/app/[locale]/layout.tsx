@@ -50,7 +50,9 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
             </Theme>
           </Height.Get>
 
-          <Footer />
+          <Theme>
+            <Footer />
+          </Theme>
 
           <Theme>
             <CookiesConsent />

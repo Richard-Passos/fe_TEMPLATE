@@ -34,7 +34,7 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
         <ColorSchemeScript defaultColorScheme={defaultColorScheme} />
       </head>
 
-      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip'>
+      <body className='relative flex min-h-svh flex-col items-center overflow-x-clip 2xl:min-h-bounds'>
         <Providers>
           <Height.Set name='header'>
             <Theme>
@@ -44,15 +44,13 @@ const Layout = ({ params: { locale }, children }: LayoutProps) => {
 
           <Height.Get name='header'>
             <Theme>
-              <main className='relative flex w-full max-w-bounds flex-col items-center max-2xl:grow 2xl:min-h-bounds'>
+              <main className='relative flex w-full max-w-bounds grow flex-col items-center'>
                 {children}
               </main>
             </Theme>
           </Height.Get>
 
-          <Theme>
-            <Footer />
-          </Theme>
+          <Footer />
 
           <Theme>
             <CookiesConsent />
